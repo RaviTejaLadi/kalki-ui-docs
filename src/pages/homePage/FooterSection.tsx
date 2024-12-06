@@ -1,0 +1,76 @@
+import Link from '@/components/common/Link';
+import { ChevronsDownIcon } from 'lucide-react';
+interface link {
+  label: string;
+  to: string;
+}
+interface FooterLinksProps {
+  title: string;
+  links: link[];
+}
+
+const FooterLinks: React.FC<FooterLinksProps> = ({ title, links }) => (
+  <div className="flex flex-col gap-2">
+    <h3 className="font-semibold text-base text-purple-500">{title}</h3>
+    {links.map((link, index) => (
+      <div key={index}>
+        <Link to={link.to} className="text-xs text-black">
+          {link.label}
+        </Link>
+      </div>
+    ))}
+  </div>
+);
+
+export const FooterSection = () => {
+  const contactLinks = [
+    { label: 'Github', to: '#' },
+    { label: 'Twitter', to: '#' },
+    { label: 'Instagram', to: '#' },
+  ];
+
+  const helpLinks = [
+    { label: 'Contact Us', to: '#' },
+    { label: 'FAQ', to: '#' },
+    { label: 'Feedback', to: '#' },
+  ];
+
+  return (
+    <footer id="footer" className="mx-10 py-24 sm:py-32">
+      <div className="p-10 w-full border rounded-lg">
+        <div className="flex justify-between items-center">
+          {/* Brand Section */}
+          <div>
+            <Link to="#" className="flex font-bold items-center text-purple-500 " aria-label="UI Essentials React">
+              <ChevronsDownIcon className="w-9 h-9 mr-2  rounded-lg border border-secondary" />
+              <h3 className="text-2xl">UI Essentials React</h3>
+            </Link>
+          </div>
+
+          {/* Links Section */}
+          <div className="flex gap-20">
+            <FooterLinks title="Contact" links={contactLinks} />
+            <FooterLinks title="Help" links={helpLinks} />
+          </div>
+        </div>
+
+        <hr className="my-6" />
+
+        {/* Copyright Section */}
+        <section className="text-xs">
+          <h3>
+            Copyright &copy; 2024 Designed and developed by
+            <Link
+              target="_blank"
+              to="#"
+              className="transition-all text-xs text-purple-500 italic border-primary hover:border-b-2 ml-1"
+              aria-label="Ravi Teja Ladi"
+            >
+             @ Ravi Teja Ladi
+            </Link>
+          </h3>
+        </section>
+      </div>
+    </footer>
+  );
+};

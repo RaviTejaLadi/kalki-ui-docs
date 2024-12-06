@@ -1,6 +1,5 @@
 import React, { forwardRef, ReactElement, useCallback, useRef, useEffect, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { cn } from '@/utils';
 import { navMenuTriggerVariants } from './navMenuTriggerVariants';
 import { NavMenuItemTitle } from './NavMenuItemTitle';
 import { NavMenuItemContent } from './NavMenuItemContent';
@@ -8,6 +7,7 @@ import { NavMenuTrigger } from './NavMenuTrigger';
 import { NavMenuLink } from './NavMenuLink';
 import { NavMenuItemProps, NavMenuContentPosition } from './interface';
 import { NavMenuContent } from './NavMenuContent';
+import { cn } from '@/utils';
 
 export const NavMenuItem = forwardRef<HTMLDivElement, NavMenuItemProps>(
   ({ children, className, openMenuItem, setOpenMenuItem, to, variant = 'light', size = 'sm' }, ref) => {
@@ -72,7 +72,7 @@ export const NavMenuItem = forwardRef<HTMLDivElement, NavMenuItemProps>(
             <ChevronDown className={cn('size-3 transition-transform duration-200', isOpen ? 'rotate-180' : '')} />
           </NavMenuTrigger>
         ) : (
-          <NavMenuLink to={to || '#'} className={navMenuTriggerVariants({ variant, size })}>
+          <NavMenuLink to={to || '#'} className={cn(navMenuTriggerVariants({ variant, size }), 'bg-inherit')}>
             {title?.props.children}
           </NavMenuLink>
         )}

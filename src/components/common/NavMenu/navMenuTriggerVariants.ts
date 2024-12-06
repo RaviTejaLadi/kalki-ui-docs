@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority';
 
 export const navMenuTriggerVariants = cva(
-  'inline-flex items-center justify-center rounded-md font-semibold disabled:opacity-50 transition-colors',
+  'inline-flex items-center justify-center rounded-md font-normal disabled:opacity-50 transition-colors',
   {
     variants: {
       variant: {

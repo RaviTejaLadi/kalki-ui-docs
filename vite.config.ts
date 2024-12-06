@@ -16,5 +16,10 @@ export default defineConfig({
   server: {
     port: 8847,
     open: true,
+    hmr: true,
+    watch: {
+      usePolling: true, // Enables polling for file changes
+      interval: 100, // Polling interval in milliseconds
+    },
   },
 });

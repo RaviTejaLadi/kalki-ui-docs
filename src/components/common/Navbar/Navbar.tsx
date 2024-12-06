@@ -1,8 +1,8 @@
-import { cn } from '@/utils';
 import React, { forwardRef } from 'react';
 import { NavBarProps } from './interface';
 import { NavBarLogo } from './NavBarLogo';
 import { NavBarContent } from './NavBarContent';
+import { cn } from '@/utils';
 
 const NavBar = forwardRef<HTMLDivElement, NavBarProps>(({ children, className }, ref) => {
   return (

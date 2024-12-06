@@ -1,0 +1,34 @@
+import { SectionHeader } from '@/components/common/SectionHeader/SectionHeader';
+import Separator from '@/components/common/Separator/Separator';
+import TableList from '@/components/common/Table/TableList';
+import React from 'react';
+import { buttonDocs, columns, componentHierarchyCode, rows } from './data/buttonDocs';
+import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
+import { SyntaxHighLighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
+
+const ButtonPage: React.FC = () => {
+  return (
+    <div className="container">
+      <SectionHeader variant={'transparent'} size="sm">
+        <SectionHeader.Title className="tracking-wide">Button</SectionHeader.Title>
+        <SectionHeader.SubTitle className="tracking-wide">
+          Button is used to perform various actions when interacted with by users. It’s one of the most common
+          interactive elements in web applications and websites. The button can trigger actions such as form
+          submissions, invoking JavaScript functions, or navigation, among other behaviors.
+        </SectionHeader.SubTitle>
+      </SectionHeader>
+      <Separator />
+      <DocumentationRenderer className="my-4" data={buttonDocs} />
+      <SectionHeader variant={'transparent'} size="sm">
+        <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
+      </SectionHeader>
+      <TableList columns={columns} rows={rows} code CodeColumn={0} />
+      <SectionHeader variant={'transparent'} size="sm">
+        <SectionHeader.Title className="tracking-wide">Component Hiraricy</SectionHeader.Title>
+      </SectionHeader>
+      <SyntaxHighLighter code={componentHierarchyCode} language="html" />
+    </div>
+  );
+};
+
+export default ButtonPage;
