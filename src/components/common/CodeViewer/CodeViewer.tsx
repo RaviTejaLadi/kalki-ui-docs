@@ -6,7 +6,6 @@ import CodeMirror from '@uiw/react-codemirror';
 import { andromedaInit } from '@uiw/codemirror-theme-andromeda';
 import { javascript } from '@codemirror/lang-javascript';
 
-// Types
 interface FileType {
   id: string;
   name: string;
@@ -22,7 +21,6 @@ interface CodeViewerContextType {
   toggleTheme: () => void;
 }
 
-// Utility Classes
 const codeViewerWrapper = cva('relative h-screen border rounded-md overflow-hidden', {
   variants: {
     theme: {
@@ -104,9 +102,9 @@ const CodeViewerExplorer = forwardRef<HTMLDivElement, CodeViewerExplorerProps>((
           }`}
         >
           {theme === 'light' ? (
-            <Moon className={cn('mx-1.5 size-4 text-[--icon-color]')} />
+            <Moon className={cn('mx-1.5 size-4 text-[var(--icon-color)]')} />
           ) : (
-            <Sun className={cn('mx-1.5 size-4 text-[--icon-color-d]')} />
+            <Sun className={cn('mx-1.5 size-4 text-[var(--icon-color-d)]')} />
           )}
         </button>
       </div>
@@ -140,17 +138,17 @@ const CodeViewerFolder = forwardRef<HTMLDivElement, CodeViewerFolderProps>(({ na
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? (
-          <ChevronDown className={cn('size-4', theme === 'light' ? 'text-[--icon-color]' : 'text-[--icon-color-d]')} />
+          <ChevronDown className={cn('size-4', theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[var(--icon-color-d)]')} />
         ) : (
-          <ChevronRight className={cn('size-4', theme === 'light' ? 'text-[--icon-color]' : 'text-[--icon-color-d]')} />
+          <ChevronRight className={cn('size-4', theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[var(--icon-color-d)]')} />
         )}
         {isOpen ? (
           <FolderOpen
-            className={cn('mx-1.5 size-4', theme === 'light' ? 'text-[--icon-color]' : 'text-[--icon-color-d]')}
+            className={cn('mx-1.5 size-4', theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[var(--icon-color-d)]')}
           />
         ) : (
           <Folder
-            className={cn('mx-1.5 size-4', theme === 'light' ? 'text-[--icon-color]' : 'text-[--icon-color-d]')}
+            className={cn('mx-1.5 size-4', theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[var(--icon-color-d)]')}
           />
         )}
         <span className="text-xs">{name}</span>
@@ -180,7 +178,7 @@ const CodeViewerFile = forwardRef<HTMLDivElement, CodeViewerFileProps>(
       <div
         ref={ref}
         className={cn(
-          `group flex items-center px-3 py-1.5 cursor-pointer rounded-md transition-colors ${
+          `group flex items-center px-3 py-1.5 my-1 cursor-pointer rounded-md transition-colors ${
             isSelected
               ? theme === 'light'
                 ? 'bg-blue-100'
@@ -197,7 +195,7 @@ const CodeViewerFile = forwardRef<HTMLDivElement, CodeViewerFileProps>(
           icon
         ) : (
           <FileText
-            className={cn('ml-6 mr-1.5 size-4', theme === 'light' ? 'text-[--icon-color]' : 'text-[hsl(218,11%,65%)]')}
+            className={cn('ml-6 mr-1.5 size-4', theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[hsl(218,11%,65%)]')}
           />
         )}
         <span className={`text-xs ${theme === 'light' ? 'text-foreground' : 'text-gray-200'}`}>{name}</span>
@@ -262,7 +260,7 @@ const CodeViewerPreview = forwardRef<HTMLDivElement, CodeViewerPreviewProps>(
                 editable={false}
                 theme={andromedaInit({
                   settings: {
-                    background: theme === 'light' ? '#fff' : 'bg-gray-900',
+                    background: theme === 'light' ? 'bg-gray-50' : 'bg-gray-900',
                     fontFamily:
                       'Fira Code VF, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace',
                   },
@@ -281,7 +279,7 @@ const CodeViewerPreview = forwardRef<HTMLDivElement, CodeViewerPreviewProps>(
             </div>
           </div>
         ) : (
-          <div className="flex items-center justify-center h-full text-muted-foreground">
+          <div className="flex items-center justify-center h-full text-muted-foreground ">
             Select a file to view its content
           </div>
         )}

@@ -27,12 +27,12 @@ const DocumentationRenderer: React.FC<DocumentationRendererProps> = ({ data, cla
               <Tab
                 label="Preview"
                 value="preview"
-                className="h-64 w-full"
+                className="h-64 p-2 w-full"
                 leftIcon={<Terminal className="size-4" />}
               >
-                <ResizableContainer direction="right"  >
+                {/* <ResizableContainer direction="right"  > */}
                   {item.snippet}
-                </ResizableContainer>
+                {/* </ResizableContainer> */}
               </Tab>
               <Tab label="Code" value="code" className="max-h-96" leftIcon={<Code className="size-4" />}>
                 <Box padding="10px">

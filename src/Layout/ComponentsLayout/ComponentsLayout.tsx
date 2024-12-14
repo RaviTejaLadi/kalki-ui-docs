@@ -113,6 +113,7 @@ export default function ComponentsLayout() {
             </SidebarGroup>
             <SidebarMenu>
               <SidebarMenuItem to="#">State Management</SidebarMenuItem>
+              <SidebarMenuItem to="/turbo-utilities">Turbo Utilities</SidebarMenuItem>
             </SidebarMenu>
           </SidebarBody>
         </Sidebar>

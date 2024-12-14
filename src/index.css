@@ -20,27 +20,45 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --primary: #3b82f6; 
+    --primary-foreground: #ffffff; 
+  
+    --secondary: #6b7280; 
+    --secondary-foreground: #ffffff; 
+  
+    --success: #10b981; 
+    --success-foreground: #ffffff; 
+  
+    --danger: #ef4444; 
+    --danger-foreground: #ffffff; 
+  
+    --warning: #f59e0b; 
+    --warning-foreground: #ffffff; 
+  
+    --info: #06b6d4; 
+    --info-foreground: #ffffff; 
+  
+    --help: #8b5cf6; 
+    --help-foreground: #ffffff;
+  
+    --light: #f3f4f6; 
+    --light-foreground: #1f2937; 
+  
+    --dark: #1f2937; 
+    --dark-foreground: #ffffff; 
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
-    --icon-color: #2a2f3cc4;
+    --icon-color: #2a2f3c;
   }
 
   .dark {

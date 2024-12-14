@@ -4,6 +4,7 @@ import { BrowserRouter, Outlet, RouteObject, useRoutes, Navigate } from 'react-r
 import TopBar from '@/components/shared/TopBar/TopBar';
 import Loading from '@/components/shared/Loading';
 import ErrorBoundary from '../Error/ErrorBoundary';
+import TurboUtilites from '@/pages/TurboUtilites/TurboUtilites';
 
 const Home = lazy(() => import('@/pages/homePage/HomePage'));
 const GetStarted = lazy(() => import('@/pages/getStartedPage/GetStartedPage'));
@@ -47,6 +48,9 @@ const AppRoutes = () => {
         {
           path: 'components/*',
           element: <Components />,
+        },        {
+          path: 'turbo-utilities',
+          element: <TurboUtilites />,
         },
         {
           path: '404',
@@ -72,7 +76,6 @@ const DevOnly = ({ children }: { children: ReactNode }) => {
 
 const Router = () => {
   return (
-    <ErrorBoundary>
       <BrowserRouter>
         <Suspense fallback={<Loading />}>
           <DevOnly>
@@ -82,7 +85,6 @@ const Router = () => {
           </DevOnly>
         </Suspense>
       </BrowserRouter>
-    </ErrorBoundary>
   );
 };
 export default Router;
