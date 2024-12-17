@@ -4,7 +4,7 @@ import { BrowserRouter, Outlet, RouteObject, useRoutes, Navigate } from 'react-r
 import TopBar from '@/components/shared/TopBar/TopBar';
 import Loading from '@/components/shared/Loading';
 import ErrorBoundary from '../Error/ErrorBoundary';
-import TurboUtilites from '@/pages/TurboUtilites/TurboUtilites';
+import TurboUtilities from '@/pages/TurboUtilities/TurboUtilities';
 
 const Home = lazy(() => import('@/pages/homePage/HomePage'));
 const GetStarted = lazy(() => import('@/pages/getStartedPage/GetStartedPage'));
@@ -50,7 +50,7 @@ const AppRoutes = () => {
           element: <Components />,
         },        {
           path: 'turbo-utilities',
-          element: <TurboUtilites />,
+          element: <TurboUtilities />,
         },
         {
           path: '404',

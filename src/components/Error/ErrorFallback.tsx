@@ -119,7 +119,7 @@ export function ErrorFallback({ error, resetError }: ErrorFallbackProps) {
         <div className="flex justify-end pt-4 border-t border-gray-100">
           <Button onClick={resetError} variant={'ghost'}>
             <ButtonIcon>
-              <RefreshCw className="h-4 w-4 mr-2 animate-spin" />
+              <RefreshCw className="h-4 w-4 mr-2" />
             </ButtonIcon>
             <ButtonText>Retry Application</ButtonText>
           </Button>

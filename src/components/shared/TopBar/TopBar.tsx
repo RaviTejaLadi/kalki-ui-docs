@@ -2,11 +2,37 @@ import Link from '@/components/common/Link';
 import Navbar, { NavBarContent, NavBarLogo } from '@/components/common/Navbar/Navbar';
 import NavMenu, { NavMenuItem, NavMenuItemTitle, NavMenuList } from '@/components/common/NavMenu';
 
+/**
+ * Represents an item in the navigation menu.
+ * 
+ * @interface NavMenuItem
+ * @property {string} title - The title of the menu item.
+ * @property {string} to - The destination path or URL the menu item links to.
+ * @property {'xs' | 'sm' | 'md' | 'lg'} size - The size of the menu item, which can be one of 'xs', 'sm', 'md', or 'lg'.
+ */
 interface NavMenuItem {
   title: string;
   to: string;
   size: 'xs' | 'sm' | 'md' | 'lg';
 }
+
+/**
+ * The `TopBar` component represents the top navigation bar of the application.
+ * It includes a logo and a navigation menu with several items.
+ *
+ * @component
+ * @example
+ * // Usage example:
+ * <TopBar />
+ *
+ * @returns {JSX.Element} The rendered top navigation bar component.
+ *
+ * @remarks
+ * The navigation menu items are defined in the `navMenuItem` array, each containing a title, a link (`to`), and a size.
+ * The component uses several custom components such as `Navbar`, `Link`, `NavBarLogo`, `NavBarContent`, `NavMenu`, `NavMenuList`, `NavMenuItem`, and `NavMenuItemTitle`.
+ *
+ * @see {@link NavMenuItem}
+ */
 const TopBar: React.FC = () => {
   const navMenuItem: NavMenuItem[] = [
     { title: 'Get Started', to: '/get-started', size: 'xs' as const },

@@ -179,7 +179,7 @@ import { ExampleSection } from './ExampleSection';
 import { PerformanceSection } from './PerformanceSection';
 import SystemInfoTable from '../SystemInfoTable';
 
-const TurboUtilites: React.FC = () => {
+const TurboUtilities: React.FC = () => {
   return (
     <div className="container bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto space-y-8">
@@ -208,4 +208,4 @@ const TurboUtilites: React.FC = () => {
   );
 };
 
-export default TurboUtilites;
+export default TurboUtilities;
