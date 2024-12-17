@@ -1,4 +1,4 @@
-import { ErrorInfo } from 'react';
+import React, { ErrorInfo } from 'react';
 
 /**
  * Represents the location of an error in the code.

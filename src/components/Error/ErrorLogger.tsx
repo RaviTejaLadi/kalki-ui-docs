@@ -3,10 +3,6 @@ export class ErrorLogger {
   private readonly maxStoredErrors = 10;
   private readonly storageKey = 'app_error_log';
 
-  private constructor() {
-    // Private constructor for singleton pattern
-  }
-
   static getInstance(): ErrorLogger {
     if (!ErrorLogger.instance) {
       ErrorLogger.instance = new ErrorLogger();
