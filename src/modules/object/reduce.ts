@@ -33,11 +33,11 @@ export function turboReduceObject<T extends object>(
 
   // Determine starting index and initial result value based on whether initialValue is provided
   if (initialValue === undefined) {
-    startIndex = 1;  // Skip the first element if no initial value is provided
-    result = (subject as any)[keys[0]];  // Initialize with the first value
+    startIndex = 1; // Skip the first element if no initial value is provided
+    result = (subject as any)[keys[0]]; // Initialize with the first value
   } else {
-    startIndex = 0;  // Start from the first element if initialValue is provided
-    result = initialValue;  // Use the provided initial value
+    startIndex = 0; // Start from the first element if initialValue is provided
+    result = initialValue; // Use the provided initial value
   }
 
   // Use a `for` loop to iterate through the keys of the object

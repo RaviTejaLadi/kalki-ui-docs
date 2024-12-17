@@ -26,24 +26,15 @@ import { drawerVariants } from './drawerVariants';
  */
 const Drawer = forwardRef<HTMLDivElement, DrawerProps>(
   (
-    {
-      position = 'right',
-      children,
-      isOpen,
-      onClose,
-      width,
-      height,
-      overLayColor = '',
-      className,
-      style,
-      ...rest
-    },
+    { position = 'right', children, isOpen, onClose, width, height, overLayColor = '', className, style, ...rest },
     ref
   ) => {
     return (
       <div ref={ref} {...rest}>
         <div
-          className={`fixed z-50 inset-0 bg-black/80 bg-opacity-10 transition-opacity ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+          className={`fixed z-50 inset-0 bg-black/80 bg-opacity-10 transition-opacity ${
+            isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
           style={{ backgroundColor: overLayColor }}
           onClick={onClose}
         />
@@ -51,8 +42,7 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>(
           className={cn(drawerVariants({ position, open: isOpen }), className)}
           style={{
             width: position === 'left' || position === 'right' ? width : '100%',
-            height:
-              position === 'top' || position === 'bottom' ? height : '100%',
+            height: position === 'top' || position === 'bottom' ? height : '100%',
             ...style,
           }}
         >
@@ -66,9 +56,7 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>(
 Drawer.displayName = 'Drawer';
 
 export default Object.assign(
-  Drawer as React.ForwardRefExoticComponent<
-    DrawerProps & React.RefAttributes<HTMLDialogElement>
-  >,
+  Drawer as React.ForwardRefExoticComponent<DrawerProps & React.RefAttributes<HTMLDialogElement>>,
   {
     Title: DrawerTitle,
     Header: DrawerHeader,

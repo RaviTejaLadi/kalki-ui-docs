@@ -7,13 +7,13 @@ import GalleryImage from './GalleryImage';
 /**
  * `Gallery` is a React component that renders its children in different patterns.
  * It supports two patterns: 'asymmetric' and 'carousel'.
- * 
+ *
  * @param {GalleryProps} props - The properties for the Gallery component.
  * @param {React.ReactNode} props.children - The child elements to be rendered inside the gallery.
  * @param {string} props.pattern - The pattern to use for rendering the gallery. Can be 'asymmetric' or 'carousel'.
  * @param {string} [props.className] - Additional class names to apply to the gallery container.
  * @param {React.Ref<HTMLDivElement>} ref - The ref to be forwarded to the gallery container.
- * 
+ *
  * @returns {JSX.Element} The rendered gallery component.
  */
 const Gallery = forwardRef<HTMLDivElement, GalleryProps>(({ children, pattern, className }, ref) => {

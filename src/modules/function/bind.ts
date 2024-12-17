@@ -11,7 +11,7 @@ import { applyNoContext } from './applyNoContext';
  * bound(4);
  * ```
  *
- * This function mimics `Function::bind()`, allowing you to pre-bind 
+ * This function mimics `Function::bind()`, allowing you to pre-bind
  * a function with a specific `this` context and additional arguments.
  *
  * @param fn The function to bind.
@@ -20,7 +20,11 @@ import { applyNoContext } from './applyNoContext';
  * @returns A new function that, when called, applies the original function
  *          with the pre-bound arguments and context.
  */
-export function turboBind<T extends (...args: any[]) => any>(fn: T, thisContext?: any, ...args: Parameters<T>): (...args: Parameters<T>) => ReturnType<T> {
+export function turboBind<T extends (...args: any[]) => any>(
+  fn: T,
+  thisContext?: any,
+  ...args: Parameters<T>
+): (...args: Parameters<T>) => ReturnType<T> {
   const boundLength = args.length;
   let boundArgs: any[];
 

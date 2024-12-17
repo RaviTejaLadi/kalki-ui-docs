@@ -7,8 +7,7 @@ export interface JsonViewerContextType {
   copyButtonText: ReactNode;
 }
 
-export interface JsonViewerProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
+export interface JsonViewerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
   width?: string;
   height?: string;
   indentation?: number;

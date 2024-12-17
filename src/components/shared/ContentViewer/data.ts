@@ -1,4 +1,4 @@
-import { ContentSectionType } from "./types/ContentSectionType";
+import { ContentSectionType } from './types/ContentSectionType';
 
 export const contentSections: ContentSectionType[] = [
   {

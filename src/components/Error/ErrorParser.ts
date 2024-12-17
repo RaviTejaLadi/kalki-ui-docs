@@ -11,12 +11,12 @@ export class ErrorParser {
   static parseError(error: Error): ParsedError {
     const stackLines = error.stack?.split('\n') || [];
     const locations = this.parseStackTrace(stackLines);
-    
+
     return {
       message: error.message,
       stack: error.stack,
       locations: locations,
-      firstLocation: locations[0] || null
+      firstLocation: locations[0] || null,
     };
   }
 
@@ -28,9 +28,9 @@ export class ErrorParser {
   }> {
     return stackLines
       .slice(1) // Skip the error message line
-      .map(line => {
+      .map((line) => {
         const trimmed = line.trim();
-        
+
         // Try Chrome/Firefox style first
         let match = trimmed.match(this.CHROME_REGEX);
         if (match) {
@@ -51,12 +51,7 @@ export class ErrorParser {
         if (lastPart && lastPart.includes(':')) {
           const [fileName, lineStr, colStr] = lastPart.split(':');
           if (fileName && lineStr && colStr) {
-            return this.createLocationInfo(
-              fileName,
-              lineStr,
-              colStr.replace(/[)]/g, ''),
-              parts[0] || null
-            );
+            return this.createLocationInfo(fileName, lineStr, colStr.replace(/[)]/g, ''), parts[0] || null);
           }
         }
 
@@ -65,26 +60,21 @@ export class ErrorParser {
       .filter((location): location is NonNullable<typeof location> => {
         return location !== null && this.isProjectFile(location.fileName);
       })
-      .map(location => ({
+      .map((location) => ({
         ...location,
         // Adjust for source maps and bundler offsets
         lineNumber: this.adjustLineNumber(location.lineNumber),
-        columnNumber: this.adjustColumnNumber(location.columnNumber)
+        columnNumber: this.adjustColumnNumber(location.columnNumber),
       }));
   }
 
-  private static createLocationInfo(
-    fileName: string,
-    lineStr: string,
-    colStr: string,
-    functionName: string | null
-  ) {
+  private static createLocationInfo(fileName: string, lineStr: string, colStr: string, functionName: string | null) {
     const cleanFileName = this.cleanFileName(fileName);
-    
+
     // Validate the numbers
     const lineNumber = parseInt(lineStr, 10);
     const columnNumber = parseInt(colStr, 10);
-    
+
     if (isNaN(lineNumber) || isNaN(columnNumber)) {
       return null;
     }
@@ -93,19 +83,21 @@ export class ErrorParser {
       fileName: cleanFileName,
       lineNumber,
       columnNumber,
-      functionName: this.cleanFunctionName(functionName)
+      functionName: this.cleanFunctionName(functionName),
     };
   }
 
   private static cleanFunctionName(functionName: string | null): string | null {
     if (!functionName) return null;
-    
+
     // Remove common wrapper patterns
-    return functionName
-      .replace('Object.<anonymous>', '')
-      .replace(/^(async\s+)?Function\./, '')
-      .replace(/\s+\{.*\}$/, '')
-      .trim() || null;
+    return (
+      functionName
+        .replace('Object.<anonymous>', '')
+        .replace(/^(async\s+)?Function\./, '')
+        .replace(/\s+\{.*\}$/, '')
+        .trim() || null
+    );
   }
 
   private static isProjectFile(fileName: string): boolean {
@@ -117,29 +109,30 @@ export class ErrorParser {
       '[native code]',
       'webpack-internal:',
       '<anonymous>',
-      'eval'
+      'eval',
     ];
 
     const includePattern = /src\//;
 
-    return !excludePatterns.some(pattern => fileName.includes(pattern)) &&
-           includePattern.test(fileName);
+    return !excludePatterns.some((pattern) => fileName.includes(pattern)) && includePattern.test(fileName);
   }
 
   private static cleanFileName(fileName: string): string {
-    return fileName
-      // Remove common prefixes
-      .replace(/^(webpack:|file:|http:|https:)\/\/\//, '')
-      // Remove webpack internal paths
-      .replace(/webpack\/bootstrap\//, '')
-      // Remove everything before src/
-      .replace(/^.*?(?=src\/)/, '')
-      // Remove query parameters
-      .replace(/\?.*$/, '')
-      // Remove source map references
-      .replace(this.SOURCE_MAP_REGEX, '')
-      // Clean up any remaining artifacts
-      .trim();
+    return (
+      fileName
+        // Remove common prefixes
+        .replace(/^(webpack:|file:|http:|https:)\/\/\//, '')
+        // Remove webpack internal paths
+        .replace(/webpack\/bootstrap\//, '')
+        // Remove everything before src/
+        .replace(/^.*?(?=src\/)/, '')
+        // Remove query parameters
+        .replace(/\?.*$/, '')
+        // Remove source map references
+        .replace(this.SOURCE_MAP_REGEX, '')
+        // Clean up any remaining artifacts
+        .trim()
+    );
   }
 
   private static adjustLineNumber(line: number): number {

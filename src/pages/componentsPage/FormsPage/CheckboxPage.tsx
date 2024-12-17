@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const CheckboxPage = () => {
-  return (
-    <div>CheckboxPage</div>
-  )
-}
+  return <div>CheckboxPage</div>;
+};
 
-export default CheckboxPage
+export default CheckboxPage;

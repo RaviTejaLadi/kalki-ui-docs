@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const ModelPage = () => {
-  return (
-    <div>ModelPage</div>
-  )
-}
+  return <div>ModelPage</div>;
+};
 
-export default ModelPage
+export default ModelPage;

@@ -8,11 +8,7 @@
  * @param  fromIndex The position to start searching from, if known.
  * @return The position of the target in the subject, or -1 if it does not exist.
  */
-export function turboIndexOf<T>(
-  subject: T[],
-  target: T,
-  fromIndex?: number
-): number {
+export function turboIndexOf<T>(subject: T[], target: T, fromIndex?: number): number {
   const length = subject.length;
   let i = 0;
 

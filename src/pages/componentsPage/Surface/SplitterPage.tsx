@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const SplitterPage = () => {
-  return (
-    <div>SplitterPage</div>
-  )
-}
+  return <div>SplitterPage</div>;
+};
 
-export default SplitterPage
+export default SplitterPage;

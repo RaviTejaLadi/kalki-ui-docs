@@ -5,7 +5,7 @@ import { defaultColors, HighlighterProps } from './types';
 
 /**
  * Highlighter component that highlights specified text within its children.
- * 
+ *
  * @param {Object} props - The properties object.
  * @param {React.ReactNode} props.children - The content to be highlighted.
  * @param {string[]} [props.highlightText=[]] - Array of text strings to be highlighted.
@@ -18,7 +18,7 @@ import { defaultColors, HighlighterProps } from './types';
  * @param {React.CSSProperties} [props.style] - Additional inline styles for the container span.
  * @param {React.Ref<HTMLSpanElement>} ref - The ref to be forwarded to the container span.
  * @param {Object} rest - Additional properties to be spread onto the container span.
- * 
+ *
  * @returns {JSX.Element} The Highlighter component.
  */
 const Highlighter = forwardRef<HTMLSpanElement, HighlighterProps>(
@@ -43,19 +43,10 @@ const Highlighter = forwardRef<HTMLSpanElement, HighlighterProps>(
       }
 
       const colors = [...colorsList, ...defaultColors];
-      const colorMap = Object.fromEntries(
-        highlightText.map((text, index) => [
-          text,
-          colors[index % colors.length],
-        ])
-      );
+      const colorMap = Object.fromEntries(highlightText.map((text, index) => [text, colors[index % colors.length]]));
 
-      const escapeRegExp = (str: string): string =>
-        str?.toString()?.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') || '';
-      const highlightRegex = new RegExp(
-        `\\b(${highlightText.map(escapeRegExp).join('|')})\\b`,
-        'gi'
-      );
+      const escapeRegExp = (str: string): string => str?.toString()?.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') || '';
+      const highlightRegex = new RegExp(`\\b(${highlightText.map(escapeRegExp).join('|')})\\b`, 'gi');
 
       return children.split(highlightRegex).map((part, index) => {
         const baseColor = colorMap[part];
@@ -88,10 +79,7 @@ const Highlighter = forwardRef<HTMLSpanElement, HighlighterProps>(
           return (
             <span
               key={index}
-              className={cn(
-                highlightedTextVariants({ variant, emphasis, sizing }),
-                'transform-gpu px-1.5 py-0'
-              )}
+              className={cn(highlightedTextVariants({ variant, emphasis, sizing }), 'transform-gpu px-1.5 py-0')}
               style={style}
             >
               {part}
@@ -105,23 +93,12 @@ const Highlighter = forwardRef<HTMLSpanElement, HighlighterProps>(
           </span>
         );
       });
-    }, [
-      children,
-      highlightText,
-      colorsList,
-      variant,
-      emphasis,
-      sizing,
-      textClassName,
-    ]);
+    }, [children, highlightText, colorsList, variant, emphasis, sizing, textClassName]);
 
     return (
       <span
         ref={ref}
-        className={cn(
-          'inline-flex flex-wrap items-center leading-relaxed',
-          className
-        )}
+        className={cn('inline-flex flex-wrap items-center leading-relaxed', className)}
         style={style}
         {...rest}
       >

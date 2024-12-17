@@ -34,9 +34,9 @@ interface ParsedError {
 
 /**
  * Interface representing detailed information about an error.
- * 
+ *
  * @extends ParsedError
- * 
+ *
  * @property {string} [componentStack] - Optional stack trace of the component where the error occurred.
  * @property {number} timestamp - The timestamp when the error occurred.
  * @property {string} url - The URL where the error occurred.
@@ -65,7 +65,7 @@ interface ErrorBoundaryProps {
 
 /**
  * Represents the state of an error boundary component.
- * 
+ *
  * @property {boolean} hasError - Indicates whether an error has been encountered.
  * @property {ErrorDetails} [error] - Optional details about the encountered error.
  */

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const EditableTable = () => {
-  return (
-    <div>EditableTable</div>
-  )
-}
+  return <div>EditableTable</div>;
+};
 
-export default EditableTable
+export default EditableTable;

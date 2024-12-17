@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const TextHighlighterPage = () => {
-  return (
-    <div>TextHighlighterPage</div>
-  )
-}
+  return <div>TextHighlighterPage</div>;
+};
 
-export default TextHighlighterPage
+export default TextHighlighterPage;

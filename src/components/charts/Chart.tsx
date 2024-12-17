@@ -53,7 +53,7 @@ ChartContainer.displayName = 'Chart';
 /**
  * A Tooltip component from the Recharts library.
  * This component is used to display additional information when hovering over chart elements.
- * 
+ *
  * @component
  * @example
  * <ChartTooltip />
@@ -68,6 +68,5 @@ const ChartTooltip = RechartsPrimitive.Tooltip;
  * @type {typeof RechartsPrimitive.Legend}
  */
 const ChartLegend = RechartsPrimitive.Legend;
-
 
 export { ChartContainer, ChartTooltip, ChartTooltipContent, ChartLegend, ChartLegendContent, ChartStyle };

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const CarouselPage = () => {
-  return (
-    <div>CarouselPage</div>
-  )
-}
+  return <div>CarouselPage</div>;
+};
 
-export default CarouselPage
+export default CarouselPage;

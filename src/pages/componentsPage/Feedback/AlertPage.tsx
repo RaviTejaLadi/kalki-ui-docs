@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const AlertPage = () => {
-  return (
-    <div>AlertPage</div>
-  )
-}
+  return <div>AlertPage</div>;
+};
 
-export default AlertPage
+export default AlertPage;

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const FullScreenTogglePage = () => {
-  return (
-    <div>FullScreenTogglePage</div>
-  )
-}
+  return <div>FullScreenTogglePage</div>;
+};
 
-export default FullScreenTogglePage
+export default FullScreenTogglePage;

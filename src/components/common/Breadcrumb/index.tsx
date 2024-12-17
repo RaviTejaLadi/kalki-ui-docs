@@ -29,32 +29,17 @@ import { cn } from '@/utils';
  */
 const Breadcrumb = forwardRef<HTMLDivElement, BreadcrumbProps>(
   (
-    {
-      children,
-      separator = <ChevronRight className="w-4 h-4 mx-2 text-gray-400" />,
-      size,
-      className,
-      style,
-      ...rest
-    },
+    { children, separator = <ChevronRight className="w-4 h-4 mx-2 text-gray-400" />, size, className, style, ...rest },
     ref
   ) => {
     return (
-      <Box
-        aria-label="breadcrumb"
-        className={cn('flex items-center', className)}
-        style={style}
-        ref={ref}
-        {...rest}
-      >
+      <Box aria-label="breadcrumb" className={cn('flex items-center', className)} style={style} ref={ref} {...rest}>
         <ol className="flex items-center">
           {React.Children.map(children, (child, index) => (
             <li key={index} className="flex items-center">
               {index > 0 && separator}
               {React.cloneElement(child as React.ReactElement, {
-                className: `${breadcrumbVariants({ size })} ${
-                  (child as React.ReactElement).props.className || ''
-                }`,
+                className: `${breadcrumbVariants({ size })} ${(child as React.ReactElement).props.className || ''}`,
               })}
             </li>
           ))}
@@ -67,9 +52,7 @@ const Breadcrumb = forwardRef<HTMLDivElement, BreadcrumbProps>(
 Breadcrumb.displayName = 'Breadcrumb';
 
 export default Object.assign(
-  Breadcrumb as React.ForwardRefExoticComponent<
-    BreadcrumbProps & React.RefAttributes<HTMLDivElement>
-  >,
+  Breadcrumb as React.ForwardRefExoticComponent<BreadcrumbProps & React.RefAttributes<HTMLDivElement>>,
   { Item: BreadcrumbItem }
 );
 

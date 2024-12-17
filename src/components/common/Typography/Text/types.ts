@@ -4,9 +4,9 @@ import { textVariants } from './textVariants';
 
 /**
  * Props for the Text component.
- * 
+ *
  * @extends VariantProps<typeof textVariants>
- * 
+ *
  * @property {React.ReactNode} children - The content to be displayed within the Text component.
  * @property {string} [className] - Additional CSS class names to apply to the Text component.
  * @property {string} [color] - The color of the text.
@@ -43,4 +43,4 @@ interface TextProps extends VariantProps<typeof textVariants> {
   inserted?: boolean;
 }
 
-export { type TextProps }
+export { type TextProps };

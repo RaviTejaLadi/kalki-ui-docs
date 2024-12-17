@@ -18,22 +18,9 @@ interface TreeNodeProps {
 }
 
 const TreeNode = forwardRef<HTMLDivElement, TreeNodeProps>(
-  (
-    {
-      node,
-      parentChecked,
-      showCheckBox,
-      onCheckChange,
-      className,
-      style,
-      ...rest
-    },
-    ref
-  ) => {
+  ({ node, parentChecked, showCheckBox, onCheckChange, className, style, ...rest }, ref) => {
     const [collapsed, setCollapsed] = useState(false);
-    const [checked, setChecked] = useState<boolean>(
-      parentChecked !== undefined ? parentChecked : false
-    );
+    const [checked, setChecked] = useState<boolean>(parentChecked !== undefined ? parentChecked : false);
 
     useEffect(() => {
       if (parentChecked !== undefined) {
@@ -54,12 +41,7 @@ const TreeNode = forwardRef<HTMLDivElement, TreeNodeProps>(
     };
 
     return (
-      <div
-        ref={ref}
-        className={cn('text-sm', className)}
-        style={style}
-        {...rest}
-      >
+      <div ref={ref} className={cn('text-sm', className)} style={style} {...rest}>
         <div className="flex">
           {showCheckBox && (
             <input
@@ -112,56 +94,45 @@ interface TreeViewProps {
   style?: React.CSSProperties;
 }
 
-const TreeView = forwardRef<HTMLDivElement, TreeViewProps>(
-  ({ data, showCheckBox, className, style, ...rest }, ref) => {
-    const [checkedNodes, setCheckedNodes] = useState<TreeNodeType>(
-      JSON.parse(JSON.stringify(data))
-    );
+const TreeView = forwardRef<HTMLDivElement, TreeViewProps>(({ data, showCheckBox, className, style, ...rest }, ref) => {
+  const [checkedNodes, setCheckedNodes] = useState<TreeNodeType>(JSON.parse(JSON.stringify(data)));
 
-    const handleCheckChange = (node: TreeNodeType, isChecked: boolean) => {
-      const updateCheckedStatus = (nodeToUpdate: TreeNodeType) => {
-        if (nodeToUpdate.name === node.name) {
-          nodeToUpdate.checked = isChecked;
-        }
-        if (nodeToUpdate.children) {
-          nodeToUpdate.children.forEach(updateCheckedStatus);
-        }
-      };
-      updateCheckedStatus(checkedNodes);
-      setCheckedNodes({ ...checkedNodes });
-    };
-
-    const filterCheckedNodes = (node: TreeNodeType): TreeNodeType | null => {
-      if (node.checked) {
-        return {
-          ...node,
-          children: node.children
-            ? node.children.map(filterCheckedNodes).filter((n) => n !== null)
-            : undefined,
-        };
+  const handleCheckChange = (node: TreeNodeType, isChecked: boolean) => {
+    const updateCheckedStatus = (nodeToUpdate: TreeNodeType) => {
+      if (nodeToUpdate.name === node.name) {
+        nodeToUpdate.checked = isChecked;
       }
-      return null;
+      if (nodeToUpdate.children) {
+        nodeToUpdate.children.forEach(updateCheckedStatus);
+      }
     };
+    updateCheckedStatus(checkedNodes);
+    setCheckedNodes({ ...checkedNodes });
+  };
 
-    const checkedHierarchy = filterCheckedNodes(checkedNodes);
+  const filterCheckedNodes = (node: TreeNodeType): TreeNodeType | null => {
+    if (node.checked) {
+      return {
+        ...node,
+        children: node.children ? node.children.map(filterCheckedNodes).filter((n) => n !== null) : undefined,
+      };
+    }
+    return null;
+  };
 
-    return (
-      <div ref={ref} className={cn(className)} style={style} {...rest}>
-        <TreeNode
-          node={data}
-          showCheckBox={showCheckBox}
-          onCheckChange={handleCheckChange}
-          parentChecked={undefined}
-        />
-        {showCheckBox && (
-          <pre className="mt-4 p-2 bg-gray-100 rounded border text-xs">
-            <code>{JSON.stringify(checkedHierarchy, null, 2)}</code>
-          </pre>
-        )}
-      </div>
-    );
-  }
-);
+  const checkedHierarchy = filterCheckedNodes(checkedNodes);
+
+  return (
+    <div ref={ref} className={cn(className)} style={style} {...rest}>
+      <TreeNode node={data} showCheckBox={showCheckBox} onCheckChange={handleCheckChange} parentChecked={undefined} />
+      {showCheckBox && (
+        <pre className="mt-4 p-2 bg-gray-100 rounded border text-xs">
+          <code>{JSON.stringify(checkedHierarchy, null, 2)}</code>
+        </pre>
+      )}
+    </div>
+  );
+});
 
 TreeView.displayName = 'TreeView';
 

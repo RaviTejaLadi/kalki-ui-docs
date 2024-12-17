@@ -5,7 +5,7 @@ import { ButtonProps } from '../Button/types';
 
 /**
  * A React component that toggles fullscreen mode on and off when clicked.
- * 
+ *
  * @component
  * @param {Object} props - The properties passed to the component.
  * @param {string} [props.variant='light'] - The variant of the button.
@@ -13,16 +13,16 @@ import { ButtonProps } from '../Button/types';
  * @param {React.ReactNode} props.children - The content to be displayed inside the button.
  * @param {React.Ref<HTMLButtonElement>} ref - The ref to be forwarded to the button element.
  * @returns {JSX.Element} The rendered FullScreenToggle component.
- * 
+ *
  * @example
  * <FullScreenToggle variant="dark" size="md">
  *   Toggle Fullscreen
  * </FullScreenToggle>
- * 
+ *
  * @remarks
  * This component uses the Fullscreen API to toggle the fullscreen mode of the document.
  * It handles different browser implementations of the Fullscreen API.
- * 
+ *
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API
  */
 const FullScreenToggle = forwardRef<HTMLButtonElement, ButtonProps>(

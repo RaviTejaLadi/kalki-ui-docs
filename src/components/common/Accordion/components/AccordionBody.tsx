@@ -6,7 +6,7 @@ import { AccordionBodyProps } from '../types';
 
 /**
  * A component that renders collapsible content within an Accordion.
- * 
+ *
  * @component
  * @param {Object} props - The component props
  * @param {React.ReactNode} props.children - The content to be displayed inside the accordion body
@@ -14,7 +14,7 @@ import { AccordionBodyProps } from '../types';
  * @param {string} [props.className] - Additional CSS classes to apply to the outer container
  * @param {React.CSSProperties} [props.style] - Additional inline styles to apply to the outer container
  * @throws {Error} Throws an error if component is used outside of an Accordion context
- * 
+ *
  * @example
  * ```tsx
  * <AccordionBody eventKey="1">

@@ -4,7 +4,7 @@ import { accordionVariants } from './accordionVariants';
 
 /**
  * Defines the appearance and theme variant for an Accordion component.
- * 
+ *
  * @typedef {('primary'|'secondary'|'success'|'danger'|'warning'|'help'|'info'|'dark'|'light')} AccordionVariant
  */
 type AccordionVariant = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'help' | 'info' | 'dark' | 'light';
@@ -52,11 +52,10 @@ interface AccordionItemProps {
   style?: CSSProperties;
 }
 
-
 /**
  * Props for the AccordionHeader component.
  * @interface
- * 
+ *
  * @property {ReactNode} children - The content to be rendered inside the accordion header
  * @property {string} eventKey - Unique identifier for the accordion header
  * @property {boolean} [open] - Optional flag indicating whether the accordion section is expanded

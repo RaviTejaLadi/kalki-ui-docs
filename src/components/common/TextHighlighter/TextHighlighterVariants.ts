@@ -12,37 +12,17 @@ export const TextHighlighterVariants = cva(
       variant: {
         solid: ['border-transparent text-white', 'rounded px-2 py-0'],
         outlined: ['bg-transparent border-2', 'rounded px-2 py-0.5'],
-        underline: [
-          'border-b-2 border-t-0 border-x-0',
-          'rounded-none px-2 py-0.5',
-        ],
+        underline: ['border-b-2 border-t-0 border-x-0', 'rounded-none px-2 py-0.5'],
         pill: ['rounded-full px-3 py-0.5', 'border-transparent text-white'],
         gradient: [
           'border-transparent text-white',
           'rounded px-2 py-0.5',
           'bg-gradient-to-r from-current to-current/80',
         ],
-        glass: [
-          'backdrop-blur-sm bg-opacity-20',
-          'rounded px-2 py-0',
-          'border border-white/20',
-          'shadow-sm',
-        ],
-        shadow: [
-          'border-transparent text-white',
-          'rounded px-2 py-0.5',
-          'shadow-md hover:shadow-lg',
-        ],
-        floating: [
-          'border-transparent text-white',
-          'rounded px-2 py-0.5',
-          'shadow-md hover:-translate-y-0.5',
-        ],
-        minimal: [
-          'border-b border-t-0 border-x-0',
-          'px-0.5',
-          'hover:border-b-2',
-        ],
+        glass: ['backdrop-blur-sm bg-opacity-20', 'rounded px-2 py-0', 'border border-white/20', 'shadow-sm'],
+        shadow: ['border-transparent text-white', 'rounded px-2 py-0.5', 'shadow-md hover:shadow-lg'],
+        floating: ['border-transparent text-white', 'rounded px-2 py-0.5', 'shadow-md hover:-translate-y-0.5'],
+        minimal: ['border-b border-t-0 border-x-0', 'px-0.5', 'hover:border-b-2'],
         tag: [
           'border-transparent text-white',
           'rounded px-2 py-0.5',

@@ -405,4 +405,3 @@ export const Tabs: React.FC<TabsProps> = ({
 export const Tab: React.FC<TabProps> = ({ children, className }) => (
   <div className={cn('p-2 animate-fade-in w-full', className)}>{children}</div>
 );
-

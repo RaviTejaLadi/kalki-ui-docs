@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const SeoPage = () => {
-  return (
-    <div>SeoPage</div>
-  )
-}
+  return <div>SeoPage</div>;
+};
 
-export default SeoPage
+export default SeoPage;

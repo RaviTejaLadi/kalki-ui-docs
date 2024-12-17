@@ -4,7 +4,7 @@ import NavMenu, { NavMenuItem, NavMenuItemTitle, NavMenuList } from '@/component
 
 /**
  * Represents an item in the navigation menu.
- * 
+ *
  * @interface NavMenuItem
  * @property {string} title - The title of the menu item.
  * @property {string} to - The destination path or URL the menu item links to.

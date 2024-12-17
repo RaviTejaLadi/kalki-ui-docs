@@ -31,20 +31,7 @@ export interface InputProps
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   (
-    {
-      name,
-      width,
-      height,
-      margin,
-      padding,
-      type = 'text',
-      value,
-      onChange,
-      className,
-      style,
-      size = 'sm',
-      ...props
-    },
+    { name, width, height, margin, padding, type = 'text', value, onChange, className, style, size = 'sm', ...props },
     ref
   ) => {
     const customStyles = {

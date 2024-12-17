@@ -29,16 +29,8 @@ export const LinkBarControl = forwardRef<HTMLDivElement, ControlsProps>(
     return (
       <div ref={ref} className={cn(baseStyles, positionStyles, 'p-1')}>
         <div className={cn('inset-0 opacity-80', gradientStyles)} />
-        <Button
-          size={size}
-          variant={variant}
-          onClick={() => scroll(isLeft ? 'left' : 'right')}
-        >
-          {isLeft ? (
-            <ChevronLeft className="size-3" />
-          ) : (
-            <ChevronRight className="size-3" />
-          )}
+        <Button size={size} variant={variant} onClick={() => scroll(isLeft ? 'left' : 'right')}>
+          {isLeft ? <ChevronLeft className="size-3" /> : <ChevronRight className="size-3" />}
         </Button>
       </div>
     );

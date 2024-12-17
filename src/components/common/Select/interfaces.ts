@@ -1,7 +1,6 @@
-export interface SelectProps
-  extends React.SelectHTMLAttributes<HTMLDivElement> {
+export interface SelectProps extends React.SelectHTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
-  value?: string ;
+  value?: string;
   onValueChange?: (value: string) => void;
   defaultValue?: string;
   placeholder?: string;
@@ -18,8 +17,7 @@ export interface SelectContextValue {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export interface SelectTriggerProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface SelectTriggerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   children?: React.ReactNode;
 }
@@ -39,8 +37,7 @@ export interface SelectLabelProps {
   children?: React.ReactNode;
 }
 
-export interface SelectItemProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface SelectItemProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   value: string;
   disabled?: boolean;
   className?: string;

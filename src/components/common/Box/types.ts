@@ -3,10 +3,10 @@ import { boxVariants } from './boxVariants';
 
 /**
  * Props for the Box component.
- * 
+ *
  * @extends {React.HTMLAttributes<HTMLDivElement>}
  * @extends {VariantProps<typeof boxVariants>}
- * 
+ *
  * @property {string} [width] - The width of the box.
  * @property {string} [height] - The height of the box.
  * @property {string} [color] - The text color of the box.

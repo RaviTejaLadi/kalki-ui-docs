@@ -12,26 +12,9 @@ interface FormGroupProps {
 }
 
 const FormGroup = forwardRef<HTMLDivElement, FormGroupProps>(
-  (
-    {
-      children,
-      className = '',
-      style = {},
-      margin = '0 0 20px 0',
-      padding,
-      ...props
-    },
-    ref
-  ) => {
+  ({ children, className = '', style = {}, margin = '0 0 20px 0', padding, ...props }, ref) => {
     return (
-      <Box
-        ref={ref}
-        margin={margin}
-        padding={padding}
-        className={cn(className)}
-        style={style}
-        {...props}
-      >
+      <Box ref={ref} margin={margin} padding={padding} className={cn(className)} style={style} {...props}>
         {children}
       </Box>
     );

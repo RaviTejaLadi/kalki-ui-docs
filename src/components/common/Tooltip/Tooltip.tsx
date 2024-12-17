@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import { TooltipProps } from './types';
 import { getTooltipPosition, getArrowPosition } from './utils';
 
- const Tooltip: React.FC<TooltipProps> = ({
+const Tooltip: React.FC<TooltipProps> = ({
   children,
   content,
   position = 'right',
@@ -77,4 +77,4 @@ import { getTooltipPosition, getArrowPosition } from './utils';
   );
 };
 
-export default Tooltip
+export default Tooltip;

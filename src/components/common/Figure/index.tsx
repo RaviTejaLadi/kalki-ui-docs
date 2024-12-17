@@ -6,7 +6,7 @@ import { FigureCaption } from './FigureCaption';
 
 /**
  * A React functional component that renders a `<figure>` element with customizable styles and properties.
- * 
+ *
  * @component
  * @param {React.ReactNode} children - The content to be displayed inside the `<figure>` element.
  * @param {string | number} width - The width of the `<figure>` element.
@@ -16,7 +16,7 @@ import { FigureCaption } from './FigureCaption';
  * @param {React.CSSProperties} [style] - Additional inline styles to apply to the `<figure>` element.
  * @param {React.Ref<HTMLElement>} ref - A ref to be forwarded to the `<figure>` element.
  * @param {object} rest - Any other props to be passed to the `<figure>` element.
- * 
+ *
  * @returns {JSX.Element} The rendered `<figure>` element.
  */
 const Figure = forwardRef<HTMLElement, FigureProps>(

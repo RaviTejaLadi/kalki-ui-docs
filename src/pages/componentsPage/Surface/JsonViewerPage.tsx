@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const JsonViewerPage = () => {
-  return (
-    <div>JsonViewerPage</div>
-  )
-}
+  return <div>JsonViewerPage</div>;
+};
 
-export default JsonViewerPage
+export default JsonViewerPage;

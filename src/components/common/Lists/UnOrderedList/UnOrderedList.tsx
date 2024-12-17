@@ -11,12 +11,7 @@ const UnOrderedList = forwardRef<HTMLUListElement, UnOrderedListProps>(
     };
 
     return (
-      <ul
-        ref={ref}
-        className={cn('pl-5', className)}
-        style={unOrderStyles}
-        {...rest}
-      >
+      <ul ref={ref} className={cn('pl-5', className)} style={unOrderStyles} {...rest}>
         {children}
       </ul>
     );
@@ -26,9 +21,7 @@ const UnOrderedList = forwardRef<HTMLUListElement, UnOrderedListProps>(
 UnOrderedList.displayName = 'UnorderedList';
 
 export default Object.assign(
-  UnOrderedList as React.ForwardRefExoticComponent<
-    UnOrderedListProps & React.RefAttributes<HTMLUListElement>
-  >,
+  UnOrderedList as React.ForwardRefExoticComponent<UnOrderedListProps & React.RefAttributes<HTMLUListElement>>,
   {
     Item: UnOrderedListItem,
   }

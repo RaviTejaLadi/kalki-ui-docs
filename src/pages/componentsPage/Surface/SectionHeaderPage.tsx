@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const SectionHeaderPage = () => {
-  return (
-    <div>SectionHeaderPage</div>
-  )
-}
+  return <div>SectionHeaderPage</div>;
+};
 
-export default SectionHeaderPage
+export default SectionHeaderPage;

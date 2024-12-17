@@ -1,16 +1,7 @@
 import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils';
-import {
-  Info,
-  AlertCircle,
-  AlertTriangle,
-  CheckCircle,
-  HelpCircle,
-  Star,
-  BellRing,
-  LucideIcon,
-} from 'lucide-react';
+import { Info, AlertCircle, AlertTriangle, CheckCircle, HelpCircle, Star, BellRing, LucideIcon } from 'lucide-react';
 
 const descriptionVariants = cva(
   // Base styles
@@ -20,16 +11,12 @@ const descriptionVariants = cva(
       variant: {
         default: 'text-gray-500',
         info: 'text-blue-600 bg-blue-50 border border-blue-100 rounded-md',
-        warning:
-          'text-amber-600 bg-amber-50 border border-amber-100 rounded-md',
+        warning: 'text-amber-600 bg-amber-50 border border-amber-100 rounded-md',
         error: 'text-red-600 bg-red-50 border border-red-100 rounded-md',
-        success:
-          'text-green-600 bg-green-50 border border-green-100 rounded-md',
+        success: 'text-green-600 bg-green-50 border border-green-100 rounded-md',
         muted: 'text-gray-400 italic',
-        highlight:
-          'text-indigo-600 bg-indigo-50 border border-indigo-100 rounded-md',
-        accent:
-          'text-purple-600 bg-purple-50 border border-purple-100 rounded-md',
+        highlight: 'text-indigo-600 bg-indigo-50 border border-indigo-100 rounded-md',
+        accent: 'text-purple-600 bg-purple-50 border border-purple-100 rounded-md',
       },
       size: {
         xs: 'text-xs',
@@ -71,9 +58,7 @@ const descriptionVariants = cva(
 );
 
 // Define the variant type based on the variants object
-type VariantType = NonNullable<
-  VariantProps<typeof descriptionVariants>['variant']
->;
+type VariantType = NonNullable<VariantProps<typeof descriptionVariants>['variant']>;
 type SizeType = NonNullable<VariantProps<typeof descriptionVariants>['size']>;
 
 // Icon mapping with proper typing
@@ -104,10 +89,7 @@ interface FormDescriptionProps
   isAnimated?: boolean;
 }
 
-const FormDescription = React.forwardRef<
-  HTMLParagraphElement,
-  FormDescriptionProps
->(
+const FormDescription = React.forwardRef<HTMLParagraphElement, FormDescriptionProps>(
   (
     {
       className,
@@ -127,9 +109,7 @@ const FormDescription = React.forwardRef<
     const Icon = variant ? variantIcons[variant] : variantIcons.default;
     const iconSize = size ? iconSizes[size] : iconSizes.sm;
 
-    const animationClass = isAnimated
-      ? 'animate-fadeIn transition-all duration-200 ease-in-out'
-      : '';
+    const animationClass = isAnimated ? 'animate-fadeIn transition-all duration-200 ease-in-out' : '';
 
     return (
       <p
@@ -148,13 +128,7 @@ const FormDescription = React.forwardRef<
         )}
         {...props}
       >
-        {showIcon && Icon && (
-          <Icon
-            size={iconSize}
-            className="flex-shrink-0 mt-0.5"
-            aria-hidden="true"
-          />
-        )}
+        {showIcon && Icon && <Icon size={iconSize} className="flex-shrink-0 mt-0.5" aria-hidden="true" />}
         <span>{children}</span>
       </p>
     );

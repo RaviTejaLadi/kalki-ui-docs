@@ -11,23 +11,18 @@ const OrderedList = forwardRef<HTMLOListElement, OrderedListProps>(
         type === '1'
           ? 'decimal'
           : type === 'A'
-            ? 'upper-alpha'
-            : type === 'a'
-              ? 'lower-alpha'
-              : type === 'I'
-                ? 'upper-roman'
-                : type === 'i'
-                  ? 'lower-roman'
-                  : 'decimal',
+          ? 'upper-alpha'
+          : type === 'a'
+          ? 'lower-alpha'
+          : type === 'I'
+          ? 'upper-roman'
+          : type === 'i'
+          ? 'lower-roman'
+          : 'decimal',
     };
 
     return (
-      <ol
-        ref={ref}
-        className={cn('pl-5', className)}
-        style={combinedStyle}
-        {...rest}
-      >
+      <ol ref={ref} className={cn('pl-5', className)} style={combinedStyle} {...rest}>
         {children}
       </ol>
     );
@@ -37,9 +32,7 @@ const OrderedList = forwardRef<HTMLOListElement, OrderedListProps>(
 OrderedList.displayName = 'OrderedList';
 
 export default Object.assign(
-  OrderedList as React.ForwardRefExoticComponent<
-    OrderedListProps & React.RefAttributes<HTMLOListElement>
-  >,
+  OrderedList as React.ForwardRefExoticComponent<OrderedListProps & React.RefAttributes<HTMLOListElement>>,
   {
     Item: OrderedListItem,
   }

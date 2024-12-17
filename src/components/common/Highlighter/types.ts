@@ -27,10 +27,10 @@ const defaultColors: string[] = [
 
 /**
  * Props for the Highlighter component.
- * 
+ *
  * @extends React.HTMLAttributes<HTMLSpanElement>
  * @extends VariantProps<typeof highlightedTextVariants>
- * 
+ *
  * @property {string} children - The text content to be highlighted.
  * @property {string[]} [highlightText] - An array of strings to be highlighted within the children text.
  * @property {string[]} [colorsList] - An array of colors to be used for highlighting.

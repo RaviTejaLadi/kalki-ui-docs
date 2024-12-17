@@ -1,4 +1,4 @@
-import { ResizeWidth } from "./constants";
+import { ResizeWidth } from './constants';
 
 export type Direction = 'left' | 'right';
 

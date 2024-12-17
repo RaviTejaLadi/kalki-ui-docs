@@ -90,7 +90,7 @@
 //   );
 // }
 
-import  { useState } from 'react';
+import { useState } from 'react';
 import { Timer, BarChart, Loader2 } from 'lucide-react';
 import { turboForEachObject } from '@/modules/object';
 
@@ -103,7 +103,7 @@ export function PerformanceSection() {
 
   const runBenchmark = async () => {
     setIsRunning(true);
-    
+
     // Use setTimeout to allow the loading state to render
     setTimeout(async () => {
       const testObject = Array.from({ length: 10000 }, (_, i) => i).reduce((acc, curr) => {
@@ -133,7 +133,7 @@ export function PerformanceSection() {
 
       setResults({
         turbo: Number((turboEnd - turboStart).toFixed(2)),
-        native: Number((nativeEnd - nativeStart).toFixed(2))
+        native: Number((nativeEnd - nativeStart).toFixed(2)),
       });
       setIsRunning(false);
     }, 100);
@@ -141,11 +141,11 @@ export function PerformanceSection() {
 
   const getSpeedDifference = () => {
     if (!results) return null;
-    const diff = ((results.native - results.turbo) / results.native * 100).toFixed(1);
+    const diff = (((results.native - results.turbo) / results.native) * 100).toFixed(1);
     const isTurboFaster = results.turbo < results.native;
     return {
       percentage: Math.abs(Number(diff)),
-      isTurboFaster
+      isTurboFaster,
     };
   };
 
@@ -161,8 +161,9 @@ export function PerformanceSection() {
       <div className="space-y-6">
         <div className="bg-purple-50 p-4 rounded-lg border border-purple-100">
           <p className="text-gray-700">
-            This benchmark compares the performance between <code className="bg-purple-100 px-2 py-0.5 rounded">turboForEachObject</code> and 
-            native <code className="bg-purple-100 px-2 py-0.5 rounded">Object.entries().forEach()</code> over:
+            This benchmark compares the performance between{' '}
+            <code className="bg-purple-100 px-2 py-0.5 rounded">turboForEachObject</code> and native{' '}
+            <code className="bg-purple-100 px-2 py-0.5 rounded">Object.entries().forEach()</code> over:
           </p>
           <ul className="mt-2 space-y-1 text-gray-700">
             <li>• 1,000 iterations</li>
@@ -175,8 +176,8 @@ export function PerformanceSection() {
           onClick={runBenchmark}
           disabled={isRunning}
           className={`w-full px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-[1.02] ${
-            isRunning 
-              ? 'bg-purple-100 text-purple-400 cursor-not-allowed' 
+            isRunning
+              ? 'bg-purple-100 text-purple-400 cursor-not-allowed'
               : 'bg-purple-600 text-white hover:bg-purple-700 active:bg-purple-800'
           }`}
         >
@@ -212,15 +213,15 @@ export function PerformanceSection() {
               <div className="p-6 bg-gradient-to-br from-purple-50 to-white rounded-lg border border-purple-100">
                 <h3 className="text-xl font-semibold text-gray-800 mb-4">Performance Analysis</h3>
                 <div className="flex items-center gap-3">
-                  <div className={`text-4xl font-bold ${speedDiff.isTurboFaster ? 'text-green-600' : 'text-orange-600'}`}>
+                  <div
+                    className={`text-4xl font-bold ${speedDiff.isTurboFaster ? 'text-green-600' : 'text-orange-600'}`}
+                  >
                     {speedDiff.percentage}%
                   </div>
                   <div className="text-gray-700">
-                    <p className="font-medium">
-                      {speedDiff.isTurboFaster ? 'Faster' : 'Slower'} than native forEach
-                    </p>
+                    <p className="font-medium">{speedDiff.isTurboFaster ? 'Faster' : 'Slower'} than native forEach</p>
                     <p className="text-sm mt-1 text-gray-500">
-                      {speedDiff.isTurboFaster 
+                      {speedDiff.isTurboFaster
                         ? 'turboForEachObject shows better performance'
                         : 'Native forEach performs better in this case'}
                     </p>

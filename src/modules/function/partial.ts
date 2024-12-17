@@ -17,7 +17,7 @@ import { applyWithContext } from './applyWithContext';
  * @return The partially applied function.
  */
 export function turboPartial<T extends (...args: any[]) => any>(
-  fn: T, 
+  fn: T,
   ...args: Parameters<T>
 ): (...args: Parameters<T>) => ReturnType<T> {
   return function (this: any, ...newArgs: Parameters<T>): ReturnType<T> {

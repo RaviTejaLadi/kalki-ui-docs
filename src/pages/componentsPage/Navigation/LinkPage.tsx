@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const LinkPage = () => {
-  return (
-    <div>LinkPage</div>
-  )
-}
+  return <div>LinkPage</div>;
+};
 
-export default LinkPage
+export default LinkPage;

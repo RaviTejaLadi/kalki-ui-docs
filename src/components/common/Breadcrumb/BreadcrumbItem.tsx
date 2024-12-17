@@ -5,7 +5,7 @@ import { BreadcrumbItemProps } from './types';
 
 /**
  * `BreadcrumbItem` is a component that renders a breadcrumb item, which can be either an active span element or a link.
- * 
+ *
  * @param {Object} props - The properties passed to the component.
  * @param {string} [props.to] - The URL to navigate to when the breadcrumb item is clicked. If the item is active, this prop is ignored.
  * @param {boolean} props.active - Indicates whether the breadcrumb item is the currently active item.
@@ -14,7 +14,7 @@ import { BreadcrumbItemProps } from './types';
  * @param {React.CSSProperties} [props.style] - Inline styles to apply to the breadcrumb item.
  * @param {React.Ref<HTMLSpanElement | HTMLAnchorElement>} ref - The ref to be forwarded to the underlying element.
  * @param {Object} rest - Any additional props to be spread onto the underlying element.
- * 
+ *
  * @returns {JSX.Element} A breadcrumb item, which is either a span element if active, or a link if not active.
  */
 export const BreadcrumbItem = forwardRef<HTMLSpanElement | HTMLAnchorElement, BreadcrumbItemProps>(

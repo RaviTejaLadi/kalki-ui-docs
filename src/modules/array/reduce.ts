@@ -6,7 +6,7 @@ import { Bind4arguments } from '../function/Bind4arguments';
  * # Reduce
  *
  * A turbo `.reduce()` implementation.
- * 
+ *
  * Iterates over the array and reduces it to a single value based on the reducer function (`fn`).
  * The reducer function is called with an accumulator (`result`), the current value, the current index, and the entire array.
  * The function supports an optional `initialValue` for the accumulator. If it's not provided, the first element of the array is used as the initial value.

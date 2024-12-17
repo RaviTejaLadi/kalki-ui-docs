@@ -65,14 +65,14 @@ export const SyntaxHighLighter: React.FC<SyntaxHighLighterProps> = ({
 
   return (
     <div className="border border-transparent rounded-lg overflow-hidden shadow-inner mb-4">
-      <div className="flex justify-between items-center px-4 py-2 bg-gray-800 border-b border-transparent">
+      <div className="flex justify-between items-center px-4 py-2 bg-[#1d2429] border-b border-transparent">
         <div className="flex items-center gap-2">
           <div className="flex gap-2">
             <div className="w-3 h-3 bg-red-500 rounded-full"></div>
             <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
           </div>
-          <span className="text-xs font-semibold text-gray-300 ml-5">{title ? title : language}</span>
+          {/* <span className="text-xs font-semibold text-gray-300 ml-5">{title ? title : language}</span> */}
         </div>
         <button
           className="bg-transparent border-none cursor-pointer p-1 rounded hover:bg-gray-700"
@@ -83,7 +83,7 @@ export const SyntaxHighLighter: React.FC<SyntaxHighLighterProps> = ({
       </div>
       <div className="p-0">
         {isLoading ? (
-          <div className="flex justify-center items-center h-24 bg-gray-800">loading...</div>
+          <div className="flex justify-center items-center h-24 bg-[#1d2429]">loading...</div>
         ) : (
           <CodeMirror
             value={code}
@@ -91,7 +91,7 @@ export const SyntaxHighLighter: React.FC<SyntaxHighLighterProps> = ({
             editable={false}
             theme={andromedaInit({
               settings: {
-                background: '#1e293b',
+                background: '#1d2429',
                 fontFamily:
                   'Fira Code VF, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace',
               },

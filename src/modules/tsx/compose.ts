@@ -14,16 +14,15 @@
  * ```
  */
 export default function compose<R>(...funcs: Array<(arg: any) => any>): (arg: R) => R {
-    return function (this: any, arg: R): R {
-      let index = funcs.length - 1;
-      let result = funcs[index].call(this, arg);
-      while (index--) {
-        result = funcs[index].call(this, result);
-      }
-      return result;
-    };
-  }
-  
+  return function (this: any, arg: R): R {
+    let index = funcs.length - 1;
+    let result = funcs[index].call(this, arg);
+    while (index--) {
+      result = funcs[index].call(this, result);
+    }
+    return result;
+  };
+}
 
 // Example Usages:
 
@@ -84,4 +83,3 @@ const toPairs = (obj: Record<string, any>) => Object.entries(obj);
 const toObject = (entries: [string, any][]) => Object.fromEntries(entries);
 const composedObject = compose(toObject, toPairs);
 console.log(composedObject({ a: 1, b: 2 })); // Outputs: { a: 1, b: 2 }
-

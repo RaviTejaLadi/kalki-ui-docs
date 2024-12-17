@@ -18,23 +18,14 @@ const radioStyles = cva(
   }
 );
 
-interface RadioProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>,
-    VariantProps<typeof radioStyles> {
+interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>, VariantProps<typeof radioStyles> {
   name: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   size?: 'sm' | 'md' | 'lg';
 }
 
-const Radio: React.FC<RadioProps> = ({
-  name,
-  value,
-  onChange,
-  size = 'sm',
-  className,
-  ...props
-}) => {
+const Radio: React.FC<RadioProps> = ({ name, value, onChange, size = 'sm', className, ...props }) => {
   return (
     <input
       type="radio"

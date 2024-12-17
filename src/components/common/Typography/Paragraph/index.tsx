@@ -5,7 +5,7 @@ import { ParagraphProps } from './types';
 
 /**
  * A reusable Paragraph component that renders text with customizable styles.
- * 
+ *
  * @component
  * @param {Object} props - The component props
  * @param {ReactNode} props.children - The content to be rendered within the paragraph
@@ -13,9 +13,9 @@ import { ParagraphProps } from './types';
  * @param {string} [props.className] - Additional CSS classes to be applied
  * @param {(event: MouseEvent<HTMLParagraphElement>) => void} [props.onClick] - Click event handler
  * @param {...HTMLAttributes<HTMLParagraphElement>} props - Additional HTML paragraph attributes
- * 
+ *
  * @returns {JSX.Element} A styled paragraph element
- * 
+ *
  * @example
  * ```tsx
  * <Paragraph size="sm" className="custom-class">
@@ -23,18 +23,9 @@ import { ParagraphProps } from './types';
  * </Paragraph>
  * ```
  */
-const Paragraph: FC<ParagraphProps> = ({
-  children,
-  size,
-  className,
-  onClick,
-  ...props
-}) => {
+const Paragraph: FC<ParagraphProps> = ({ children, size, className, onClick, ...props }) => {
   return (
-    <p
-      className={cn(paragraphVariants({ size, ...props }), className)}
-      onClick={onClick}
-    >
+    <p className={cn(paragraphVariants({ size, ...props }), className)} onClick={onClick}>
       {children}
     </p>
   );

@@ -16,9 +16,7 @@ const labelStyles = cva('block font-medium', {
   },
 });
 
-export interface LabelProps
-  extends LabelHTMLAttributes<HTMLLabelElement>,
-    VariantProps<typeof labelStyles> {
+export interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement>, VariantProps<typeof labelStyles> {
   htmlFor: string;
   color?: string;
   fontSize?: string;
@@ -51,12 +49,7 @@ const Label: React.FC<LabelProps> = ({
   };
 
   return (
-    <label
-      htmlFor={htmlFor}
-      className={cn(labelStyles({ size }), className)}
-      style={customStyles}
-      {...props}
-    >
+    <label htmlFor={htmlFor} className={cn(labelStyles({ size }), className)} style={customStyles} {...props}>
       {children}
     </label>
   );

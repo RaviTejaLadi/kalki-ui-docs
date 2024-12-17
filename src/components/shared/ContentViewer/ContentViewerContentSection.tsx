@@ -1,5 +1,5 @@
-import React from "react";
-import { ContentSectionType } from "./types/ContentSectionType";
+import React from 'react';
+import { ContentSectionType } from './types/ContentSectionType';
 
 interface ContentViewerContentSectionProps {
   section: ContentSectionType;
@@ -16,4 +16,4 @@ export const ContentViewerContentSection = React.forwardRef<HTMLDivElement, Cont
   )
 );
 
-ContentViewerContentSection.displayName = "ContentViewerContentSection";
+ContentViewerContentSection.displayName = 'ContentViewerContentSection';

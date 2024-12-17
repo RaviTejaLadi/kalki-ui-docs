@@ -2,21 +2,18 @@ import { forwardRef, InputHTMLAttributes } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils';
 
-const checkboxStyles = cva(
-  'mr-2 border border-gray-300  rounded-md bg-white shadow-sm',
-  {
-    variants: {
-      size: {
-        sm: 'w-3.5 h-3.5',
-        md: 'w-4 h-4',
-        lg: 'w-5 h-5',
-      },
+const checkboxStyles = cva('mr-2 border border-gray-300  rounded-md bg-white shadow-sm', {
+  variants: {
+    size: {
+      sm: 'w-3.5 h-3.5',
+      md: 'w-4 h-4',
+      lg: 'w-5 h-5',
     },
-    defaultVariants: {
-      size: 'sm',
-    },
-  }
-);
+  },
+  defaultVariants: {
+    size: 'sm',
+  },
+});
 
 interface CheckboxProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>,
@@ -32,22 +29,7 @@ interface CheckboxProps
 }
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
-  (
-    {
-      name,
-      checked,
-      onChange,
-      width,
-      height,
-      margin,
-      padding,
-      style,
-      className,
-      size = 'sm',
-      ...props
-    },
-    ref
-  ) => {
+  ({ name, checked, onChange, width, height, margin, padding, style, className, size = 'sm', ...props }, ref) => {
     const customStyles = {
       width,
       height,

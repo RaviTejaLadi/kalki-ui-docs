@@ -3,7 +3,7 @@ import { StackItemProps } from './types';
 
 /**
  * A component that represents an item within a Stack layout.
- * 
+ *
  * @component
  * @param {object} props - The component props
  * @param {React.ReactNode} props.children - The content to be rendered inside the stack item

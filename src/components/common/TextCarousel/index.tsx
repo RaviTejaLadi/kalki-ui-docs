@@ -15,7 +15,7 @@ interface TextCarouselProps {
 
 /**
  * A carousel component that displays text content with navigation controls.
- * 
+ *
  * @component
  * @param {Object} props - The component props
  * @param {ReactNode} props.children - The content to be displayed in the carousel
@@ -25,9 +25,9 @@ interface TextCarouselProps {
  * @param {string} [props.size='xs'] - Size variant for the navigation buttons
  * @param {string} [props.variant] - Visual variant for the navigation buttons
  * @param {React.Ref<HTMLDivElement>} ref - Ref object for the carousel container
- * 
+ *
  * @returns {ReactElement} A carousel component with navigation buttons
- * 
+ *
  * @example
  * ```tsx
  * <TextCarousel interval={3000} size="sm">

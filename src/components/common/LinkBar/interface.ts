@@ -7,15 +7,12 @@ export interface LinkBarContextValue {
   scrollRef?: React.RefObject<HTMLDivElement>;
 }
 
-export interface LinkBarProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof linkBarVariants> {
+export interface LinkBarProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof linkBarVariants> {
   activeUrl?: string;
   onUrlChange?: (url: string) => void;
 }
 
-export interface LinkProps
-  extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'ref'> {
+export interface LinkProps extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'ref'> {
   to: string;
   icon?: React.ReactNode;
   iconPosition?: 'start' | 'end';

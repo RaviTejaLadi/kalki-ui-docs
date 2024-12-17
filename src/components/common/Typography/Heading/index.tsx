@@ -15,13 +15,7 @@ import { HeadingProps } from './types';
  * @param {object} [props.props] - Additional properties to be passed to the heading element.
  * @returns {React.ReactElement} The rendered heading element.
  */
-const Heading: FC<HeadingProps> = ({
-  children,
-  size,
-  className,
-  onClick,
-  ...props
-}) => {
+const Heading: FC<HeadingProps> = ({ children, size, className, onClick, ...props }) => {
   const element = size || 'h1';
   return createElement(
     element,

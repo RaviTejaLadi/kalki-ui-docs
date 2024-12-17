@@ -40,17 +40,11 @@ export const usePosition = (
         left = triggerRect.left + scrollX;
         break;
       case 'left':
-        top =
-          triggerRect.top +
-          (triggerRect.height - contentRect.height) / 2 +
-          scrollY;
+        top = triggerRect.top + (triggerRect.height - contentRect.height) / 2 + scrollY;
         left = triggerRect.left - contentRect.width - offset + scrollX;
         break;
       case 'right':
-        top =
-          triggerRect.top +
-          (triggerRect.height - contentRect.height) / 2 +
-          scrollY;
+        top = triggerRect.top + (triggerRect.height - contentRect.height) / 2 + scrollY;
         left = triggerRect.right + offset + scrollX;
         break;
     }
@@ -65,15 +59,9 @@ export const usePosition = (
         break;
       case 'center':
         if (position === 'top' || position === 'bottom') {
-          left =
-            triggerRect.left +
-            (triggerRect.width - contentRect.width) / 2 +
-            scrollX;
+          left = triggerRect.left + (triggerRect.width - contentRect.width) / 2 + scrollX;
         } else {
-          top =
-            triggerRect.top +
-            (triggerRect.height - contentRect.height) / 2 +
-            scrollY;
+          top = triggerRect.top + (triggerRect.height - contentRect.height) / 2 + scrollY;
         }
         break;
       case 'end':

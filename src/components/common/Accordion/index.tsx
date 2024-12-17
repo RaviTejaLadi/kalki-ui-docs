@@ -9,7 +9,7 @@ import { AccordionProps } from './types';
 
 /**
  * A flexible accordion component that manages expandable/collapsible sections.
- * 
+ *
  * @component
  * @param {Object} props - The component props
  * @param {ReactNode} props.children - The content to be rendered within the accordion
@@ -18,21 +18,18 @@ import { AccordionProps } from './types';
  * @param {string} [props.className] - Additional CSS class names
  * @param {CSSProperties} [props.style] - Inline styles to apply to the accordion
  * @param {React.Ref<HTMLDivElement>} ref - Forwarded ref to the root div element
- * 
+ *
  * @example
  * ```tsx
  * <Accordion size="sm" variant="primary">
  *   <AccordionItem>Content</AccordionItem>
  * </Accordion>
  * ```
- * 
+ *
  * @returns {JSX.Element} The rendered Accordion component
  */
 const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
-  (
-    { children, variant = 'primary', size = 'sm', className, style, ...rest },
-    ref
-  ) => {
+  ({ children, variant = 'primary', size = 'sm', className, style, ...rest }, ref) => {
     const [activeKeys, setActiveKeys] = useState<Set<string>>(new Set());
 
     const toggleItem = useCallback((eventKey: string) => {
@@ -64,12 +61,7 @@ const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
 
     return (
       <AccordionContext.Provider value={contextValue}>
-        <div
-          ref={ref}
-          className={cn(accordionVariants({ size }), className)}
-          style={style}
-          {...rest}
-        >
+        <div ref={ref} className={cn(accordionVariants({ size }), className)} style={style} {...rest}>
           {children}
         </div>
       </AccordionContext.Provider>
@@ -80,9 +72,7 @@ const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
 Accordion.displayName = 'Accordion';
 
 export default Object.assign(
-  Accordion as React.ForwardRefExoticComponent<
-    AccordionProps & React.RefAttributes<HTMLDivElement>
-  >,
+  Accordion as React.ForwardRefExoticComponent<AccordionProps & React.RefAttributes<HTMLDivElement>>,
   {
     Header: AccordionHeader,
     Body: AccordionBody,

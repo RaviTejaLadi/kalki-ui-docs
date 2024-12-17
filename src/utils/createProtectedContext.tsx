@@ -4,25 +4,25 @@ type ContextValue = boolean;
 
 /**
  * Creates a protected React context with error handling and styling.
- * 
+ *
  * @param errorMessage - The error message to display when context is accessed outside of provider
  * @returns An object containing:
  *  - Provider: A memoized context provider component
  *  - useProtectedContext: A hook to safely access the context value
- * 
+ *
  * @throws {Error} When context is accessed outside of provider
- * 
+ *
  * @example
  * ```tsx
  * const { Provider, useProtectedContext } = createProtectedContext(
  *   "This component must be used within Provider"
  * );
- * 
+ *
  * // In parent:
  * <Provider>
  *   <Child />
  * </Provider>
- * 
+ *
  * // In child:
  * const contextValue = useProtectedContext();
  * ```

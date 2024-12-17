@@ -4,7 +4,6 @@ import { AvatarProps } from './types';
 import { AvatarImage } from './AvatarImage';
 import { AvatarFallback } from './AvatarFallback';
 
-
 /**
  * `Avatar` is a React component that renders a div with a ref and custom class names.
  * It uses `React.forwardRef` to pass down the ref to the div element.
@@ -16,15 +15,13 @@ import { AvatarFallback } from './AvatarFallback';
  *
  * @returns {JSX.Element} The rendered Avatar component.
  */
-const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
-  ({ children, className = '' }, ref) => {
-    return (
-      <div ref={ref} className={cn('relative inline-flex', className)}>
-        {children}
-      </div>
-    );
-  }
-);
+const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(({ children, className = '' }, ref) => {
+  return (
+    <div ref={ref} className={cn('relative inline-flex', className)}>
+      {children}
+    </div>
+  );
+});
 
 Avatar.displayName = 'Avatar';
 

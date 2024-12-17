@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const RipplePage = () => {
-  return (
-    <div>RipplePage</div>
-  )
-}
+  return <div>RipplePage</div>;
+};
 
-export default RipplePage
+export default RipplePage;

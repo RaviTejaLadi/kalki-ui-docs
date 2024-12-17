@@ -75,7 +75,6 @@ const Text = forwardRef<HTMLParagraphElement, TextProps>(
       ...style,
     };
 
-
     return (
       <p ref={ref} className={cn(textVariants({ variant, size }), className)} style={dynamicStyle} {...rest}>
         {children}

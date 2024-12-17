@@ -59,22 +59,11 @@ const Image: React.FC<ImageProps> = ({
     };
   }, [src, loading]);
 
-  const optimizedSrc = src.includes('?')
-    ? `${src}&q=${quality}`
-    : `${src}?q=${quality}`;
+  const optimizedSrc = src.includes('?') ? `${src}&q=${quality}` : `${src}?q=${quality}`;
 
   return (
-    <div
-      className={cn(
-        'relative',
-        width && `w-[${width}px]`,
-        height && `h-[${height}px]`,
-        className
-      )}
-    >
-      {placeholder === 'blur' && isLoading && blurDataURL && (
-        <BlurPlaceholder dataURL={blurDataURL} />
-      )}
+    <div className={cn('relative', width && `w-[${width}px]`, height && `h-[${height}px]`, className)}>
+      {placeholder === 'blur' && isLoading && blurDataURL && <BlurPlaceholder dataURL={blurDataURL} />}
 
       <img
         ref={imgRef}

@@ -1,8 +1,8 @@
 /**
  * Internal helper for applying a function with a specified context (`this`).
  * This function allows you to call the `subject` function with varying
- * numbers of arguments, from 0 to 8, and fall back to using `.apply` 
- * for more than 8 arguments, while ensuring the function is executed 
+ * numbers of arguments, from 0 to 8, and fall back to using `.apply`
+ * for more than 8 arguments, while ensuring the function is executed
  * with the provided `thisContext`.
  *
  * @param subject - The function to apply, which can accept 0 to 8 arguments.

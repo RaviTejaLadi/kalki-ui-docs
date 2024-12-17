@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const BreadcrumPage = () => {
-  return (
-    <div>BreadcrumPage</div>
-  )
-}
+  return <div>BreadcrumPage</div>;
+};
 
-export default BreadcrumPage
+export default BreadcrumPage;

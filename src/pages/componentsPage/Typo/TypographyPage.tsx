@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const TypographyPage = () => {
-  return (
-    <div>TypographyPage</div>
-  )
-}
+  return <div>TypographyPage</div>;
+};
 
-export default TypographyPage
+export default TypographyPage;

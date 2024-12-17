@@ -122,7 +122,9 @@ const Tabs = ({ defaultTab, children, variant = 'default', size = 'default', cla
 
   return (
     <TabsContext.Provider value={{ activeTab, setActiveTab, variant, size, isMobile }}>
-      <div className={cn('flex w-full border-none rounded-md', isMobile ? 'flex-col' : 'flex-row', className)}>{children}</div>
+      <div className={cn('flex w-full border-none rounded-md', isMobile ? 'flex-col' : 'flex-row', className)}>
+        {children}
+      </div>
     </TabsContext.Provider>
   );
 };
@@ -158,7 +160,11 @@ const TabContent = ({ id, children, className }: TabContentProps) => {
 
   if (activeTab !== id) return null;
 
-  return <div className={cn('flex-1 p-6  mx-2 animate-in fade-in-50 duration-200 text-muted-foreground', className)}>{children}</div>;
+  return (
+    <div className={cn('flex-1 p-6  mx-2 animate-in fade-in-50 duration-200 text-muted-foreground', className)}>
+      {children}
+    </div>
+  );
 };
 
 Tabs.List = TabList;

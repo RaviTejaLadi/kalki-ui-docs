@@ -6,10 +6,7 @@ import { cn } from '@/utils';
 import { ChevronRight } from 'lucide-react';
 
 export const ListGroupItem = forwardRef<HTMLLIElement, ListGroupItemProps>(
-  (
-    { icon, label, description, disabled, onClick, className, ...props },
-    ref
-  ) => {
+  ({ icon, label, description, disabled, onClick, className, ...props }, ref) => {
     const { variant, showArrows, showDividers } = useListGroup();
 
     return (
@@ -35,10 +32,7 @@ export const ListGroupItem = forwardRef<HTMLLIElement, ListGroupItemProps>(
           <div className="font-medium truncate">{label}</div>
           {description && (
             <div
-              className={cn(
-                'text-xs opacity-75 line-clamp-1',
-                variant === 'dark' ? 'text-gray-300' : 'text-gray-600'
-              )}
+              className={cn('text-xs opacity-75 line-clamp-1', variant === 'dark' ? 'text-gray-300' : 'text-gray-600')}
             >
               {description}
             </div>
@@ -46,10 +40,7 @@ export const ListGroupItem = forwardRef<HTMLLIElement, ListGroupItemProps>(
         </div>
         {showArrows && !disabled && (
           <ChevronRight
-            className={cn(
-              'w-4 h-4 flex-shrink-0 transition-transform duration-200',
-              'group-hover:translate-x-1'
-            )}
+            className={cn('w-4 h-4 flex-shrink-0 transition-transform duration-200', 'group-hover:translate-x-1')}
           />
         )}
       </li>

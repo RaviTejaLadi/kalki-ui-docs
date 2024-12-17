@@ -4,9 +4,9 @@ import { galleryVariants } from './galleryVariants';
 
 /**
  * Props for the Gallery component.
- * 
+ *
  * @extends VariantProps<typeof galleryVariants>
- * 
+ *
  * @property {ReactNode} children - The content to be displayed within the gallery.
  * @property {string} [className] - Optional additional class name(s) to apply to the gallery component.
  */

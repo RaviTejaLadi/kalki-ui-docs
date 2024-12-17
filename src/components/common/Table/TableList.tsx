@@ -18,9 +18,9 @@ interface TableListProps {
 
 /**
  * A customizable table component that can display data in rows and columns with optional code formatting.
- * 
+ *
  * @component
- * 
+ *
  * @param {Object} props - The component props
  * @param {string[]} props.columns - Array of column headers
  * @param {Array<Array<React.ReactNode>>} props.rows - 2D array of row data
@@ -32,7 +32,7 @@ interface TableListProps {
  * @param {React.CSSProperties} [props.codeStyle={}] - Custom styles for code formatted text
  * @param {string} [props.className=''] - Additional CSS class names
  * @param {React.CSSProperties} [props.style] - Custom styles for the table
- * 
+ *
  * @example
  * ```tsx
  * <TableList

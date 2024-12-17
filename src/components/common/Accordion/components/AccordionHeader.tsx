@@ -8,7 +8,7 @@ import { AccordionHeaderProps } from '../types';
 
 /**
  * A component that represents the header part of an accordion item.
- * 
+ *
  * @component
  * @example
  * ```tsx
@@ -16,7 +16,7 @@ import { AccordionHeaderProps } from '../types';
  *   Accordion Title
  * </AccordionHeader>
  * ```
- * 
+ *
  * @param props - The component props
  * @param props.children - The content to be displayed in the header
  * @param props.eventKey - Unique identifier for the accordion item
@@ -24,9 +24,9 @@ import { AccordionHeaderProps } from '../types';
  * @param props.open - Controls whether the accordion item is initially expanded
  * @param props.className - Additional CSS classes to apply to the header
  * @param props.style - Additional inline styles to apply to the header
- * 
+ *
  * @throws {Error} Throws an error if used outside of an Accordion context
- * 
+ *
  * @requires AccordionContext
  * @requires ChevronDown
  */

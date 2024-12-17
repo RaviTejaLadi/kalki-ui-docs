@@ -37,6 +37,3 @@ export function turboReduceRightObject<T extends object>(
 
   return result;
 }
-
-
-

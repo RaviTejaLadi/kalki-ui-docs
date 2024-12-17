@@ -1,7 +1,7 @@
 import React from 'react';
 import { ErrorFallback } from './ErrorFallback';
 import { ErrorLogger } from './ErrorLogger';
-import { ErrorBoundaryProps, ErrorBoundaryState, } from './types';
+import { ErrorBoundaryProps, ErrorBoundaryState } from './types';
 import { ErrorParser } from './ErrorParser';
 
 class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
@@ -15,7 +15,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
 
   static getDerivedStateFromError(error: Error): ErrorBoundaryState {
     const parsedError = ErrorParser.parseError(error);
-    
+
     return {
       hasError: true,
       error: {
@@ -29,7 +29,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
     const parsedError = ErrorParser.parseError(error);
-    
+
     // Log the error
     this.errorLogger.logError({
       ...parsedError,
@@ -37,19 +37,23 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
     });
 
     // Update state with component stack
-    this.setState((prevState: ErrorBoundaryState): ErrorBoundaryState => ({
-      hasError: true,
-      error: prevState.error ? {
-        ...prevState.error,
-        componentStack: errorInfo.componentStack || undefined,
-      } : {
-        ...parsedError,
-        componentStack: errorInfo.componentStack || undefined,
-        timestamp: Date.now(),
-        url: window.location.href,
-        userAgent: navigator.userAgent,
-      },
-    }));
+    this.setState(
+      (prevState: ErrorBoundaryState): ErrorBoundaryState => ({
+        hasError: true,
+        error: prevState.error
+          ? {
+              ...prevState.error,
+              componentStack: errorInfo.componentStack || undefined,
+            }
+          : {
+              ...parsedError,
+              componentStack: errorInfo.componentStack || undefined,
+              timestamp: Date.now(),
+              url: window.location.href,
+              userAgent: navigator.userAgent,
+            },
+      })
+    );
 
     // Call optional error handler
     this.props.onError?.(error, errorInfo);
@@ -65,12 +69,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
         return this.props.fallback;
       }
 
-      return (
-        <ErrorFallback
-          error={this.state.error}
-          resetError={this.handleReset}
-        />
-      );
+      return <ErrorFallback error={this.state.error} resetError={this.handleReset} />;
     }
 
     return this.props.children;

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const BannerPage = () => {
-  return (
-    <div>BannerPage</div>
-  )
-}
+  return <div>BannerPage</div>;
+};
 
-export default BannerPage
+export default BannerPage;

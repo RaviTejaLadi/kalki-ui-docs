@@ -1,10 +1,10 @@
 /**
  * Main entry point for the React application.
- * 
+ *
  * This module initializes the root React component and renders it to the DOM.
  * It sets up the application with React.StrictMode for additional development checks
  * and includes necessary global styles.
- * 
+ *
  * @module main
  * @requires react
  * @requires react-dom/client

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const DrawerPage = () => {
-  return (
-    <div>DrawerPage</div>
-  )
-}
+  return <div>DrawerPage</div>;
+};
 
-export default DrawerPage
+export default DrawerPage;

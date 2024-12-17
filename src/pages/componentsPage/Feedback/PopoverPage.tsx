@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const PopoverPage = () => {
-  return (
-    <div>PopoverPage</div>
-  )
-}
+  return <div>PopoverPage</div>;
+};
 
-export default PopoverPage
+export default PopoverPage;

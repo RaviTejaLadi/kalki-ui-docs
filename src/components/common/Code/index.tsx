@@ -21,20 +21,7 @@ import { CodeProps } from './types';
  * @returns {JSX.Element} The rendered `<code>` element with the applied styles and class names.
  */
 const Code = forwardRef<HTMLElement, CodeProps>(
-  (
-    {
-      children,
-      variant,
-      size,
-      underline = false,
-      className,
-      style,
-      padding,
-      margin,
-      ...rest
-    },
-    ref
-  ) => {
+  ({ children, variant, size, underline = false, className, style, padding, margin, ...rest }, ref) => {
     const combinedStyles = {
       margin,
       padding,

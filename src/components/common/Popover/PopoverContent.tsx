@@ -3,28 +3,10 @@ import { usePopover } from './PopoverContext';
 import { usePosition } from './usePosition';
 import type { PopoverContentProps } from './types';
 
-export const PopoverContent = React.forwardRef<
-  HTMLDivElement,
-  PopoverContentProps
->(
-  (
-    {
-      children,
-      position = 'bottom',
-      align = 'center',
-      offset = 8,
-      className = '',
-    },
-    ref
-  ) => {
+export const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentProps>(
+  ({ children, position = 'bottom', align = 'center', offset = 8, className = '' }, ref) => {
     const { isOpen, contentRef, triggerRef, onOpenChange } = usePopover();
-    const coords = usePosition(
-      triggerRef.current,
-      contentRef.current,
-      position,
-      align,
-      offset
-    );
+    const coords = usePosition(triggerRef.current, contentRef.current, position, align, offset);
 
     useEffect(() => {
       const handleClickOutside = (event: MouseEvent) => {
@@ -39,8 +21,7 @@ export const PopoverContent = React.forwardRef<
       };
 
       document.addEventListener('mousedown', handleClickOutside);
-      return () =>
-        document.removeEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
     if (!isOpen) return null;

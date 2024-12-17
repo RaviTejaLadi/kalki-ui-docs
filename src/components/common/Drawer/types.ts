@@ -2,9 +2,9 @@ import { CSSProperties, ReactNode } from 'react';
 
 /**
  * Props for the Drawer component.
- * 
+ *
  * @interface DrawerProps
- * 
+ *
  * @property {('top' | 'right' | 'bottom' | 'left')} [position] - The position of the drawer. Can be 'top', 'right', 'bottom', or 'left'.
  * @property {ReactNode} children - The content to be displayed inside the drawer.
  * @property {boolean} isOpen - Indicates whether the drawer is open or closed.
@@ -31,7 +31,7 @@ interface DrawerProps {
  * Props for the DrawerHeader component.
  *
  * @interface DrawerHeaderProps
- * 
+ *
  * @property {ReactNode} children - The content to be displayed inside the drawer header.
  * @property {boolean} [closeButton] - Optional. If true, a close button will be displayed in the header.
  * @property {() => void} [onClose] - Optional. Callback function to be called when the close button is clicked.

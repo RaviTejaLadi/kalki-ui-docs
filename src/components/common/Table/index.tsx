@@ -7,20 +7,18 @@ import { TableRow } from './TableRow';
 import { TableCell } from './TableCell';
 import { TableProps } from './types';
 
-
-
 /**
  * A reusable Table component that wraps HTML table element with additional styling.
- * 
+ *
  * @component
  * @param {Object} props - The component props
  * @param {ReactNode} props.children - The content to be rendered inside the table
  * @param {string} [props.className] - Additional CSS class names to be applied
  * @param {CSSProperties} [props.style] - Inline styles to be applied to the table
  * @param {React.Ref<HTMLTableElement>} ref - Forwarded ref to access the underlying table element
- * 
+ *
  * @returns {JSX.Element} A styled table component wrapped in a scrollable container
- * 
+ *
  * @example
  * ```tsx
  * <Table className="my-custom-class">
@@ -46,7 +44,6 @@ const Table = forwardRef<HTMLTableElement, TableProps>(({ children, className, s
     </div>
   );
 });
-
 
 Table.displayName = 'Table';
 

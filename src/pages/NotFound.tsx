@@ -4,7 +4,7 @@ import Head from '@/components/SeoMetaData/SeoMetaData';
 /**
  * Renders a 404 Not Found screen component.
  * Displays a centered error message with a 404 status code and explanatory text.
- * 
+ *
  * @returns A React component that shows a full-screen 404 error page
  * @example
  * ```tsx

@@ -203,7 +203,7 @@ const TurboUtilities: React.FC = () => {
         {/* <ExampleSection /> */}
         <PerformanceSection />
       </div>
-      <SystemInfoTable/>
+      <SystemInfoTable />
     </div>
   );
 };

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const CheckBoxCardPage = () => {
-  return (
-    <div>CheckBoxCardPage</div>
-  )
-}
+  return <div>CheckBoxCardPage</div>;
+};
 
-export default CheckBoxCardPage
+export default CheckBoxCardPage;

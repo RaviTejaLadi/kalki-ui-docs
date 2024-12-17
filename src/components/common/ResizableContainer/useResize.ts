@@ -16,7 +16,7 @@ export const useResize = ({
   minWidth = RESIZE_DEFAULTS.MIN_WIDTH,
   maxWidth = RESIZE_DEFAULTS.MAX_WIDTH,
   initialWidth = RESIZE_DEFAULTS.INITIAL_WIDTH,
-  containerRef
+  containerRef,
 }: UseResizeProps) => {
   const [width, setWidth] = useState<ResizeWidth>(() => {
     if (initialWidth === '100%' || !containerRef.current) {
@@ -24,7 +24,7 @@ export const useResize = ({
     }
     return initialWidth;
   });
-  
+
   const isResizing = useRef<boolean>(false);
   const startX = useRef<number>(0);
   const startWidth = useRef<number>(0);
@@ -43,22 +43,23 @@ export const useResize = ({
     document.body.style.userSelect = 'none';
   }, []);
 
-  const handleMouseMove = useCallback((e: MouseEvent) => {
-    if (!isResizing.current) return;
+  const handleMouseMove = useCallback(
+    (e: MouseEvent) => {
+      if (!isResizing.current) return;
 
-    const delta = e.clientX - startX.current;
-    const newWidth = direction === 'right'
-      ? startWidth.current + delta
-      : startWidth.current - delta;
+      const delta = e.clientX - startX.current;
+      const newWidth = direction === 'right' ? startWidth.current + delta : startWidth.current - delta;
 
-    const maxAllowedWidth = getMaxAllowedWidth();
-    const clampedWidth = Math.min(
-      Math.max(newWidth, minWidth),
-      typeof maxWidth === 'number' ? maxWidth : maxAllowedWidth
-    );
+      const maxAllowedWidth = getMaxAllowedWidth();
+      const clampedWidth = Math.min(
+        Math.max(newWidth, minWidth),
+        typeof maxWidth === 'number' ? maxWidth : maxAllowedWidth
+      );
 
-    setWidth(clampedWidth);
-  }, [direction, minWidth, maxWidth, getMaxAllowedWidth]);
+      setWidth(clampedWidth);
+    },
+    [direction, minWidth, maxWidth, getMaxAllowedWidth]
+  );
 
   const handleMouseUp = useCallback(() => {
     isResizing.current = false;
@@ -90,6 +91,6 @@ export const useResize = ({
   return {
     width,
     handleMouseDown,
-    isResizing: isResizing.current
+    isResizing: isResizing.current,
   };
 };

@@ -19,23 +19,16 @@ const buttonVariants = cva(
         center: 'bottom-6 left-1/2 transform -translate-x-1/2',
       },
       variant: {
-        primary:
-          'bg-blue-500 hover:bg-blue-600 text-white focus:ring-2 focus:ring-blue-300',
-        secondary:
-          'bg-gray-500 hover:bg-gray-600 text-white focus:ring-2 focus:ring-gray-300',
-        success:
-          'bg-green-500 hover:bg-green-600 text-white focus:ring-2 focus:ring-green-300',
-        danger:
-          'bg-red-500 hover:bg-red-600 text-white focus:ring-2 focus:ring-red-300',
-        warning:
-          'bg-yellow-500 hover:bg-yellow-600 text-white focus:ring-2 focus:ring-yellow-300',
+        primary: 'bg-blue-500 hover:bg-blue-600 text-white focus:ring-2 focus:ring-blue-300',
+        secondary: 'bg-gray-500 hover:bg-gray-600 text-white focus:ring-2 focus:ring-gray-300',
+        success: 'bg-green-500 hover:bg-green-600 text-white focus:ring-2 focus:ring-green-300',
+        danger: 'bg-red-500 hover:bg-red-600 text-white focus:ring-2 focus:ring-red-300',
+        warning: 'bg-yellow-500 hover:bg-yellow-600 text-white focus:ring-2 focus:ring-yellow-300',
         info: 'bg-cyan-500 hover:bg-cyan-600 text-white focus:ring-2 focus:ring-cyan-300',
         help: 'bg-purple-500 hover:bg-purple-600 text-white focus:ring-2 focus:ring-purple-300',
-        light:
-          'bg-gray-100 hover:bg-gray-200 text-gray-800 focus:ring-2 focus:ring-gray-200',
+        light: 'bg-gray-100 hover:bg-gray-200 text-gray-800 focus:ring-2 focus:ring-gray-200',
         dark: 'bg-gray-800 hover:bg-gray-900 text-white focus:ring-2 focus:ring-gray-600',
-        outline:
-          'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+        outline: 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
       },
     },
     defaultVariants: {
@@ -46,9 +39,7 @@ const buttonVariants = cva(
   }
 );
 
-interface ScrollToTopProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+interface ScrollToTopProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   threshold?: number;
   smooth?: boolean;
 }

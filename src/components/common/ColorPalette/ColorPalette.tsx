@@ -61,23 +61,23 @@ const ColorSwatch: React.FC<{ shade: { value: number; color: string } }> = ({ sh
 
 /**
  * ColorPalette component renders a searchable list of Tailwind CSS colors.
- * 
+ *
  * @component
  * @example
  * return (
  *   <ColorPalette />
  * )
- * 
+ *
  * @returns {JSX.Element} The rendered ColorPalette component.
- * 
+ *
  * The component includes:
  * - A search input to filter colors by name or Tailwind class.
  * - A list of filtered colors displayed with their respective shades.
  * - A message when no colors match the search term.
- * 
+ *
  * @remarks
  * The component uses Tailwind CSS for styling and assumes the presence of a `colors` array and a `ColorSwatch` component.
- * 
+ *
  * @hook
  * The component uses the `useState` hook to manage the search term state.
  */

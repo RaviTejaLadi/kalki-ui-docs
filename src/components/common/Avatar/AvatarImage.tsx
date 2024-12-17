@@ -5,7 +5,7 @@ import { cn } from '@/utils';
 
 /**
  * AvatarImage component renders an image for an avatar with error handling.
- * 
+ *
  * @component
  * @param {Object} props - The properties object.
  * @param {string} props.src - The source URL of the image.
@@ -16,7 +16,7 @@ import { cn } from '@/utils';
  * @param {Object} props.style - Inline styles for the image.
  * @param {Object} rest - Additional properties passed to the image element.
  * @param {React.Ref<HTMLImageElement>} ref - The ref to the image element.
- * 
+ *
  * @returns {JSX.Element|null} The rendered image element or null if there is an error.
  */
 export const AvatarImage = forwardRef<HTMLImageElement, AvatarImageProps>(

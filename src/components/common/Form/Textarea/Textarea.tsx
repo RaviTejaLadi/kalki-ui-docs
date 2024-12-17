@@ -18,9 +18,7 @@ const textareaStyles = cva(
   }
 );
 
-interface TextareaProps
-  extends TextareaHTMLAttributes<HTMLTextAreaElement>,
-    VariantProps<typeof textareaStyles> {
+interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement>, VariantProps<typeof textareaStyles> {
   name: string;
   width?: string;
   height?: string;
@@ -30,22 +28,7 @@ interface TextareaProps
 }
 
 const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  (
-    {
-      name,
-      value,
-      onChange,
-      width,
-      height,
-      margin,
-      padding,
-      className,
-      style,
-      size = 'sm',
-      ...props
-    },
-    ref
-  ) => {
+  ({ name, value, onChange, width, height, margin, padding, className, style, size = 'sm', ...props }, ref) => {
     const customStyles = {
       width,
       height,

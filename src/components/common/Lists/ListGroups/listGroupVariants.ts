@@ -1,34 +1,31 @@
 import { cva } from 'class-variance-authority';
 import { VariantType } from './type';
 
-export const listGroupVariants = cva(
-  'flex flex-col rounded-md shadow-xs overflow-hidden bg-white border',
-  {
-    variants: {
-      size: {
-        sm: 'text-sm',
-        md: 'text-base',
-        lg: 'text-lg',
-        xl: 'text-xl',
-        xxl: 'text-2xl',
-      },
-      variant: {
-        primary: 'border-blue-200',
-        secondary: 'border-gray-200',
-        success: 'border-green-200',
-        danger: 'border-red-200',
-        warning: 'border-yellow-200',
-        info: 'border-cyan-200',
-        light: 'border-gray-100',
-        dark: 'border-gray-700 bg-gray-800',
-      },
+export const listGroupVariants = cva('flex flex-col rounded-md shadow-xs overflow-hidden bg-white border', {
+  variants: {
+    size: {
+      sm: 'text-sm',
+      md: 'text-base',
+      lg: 'text-lg',
+      xl: 'text-xl',
+      xxl: 'text-2xl',
     },
-    defaultVariants: {
-      size: 'sm',
-      variant: 'primary',
+    variant: {
+      primary: 'border-blue-200',
+      secondary: 'border-gray-200',
+      success: 'border-green-200',
+      danger: 'border-red-200',
+      warning: 'border-yellow-200',
+      info: 'border-cyan-200',
+      light: 'border-gray-100',
+      dark: 'border-gray-700 bg-gray-800',
     },
-  }
-);
+  },
+  defaultVariants: {
+    size: 'sm',
+    variant: 'primary',
+  },
+});
 
 export const itemVariants: Record<VariantType, string> = {
   primary: 'hover:bg-blue-50 focus:bg-blue-100 active:bg-blue-200',

@@ -29,7 +29,7 @@
 export function turboConcat(...items: (Array<any> | any)[]): any[] {
   const result: any[] = []; // The array to store the concatenated result
 
-  items.forEach(item => {
+  items.forEach((item) => {
     // If the item is an array, push all of its elements into the result array
     if (Array.isArray(item)) {
       result.push(...item);
@@ -47,51 +47,51 @@ export function turboConcat(...items: (Array<any> | any)[]): any[] {
 // 1. Concatenate two arrays
 const array1 = [1, 2, 3];
 const array2 = [4, 5, 6];
-console.log(turboConcat(array1, array2)); 
+console.log(turboConcat(array1, array2));
 // Output: [1, 2, 3, 4, 5, 6]
 
 // 2. Concatenate a single item with an array
 const array3 = [7, 8, 9];
-console.log(turboConcat(array3, 10)); 
+console.log(turboConcat(array3, 10));
 // Output: [7, 8, 9, 10]
 
 // 3. Concatenate multiple arrays
 const array4 = [11, 12];
 const array5 = [13, 14];
 const array6 = [15, 16];
-console.log(turboConcat(array4, array5, array6)); 
+console.log(turboConcat(array4, array5, array6));
 // Output: [11, 12, 13, 14, 15, 16]
 
 // 4. Concatenate multiple items (non-arrays)
-console.log(turboConcat(1, 2, 3, 4)); 
+console.log(turboConcat(1, 2, 3, 4));
 // Output: [1, 2, 3, 4]
 
 // 5. Concatenate an empty array
-console.log(turboConcat([])); 
+console.log(turboConcat([]));
 // Output: []
 
 // 6. Concatenate an array and a string
-console.log(turboConcat([1, 2], 'hello')); 
+console.log(turboConcat([1, 2], 'hello'));
 // Output: [1, 2, 'hello']
 
 // 7. Concatenate mixed arrays and items
 const array7 = ['a', 'b'];
-console.log(turboConcat(array7, 3, 'hello', [4, 5])); 
+console.log(turboConcat(array7, 3, 'hello', [4, 5]));
 // Output: ['a', 'b', 3, 'hello', 4, 5]
 
 // 8. Concatenate an array with undefined values
 const array8 = [undefined, 1, 2];
-console.log(turboConcat(array8, 3, 4)); 
+console.log(turboConcat(array8, 3, 4));
 // Output: [undefined, 1, 2, 3, 4]
 
 // 9. Concatenate an array with null values
 const array9 = [null, 1, 2];
-console.log(turboConcat(array9, 3, 4)); 
+console.log(turboConcat(array9, 3, 4));
 // Output: [null, 1, 2, 3, 4]
 
 // 10. Concatenate a deep array with nested arrays
 const array10 = [1, [2, 3]];
-console.log(turboConcat(array10, 4)); 
+console.log(turboConcat(array10, 4));
 // Output: [1, [2, 3], 4]
 
 // Example Use Cases:

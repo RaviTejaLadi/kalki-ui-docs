@@ -4,19 +4,19 @@ import { CSSProperties, ReactNode } from 'react';
 
 /**
  * Represents the size of a banner.
- * 
+ *
  * This type is derived from the `size` property of the `bannerVariants` object,
  * ensuring that the size is non-nullable.
- * 
+ *
  * @typedef {BannerSize}
  */
 type BannerSize = NonNullable<VariantProps<typeof bannerVariants>['size']>;
 
 /**
  * A mapping of banner sizes to their corresponding CSS text size classes.
- * 
+ *
  * @type {Record<BannerSize, string>}
- * 
+ *
  * @property {string} sm - Corresponds to 'text-lg' for small banners.
  * @property {string} md - Corresponds to 'text-xl' for medium banners.
  * @property {string} lg - Corresponds to 'text-2xl' for large banners.
@@ -35,9 +35,9 @@ export const titleSizes: Record<BannerSize, string> = {
 
 /**
  * A mapping of banner sizes to their corresponding subtitle text size classes.
- * 
+ *
  * @type {Record<BannerSize, string>}
- * 
+ *
  * @property {string} sm - The CSS class for small subtitle text size.
  * @property {string} md - The CSS class for medium subtitle text size.
  * @property {string} lg - The CSS class for large subtitle text size.
@@ -56,10 +56,10 @@ export const subtitleSizes: Record<BannerSize, string> = {
 
 /**
  * Props for the Banner component.
- * 
+ *
  * @interface BannerProps
  * @extends {VariantProps<typeof bannerVariants>}
- * 
+ *
  * @property {ReactNode} children - The content to be displayed inside the banner.
  * @property {ReactNode} [controls] - Optional controls to be displayed within the banner.
  * @property {string} [className] - Optional additional CSS class names to apply to the banner.

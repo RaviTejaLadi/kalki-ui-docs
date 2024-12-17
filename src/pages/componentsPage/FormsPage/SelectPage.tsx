@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const SelectPage = () => {
-  return (
-    <div>SelectPage</div>
-  )
-}
+  return <div>SelectPage</div>;
+};
 
-export default SelectPage
+export default SelectPage;

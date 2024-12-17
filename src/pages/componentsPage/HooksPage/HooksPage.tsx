@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const HooksPage = () => {
-  return (
-    <div>HooksPage</div>
-  )
-}
+  return <div>HooksPage</div>;
+};
 
-export default HooksPage
+export default HooksPage;

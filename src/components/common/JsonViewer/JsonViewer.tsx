@@ -1,27 +1,16 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  forwardRef,
-  createContext,
-  useContext,
-} from 'react';
+import React, { useState, useEffect, useRef, forwardRef, createContext, useContext } from 'react';
 import Box from '../Box';
 import { Clipboard, ClipboardCheck } from 'lucide-react';
 import { JsonViewerContextType, JsonViewerProps } from './interface';
 import { JsonViewerHeader } from './JsonViewerHeader';
 import { JsonViewerContent } from './JsonViewerContent';
 
-export const JsonViewerContext = createContext<JsonViewerContextType | null>(
-  null
-);
+export const JsonViewerContext = createContext<JsonViewerContextType | null>(null);
 
 export const useJsonViewer = () => {
   const context = useContext(JsonViewerContext);
   if (!context) {
-    throw new Error(
-      'JsonViewer compound components must be used within JsonViewer'
-    );
+    throw new Error('JsonViewer compound components must be used within JsonViewer');
   }
   return context;
 };
@@ -46,9 +35,7 @@ const JsonViewerComponent = forwardRef<HTMLDivElement, JsonViewerProps>(
     ref
   ) => {
     const [jsonData, setJsonData] = useState<string>('');
-    const [copyButtonText, setCopyButtonText] = useState(
-      <Clipboard className="size-3" />
-    );
+    const [copyButtonText, setCopyButtonText] = useState(<Clipboard className="size-3" />);
     const containerRef = useRef<HTMLPreElement>(null);
 
     useEffect(() => {
@@ -56,17 +43,9 @@ const JsonViewerComponent = forwardRef<HTMLDivElement, JsonViewerProps>(
 
       try {
         if (Array.isArray(replacer)) {
-          formattedJsonData = JSON.stringify(
-            data,
-            replacer as (string | number)[],
-            indentation
-          );
+          formattedJsonData = JSON.stringify(data, replacer as (string | number)[], indentation);
         } else if (typeof replacer === 'function') {
-          formattedJsonData = JSON.stringify(
-            data,
-            replacer as (key: string, value: any) => any,
-            indentation
-          );
+          formattedJsonData = JSON.stringify(data, replacer as (key: string, value: any) => any, indentation);
         } else {
           formattedJsonData = JSON.stringify(data, null, indentation);
         }
@@ -79,9 +58,7 @@ const JsonViewerComponent = forwardRef<HTMLDivElement, JsonViewerProps>(
         (match) => {
           let classString = '';
           if (/^"/.test(match)) {
-            classString = match.endsWith(':')
-              ? 'text-gray-800 font-semibold'
-              : 'text-pink-500';
+            classString = match.endsWith(':') ? 'text-gray-800 font-semibold' : 'text-pink-500';
           } else if (/true|false|null|undefined/.test(match)) {
             classString = 'text-blue-400';
           } else if (/\d+(\.\d+)?/.test(match)) {
@@ -166,9 +143,7 @@ const JsonViewerComponent = forwardRef<HTMLDivElement, JsonViewerProps>(
 JsonViewerComponent.displayName = 'JsonViewer';
 
 export default Object.assign(
-  JsonViewerComponent as React.ForwardRefExoticComponent<
-    JsonViewerProps & React.RefAttributes<HTMLDivElement>
-  >,
+  JsonViewerComponent as React.ForwardRefExoticComponent<JsonViewerProps & React.RefAttributes<HTMLDivElement>>,
   {
     Header: JsonViewerHeader,
     Content: JsonViewerContent,

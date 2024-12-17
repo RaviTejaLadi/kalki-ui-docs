@@ -6,7 +6,7 @@ import * as RechartsPrimitive from 'recharts';
 
 /**
  * A React component that renders the content of a chart legend.
- * 
+ *
  * @component
  * @param {object} props - The properties object.
  * @param {string} [props.className] - Additional class names to apply to the legend container.
@@ -15,7 +15,7 @@ import * as RechartsPrimitive from 'recharts';
  * @param {string} [props.verticalAlign='bottom'] - The vertical alignment of the legend ('top' or 'bottom').
  * @param {string} [props.nameKey] - The key to use for the name of the legend items.
  * @param {React.Ref<HTMLDivElement>} ref - The ref to attach to the legend container.
- * 
+ *
  * @returns {JSX.Element | null} The rendered legend content or null if there is no payload.
  */
 export const ChartLegendContent = React.forwardRef<

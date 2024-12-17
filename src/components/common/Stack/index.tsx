@@ -5,7 +5,7 @@ import { StackItem } from './StackItem';
 
 /**
  * A flexible container component that manages the layout and spacing of its children.
- * 
+ *
  * @component
  * @param {Object} props - The component props
  * @param {'row' | 'column'} [props.direction='row'] - The direction of the stack's items
@@ -18,7 +18,7 @@ import { StackItem } from './StackItem';
  * @param {string} [props.className] - Additional CSS classes
  * @param {React.CSSProperties} [props.style] - Additional inline styles
  * @param {React.ReactNode} props.children - The content to be rendered inside the stack
- * 
+ *
  * @example
  * ```tsx
  * <Stack direction="column" spacing={16} alignItems="center">

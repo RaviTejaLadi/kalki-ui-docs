@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const GridBackgroundPage = () => {
-  return (
-    <div>GridBackgroundPage</div>
-  )
-}
+  return <div>GridBackgroundPage</div>;
+};
 
-export default GridBackgroundPage
+export default GridBackgroundPage;

@@ -25,11 +25,11 @@ export const ContentViewerProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   return (
-    <ContentViewerContext.Provider 
-      value={{ 
-        activeId, 
-        setActiveId: handleSetActiveId, 
-        registerSection 
+    <ContentViewerContext.Provider
+      value={{
+        activeId,
+        setActiveId: handleSetActiveId,
+        registerSection,
       }}
     >
       {children}

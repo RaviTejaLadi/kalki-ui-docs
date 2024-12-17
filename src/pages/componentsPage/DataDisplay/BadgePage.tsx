@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const BadgePage = () => {
-  return (
-    <div>BadgePage</div>
-  )
-}
+  return <div>BadgePage</div>;
+};
 
-export default BadgePage
+export default BadgePage;

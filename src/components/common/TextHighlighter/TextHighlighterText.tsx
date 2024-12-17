@@ -4,14 +4,8 @@ import { HighlightContext } from './HighlightContext';
 import { TextHighlighterTextProps } from './types';
 import { TextHighlighterVariants } from './TextHighlighterVariants';
 
-export const TextHighlighterText = forwardRef<
-  HTMLSpanElement,
-  TextHighlighterTextProps
->(
-  (
-    { children, variant, emphasis, sizing, color, className, style, ...props },
-    ref
-  ) => {
+export const TextHighlighterText = forwardRef<HTMLSpanElement, TextHighlighterTextProps>(
+  ({ children, variant, emphasis, sizing, color, className, style, ...props }, ref) => {
     const context = useContext(HighlightContext);
     const finalVariant = variant || context.defaultVariant;
     const finalEmphasis = emphasis || context.defaultEmphasis;

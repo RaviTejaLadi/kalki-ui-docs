@@ -2,7 +2,7 @@
 
 /**
  * # Pluck
- * 
+ *
  * Extracts the property with the given name (`field`) from an array of objects (`input`).
  * Returns an array containing the values of the specified field for each object.
  *

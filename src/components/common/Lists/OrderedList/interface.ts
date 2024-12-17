@@ -7,8 +7,7 @@ export interface ListItemProps extends React.LiHTMLAttributes<HTMLLIElement> {
   style?: CSSProperties;
 }
 
-export interface OrderedListProps
-  extends Omit<React.OlHTMLAttributes<HTMLOListElement>, 'type'> {
+export interface OrderedListProps extends Omit<React.OlHTMLAttributes<HTMLOListElement>, 'type'> {
   children: ReactNode;
   className?: string;
   style?: CSSProperties;

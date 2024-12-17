@@ -5,15 +5,15 @@ import { TextHighlighterInfoProps } from './types';
 
 /**
  * A component that displays an info icon with a hoverable tooltip containing additional information.
- * 
+ *
  * @component
  * @param {Object} props - The component props
  * @param {React.ReactNode} props.children - The content to be displayed in the tooltip
  * @param {'dark' | 'light'} [props.variant='dark'] - The color variant of the tooltip
  * @param {string} [props.className] - Additional CSS classes to apply to the tooltip
- * 
+ *
  * @returns {JSX.Element} A div containing an info icon and conditional tooltip
- * 
+ *
  * @example
  * ```tsx
  * <TextHighlighterInfo variant="dark">

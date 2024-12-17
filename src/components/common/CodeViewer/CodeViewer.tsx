@@ -138,17 +138,27 @@ const CodeViewerFolder = forwardRef<HTMLDivElement, CodeViewerFolderProps>(({ na
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? (
-          <ChevronDown className={cn('size-4', theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[var(--icon-color-d)]')} />
+          <ChevronDown
+            className={cn('size-4', theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[var(--icon-color-d)]')}
+          />
         ) : (
-          <ChevronRight className={cn('size-4', theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[var(--icon-color-d)]')} />
+          <ChevronRight
+            className={cn('size-4', theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[var(--icon-color-d)]')}
+          />
         )}
         {isOpen ? (
           <FolderOpen
-            className={cn('mx-1.5 size-4', theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[var(--icon-color-d)]')}
+            className={cn(
+              'mx-1.5 size-4',
+              theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[var(--icon-color-d)]'
+            )}
           />
         ) : (
           <Folder
-            className={cn('mx-1.5 size-4', theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[var(--icon-color-d)]')}
+            className={cn(
+              'mx-1.5 size-4',
+              theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[var(--icon-color-d)]'
+            )}
           />
         )}
         <span className="text-xs">{name}</span>
@@ -195,7 +205,10 @@ const CodeViewerFile = forwardRef<HTMLDivElement, CodeViewerFileProps>(
           icon
         ) : (
           <FileText
-            className={cn('ml-6 mr-1.5 size-4', theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[hsl(218,11%,65%)]')}
+            className={cn(
+              'ml-6 mr-1.5 size-4',
+              theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[hsl(218,11%,65%)]'
+            )}
           />
         )}
         <span className={`text-xs ${theme === 'light' ? 'text-foreground' : 'text-gray-200'}`}>{name}</span>

@@ -48,7 +48,8 @@ const AppRoutes = () => {
         {
           path: 'components/*',
           element: <Components />,
-        },        {
+        },
+        {
           path: 'turbo-utilities',
           element: <TurboUtilities />,
         },
@@ -76,15 +77,15 @@ const DevOnly = ({ children }: { children: ReactNode }) => {
 
 const Router = () => {
   return (
-      <BrowserRouter>
-        <Suspense fallback={<Loading />}>
-          <DevOnly>
-            <ErrorBoundary>
-              <AppRoutes />
-            </ErrorBoundary>
-          </DevOnly>
-        </Suspense>
-      </BrowserRouter>
+    <BrowserRouter>
+      <Suspense fallback={<Loading />}>
+        <DevOnly>
+          <ErrorBoundary>
+            <AppRoutes />
+          </ErrorBoundary>
+        </DevOnly>
+      </Suspense>
+    </BrowserRouter>
   );
 };
 export default Router;

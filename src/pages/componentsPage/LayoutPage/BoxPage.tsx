@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const BoxPage = () => {
-  return (
-    <div>BoxPage</div>
-  )
-}
+  return <div>BoxPage</div>;
+};
 
-export default BoxPage
+export default BoxPage;

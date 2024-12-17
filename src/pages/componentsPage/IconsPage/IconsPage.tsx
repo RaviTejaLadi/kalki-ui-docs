@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const IconsPage = () => {
-  return (
-    <div>IconsPage</div>
-  )
-}
+  return <div>IconsPage</div>;
+};
 
-export default IconsPage
+export default IconsPage;

@@ -1,9 +1,4 @@
-import React, {
-  useState,
-  useLayoutEffect,
-  forwardRef,
-  MouseEvent,
-} from 'react';
+import React, { useState, useLayoutEffect, forwardRef, MouseEvent } from 'react';
 import { cn } from '@/utils';
 
 interface RippleProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -11,11 +6,7 @@ interface RippleProps extends React.HTMLAttributes<HTMLDivElement> {
   color?: string;
 }
 
-const useDebouncedRippleCleanUp = (
-  rippleCount: number,
-  duration: number,
-  cleanUpFunction: () => void
-) => {
+const useDebouncedRippleCleanUp = (rippleCount: number, duration: number, cleanUpFunction: () => void) => {
   useLayoutEffect(() => {
     let bounce: ReturnType<typeof setTimeout> | null = null;
     if (rippleCount > 0) {
@@ -29,9 +20,7 @@ const useDebouncedRippleCleanUp = (
 
 const Ripple = forwardRef<HTMLDivElement, RippleProps>(
   ({ duration = 850, color = '#fff', className, style, ...rest }, ref) => {
-    const [rippleArray, setRippleArray] = useState<
-      { x: number; y: number; size: number }[]
-    >([]);
+    const [rippleArray, setRippleArray] = useState<{ x: number; y: number; size: number }[]>([]);
 
     useDebouncedRippleCleanUp(rippleArray.length, duration, () => {
       setRippleArray([]);
@@ -39,10 +28,7 @@ const Ripple = forwardRef<HTMLDivElement, RippleProps>(
 
     const addRipple = (event: MouseEvent<HTMLDivElement>) => {
       const rippleContainer = event.currentTarget.getBoundingClientRect();
-      const size =
-        rippleContainer.width > rippleContainer.height
-          ? rippleContainer.width
-          : rippleContainer.height;
+      const size = rippleContainer.width > rippleContainer.height ? rippleContainer.width : rippleContainer.height;
       const x = event.pageX - rippleContainer.x - size / 2;
       const y = event.pageY - rippleContainer.y - size / 2;
       const newRipple = { x, y, size };
@@ -68,9 +54,7 @@ const Ripple = forwardRef<HTMLDivElement, RippleProps>(
               backgroundColor: color,
               animationDuration: `${duration}ms`,
             }}
-            className={
-              'absolute rounded-full opacity-75 scale-0 animate-ripple'
-            }
+            className={'absolute rounded-full opacity-75 scale-0 animate-ripple'}
           />
         ))}
       </div>

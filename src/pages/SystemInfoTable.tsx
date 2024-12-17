@@ -17,7 +17,7 @@ interface LocationInfo {
 
 /**
  * A React component that displays detailed system and location information in a table format.
- * 
+ *
  * This component collects and displays various system information including:
  * - Browser details (user agent, platform, language)
  * - Screen properties (resolution, color depth)
@@ -25,15 +25,15 @@ interface LocationInfo {
  * - Battery status (if available)
  * - GPU information
  * - Geolocation data based on IP address
- * 
+ *
  * The component also provides functionality to:
  * - View the collected data in a formatted table
  * - Toggle JSON view of the data
  * - Copy the JSON data to clipboard
- * 
+ *
  * @returns {JSX.Element} A table displaying system information and location details
  * with options to view and copy data in JSON format
- * 
+ *
  * @example
  * ```tsx
  * <SystemInfoTable />

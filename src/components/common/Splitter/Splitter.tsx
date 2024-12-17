@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useCallback,
-  useRef,
-  useEffect,
-  forwardRef,
-} from 'react';
+import React, { useState, useCallback, useRef, useEffect, forwardRef } from 'react';
 import Box from '../Box';
 import { useMergedRef } from '@/hooks/useMergedRef';
 import { cn } from '@/utils';
@@ -26,10 +20,7 @@ interface SplitterPaneProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
 }
 
-const parseSizeToPixels = (
-  size: string | number,
-  containerSize: number
-): number | null => {
+const parseSizeToPixels = (size: string | number, containerSize: number): number | null => {
   if (typeof size === 'number') return size;
   if (typeof size === 'string') {
     if (size.endsWith('%')) {
@@ -56,22 +47,18 @@ const useResizeHandle = (
       e.preventDefault();
       const startPos = orientation === 'horizontal' ? e.clientX : e.clientY;
       const containerSize =
-        orientation === 'horizontal'
-          ? containerRef.current!.offsetWidth
-          : containerRef.current!.offsetHeight;
+        orientation === 'horizontal' ? containerRef.current!.offsetWidth : containerRef.current!.offsetHeight;
       const startSizes = [...sizes];
 
       const handleMouseMove = (moveEvent: MouseEvent) => {
-        const currentPos =
-          orientation === 'horizontal' ? moveEvent.clientX : moveEvent.clientY;
+        const currentPos = orientation === 'horizontal' ? moveEvent.clientX : moveEvent.clientY;
         const diff = currentPos - startPos;
 
         const newSizes = startSizes.map((size, i) => {
           if (i === index || i === index + 1) {
             const currentSize = parseSizeToPixels(size, containerSize)!;
             const minSize = parseSizeToPixels(minSizes[i], containerSize) || 0;
-            const maxSize =
-              parseSizeToPixels(maxSizes[i], containerSize) || containerSize;
+            const maxSize = parseSizeToPixels(maxSizes[i], containerSize) || containerSize;
 
             let newSize = i === index ? currentSize + diff : currentSize - diff;
             newSize = Math.max(minSize, Math.min(maxSize, newSize));
@@ -109,9 +96,7 @@ const ResizeHandle = React.memo(
   }) => (
     <div
       className={`flex items-center justify-center bg-gray-200 ${
-        orientation === 'horizontal'
-          ? 'w-[.8px] cursor-ew-resize'
-          : 'h-[.8px] cursor-ns-resize'
+        orientation === 'horizontal' ? 'w-[.8px] cursor-ew-resize' : 'h-[.8px] cursor-ns-resize'
       }`}
       onMouseDown={onMouseDown}
     >
@@ -141,22 +126,9 @@ const ResizeHandle = React.memo(
 );
 
 const Splitter = forwardRef<HTMLDivElement, SplitterProps>(
-  (
-    {
-      orientation = 'horizontal',
-      height = '100%',
-      children,
-      withHandle = true,
-      className,
-    },
-    ref
-  ) => {
-    const panes = React.Children.toArray(
-      children
-    ) as React.ReactElement<SplitterPaneProps>[];
-    const initialSizes = panes.map(
-      (pane) => pane.props.initialSize || `${100 / panes.length}%`
-    );
+  ({ orientation = 'horizontal', height = '100%', children, withHandle = true, className }, ref) => {
+    const panes = React.Children.toArray(children) as React.ReactElement<SplitterPaneProps>[];
+    const initialSizes = panes.map((pane) => pane.props.initialSize || `${100 / panes.length}%`);
     const minSizes = panes.map((pane) => pane.props.minSize || '0%');
     const maxSizes = panes.map((pane) => pane.props.maxSize || '100%');
 
@@ -170,9 +142,7 @@ const Splitter = forwardRef<HTMLDivElement, SplitterProps>(
 
     useEffect(() => {
       const containerSize =
-        orientation === 'horizontal'
-          ? containerRef.current!.offsetWidth
-          : containerRef.current!.offsetHeight;
+        orientation === 'horizontal' ? containerRef.current!.offsetWidth : containerRef.current!.offsetHeight;
       const newSizes = initialSizes.map((size) => {
         const pxSize = parseSizeToPixels(size, containerSize)!;
         return `${(pxSize / containerSize) * 100}%`;
@@ -194,8 +164,7 @@ const Splitter = forwardRef<HTMLDivElement, SplitterProps>(
             <div
               className="overflow-auto"
               style={{
-                [orientation === 'horizontal' ? 'width' : 'height']:
-                  sizes[index],
+                [orientation === 'horizontal' ? 'width' : 'height']: sizes[index],
               }}
             >
               {React.cloneElement(pane, {
@@ -216,22 +185,18 @@ const Splitter = forwardRef<HTMLDivElement, SplitterProps>(
   }
 );
 
-const SplitterPane = forwardRef<HTMLDivElement, SplitterPaneProps>(
-  ({ children, className, ...rest }, ref) => (
-    <div ref={ref} className={cn('h-full overflow-auto', className)} {...rest}>
-      {children}
-    </div>
-  )
-);
+const SplitterPane = forwardRef<HTMLDivElement, SplitterPaneProps>(({ children, className, ...rest }, ref) => (
+  <div ref={ref} className={cn('h-full overflow-auto', className)} {...rest}>
+    {children}
+  </div>
+));
 
 SplitterPane.displayName = 'SplitterPane';
 Splitter.displayName = 'Splitter';
 ResizeHandle.displayName = 'ResizeHandle';
 
 export default Object.assign(
-  Splitter as React.ForwardRefExoticComponent<
-    SplitterProps & React.RefAttributes<HTMLDivElement>
-  >,
+  Splitter as React.ForwardRefExoticComponent<SplitterProps & React.RefAttributes<HTMLDivElement>>,
   {
     Pane: SplitterPane,
   }

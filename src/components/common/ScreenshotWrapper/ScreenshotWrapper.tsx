@@ -39,10 +39,7 @@ const ScreenshotWrapper: FC<ScreenshotWrapperProps> = ({ children }) => {
       setShowMessage(true);
       setTimeout(() => setShowMessage(false), 3000);
     } catch (error) {
-      console.error(
-        'Screenshot error:',
-        error instanceof Error ? error.message : 'Unknown error'
-      );
+      console.error('Screenshot error:', error instanceof Error ? error.message : 'Unknown error');
     }
   };
 

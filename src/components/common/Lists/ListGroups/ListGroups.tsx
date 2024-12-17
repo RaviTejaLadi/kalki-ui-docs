@@ -8,24 +8,12 @@ import { ListGroupItem } from './ListGroupItem';
 
 const ListGroups = forwardRef<HTMLUListElement, ListGroupProps>(
   (
-    {
-      width,
-      size,
-      variant = 'primary',
-      className,
-      style,
-      showDividers = true,
-      showArrows = true,
-      children,
-      ...rest
-    },
+    { width, size, variant = 'primary', className, style, showDividers = true, showArrows = true, children, ...rest },
     ref
   ) => {
     const currentVariant = (variant || 'primary') as VariantType;
     return (
-      <ListGroupContext.Provider
-        value={{ variant: currentVariant, showArrows, showDividers }}
-      >
+      <ListGroupContext.Provider value={{ variant: currentVariant, showArrows, showDividers }}>
         <ul
           ref={ref}
           className={cn(listGroupVariants({ size, variant }), className)}
@@ -40,9 +28,7 @@ const ListGroups = forwardRef<HTMLUListElement, ListGroupProps>(
 );
 
 export default Object.assign(
-  ListGroups as React.ForwardRefExoticComponent<
-    ListGroupProps & React.RefAttributes<HTMLOListElement>
-  >,
+  ListGroups as React.ForwardRefExoticComponent<ListGroupProps & React.RefAttributes<HTMLOListElement>>,
   {
     Item: ListGroupItem,
   }

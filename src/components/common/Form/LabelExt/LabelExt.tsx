@@ -8,13 +8,7 @@ interface LabelExtProps extends Omit<LabelProps, 'children'> {
   info?: string;
 }
 
-const LabelExt: React.FC<LabelExtProps> = ({
-  label,
-  info,
-  htmlFor,
-  className,
-  ...props
-}) => {
+const LabelExt: React.FC<LabelExtProps> = ({ label, info, htmlFor, className, ...props }) => {
   return (
     <div className="flex items-center gap-1">
       <Label htmlFor={htmlFor} className={className} {...props}>

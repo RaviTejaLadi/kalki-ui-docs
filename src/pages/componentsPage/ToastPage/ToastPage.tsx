@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const ToastPage = () => {
-  return (
-    <div>ToastPage</div>
-  )
-}
+  return <div>ToastPage</div>;
+};
 
-export default ToastPage
+export default ToastPage;

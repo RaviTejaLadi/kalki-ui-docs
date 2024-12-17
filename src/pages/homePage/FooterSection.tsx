@@ -66,7 +66,7 @@ export const FooterSection = () => {
               className="transition-all text-xs text-purple-500 italic border-primary hover:border-b-2 ml-1"
               aria-label="Ravi Teja Ladi"
             >
-             @ Ravi Teja Ladi
+              @ Ravi Teja Ladi
             </Link>
           </h3>
         </section>

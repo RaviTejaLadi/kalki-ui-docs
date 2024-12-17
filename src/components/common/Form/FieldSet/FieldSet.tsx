@@ -33,10 +33,9 @@ const fieldSetLabelStyles = cva('px-2 font-medium border rounded-md', {
   },
 });
 
-const { Provider: FieldSetProvider, useProtectedContext: useFieldSetContext } =
-  createProtectedContext(
-    '`FieldSetLabel` and `FieldSetContent` must be used within `FieldSet`. Please refer to the documentation for more information.'
-  );
+const { Provider: FieldSetProvider, useProtectedContext: useFieldSetContext } = createProtectedContext(
+  '`FieldSetLabel` and `FieldSetContent` must be used within `FieldSet`. Please refer to the documentation for more information.'
+);
 
 interface FieldSetProps extends VariantProps<typeof fieldSetStyles> {
   borderType?: 'solid' | 'dashed' | 'dotted';
@@ -44,18 +43,10 @@ interface FieldSetProps extends VariantProps<typeof fieldSetStyles> {
   className?: string;
 }
 
-const FieldSet: React.FC<FieldSetProps> = ({
-  borderType,
-  children,
-  className,
-  ...props
-}) => {
+const FieldSet: React.FC<FieldSetProps> = ({ borderType, children, className, ...props }) => {
   return (
     <FieldSetProvider>
-      <fieldset
-        className={cn(fieldSetStyles({ borderType }), className)}
-        {...props}
-      >
+      <fieldset className={cn(fieldSetStyles({ borderType }), className)} {...props}>
         {children}
       </fieldset>
     </FieldSetProvider>
@@ -67,18 +58,10 @@ interface FieldSetLabelProps extends VariantProps<typeof fieldSetLabelStyles> {
   className?: string;
 }
 
-const FieldSetLabel: React.FC<FieldSetLabelProps> = ({
-  variant,
-  children,
-  className,
-  ...props
-}) => {
+const FieldSetLabel: React.FC<FieldSetLabelProps> = ({ variant, children, className, ...props }) => {
   useFieldSetContext();
   return (
-    <legend
-      className={cn(fieldSetLabelStyles({ variant }), className)}
-      {...props}
-    >
+    <legend className={cn(fieldSetLabelStyles({ variant }), className)} {...props}>
       {children}
     </legend>
   );
@@ -89,11 +72,7 @@ interface FieldSetContentProps {
   className?: string;
 }
 
-const FieldSetContent: React.FC<FieldSetContentProps> = ({
-  children,
-  className,
-  ...props
-}) => {
+const FieldSetContent: React.FC<FieldSetContentProps> = ({ children, className, ...props }) => {
   useFieldSetContext();
   return (
     <div className={cn('p-2', className)} {...props}>
@@ -103,9 +82,7 @@ const FieldSetContent: React.FC<FieldSetContentProps> = ({
 };
 
 export default Object.assign(
-  FieldSet as React.ForwardRefExoticComponent<
-    FieldSetProps & React.RefAttributes<HTMLFieldSetElement>
-  >,
+  FieldSet as React.ForwardRefExoticComponent<FieldSetProps & React.RefAttributes<HTMLFieldSetElement>>,
   {
     Label: FieldSetLabel,
     Content: FieldSetContent,

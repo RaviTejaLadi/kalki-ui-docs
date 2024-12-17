@@ -4,7 +4,6 @@ import { useSidebar } from '../context';
 import { SidebarHeaderProps } from '../types';
 import { SidebarTrigger } from '../SidebarTrigger';
 
-
 export const SidebarHeader = React.forwardRef<HTMLDivElement, SidebarHeaderProps>(
   ({ className, children, showTrigger = false, ...props }, ref) => {
     const { expanded } = useSidebar();

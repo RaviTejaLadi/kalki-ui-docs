@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContentSectionType } from "./types/ContentSectionType";
+import { ContentSectionType } from './types/ContentSectionType';
 import { ContentViewerContentSection } from './ContentViewerContentSection';
 
 interface MainContentProps {

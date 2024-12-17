@@ -1,5 +1,6 @@
 // Save bytes in the minified (but not gzipped) version:
-export const ArrayProto = Array.prototype, ObjProto = Object.prototype;
+export const ArrayProto = Array.prototype,
+  ObjProto = Object.prototype;
 export const SymbolProto = typeof Symbol !== 'undefined' ? Symbol.prototype : null;
 
 // Create quick reference variables for speed access to core prototypes.
@@ -26,8 +27,12 @@ export const _isFinite = isFinite;
 // Keys in IE < 9 that won't be iterated by `for key in ...` and thus missed.
 export const hasEnumBug = !{ toString: null }.propertyIsEnumerable('toString');
 export const nonEnumerableProps: string[] = [
-    'valueOf', 'isPrototypeOf', 'toString',
-    'propertyIsEnumerable', 'hasOwnProperty', 'toLocaleString'
+  'valueOf',
+  'isPrototypeOf',
+  'toString',
+  'propertyIsEnumerable',
+  'hasOwnProperty',
+  'toLocaleString',
 ];
 
 // The largest integer that can be represented exactly.
