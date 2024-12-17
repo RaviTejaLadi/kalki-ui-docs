@@ -22,7 +22,7 @@ export const textVariants = cva('block', {
       md: 'text-base leading-6',
       lg: 'text-lg leading-7',
       xl: 'text-xl leading-8',
-      xxl: 'text-2xl leading-9',
+      "2xl": 'text-2xl leading-9',
     },
   },
   defaultVariants: {
