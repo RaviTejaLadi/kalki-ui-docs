@@ -14,7 +14,11 @@ const useDebouncedRippleCleanUp = (rippleCount: number, duration: number, cleanU
         cleanUpFunction();
       }, duration * 4);
     }
-    return () => bounce && clearTimeout(bounce);
+    return () => {
+      if (bounce) {
+        clearTimeout(bounce);
+      }
+    };
   }, [rippleCount, duration, cleanUpFunction]);
 };
 
