@@ -1,5 +1,5 @@
 import React from 'react';
-import { SidebarProps } from '../interface';
+import { SidebarProps } from '../types';
 import { cn } from '@/utils';
 
 export const SidebarGroupContent = React.forwardRef<HTMLDivElement, SidebarProps>(

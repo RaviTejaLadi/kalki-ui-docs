@@ -1,5 +1,5 @@
 import React from 'react';
-import { SidebarMenuSubItemProps } from '../interface';
+import { SidebarMenuSubItemProps } from '../types';
 import { cn } from '@/utils';
 import Link from '../../Link';
 

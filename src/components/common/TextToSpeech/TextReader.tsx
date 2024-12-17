@@ -82,7 +82,7 @@ import { SpeedControl } from './SpeedControl';
 import { TextReaderProps } from './Speech';
 import { getTextFromNode } from './textChunker';
 import Button from '../Button';
-import Div from '../Div/Div';
+import Div from '../Div';
 import Tooltip from '../Tooltip/Tooltip';
 
 export function TextReader({ children, className = '' }: TextReaderProps) {

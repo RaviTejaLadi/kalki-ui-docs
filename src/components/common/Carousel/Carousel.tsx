@@ -1,6 +1,6 @@
 import React, { useState, forwardRef, createContext, useContext, useEffect, ReactNode } from 'react';
 import { cva } from 'class-variance-authority';
-import Box from '../Box/Box';
+import Box from '../Box';
 import { cn } from '@/utils';
 
 interface CarouselProps {
@@ -44,10 +44,7 @@ const carouselContainer = cva('flex flex-col mx-auto', {
 });
 
 const Carousel = forwardRef<HTMLDivElement, CarouselProps>(
-  (
-    { size = 'sm', width, height, borderRadius = '5px', padding = '10px', children, className, style, ...rest },
-    ref
-  ) => {
+  ({ size = 'sm', width, height, borderRadius = '5px', padding = 'md', children, className, style, ...rest }, ref) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [slides, setSlides] = useState<ReactNode[]>([]);
 
@@ -80,7 +77,7 @@ const Carousel = forwardRef<HTMLDivElement, CarouselProps>(
         <Box
           ref={ref}
           padding={padding}
-          className={cn(carouselContainer({ padding }), className)}
+          className={cn(carouselContainer({ padding: padding as 'sm' | 'md' | 'lg' | 'xl' }), className)}
           style={containerStyle}
           {...rest}
         >
@@ -136,7 +133,7 @@ const CarouselControls: React.FC<CarouselControlsProps> = ({ children, className
     <div className={cn('flex justify-between mt-4', className)} style={style}>
       {React.Children.map(children, (child) =>
         React.cloneElement(child as React.ReactElement, {
-          onClick: child?.props?.onClick === goToPrevious ? goToPrevious : goToNext,
+          onClick: React.isValidElement(child) && child.props?.onClick === goToPrevious ? goToPrevious : goToNext,
         })
       )}
     </div>

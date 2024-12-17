@@ -53,6 +53,10 @@ module.exports = {
           DEFAULT: 'var(--dark)',
           foreground: 'var(--dark-foreground)',
         },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
         popover: {
           DEFAULT: 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',

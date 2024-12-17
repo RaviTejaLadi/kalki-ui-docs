@@ -2,8 +2,8 @@ import { SectionHeader } from '@/components/common/SectionHeader/SectionHeader';
 import React from 'react';
 import Link from '@/components/common/Link';
 import Separator from '@/components/common/Separator/Separator';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/common/Card';
-import { categorizedRoutesComponents } from '@/Layout/ComponentsLayout/categorizedRoutesComponents';
+import Card, { CardContent, CardDescription, CardTitle, CardHeader } from '@/components/common/Card';
+import { categorizedRoutesComponents } from '@/components/Layout/ComponentsLayout/categorizedRoutesComponents';
 
 const ComponentsOverviewPage: React.FC = () => {
   return (
@@ -20,11 +20,11 @@ const ComponentsOverviewPage: React.FC = () => {
         {categorizedRoutesComponents.map(({ category, components, id }) => (
           <div className="mb-5">
             <h2 className="text-foreground font-semibold">{category}</h2>
-            <Separator className='h-[0.5px] my-2'/>
+            <Separator className="h-[0.5px] my-2" />
             <div key={id} id={id} className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {components.map(({ path, label, description, Icon }, idx) => (
-                <Card className="border border-gray-100 mb-5 rounded-md hover:shadow-sm transition">
-                  <Link key={idx} to={path}>
+                <Link key={idx} to={path}>
+                  <Card className="border border-gray-100 mb-5 rounded-md hover:shadow-sm transition">
                     <CardHeader>
                       <div className="flex gap-3 items-center align-middle">
                         {Icon ? <Icon className="size-5 text-[--icon-color] border p-1 rounded bg-gray-200" /> : null}
@@ -34,8 +34,8 @@ const ComponentsOverviewPage: React.FC = () => {
                     <CardContent>
                       <CardDescription className="text-xs">{description}</CardDescription>
                     </CardContent>
-                  </Link>
-                </Card>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>

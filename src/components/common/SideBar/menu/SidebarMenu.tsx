@@ -1,5 +1,5 @@
 import React from 'react';
-import { SidebarMenuProps } from '../interface';
+import { SidebarMenuProps } from '../types';
 import { cn } from '@/utils';
 
 export const SidebarMenu = React.forwardRef<HTMLDivElement, SidebarMenuProps>(

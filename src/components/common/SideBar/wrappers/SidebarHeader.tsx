@@ -1,7 +1,7 @@
 import React from 'react';
 import { cn } from '@/utils';
 import { useSidebar } from '../context';
-import { SidebarHeaderProps } from '../interface';
+import { SidebarHeaderProps } from '../types';
 import { SidebarTrigger } from '../SidebarTrigger';
 
 

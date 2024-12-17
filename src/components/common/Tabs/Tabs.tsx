@@ -194,7 +194,7 @@
 
 import React, { useState, useEffect, ReactNode, CSSProperties } from 'react';
 import { cva } from 'class-variance-authority';
-import Box from '../Box/Box';
+import Box from '../Box';
 import { cn } from '@/utils';
 import { Monitor, Smartphone, Tablet } from 'lucide-react';
 

@@ -1,4 +1,4 @@
-import Div from '../Div/Div';
+import Div from '../Div';
 import Select, { SelectContent, SelectItem, SelectTrigger, SelectValue } from '../Select';
 
 interface VoiceSelectorProps {

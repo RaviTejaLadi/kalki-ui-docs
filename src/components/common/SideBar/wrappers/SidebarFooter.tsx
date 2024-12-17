@@ -1,6 +1,6 @@
 import { cn } from '@/utils';
 import React from 'react';
-import { SidebarFooterProps } from '../interface';
+import { SidebarFooterProps } from '../types';
 
 export const SidebarFooter = React.forwardRef<HTMLDivElement, SidebarFooterProps>(
   ({ className, children, ...props }, ref) => (

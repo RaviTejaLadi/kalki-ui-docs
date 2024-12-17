@@ -18,7 +18,7 @@ export const HeroSection = () => {
           </Badge>
 
           <div className="max-w-screen-md space-y-4 mx-auto text-center  font-bold">
-            <h1 className="px-2 text-purple-300 text-4xl tracking-wide md:text-6xl">UI Essentials React</h1>
+            <h1 className="px-2 text-purple-400 text-4xl tracking-wide md:text-6xl">UI Essentials React</h1>
             <h6 className="text-2xl md:text-3xl text-foreground">Build using Tsx and Tailwind css</h6>
           </div>
 

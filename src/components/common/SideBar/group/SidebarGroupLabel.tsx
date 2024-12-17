@@ -1,5 +1,5 @@
 import React from 'react';
-import { SidebarGroupProps } from '../interface';
+import { SidebarGroupProps } from '../types';
 import { cn } from '@/utils';
 import { useSidebar } from '../context';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SidebarMenuBadgeProps } from '../interface';
+import { SidebarMenuBadgeProps } from '../types';
 import { cn } from '@/utils';
 import { useSidebar } from '../context';
 

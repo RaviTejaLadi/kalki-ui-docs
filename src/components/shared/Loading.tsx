@@ -1,5 +1,5 @@
 import { Loader2 } from 'lucide-react';
-import Div from '../common/Div/Div';
+import Div from '../common/Div';
 
 export default function Loading() {
   return (

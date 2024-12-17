@@ -1,33 +1,35 @@
 import { ErrorInfo } from 'react';
 
-export interface ErrorLocation {
+interface ErrorLocation {
   fileName: string;
   lineNumber: number;
   columnNumber: number;
   functionName: string | null;
 }
 
-export interface ParsedError {
+interface ParsedError {
   message: string;
   stack?: string;
   locations: ErrorLocation[];
   firstLocation: ErrorLocation | null;
 }
 
-export interface ErrorDetails extends ParsedError {
+interface ErrorDetails extends ParsedError {
   componentStack?: string;
   timestamp: number;
   url: string;
   userAgent: string;
 }
 
-export interface ErrorBoundaryProps {
+interface ErrorBoundaryProps {
   children: React.ReactNode;
   onError?: (error: Error, errorInfo: ErrorInfo) => void;
   fallback?: React.ReactNode;
 }
 
-export interface ErrorBoundaryState {
+interface ErrorBoundaryState {
   hasError: boolean;
   error?: ErrorDetails;
 }
+
+export type { ErrorLocation, ParsedError, ErrorDetails, ErrorBoundaryProps, ErrorBoundaryState };

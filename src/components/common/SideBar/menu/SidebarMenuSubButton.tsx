@@ -1,7 +1,7 @@
 import { cn } from '@/utils';
 import { ChevronRight } from 'lucide-react';
 import React from 'react';
-import { SidebarMenuSubButtonProps } from '../interface';
+import { SidebarMenuSubButtonProps } from '../types';
 
 export const SidebarMenuSubButton = React.forwardRef<HTMLButtonElement, SidebarMenuSubButtonProps>(
   ({ className, icon, children, isOpen, onOpenChange, ...props }, ref) => {

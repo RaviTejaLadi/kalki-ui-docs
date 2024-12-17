@@ -1,46 +1,14 @@
-import React, { createContext, ReactNode } from 'react';
+import React, { createContext } from 'react';
 import { SyntaxHighLighter } from '../SyntaxHighLighter/SyntaxHighLighter';
 import { cn } from '@/utils';
+import { CodeBlockProps, DescriptionProps, StepperComponent, StepProps } from './types';
 
-// Types and Interfaces
-interface StepperContextType {
-  // Add context properties if needed
-}
+const StepperContext = createContext({});
 
-interface StepProps {
-  step?: string;
-  title: string;
-  children: ReactNode;
-}
-
-interface CodeBlockProps {
-  code: string;
-  language?: string;
-}
-
-interface DescriptionProps {
-  children: ReactNode;
-  className?: string;
-}
-
-interface StepperProps {
-  children: ReactNode;
-}
-
-interface StepperComponent extends React.FC<StepperProps> {
-  Step: React.FC<StepProps>;
-  CodeBlock: React.FC<CodeBlockProps>;
-  Description: React.FC<DescriptionProps>;
-}
-
-// Context
-const StepperContext = createContext<StepperContextType>({});
-
-// Root Stepper Component
 export const Stepper: StepperComponent = ({ children }) => {
   return (
     <StepperContext.Provider value={{}}>
-      <div className="w-full mx-auto p-6 bg-white text-black">
+      <div className="w-full mx-auto p-6 bg-white text-foreground">
         <div className="relative">{children}</div>
       </div>
     </StepperContext.Provider>

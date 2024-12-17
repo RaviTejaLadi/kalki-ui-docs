@@ -24,7 +24,7 @@ const GetStarted: React.FC = () => {
       <Stepper>
         <Stepper.Step step="1" title="Install the Package">
           <Stepper.Description>Install the package in your project directory with:</Stepper.Description>
-          <Tabs variant="help" size="sm">
+          <Tabs variant="secondary" size="sm">
             {usage.map((item) => (
               <Tab label={item.label} value={item.label} leftIcon={item.icon}>
                 <Stepper.CodeBlock code={item.content} language="jsx" />

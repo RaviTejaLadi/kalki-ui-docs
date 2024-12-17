@@ -1,5 +1,5 @@
 import React from 'react';
-import { SidebarContextType } from './interface';
+import { SidebarContextType } from './types';
 
 export const SidebarContext = React.createContext<SidebarContextType>({
   expanded: true,

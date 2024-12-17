@@ -1,35 +1,10 @@
-'use client';
-
 import * as React from 'react';
 import * as RechartsPrimitive from 'recharts';
 import { cn } from '@/utils';
+import { ChartConfig, ChartContextProps, THEMES } from './types';
+import { useChart } from './useChart';
 
-
-// Format: { THEME_NAME: CSS_SELECTOR }
-const THEMES = { light: '', dark: '.dark' } as const;
-
-export type ChartConfig = {
-  [k in string]: {
-    label?: React.ReactNode;
-    icon?: React.ComponentType;
-  } & ({ color?: string; theme?: never } | { color?: never; theme: Record<keyof typeof THEMES, string> });
-};
-
-type ChartContextProps = {
-  config: ChartConfig;
-};
-
-const ChartContext = React.createContext<ChartContextProps | null>(null);
-
-function useChart() {
-  const context = React.useContext(ChartContext);
-
-  if (!context) {
-    throw new Error('useChart must be used within a <ChartContainer />');
-  }
-
-  return context;
-}
+export const ChartContext = React.createContext<ChartContextProps | null>(null);
 
 const ChartContainer = React.forwardRef<
   HTMLDivElement,
@@ -91,6 +66,27 @@ ${colorConfig
 
 const ChartTooltip = RechartsPrimitive.Tooltip;
 
+/**
+ * A React component that renders the content of a chart tooltip.
+ *
+ * @param {Object} props - The properties passed to the component.
+ * @param {boolean} [props.active] - Indicates if the tooltip is active.
+ * @param {Array} [props.payload] - The data payload for the tooltip.
+ * @param {string} [props.className] - Additional class names for the tooltip container.
+ * @param {'line' | 'dot' | 'dashed'} [props.indicator='dot'] - The type of indicator to display.
+ * @param {boolean} [props.hideLabel=false] - Whether to hide the label.
+ * @param {boolean} [props.hideIndicator=false] - Whether to hide the indicator.
+ * @param {string} [props.label] - The label to display.
+ * @param {Function} [props.labelFormatter] - A function to format the label.
+ * @param {string} [props.labelClassName] - Additional class names for the label.
+ * @param {Function} [props.formatter] - A function to format the tooltip content.
+ * @param {string} [props.color] - The color of the indicator.
+ * @param {string} [props.nameKey] - The key to use for the name.
+ * @param {string} [props.labelKey] - The key to use for the label.
+ * @param {React.Ref<HTMLDivElement>} ref - The ref to the tooltip container.
+ *
+ * @returns {JSX.Element | null} The rendered tooltip content or null if inactive or no payload.
+ */
 const ChartTooltipContent = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<typeof RechartsPrimitive.Tooltip> &

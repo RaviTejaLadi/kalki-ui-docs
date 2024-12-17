@@ -1,5 +1,5 @@
 import React from 'react';
-import { SidebarProviderProps } from '../interface';
+import { SidebarProviderProps } from '../types';
 import { SidebarContext } from '../context';
 
 export const SidebarProvider = ({

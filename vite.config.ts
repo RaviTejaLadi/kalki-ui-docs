@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import * as path from 'path';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   resolve: {
@@ -16,10 +15,12 @@ export default defineConfig({
   server: {
     port: 8847,
     open: true,
-    hmr: true,
+    hmr: {
+      overlay: true,
+    },
     watch: {
-      usePolling: true, // Enables polling for file changes
-      interval: 100, // Polling interval in milliseconds
+      usePolling: true,
+      interval: 50, // Reduced polling interval for faster updates
     },
   },
 });

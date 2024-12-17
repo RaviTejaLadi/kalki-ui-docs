@@ -1,4 +1,4 @@
-import { Card,CardContent, CardHeader, CardTitle } from '@/components/common/Card';
+import Card, { CardContent, CardTitle, CardHeader } from '@/components/common/Card';
 
 interface FeaturesProps {
   id: number;
