@@ -20,7 +20,7 @@ export default function ComponentCategoriesSection() {
               {category.components.map((component, idx) => (
                 <Link
                   key={idx}
-                  className=" rounded-md p-4 dark:bg-black/10  hover:shadow-md transition"
+                  className=" rounded-md p-4 dark:bg-background/10 border dark:border-gray-200/10  hover:shadow-md transition"
                   to={component.path}
                 >
                   <h3 className="text-sm font-medium text-purple-500">{component.label}</h3>

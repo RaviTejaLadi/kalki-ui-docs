@@ -57,7 +57,7 @@ export const FeaturesSection = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-4 sm:block columns-2  lg:columns-3 lg:gap-6 mx-auto space-y-4 lg:space-y-6 sm:grid-cols-2  md:grid-col-3 gap-4">
         {featureList.map(({ id, title, description }) => (
           <div key={id}>
-            <Card className="h-full max-w-md md:break-inside-avoid overflow-hidden border-none hover:shadow-md dark:bg-black/10 shadow-none">
+            <Card className="h-full max-w-md md:break-inside-avoid overflow-hidden  hover:shadow-md border dark:border-gray-200/10 dark:bg-background/10 shadow-none">
               <CardHeader className="flex">
                 <CardTitle className="text-purple-500 text-base text-left tracking-wide">{title}</CardTitle>
               </CardHeader>
