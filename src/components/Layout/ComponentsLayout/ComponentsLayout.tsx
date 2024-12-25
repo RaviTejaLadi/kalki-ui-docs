@@ -17,42 +17,38 @@ import { cn } from '@/utils';
 
 export default function ComponentsLayout() {
   return (
-    <div className="flex relative ">
-      <div className="fixed">
-        <Sidebar className="border-r bg-inherit">
+    <div className="flex min-h-screen bg-inherit">
+      <aside className="fixed top-11 left-0 h-screen  bg-inherit">
+        <Sidebar className="bg-inherit w-[13rem]">
           <SidebarBody>
             <SidebarGroup>
               <SidebarGroupLabel>Components</SidebarGroupLabel>
-              {categorizedRoutesComponents.map(({ category, components, path, Icon }) => {
-                return (
-                  <SidebarGroupContent key={path}>
-                    <SidebarMenuSub>
-                      <SidebarMenuSubButton
-                        title={category}
-                        icon={Icon ? <Icon className="size-4 text-[--icon-color]" /> : null}
+              {categorizedRoutesComponents.map(({ category, components, path, Icon }) => (
+                <SidebarGroupContent key={path}>
+                  <SidebarMenuSub>
+                    <SidebarMenuSubButton
+                      title={category}
+                      icon={Icon ? <Icon className="size-4 text-[--icon-color]" /> : null}
+                    >
+                      <Link
+                        to={path || '#'}
+                        className={cn('text-muted-foreground text-xs hover:bg-gray-100 hover:text-muted-foreground')}
                       >
-                        <Link
-                          to={path || '#'}
-                          className={cn('text-muted-foreground text-xs hover:bg-gray-100 hover:text-muted-foreground')}
-                        >
-                          {category.slice(0, 15)}
-                        </Link>
-                      </SidebarMenuSubButton>
-                      {components.map(({ path, label, Icon }) => {
-                        return (
-                          <SidebarMenuSubItem
-                            key={path}
-                            to={path}
-                            icon={Icon ? <Icon className="size-4 text-[var(--icon-color)]" /> : null}
-                          >
-                            {label}
-                          </SidebarMenuSubItem>
-                        );
-                      })}
-                    </SidebarMenuSub>
-                  </SidebarGroupContent>
-                );
-              })}
+                        {category.slice(0, 15)}
+                      </Link>
+                    </SidebarMenuSubButton>
+                    {components.map(({ path, label, Icon }) => (
+                      <SidebarMenuSubItem
+                        key={path}
+                        to={path}
+                        icon={Icon ? <Icon className="size-4 text-[var(--icon-color)]" /> : null}
+                      >
+                        {label}
+                      </SidebarMenuSubItem>
+                    ))}
+                  </SidebarMenuSub>
+                </SidebarGroupContent>
+              ))}
             </SidebarGroup>
             <SidebarMenu>
               <SidebarMenuItem to="#">State Management</SidebarMenuItem>
@@ -66,8 +62,8 @@ export default function ComponentsLayout() {
             </SidebarMenu>
           </SidebarBody>
         </Sidebar>
-      </div>
-      <main className="flex-1 absolute left-56  p-6 overflow-y-auto">
+      </aside>
+      <main className="ml-[13rem] w-full  flex-1 p-6 overflow-y-auto bg-inherit">
         <Outlet />
       </main>
     </div>

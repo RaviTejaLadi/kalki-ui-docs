@@ -24,7 +24,7 @@ const ComponentsOverviewPage: React.FC = () => {
             <div key={id} id={id} className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {components.map(({ path, label, description, Icon }, idx) => (
                 <Link key={idx} to={path}>
-                  <Card className="border border-gray-100 mb-5 rounded-md hover:shadow-sm transition">
+                  <Card className="border border-gray-100 mb-5 rounded-md hover:shadow-sm transition dark:border-gray-200/10 dark:bg-background/10">
                     <CardHeader>
                       <div className="flex gap-3 items-center align-middle">
                         {Icon ? <Icon className="size-5 text-[--icon-color] border p-1 rounded bg-gray-200" /> : null}
