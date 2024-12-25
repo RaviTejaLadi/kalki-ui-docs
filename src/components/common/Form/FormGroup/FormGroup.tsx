@@ -1,6 +1,6 @@
-import Box from '@/components/Box';
 import { cn } from '@/utils';
 import { CSSProperties, forwardRef, ReactNode } from 'react';
+import Box from '../../Box';
 
 interface FormGroupProps {
   children: ReactNode;
