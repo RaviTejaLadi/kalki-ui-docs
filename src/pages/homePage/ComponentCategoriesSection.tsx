@@ -1,15 +1,14 @@
 import Tabs from '@/components/common/VerticalTabs/Tabs';
-// import { categorizedComponents } from './utils/categorizedComponents';
 import Link from '@/components/common/Link';
 import { categorizedRoutesComponents } from '@/components/Layout/ComponentsLayout/categorizedRoutesComponents';
 
 export default function ComponentCategoriesSection() {
   return (
-    <div className="px-10">
-      <Tabs defaultTab="layout" variant="default" size="default">
-        <Tabs.List title="All Available Components">
+    <div className="px-10 ">
+      <Tabs defaultTab="layout" >
+        <Tabs.List title="All Available Components"  >
           {categorizedRoutesComponents.map((category, index) => (
-            <Tabs.Trigger key={index} id={category.id} className="text-sm">
+            <Tabs.Trigger key={index} id={category.id} >
               {category.category}
             </Tabs.Trigger>
           ))}
@@ -21,7 +20,7 @@ export default function ComponentCategoriesSection() {
               {category.components.map((component, idx) => (
                 <Link
                   key={idx}
-                  className="border border-gray-100 rounded-md p-4  hover:shadow-sm transition"
+                  className=" rounded-md p-4 dark:bg-black/10  hover:shadow-md transition"
                   to={component.path}
                 >
                   <h3 className="text-sm font-medium text-purple-500">{component.label}</h3>

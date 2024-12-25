@@ -18,6 +18,7 @@ interface DescriptionProps {
 
 interface StepperProps {
   children: ReactNode;
+  className?: string;
 }
 
 interface StepperComponent extends React.FC<StepperProps> {

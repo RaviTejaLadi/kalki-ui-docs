@@ -1,6 +1,8 @@
+import Div from '@/components/common/Div';
 import Link from '@/components/common/Link';
 import Navbar, { NavBarContent, NavBarLogo } from '@/components/common/Navbar/Navbar';
 import NavMenu, { NavMenuItem, NavMenuItemTitle, NavMenuList } from '@/components/common/NavMenu';
+import { ThemeToggle } from './ThemeToggle';
 
 /**
  * Represents an item in the navigation menu.
@@ -43,23 +45,30 @@ const TopBar: React.FC = () => {
   ];
 
   return (
-    <Navbar className="flex h-11 justify-start space-x-10 fixed top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <Link to="/">
-        <NavBarLogo className="text-md tracking-wide text-purple-500">UI Essentials</NavBarLogo>
+    <Navbar className="flex  h-11 justify-start space-x-10 fixed top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <Link to="/" className="w-[10rem]">
+        <NavBarLogo className="text-md tracking-wide text-purple-500 dark:text-white">UI Essentials</NavBarLogo>
       </Link>
-      <NavBarContent className="flex">
-        <NavMenu>
-          <NavMenuList>
-            {navMenuItem.map((item) => (
-              <NavMenuItem key={item.to} size={item.size} to={item.to}>
-                <NavMenuItemTitle>
-                  <span className="text-muted-foreground tracking-wide text-xs font-medium">{item.title}</span>
-                </NavMenuItemTitle>
-              </NavMenuItem>
-            ))}
-          </NavMenuList>
-        </NavMenu>
-      </NavBarContent>
+      <Div className="flex justify-between items-center w-full">
+        <NavBarContent className="flex ">
+          <NavMenu>
+            <NavMenuList>
+              {navMenuItem.map((item) => (
+                <NavMenuItem key={item.to} size={item.size} to={item.to}>
+                  <NavMenuItemTitle>
+                    <span className="text-muted-foreground tracking-wide text-xs font-medium dark:hover:text-gray-800  dark:text-white">
+                      {item.title}
+                    </span>
+                  </NavMenuItemTitle>
+                </NavMenuItem>
+              ))}
+            </NavMenuList>
+          </NavMenu>
+        </NavBarContent>
+        <Div className="hidden md:block">
+          <ThemeToggle />
+        </Div>
+      </Div>
     </Navbar>
   );
 };

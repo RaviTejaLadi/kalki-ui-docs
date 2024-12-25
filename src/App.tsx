@@ -1,5 +1,6 @@
 import { HelmetProvider } from 'react-helmet-async';
 import Router from '@/components/router/Router';
+import { ThemeProvider } from './context/ThemeContext';
 
 /**
  * Root component of the application.
@@ -11,7 +12,9 @@ import Router from '@/components/router/Router';
 export default function App() {
   return (
     <HelmetProvider>
-      <Router />
+      <ThemeProvider>
+        <Router />
+      </ThemeProvider>
     </HelmetProvider>
   );
 }

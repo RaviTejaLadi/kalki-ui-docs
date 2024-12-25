@@ -25,9 +25,9 @@ const useSectionHeaderContext = () => {
 const sectionHeaderVariants = cva('w-full flex', {
   variants: {
     variant: {
-      default: 'bg-background border-b',
-      transparent: 'bg-transparent',
-      outline: 'bg-background border rounded-lg shadow-sm',
+      default: 'bg-background border-b dark:bg-gray-800 dark:border-gray-700',
+      transparent: 'bg-transparent dark:bg-transparent',
+      outline: 'bg-background border rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700',
     },
     size: {
       sm: 'p-4 gap-3',
@@ -48,16 +48,17 @@ const sectionHeaderVariants = cva('w-full flex', {
 });
 
 const titleVariants: Record<Size, string> = {
-  sm: 'text-lg font-semibold tracking-tight',
-  md: 'text-xl font-semibold tracking-tight',
-  lg: 'text-2xl font-semibold tracking-tight',
+  sm: 'text-lg font-semibold tracking-tight dark:text-white',
+  md: 'text-xl font-semibold tracking-tight dark:text-white',
+  lg: 'text-2xl font-semibold tracking-tight dark:text-white',
 };
 
 const subtitleVariants: Record<Size, string> = {
-  sm: 'text-xs text-muted-foreground',
-  md: 'text-sm text-muted-foreground',
-  lg: 'text-md text-muted-foreground',
+  sm: 'text-xs text-muted-foreground dark:text-gray-400',
+  md: 'text-sm text-muted-foreground dark:text-gray-400',
+  lg: 'text-md text-muted-foreground dark:text-gray-400',
 };
+
 
 // Props interfaces
 interface SectionHeaderRootProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'size'> {

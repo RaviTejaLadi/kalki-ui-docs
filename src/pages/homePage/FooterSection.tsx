@@ -14,7 +14,7 @@ const FooterLinks: React.FC<FooterLinksProps> = ({ title, links }) => (
     <h3 className="font-semibold text-base text-purple-500">{title}</h3>
     {links.map((link, index) => (
       <div key={index}>
-        <Link to={link.to} className="text-xs text-black">
+        <Link to={link.to} className="text-xs text-black dark:text-white">
           {link.label}
         </Link>
       </div>
@@ -36,13 +36,13 @@ export const FooterSection = () => {
   ];
 
   return (
-    <footer id="footer" className="mx-10 py-24 sm:py-32">
-      <div className="p-10 w-full border rounded-lg">
+    <footer className="mx-10 pt-24 sm:pt-32 sm:pb-10">
+      <div className="p-10 w-full border dark:border-gray-200/10 rounded-lg">
         <div className="flex justify-between items-center">
           {/* Brand Section */}
           <div>
             <Link to="#" className="flex font-bold items-center text-purple-500 " aria-label="UI Essentials React">
-              <ChevronsDownIcon className="w-9 h-9 mr-2  rounded-lg border border-secondary" />
+              <ChevronsDownIcon className="w-9 h-9 mr-2 rounded-lg border border-secondary dark:border-gray-200/10" />
               <h3 className="text-2xl">UI Essentials React</h3>
             </Link>
           </div>
@@ -54,11 +54,11 @@ export const FooterSection = () => {
           </div>
         </div>
 
-        <hr className="my-6" />
+        <hr className="my-6 dark:bg-gray-200/10" />
 
         {/* Copyright Section */}
         <section className="text-xs">
-          <h3>
+          <h3 className="dark:text-white">
             Copyright &copy; 2024 Designed and developed by
             <Link
               target="_blank"

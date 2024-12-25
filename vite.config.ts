@@ -15,12 +15,9 @@ export default defineConfig({
   server: {
     port: 8847,
     open: true,
-    hmr: {
-      overlay: true,
-    },
     watch: {
       usePolling: true,
-      interval: 50, // Reduced polling interval for faster updates
+      interval: 50, 
     },
   },
 });

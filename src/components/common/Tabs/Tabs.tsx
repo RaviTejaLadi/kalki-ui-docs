@@ -196,7 +196,6 @@ import React, { useState, useEffect, ReactNode, CSSProperties } from 'react';
 import { cva } from 'class-variance-authority';
 import Box from '../Box';
 import { cn } from '@/utils';
-import { Monitor, Smartphone, Tablet } from 'lucide-react';
 
 interface TabProps {
   label: string;
@@ -226,15 +225,15 @@ const tabButtonStyles = cva(
   {
     variants: {
       variant: {
-        primary: 'bg-blue-50 text-blue-800 hover:bg-blue-100 border border-blue-200',
-        secondary: 'bg-gray-50 text-muted-foreground hover:bg-gray-100 border border-gray-200',
-        success: 'bg-green-50 text-green-800 hover:bg-green-100 border border-green-200',
-        danger: 'bg-red-50 text-red-800 hover:bg-red-100 border border-red-200',
-        warning: 'bg-yellow-50 text-yellow-800 hover:bg-yellow-100 border border-yellow-200',
-        help: 'bg-purple-50 text-purple-800 hover:bg-purple-100 border border-purple-200',
-        info: 'bg-cyan-50 text-cyan-800 hover:bg-cyan-100 border border-cyan-200',
-        dark: 'bg-gray-800 text-white hover:bg-gray-700 border border-gray-900',
-        light: 'bg-gray-50 text-muted-foreground hover:bg-gray-100 border border-gray-300',
+        primary: 'bg-blue-50 text-blue-800 hover:bg-blue-100 border border-blue-200 dark:bg-blue-900 dark:text-blue-100 dark:border-blue-800 dark:hover:bg-blue-800',
+        secondary: 'bg-gray-50 text-gray-800 hover:bg-gray-100 border border-gray-200 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-700 dark:hover:bg-gray-700',
+        success: 'bg-green-50 text-green-800 hover:bg-green-100 border border-green-200 dark:bg-green-900 dark:text-green-100 dark:border-green-800 dark:hover:bg-green-800',
+        danger: 'bg-red-50 text-red-800 hover:bg-red-100 border border-red-200 dark:bg-red-900 dark:text-red-100 dark:border-red-800 dark:hover:bg-red-800',
+        warning: 'bg-yellow-50 text-yellow-800 hover:bg-yellow-100 border border-yellow-200 dark:bg-yellow-900 dark:text-yellow-100 dark:border-yellow-800 dark:hover:bg-yellow-800',
+        help: 'bg-purple-50 text-purple-800 hover:bg-purple-100 border border-purple-200 dark:bg-purple-900 dark:text-purple-100 dark:border-purple-800 dark:hover:bg-purple-800',
+        info: 'bg-cyan-50 text-cyan-800 hover:bg-cyan-100 border border-cyan-200 dark:bg-cyan-900 dark:text-cyan-100 dark:border-cyan-800 dark:hover:bg-cyan-800',
+        dark: 'bg-gray-800 text-white hover:bg-gray-700 border border-gray-900 dark:bg-black dark:border-gray-700 dark:hover:bg-gray-900',
+        light: 'bg-gray-50 text-gray-800 hover:bg-gray-100 border border-gray-300 dark:bg-gray-900 dark:text-gray-100 dark:border-gray-700 dark:hover:bg-gray-800',
       },
       size: {
         sm: 'text-xs px-3 py-1.5 space-x-2',
@@ -254,47 +253,47 @@ const tabButtonStyles = cva(
       {
         variant: 'primary',
         active: true,
-        class: 'ring-blue-300 bg-blue-100',
+        class: 'ring-blue-300 bg-blue-100 dark:ring-blue-600 dark:bg-blue-800',
       },
       {
         variant: 'secondary',
         active: true,
-        class: 'ring-gray-300 text-foreground bg-gray-100',
+        class: 'ring-gray-300 bg-gray-100 dark:ring-gray-600 dark:bg-gray-700',
       },
       {
         variant: 'success',
         active: true,
-        class: 'ring-green-300 bg-green-100',
+        class: 'ring-green-300 bg-green-100 dark:ring-green-600 dark:bg-green-800',
       },
       {
         variant: 'danger',
         active: true,
-        class: 'ring-red-300 bg-red-100',
+        class: 'ring-red-300 bg-red-100 dark:ring-red-600 dark:bg-red-800',
       },
       {
         variant: 'warning',
         active: true,
-        class: 'ring-yellow-300 bg-yellow-100',
+        class: 'ring-yellow-300 bg-yellow-100 dark:ring-yellow-600 dark:bg-yellow-800',
       },
       {
         variant: 'help',
         active: true,
-        class: 'ring-purple-300 bg-purple-100',
+        class: 'ring-purple-300 bg-purple-100 dark:ring-purple-600 dark:bg-purple-800',
       },
       {
         variant: 'info',
         active: true,
-        class: 'ring-cyan-300 bg-cyan-100',
+        class: 'ring-cyan-300 bg-cyan-100 dark:ring-cyan-600 dark:bg-cyan-800',
       },
       {
         variant: 'dark',
         active: true,
-        class: 'ring-gray-600 bg-gray-700',
+        class: 'ring-gray-600 bg-gray-700 dark:ring-gray-500 dark:bg-gray-800',
       },
       {
         variant: 'light',
         active: true,
-        class: 'ring-gray-300 text-foreground bg-gray-200',
+        class: 'ring-gray-300 bg-gray-200 dark:ring-gray-600 dark:bg-gray-700',
       },
     ],
     defaultVariants: {
@@ -314,7 +313,6 @@ export const Tabs: React.FC<TabsProps> = ({
   bodyStyles,
   className,
   style,
-  title,
 }) => {
   const getInitialActiveTab = () => {
     const firstEnabledTab = React.Children.toArray(children).find((child: any) => !child.props.disabled);
@@ -322,7 +320,6 @@ export const Tabs: React.FC<TabsProps> = ({
   };
 
   const [activeTab, setActiveTab] = useState(getInitialActiveTab);
-  const [tabSize, setTabSize] = useState<'sm' | 'md' | 'lg'>(size);
 
   useEffect(() => {
     if (active !== undefined) {
@@ -337,24 +334,14 @@ export const Tabs: React.FC<TabsProps> = ({
     }
   };
 
-  const handleSizeChange = (size: 'sm' | 'md' | 'lg') => {
-    setTabSize(size);
-  };
-  // const getContentWidthClass = () => {
-  //   switch (tabSize) {
-  //     case 'lg':
-  //       return 'w-full';
-  //     case 'md':
-  //       return 'w-3/4';
-  //     case 'sm':
-  //       return 'w-1/2';
-  //     default:
-  //       return 'w-full';
-  //   }
-  // };
   return (
     <Box padding="5" rounded className={cn(className)} style={style}>
-      <div className={cn('flex mb-2 p-1 items-center bg-white border rounded-md overflow-x-auto', headerStyles)}>
+      <div
+        className={cn(
+          'flex mb-2 p-1 items-center bg-inherit border rounded-md overflow-x-auto dark:bg-gray-800 dark:border-gray-700',
+          headerStyles
+        )}
+      >
         {React.Children.map(children, (child: any) => (
           <button
             key={child.props.value}
@@ -380,22 +367,13 @@ export const Tabs: React.FC<TabsProps> = ({
             )}
           </button>
         ))}
-        {/* <div className="flex justify-between w-full items-center">
-          <div className="text-foreground font-medium text-xs ml-2 ">{title}</div>
-          <div className="flex items-center justify-end gap-2 p-1 rounded-md border border-gray-100 bg-gray-50">
-            {[{ Component: Monitor, size: 'lg' }, { Component: Tablet, size: 'md' }, { Component: Smartphone, size: 'sm' }].map(({ Component, size }, index) => (
-              <button
-                key={index}
-                className="p-1 rounded hover:bg-gray-100"
-                onClick={() => handleSizeChange(size as 'sm' | 'md' | 'lg')}
-              >
-                <Component className="size-4 text-foreground hover:text-muted-foreground" />
-              </button>
-            ))}
-          </div>
-        </div> */}
       </div>
-      <div className={cn('bg-white border flex items-center rounded-md overflow-y-auto', bodyStyles)}>
+      <div
+        className={cn(
+          'bg-white border flex items-center rounded-md overflow-y-auto dark:bg-gray-800 dark:border-gray-700',
+          bodyStyles
+        )}
+      >
         {React.Children.toArray(children).find((child: any) => child.props.value === activeTab)}
       </div>
     </Box>

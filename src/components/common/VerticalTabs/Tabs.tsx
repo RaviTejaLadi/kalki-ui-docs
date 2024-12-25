@@ -1,68 +1,15 @@
-import { cva, type VariantProps } from 'class-variance-authority';
-import React, { createContext, useContext, useState } from 'react';
 import { cn } from '@/utils';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
-// Variants definition using cva
-const tabListVariants = cva('transition-all duration-200', {
-  variants: {
-    variant: {
-      default: 'w-80 bg-white',
-    },
-    size: {
-      default: 'min-h-[500px]',
-      full: 'min-h-screen',
-      auto: 'min-h-fit',
-    },
-    mobile: {
-      true: 'w-full border-r-0 border-b',
-      false: '',
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-    size: 'default',
-    mobile: false,
-  },
-});
-
-const tabTriggerVariants = cva(
-  'relative flex items-center border mx-2 my-1 rounded px-4 py-1 text-left transition-all duration-150 hover:bg-gray-50 border-b border-gray-200 cursor-pointer',
-  {
-    variants: {
-      variant: {
-        default: [
-          'hover:bg-gray-50 ',
-          'data-[state=active]:bg-purple-50 data-[state=active]:text-purple-600',
-          'data-[state=active]:before:absolute data-[state=active]:before:left-0',
-          'data-[state=active]:before:h-1/2  data-[state=active]:before:w-1',
-          'data-[state=active]:before:bg-purple-600',
-          'data-[state=active]:before:rounded',
-        ],
-      },
-      mobile: {
-        true: 'border-r border-gray-200',
-        false: '',
-      },
-    },
-    defaultVariants: {
-      variant: 'default',
-      mobile: false,
-    },
-  }
-);
-
-type TabListVariantProps = VariantProps<typeof tabListVariants>;
-
-// Types
+// Context type
 type TabsContextType = {
   activeTab: string;
   setActiveTab: (id: string) => void;
-  variant: TabListVariantProps['variant'];
-  size: TabListVariantProps['size'];
   isMobile: boolean;
 };
 
-interface TabsProps extends TabListVariantProps {
+// Props types
+interface TabsProps {
   defaultTab: string;
   children: React.ReactNode;
   className?: string;
@@ -87,16 +34,8 @@ interface TabContentProps {
   className?: string;
 }
 
-// Context and default values
-const defaultTabsContext: TabsContextType = {
-  activeTab: '',
-  setActiveTab: () => {},
-  variant: 'default',
-  size: 'default',
-  isMobile: false,
-};
-
-const TabsContext = createContext<TabsContextType>(defaultTabsContext);
+// Context setup
+const TabsContext = createContext<TabsContextType | undefined>(undefined);
 
 const useTabs = () => {
   const context = useContext(TabsContext);
@@ -107,22 +46,27 @@ const useTabs = () => {
 };
 
 // Components
-const Tabs = ({ defaultTab, children, variant = 'default', size = 'default', className }: TabsProps) => {
+const Tabs = ({ defaultTab, children, className }: TabsProps) => {
   const [activeTab, setActiveTab] = useState(defaultTab);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(false);
 
-  React.useEffect(() => {
-    const handleResize = () => {
+  useEffect(() => {
+    const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   return (
-    <TabsContext.Provider value={{ activeTab, setActiveTab, variant, size, isMobile }}>
-      <div className={cn('flex w-full border-none rounded-md', isMobile ? 'flex-col' : 'flex-row', className)}>
+    <TabsContext.Provider value={{ activeTab, setActiveTab, isMobile }}>
+      <div className={cn(
+        'flex w-full rounded-md',
+        isMobile ? 'flex-col' : 'flex-row',
+        className
+      )}>
         {children}
       </div>
     </TabsContext.Provider>
@@ -130,38 +74,73 @@ const Tabs = ({ defaultTab, children, variant = 'default', size = 'default', cla
 };
 
 const TabList = ({ children, title, className }: TabListProps) => {
-  const { variant, size, isMobile } = useTabs();
+  const { isMobile } = useTabs();
 
   return (
-    <div className={cn(tabListVariants({ variant, size, mobile: isMobile }), className)}>
-      {title && <div className={cn('px-4 py-3 font-medium text-foreground text-sm')}>{title}</div>}
-      <nav className={cn('flex', isMobile ? 'flex-row overflow-x-auto' : 'flex-col')}>{children}</nav>
+    <div className={cn(
+      'bg-inherit transition-all duration-200',
+      isMobile ? 'w-full' : 'w-80',
+      className
+    )}>
+      {title && (
+        <div className="px-4 py-3 font-medium text-sm text-foreground dark:text-gray-200">
+          {title}
+        </div>
+      )}
+      <nav className={cn(
+        'flex',
+        isMobile ? 'flex-row overflow-x-auto scrollbar-hide' : 'flex-col'
+      )}>
+        {children}
+      </nav>
     </div>
   );
 };
 
 const TabTrigger = ({ id, children, className, icon }: TabTriggerProps) => {
-  const { activeTab, setActiveTab, variant, isMobile } = useTabs();
+  const { activeTab, setActiveTab, isMobile } = useTabs();
+  const isActive = activeTab === id;
 
   return (
     <button
       onClick={() => setActiveTab(id)}
-      data-state={activeTab === id ? 'active' : 'inactive'}
-      className={cn(tabTriggerVariants({ variant, mobile: isMobile }), className)}
+      className={cn(
+        'relative rounded-sm h-8 text-sm flex items-center transition-all duration-150',
+        'border border-gray-200 dark:border-gray-700',
+        'hover:bg-gray-50 dark:hover:bg-gray-800',
+        'text-foreground dark:text-foreground',
+        isMobile
+          ? 'mx-1 my-2 px-3 py-2 text-sm whitespace-nowrap'
+          : 'mx-2 my-1 px-4 py-2',
+        isActive && [
+          'bg-purple-50 dark:bg-gray-900/10',
+          'text-foreground dark:text-foreground', 
+        ],
+        isActive && !isMobile && 'before:absolute before:left-0 before:h-1/2 before:w-1 before:bg-gray-600 dark:before:bg-gray-400 before:rounded',
+        isActive && isMobile && 'border-b-2 border-b-gray-600 dark:border-b-gray-400',
+        className
+      )}
     >
-      {icon && <span className="mr-3">{icon}</span>}
-      <span className={cn('whitespace-nowrap text-foreground')}>{children}</span>
+      {icon && <span className={cn('inline-flex', isMobile ? 'mr-2' : 'mr-3')}>{icon}</span>}
+      <span className="whitespace-nowrap">{children}</span>
     </button>
   );
 };
 
 const TabContent = ({ id, children, className }: TabContentProps) => {
-  const { activeTab } = useTabs();
+  const { activeTab, isMobile } = useTabs();
 
   if (activeTab !== id) return null;
 
   return (
-    <div className={cn('flex-1 p-6  mx-2 animate-in fade-in-50 duration-200 text-muted-foreground', className)}>
+    <div
+      className={cn(
+        'animate-in fade-in-50 duration-200',
+        'text-gray-700 dark:text-gray-300',
+        isMobile ? 'p-4' : 'flex-1 p-6 mx-2',
+        className
+      )}
+    >
       {children}
     </div>
   );

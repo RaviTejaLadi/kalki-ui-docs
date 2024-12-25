@@ -6,25 +6,29 @@ import { compExampleCode, componentCode, setupSnippet } from './Snippet';
 import { Code, Terminal } from 'lucide-react';
 import Button from '@/components/common/Button';
 import Box from '@/components/common/Box';
+import { useTheme } from '@/context/ThemeContext';
 
 const GetStarted: React.FC = () => {
+  const { theme } = useTheme();
   return (
     <div className="container">
       <SectionHeader variant={'transparent'} className="mb-5" size="sm">
-        <SectionHeader.Title>Quick Start</SectionHeader.Title>
-        <SectionHeader.SubTitle>Getting Started with UI Essentials React</SectionHeader.SubTitle>
+        <SectionHeader.Title className="dark:text-foreground">Quick Start</SectionHeader.Title>
+        <SectionHeader.SubTitle className="dark:text-muted-foreground">
+          Getting Started with UI Essentials React
+        </SectionHeader.SubTitle>
       </SectionHeader>
-      <SectionHeader size="sm">
-        <SectionHeader.Title>Introduction</SectionHeader.Title>
-        <SectionHeader.SubTitle>
+      <SectionHeader size="sm" className="bg-inherit">
+        <SectionHeader.Title className="dark:text-foreground">Introduction</SectionHeader.Title>
+        <SectionHeader.SubTitle className="dark:text-muted-foreground">
           To import a component from this package. you first need to ensure that the package is installed in your
           project. You can install it using npm or yarn or pnpm. Here’s how you can do it:
         </SectionHeader.SubTitle>
       </SectionHeader>
-      <Stepper>
+      <Stepper className="bg-inherit">
         <Stepper.Step step="1" title="Install the Package">
           <Stepper.Description>Install the package in your project directory with:</Stepper.Description>
-          <Tabs variant="secondary" size="sm">
+          <Tabs variant={'secondary'} size="sm">
             {usage.map((item) => (
               <Tab label={item.label} value={item.label} leftIcon={item.icon}>
                 <Stepper.CodeBlock code={item.content} language="jsx" />
@@ -48,7 +52,7 @@ const GetStarted: React.FC = () => {
             After importing the Button component, you can use it in your React component:
           </Stepper.Description>
 
-          <Tabs variant="help">
+          <Tabs variant="secondary">
             <Tab label="Preview" value="preview" leftIcon={<Terminal className="size-4" />}>
               <Box
                 padding="10px"

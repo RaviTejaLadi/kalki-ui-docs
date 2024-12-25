@@ -19,7 +19,7 @@ export default function ComponentsLayout() {
   return (
     <div className="flex  relative">
       <div className="fixed">
-        <Sidebar className="border-r">
+        <Sidebar className="border-r bg-inherit">
           <SidebarBody>
             <SidebarGroup>
               <SidebarGroupLabel>Components</SidebarGroupLabel>
