@@ -8,12 +8,7 @@ const StepperContext = createContext({});
 export const Stepper: StepperComponent = ({ children, className }) => {
   return (
     <StepperContext.Provider value={{}}>
-      <div
-        className={cn(
-          'w-full mx-auto p-6 bg-white text-foreground dark:bg-inherit dark:text-gray-100',
-          className
-        )}
-      >
+      <div className={cn('w-full mx-auto p-6 bg-white text-foreground dark:bg-inherit dark:text-gray-100', className)}>
         <div className="relative">{children}</div>
       </div>
     </StepperContext.Provider>
@@ -45,16 +40,7 @@ const StepperCodeBlock: React.FC<CodeBlockProps> = ({ code, language, ...rest })
 };
 
 const StepperDescription: React.FC<DescriptionProps> = ({ children, className }) => {
-  return (
-    <p
-      className={cn(
-        'text-muted-foreground mb-4 dark:text-gray-400',
-        className
-      )}
-    >
-      {children}
-    </p>
-  );
+  return <p className={cn('text-muted-foreground mb-4 dark:text-gray-400', className)}>{children}</p>;
 };
 
 Stepper.Step = StepperStep;

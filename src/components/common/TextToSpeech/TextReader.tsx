@@ -113,7 +113,7 @@ export function TextReader({ children, className = '' }: TextReaderProps) {
         <Div className="flex items-center space-x-2">
           <Tooltip content="Slow down">
             <Button
-              variant={'ghost'}
+              variant="ghost"
               onClick={() => setRate(Math.max(0.5, rate - 0.25))}
               aria-label="Slow down"
               disabled={rate <= 0.5}
@@ -123,14 +123,14 @@ export function TextReader({ children, className = '' }: TextReaderProps) {
           </Tooltip>
 
           <Tooltip content={isPlaying ? 'Pause' : 'Play'}>
-            <Button variant={'primary'} onClick={handlePlayPause} aria-label={isPlaying ? 'Pause' : 'Play'} rounded>
+            <Button variant="primary" onClick={handlePlayPause} aria-label={isPlaying ? 'Pause' : 'Play'} rounded>
               {isPlaying ? <Pause className="size-4" /> : <Play className="size-4" />}
             </Button>
           </Tooltip>
 
           <Tooltip content="Speed up">
             <Button
-              variant={'ghost'}
+              variant="ghost"
               onClick={() => setRate(Math.min(2, rate + 0.25))}
               aria-label="Speed up"
               disabled={rate >= 2}
@@ -141,7 +141,7 @@ export function TextReader({ children, className = '' }: TextReaderProps) {
 
           <Tooltip content="Restart">
             <Button
-              variant={'ghost'}
+              variant="ghost"
               onClick={handleRestart}
               aria-label="Restart"
               className="hover:bg-gray-200 transition-colors"
@@ -151,7 +151,7 @@ export function TextReader({ children, className = '' }: TextReaderProps) {
           </Tooltip>
 
           <Tooltip content="Volume">
-            <Button variant={'ghost'} onClick={() => setVolume(volume === 0 ? 1 : 0)} aria-label="Toggle Mute">
+            <Button variant="ghost" onClick={() => setVolume(volume === 0 ? 1 : 0)} aria-label="Toggle Mute">
               {getVolumeIcon()}
             </Button>
           </Tooltip>

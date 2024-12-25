@@ -17,7 +17,7 @@ export default defineConfig({
     open: true,
     watch: {
       usePolling: true,
-      interval: 50, 
+      interval: 50,
     },
   },
 });

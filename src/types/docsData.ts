@@ -1,3 +1,5 @@
+import React from 'react';
+
 /**
  * Interface representing documentation data structure.
  * @interface docsData

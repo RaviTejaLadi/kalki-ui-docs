@@ -62,13 +62,7 @@ const Tabs = ({ defaultTab, children, className }: TabsProps) => {
 
   return (
     <TabsContext.Provider value={{ activeTab, setActiveTab, isMobile }}>
-      <div className={cn(
-        'flex w-full rounded-md',
-        isMobile ? 'flex-col' : 'flex-row',
-        className
-      )}>
-        {children}
-      </div>
+      <div className={cn('flex w-full rounded-md', isMobile ? 'flex-col' : 'flex-row', className)}>{children}</div>
     </TabsContext.Provider>
   );
 };
@@ -77,22 +71,9 @@ const TabList = ({ children, title, className }: TabListProps) => {
   const { isMobile } = useTabs();
 
   return (
-    <div className={cn(
-      'bg-inherit transition-all duration-200',
-      isMobile ? 'w-full' : 'w-80',
-      className
-    )}>
-      {title && (
-        <div className="px-4 py-3 font-medium text-sm text-foreground dark:text-gray-200">
-          {title}
-        </div>
-      )}
-      <nav className={cn(
-        'flex',
-        isMobile ? 'flex-row overflow-x-auto scrollbar-hide' : 'flex-col'
-      )}>
-        {children}
-      </nav>
+    <div className={cn('bg-inherit transition-all duration-200', isMobile ? 'w-full' : 'w-80', className)}>
+      {title && <div className="px-4 py-3 font-medium text-sm text-foreground dark:text-gray-200">{title}</div>}
+      <nav className={cn('flex', isMobile ? 'flex-row overflow-x-auto scrollbar-hide' : 'flex-col')}>{children}</nav>
     </div>
   );
 };
@@ -109,14 +90,11 @@ const TabTrigger = ({ id, children, className, icon }: TabTriggerProps) => {
         'border border-gray-200 dark:border-gray-700',
         'hover:bg-gray-50 dark:hover:bg-gray-800',
         'text-foreground dark:text-foreground',
-        isMobile
-          ? 'mx-1 my-2 px-3 py-2 text-sm whitespace-nowrap'
-          : 'mx-2 my-1 px-4 py-2',
-        isActive && [
-          'bg-purple-50 dark:bg-gray-900/10',
-          'text-foreground dark:text-foreground', 
-        ],
-        isActive && !isMobile && 'before:absolute before:left-0 before:h-1/2 before:w-1 before:bg-gray-600 dark:before:bg-gray-400 before:rounded',
+        isMobile ? 'mx-1 my-2 px-3 py-2 text-sm whitespace-nowrap' : 'mx-2 my-1 px-4 py-2',
+        isActive && ['bg-purple-50 dark:bg-gray-900/10', 'text-foreground dark:text-foreground'],
+        isActive &&
+          !isMobile &&
+          'before:absolute before:left-0 before:h-1/2 before:w-1 before:bg-gray-600 dark:before:bg-gray-400 before:rounded',
         isActive && isMobile && 'border-b-2 border-b-gray-600 dark:border-b-gray-400',
         className
       )}

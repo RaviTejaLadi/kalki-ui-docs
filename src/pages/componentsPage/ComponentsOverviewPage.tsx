@@ -8,7 +8,7 @@ import { categorizedRoutesComponents } from '@/components/Layout/ComponentsLayou
 const ComponentsOverviewPage: React.FC = () => {
   return (
     <div className="container">
-      <SectionHeader variant={'transparent'} size="sm">
+      <SectionHeader variant="transparent" size="sm">
         <SectionHeader.Title className="tracking-wide">Components overview</SectionHeader.Title>
         <SectionHeader.SubTitle className="tracking-wide">
           Every UI Essentials component available so far. Accessible, modern and easy to style UI components.

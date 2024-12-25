@@ -9,7 +9,7 @@
  * @return The last position of the target in the subject, or -1 if it does not exist.
  */
 export function turboLastIndexOf<T>(subject: T[], target: T, fromIndex?: number): number {
-  let length = subject.length;
+  const length = subject.length;
   let i = length - 1;
 
   if (typeof fromIndex === 'number') {

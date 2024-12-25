@@ -39,7 +39,7 @@ export const createProtectedContext = (errorMessage: string) => {
 
   // Memoize the Provider component
   const Provider: React.FC<ProviderProps> = React.memo(({ children }) => (
-    <Context.Provider value={true}>{children}</Context.Provider>
+    <Context.Provider value>{children}</Context.Provider>
   ));
 
   // Name the component for better debugging

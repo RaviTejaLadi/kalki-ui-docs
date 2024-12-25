@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const THEMES = { light: '', dark: '.dark' } as const;
 

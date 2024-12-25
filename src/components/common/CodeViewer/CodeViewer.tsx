@@ -201,9 +201,7 @@ const CodeViewerFile = forwardRef<HTMLDivElement, CodeViewerFileProps>(
         )}
         onClick={() => setSelectedFile({ id, name, content: children || '' })}
       >
-        {icon ? (
-          icon
-        ) : (
+        {icon || (
           <FileText
             className={cn(
               'ml-6 mr-1.5 size-4',

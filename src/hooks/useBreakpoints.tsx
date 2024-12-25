@@ -36,13 +36,13 @@ const getBreakpoint = (width: number, breakpoints: Breakpoints): string => {
 
 /**
  * Custom React hook to get the current screen size and breakpoint based on the provided breakpoints.
- * 
+ *
  * @param {Partial<Breakpoints>} customBreakpoints - An optional object to override the default breakpoints.
  * @returns {ScreenSize} An object containing the current screen width and the corresponding breakpoint.
- * 
+ *
  * @example
  * const { width, breakpoint } = useBreakpoints();
- * 
+ *
  * @example
  * const customBreakpoints = { sm: 480, md: 768, lg: 1024, xl: 1280 };
  * const { width, breakpoint } = useBreakpoints(customBreakpoints);

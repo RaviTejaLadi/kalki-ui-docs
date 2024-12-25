@@ -35,7 +35,7 @@ const DocumentationRenderer: React.FC<DocumentationRendererProps> = ({ data, cla
       {data?.map((item: docsData) => {
         return (
           <div className="my-5" key={item.title.slice(0, 3)}>
-            <SectionHeader variant={'transparent'} size="sm">
+            <SectionHeader variant="transparent" size="sm">
               <SectionHeader.Title className="tracking-wide">{item.title}</SectionHeader.Title>
               <SectionHeader.SubTitle className="tracking-wide">{item.desc}</SectionHeader.SubTitle>
             </SectionHeader>

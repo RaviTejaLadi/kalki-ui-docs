@@ -59,7 +59,6 @@ const subtitleVariants: Record<Size, string> = {
   lg: 'text-md text-muted-foreground dark:text-gray-400',
 };
 
-
 // Props interfaces
 interface SectionHeaderRootProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'size'> {
   variant?: VariantProps<typeof sectionHeaderVariants>['variant'];

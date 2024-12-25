@@ -8,10 +8,12 @@
     "skipLibCheck": false,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
+
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -22,8 +24,7 @@
     "baseUrl": "./src",
     "paths": {
       "@/*": ["./*"]
-    },
-
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

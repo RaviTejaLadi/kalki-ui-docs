@@ -11,10 +11,12 @@ import { ThemeProvider } from './context/ThemeContext';
  */
 export default function App() {
   return (
-    <HelmetProvider>
-      <ThemeProvider>
-        <Router />
-      </ThemeProvider>
-    </HelmetProvider>
+    <div className="bg-gray-50 dark:bg-gray-900/90">
+      <HelmetProvider>
+        <ThemeProvider>
+          <Router />
+        </ThemeProvider>
+      </HelmetProvider>
+    </div>
   );
 }

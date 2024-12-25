@@ -4,7 +4,7 @@ export function splitTextIntoChunks(text: string, maxLength: number = 200): stri
   let currentChunk = '';
 
   for (const word of words) {
-    if ((currentChunk + ' ' + word).length <= maxLength) {
+    if (`${currentChunk} ${word}`.length <= maxLength) {
       currentChunk += (currentChunk ? ' ' : '') + word;
     } else {
       chunks.push(currentChunk);

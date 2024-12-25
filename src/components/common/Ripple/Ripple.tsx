@@ -58,7 +58,7 @@ const Ripple = forwardRef<HTMLDivElement, RippleProps>(
               backgroundColor: color,
               animationDuration: `${duration}ms`,
             }}
-            className={'absolute rounded-full opacity-75 scale-0 animate-ripple'}
+            className="absolute rounded-full opacity-75 scale-0 animate-ripple"
           />
         ))}
       </div>

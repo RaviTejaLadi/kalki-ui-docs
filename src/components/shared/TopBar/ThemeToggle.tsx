@@ -7,7 +7,7 @@ export const ThemeToggle: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <Button variant={'ghost'} onClick={toggleTheme} aria-label="Toggle theme" rounded>
+    <Button variant="ghost" onClick={toggleTheme} aria-label="Toggle theme" rounded>
       {theme === 'light' ? (
         <Moon className="size-4 text-gray-800 dark:text-gray-200" />
       ) : (

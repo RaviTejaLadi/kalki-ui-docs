@@ -1,5 +1,7 @@
 import Link from '@/components/common/Link';
 import { ChevronsDownIcon } from 'lucide-react';
+import React from 'react';
+
 interface link {
   label: string;
   to: string;

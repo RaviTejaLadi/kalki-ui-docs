@@ -38,7 +38,7 @@ sumAfter(1, 2); // No output
 sumAfter(3, 4); // Logs: "Sum: 7"
 
 // 3. Using in a loop
-let counter = 0;
+const counter = 0;
 const countAfter = after(5, () => console.log('Count reached 5'));
 for (let i = 1; i <= 7; i++) {
   console.log(`Call ${i}`);

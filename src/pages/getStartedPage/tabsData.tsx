@@ -9,7 +9,7 @@ interface usageData {
   content: string;
   icon: React.ReactNode;
 }
-export let usage: usageData[] = [
+export const usage: usageData[] = [
   {
     label: 'npm',
     content: npmSnippet,
@@ -27,7 +27,7 @@ export let usage: usageData[] = [
   },
 ];
 
-export let demoExample = [
+export const demoExample = [
   {
     label: 'Preview',
     content: (

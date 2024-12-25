@@ -5,10 +5,10 @@ import { categorizedRoutesComponents } from '@/components/Layout/ComponentsLayou
 export default function ComponentCategoriesSection() {
   return (
     <div className="px-10 ">
-      <Tabs defaultTab="layout" >
-        <Tabs.List title="All Available Components"  >
+      <Tabs defaultTab="layout">
+        <Tabs.List title="All Available Components">
           {categorizedRoutesComponents.map((category, index) => (
-            <Tabs.Trigger key={index} id={category.id} >
+            <Tabs.Trigger key={index} id={category.id}>
               {category.category}
             </Tabs.Trigger>
           ))}

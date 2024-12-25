@@ -12,7 +12,7 @@ export const HeroSection = () => {
         <div className="text-center space-y-8">
           <Badge variant={theme ? 'light' : 'dark'} className="text-sm dark:bg-gray-200/10 rounded-full py-2">
             <span className="mr-2 text-primary">
-              <Badge variant={'help'} className="rounded-full tracking-wide">
+              <Badge variant="help" className="rounded-full tracking-wide">
                 New
               </Badge>
             </span>
@@ -25,14 +25,14 @@ export const HeroSection = () => {
           </div>
 
           <p className="max-w-screen-sm mx-auto text-xl tracking-wide text-muted-foreground">
-            {`Best Package For All Your Ui Needs`}
+            Best Package For All Your Ui Needs
           </p>
 
           <div className="space-y-4 md:space-y-0 md:space-x-4">
             <Link to="/get-started">
               <Button
                 size="xs"
-                variant={'outline'}
+                variant="outline"
                 className="w-5/6 md:w-1/4 text-foreground text-xs hover:text-purple-400 dark:bg-inherit font-bold group/arrow"
               >
                 Get Started
@@ -40,8 +40,12 @@ export const HeroSection = () => {
               </Button>
             </Link>
 
-            <Button size="xs" variant={'ghost'} className="w-5/6 md:w-1/4 text-black hover:text-purple-400 font-bold">
-              <Link className="text-xs text-dark dark:text-white" to="https://github.com/nobruf/shadcn-landing-page.git" target="_blank">
+            <Button size="xs" variant="ghost" className="w-5/6 md:w-1/4 text-black hover:text-purple-400 font-bold">
+              <Link
+                className="text-xs text-dark dark:text-white"
+                to="https://github.com/nobruf/shadcn-landing-page.git"
+                target="_blank"
+              >
                 Github repository
               </Link>
             </Button>

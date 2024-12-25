@@ -71,7 +71,7 @@ const TextCarousel = forwardRef<HTMLDivElement, TextCarouselProps>(
     return (
       <Box ref={ref} padding="8px" className={cn('flex flex-col justify-center ', className)} style={style} {...rest}>
         <Box padding="6px" className="relative overflow-hidden">
-          <div className={`transition-opacity duration-500`}>{cloneElement(items[index])}</div>
+          <div className="transition-opacity duration-500">{cloneElement(items[index])}</div>
         </Box>
         <Box className="flex gap-5 ">
           <Button onClick={goToPrev} variant={variant} size={size}>

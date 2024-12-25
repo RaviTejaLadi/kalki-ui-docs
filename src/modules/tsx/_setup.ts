@@ -1,6 +1,6 @@
 // Save bytes in the minified (but not gzipped) version:
-export const ArrayProto = Array.prototype,
-  ObjProto = Object.prototype;
+export const ArrayProto = Array.prototype;
+export const ObjProto = Object.prototype;
 export const SymbolProto = typeof Symbol !== 'undefined' ? Symbol.prototype : null;
 
 // Create quick reference variables for speed access to core prototypes.
