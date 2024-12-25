@@ -10,14 +10,14 @@ import Sidebar, {
   SidebarMenuSubItem,
   SidebarGroupContent,
 } from '@/components/common/SideBar';
-import { Calendar, Home, Inbox, MessageSquare, Search, Settings } from 'lucide-react';
+import { MessageSquare } from 'lucide-react';
 import { categorizedRoutesComponents } from './categorizedRoutesComponents';
 import Link from '@/components/common/Link';
 import { cn } from '@/utils';
 
 export default function ComponentsLayout() {
   return (
-    <div className="flex  relative">
+    <div className="flex relative ">
       <div className="fixed">
         <Sidebar className="border-r bg-inherit">
           <SidebarBody>

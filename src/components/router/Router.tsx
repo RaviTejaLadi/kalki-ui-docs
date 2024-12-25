@@ -14,11 +14,11 @@ const NotFoundScreen = lazy(() => import('@/pages/NotFound'));
 
 function Layout() {
   return (
-    <div className="relative min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
+    <div className="relative min-h-screen flex flex-col ">
       <div className="fixed top-0 left-0 right-0 z-50 h-11">
         <TopBar />
       </div>
-      <main className="flex-grow pt-11">
+      <main className="flex-grow pt-11 ">
         <Suspense fallback={<Loading />}>
           <Outlet />
         </Suspense>
