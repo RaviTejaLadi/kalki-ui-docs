@@ -49,14 +49,14 @@ const TopBar: React.FC = () => {
       <Link to="/" className="w-[10rem]">
         <NavBarLogo className="text-md tracking-wide text-purple-500 dark:text-foreground">UI Essentials</NavBarLogo>
       </Link>
-      <Div className="flex justify-between items-center w-full">
+      <Div className="flex justify-between  items-center w-full">
         <NavBarContent className="flex ">
           <NavMenu>
             <NavMenuList>
               {navMenuItem.map((item) => (
-                <NavMenuItem key={item.to} size={item.size} to={item.to}>
+                <NavMenuItem key={item.to} size={item.size} variant='light' to={item.to}>
                   <NavMenuItemTitle>
-                    <span className="text-muted-foreground tracking-wide text-xs font-medium dark:hover:text-gray-800  dark:text-muted-foreground ">
+                    <span className="text-muted-foreground tracking-wide text-xs font-medium ">
                       {item.title}
                     </span>
                   </NavMenuItemTitle>
