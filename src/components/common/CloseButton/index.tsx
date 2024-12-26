@@ -32,7 +32,7 @@ const CloseButton = forwardRef<HTMLButtonElement, CloseButtonProps>(
         style={style}
         {...rest}
       >
-        <X className="m-[-2px]" width={iconSize} height={iconSize} />
+        <X className="m-[-2px] text-foreground" width={iconSize} height={iconSize} />
       </button>
     );
   }

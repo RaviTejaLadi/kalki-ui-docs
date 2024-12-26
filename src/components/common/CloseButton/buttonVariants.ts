@@ -3,8 +3,18 @@ import { cva } from 'class-variance-authority';
 export const buttonVariants = cva('flex items-center justify-center rounded transition ease-in-out duration-150', {
   variants: {
     variant: {
-      light: 'bg-light border-gray-100 hover:bg-gray-200 hover:border-gray-200',
-      dark: 'bg-dark border-gray-700 hover:bg-gray-600 hover:border-gray-600 text-white',
+      light: [
+        'bg-white dark:bg-gray-800',
+        'border-gray-100 dark:border-gray-700',
+        'hover:bg-gray-100 dark:hover:bg-gray-700',
+        'text-gray-900 dark:text-gray-100',
+      ],
+      dark: [
+        'bg-gray-900 dark:bg-gray-950',
+        'border-gray-700 dark:border-gray-800',
+        'hover:bg-gray-800 dark:hover:bg-gray-900',
+        'text-white',
+      ],
     },
     size: {
       sm: 'w-6 h-6 p-1 rounded-md',

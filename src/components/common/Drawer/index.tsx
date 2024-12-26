@@ -32,7 +32,7 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>(
     return (
       <div ref={ref} {...rest}>
         <div
-          className={`fixed z-50 inset-0 bg-black/80 bg-opacity-10 transition-opacity ${
+          className={`fixed  z-50 inset-0 bg-black/80 bg-opacity-10 transition-opacity ${
             isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
           style={{ backgroundColor: overLayColor }}

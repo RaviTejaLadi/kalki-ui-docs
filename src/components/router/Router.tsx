@@ -5,6 +5,7 @@ import TopBar from '@/components/shared/TopBar/TopBar';
 import Loading from '@/components/shared/Loading';
 import ErrorBoundary from '../Error/ErrorBoundary';
 import TurboUtilities from '@/pages/TurboUtilities/TurboUtilities';
+import TurboHooks from '@/pages/TurboUtilities/TurboHooks';
 
 const Home = lazy(() => import('@/pages/homePage/HomePage'));
 const GetStarted = lazy(() => import('@/pages/getStartedPage/GetStartedPage'));
@@ -52,7 +53,11 @@ const AppRoutes = () => {
         {
           path: 'turbo-utilities',
           element: <TurboUtilities />,
+        },{
+          path: '/turbo-utilities/hooks',
+          element: <TurboHooks />,
         },
+        
         {
           path: '404',
           element: <NotFoundScreen />,
