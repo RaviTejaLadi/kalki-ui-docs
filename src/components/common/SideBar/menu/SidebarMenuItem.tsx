@@ -14,7 +14,7 @@ export const SidebarMenuItem = React.forwardRef<HTMLAnchorElement, SidebarMenuIt
         ref={ref}
         className={cn(
           'flex items-center gap-4 rounded-md text-xs px-2 py-1.5 mb-2',
-          'text-muted-foreground font-medium hover:bg-gray-100 hover:text-muted-foreground',
+          'text-muted-foreground font-medium hover:bg-gray-100 dark:hover:bg-gray-200/10 hover:text-muted-foreground',
           active && 'bg-gray-100 text-foreground',
           !expanded && 'justify-center',
           className

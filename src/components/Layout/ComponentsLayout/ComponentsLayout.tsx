@@ -28,11 +28,12 @@ export default function ComponentsLayout() {
                   <SidebarMenuSub>
                     <SidebarMenuSubButton
                       title={category}
-                      icon={Icon ? <Icon className="size-4 text-[--icon-color]" /> : null}
+                      icon={Icon ? <Icon className="size-4 text-[var(--icon-color)]" /> : null}
+                      className="hover:bg-gray-100 dark:hover:bg-gray-200/10"
                     >
                       <Link
                         to={path || '#'}
-                        className={cn('text-muted-foreground text-xs hover:bg-gray-100 hover:text-muted-foreground')}
+                        className={cn('text-muted-foreground text-xs  hover:text-muted-foreground')}
                       >
                         {category.slice(0, 15)}
                       </Link>
@@ -42,6 +43,7 @@ export default function ComponentsLayout() {
                         key={path}
                         to={path}
                         icon={Icon ? <Icon className="size-4 text-[var(--icon-color)]" /> : null}
+                        className="hover:bg-gray-100 dark:hover:bg-gray-200/10"
                       >
                         {label}
                       </SidebarMenuSubItem>
