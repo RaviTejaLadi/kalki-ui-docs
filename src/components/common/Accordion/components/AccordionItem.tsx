@@ -13,7 +13,7 @@ import { AccordionItemProps } from '../types';
  * @returns {JSX.Element} An accordion item container
  */
 export const AccordionItem: React.FC<AccordionItemProps> = ({ children, className, style, ...rest }) => (
-  <div className={cn('border-b-[1px]', className)} style={style} {...rest}>
+  <div className={cn('border-b border-gray-200 last:border-b-0', className)} style={style} {...rest}>
     {children}
   </div>
 );

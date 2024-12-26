@@ -57,7 +57,7 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   return (
     <div
       className={cn(
-        `flex justify-between font-medium items-center cursor-pointer p-4 transition-colors duration-300 ${
+        `flex justify-between font-medium items-center cursor-pointer text-foreground dark:text-foreground p-4 transition-colors duration-300 ${
           isActive ? 'text-white' : 'text-black'
         } ${backgroundColor} ${dimensions}`,
         className

@@ -46,7 +46,7 @@ export const AccordionBody: React.FC<AccordionBodyProps> = ({ children, eventKey
       style={{ ...style, maxHeight }}
       {...rest}
     >
-      <div className={cn('overflow-auto', dimensions)}>{children}</div>
+      <div className={cn('overflow-auto text-muted-foreground', dimensions)}>{children}</div>
     </div>
   );
 };
