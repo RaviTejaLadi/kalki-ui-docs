@@ -17,9 +17,9 @@ import { cn } from '@/utils';
 
 export default function ComponentsLayout() {
   return (
-    <div className="flex min-h-screen bg-inherit">
-      <aside className="fixed top-11 left-0 h-screen  bg-inherit">
-        <Sidebar className="bg-inherit w-[13rem]">
+    <div className="flex min-h-screen">
+      <aside className="fixed top-11 left-0 h-screen ">
+        <Sidebar className=" w-[13rem]">
           <SidebarBody>
             <SidebarGroup>
               <SidebarGroupLabel>Components</SidebarGroupLabel>

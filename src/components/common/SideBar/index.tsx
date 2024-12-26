@@ -62,7 +62,7 @@ export const Sidebar = React.forwardRef<HTMLDivElement, SidebarProps>(({ classNa
     <div
       ref={ref}
       className={cn(
-        'flex h-screen flex-col bg-white transition-all duration-300',
+        'flex h-screen flex-col bg-background dark:bg-inherit transition-all duration-300',
         expanded ? 'w-56' : 'w-16',
         className
       )}
