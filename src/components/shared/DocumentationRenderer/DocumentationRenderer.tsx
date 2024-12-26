@@ -1,6 +1,6 @@
 import Box from '@/components/common/Box';
 import { SectionHeader } from '@/components/common/SectionHeader/SectionHeader';
-import { SyntaxHighLighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
+import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
 import { Tab, Tabs } from '@/components/common/Tabs/Tabs';
 import { docsData } from '@/types/docsData';
 import { cn } from '@/utils';
@@ -50,7 +50,7 @@ const DocumentationRenderer: React.FC<DocumentationRendererProps> = ({ data, cla
               </Tab>
               <Tab label="Code" value="code" className="max-h-96" leftIcon={<Code className="size-4" />}>
                 <Box padding="10px">
-                  <SyntaxHighLighter code={item.code} language="jsx" />
+                  <SyntaxHighlighter code={item.code} language="jsx" />
                 </Box>
               </Tab>
             </Tabs>

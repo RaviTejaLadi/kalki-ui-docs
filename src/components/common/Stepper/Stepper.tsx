@@ -1,5 +1,5 @@
 import React, { createContext } from 'react';
-import { SyntaxHighLighter } from '../SyntaxHighLighter/SyntaxHighLighter';
+import { SyntaxHighlighter } from '../SyntaxHighLighter/SyntaxHighLighter';
 import { cn } from '@/utils';
 import { CodeBlockProps, DescriptionProps, StepperComponent, StepProps } from './types';
 
@@ -34,7 +34,7 @@ const StepperStep: React.FC<StepProps> = ({ step, title, children }) => {
 const StepperCodeBlock: React.FC<CodeBlockProps> = ({ code, language, ...rest }) => {
   return (
     <div className="rounded-md font-mono text-sm text-gray-800 mt-2 dark:text-gray-300">
-      <SyntaxHighLighter code={code} language={language} {...rest} />
+      <SyntaxHighlighter code={code} language={language} {...rest} />
     </div>
   );
 };
