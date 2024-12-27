@@ -1,8 +1,9 @@
 import React, { forwardRef } from 'react';
 import { buttonVariants } from './buttonVariants';
-import { ButtonProps } from './types';
+import type { ButtonProps, ButtonIconProps, ButtonTextProps } from './types';
 import { ButtonIcon } from './ButtonIcon';
 import { ButtonText } from './ButtonText';
+import { Loader } from 'lucide-react';
 
 /**
  * A customizable button component.
@@ -34,6 +35,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       className = '',
       style = {},
       children,
+      loader,
+      isPending = false,
+      isPendingText = 'Loading...',
       ...rest
     },
     ref
@@ -47,8 +51,22 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     });
 
     return (
-      <button className={buttonClasses} style={style} onClick={onClick} disabled={disabled} ref={ref} {...rest}>
-        {children}
+      <button
+        className={buttonClasses}
+        style={style}
+        onClick={onClick}
+        disabled={disabled || isPending}
+        ref={ref}
+        {...rest}
+      >
+        {isPending ? (
+          <span className="flex gap-2 items-center justify-center">
+            {loader ? loader : <Loader className="size-4 animate-spin" />}
+            <span>{isPendingText}</span>
+          </span>
+        ) : (
+          children
+        )}
       </button>
     );
   }
@@ -64,4 +82,4 @@ export default Object.assign(
   }
 );
 
-export { ButtonIcon, ButtonText };
+export { ButtonIcon, ButtonText, ButtonProps, ButtonIconProps, ButtonTextProps };

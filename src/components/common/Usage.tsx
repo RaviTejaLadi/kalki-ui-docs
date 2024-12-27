@@ -6,6 +6,7 @@ import Badge from './Badge';
 import Box from './Box';
 import Banner from './Banner';
 import Breadcrumb from './Breadcrumb';
+import Button from './Button';
 
 const Usage = () => {
   return (
@@ -125,6 +126,26 @@ const Usage = () => {
           <Breadcrumb.Item to="/about">About</Breadcrumb.Item>
           <Breadcrumb.Item active>Current Page</Breadcrumb.Item>
         </Breadcrumb>
+      </Box>
+      <Box outlined rounded padding="10px" margin="10px">
+        <p>Button</p>
+        {[
+          'primary' as const,
+          'secondary' as const,
+          'warning' as const,
+          'danger' as const,
+          'help' as const,
+          'success' as const,
+          'light' as const,
+          'dark' as const,
+          'outline' as const,
+          'ghost' as const,
+          'link' as const,
+        ].map((item) => (
+          <Button variant={item} isPending={false} size="xs">
+            {item}
+          </Button>
+        ))}
       </Box>
     </div>
   );
