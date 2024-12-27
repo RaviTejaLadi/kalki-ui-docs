@@ -5,6 +5,7 @@ import Avatar from './Avatar';
 import Badge from './Badge';
 import Box from './Box';
 import Banner from './Banner';
+import Breadcrumb from './Breadcrumb';
 
 const Usage = () => {
   return (
@@ -115,6 +116,15 @@ const Usage = () => {
             <Banner.SubTitle>Subtitle</Banner.SubTitle>
           </Banner>
         ))}
+      </Box>
+
+      <Box outlined rounded padding="10px" margin="10px">
+        <p>Breadcrumb</p>
+        <Breadcrumb size="xs">
+          <Breadcrumb.Item to="/">Home</Breadcrumb.Item>
+          <Breadcrumb.Item to="/about">About</Breadcrumb.Item>
+          <Breadcrumb.Item active>Current Page</Breadcrumb.Item>
+        </Breadcrumb>
       </Box>
     </div>
   );

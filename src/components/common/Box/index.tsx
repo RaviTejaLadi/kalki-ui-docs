@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 import { cn } from '@/utils';
-import { BoxProps } from './types';
+import type { BoxProps } from './types';
 import { boxVariants } from './boxVariants';
 
 /**
@@ -90,3 +90,4 @@ const Box = forwardRef<HTMLDivElement, BoxProps>(
 Box.displayName = 'Box';
 
 export default Box;
+export { BoxProps };

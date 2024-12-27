@@ -1,6 +1,9 @@
 import { VariantProps } from 'class-variance-authority';
 import { CSSProperties, ReactNode } from 'react';
 import { breadcrumbVariants } from './breadcrumbVariants';
+import { BoxProps } from '../Box';
+
+type SeparatorType = 'chevron' | 'arrow' | 'dot' | 'slash' | 'circle';
 
 /**
  * Props for the Breadcrumb component.
@@ -12,9 +15,9 @@ import { breadcrumbVariants } from './breadcrumbVariants';
  * @property {string} [className] - Optional additional CSS class names to apply to the breadcrumb.
  * @property {CSSProperties} [style] - Optional inline styles to apply to the breadcrumb.
  */
-interface BreadcrumbProps extends VariantProps<typeof breadcrumbVariants> {
+interface BreadcrumbProps extends VariantProps<typeof breadcrumbVariants>, BoxProps {
   children: ReactNode;
-  separator?: ReactNode;
+  separator?: ReactNode | SeparatorType;
   className?: string;
   style?: CSSProperties;
 }
@@ -38,4 +41,4 @@ interface BreadcrumbItemProps {
   style?: CSSProperties;
 }
 
-export { type BreadcrumbProps, type BreadcrumbItemProps };
+export type { BreadcrumbProps, BreadcrumbItemProps, SeparatorType };
