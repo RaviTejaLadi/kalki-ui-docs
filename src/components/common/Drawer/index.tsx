@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { cn } from '@/utils';
-import { DrawerProps } from './types';
+import type { DrawerProps, DrawerHeaderProps, DrawerTitleProps, DrawerBodyProps } from './types';
 import { DrawerTitle } from './DrawerTitle';
 import { DrawerHeader } from './DrawerHeader';
 import { DrawerBody } from './DrawerBody';
@@ -26,7 +26,7 @@ import { drawerVariants } from './drawerVariants';
  */
 const Drawer = forwardRef<HTMLDivElement, DrawerProps>(
   (
-    { position = 'right', children, isOpen, onClose, width, height, overLayColor = '', className, style, ...rest },
+    { position = 'right', children, isOpen, onClose, width="300px", height="300px", overLayColor = '', className, style, ...rest },
     ref
   ) => {
     return (
@@ -63,4 +63,4 @@ export default Object.assign(
     Body: DrawerBody,
   }
 );
-export { DrawerTitle, DrawerHeader, DrawerBody };
+export { DrawerTitle, DrawerHeader, DrawerBody, DrawerProps, DrawerHeaderProps, DrawerTitleProps, DrawerBodyProps };

@@ -12,8 +12,27 @@ import Carousel, { CarouselSlides } from './Carousel';
 import CloseButton from './CloseButton';
 import Code from './Code';
 import ContentScrollable from './ContentScrollable';
+import Drawer from './Drawer';
+import { Fragment, useState } from 'react';
 
 const Usage = () => {
+  const [rightDrawer, setRightDrawer] = useState(false);
+  const [topDrawer, setTopDrawer] = useState(false);
+  const [bottomDrawer, setBottomDrawer] = useState(false);
+  const [leftDrawer, setLeftDrawer] = useState(false);
+  const drawerPositions = ['right', 'top', 'bottom', 'left'] as const;
+  const drawerStates = {
+    right: rightDrawer,
+    top: topDrawer,
+    bottom: bottomDrawer,
+    left: leftDrawer,
+  } as const;
+  const setDrawerStates = {
+    right: setRightDrawer,
+    top: setTopDrawer,
+    bottom: setBottomDrawer,
+    left: setLeftDrawer,
+  } as const;
   return (
     <div>
       <Box outlined rounded padding="10px" margin="10px">
@@ -231,6 +250,27 @@ const Usage = () => {
             adipisicing elit. Consectetur impedit reprehenderit laboriosam facere deserunt voluptate illum amet tenetur
             voluptatibus architecto quaerat aliquam quia excepturi eos eius modi, obcaecati consequatur. Numquam?
           </ContentScrollable>
+        ))}
+      </Box>
+      <Box outlined rounded padding="10px" margin="10px">
+        <p>Drawer</p>
+
+        {drawerPositions.map((position) => (
+          <Fragment key={position}>
+            <Button onClick={() => setDrawerStates[position](true)} className="mx-2">
+              Open Drawer {position}
+            </Button>
+            <Drawer
+              isOpen={drawerStates[position]}
+              onClose={() => setDrawerStates[position](false)}
+              position={position}
+            >
+              <Drawer.Header closeButton onClose={() => setDrawerStates[position](false)}>
+                <Drawer.Title>{position.charAt(0).toUpperCase() + position.slice(1)} Drawer</Drawer.Title>
+              </Drawer.Header>
+              <Drawer.Body>{position.charAt(0).toUpperCase() + position.slice(1)} Drawer Content</Drawer.Body>
+            </Drawer>
+          </Fragment>
         ))}
       </Box>
     </div>
