@@ -13,6 +13,8 @@ import * as React from 'react';
  * @returns {JSX.Element} The rendered `div` element with the specified props and class names.
  */
 export const CardFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => <div ref={ref} className={cn('flex items-center p-4 pt-0', className)} {...props} />
+  ({ className, ...props }, ref) => (
+    <div ref={ref} className={cn('flex text-sm text-muted-foreground items-center p-4 pt-0', className)} {...props} />
+  )
 );
 CardFooter.displayName = 'CardFooter';

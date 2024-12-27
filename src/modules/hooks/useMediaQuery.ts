@@ -1,9 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 
-function attachMediaListener(
-  query: any,
-  callback: (event: MediaQueryListEvent) => any,
-) {
+function attachMediaListener(query: any, callback: (event: MediaQueryListEvent) => any) {
   try {
     query.addEventListener('change', callback);
 
@@ -28,18 +25,14 @@ function computeInitialValue<T>(query: string, initialValue: T) {
 }
 
 export function useMediaQuery<T>(query: string, initialValue: T) {
-  const [matches, setMatches] = useState(
-    computeInitialValue(query, initialValue),
-  );
+  const [matches, setMatches] = useState(computeInitialValue(query, initialValue));
   const ref = useRef<MediaQueryList | undefined>();
 
   useEffect(() => {
     if ('matchMedia' in window) {
       ref.current = window.matchMedia(query);
       setMatches(ref.current.matches);
-      return attachMediaListener(ref.current, (event: MediaQueryListEvent) =>
-        setMatches(event.matches),
-      );
+      return attachMediaListener(ref.current, (event: MediaQueryListEvent) => setMatches(event.matches));
     }
 
     return undefined;

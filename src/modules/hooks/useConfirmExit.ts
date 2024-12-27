@@ -1,10 +1,7 @@
 import { off, on } from '../helpers/event';
 import { useCallback, useEffect } from 'react';
 
-export function useConfirmExit(
-  enabled: boolean | (() => boolean),
-  message = 'Are you sure you want to exit?',
-) {
+export function useConfirmExit(enabled: boolean | (() => boolean), message = 'Are you sure you want to exit?') {
   const handler = useCallback(
     (e: Event) => {
       const finalEnabled = typeof enabled === 'function' ? enabled() : true;
@@ -23,7 +20,7 @@ export function useConfirmExit(
 
       return message;
     },
-    [enabled, message],
+    [enabled, message]
   );
 
   useEffect(() => {

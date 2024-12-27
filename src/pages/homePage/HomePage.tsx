@@ -9,7 +9,7 @@ import Usage from '@/components/common/Usage';
 export default function Home() {
   return (
     <Div>
-      <Usage/>
+      <Usage />
       <Head title="Home" />
       <HeroSection />
       <FeaturesSection />

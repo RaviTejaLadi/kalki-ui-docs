@@ -56,11 +56,9 @@ const TopBar: React.FC = () => {
           <NavMenu>
             <NavMenuList>
               {navMenuItem.map((item) => (
-                <NavMenuItem key={item.to} size={item.size} variant='light' to={item.to}>
+                <NavMenuItem key={item.to} size={item.size} variant="light" to={item.to}>
                   <NavMenuItemTitle>
-                    <span className="text-muted-foreground tracking-wide text-xs font-medium ">
-                      {item.title}
-                    </span>
+                    <span className="text-muted-foreground tracking-wide text-xs font-medium ">{item.title}</span>
                   </NavMenuItemTitle>
                 </NavMenuItem>
               ))}

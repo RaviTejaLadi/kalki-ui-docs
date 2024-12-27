@@ -7,6 +7,7 @@ import Box from './Box';
 import Banner from './Banner';
 import Breadcrumb from './Breadcrumb';
 import Button from './Button';
+import Card from './Card';
 
 const Usage = () => {
   return (
@@ -146,6 +147,22 @@ const Usage = () => {
             {item}
           </Button>
         ))}
+      </Box>
+
+      <Box outlined rounded padding="10px" margin="10px">
+        <p>Card</p>
+        <Card>
+          <Card.Header>
+            <Card.Title>Card Title</Card.Title>
+            <Card.Description>Card Description</Card.Description>
+          </Card.Header>
+          <Card.Content>
+            <p>Card Content</p>
+          </Card.Content>
+          <Card.Footer>
+            <p>Card Footer</p>
+          </Card.Footer>
+        </Card>
       </Box>
     </div>
   );

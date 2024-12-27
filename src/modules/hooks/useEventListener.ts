@@ -1,11 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect';
 
-export function useEventListener(
-  eventName: string,
-  handler: (e: Event) => any,
-  element?: React.RefObject<any>,
-) {
+export function useEventListener(eventName: string, handler: (e: Event) => any, element?: React.RefObject<any>) {
   const savedHandler = useRef(handler);
 
   useIsomorphicLayoutEffect(() => {

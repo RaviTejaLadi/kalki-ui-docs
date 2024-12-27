@@ -2,7 +2,7 @@ interface Overview {
   id: number;
   title: string;
   desc: string;
-  path: string; 
+  path: string;
 }
 
 export const overView: Overview[] = [
@@ -18,5 +18,4 @@ export const overView: Overview[] = [
     desc: 'A collection of mathematical operations for basic arithmetic and more advanced calculations.',
     path: '/math-operations',
   },
-  
 ];

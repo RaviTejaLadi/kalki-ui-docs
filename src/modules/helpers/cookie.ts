@@ -1,11 +1,6 @@
-export const parseToDataType = (
-  value: string | undefined,
-  isItRetry = false,
-): any => {
+export const parseToDataType = (value: string | undefined, isItRetry = false): any => {
   try {
-    return value === 'undefined' || value === undefined
-      ? undefined
-      : JSON.parse(value);
+    return value === 'undefined' || value === undefined ? undefined : JSON.parse(value);
   } catch (e) {
     if (!isItRetry) {
       return parseToDataType(`"${value?.replaceAll?.('"', '')}"`, true);
@@ -32,19 +27,14 @@ export const getCookie = (name: string) => {
 };
 
 export const getCookies = (cookies: string[]): Record<string, string> => {
-
-  if (cookies.length)
-    return cookies.reduce(
-      (result, cookie) => ({ ...result, [cookie]: getCookie(cookie) }),
-      {},
-    );
+  if (cookies.length) return cookies.reduce((result, cookie) => ({ ...result, [cookie]: getCookie(cookie) }), {});
 
   return Object.fromEntries(
     document.cookie.split('; ').map((c) => {
       const [key, value] = c.split('=');
 
       return [key, parseToDataType(value)];
-    }),
+    })
   );
 };
 

@@ -27,7 +27,9 @@ const ComponentsOverviewPage: React.FC = () => {
                   <Card className="border h-full border-gray-100 mb-5 rounded-md hover:shadow-md transition dark:border-gray-200/10 dark:bg-background/10">
                     <CardHeader>
                       <div className="flex gap-3 items-center align-middle">
-                        {Icon ? <Icon className="size-5 text-[var(--icon-color)] border p-1 rounded bg-background dark:border-gray-200/10 dark:bg-background/10" /> : null}
+                        {Icon ? (
+                          <Icon className="size-5 text-[var(--icon-color)] border p-1 rounded bg-background dark:border-gray-200/10 dark:bg-background/10" />
+                        ) : null}
                         <CardTitle className="text-sm font-medium text-foreground">{label}</CardTitle>
                       </div>
                     </CardHeader>

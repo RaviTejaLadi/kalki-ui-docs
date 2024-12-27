@@ -9,18 +9,8 @@ export function useMousePosition() {
     if (target.current) {
       // @ts-ignore
       const r = event?.currentTarget?.getBoundingClientRect();
-      const x = max(
-        0,
-        Math.round(
-          event.pageX - r.left - (window.pageXOffset || window.scrollX),
-        ),
-      );
-      const y = max(
-        0,
-        Math.round(
-          event.pageY - r.top - (window.pageYOffset || window.scrollY),
-        ),
-      );
+      const x = max(0, Math.round(event.pageX - r.left - (window.pageXOffset || window.scrollX)));
+      const y = max(0, Math.round(event.pageY - r.top - (window.pageYOffset || window.scrollY)));
       setPosition({ x, y });
     } else setPosition({ x: event.clientX, y: event.clientY });
   };

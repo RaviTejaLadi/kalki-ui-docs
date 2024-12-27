@@ -12,6 +12,6 @@ import * as React from 'react';
  * @returns {JSX.Element} A `div` element with the specified props and forwarded ref.
  */
 export const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => <div ref={ref} className={cn('p-4 pt-0', className)} {...props} />
+  ({ className, ...props }, ref) => <div ref={ref} className={cn('p-4 pt-0 text-sm', className)} {...props} />
 );
 CardContent.displayName = 'CardContent';

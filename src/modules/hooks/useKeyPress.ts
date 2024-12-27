@@ -4,10 +4,7 @@ const normalizeKey = (key: string) => {
   return key.toLowerCase();
 };
 
-export function useKeyPress(
-  keys: string[],
-  callback: (e: KeyboardEvent) => void,
-) {
+export function useKeyPress(keys: string[], callback: (e: KeyboardEvent) => void) {
   const lastKeyPressed = useRef<Set<string>>(new Set([]));
   const keysSet = useMemo(() => {
     return new Set(keys.map((key) => normalizeKey(key)));

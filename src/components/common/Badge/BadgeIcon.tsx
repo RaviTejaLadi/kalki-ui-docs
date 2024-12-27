@@ -13,8 +13,8 @@ import { BadgeIconProps } from './types';
  * @returns {JSX.Element} A `<span>` element with the provided props and ref.
  */
 
-export const BadgeIcon = forwardRef<HTMLSpanElement, BadgeIconProps>(
-  ({ className, ...rest }, ref) => <span ref={ref} className={cn(className)} {...rest} />
-);
+export const BadgeIcon = forwardRef<HTMLSpanElement, BadgeIconProps>(({ className, ...rest }, ref) => (
+  <span ref={ref} className={cn(className)} {...rest} />
+));
 
 BadgeIcon.displayName = 'BadgeIcon';

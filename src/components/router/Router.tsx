@@ -53,11 +53,12 @@ const AppRoutes = () => {
         {
           path: 'turbo-utilities',
           element: <TurboUtilities />,
-        },{
+        },
+        {
           path: '/turbo-utilities/hooks',
           element: <TurboHooks />,
         },
-        
+
         {
           path: '404',
           element: <NotFoundScreen />,

@@ -25,20 +25,18 @@ const TurboUtilities: React.FC = () => {
           </div>
         </header>
 
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {overView.map((item) => (
-              <Link
-                key={item.id}
-                className=" rounded-md p-4 dark:bg-background/10 border dark:border-gray-200/10  hover:shadow-md transition"
-                to={item.path}
-              >
-                <h3 className="text-sm font-medium text-purple-500">{item.title}</h3>
-                <p className="text-xs py-1 text-muted-foreground">{item.desc}</p>
-              </Link>
-            ))}
-          </div>
-
-     
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {overView.map((item) => (
+            <Link
+              key={item.id}
+              className=" rounded-md p-4 dark:bg-background/10 border dark:border-gray-200/10  hover:shadow-md transition"
+              to={item.path}
+            >
+              <h3 className="text-sm font-medium text-purple-500">{item.title}</h3>
+              <p className="text-xs py-1 text-muted-foreground">{item.desc}</p>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

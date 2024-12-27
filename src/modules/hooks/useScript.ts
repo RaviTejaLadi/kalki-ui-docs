@@ -10,9 +10,7 @@ export function useScript(src: string) {
       return;
     }
 
-    let script: HTMLScriptElement | null = document.querySelector(
-      `script[src="${src}"]`,
-    );
+    let script: HTMLScriptElement | null = document.querySelector(`script[src="${src}"]`);
 
     if (!script) {
       script = document.createElement('script');
@@ -23,10 +21,7 @@ export function useScript(src: string) {
       document.body.appendChild(script);
 
       const setAttributeFromEvent = (event: Event) => {
-        script?.setAttribute(
-          'data-status',
-          event.type === 'load' ? 'ready' : 'error',
-        );
+        script?.setAttribute('data-status', event.type === 'load' ? 'ready' : 'error');
       };
 
       script.addEventListener('load', setAttributeFromEvent);
@@ -35,8 +30,7 @@ export function useScript(src: string) {
       setStatus(script.getAttribute('data-status'));
     }
 
-    const setStateFromEvent = (event: Event) =>
-      setStatus(event.type === 'load' ? 'ready' : 'error');
+    const setStateFromEvent = (event: Event) => setStatus(event.type === 'load' ? 'ready' : 'error');
 
     script.addEventListener('load', setStateFromEvent);
     script.addEventListener('error', setStateFromEvent);

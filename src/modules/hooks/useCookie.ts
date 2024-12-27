@@ -3,22 +3,10 @@ import { useState } from 'react';
 import { useCookieListener } from './useCookieListener';
 import { useSingleEffect } from './useSingleEffect';
 
-import {
-  parseToCookieType,
-  parseToDataType,
-  getCookie,
-  setCookie,
-  deleteCookie,
-} from '../helpers/cookie';
+import { parseToCookieType, parseToDataType, getCookie, setCookie, deleteCookie } from '../helpers/cookie';
 
-export const useCookie = <T>(
-  key: string,
-  initialValue: T,
-  expireDays = 365,
-) => {
-  const [cookieValue, setCookieValue] = useState<T>(
-    getCookie(key) ?? parseToDataType(parseToCookieType(initialValue)),
-  );
+export const useCookie = <T>(key: string, initialValue: T, expireDays = 365) => {
+  const [cookieValue, setCookieValue] = useState<T>(getCookie(key) ?? parseToDataType(parseToCookieType(initialValue)));
 
   useSingleEffect(() => {
     if (typeof getCookie(key) === 'undefined') {
@@ -30,7 +18,7 @@ export const useCookie = <T>(
     (value: T) => {
       setCookieValue(value);
     },
-    [key],
+    [key]
   );
 
   const setValue = (value: T) => {

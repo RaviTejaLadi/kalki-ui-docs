@@ -24,15 +24,11 @@ import { useEffect, useRef, useState } from 'react';
  */
 export function useInterval(callback: () => any, initialDelay: number) {
   if (typeof callback !== 'function') {
-    throw new Error(
-      `Invalid parameter type. 'callback' should be a function but received ${callback}`,
-    );
+    throw new Error(`Invalid parameter type. 'callback' should be a function but received ${callback}`);
   }
 
   if (typeof initialDelay !== 'number') {
-    throw new Error(
-      `Invalid parameter type. 'initialDelay should be a number but received ${initialDelay}'`,
-    );
+    throw new Error(`Invalid parameter type. 'initialDelay should be a number but received ${initialDelay}'`);
   }
 
   const savedCallback = useRef<(() => any) | undefined>();

@@ -12,11 +12,11 @@ const TurboHooks = () => {
   const [selectedItem, setSelectedItem] = useState<HookItem | null>(null);
 
   const handleOpenDrawer = (item: HookItem) => {
-    setSelectedItem(item); 
+    setSelectedItem(item);
   };
 
   const handleCloseDrawer = () => {
-    setSelectedItem(null); 
+    setSelectedItem(null);
   };
 
   return (

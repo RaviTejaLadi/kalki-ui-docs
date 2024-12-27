@@ -14,10 +14,7 @@ const preventDefault = (e: EventType) => {
   }
 };
 
-export const useHold = (
-  callback: (e: EventType) => any,
-  { doPreventDefault = true, delay = 1000 } = {},
-) => {
+export const useHold = (callback: (e: EventType) => any, { doPreventDefault = true, delay = 1000 } = {}) => {
   const timeout = useRef<number | undefined>();
   const target = useRef<EventTarget | undefined>();
 
@@ -28,12 +25,9 @@ export const useHold = (
         target.current = event.target;
       }
 
-      timeout.current = setTimeout(
-        () => callback(event),
-        delay,
-      ) as unknown as number;
+      timeout.current = setTimeout(() => callback(event), delay) as unknown as number;
     },
-    [callback, delay, doPreventDefault],
+    [callback, delay, doPreventDefault]
   );
 
   const clear = useCallback(() => {

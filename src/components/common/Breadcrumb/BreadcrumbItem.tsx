@@ -19,13 +19,15 @@ import { BreadcrumbItemProps } from './types';
  */
 export const BreadcrumbItem = forwardRef<HTMLSpanElement | HTMLAnchorElement, BreadcrumbItemProps>(
   ({ to, active, children, className, style, ...rest }, ref) => {
-    const itemClasses = active ? 'font-bold text-foreground' : 'text-muted-foreground font-semibold hover:text-gray-700';
+    const itemClasses = active
+      ? 'font-bold text-foreground'
+      : 'text-muted-foreground font-semibold hover:text-gray-700';
 
     if (active) {
       return (
         <span
           ref={ref as React.Ref<HTMLSpanElement>}
-          className={cn( itemClasses, className)}
+          className={cn(itemClasses, className)}
           style={style}
           aria-current="page"
           {...rest}

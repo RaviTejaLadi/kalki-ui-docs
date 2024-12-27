@@ -2,9 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 
 type DocumentWith<T> = Document & T;
 
-export function useFullscreen(
-  targetRef: React.MutableRefObject<(Document & {}) | any>,
-) {
+export function useFullscreen(targetRef: React.MutableRefObject<(Document & {}) | any>) {
   const [isFullscreen, setFullscreen] = useState(false);
 
   const toggleFullscreen = useCallback(() => {

@@ -39,10 +39,7 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
     setStoredValue(readValue());
   }, []);
 
-  const handleStorageChange = useCallback(
-    () => setStoredValue(readValue()),
-    [readValue],
-  );
+  const handleStorageChange = useCallback(() => setStoredValue(readValue()), [readValue]);
   useEventListener('storage', handleStorageChange);
   useEventListener('local-storage', handleStorageChange);
   return [storedValue, setValue];
