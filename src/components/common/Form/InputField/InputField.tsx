@@ -11,13 +11,12 @@ interface InputFieldProps extends InputProps {
   error?: string;
 }
 
-const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
+export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
   ({ label, info, labelProps, error, name, className, size = 'sm', ...props }, ref) => {
     return (
-      <div className="space-y-1">
+      <div ref={ref} className="space-y-2">
         <LabelExt label={label} info={info} htmlFor={name} size={size} {...labelProps} />
         <Input
-          ref={ref}
           name={name}
           size={size}
           className={cn(error && 'border-red-500 focus:border-red-500 focus:ring-red-200', className)}
@@ -26,7 +25,7 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
           {...props}
         />
         {error && (
-          <p id={`${name}-error`} className="text-sm text-red-500 mt-1" role="alert">
+          <p id={`${name}-error`} className="text-xs text-red-500 mt-1" role="alert">
             {error}
           </p>
         )}

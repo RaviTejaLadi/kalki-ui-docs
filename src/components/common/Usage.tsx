@@ -15,6 +15,9 @@ import ContentScrollable from './ContentScrollable';
 import Drawer from './Drawer';
 import { Fragment, useState } from 'react';
 import Figure from './Figure';
+import Form from './Form';
+import LabelExt from './Form/LabelExt/LabelExt';
+import { InputField } from './Form/InputField/InputField';
 
 const Usage = () => {
   const [rightDrawer, setRightDrawer] = useState(false);
@@ -276,10 +279,19 @@ const Usage = () => {
       </Box>
       <Box outlined rounded padding="10px" margin="10px">
         <p>figure</p>
-        <Figure className='w-fit'>
+        <Figure className="w-fit">
           <Figure.Image src="https://picsum.photos/300/200" alt="Random image" />
           <Figure.Caption>Random image</Figure.Caption>
         </Figure>
+      </Box>
+
+      <Box outlined rounded padding="10px" margin="10px">
+        <p>Form</p>
+        <Form onSubmit={() => console.log('Form submitted')}>
+          <LabelExt label="Name" htmlFor="name" info="Name info" />
+          <Form.Input name='test' size='sm' type="tel" placeholder="Text input" />
+          <InputField  name='test' size='sm' placeholder="placeholder" label="test" info="text2"/>
+        </Form>
       </Box>
     </div>
   );

@@ -1,7 +1,7 @@
-import React, { ButtonHTMLAttributes, ReactNode } from 'react';
-import Button from '../../Button';
+import React, { ReactNode } from 'react';
+import Button, { ButtonProps } from '../../Button';
 
-interface SubmitProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface SubmitProps extends ButtonProps {
   children: ReactNode;
   onClick?: () => void;
   [key: string]: any;

@@ -2,13 +2,13 @@ import React, { LabelHTMLAttributes } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils';
 
-// Define the label variant styles with cva
-const labelStyles = cva('block font-medium', {
+const labelStyles = cva('block font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground', {
   variants: {
     size: {
-      sm: 'text-sm', // 14px
-      md: 'text-base', // 16px
-      lg: 'text-lg', // 18px
+      xs: 'text-xs',
+      sm: 'text-sm', 
+      md: 'text-base', 
+      lg: 'text-lg', 
     },
   },
   defaultVariants: {
@@ -23,7 +23,7 @@ export interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement>, Varia
   fontWeight?: string | number;
   padding?: string;
   margin?: string;
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'xs'|'sm' | 'md' | 'lg';
 }
 
 const Label: React.FC<LabelProps> = ({

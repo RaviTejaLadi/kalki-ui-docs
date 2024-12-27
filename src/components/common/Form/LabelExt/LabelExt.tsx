@@ -16,7 +16,7 @@ const LabelExt: React.FC<LabelExtProps> = ({ label, info, htmlFor, className, ..
       </Label>
       {info && (
         <Tooltip content={info}>
-          <Info className="text-gray-500 cursor-help" />
+          <Info className="text-gray-500 size-3 cursor-pointer" />
         </Tooltip>
       )}
     </div>

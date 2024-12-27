@@ -3,13 +3,23 @@ import { cva, VariantProps } from 'class-variance-authority';
 import { forwardRef, InputHTMLAttributes } from 'react';
 
 const inputStyles = cva(
-  'w-full border border-gray-300 rounded-md bg-white shadow-sm focus:border-blue-500 focus:ring-4 focus:ring-blue-200',
+  [
+    'w-full border-[1px] rounded-md bg-background dark:bg-inherit dark:border-gray-200/10',
+    'hover:shadow-sm focus:border-gray-500/10 focus:ring-2 focus:ring-gray-200/10',
+    'flex px-3 py-2 border-input ring-offset-background',
+    'file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground',
+    'placeholder:text-muted-foreground',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
+    'disabled:cursor-not-allowed disabled:opacity-50',
+    'md:text-sm outline-none',
+  ],
   {
     variants: {
       size: {
-        sm: 'p-1.5 h-8 w-auto text-sm placeholder-gray-500',
-        md: 'p-2 h-10 w-auto text-base placeholder-gray-500',
-        lg: 'p-2.5 h-12 w-auto text-lg placeholder-gray-500',
+        xs: 'h-7 px-[0.45rem] w-auto h-6 text-2xs ',
+        sm: 'px-[0.55rem] h-8  w-auto text-xs ',
+        md: 'px-3 h-10  w-auto text-sm ',
+        lg: 'p-3.5 h-11  w-auto text-base ',
       },
     },
     defaultVariants: {
@@ -26,7 +36,7 @@ export interface InputProps
   height?: string;
   margin?: string;
   padding?: string;
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'xs' | 'sm' | 'md' | 'lg';
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(

@@ -23,21 +23,24 @@ const Form = forwardRef<HTMLFormElement, FormProps>(
     };
 
     return (
-      <form ref={ref} className={cn('space-y-6', className)} style={style} onSubmit={handleSubmit} {...rest}>
+      <form ref={ref} className={cn('space-y-2',className)} style={style} onSubmit={handleSubmit} {...rest}>
         {children}
       </form>
     );
   }
 );
 
-export default Object.assign(Form, {
-  Group: FormGroup,
-  Label: Label,
-  Input: Input,
-  Textarea: Textarea,
-  Checkbox: Checkbox,
-  Radio: Radio,
-  Submit: Submit,
-}) as React.ForwardRefExoticComponent<FormProps & React.RefAttributes<HTMLFormElement>>;
+export default Object.assign(
+  Form as React.ForwardRefExoticComponent<FormProps & React.RefAttributes<HTMLFormElement>>,
+  {
+    Group: FormGroup,
+    Label: Label,
+    Input: Input,
+    Textarea: Textarea,
+    Checkbox: Checkbox,
+    Radio: Radio,
+    Submit: Submit,
+  }
+);
 
 export { FormGroup, Label, Input, Textarea, Checkbox, Radio, Submit };
