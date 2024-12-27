@@ -18,6 +18,8 @@ import Figure from './Figure';
 import Form from './Form';
 import LabelExt from './Form/LabelExt/LabelExt';
 import { InputField } from './Form/InputField/InputField';
+import FullScreenToggle from './FullScreenToggle';
+import Gallery from './Gallery';
 
 const Usage = () => {
   const [rightDrawer, setRightDrawer] = useState(false);
@@ -289,9 +291,27 @@ const Usage = () => {
         <p>Form</p>
         <Form onSubmit={() => console.log('Form submitted')}>
           <LabelExt label="Name" htmlFor="name" info="Name info" />
-          <Form.Input name='test' size='sm' type="tel" placeholder="Text input" />
-          <InputField  name='test' size='sm' placeholder="placeholder" label="test" info="text2"/>
+          <Form.Input name="test" size="sm" type="tel" placeholder="Text input" />
+          <InputField name="test" size="sm" placeholder="placeholder" label="test" info="text2" />
         </Form>
+      </Box>
+      <Box outlined rounded padding="10px" margin="10px">
+        <p>FullScreenToggle</p>
+        <FullScreenToggle />
+      </Box>
+      <Box outlined rounded padding="10px" margin="10px">
+        <p>Gallery</p>
+        <Gallery pattern="compact">
+          <Gallery.Image src="https://picsum.photos/300/200" alt="Random image 1" />
+          <Gallery.Image src="https://picsum.photos/300/200?random=2" alt="Random image 2" />
+          <Gallery.Image src="https://picsum.photos/300/200?random=3" alt="Random image 3" />
+          <Gallery.Image src="https://picsum.photos/300/200?random=4" alt="Random image 4" />
+          <Gallery.Image src="https://picsum.photos/300/200?random=5" alt="Random image 5" />
+          <Gallery.Image src="https://picsum.photos/300/200?random=6" alt="Random image 6" />
+          <Gallery.Image src="https://picsum.photos/300/200?random=7" alt="Random image 7" />
+          <Gallery.Image src="https://picsum.photos/300/200?random=8" alt="Random image 8" />
+          <Gallery.Image src="https://picsum.photos/300/200?random=9" alt="Random image 9" />
+        </Gallery>
       </Box>
     </div>
   );

@@ -15,7 +15,7 @@ import { VariantProps } from 'class-variance-authority';
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   disabled?: boolean;
   onClick?: () => void;
-  children: ReactNode;
+  children?: ReactNode;
   loader?: ReactNode;
   isPending?: boolean;
   isPendingText?: string;

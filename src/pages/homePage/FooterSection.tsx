@@ -16,7 +16,7 @@ const FooterLinks: React.FC<FooterLinksProps> = ({ title, links }) => (
     <h3 className="font-semibold text-base text-purple-500">{title}</h3>
     {links.map((link, index) => (
       <div key={index}>
-        <Link to={link.to} className="text-xs text-black dark:text-white">
+        <Link to={link.to} className="text-xs text-foreground">
           {link.label}
         </Link>
       </div>
@@ -56,11 +56,11 @@ export const FooterSection = () => {
           </div>
         </div>
 
-        <hr className="my-6 dark:bg-gray-200/10" />
+        <hr className="my-6 dark:border-gray-200/10" />
 
         {/* Copyright Section */}
         <section className="text-xs">
-          <h3 className="dark:text-white">
+          <h3 className="text-foreground">
             Copyright &copy; 2024 Designed and developed by
             <Link
               target="_blank"

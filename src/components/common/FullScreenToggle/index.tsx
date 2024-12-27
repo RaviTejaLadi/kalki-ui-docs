@@ -73,7 +73,7 @@ const FullScreenToggle = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Button ref={ref} variant={variant} size={size} onClick={toggleFullScreen} {...rest}>
         <ButtonIcon>{isFullScreen ? <Expand className="size-3" /> : <Shrink className="size-3" />}</ButtonIcon>
-        <ButtonText>{children}</ButtonText>
+        <ButtonText>{children || null}</ButtonText>
       </Button>
     );
   }
