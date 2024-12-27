@@ -1,5 +1,6 @@
 import Accordion from './Accordion';
 import Alert from './Alert';
+import Avatar from './Avatar';
 import Box from './Box';
 
 const Usage = () => {
@@ -44,7 +45,7 @@ const Usage = () => {
           'success' as const,
           'light' as const,
         ].map((item) => (
-          <Alert className="mb-4 "  variant={item}>
+          <Alert className="mb-4 " variant={item}>
             <Alert.Header>Header 1</Alert.Header>
             <Alert.Body>
               lore m ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
@@ -53,6 +54,21 @@ const Usage = () => {
             <Alert.Footer>Footer 1</Alert.Footer>
           </Alert>
         ))}
+      </Box>
+      <Box outlined rounded padding="10px" margin="10px">
+        <p>Avatar</p>
+
+        <Avatar size="md" shape="circle">
+          <Avatar.Image src="" alt="User avatar" />
+          <Avatar.Fallback>JD</Avatar.Fallback>
+        </Avatar>
+
+        <Avatar size="lg" shape="square" className="border-2 border-blue-500">
+          <Avatar.Image src="/path/to/image.jpg" className="grayscale hover:grayscale-0 transition-all" />
+          <Avatar.Fallback className="bg-blue-100">
+            <span className="text-blue-600">JD</span>
+          </Avatar.Fallback>
+        </Avatar>
       </Box>
     </div>
   );

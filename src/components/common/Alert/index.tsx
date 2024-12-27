@@ -1,10 +1,9 @@
 import React, { forwardRef } from 'react';
 import { alertVariants } from './alertVariants';
-import { AlertProps } from './types';
 import { AlertHeader } from './components/AlertHeader';
 import { AlertBody } from './components/AlertBody';
 import { AlertFooter } from './components/AlertFooter';
-
+import type { AlertProps, SectionProps } from './types';
 /**
  * A customizable alert component that displays a message with different visual variants.
  *
@@ -42,4 +41,4 @@ export default Object.assign(
   }
 );
 
-export { AlertBody, AlertHeader, AlertFooter };
+export { AlertBody, AlertHeader, AlertFooter, AlertProps, SectionProps };

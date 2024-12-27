@@ -12,14 +12,9 @@ export const avatarVariants = cva('inline-flex items-center justify-center', {
       circle: 'rounded-full',
       square: 'rounded-md',
     },
-    variant: {
-      image: 'object-cover',
-      fallback: 'bg-gray-300 text-gray-600 font-medium',
-    },
   },
   defaultVariants: {
     size: 'md',
     shape: 'circle',
-    variant: 'image',
   },
 });

@@ -1,27 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { cn } from '@/utils';
 import { AvatarProps } from './types';
 import { AvatarImage } from './AvatarImage';
 import { AvatarFallback } from './AvatarFallback';
+import { AvatarContext } from './context/AvatarContext';
 
-/**
- * `Avatar` is a React component that renders a div with a ref and custom class names.
- * It uses `React.forwardRef` to pass down the ref to the div element.
- *
- * @param {AvatarProps} props - The properties passed to the Avatar component.
- * @param {React.ReactNode} props.children - The content to be rendered inside the Avatar component.
- * @param {string} [props.className=''] - Additional class names to apply to the Avatar component.
- * @param {React.Ref<HTMLDivElement>} ref - The ref to be forwarded to the div element.
- *
- * @returns {JSX.Element} The rendered Avatar component.
- */
-const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(({ children, className = '' }, ref) => {
-  return (
-    <div ref={ref} className={cn('relative inline-flex', className)}>
-      {children}
-    </div>
-  );
-});
+const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
+  ({ children, className, size, shape, ...props }, ref) => {
+    const [hasError, setHasError] = useState(false);
+
+    return (
+      <AvatarContext.Provider 
+        value={{ 
+          size, 
+          shape, 
+          hasError,
+          onError: () => setHasError(true)
+        }}
+      >
+        <div
+          ref={ref}
+          className={cn('relative inline-flex', className)}
+          {...props}
+        >
+          {children}
+        </div>
+      </AvatarContext.Provider>
+    );
+  }
+);
 
 Avatar.displayName = 'Avatar';
 

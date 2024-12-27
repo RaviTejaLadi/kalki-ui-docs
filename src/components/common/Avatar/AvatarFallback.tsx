@@ -1,28 +1,25 @@
-import { forwardRef } from 'react';
+import React, { useContext } from 'react';
 import { cn } from '@/utils';
 import { avatarVariants } from './avatarVariants';
 import { AvatarFallbackProps } from './types';
+import { AvatarContext } from './context/AvatarContext';
 
-/**
- * A fallback component for the Avatar component.
- *
- * This component is used to display a fallback UI when the main Avatar component
- * cannot display the intended content. It supports various sizes and shapes.
- *
- * @component
- * @param {AvatarFallbackProps} props - The properties for the AvatarFallback component.
- * @param {React.ReactNode} props.children - The content to be displayed inside the fallback avatar.
- * @param {string} [props.className=''] - Additional class names to apply to the fallback avatar.
- * @param {string} props.size - The size of the fallback avatar.
- * @param {string} props.shape - The shape of the fallback avatar.
- * @param {React.Ref<HTMLDivElement>} ref - The ref to be forwarded to the fallback avatar's root element.
- *
- * @returns {JSX.Element} The rendered fallback avatar component.
- */
-export const AvatarFallback = forwardRef<HTMLDivElement, AvatarFallbackProps>(
-  ({ children, className = '', size, shape }, ref) => {
+export const AvatarFallback = React.forwardRef<HTMLDivElement, AvatarFallbackProps>(
+  ({ children, className, ...props }, ref) => {
+    const { size, shape, hasError } = useContext(AvatarContext);
+
+    if (!hasError) return null;
+
     return (
-      <div ref={ref} className={cn(avatarVariants({ size, shape, variant: 'fallback' }), className)}>
+      <div
+        ref={ref}
+        className={cn(
+          avatarVariants({ size, shape }),
+          'bg-background dark:bg-background/40 border dark:border-gray-200/10 text-foreground font-medium',
+          className
+        )}
+        {...props}
+      >
         {children}
       </div>
     );

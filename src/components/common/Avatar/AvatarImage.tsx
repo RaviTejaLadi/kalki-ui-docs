@@ -1,43 +1,26 @@
-import { forwardRef, useState } from 'react';
+import React, { useContext } from 'react';
 import { AvatarImageProps } from './types';
 import { avatarVariants } from './avatarVariants';
 import { cn } from '@/utils';
+import { AvatarContext } from './context/AvatarContext';
 
-/**
- * AvatarImage component renders an image for an avatar with error handling.
- *
- * @component
- * @param {Object} props - The properties object.
- * @param {string} props.src - The source URL of the image.
- * @param {string} [props.alt='avatar'] - The alt text for the image.
- * @param {string} [props.className=''] - Additional class names for styling.
- * @param {string} props.size - The size of the avatar.
- * @param {string} props.shape - The shape of the avatar.
- * @param {Object} props.style - Inline styles for the image.
- * @param {Object} rest - Additional properties passed to the image element.
- * @param {React.Ref<HTMLImageElement>} ref - The ref to the image element.
- *
- * @returns {JSX.Element|null} The rendered image element or null if there is an error.
- */
-export const AvatarImage = forwardRef<HTMLImageElement, AvatarImageProps>(
-  ({ src, alt = 'avatar', className = '', size, shape, style, ...rest }, ref) => {
-    const [hasError, setHasError] = useState(false);
+export const AvatarImage = React.forwardRef<HTMLImageElement, AvatarImageProps>(
+  ({ className, src, alt = 'avatar', ...props }, ref) => {
+    const { size, shape, hasError, onError } = useContext(AvatarContext);
 
-    const handleError = () => {
-      setHasError(true);
-    };
+    if (hasError) return null;
 
-    return !hasError ? (
+    return (
       <img
-        src={src}
         ref={ref}
+        src={src}
         alt={alt}
-        className={cn(avatarVariants({ size, shape, variant: 'image' }), className)}
-        style={style}
-        onError={handleError}
-        {...rest}
+        className={cn(avatarVariants({ size, shape }), 'object-cover', className)}
+        onError={onError}
+        {...props}
       />
-    ) : null;
+    );
   }
 );
-AvatarImage.displayName = 'AvatarImage';
+
+AvatarImage.displayName = 'Avatar.Image';
