@@ -15,17 +15,17 @@ import { BadgeIcon } from './BadgeIcon';
  * @param {string} [props.className] - Additional class names to apply to the badge.
  * @param {React.CSSProperties} [props.style] - Inline styles to apply to the badge.
  * @param {React.ReactNode} props.children - The content to be displayed inside the badge.
- * @param {React.Ref<HTMLSpanElement>} ref - The ref to be forwarded to the `<span>` element.
+ * @param {React.Ref<HTMLDivElement>} ref - The ref to be forwarded to the `<span>` element.
  * @param {object} rest - Any additional props to be passed to the `<span>` element.
  *
  * @returns {JSX.Element} The rendered badge component.
  */
-const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
+const Badge = forwardRef<HTMLDivElement, BadgeProps>(
   ({ size, variant, pill, className, style, children, ...rest }, ref) => {
     return (
-      <span className={cn(badgeVariants({ size, variant, pill }), className)} style={style} ref={ref} {...rest}>
+      <div className={cn(badgeVariants({ size, variant, pill }), className)} style={style} ref={ref} {...rest}>
         {children}
-      </span>
+      </div>
     );
   }
 );
@@ -33,7 +33,7 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
 Badge.displayName = 'Badge';
 
 export default Object.assign(
-  Badge as React.ForwardRefExoticComponent<BadgeProps & React.RefAttributes<HTMLSpanElement>>,
+  Badge as React.ForwardRefExoticComponent<BadgeProps & React.RefAttributes<HTMLDivElement>>,
   {
     Icon: BadgeIcon,
   }

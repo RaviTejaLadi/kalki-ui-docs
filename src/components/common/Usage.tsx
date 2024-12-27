@@ -1,6 +1,8 @@
+import { Bug, Building } from 'lucide-react';
 import Accordion from './Accordion';
 import Alert from './Alert';
 import Avatar from './Avatar';
+import Badge from './Badge';
 import Box from './Box';
 
 const Usage = () => {
@@ -69,6 +71,34 @@ const Usage = () => {
             <span className="text-blue-600">JD</span>
           </Avatar.Fallback>
         </Avatar>
+      </Box>
+
+      <Box outlined rounded padding="10px" margin="10px">
+        <p>Badge</p>
+        {[
+          'primary' as const,
+          'secondary' as const,
+          'warning' as const,
+          'danger' as const,
+          'help' as const,
+          'success' as const,
+          'light' as const,
+          'dark' as const,
+          'outline' as const,
+        ].map((item) => (
+          <Badge variant={item} size="sm">
+            <Badge.Icon>
+              <Bug className="size-4" />
+            </Badge.Icon>
+            <div>
+
+            Primary
+            </div>
+            <Badge.Icon>
+              <Building className="size-4" />
+            </Badge.Icon>
+          </Badge>
+        ))}
       </Box>
     </div>
   );
