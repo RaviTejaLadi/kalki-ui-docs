@@ -12,9 +12,8 @@ export const bannerVariants = cva(
         warning: 'bg-warning text-gray-900',
         info: 'bg-info text-white',
         help: 'bg-help text-white',
-        light: 'bg-light text-gray-900',
+        light: 'bg-light text-foreground',
         dark: 'bg-dark text-white',
-        custom: 'text-grey-900',
       },
       size: {
         sm: 'p-5 h-20',

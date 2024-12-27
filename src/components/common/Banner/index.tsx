@@ -1,7 +1,7 @@
 import React, { forwardRef, CSSProperties } from 'react';
 import { cn } from '@/utils';
 import { bannerVariants } from './bannerVariants';
-import { BannerProps } from './types';
+import type { BannerProps, BannerChildProps } from './types';
 import BannerTitle from './BannerTitle';
 import BannerSubTitle from './BannerSubTitle';
 
@@ -33,12 +33,7 @@ const Banner = forwardRef<HTMLDivElement, BannerProps>(
     };
 
     return (
-      <div
-        className={cn(bannerClasses, className, variant === 'custom' && 'text-white')}
-        style={bannerStyle}
-        ref={ref}
-        {...rest}
-      >
+      <div className={cn(bannerClasses, className, variant)} style={bannerStyle} ref={ref} {...rest}>
         <div className="flex-grow">
           {React.Children.map(children, (child) =>
             React.isValidElement(child) && (child.type === BannerTitle || child.type === BannerSubTitle)
@@ -62,4 +57,4 @@ export default Object.assign(
   }
 );
 
-export { BannerTitle, BannerSubTitle };
+export { BannerTitle, BannerSubTitle, BannerProps, BannerChildProps };

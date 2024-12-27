@@ -4,6 +4,7 @@ import Alert from './Alert';
 import Avatar from './Avatar';
 import Badge from './Badge';
 import Box from './Box';
+import Banner from './Banner';
 
 const Usage = () => {
   return (
@@ -90,14 +91,29 @@ const Usage = () => {
             <Badge.Icon>
               <Bug className="size-4" />
             </Badge.Icon>
-            <div>
-
-            Primary
-            </div>
+            <div>{item}</div>
             <Badge.Icon>
               <Building className="size-4" />
             </Badge.Icon>
           </Badge>
+        ))}
+      </Box>
+      <Box outlined rounded padding="10px" margin="10px">
+        <p>Banner</p>
+        {[
+          'primary' as const,
+          'secondary' as const,
+          'warning' as const,
+          'danger' as const,
+          'help' as const,
+          'success' as const,
+          'light' as const,
+          'dark' as const,
+        ].map((item) => (
+          <Banner variant={item} size="sm">
+            <Banner.Title>{item}</Banner.Title>
+            <Banner.SubTitle>Subtitle</Banner.SubTitle>
+          </Banner>
         ))}
       </Box>
     </div>

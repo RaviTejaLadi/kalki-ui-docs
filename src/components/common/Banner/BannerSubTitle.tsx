@@ -18,7 +18,7 @@ import { BannerChildProps, subtitleSizes } from './types';
  */
 const BannerSubTitle = forwardRef<HTMLParagraphElement, BannerChildProps>(
   ({ children, className = '', style, size = 'md' }, ref) => (
-    <p ref={ref} className={cn('mt-1', subtitleSizes[size], className)} style={style}>
+    <p ref={ref} className={cn('my-1', subtitleSizes[size], className)} style={style}>
       {children}
     </p>
   )
