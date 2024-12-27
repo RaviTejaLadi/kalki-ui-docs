@@ -9,6 +9,11 @@
   box-sizing: border-box;
 }
 
+.cm-gutters {
+  padding: 0px;
+  background: inherit !important;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

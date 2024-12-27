@@ -1,10 +1,19 @@
-import { createContext, useContext, useState, forwardRef, ReactNode, useEffect } from 'react';
-import { ChevronRight, ChevronDown, FileText, Folder, FolderOpen, Clipboard , Search, GitBranch, Settings} from 'lucide-react';
+import React, { createContext, useContext, useState, forwardRef, ReactNode, useEffect } from 'react';
+import {
+  ChevronRight,
+  ChevronDown,
+  FileText,
+  Folder,
+  FolderOpen,
+  Clipboard,
+  Search,
+  GitBranch,
+  Settings,
+} from 'lucide-react';
 import { cn } from '@/utils';
 import CodeMirror from '@uiw/react-codemirror';
 import { andromedaInit } from '@uiw/codemirror-theme-andromeda';
 import { javascript } from '@codemirror/lang-javascript';
-
 
 const EmptyState = () => {
   return (
@@ -64,15 +73,26 @@ const EmptyState = () => {
     </div>
   );
 };
+
 interface FileType {
+  type: 'file';
   id: string;
   name: string;
-  content?: string;
+  content: string;
 }
+
+interface FolderType {
+  type: 'folder';
+  name: string;
+  children: (FileType | FolderType)[];
+}
+
+type FileSystemItem = FileType | FolderType;
 
 interface CodeViewerContextType {
   selectedFile: FileType | null;
   setSelectedFile: (file: FileType | null) => void;
+  allFiles: FileType[];
 }
 
 const CodeViewerContext = createContext<CodeViewerContextType | undefined>(undefined);
@@ -85,39 +105,65 @@ const useCodeViewer = () => {
   return context;
 };
 
+// Helper function to extract all files from the nested structure
+const getAllFiles = (items: FileSystemItem[]): FileType[] => {
+  const files: FileType[] = [];
+  
+  const traverse = (items: FileSystemItem[]) => {
+    items.forEach(item => {
+      if (item.type === 'file') {
+        files.push(item);
+      } else {
+        traverse(item.children);
+      }
+    });
+  };
+  
+  traverse(items);
+  return files;
+};
+
 interface CodeViewerProps {
   children: ReactNode;
-  files?: FileType[];
   className?: string;
+  defaultFileOpen?: string;
+  items?: FileSystemItem[];
 }
 
-const CodeViewer = forwardRef<HTMLDivElement, CodeViewerProps>(({ children, files, className }, ref) => {
-  const [selectedFile, setSelectedFile] = useState<FileType | null>(null);
-  
-  useEffect(() => {
-    if (!selectedFile && files && files.length > 0) {
-      setSelectedFile(files[0]);
-    }
-  }, [selectedFile, files]);
+const CodeViewer = forwardRef<HTMLDivElement, CodeViewerProps>(
+  ({ children, className, defaultFileOpen, items = [] }, ref) => {
+    const [selectedFile, setSelectedFile] = useState<FileType | null>(null);
+    const allFiles = getAllFiles(items);
 
-  return (
-    <CodeViewerContext.Provider value={{ selectedFile, setSelectedFile }}>
-      <div
-        ref={ref}
-        className={cn(
-          'relative h-screen m-4 border rounded-md overflow-hidden bg-background dark:bg-inherit border-gray-200 dark:border-gray-200/10',
-          className
-        )}
-      >
-        <div className="flex h-full">{children}</div>
-      </div>
-    </CodeViewerContext.Provider>
-  );
-});
+    useEffect(() => {
+      if (!selectedFile && allFiles.length > 0) {
+        if (defaultFileOpen) {
+          const defaultFile = allFiles.find(file => file.id === defaultFileOpen);
+          if (defaultFile) {
+            setSelectedFile(defaultFile);
+            return;
+          }
+        }
+        setSelectedFile(allFiles[0]);
+      }
+    }, [defaultFileOpen, allFiles]);
 
-CodeViewer.displayName = 'CodeViewer';
+    return (
+      <CodeViewerContext.Provider value={{ selectedFile, setSelectedFile, allFiles }}>
+        <div
+          ref={ref}
+          className={cn(
+            'relative h-screen m-4 border rounded-md overflow-hidden bg-background dark:bg-inherit border-gray-200 dark:border-gray-200/10',
+            className
+          )}
+        >
+          <div className="flex h-full">{children}</div>
+        </div>
+      </CodeViewerContext.Provider>
+    );
+  }
+);
 
-// Explorer
 interface CodeViewerExplorerProps {
   children: ReactNode;
   className?: string;
@@ -128,21 +174,21 @@ const CodeViewerExplorer = forwardRef<HTMLDivElement, CodeViewerExplorerProps>((
     <div
       ref={ref}
       className={cn(
-        'w-64 min-w-64 border-r border-gray-200 dark:border-gray-200/10 dark:bg-inherit bg-background',
+        ' w-64 min-w-64 border-r border-gray-200 dark:border-gray-200/10 dark:bg-inherit bg-background',
         className
       )}
     >
-      <div className="px-4 py-2 h-10 border-b border-gray-200 dark:border-gray-200/10 flex items-center">
+      <div className="px-4  py-2  h-10 border-b border-gray-200 dark:border-gray-200/10 flex items-center">
         <h2 className="text-xs font-medium text-muted-foreground">Files</h2>
       </div>
-      <div className="p-2">{children}</div>
+      <div className="p-2 h-full overflow-y-auto">{children}</div>
     </div>
   );
 });
 
 CodeViewerExplorer.displayName = 'CodeViewerExplorer';
 
-// Folder
+// Update Folder component
 interface CodeViewerFolderProps {
   name: string;
   children: ReactNode;
@@ -150,7 +196,7 @@ interface CodeViewerFolderProps {
 }
 
 const CodeViewerFolder = forwardRef<HTMLDivElement, CodeViewerFolderProps>(({ name, children, className }, ref) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true); // Changed to true by default for better UX
 
   return (
     <div ref={ref}>
@@ -178,9 +224,7 @@ const CodeViewerFolder = forwardRef<HTMLDivElement, CodeViewerFolderProps>(({ na
   );
 });
 
-CodeViewerFolder.displayName = 'CodeViewerFolder';
-
-// File
+// File component remains mostly the same, but uses the new FileType
 interface CodeViewerFileProps {
   id: string;
   name: string;
@@ -202,7 +246,14 @@ const CodeViewerFile = forwardRef<HTMLDivElement, CodeViewerFileProps>(
           isSelected ? 'bg-blue-100/10' : 'hover:bg-gray-100/10',
           className
         )}
-        onClick={() => setSelectedFile({ id, name, content: children || '' })}
+        onClick={() => 
+          setSelectedFile({
+            type: 'file',
+            id,
+            name,
+            content: children || ''
+          })
+        }
       >
         {icon || <FileText className="ml-6 mr-1.5 size-4 text-[var(--icon-color)]" />}
         <span className="text-xs text-muted-foreground">{name}</span>
@@ -211,9 +262,6 @@ const CodeViewerFile = forwardRef<HTMLDivElement, CodeViewerFileProps>(
   }
 );
 
-CodeViewerFile.displayName = 'CodeViewerFile';
-
-// Preview
 interface CodeViewerPreviewProps {
   className?: string;
   language?: string;
@@ -258,7 +306,7 @@ const CodeViewerPreview = forwardRef<HTMLDivElement, CodeViewerPreviewProps>(
               <CodeMirror
                 value={selectedFile.content || 'No content available'}
                 height="100%"
-                editable={true}
+                editable={false}
                 theme={andromedaInit({
                   settings: {
                     background: 'bg-gray-50',
@@ -281,7 +329,7 @@ const CodeViewerPreview = forwardRef<HTMLDivElement, CodeViewerPreviewProps>(
             </div>
           </div>
         ) : (
-          <EmptyState/>
+          <EmptyState />
         )}
       </div>
     );
