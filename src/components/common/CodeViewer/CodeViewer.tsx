@@ -1,42 +1,82 @@
-import { createContext, useContext, useState, forwardRef, ReactNode } from 'react';
-import { ChevronRight, ChevronDown, FileText, Folder, FolderOpen, Sun, Moon, Clipboard } from 'lucide-react';
-import { cva, type VariantProps } from 'class-variance-authority';
+import { createContext, useContext, useState, forwardRef, ReactNode, useEffect } from 'react';
+import { ChevronRight, ChevronDown, FileText, Folder, FolderOpen, Clipboard , Search, GitBranch, Settings} from 'lucide-react';
 import { cn } from '@/utils';
 import CodeMirror from '@uiw/react-codemirror';
 import { andromedaInit } from '@uiw/codemirror-theme-andromeda';
 import { javascript } from '@codemirror/lang-javascript';
 
+
+const EmptyState = () => {
+  return (
+    <div className="flex flex-col items-center justify-center h-full bg-background dark:bg-inherit text-gray-600">
+      {/* Main content */}
+      <div className="flex flex-col items-center space-y-6 max-w-lg text-center p-8">
+        {/* Icon Grid */}
+        <div className="grid grid-cols-2 gap-4 mb-4">
+          <div className="flex flex-col items-center p-4 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer group">
+            <FileText className="size-8 mb-2 text-blue-500 group-hover:text-blue-600" />
+            <span className="text-sm font-medium">New File</span>
+          </div>
+          <div className="flex flex-col items-center p-4 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer group">
+            <FolderOpen className="size-8 mb-2 text-orange-500 group-hover:text-orange-600" />
+            <span className="text-sm font-medium">Open Folder</span>
+          </div>
+          <div className="flex flex-col items-center p-4 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer group">
+            <GitBranch className="size-8 mb-2 text-purple-500 group-hover:text-purple-600" />
+            <span className="text-sm font-medium">Clone Git Repository</span>
+          </div>
+          <div className="flex flex-col items-center p-4 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer group">
+            <Search className="size-8 mb-2 text-green-500 group-hover:text-green-600" />
+            <span className="text-sm font-medium">Find in Files</span>
+          </div>
+        </div>
+
+        {/* Recent Files Section */}
+        <div className="w-full">
+          <h2 className="text-sm font-semibold mb-3 text-gray-700">Recent Files</h2>
+          <div className="space-y-2">
+            <div className="flex items-center p-2 hover:bg-gray-100 rounded-md transition-colors cursor-pointer">
+              <FileText className="size-4 mr-2 text-gray-500" />
+              <span className="text-sm">index.tsx</span>
+            </div>
+            <div className="flex items-center p-2 hover:bg-gray-100 rounded-md transition-colors cursor-pointer">
+              <FileText className="size-4 mr-2 text-gray-500" />
+              <span className="text-sm">styles.css</span>
+            </div>
+            <div className="flex items-center p-2 hover:bg-gray-100 rounded-md transition-colors cursor-pointer">
+              <FileText className="size-4 mr-2 text-gray-500" />
+              <span className="text-sm">package.json</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="w-full h-5 py-3 px-4 border-t border-gray-200 bg-background dark:bg-inherit dark:border-gray-200/10">
+        <div className="flex items-center justify-between text-xs text-muted-foreground">
+          <div className="flex items-center">
+            <Settings className="size-3 mr-1" />
+            <span>Settings</span>
+          </div>
+          <span>Version 1.0.0</span>
+        </div>
+      </div>
+    </div>
+  );
+};
 interface FileType {
   id: string;
   name: string;
   content?: string;
 }
 
-type Theme = 'light' | 'dark';
-
 interface CodeViewerContextType {
   selectedFile: FileType | null;
   setSelectedFile: (file: FileType | null) => void;
-  theme: Theme;
-  toggleTheme: () => void;
 }
 
-const codeViewerWrapper = cva('relative h-screen border rounded-md overflow-hidden', {
-  variants: {
-    theme: {
-      light: 'bg-white border-gray-200',
-      dark: 'bg-gray-900 border-gray-700',
-    },
-  },
-  defaultVariants: {
-    theme: 'light',
-  },
-});
-
-// Context
 const CodeViewerContext = createContext<CodeViewerContextType | undefined>(undefined);
 
-// Hook
 const useCodeViewer = () => {
   const context = useContext(CodeViewerContext);
   if (!context) {
@@ -45,23 +85,30 @@ const useCodeViewer = () => {
   return context;
 };
 
-// CodeViewer
-interface CodeViewerProps extends VariantProps<typeof codeViewerWrapper> {
+interface CodeViewerProps {
   children: ReactNode;
+  files?: FileType[];
   className?: string;
 }
 
-const CodeViewer = forwardRef<HTMLDivElement, CodeViewerProps>(({ children, className }, ref) => {
+const CodeViewer = forwardRef<HTMLDivElement, CodeViewerProps>(({ children, files, className }, ref) => {
   const [selectedFile, setSelectedFile] = useState<FileType | null>(null);
-  const [theme, setTheme] = useState<Theme>('light');
-
-  const toggleTheme = () => {
-    setTheme((current) => (current === 'light' ? 'dark' : 'light'));
-  };
+  
+  useEffect(() => {
+    if (!selectedFile && files && files.length > 0) {
+      setSelectedFile(files[0]);
+    }
+  }, [selectedFile, files]);
 
   return (
-    <CodeViewerContext.Provider value={{ selectedFile, setSelectedFile, theme, toggleTheme }}>
-      <div ref={ref} className={codeViewerWrapper({ theme, className })}>
+    <CodeViewerContext.Provider value={{ selectedFile, setSelectedFile }}>
+      <div
+        ref={ref}
+        className={cn(
+          'relative h-screen m-4 border rounded-md overflow-hidden bg-background dark:bg-inherit border-gray-200 dark:border-gray-200/10',
+          className
+        )}
+      >
         <div className="flex h-full">{children}</div>
       </div>
     </CodeViewerContext.Provider>
@@ -77,36 +124,16 @@ interface CodeViewerExplorerProps {
 }
 
 const CodeViewerExplorer = forwardRef<HTMLDivElement, CodeViewerExplorerProps>(({ children, className }, ref) => {
-  const { theme, toggleTheme } = useCodeViewer();
-
   return (
     <div
       ref={ref}
       className={cn(
-        `w-64 min-w-64 border-r transition-colors duration-200 ${
-          theme === 'light' ? 'border-gray-200 bg-white' : 'border-gray-700 bg-gray-900'
-        }`,
+        'w-64 min-w-64 border-r border-gray-200 dark:border-gray-200/10 dark:bg-inherit bg-background',
         className
       )}
     >
-      <div
-        className={`px-4 py-2 h-10 border-b flex items-center justify-between transition-colors duration-200 ${
-          theme === 'light' ? 'border-gray-200' : 'border-gray-700'
-        }`}
-      >
-        <h2 className={`text-xs font-medium ${theme === 'light' ? 'text-foreground' : 'text-gray-100'}`}>Files</h2>
-        <button
-          onClick={toggleTheme}
-          className={`p-1.5 rounded-md transition-colors ${
-            theme === 'light' ? 'text-foreground hover:bg-gray-100' : 'text-gray-300 hover:bg-gray-800'
-          }`}
-        >
-          {theme === 'light' ? (
-            <Moon className={cn('mx-1.5 size-4 text-[var(--icon-color)]')} />
-          ) : (
-            <Sun className={cn('mx-1.5 size-4 text-[var(--icon-color-d)]')} />
-          )}
-        </button>
+      <div className="px-4 py-2 h-10 border-b border-gray-200 dark:border-gray-200/10 flex items-center">
+        <h2 className="text-xs font-medium text-muted-foreground">Files</h2>
       </div>
       <div className="p-2">{children}</div>
     </div>
@@ -124,42 +151,25 @@ interface CodeViewerFolderProps {
 
 const CodeViewerFolder = forwardRef<HTMLDivElement, CodeViewerFolderProps>(({ name, children, className }, ref) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { theme } = useCodeViewer();
 
   return (
     <div ref={ref}>
       <div
         className={cn(
-          `flex items-center px-3 py-1.5 cursor-pointer rounded-md transition-colors ${
-            theme === 'light' ? 'hover:bg-gray-100 text-foreground' : 'hover:bg-gray-800 text-gray-200'
-          }`,
+          'flex items-center px-3 py-1.5 cursor-pointer rounded-md hover:bg-gray-100/10 text-muted-foreground',
           className
         )}
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? (
-          <ChevronDown
-            className={cn('size-4', theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[var(--icon-color-d)]')}
-          />
+          <ChevronDown className="size-4 text-[var(--icon-color)]" />
         ) : (
-          <ChevronRight
-            className={cn('size-4', theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[var(--icon-color-d)]')}
-          />
+          <ChevronRight className="size-4 text-[var(--icon-color)]" />
         )}
         {isOpen ? (
-          <FolderOpen
-            className={cn(
-              'mx-1.5 size-4',
-              theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[var(--icon-color-d)]'
-            )}
-          />
+          <FolderOpen className="mx-1.5 size-4 text-[var(--icon-color)]" />
         ) : (
-          <Folder
-            className={cn(
-              'mx-1.5 size-4',
-              theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[var(--icon-color-d)]'
-            )}
-          />
+          <Folder className="mx-1.5 size-4 text-[var(--icon-color)]" />
         )}
         <span className="text-xs">{name}</span>
       </div>
@@ -181,35 +191,21 @@ interface CodeViewerFileProps {
 
 const CodeViewerFile = forwardRef<HTMLDivElement, CodeViewerFileProps>(
   ({ id, name, children, icon, className }, ref) => {
-    const { selectedFile, setSelectedFile, theme } = useCodeViewer();
+    const { selectedFile, setSelectedFile } = useCodeViewer();
     const isSelected = selectedFile?.id === id;
 
     return (
       <div
         ref={ref}
         className={cn(
-          `group flex items-center px-3 py-1.5 my-1 cursor-pointer rounded-md transition-colors ${
-            isSelected
-              ? theme === 'light'
-                ? 'bg-blue-100'
-                : 'bg-blue-900/50'
-              : theme === 'light'
-              ? 'hover:bg-gray-100'
-              : 'hover:bg-gray-800'
-          }`,
+          `group flex items-center px-3 py-1.5 my-1 cursor-pointer rounded-md transition-colors`,
+          isSelected ? 'bg-blue-100/10' : 'hover:bg-gray-100/10',
           className
         )}
         onClick={() => setSelectedFile({ id, name, content: children || '' })}
       >
-        {icon || (
-          <FileText
-            className={cn(
-              'ml-6 mr-1.5 size-4',
-              theme === 'light' ? 'text-[var(--icon-color)]' : 'text-[hsl(218,11%,65%)]'
-            )}
-          />
-        )}
-        <span className={`text-xs ${theme === 'light' ? 'text-foreground' : 'text-gray-200'}`}>{name}</span>
+        {icon || <FileText className="ml-6 mr-1.5 size-4 text-[var(--icon-color)]" />}
+        <span className="text-xs text-muted-foreground">{name}</span>
       </div>
     );
   }
@@ -227,7 +223,7 @@ interface CodeViewerPreviewProps {
 
 const CodeViewerPreview = forwardRef<HTMLDivElement, CodeViewerPreviewProps>(
   ({ className, language = 'jsx', lineNumbers = false, title, ...rest }, ref) => {
-    const { selectedFile, theme } = useCodeViewer();
+    const { selectedFile } = useCodeViewer();
 
     const getLanguageExtension = () => {
       if (['typescript', 'ts', 'jsx', 'tsx'].includes(language)) {
@@ -235,6 +231,7 @@ const CodeViewerPreview = forwardRef<HTMLDivElement, CodeViewerPreviewProps>(
       }
       return [javascript()];
     };
+
     const copyContent = () => {
       if (selectedFile?.content) {
         navigator.clipboard.writeText(selectedFile.content).then(() => {
@@ -242,25 +239,18 @@ const CodeViewerPreview = forwardRef<HTMLDivElement, CodeViewerPreviewProps>(
         });
       }
     };
+
     return (
       <div ref={ref} className={cn('flex-1 overflow-hidden', className)}>
         {selectedFile ? (
           <div className="h-full flex flex-col">
-            <div
-              className={`px-4 py-2 h-10 border-b flex justify-between items-center transition-colors duration-200 ${
-                theme === 'light' ? 'border-gray-200' : 'border-gray-700'
-              }`}
-            >
-              <span className={`text-xs ${theme === 'light' ? 'text-foreground' : 'text-gray-300'}`}>
-                {selectedFile.name}
-              </span>
+            <div className="px-4 py-2 h-10 border-b border-gray-200 dark:border-gray-200/10 flex justify-between items-center">
+              <span className="text-xs text-muted-foreground">{selectedFile.name}</span>
               <button
                 onClick={copyContent}
-                className={`flex items-center gap-1 text-xs p-1  rounded ${
-                  theme === 'light' ? 'border-gray-300 bg-gray-100' : 'border-gray-700 bg-gray-800 text-gray-300'
-                } hover:bg-opacity-75`}
+                className="flex items-center gap-1 text-xs p-1 hover:bg-gray-200/10 rounded border-gray-200 dark:border-gray-200/10 dark:bg-inherit bg-background hover:bg-opacity-75"
               >
-                <Clipboard className="size-4" />
+                <Clipboard className="size-4 text-[var(--icon-color)]" />
               </button>
             </div>
 
@@ -268,31 +258,30 @@ const CodeViewerPreview = forwardRef<HTMLDivElement, CodeViewerPreviewProps>(
               <CodeMirror
                 value={selectedFile.content || 'No content available'}
                 height="100%"
-                editable={false}
+                editable={true}
                 theme={andromedaInit({
                   settings: {
-                    background: theme === 'light' ? 'bg-gray-50' : 'bg-gray-900',
+                    background: 'bg-gray-50',
                     fontFamily:
                       'Fira Code VF, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace',
                   },
                 })}
                 extensions={[getLanguageExtension()]}
                 basicSetup={{
-                  lineNumbers: false,
-                  foldGutter: false,
-                  highlightActiveLineGutter: false,
-                  highlightActiveLine: false,
-                  tabSize: 4,
+                  lineNumbers: true,
+                  foldGutter: true,
+                  highlightActiveLineGutter: true,
+                  highlightActiveLine: true,
+                  tabSize: 2,
+                  autocompletion: true,
                 }}
-                className="text-xs font-medium leading-6 h-full"
+                className="text-xs font-medium leading-6 tracking-wide h-full px-5 py-4"
                 {...rest}
               />
             </div>
           </div>
         ) : (
-          <div className="flex items-center justify-center h-full text-muted-foreground ">
-            Select a file to view its content
-          </div>
+          <EmptyState/>
         )}
       </div>
     );
