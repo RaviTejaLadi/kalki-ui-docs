@@ -1,6 +1,6 @@
 import { forwardRef, CSSProperties } from 'react';
 import { cn } from '@/utils';
-import { ContentScrollableProps } from './types';
+import type { ContentScrollableProps } from './types';
 import { contentScrollableVariants } from './contentScrollableVariants';
 
 /**
@@ -40,3 +40,4 @@ const ContentScrollable = forwardRef<HTMLDivElement, ContentScrollableProps>(
 ContentScrollable.displayName = 'ContentScrollable';
 
 export default ContentScrollable;
+export { ContentScrollableProps };

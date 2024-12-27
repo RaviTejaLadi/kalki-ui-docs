@@ -17,7 +17,7 @@ interface ContentScrollableProps extends React.HTMLAttributes<HTMLDivElement> {
   height?: string;
   width?: string;
   children: ReactNode;
-  variant?: 'success' | 'danger' | 'warning' | 'info' | 'primary' | 'secondary' | 'dark' | 'light';
+  variant?: 'success' | 'danger' | 'help' | 'warning' | 'info' | 'primary' | 'secondary' | 'dark' | 'light';
   className?: string;
   style?: CSSProperties;
 }

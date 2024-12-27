@@ -11,6 +11,7 @@ import Card from './Card';
 import Carousel, { CarouselSlides } from './Carousel';
 import CloseButton from './CloseButton';
 import Code from './Code';
+import ContentScrollable from './ContentScrollable';
 
 const Usage = () => {
   return (
@@ -206,6 +207,30 @@ const Usage = () => {
           <Code variant={item} size="sm">
             {`() => console.log('Close button clicked')`}
           </Code>
+        ))}
+      </Box>
+
+      <Box outlined rounded padding="10px" margin="10px">
+        <p>Content scrollable</p>
+        {[
+          'primary' as const,
+          'secondary' as const,
+          'warning' as const,
+          'danger' as const,
+          'help' as const,
+          'success' as const,
+          'light' as const,
+          'dark' as const,
+        ].map((item) => (
+          <ContentScrollable height="200px" width="200px" variant={item}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur impedit reprehenderit laboriosam facere
+            deserunt voluptate illum amet tenetur voluptatibus architecto quaerat aliquam quia excepturi eos eius modi,
+            obcaecati consequatur. Numquam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur impedit
+            reprehenderit laboriosam facere deserunt voluptate illum amet tenetur voluptatibus architecto quaerat
+            aliquam quia excepturi eos eius modi, obcaecati consequatur. Numquam? Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Consectetur impedit reprehenderit laboriosam facere deserunt voluptate illum amet tenetur
+            voluptatibus architecto quaerat aliquam quia excepturi eos eius modi, obcaecati consequatur. Numquam?
+          </ContentScrollable>
         ))}
       </Box>
     </div>
