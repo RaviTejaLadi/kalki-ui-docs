@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, KeyboardEvent } from 'react';
 import { AccordionContext } from '../context/AccordionContext';
 import { backgroundColorMap } from '../utils/backgroundColorMap';
 import { sizesMap } from '../utils/sizesMap';
@@ -54,25 +54,30 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   const backgroundColor = isActive ? backgroundColorMap[variant] : 'bg-transparent';
   const dimensions = sizesMap[size];
 
+  const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleItem(eventKey);
+    }
+  };
   return (
     <div
       className={cn(
-        `flex justify-between font-medium items-center cursor-pointer text-foreground dark:text-foreground p-4 transition-colors duration-300 ${
-          isActive ? 'text-white' : 'text-black'
-        } ${backgroundColor} ${dimensions}`,
+        'flex justify-between font-medium items-center cursor-pointer text-foreground dark:text-foreground p-4 transition-colors duration-300',
+        isActive ? 'text-white' : 'text-black',
+        backgroundColor,
+        dimensions,
         className
       )}
+      tabIndex={0}
+      role="button"
       onClick={() => toggleItem(eventKey)}
+      onKeyDown={handleKeyDown}
       style={style}
       {...rest}
     >
       {children}
-      {icon || (
-        <ChevronDown
-          style={{ width: '24px', height: '24px' }}
-          className={`transition-transform ${isActive ? 'rotate-180' : ''}`}
-        />
-      )}
+      {icon || <ChevronDown className={cn('transition-transform size-4', isActive ? 'rotate-180' : '')} />}
     </div>
   );
 };
