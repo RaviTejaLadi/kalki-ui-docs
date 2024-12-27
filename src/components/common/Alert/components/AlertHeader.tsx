@@ -13,7 +13,7 @@ import { SectionProps } from '../types';
  */
 export const AlertHeader: React.FC<SectionProps> = ({ children, className, style, ...rest }) => {
   return (
-    <div className={cn('font-bold mb-2', className)} style={style} {...rest}>
+    <div className={cn('font-semibold text-sm', className)} style={style} {...rest}>
       {children}
     </div>
   );

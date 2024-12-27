@@ -14,7 +14,7 @@ import { SectionProps } from '../types';
  */
 export const AlertBody: React.FC<SectionProps> = ({ children, className, style, ...rest }) => {
   return (
-    <div className={cn('mb-2', className)} style={style} {...rest}>
+    <div className={cn('text-xs my-2', className)} style={style} {...rest}>
       {children}
     </div>
   );

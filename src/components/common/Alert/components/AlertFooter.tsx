@@ -13,7 +13,7 @@ import { SectionProps } from '../types';
  */
 export const AlertFooter: React.FC<SectionProps> = ({ children, className, style, ...rest }) => {
   return (
-    <div className={cn('mt-2', className)} style={style} {...rest}>
+    <div className={cn('text-xs', className)} style={style} {...rest}>
       {children}
     </div>
   );

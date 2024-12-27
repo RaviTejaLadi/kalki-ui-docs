@@ -1,4 +1,5 @@
 import Accordion from './Accordion';
+import Alert from './Alert';
 import Box from './Box';
 
 const Usage = () => {
@@ -30,6 +31,27 @@ const Usage = () => {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
+        ))}
+      </Box>
+      <Box outlined rounded padding="10px" margin="10px">
+        <p>Alert</p>
+        {[
+          'primary' as const,
+          'secondary' as const,
+          'warning' as const,
+          'danger' as const,
+          'help' as const,
+          'success' as const,
+          'light' as const,
+        ].map((item) => (
+          <Alert className="mb-4 "  variant={item}>
+            <Alert.Header>Header 1</Alert.Header>
+            <Alert.Body>
+              lore m ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
+              ante dapibus diam. Sed nisi. Nulla quis sem at nib
+            </Alert.Body>
+            <Alert.Footer>Footer 1</Alert.Footer>
+          </Alert>
         ))}
       </Box>
     </div>
