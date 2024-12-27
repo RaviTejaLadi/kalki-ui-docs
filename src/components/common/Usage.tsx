@@ -8,6 +8,7 @@ import Banner from './Banner';
 import Breadcrumb from './Breadcrumb';
 import Button from './Button';
 import Card from './Card';
+import Carousel, { CarouselSlides } from './Carousel';
 
 const Usage = () => {
   return (
@@ -163,6 +164,24 @@ const Usage = () => {
             <p>Card Footer</p>
           </Card.Footer>
         </Card>
+      </Box>
+      <Box outlined rounded padding="10px" margin="10px">
+        <p>Carousel</p>
+        <Carousel outlined size="sm" width="400px" height="300px" borderRadius="10px" padding="sm">
+          <CarouselSlides >
+            <img src="https://picsum.photos/300/200" className='w-full' alt="Random image 1" />
+            <img src="https://picsum.photos/300/200?random=2"  className='w-full'alt="Random image 2" />
+            <img src="https://picsum.photos/300/200?random=3" className='w-full'alt="Random image 3" />
+          </CarouselSlides>
+          <Carousel.Content>
+            <p>Content</p>
+          </Carousel.Content>
+          <Carousel.Dots />
+          <Carousel.Controls>
+            <Button>Previous</Button>
+            <Button>Next</Button>
+          </Carousel.Controls>
+        </Carousel>
       </Box>
     </div>
   );
