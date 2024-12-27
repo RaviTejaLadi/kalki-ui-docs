@@ -1,4 +1,5 @@
 import { CSSProperties, ReactNode } from 'react';
+import { ImageProps } from '../Image/types';
 
 /**
  * Props for the Figure component.
@@ -32,7 +33,7 @@ interface FigureProps extends React.HTMLAttributes<HTMLElement> {
  * @property {string} [className] - Optional CSS class name for the image.
  * @property {CSSProperties} [style] - Optional inline styles for the image.
  */
-interface FigureImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+interface FigureImageProps extends ImageProps {
   src: string;
   alt: string;
   className?: string;

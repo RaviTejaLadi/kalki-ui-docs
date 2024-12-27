@@ -1,6 +1,7 @@
 import { forwardRef } from 'react';
 import { cn } from '@/utils';
 import { FigureImageProps } from './types';
+import Image from '../Image';
 
 /**
  * A functional component that renders an image with customizable properties.
@@ -19,14 +20,15 @@ import { FigureImageProps } from './types';
 export const FigureImage = forwardRef<HTMLImageElement, FigureImageProps>(
   ({ src, alt, className, style, ...rest }, ref) => {
     return (
-      <img
-        ref={ref}
-        src={src}
-        alt={alt}
-        className={cn('w-full h-full object-cover rounded-md', className)}
-        style={style}
-        {...rest}
-      />
+      <div ref={ref}>
+        <Image
+          src={src}
+          alt={alt}
+          className={cn('w-full h-full object-cover rounded-md', className)}
+          style={style}
+          {...rest}
+        />
+      </div>
     );
   }
 );

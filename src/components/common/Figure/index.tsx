@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { FigureProps } from './types';
+import type { FigureProps, FigureImageProps, FigureCaptionProps } from './types';
 import { cn } from '@/utils';
 import { FigureImage } from './FigureImage';
 import { FigureCaption } from './FigureCaption';
@@ -43,4 +43,5 @@ export default Object.assign(
     Caption: FigureCaption,
   }
 );
-export { FigureImage, FigureCaption };
+
+export { FigureImage, FigureCaption, FigureProps, FigureImageProps, FigureCaptionProps };

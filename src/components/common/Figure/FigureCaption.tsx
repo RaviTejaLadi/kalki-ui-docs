@@ -19,7 +19,7 @@ export const FigureCaption = forwardRef<HTMLElement, FigureCaptionProps>(
     return (
       <figcaption
         ref={ref}
-        className={cn('w-full italic text-sm text-gray-600 mt-2 ml-4', className)}
+        className={cn('w-full italic text-sm text-muted-foreground mt-2 ml-4', className)}
         style={style}
         {...rest}
       >

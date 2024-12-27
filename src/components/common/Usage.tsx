@@ -14,6 +14,7 @@ import Code from './Code';
 import ContentScrollable from './ContentScrollable';
 import Drawer from './Drawer';
 import { Fragment, useState } from 'react';
+import Figure from './Figure';
 
 const Usage = () => {
   const [rightDrawer, setRightDrawer] = useState(false);
@@ -272,6 +273,13 @@ const Usage = () => {
             </Drawer>
           </Fragment>
         ))}
+      </Box>
+      <Box outlined rounded padding="10px" margin="10px">
+        <p>figure</p>
+        <Figure className='w-fit'>
+          <Figure.Image src="https://picsum.photos/300/200" alt="Random image" />
+          <Figure.Caption>Random image</Figure.Caption>
+        </Figure>
       </Box>
     </div>
   );
