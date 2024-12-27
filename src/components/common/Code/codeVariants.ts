@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-export const codeVariants = cva('font-mono rounded whitespace-nowrap inline-block font-semibold', {
+export const codeVariants = cva('font-mono rounded-md whitespace-nowrap inline-block font-normal', {
   variants: {
     variant: {
       primary: 'text-blue-500 bg-blue-100',
@@ -10,7 +10,7 @@ export const codeVariants = cva('font-mono rounded whitespace-nowrap inline-bloc
       warning: 'text-yellow-500 bg-yellow-100',
       info: 'text-teal-500 bg-teal-100',
       help: 'text-purple-500 bg-purple-100',
-      light: 'text-gray-800 bg-gray-50',
+      light: 'text-foreground bg-background',
       dark: 'text-gray-800 bg-gray-300',
     },
     size: {

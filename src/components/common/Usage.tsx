@@ -9,6 +9,8 @@ import Breadcrumb from './Breadcrumb';
 import Button from './Button';
 import Card from './Card';
 import Carousel, { CarouselSlides } from './Carousel';
+import CloseButton from './CloseButton';
+import Code from './Code';
 
 const Usage = () => {
   return (
@@ -168,10 +170,10 @@ const Usage = () => {
       <Box outlined rounded padding="10px" margin="10px">
         <p>Carousel</p>
         <Carousel outlined size="sm" width="400px" height="300px" borderRadius="10px" padding="sm">
-          <CarouselSlides >
-            <img src="https://picsum.photos/300/200" className='w-full' alt="Random image 1" />
-            <img src="https://picsum.photos/300/200?random=2"  className='w-full'alt="Random image 2" />
-            <img src="https://picsum.photos/300/200?random=3" className='w-full'alt="Random image 3" />
+          <CarouselSlides>
+            <img src="https://picsum.photos/300/200" className="w-full" alt="Random image 1" />
+            <img src="https://picsum.photos/300/200?random=2" className="w-full" alt="Random image 2" />
+            <img src="https://picsum.photos/300/200?random=3" className="w-full" alt="Random image 3" />
           </CarouselSlides>
           <Carousel.Content>
             <p>Content</p>
@@ -182,6 +184,29 @@ const Usage = () => {
             <Button>Next</Button>
           </Carousel.Controls>
         </Carousel>
+      </Box>
+
+      <Box outlined rounded padding="10px" margin="10px">
+        <p>Close Button</p>
+        <CloseButton onClick={() => console.log('Close button clicked')} />
+      </Box>
+
+      <Box outlined rounded padding="10px" margin="10px">
+        <p>Code</p>
+        {[
+          'primary' as const,
+          'secondary' as const,
+          'warning' as const,
+          'danger' as const,
+          'help' as const,
+          'success' as const,
+          'light' as const,
+          'dark' as const,
+        ].map((item) => (
+          <Code variant={item} size="sm">
+            {`() => console.log('Close button clicked')`}
+          </Code>
+        ))}
       </Box>
     </div>
   );

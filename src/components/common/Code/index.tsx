@@ -1,7 +1,7 @@
 import { cn } from '@/utils';
 import { forwardRef } from 'react';
 import { codeVariants } from './codeVariants';
-import { CodeProps } from './types';
+import type { CodeProps } from './types';
 
 /**
  * `Code` is a React functional component that renders a `<code>` element with customizable styles and class names.
@@ -44,3 +44,4 @@ const Code = forwardRef<HTMLElement, CodeProps>(
 Code.displayName = 'Code';
 
 export default Code;
+export { codeVariants };
