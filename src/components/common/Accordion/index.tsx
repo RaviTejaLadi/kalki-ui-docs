@@ -5,7 +5,14 @@ import { AccordionHeader } from './components/AccordionHeader';
 import { AccordionBody } from './components/AccordionBody';
 import { AccordionItem } from './components/AccordionItem';
 import { cn } from '@/utils';
-import { AccordionProps } from './types';
+import type {
+  AccordionVariant,
+  AccordionSize,
+  AccordionProps,
+  AccordionItemProps,
+  AccordionHeaderProps,
+  AccordionBodyProps,
+} from './types';
 
 /**
  * A flexible accordion component that manages expandable/collapsible sections.
@@ -80,4 +87,14 @@ export default Object.assign(
   }
 );
 
-export { AccordionHeader, AccordionBody, AccordionItem };
+export {
+  AccordionHeader,
+  AccordionBody,
+  AccordionItem,
+  AccordionVariant,
+  AccordionSize,
+  AccordionProps,
+  AccordionItemProps,
+  AccordionHeaderProps,
+  AccordionBodyProps,
+};
