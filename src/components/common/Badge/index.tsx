@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { cn } from '@/utils';
 import { badgeVariants } from './badgeVariants';
-import { BadgeProps } from './types';
+import type { BadgeProps, BadgeIconProps } from './types';
 import { BadgeIcon } from './BadgeIcon';
 
 /**
@@ -39,4 +39,4 @@ export default Object.assign(
   }
 );
 
-export { BadgeIcon };
+export { BadgeIcon, BadgeProps, BadgeIconProps };

@@ -14,4 +14,8 @@ interface BadgeProps extends HTMLAttributes<HTMLSpanElement>, VariantProps<typeo
   children: React.ReactNode;
 }
 
-export type { BadgeProps };
+interface BadgeIconProps extends React.HTMLAttributes<HTMLSpanElement> {
+  className?: string;
+}
+
+export type { BadgeProps, BadgeIconProps };

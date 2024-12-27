@@ -1,5 +1,6 @@
 import { forwardRef } from 'react';
 import { cn } from '@/utils';
+import { BadgeIconProps } from './types';
 
 /**
  * `BadgeIcon` is a React functional component that renders a `<span>` element.
@@ -11,7 +12,8 @@ import { cn } from '@/utils';
  *
  * @returns {JSX.Element} A `<span>` element with the provided props and ref.
  */
-export const BadgeIcon = forwardRef<HTMLSpanElement, React.HTMLAttributes<HTMLSpanElement>>(
+
+export const BadgeIcon = forwardRef<HTMLSpanElement, BadgeIconProps>(
   ({ className, ...rest }, ref) => <span ref={ref} className={cn(className)} {...rest} />
 );
 
