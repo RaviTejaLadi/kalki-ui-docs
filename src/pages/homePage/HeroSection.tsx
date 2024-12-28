@@ -2,28 +2,41 @@ import Badge from '@/components/common/Badge';
 import Button from '@/components/common/Button';
 import Link from '@/components/common/Link';
 import { useTheme } from '@/context/ThemeContext';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
+import { FloatingShapes } from './FloatingShapes';
+import { ReactLogo, TailwindLogo, TypeScriptLogo } from './Logos';
 
 export const HeroSection = () => {
   const { theme } = useTheme();
   return (
-    <section className="w-full">
+    <section className="w-full relative sm:px-6 lg:px-8 overflow-hidden">
+      <FloatingShapes />
       <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20 md:py-32">
         <div className="text-center space-y-8">
+          <div className="flex justify-center items-center gap-6 ">
+            <ReactLogo />
+            <TypeScriptLogo />
+            <TailwindLogo />
+          </div>
           <Badge variant={theme ? 'light' : 'dark'} className="text-sm dark:bg-gray-200/10 rounded-full py-2">
-            <span className="mr-2 text-primary">
-              <Badge variant="help" className="rounded-full tracking-wide">
-                New
+            <span className=" text-primary">
+              <Badge variant="outline" className="bg-indigo-50 text-blue rounded-full tracking-wide">
+                <Sparkles className="w-4 h-4 " />
+                50 +
               </Badge>
             </span>
-            <span className="tracking-wide text-foreground dark:text-gray"> Beautiful UI components </span>
+            <span className="tracking-wide text-foreground dark:text-gray"> Production-Ready Components </span>
           </Badge>
 
           <div className="max-w-screen-md space-y-4 mx-auto text-center  font-bold">
             <h1 className="px-2 text-purple-400 text-4xl tracking-wide md:text-6xl">UI Essentials React</h1>
-            <h6 className="text-2xl md:text-3xl text-foreground">Build using Tsx and Tailwind css</h6>
+            <h6 className="text-xl md:text-xl text-foreground">Build using Tsx and Tailwind css</h6>
           </div>
 
+          <p className="max-w-screen-sm mx-auto text-xl tracking-wide text-muted-foreground">
+            Build stunning web applications faster than ever with our modern, accessible, and fully customizable
+            components. ✨
+          </p>
           <p className="max-w-screen-sm mx-auto text-xl tracking-wide text-muted-foreground">
             Best Package For All Your Ui Needs
           </p>

@@ -49,7 +49,10 @@ const TopBar: React.FC = () => {
   return (
     <Navbar className="flex  h-11 justify-start space-x-10 fixed top-0 z-50 w-full  border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-inherit">
       <Link to="/" className="w-[10rem]">
-        <NavBarLogo className="text-md tracking-wide text-purple-500 dark:text-foreground">UI Essentials</NavBarLogo>
+        <NavBarLogo className="text-md tracking-wide text-purple-500 dark:text-foreground">
+          <span>📦</span>
+          UI Essentials
+        </NavBarLogo>
       </Link>
       <Div className="flex justify-between  items-center w-full">
         <NavBarContent className="flex ">
