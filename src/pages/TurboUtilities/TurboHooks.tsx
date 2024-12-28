@@ -1,6 +1,7 @@
 import Drawer from '@/components/common/Drawer';
 import { hooksOverview } from './docs/hooks/overView';
 import { useState } from 'react';
+import { HookDocs } from './docs/hooks/docs/HookDocs';
 
 interface HookItem {
   id: string;
@@ -35,12 +36,13 @@ const TurboHooks = () => {
       </div>
 
       {selectedItem && (
-        <Drawer isOpen={Boolean(selectedItem)} onClose={handleCloseDrawer} position="right" width="50%">
+        <Drawer isOpen={Boolean(selectedItem)} position="right" width="60%">
           <Drawer.Header closeButton onClose={handleCloseDrawer}>
             <Drawer.Title>{selectedItem.title}</Drawer.Title>
           </Drawer.Header>
           <Drawer.Body>
-            <p>{selectedItem.desc}</p>
+            {/* <p>{selectedItem.desc}</p> */}
+            <HookDocs/>
           </Drawer.Body>
         </Drawer>
       )}

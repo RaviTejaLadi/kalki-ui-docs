@@ -19,7 +19,7 @@ interface DrawerProps {
   position?: 'top' | 'right' | 'bottom' | 'left';
   children: ReactNode;
   isOpen: boolean;
-  onClose: () => void;
+  onClose?: () => void;
   width?: string;
   height?: string;
   overLayColor?: string;
