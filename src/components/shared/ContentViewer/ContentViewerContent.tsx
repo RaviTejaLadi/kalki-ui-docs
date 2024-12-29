@@ -3,11 +3,10 @@ import { useContentViewer } from './context/context';
 
 interface ContentViewerContentProps {
   id: string;
-  title: string;
   children: React.ReactNode;
 }
 
-export const ContentViewerContent: React.FC<ContentViewerContentProps> = ({ id, title, children }) => {
+export const ContentViewerContent: React.FC<ContentViewerContentProps> = ({ id,  children }) => {
   const { registerSection } = useContentViewer();
 
   return (

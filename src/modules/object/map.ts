@@ -1,7 +1,5 @@
 'use strict';
 
-import { Bind3arguments } from '../function/Bind3arguments';
-
 /**
  * # Map
  *

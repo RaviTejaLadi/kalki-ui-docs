@@ -1,4 +1,4 @@
-class MathOperations {
+export class MathOperations {
   // 1. Addition
   static add(a: number, b: number): number {
     return a + b;
