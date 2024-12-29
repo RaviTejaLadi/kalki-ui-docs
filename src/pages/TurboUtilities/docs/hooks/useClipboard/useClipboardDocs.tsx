@@ -1,3 +1,6 @@
+import { useClipboard } from "@/modules/hooks";
+import React from "react";
+
 interface hookDocs {
   title: string;
   description: string;

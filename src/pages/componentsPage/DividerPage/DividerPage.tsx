@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const DividerPage = () => {
   return <div>DividerPage</div>;

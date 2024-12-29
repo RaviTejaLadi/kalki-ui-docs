@@ -156,8 +156,8 @@ class MathOperations {
     return numbers.reduce((sum, num) => sum + num, 0) / numbers.length;
   }
 
-  static getRandomValueInRange(min: number, max: number, round: boolean = false): number {
-    let value = Math.random() * (max - min) + min;
+  static getRandomValueInRange(min: number, max: number, round = false): number {
+    const value = Math.random() * (max - min) + min;
     return round ? Math.round(value) : value;
   }
 

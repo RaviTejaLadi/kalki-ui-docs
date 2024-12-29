@@ -3,6 +3,7 @@ import { npmSnippet, yarnSnippet, pnpmSnippet, compExampleCode } from './Snippet
 import Button from '@/components/common/Button';
 import Box from '@/components/common/Box';
 import { Code, Terminal } from 'lucide-react';
+import React from 'react';
 
 interface usageData {
   label: string;
@@ -42,7 +43,7 @@ export const demoExample = [
           'light' as const,
           'dark' as const,
         ].map((item) => (
-          <Button size="sm" variant={item} onClick={() => alert('Button clicked!')}>
+          <Button size="sm" key={item} variant={item} onClick={() => alert('Button clicked!')}>
             Click Me
           </Button>
         ))}

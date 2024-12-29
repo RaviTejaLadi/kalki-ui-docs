@@ -27,7 +27,7 @@ import { ButtonProps } from '../Button/types';
  */
 const FullScreenToggle = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ variant = 'light', size = 'xs', children, ...rest }, ref) => {
-    const [isFullScreen, setFullScreen] = useState<Boolean>(false);
+    const [isFullScreen, setFullScreen] = useState<boolean>(false);
 
     const toggleFullScreen = () => {
       const doc = document.documentElement;

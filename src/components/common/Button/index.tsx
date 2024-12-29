@@ -61,7 +61,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {isPending ? (
           <span className="flex gap-2 items-center justify-center">
-            {loader ? loader : <Loader className="size-4 animate-spin" />}
+            {loader || <Loader className="size-4 animate-spin" />}
             <span>{isPendingText}</span>
           </span>
         ) : (

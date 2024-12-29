@@ -1,5 +1,3 @@
-import React from 'react';
-
 const RipplePage = () => {
   return <div>RipplePage</div>;
 };

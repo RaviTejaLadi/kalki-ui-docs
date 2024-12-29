@@ -6,7 +6,7 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 import { FloatingShapes } from './FloatingShapes';
 import { ReactLogo, TailwindLogo, TypeScriptLogo } from './Logos';
 import { TextReveal } from './animations/TextReveal';
-import { GradientText } from './animations/GridBackground';
+import { GradientText } from './animations/GradientText';
 
 export const HeroSection = () => {
   const { theme } = useTheme();

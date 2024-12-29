@@ -9,8 +9,7 @@ interface Component {
   name: string;
   description: string;
   preview: React.ReactNode;
-}
-[];
+}[];
 
 const components: Component[] = [
   {

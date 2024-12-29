@@ -67,9 +67,9 @@ interface SectionHeaderRootProps extends Omit<React.HTMLAttributes<HTMLDivElemen
   asChild?: boolean;
 }
 
-interface SectionHeaderTitleProps extends Omit<React.HTMLAttributes<HTMLHeadingElement>, 'size'> {}
+type SectionHeaderTitleProps = Omit<React.HTMLAttributes<HTMLHeadingElement>, 'size'>
 
-interface SectionHeaderSubTitleProps extends Omit<React.HTMLAttributes<HTMLParagraphElement>, 'size'> {}
+type SectionHeaderSubTitleProps = Omit<React.HTMLAttributes<HTMLParagraphElement>, 'size'>
 
 const SectionHeader = React.forwardRef<HTMLDivElement, SectionHeaderRootProps>(
   ({ className, variant, size = 'md', align, children, ...props }, ref) => {

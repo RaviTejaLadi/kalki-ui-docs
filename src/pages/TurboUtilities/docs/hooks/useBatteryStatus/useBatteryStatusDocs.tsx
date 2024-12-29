@@ -1,3 +1,4 @@
+import React from 'react';
 import BatteryStatusDisplay from './BatteryStatusDisplay';
 
 interface BatteryStatusDocs {

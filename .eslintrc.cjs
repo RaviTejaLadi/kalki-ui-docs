@@ -1,23 +1,36 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
+    es2024: true, // Updated to latest ECMAScript version
+    node: true // Added for Node.js environment support
   },
-  extends: ['plugin:react/recommended', 'standard', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime', // Added for new JSX transform
+    'plugin:react-hooks/recommended', // Added hooks linting
+    'standard',
+    'prettier'
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
-    ecmaVersion: 12,
-    sourceType: 'module',
+    ecmaVersion: 'latest',
+    sourceType: 'module'
   },
   settings: {
     react: {
-      version: 'detect',
-    },
+      version: 'detect'
+    }
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: [
+    'react',
+    'react-hooks', // Added React Hooks plugin
+    '@typescript-eslint'
+  ],
   rules: {
     'react/jsx-curly-brace-presence': 'error',
     'react/react-in-jsx-scope': 'off',
@@ -25,13 +38,20 @@ module.exports = {
       'error',
       {
         component: true,
-        html: true,
-      },
+        html: true
+      }
     ],
     'react/jsx-boolean-value': 'error',
     'prefer-template': 'error',
     'jsx-quotes': ['error', 'prefer-double'],
     'react/jsx-tag-spacing': 'error',
     'space-before-function-paren': 'off',
-  },
+    // Additional recommended rules
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    '@typescript-eslint/no-unused-vars': ['error'],
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-explicit-any': 'warn'
+  }
 };

@@ -31,8 +31,8 @@ const Quiz = ({ name, questions, totalTime, onComplete }: QuizProps) => {
   const [answers, setAnswers] = useState<Array<{ selected: number | null; isCorrect: boolean }>>([]);
 
   useEffect(() => {
-    let timer: number = 0;
-    let questionTimer: number = 0;
+    let timer = 0;
+    let questionTimer = 0;
 
     if (quizStarted && !quizCompleted) {
       setQuestionTimeLeft(questions[currentQuestionIndex].timeLimit);

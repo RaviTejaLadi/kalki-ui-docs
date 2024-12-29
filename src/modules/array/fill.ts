@@ -21,7 +21,7 @@
  *
  * @returns The array filled with the specified value.
  */
-export function turboFill<T>(subject: T[], value: T, start: number = 0, end: number = subject.length): T[] {
+export function turboFill<T>(subject: T[], value: T, start = 0, end: number = subject.length): T[] {
   const length = subject.length;
 
   // If start and end are outside bounds, adjust them

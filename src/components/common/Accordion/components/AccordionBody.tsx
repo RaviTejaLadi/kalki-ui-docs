@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { bodySizesMap } from '../utils/bodySizesMap';
 import { AccordionContext } from '../context/AccordionContext';
 import { cn } from '@/utils';

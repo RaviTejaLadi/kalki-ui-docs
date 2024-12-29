@@ -1,7 +1,7 @@
-import React from 'react';
 
-const BreadcrumPage = () => {
-  return <div>BreadcrumPage</div>;
+
+const BreadcrumbPage = () => {
+  return <div>BreadcrumbPage</div>;
 };
 
-export default BreadcrumPage;
+export default BreadcrumbPage;

@@ -6,6 +6,7 @@ import { compExampleCode, componentCode, setupSnippet } from './Snippet';
 import { Code, Terminal } from 'lucide-react';
 import Button from '@/components/common/Button';
 import Box from '@/components/common/Box';
+import React from 'react';
 
 const GetStarted: React.FC = () => {
   return (
@@ -28,7 +29,7 @@ const GetStarted: React.FC = () => {
           <Stepper.Description>Install the package in your project directory with:</Stepper.Description>
           <Tabs variant="secondary" size="sm">
             {usage.map((item) => (
-              <Tab label={item.label} value={item.label} leftIcon={item.icon}>
+              <Tab label={item.label} key={item.label} value={item.label} leftIcon={item.icon}>
                 <Stepper.CodeBlock code={item.content} language="jsx" />
               </Tab>
             ))}
@@ -66,7 +67,7 @@ const GetStarted: React.FC = () => {
                   'light' as const,
                   'dark' as const,
                 ].map((item) => (
-                  <Button size="xs" variant={item} onClick={() => alert('Button clicked!')}>
+                  <Button size="xs" key={item} variant={item} onClick={() => alert('Button clicked!')}>
                     Click Me
                   </Button>
                 ))}

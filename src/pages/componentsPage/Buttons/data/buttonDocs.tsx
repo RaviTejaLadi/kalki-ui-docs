@@ -250,7 +250,7 @@ export const buttonDocs: docsData[] = [
           'outline' as const,
           'ghost' as const,
         ].map((item) => (
-          <Button size="sm" variant={item}>
+          <Button size="sm" key={item} variant={item}>
             <Button.Icon>
               <Globe className="size-4" />
             </Button.Icon>

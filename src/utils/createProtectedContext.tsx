@@ -1,4 +1,4 @@
-import React, { createContext, useContext, ReactNode, Context } from 'react';
+import React, { createContext, useContext, ReactNode, Context, useCallback } from 'react';
 
 type ContextValue = boolean;
 
@@ -63,7 +63,7 @@ export const createProtectedContext = (errorMessage: string) => {
   `;
 
   // Memoize the format function
-  const formatErrorMessage = React.useCallback((message: string): string => {
+  const formatErrorMessage = useCallback((message: string): string => {
     return message
       .replace(/</g, '\n  <')
       .replace(/>/g, '>\n')

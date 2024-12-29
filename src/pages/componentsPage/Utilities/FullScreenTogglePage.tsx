@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const FullScreenTogglePage = () => {
   return <div>FullScreenTogglePage</div>;

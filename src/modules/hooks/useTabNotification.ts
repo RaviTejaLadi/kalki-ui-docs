@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 export function useTabNotification(flashDelayInSeconds = 2) {
   const [originalTitle] = useState(document.title);
-  let defaultFavicon = document.querySelector('link[rel$=icon]')?.getAttribute('href');
+  const defaultFavicon = document.querySelector('link[rel$=icon]')?.getAttribute('href');
   const [favicon] = useState(defaultFavicon);
   const [notificationFavicon, setNotificationFavicon] = useState(defaultFavicon);
   const [titlePrefix, setTitlePrefix] = useState<string | null>(null);
@@ -44,9 +44,9 @@ export function useTabNotification(flashDelayInSeconds = 2) {
     if (!isShown) {
       setModifiedTitle(originalTitle);
     } else {
-      let title = customTitle ? customTitle : originalTitle;
+      let title = customTitle || originalTitle;
       if (titlePrefix) {
-        title = titlePrefix + ' ' + title;
+        title = `${titlePrefix  } ${  title}`;
       }
 
       setModifiedTitle(title);

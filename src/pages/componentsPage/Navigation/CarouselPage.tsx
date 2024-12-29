@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const CarouselPage = () => {
   return <div>CarouselPage</div>;

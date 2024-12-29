@@ -5,7 +5,7 @@ export const rgbToHsl = (r: number, g: number, b: number): { h: number; s: numbe
   const max = Math.max(r, g, b);
   const min = Math.min(r, g, b);
   const l = (max + min) / 2;
-  let h: number = 0;
+  let h = 0;
   let s: number;
 
   if (max === min) {

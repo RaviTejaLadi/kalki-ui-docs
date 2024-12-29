@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const TypographyPage = () => {
   return <div>TypographyPage</div>;

@@ -5,7 +5,7 @@ import { CardTitle } from './CardTitle';
 import { CardDescription } from './CardDescription';
 import { CardContent } from './CardContent';
 import { CardFooter } from './CardFooter';
-interface CardProps extends React.PropsWithChildren<React.ComponentProps<'div'>> {}
+type CardProps = React.PropsWithChildren<React.ComponentProps<'div'>>
 
 /**
  * `Card` is a React functional component that renders a styled div element.

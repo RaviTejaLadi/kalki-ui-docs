@@ -2,7 +2,7 @@ export const useDeviceOS = () => {
   // @ts-ignore
   const { platform } = navigator?.userAgentData || {};
 
-  if (!!platform) {
+  if (platform) {
     return platform;
   }
   // For mobile emulators on browsers

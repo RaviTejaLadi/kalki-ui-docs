@@ -1,3 +1,5 @@
+import React from "react";
+
 interface hookDocs {
   title: string;
   description: string;

@@ -118,9 +118,9 @@ export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
               ${currentTheme.text}`}
             >
               <div className="animate-pulse flex items-center space-x-2">
-                <div className="w-2 h-2 bg-current rounded-full animate-bounce"></div>
-                <div className="w-2 h-2 bg-current rounded-full animate-bounce delay-100"></div>
-                <div className="w-2 h-2 bg-current rounded-full animate-bounce delay-200"></div>
+                <div className="w-2 h-2 bg-current rounded-full animate-bounce" />
+                <div className="w-2 h-2 bg-current rounded-full animate-bounce delay-100" />
+                <div className="w-2 h-2 bg-current rounded-full animate-bounce delay-200" />
               </div>
             </div>
           ) : (
