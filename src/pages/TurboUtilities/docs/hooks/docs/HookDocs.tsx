@@ -34,7 +34,7 @@ export const HookDocs = () => {
         <BookOpen className="w-8 h-8 text-blue-500" />
         <h1 className="text-2xl font-bold text-foreground">useWindowSize Hook</h1>
       </div>
-      
+
       <p className="text-muted-foreground mb-8">
         A custom React hook that tracks the browser window's dimensions in real-time.
       </p>
@@ -58,7 +58,7 @@ export const HookDocs = () => {
             'Automatic cleanup of event listeners',
             'TypeScript support',
             'SSR-safe with fallback values',
-            'Efficient re-rendering'
+            'Efficient re-rendering',
           ].map((feature, index) => (
             <li key={index} className="flex items-center gap-2">
               <Shield className="w-5 h-5 text-green-500" />
@@ -114,7 +114,7 @@ export const HookDocs = () => {
               'Only use when you need real-time window size updates',
               'Consider debouncing for performance in high-update scenarios',
               'Use in conjunction with CSS media queries when possible',
-              'Avoid using for static breakpoint checks'
+              'Avoid using for static breakpoint checks',
             ].map((practice, index) => (
               <li key={index} className="flex items-center gap-2">
                 <Gauge className="w-5 h-5 text-blue-500" />

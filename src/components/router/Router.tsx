@@ -6,6 +6,8 @@ import Loading from '@/components/shared/Loading';
 import ErrorBoundary from '../Error/ErrorBoundary';
 import TurboUtilities from '@/pages/TurboUtilities/TurboUtilities';
 import TurboHooks from '@/pages/TurboUtilities/TurboHooks';
+import ScrollToTop from '../common/ScrollToTop/ScrollToTop';
+import ComponentsShowCase from '@/pages/ComponentsShowCase/ComponentsShowCase';
 
 const Home = lazy(() => import('@/pages/homePage/HomePage'));
 const GetStarted = lazy(() => import('@/pages/getStartedPage/GetStartedPage'));
@@ -22,6 +24,7 @@ function Layout() {
       <main className="flex-grow pt-11 ">
         <Suspense fallback={<Loading />}>
           <Outlet />
+          <ScrollToTop />
         </Suspense>
       </main>
     </div>
@@ -58,7 +61,10 @@ const AppRoutes = () => {
           path: '/turbo-utilities/hooks',
           element: <TurboHooks />,
         },
-
+        {
+          path: '/components-showcase',
+          element: <ComponentsShowCase />,
+        },
         {
           path: '404',
           element: <NotFoundScreen />,

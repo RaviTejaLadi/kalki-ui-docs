@@ -12,8 +12,10 @@ import { AccordionItemProps } from '../types';
  * @param {React.CSSProperties} [props.style] - Custom CSS styles to be applied
  * @returns {JSX.Element} An accordion item container
  */
-export const AccordionItem: React.FC<AccordionItemProps> = ({ children, className, style, ...rest }) => (
-  <div className={cn('border-b border-gray-200 last:border-b-0', className)} style={style} {...rest}>
-    {children}
-  </div>
-);
+export const AccordionItem: React.FC<AccordionItemProps> = ({ children, className, style, ...rest }) => {
+  return (
+    <div className={cn('border-b border-gray-200 last:border-b-0', className)} style={style} {...rest}>
+      {children}
+    </div>
+  );
+};

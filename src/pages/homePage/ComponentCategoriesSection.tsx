@@ -1,6 +1,7 @@
 import Tabs from '@/components/common/VerticalTabs/Tabs';
 import Link from '@/components/common/Link';
 import { categorizedRoutesComponents } from '@/components/Layout/ComponentsLayout/categorizedRoutesComponents';
+import { ChevronRight } from 'lucide-react';
 
 export default function ComponentCategoriesSection() {
   return (
@@ -9,7 +10,7 @@ export default function ComponentCategoriesSection() {
         <Tabs.List title="✨ Component Showcase ✨">
           {categorizedRoutesComponents.map((category, index) => (
             <Tabs.Trigger key={index} id={category.id}>
-             {category.category}
+              {category.category}
             </Tabs.Trigger>
           ))}
         </Tabs.List>
@@ -31,6 +32,15 @@ export default function ComponentCategoriesSection() {
           </Tabs.Content>
         ))}
       </Tabs>
+      <div className="mt-16 text-center">
+        <Link
+          to="/components-showcase"
+          className="group inline-flex items-center border gap-2 bg-background dark:bg-background/10 dark:border-gray-200/10 text-foreground px-8 py-4 rounded-xl hover:shadow-md transition-colors"
+        >
+          Components Showcase
+          <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </Link>
+      </div>
     </div>
   );
 }

@@ -54,12 +54,10 @@ const featureList: FeaturesProps[] = [
 export const FeaturesSection = () => {
   return (
     <section id="features" className="py-5 px-10 ">
-              <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-foreground">Why Choose UI Essentials React?</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Everything you need to build modern React applications 🚀
-          </p>
-        </div>
+      <div className="text-center mb-16">
+        <h2 className="text-3xl font-bold text-foreground">Why Choose UI Essentials React?</h2>
+        <p className="mt-4 text-lg text-muted-foreground">Everything you need to build modern React applications 🚀</p>
+      </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 sm:block columns-2  lg:columns-3 lg:gap-6 mx-auto space-y-4 lg:space-y-6 sm:grid-cols-2  md:grid-col-3 gap-4">
         {featureList.map(({ id, title, description }) => (
           <div key={id}>

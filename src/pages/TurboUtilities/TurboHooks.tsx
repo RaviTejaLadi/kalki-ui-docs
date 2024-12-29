@@ -42,7 +42,7 @@ const TurboHooks = () => {
           </Drawer.Header>
           <Drawer.Body>
             {/* <p>{selectedItem.desc}</p> */}
-            <HookDocs/>
+            <HookDocs />
           </Drawer.Body>
         </Drawer>
       )}

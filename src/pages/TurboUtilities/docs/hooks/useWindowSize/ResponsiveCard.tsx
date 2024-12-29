@@ -21,9 +21,7 @@ export const ResponsiveCard = () => {
       </div>
       <div className="text-center">
         <h2 className="text-xl font-bold mb-2">Window Size Demo</h2>
-        <p className="text-gray-600 mb-4">
-          Current window dimensions:
-        </p>
+        <p className="text-gray-600 mb-4">Current window dimensions:</p>
         <div className="space-y-2">
           <p className="text-sm text-gray-500">
             Width: <span className="font-mono">{width}px</span>

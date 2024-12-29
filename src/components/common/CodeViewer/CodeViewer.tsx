@@ -108,9 +108,9 @@ const useCodeViewer = () => {
 // Helper function to extract all files from the nested structure
 const getAllFiles = (items: FileSystemItem[]): FileType[] => {
   const files: FileType[] = [];
-  
+
   const traverse = (items: FileSystemItem[]) => {
-    items.forEach(item => {
+    items.forEach((item) => {
       if (item.type === 'file') {
         files.push(item);
       } else {
@@ -118,7 +118,7 @@ const getAllFiles = (items: FileSystemItem[]): FileType[] => {
       }
     });
   };
-  
+
   traverse(items);
   return files;
 };
@@ -138,7 +138,7 @@ const CodeViewer = forwardRef<HTMLDivElement, CodeViewerProps>(
     useEffect(() => {
       if (!selectedFile && allFiles.length > 0) {
         if (defaultFileOpen) {
-          const defaultFile = allFiles.find(file => file.id === defaultFileOpen);
+          const defaultFile = allFiles.find((file) => file.id === defaultFileOpen);
           if (defaultFile) {
             setSelectedFile(defaultFile);
             return;
@@ -246,12 +246,12 @@ const CodeViewerFile = forwardRef<HTMLDivElement, CodeViewerFileProps>(
           isSelected ? 'bg-blue-100/10' : 'hover:bg-gray-100/10',
           className
         )}
-        onClick={() => 
+        onClick={() =>
           setSelectedFile({
             type: 'file',
             id,
             name,
-            content: children || ''
+            content: children || '',
           })
         }
       >

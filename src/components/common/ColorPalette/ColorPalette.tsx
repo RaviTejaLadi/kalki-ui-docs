@@ -99,7 +99,7 @@ const ColorPalette: React.FC = () => {
 
   return (
     <div className="px-5">
-      <div className='flex items-end justify-between'>
+      <div className="flex items-end justify-between">
         <div className="pl-2 pt-14">
           <h1 className="text-3xl font-bold mb-2 text-foreground">Tailwind Colors</h1>
           <p className="text-sm text-muted-foreground">Tailwind CSS colors in HSL, RGB, and HEX formats.</p>

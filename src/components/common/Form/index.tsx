@@ -23,7 +23,7 @@ const Form = forwardRef<HTMLFormElement, FormProps>(
     };
 
     return (
-      <form ref={ref} className={cn('space-y-2',className)} style={style} onSubmit={handleSubmit} {...rest}>
+      <form ref={ref} className={cn('space-y-2', className)} style={style} onSubmit={handleSubmit} {...rest}>
         {children}
       </form>
     );

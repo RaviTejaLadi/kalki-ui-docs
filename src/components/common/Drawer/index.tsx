@@ -26,7 +26,18 @@ import { drawerVariants } from './drawerVariants';
  */
 const Drawer = forwardRef<HTMLDivElement, DrawerProps>(
   (
-    { position = 'right', children, isOpen, onClose, width="300px", height="300px", overLayColor = '', className, style, ...rest },
+    {
+      position = 'right',
+      children,
+      isOpen,
+      onClose,
+      width = '300px',
+      height = '300px',
+      overLayColor = '',
+      className,
+      style,
+      ...rest
+    },
     ref
   ) => {
     return (
