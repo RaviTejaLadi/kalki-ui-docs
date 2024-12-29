@@ -1,5 +1,5 @@
 import { Bug, Building } from 'lucide-react';
-import Accordion from './Accordion';
+import { Accordion } from 'kalki-ui';
 import Alert from './Alert';
 import Avatar from './Avatar';
 import Badge from './Badge';
