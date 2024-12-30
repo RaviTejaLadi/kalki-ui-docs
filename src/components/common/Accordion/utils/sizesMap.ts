@@ -5,5 +5,5 @@ export const sizesMap: Record<AccordionSize, string> = {
   md: 'h-11',
   lg: 'h-12',
   xl: 'h-13',
-  xxl: 'h-14',
+  '2xl': 'h-14',
 };

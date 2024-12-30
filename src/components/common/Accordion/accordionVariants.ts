@@ -7,7 +7,7 @@ export const accordionVariants = cva('w-full border-[.5px] dark:border-gray-200/
       md: 'text-base',
       lg: 'text-lg',
       xl: 'text-xl',
-      xxl: 'text-2xl',
+      '2xl': 'text-2xl',
     },
   },
   defaultVariants: {
