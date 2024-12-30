@@ -35,7 +35,7 @@ export const HeroSection = () => {
           <TextReveal delay={400}>
             <div className="max-w-screen-md space-y-4 mx-auto text-center  font-bold">
               <GradientText delay={600}>
-                <h1 className="px-2 text-purple-400 text-4xl tracking-wide md:text-6xl">UI Essentials React</h1>
+                <h1 className="px-2 text-purple-400 text-4xl tracking-wide md:text-6xl">Kalki UI</h1>
               </GradientText>
               <h6 className="text-xl md:text-xl text-foreground">Build using Tsx and Tailwind css</h6>
             </div>

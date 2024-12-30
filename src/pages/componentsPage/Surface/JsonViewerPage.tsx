@@ -1,5 +1,3 @@
-
-
 const JsonViewerPage = () => {
   return <div>JsonViewerPage</div>;
 };

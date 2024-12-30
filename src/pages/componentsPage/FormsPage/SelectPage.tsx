@@ -1,5 +1,3 @@
-
-
 const SelectPage = () => {
   return <div>SelectPage</div>;
 };

@@ -1,5 +1,3 @@
-
-
 const FullScreenTogglePage = () => {
   return <div>FullScreenTogglePage</div>;
 };

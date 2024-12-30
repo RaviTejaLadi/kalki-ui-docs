@@ -1,5 +1,3 @@
-
-
 const GridSystemPage = () => {
   return <div>GridSystemPage</div>;
 };

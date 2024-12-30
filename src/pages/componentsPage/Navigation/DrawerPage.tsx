@@ -1,5 +1,3 @@
-
-
 const DrawerPage = () => {
   return <div>DrawerPage</div>;
 };

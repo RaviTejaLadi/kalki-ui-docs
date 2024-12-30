@@ -1,5 +1,3 @@
-
-
 const ContentScrollablePage = () => {
   return <div>ContentScrollablePage</div>;
 };

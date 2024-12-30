@@ -1,5 +1,5 @@
-import React from "react";
-// provide docs of this hook  
+import React from 'react';
+// provide docs of this hook
 //  which should have about Features, Implementation Details,Example Use Cases,Best Practices in below format example as a separate component and for every option minimum 3 points
 interface hookDocs {
   title: string;

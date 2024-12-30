@@ -1,5 +1,3 @@
-
-
 const CloseButtonPage = () => {
   return <div>CloseButtonPage</div>;
 };

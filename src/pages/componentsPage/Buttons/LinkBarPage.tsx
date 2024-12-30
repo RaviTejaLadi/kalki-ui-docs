@@ -1,5 +1,3 @@
-
-
 const LinkBarPage = () => {
   return <div>LinkBarPage</div>;
 };

@@ -1,5 +1,3 @@
-
-
 const RadioCardPage = () => {
   return <div>RadioCardPage</div>;
 };

@@ -1,5 +1,3 @@
-
-
 const BadgePage = () => {
   return <div>BadgePage</div>;
 };

@@ -1,5 +1,3 @@
-
-
 const TypographyPage = () => {
   return <div>TypographyPage</div>;
 };

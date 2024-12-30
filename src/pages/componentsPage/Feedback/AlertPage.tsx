@@ -1,5 +1,3 @@
-
-
 const AlertPage = () => {
   return <div>AlertPage</div>;
 };

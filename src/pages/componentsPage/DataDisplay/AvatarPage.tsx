@@ -1,5 +1,3 @@
-
-
 const AvatarPage = () => {
   return <div>AvatarPage</div>;
 };

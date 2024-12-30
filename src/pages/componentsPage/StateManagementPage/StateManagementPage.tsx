@@ -1,5 +1,3 @@
-
-
 const StateManagementPage = () => {
   return <div>StateManagementPage</div>;
 };

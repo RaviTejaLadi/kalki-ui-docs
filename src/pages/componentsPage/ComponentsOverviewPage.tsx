@@ -11,9 +11,11 @@ const ComponentsOverviewPage: React.FC = () => {
       <SectionHeader variant="transparent" size="sm">
         <SectionHeader.Title className="tracking-wide">Components overview</SectionHeader.Title>
         <SectionHeader.SubTitle className="tracking-wide">
-          Every UI Essentials component available so far. Accessible, modern and easy to style UI components.
+          Every Kalki UI component available so far. Accessible, modern and easy to style UI components.
         </SectionHeader.SubTitle>
-        <SectionHeader.SubTitle>Here's a list of all the components available in the library.</SectionHeader.SubTitle>
+        <SectionHeader.SubTitle>
+          Here&apos;s a list of all the components available in the library.
+        </SectionHeader.SubTitle>
       </SectionHeader>
       <Separator />
       <div className="container my-3">

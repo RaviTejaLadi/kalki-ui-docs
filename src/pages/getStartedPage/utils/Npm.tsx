@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 interface NpmProps extends React.SVGProps<SVGSVGElement> {}
 
 const Npm: React.FC<NpmProps> = (props) => (

@@ -46,7 +46,7 @@ export function useTabNotification(flashDelayInSeconds = 2) {
     } else {
       let title = customTitle || originalTitle;
       if (titlePrefix) {
-        title = `${titlePrefix  } ${  title}`;
+        title = `${titlePrefix} ${title}`;
       }
 
       setModifiedTitle(title);

@@ -1,5 +1,3 @@
-
-
 const FigurePage = () => {
   return <div>FigurePage</div>;
 };

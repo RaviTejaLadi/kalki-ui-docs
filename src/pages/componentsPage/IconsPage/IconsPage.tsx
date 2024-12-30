@@ -1,5 +1,3 @@
-
-
 const IconsPage = () => {
   return <div>IconsPage</div>;
 };

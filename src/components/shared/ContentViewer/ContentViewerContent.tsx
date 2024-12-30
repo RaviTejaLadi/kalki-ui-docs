@@ -6,7 +6,7 @@ interface ContentViewerContentProps {
   children: React.ReactNode;
 }
 
-export const ContentViewerContent: React.FC<ContentViewerContentProps> = ({ id,  children }) => {
+export const ContentViewerContent: React.FC<ContentViewerContentProps> = ({ id, children }) => {
   const { registerSection } = useContentViewer();
 
   return (

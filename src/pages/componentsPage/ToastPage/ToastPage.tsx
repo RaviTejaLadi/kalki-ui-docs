@@ -1,5 +1,3 @@
-
-
 const ToastPage = () => {
   return <div>ToastPage</div>;
 };

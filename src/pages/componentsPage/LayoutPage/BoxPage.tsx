@@ -1,5 +1,3 @@
-
-
 const BoxPage = () => {
   return <div>BoxPage</div>;
 };

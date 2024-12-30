@@ -1,5 +1,3 @@
-
-
 const DividerPage = () => {
   return <div>DividerPage</div>;
 };

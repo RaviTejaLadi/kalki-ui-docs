@@ -14,7 +14,7 @@ const GetStarted: React.FC = () => {
       <SectionHeader variant="transparent" className="mb-5" size="sm">
         <SectionHeader.Title className="dark:text-foreground">Quick Start</SectionHeader.Title>
         <SectionHeader.SubTitle className="dark:text-muted-foreground">
-          Getting Started with UI Essentials React
+          Getting Started with Kalki UI React
         </SectionHeader.SubTitle>
       </SectionHeader>
       <SectionHeader size="sm" variant="transparent">

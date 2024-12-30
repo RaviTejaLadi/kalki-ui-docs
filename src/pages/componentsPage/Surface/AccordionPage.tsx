@@ -1,5 +1,3 @@
-
-
 const AccordionPage = () => {
   return <div>AccordionPage</div>;
 };

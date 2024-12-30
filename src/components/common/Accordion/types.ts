@@ -2,7 +2,6 @@ import { CSSProperties, ReactNode } from 'react';
 import { VariantProps } from 'class-variance-authority';
 import { accordionVariants } from './accordionVariants';
 
-
 type AccordionVariant = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'help' | 'info' | 'dark' | 'light';
 
 type AccordionSize = 'sm' | 'md' | 'lg' | 'xl' | '2xl';

@@ -1,5 +1,3 @@
-
-
 const TabsPage = () => {
   return <div>TabsPage</div>;
 };

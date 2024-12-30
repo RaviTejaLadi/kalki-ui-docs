@@ -1,5 +1,3 @@
-
-
 const SplitterPage = () => {
   return <div>SplitterPage</div>;
 };

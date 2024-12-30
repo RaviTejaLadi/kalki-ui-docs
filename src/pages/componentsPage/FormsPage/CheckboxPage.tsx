@@ -1,5 +1,3 @@
-
-
 const CheckboxPage = () => {
   return <div>CheckboxPage</div>;
 };

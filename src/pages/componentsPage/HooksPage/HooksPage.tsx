@@ -1,5 +1,3 @@
-
-
 const HooksPage = () => {
   return <div>HooksPage</div>;
 };

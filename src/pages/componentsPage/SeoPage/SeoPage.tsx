@@ -1,5 +1,3 @@
-
-
 const SeoPage = () => {
   return <div>SeoPage</div>;
 };

@@ -1,5 +1,5 @@
-import { useClipboard } from "@/modules/hooks";
-import React from "react";
+import { useClipboard } from '@/modules/hooks';
+import React from 'react';
 
 interface hookDocs {
   title: string;

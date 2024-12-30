@@ -1,5 +1,3 @@
-
-
 const EditableTable = () => {
   return <div>EditableTable</div>;
 };

@@ -1,5 +1,3 @@
-
-
 const TextHighlighterPage = () => {
   return <div>TextHighlighterPage</div>;
 };

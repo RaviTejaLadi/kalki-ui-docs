@@ -3,16 +3,17 @@ import Link from '@/components/common/Link';
 import Navbar, { NavBarContent, NavBarLogo } from '@/components/common/Navbar/Navbar';
 import NavMenu, { NavMenuItem, NavMenuItemTitle, NavMenuList } from '@/components/common/NavMenu';
 import { ThemeToggle } from './ThemeToggle';
+import React from 'react';
 
 /**
  * Represents an item in the navigation menu.
  *
- * @interface NavMenuItem
+ * @interface NavMenuItemList
  * @property {string} title - The title of the menu item.
  * @property {string} to - The destination path or URL the menu item links to.
  * @property {'xs' | 'sm' | 'md' | 'lg'} size - The size of the menu item, which can be one of 'xs', 'sm', 'md', or 'lg'.
  */
-interface NavMenuItem {
+interface NavMenuItemList {
   title: string;
   to: string;
   size: 'xs' | 'sm' | 'md' | 'lg';
@@ -36,7 +37,7 @@ interface NavMenuItem {
  * @see {@link NavMenuItem}
  */
 const TopBar: React.FC = () => {
-  const navMenuItem: NavMenuItem[] = [
+  const navMenuItem: NavMenuItemList[] = [
     { title: 'Get Started', to: '/get-started', size: 'xs' as const },
     { title: 'Components', to: '/components', size: 'xs' as const },
     { title: 'Examples', to: '/examples', size: 'xs' as const },
@@ -51,7 +52,7 @@ const TopBar: React.FC = () => {
       <Link to="/" className="w-[10rem]">
         <NavBarLogo className="text-md tracking-wide text-purple-500 dark:text-foreground">
           <span>📦</span>
-          UI Essentials
+          Kalki UI
         </NavBarLogo>
       </Link>
       <Div className="flex justify-between  items-center w-full">

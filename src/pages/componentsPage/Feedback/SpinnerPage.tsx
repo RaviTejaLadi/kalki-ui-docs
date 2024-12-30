@@ -1,5 +1,3 @@
-
-
 const SpinnerPage = () => {
   return <div>SpinnerPage</div>;
 };
