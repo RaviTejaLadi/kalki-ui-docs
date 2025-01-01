@@ -45,7 +45,7 @@ export const FooterSection = () => {
           <div>
             <Link to="#" className="flex font-bold items-center text-purple-500 " aria-label="Kalki UI React">
               <ChevronsDownIcon className="w-9 h-9 mr-2 rounded-lg border border-secondary dark:border-gray-200/10" />
-              <h3 className="text-2xl">Kalki UI React</h3>
+              <h3 className="text-2xl">Kalki UI</h3>
             </Link>
           </div>
 

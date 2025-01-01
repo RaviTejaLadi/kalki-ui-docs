@@ -9,7 +9,7 @@ interface FeaturesProps {
 const featureList: FeaturesProps[] = [
   {
     id: Math.random(),
-    title: '📦 Kalki UI React Package:',
+    title: '📦 Kalki UI Package:',
     description:
       " Enhance your React projects with the comprehensive 'ui-essentials-react' package, meticulously crafted with React, HTML, CSS, and JavaScript. This all-in-one toolkit is designed to streamline your development process by providing a rich set of essential components for building dynamic and visually appealing user interfaces.",
   },
@@ -55,7 +55,7 @@ export const FeaturesSection = () => {
   return (
     <section id="features" className="py-5 px-10 ">
       <div className="text-center mb-16">
-        <h2 className="text-3xl font-bold text-foreground">Why Choose Kalki UI React?</h2>
+        <h2 className="text-3xl font-bold text-foreground">Why Choose Kalki UI ?</h2>
         <p className="mt-4 text-lg text-muted-foreground">Everything you need to build modern React applications 🚀</p>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 sm:block columns-2  lg:columns-3 lg:gap-6 mx-auto space-y-4 lg:space-y-6 sm:grid-cols-2  md:grid-col-3 gap-4">

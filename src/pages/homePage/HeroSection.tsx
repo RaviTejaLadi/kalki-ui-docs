@@ -21,14 +21,14 @@ export const HeroSection = () => {
             <TailwindLogo />
           </div>
           <TextReveal delay={200}>
-            <Badge variant={theme ? 'light' : 'dark'} className="text-sm dark:bg-gray-200/10 rounded-full py-2">
+            <Badge variant={theme ? 'light' : 'dark'} size="sm" className="text-sm dark:bg-gray-200/10 rounded-full py-2">
               <span className=" text-primary">
                 <Badge variant="outline" className="bg-indigo-50 text-blue rounded-full tracking-wide">
                   <Sparkles className="w-4 h-4 " />
                   50 +
                 </Badge>
               </span>
-              <span className="tracking-wide text-foreground dark:text-gray"> Production-Ready Components </span>
+              <span className="tracking-wide text-foreground dark:text-gray">Production-Ready Components </span>
             </Badge>
           </TextReveal>
 

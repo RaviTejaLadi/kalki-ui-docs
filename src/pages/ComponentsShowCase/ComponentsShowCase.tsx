@@ -10,7 +10,6 @@ interface Component {
   description: string;
   preview: React.ReactNode;
 }
-[];
 
 const components: Component[] = [
   {

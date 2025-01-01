@@ -1,5 +1,6 @@
 import { cn } from '@/utils';
 import { SectionProps } from '../types';
+import React from 'react';
 
 /**
  * Footer component for Alert that wraps content with margin top and additional styling options
