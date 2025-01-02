@@ -24,7 +24,7 @@ function Layout() {
       <main className="flex-grow pt-11 ">
         <Suspense fallback={<Loading />}>
           <Outlet />
-          <ScrollToTop />
+          <ScrollToTop variant="outline" />
         </Suspense>
       </main>
     </div>
