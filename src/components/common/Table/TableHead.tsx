@@ -6,7 +6,7 @@ export const TableHead: React.FC<TableSectionProps> = ({ children, className, st
   return (
     <thead
       className={cn(
-        'bg-gray-50  text-foreground text-left uppercase text-xs font-semibold border-b border-gray-200',
+        'bg-gray-50 dark:bg-inherit dark:border-gray-200/10 text-foreground text-left uppercase text-xs font-semibold border-b border-gray-200',
         className
       )}
       style={style}

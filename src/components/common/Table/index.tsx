@@ -29,11 +29,11 @@ import { TableProps } from './types';
  */
 const Table = forwardRef<HTMLTableElement, TableProps>(({ children, className, style, ...rest }, ref) => {
   return (
-    <div className="overflow-x-auto rounded-md border">
+    <div className="overflow-x-auto rounded-md border dark:border-gray-200/10">
       <table
         ref={ref}
         className={cn(
-          'w-full border-collapse border border-gray-200 rounded-md text-sm bg-white shadow-sm overflow-hidden',
+          'w-full border-collapse border border-gray-200 rounded-md text-sm bg-background dark:bg-inherit dark:border-gray-200/10 shadow-sm overflow-hidden',
           className
         )}
         style={style}

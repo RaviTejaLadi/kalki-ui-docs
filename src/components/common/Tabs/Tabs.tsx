@@ -126,9 +126,15 @@ export const Tabs: React.FC<TabsProps> = ({
   className,
   style,
 }) => {
+  const isTabElement = (child: React.ReactNode): child is React.ReactElement<TabProps> => {
+    return React.isValidElement(child) && 'value' in child.props;
+  };
+
   const getInitialActiveTab = () => {
-    const firstEnabledTab = React.Children.toArray(children).find((child: any) => !child.props.disabled);
-    return active || (firstEnabledTab as any)?.props?.value;
+    const firstEnabledTab = React.Children.toArray(children).find(
+      (child) => isTabElement(child) && !child.props.disabled
+    );
+    return active || (isTabElement(firstEnabledTab) ? firstEnabledTab.props.value : undefined);
   };
 
   const [activeTab, setActiveTab] = useState(getInitialActiveTab);
@@ -139,21 +145,28 @@ export const Tabs: React.FC<TabsProps> = ({
     }
   }, [active]);
 
-  const handleTabClick = (value: string) => {
-    setActiveTab(value);
-    if (onChange) {
-      onChange(value);
-    }
-  };
+  const handleTabClick = useCallback(
+    (value: string) => {
+      setActiveTab(value);
+      if (onChange) {
+        onChange(value);
+      }
+    },
+    [onChange]
+  );
 
   const getEnabledTabs = useCallback(() => {
-    return React.Children.toArray(children).filter((child: any) => !child.props.disabled);
+    return React.Children.toArray(children).filter(
+      (child): child is React.ReactElement<TabProps> => isTabElement(child) && !child.props.disabled
+    );
   }, [children]);
 
   const handleKeyNavigation = useCallback(
     (e: React.KeyboardEvent<HTMLDivElement>) => {
       const enabledTabs = getEnabledTabs();
-      const currentIndex = enabledTabs.findIndex((child: any) => child.props.value === activeTab);
+      const currentIndex = enabledTabs.findIndex(
+        (child: React.ReactElement<TabProps>) => child.props.value === activeTab
+      );
 
       if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
         e.preventDefault();
@@ -165,7 +178,7 @@ export const Tabs: React.FC<TabsProps> = ({
           newIndex = currentIndex - 1 < 0 ? enabledTabs.length - 1 : currentIndex - 1;
         }
 
-        const newTab = enabledTabs[newIndex] as any;
+        const newTab = enabledTabs[newIndex] as React.ReactElement<TabProps>;
         handleTabClick(newTab.props.value);
 
         // Focus the newly selected tab button
@@ -188,7 +201,8 @@ export const Tabs: React.FC<TabsProps> = ({
         )}
         onKeyDown={handleKeyNavigation}
       >
-        {React.Children.map(children, (child: any) => {
+        {React.Children.map(children, (child: React.ReactNode) => {
+          if (!isTabElement(child)) return null;
           const isActive = child.props.value === activeTab;
           return (
             <button
@@ -223,22 +237,25 @@ export const Tabs: React.FC<TabsProps> = ({
       </div>
       <div
         className={cn(
-          'bg-background border flex items-center rounded-md overflow-y-auto dark:bg-gray-800 dark:border-gray-700',
+          'bg-background border flex items-center rounded-md overflow-y-auto dark:bg-inherit dark:border-gray-200/10',
           bodyStyles
         )}
       >
-        {React.Children.toArray(children).map((child: any) => (
-          <div
-            key={child.props.value}
-            role="tabpanel"
-            id={`tabpanel-${child.props.value}`}
-            aria-labelledby={`tab-${child.props.value}`}
-            hidden={child.props.value !== activeTab}
-            className={cn('p-2 animate-fade-in w-full', child.props.className)}
-          >
-            {child.props.value === activeTab && child.props.children}
-          </div>
-        ))}
+        {React.Children.toArray(children).map((child) => {
+          if (!isTabElement(child)) return null;
+          return (
+            <div
+              key={child.props.value}
+              role="tabpanel"
+              id={`tabpanel-${child.props.value}`}
+              aria-labelledby={`tab-${child.props.value}`}
+              hidden={child.props.value !== activeTab}
+              className={cn('p-2 animate-fade-in w-full', child.props.className)}
+            >
+              {child.props.children}
+            </div>
+          );
+        })}
       </div>
     </Box>
   );

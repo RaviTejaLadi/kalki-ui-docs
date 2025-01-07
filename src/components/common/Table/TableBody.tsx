@@ -4,7 +4,7 @@ import { TableSectionProps } from './types';
 
 export const TableBody: React.FC<TableSectionProps> = ({ children, className, style, ...rest }) => {
   return (
-    <tbody className={cn('divide-y divide-gray-200', className)} style={style} {...rest}>
+    <tbody className={cn('divide-y divide-gray-200 dark:divide-gray-200/10', className)} style={style} {...rest}>
       {children}
     </tbody>
   );
