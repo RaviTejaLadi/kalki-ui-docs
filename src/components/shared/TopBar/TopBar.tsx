@@ -41,7 +41,6 @@ const TopBar: React.FC = () => {
   const navMenuItem: NavMenuItemList[] = [
     { title: 'Get Started', to: '/get-started', size: 'xs' as const },
     { title: 'Components', to: '/components', size: 'xs' as const },
-    { title: 'Examples', to: '/examples', size: 'xs' as const },
     { title: 'Colors', to: '/colors', size: 'xs' as const },
     { title: 'Playgrounds', to: '/playgrounds', size: 'xs' as const },
     { title: 'Turbo Utilities', to: '/turbo-utilities', size: 'xs' as const },
