@@ -1,28 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-/**
- * The useInterval hook takes in two parameters as arguments, first it takes a `callback` function
- * and second is the `initialDelay`.
- * It runs the callback function after every fixed interval of time.
- *
- * ```js
- * function Timer() {
- *   const { start, stop } = useInterval(() => {
- *     console.log('Runs every one second!')
- *   }, 1000)
- *
- *   return <div>useInterval</div>;
- * }
- * ```
- * @param {() => void} callback
- * The callback function does not take any input as argument and returns `void` on execution.
- * @param {number} initialDelay
- * It sets the time period after which the callback gets called.
- *
- *
- * @returns {{start: (delay?: number) => void, stop: () => void}}
- */
-export function useInterval(callback: () => any, initialDelay: number) {
+export function useInterval(callback: () => void, initialDelay: number) {
   if (typeof callback !== 'function') {
     throw new Error(`Invalid parameter type. 'callback' should be a function but received ${callback}`);
   }
@@ -31,7 +9,7 @@ export function useInterval(callback: () => any, initialDelay: number) {
     throw new Error(`Invalid parameter type. 'initialDelay should be a number but received ${initialDelay}'`);
   }
 
-  const savedCallback = useRef<(() => any) | undefined>();
+  const savedCallback = useRef<(() => void) | undefined>();
 
   const [delay, setDelay] = useState<number | null | undefined>(initialDelay);
 

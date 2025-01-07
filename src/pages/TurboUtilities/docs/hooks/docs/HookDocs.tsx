@@ -1,65 +1,32 @@
-import { CodeBlock } from './CodeBlock';
+import React from 'react';
 import { Section } from './Section';
 import { BookOpen, Code2, Cpu, Gauge, Shield } from 'lucide-react';
+import { HookDocs } from '../types';
+import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
 
-const usageCode = `function MyComponent() {
-  const { width, height } = useWindowSize();
-  
-  return (
-    <div>
-      Window size: {width}px × {height}px
-    </div>
-  );
-}`;
 
-const returnTypeCode = `{
-  width: number;  // Current window width in pixels
-  height: number; // Current window height in pixels
-}`;
-
-const responsiveLayoutCode = `const { width } = useWindowSize();
-const isMobile = width < 640;
-
-return isMobile ? <MobileView /> : <DesktopView />;`;
-
-const dynamicStylingCode = `const { width } = useWindowSize();
-const columns = width > 1024 ? 4 : width > 768 ? 3 : 2;
-
-return <Grid columns={columns} />;`;
-
-export const HookDocs = () => {
+interface HookDocsProps {
+  data: HookDocs | undefined;
+}
+export const HookDocumentation: React.FC<HookDocsProps> = ({ data }) => {
+  console.log(data);
   return (
     <div className="max-w-3xl mx-auto p-6 bg-background dark:bg-inherit ">
       <div className="flex items-center gap-3 mb-6">
         <BookOpen className="w-8 h-8 text-blue-500" />
-        <h1 className="text-2xl font-bold text-foreground">useWindowSize Hook</h1>
+        <h1 className="text-2xl font-bold text-foreground">{data?.title}</h1>
       </div>
 
-      <p className="text-muted-foreground mb-8">
-        A custom React hook that tracks the browser window's dimensions in real-time.
-      </p>
+      <p className="text-muted-foreground mb-8">{data?.description}</p>
 
       <Section title="Installation">
-        <CodeBlock code="import { useWindowSize } from './hooks/useWindowSize';" />
+        <SyntaxHighlighter code={data?.snippet || ''} language="jsx" />
       </Section>
 
-      <Section title="Usage">
-        <CodeBlock code={usageCode} />
-      </Section>
-
-      <Section title="Return Value">
-        <CodeBlock code={returnTypeCode} />
-      </Section>
 
       <Section title="Features">
         <ul className="list-none space-y-3">
-          {[
-            'Real-time window size tracking',
-            'Automatic cleanup of event listeners',
-            'TypeScript support',
-            'SSR-safe with fallback values',
-            'Efficient re-rendering',
-          ].map((feature, index) => (
+          {data?.docs.map((feature, index) => (
             <li key={index} className="flex items-center gap-2">
               <Shield className="w-5 h-5 text-green-500" />
               <span className="text-gray-700">{feature}</span>
@@ -90,19 +57,6 @@ export const HookDocs = () => {
                 <li>Handles SSR scenarios with type checking</li>
               </ul>
             </div>
-          </div>
-        </div>
-      </Section>
-
-      <Section title="Example Use Cases">
-        <div className="space-y-6">
-          <div>
-            <h3 className="font-semibold text-foreground mb-2">Responsive Layouts</h3>
-            <CodeBlock code={responsiveLayoutCode} />
-          </div>
-          <div>
-            <h3 className="font-semibold text-foreground mb-2">Dynamic Styling</h3>
-            <CodeBlock code={dynamicStylingCode} />
           </div>
         </div>
       </Section>

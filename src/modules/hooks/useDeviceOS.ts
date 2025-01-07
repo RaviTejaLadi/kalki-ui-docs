@@ -1,6 +1,11 @@
+interface NavigatorWithUserAgentData extends Navigator {
+  userAgentData?: {
+    platform: string;
+  };
+}
+
 export const useDeviceOS = () => {
-  // @ts-ignore
-  const { platform } = navigator?.userAgentData || {};
+  const { platform } = (navigator as NavigatorWithUserAgentData)?.userAgentData || {};
 
   if (platform) {
     return platform;

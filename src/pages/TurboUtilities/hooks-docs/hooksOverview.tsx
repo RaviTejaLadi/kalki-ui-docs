@@ -1,5 +1,5 @@
-import { useHoverDocs } from '../../hooks-docs/data/useHoverDocs';
-import { HookDocs } from '../../hooks-docs/types';
+import { useHoverDocs } from './data/useHoverDocs';
+import { HookDocs } from './types';
 
 export interface HookOverview {
   id: string;
@@ -8,7 +8,7 @@ export interface HookOverview {
   docs?: HookDocs;
 }
 
-export const hooksOverview: HookOverview[] = [
+export const hooksOverviewList: HookOverview[] = [
   {
     id: 'useHover',
     title: 'useHover',

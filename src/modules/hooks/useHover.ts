@@ -7,18 +7,19 @@ export function useHover() {
   const onMouseLeave = useCallback(() => setHovered(false), []);
 
   useEffect(() => {
-    if (ref.current) {
-      ref.current.addEventListener('mouseenter', onMouseEnter);
-      ref.current.addEventListener('mouseleave', onMouseLeave);
+    const element = ref.current;
+    if (element) {
+      element.addEventListener('mouseenter', onMouseEnter);
+      element.addEventListener('mouseleave', onMouseLeave);
 
       return () => {
-        ref.current?.removeEventListener('mouseenter', onMouseEnter);
-        ref.current?.removeEventListener('mouseleave', onMouseLeave);
+        element.removeEventListener('mouseenter', onMouseEnter);
+        element.removeEventListener('mouseleave', onMouseLeave);
       };
     }
 
     return undefined;
-  }, []);
+  }, [onMouseEnter, onMouseLeave]);
 
   return { ref, hovered };
 }

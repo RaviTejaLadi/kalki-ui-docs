@@ -4,6 +4,7 @@ interface hookDocs {
   title: string;
   description: string;
   example: React.ReactNode;
+  snippet: string;
   docs: {
     title: string;
     list: {
