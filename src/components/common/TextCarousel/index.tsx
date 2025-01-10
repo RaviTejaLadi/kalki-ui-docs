@@ -49,17 +49,17 @@ const TextCarousel = forwardRef<HTMLDivElement, TextCarouselProps>(
       setIndex((prevIndex) => (prevIndex === 0 ? itemCount - 1 : prevIndex - 1));
     };
 
-    const goToNext = () => {
+    const goToNext = React.useCallback(() => {
       setIsTransitioning(true);
       setIndex((prevIndex) => (prevIndex === itemCount - 1 ? 0 : prevIndex + 1));
-    };
+    }, [itemCount]);
 
     useEffect(() => {
       if (interval > 0) {
         const timer = setInterval(goToNext, interval);
         return () => clearInterval(timer);
       }
-    }, [interval]);
+    }, [interval, goToNext]);
 
     useEffect(() => {
       if (isTransitioning) {
