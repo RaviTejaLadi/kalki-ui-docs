@@ -2,7 +2,7 @@ import { SectionHeader } from '@/components/common/SectionHeader/SectionHeader';
 import Separator from '@/components/common/Separator/Separator';
 import TableList from '@/components/common/Table/TableList';
 import React from 'react';
-import { buttonDocs, columns, componentHierarchyCode, rows } from './data/buttonDocs';
+import { docs, columns, componentHierarchyCode, rows } from './data/buttonDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
 
@@ -18,7 +18,7 @@ const ButtonPage: React.FC = () => {
         </SectionHeader.SubTitle>
       </SectionHeader>
       <Separator />
-      <DocumentationRenderer className="my-4" data={buttonDocs} />
+      <DocumentationRenderer className="my-4" data={docs} />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
       </SectionHeader>

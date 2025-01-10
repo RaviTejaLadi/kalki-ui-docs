@@ -58,7 +58,7 @@ export const linkVariants = cva(
 
 // Interfaces for Components
 interface LinkButtonProps extends VariantProps<typeof linkVariants> {
-  to: string;
+  to?: string;
   children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
@@ -78,7 +78,7 @@ interface LinkTextProps {
 
 // LinkButton Component
 const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(
-  ({ variant, size, to, children, className, raised, rounded, ...rest }, ref) => {
+  ({ variant, size, to="", children, className, raised, rounded, ...rest }, ref) => {
     return (
       <Link ref={ref} to={to} className={linkVariants({ variant, size, raised, rounded, className })} {...rest}>
         {children}

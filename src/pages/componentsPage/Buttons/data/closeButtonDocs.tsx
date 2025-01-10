@@ -1,7 +1,7 @@
 import CloseButton from '@/components/common/CloseButton';
 import { docsData } from '@/types/docsData';
 
-export const closeButtonDocs: docsData[] = [
+export const docs: docsData[] = [
   {
     title: 'Simple CloseButton',
     desc: 'This example demonstrates the basic usage of the CloseButton component.',

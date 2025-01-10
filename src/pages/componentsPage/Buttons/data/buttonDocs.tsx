@@ -3,7 +3,7 @@ import Button from '@/components/common/Button';
 import { docsData } from '@/types/docsData';
 import { Globe } from 'lucide-react';
 
-export const buttonDocs: docsData[] = [
+export const docs: docsData[] = [
   {
     title: 'Basic Button',
     desc: 'This example demonstrates the most basic usage of the Button component with default properties.',

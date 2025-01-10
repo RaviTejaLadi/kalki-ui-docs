@@ -1,7 +1,7 @@
 import { SectionHeader } from '@/components/common/SectionHeader/SectionHeader';
 import Separator from '@/components/common/Separator/Separator';
 import TableList from '@/components/common/Table/TableList';
-import { closeButtonDocs, columns, rows } from './data/closeButtonDocs';
+import { docs, columns, rows } from './data/closeButtonDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 
 const CloseButtonPage = () => {
@@ -15,7 +15,7 @@ const CloseButtonPage = () => {
     </SectionHeader.SubTitle>
   </SectionHeader>
   <Separator />
-  <DocumentationRenderer className="my-4" data={closeButtonDocs} />
+  <DocumentationRenderer className="my-4" data={docs} />
   <SectionHeader variant="transparent" size="sm">
     <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
   </SectionHeader>
