@@ -27,7 +27,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       disabled = false,
-      onClick = () => {},
+      onClick = undefined,
       variant,
       size,
       raised,
