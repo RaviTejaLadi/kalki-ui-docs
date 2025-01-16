@@ -1,20 +1,21 @@
 import { VariantProps } from 'class-variance-authority';
 import { linkBarVariants } from './linkBarVariants';
+import { AnchorHTMLAttributes, HTMLAttributes, ReactNode, RefObject } from 'react';
 
 export interface LinkBarContextValue {
   activeUrl?: string;
   onUrlChange?: (url: string) => void;
-  scrollRef?: React.RefObject<HTMLDivElement>;
+  scrollRef?: RefObject<HTMLDivElement>;
 }
 
-export interface LinkBarProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof linkBarVariants> {
+export interface LinkBarProps extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof linkBarVariants> {
   activeUrl?: string;
   onUrlChange?: (url: string) => void;
 }
 
-export interface LinkProps extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'ref'> {
+export interface LinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'ref'> {
   to: string;
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   iconPosition?: 'start' | 'end';
   target?: '_blank' | '_self' | '_parent' | '_top';
 }
@@ -38,6 +39,6 @@ export interface ControlsProps {
 }
 
 export interface LinkBarContentProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
