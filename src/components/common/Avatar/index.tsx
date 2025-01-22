@@ -1,9 +1,45 @@
-import React, { useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import { cn } from '@/utils';
-import { AvatarImage } from './AvatarImage';
-import { AvatarFallback } from './AvatarFallback';
-import { AvatarContext } from './context/AvatarContext';
-import type { AvatarContextType, AvatarProps, AvatarImageProps, AvatarFallbackProps } from './types';
+import { cva, VariantProps } from 'class-variance-authority';
+
+const avatarVariants = cva('inline-flex items-center justify-center', {
+  variants: {
+    size: {
+      sm: 'h-8 w-8',
+      md: 'h-10 w-10',
+      lg: 'h-12 w-12',
+      xl: 'h-16 w-16',
+    },
+    shape: {
+      circle: 'rounded-full',
+      square: 'rounded-md',
+    },
+  },
+  defaultVariants: {
+    size: 'md',
+    shape: 'circle',
+  },
+});
+
+interface AvatarContextType extends VariantProps<typeof avatarVariants> {
+  hasError?: boolean;
+  onError?: () => void;
+}
+
+interface AvatarProps extends VariantProps<typeof avatarVariants> {
+  className?: string;
+  children: React.ReactNode;
+}
+
+interface AvatarImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+  className?: string;
+}
+
+interface AvatarFallbackProps {
+  className?: string;
+  children: React.ReactNode;
+}
+const AvatarContext = createContext<AvatarContextType>({});
 
 const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(({ children, className, size, shape, ...props }, ref) => {
   const [hasError, setHasError] = useState(false);
@@ -26,9 +62,55 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(({ children, classN
 
 Avatar.displayName = 'Avatar';
 
+const AvatarFallback = React.forwardRef<HTMLDivElement, AvatarFallbackProps>(
+  ({ children, className, ...props }, ref) => {
+    const { size, shape, hasError } = useContext(AvatarContext);
+
+    if (!hasError) return null;
+
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          avatarVariants({ size, shape }),
+          'bg-background dark:bg-background/40 border dark:border-gray-200/10 text-foreground font-medium',
+          className
+        )}
+        {...props}
+      >
+        {children}
+      </div>
+    );
+  }
+);
+
+AvatarFallback.displayName = 'AvatarFallback';
+
+const AvatarImage = React.forwardRef<HTMLImageElement, AvatarImageProps>(
+  ({ className, src, alt = 'avatar', ...props }, ref) => {
+    const { size, shape, hasError, onError } = useContext(AvatarContext);
+
+    if (hasError) return null;
+
+    return (
+      <img
+        ref={ref}
+        src={src}
+        alt={alt}
+        className={cn(avatarVariants({ size, shape }), 'object-cover', className)}
+        onError={onError}
+        {...props}
+      />
+    );
+  }
+);
+
+AvatarImage.displayName = 'Avatar.Image';
+
 export default Object.assign(Avatar as React.FC<AvatarProps>, {
   Image: AvatarImage,
   Fallback: AvatarFallback,
 });
 
-export { AvatarFallback, AvatarImage, AvatarContextType, AvatarProps, AvatarImageProps, AvatarFallbackProps };
+export { AvatarFallback, AvatarImage, avatarVariants };
+export type { AvatarContextType, AvatarProps, AvatarImageProps, AvatarFallbackProps };

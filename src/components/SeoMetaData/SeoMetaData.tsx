@@ -22,6 +22,7 @@ const APP_DESCRIPTION = import.meta.env.VITE_APP_DESCRIPTION;
  *
  * @returns {JSX.Element} The Helmet component with the SEO metadata.
  */
+
 export default function SeoMetaData({ title, description }: Props) {
   return (
     <Helmet>

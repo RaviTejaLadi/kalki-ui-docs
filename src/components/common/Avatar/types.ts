@@ -2,10 +2,10 @@ import React from 'react';
 import { type VariantProps } from 'class-variance-authority';
 import { avatarVariants } from './avatarVariants';
 
-type AvatarContextType = VariantProps<typeof avatarVariants> & {
+interface AvatarContextType extends VariantProps<typeof avatarVariants> {
   hasError?: boolean;
   onError?: () => void;
-};
+}
 
 interface AvatarProps extends VariantProps<typeof avatarVariants> {
   className?: string;

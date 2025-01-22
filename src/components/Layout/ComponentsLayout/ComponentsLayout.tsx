@@ -10,7 +10,7 @@ import Sidebar, {
   SidebarMenuSubItem,
   SidebarGroupContent,
 } from '@/components/common/SideBar';
-import { MessageSquare } from 'lucide-react';
+import { CircleGauge, MessageSquare, Network } from 'lucide-react';
 import { categorizedRoutesComponents } from './categorizedRoutesComponents';
 import Link from '@/components/common/Link';
 import { cn } from '@/utils';
@@ -53,8 +53,12 @@ export default function ComponentsLayout() {
               ))}
             </SidebarGroup>
             <SidebarMenu>
-              <SidebarMenuItem to="#">State Management</SidebarMenuItem>
-              <SidebarMenuItem to="/turbo-utilities">Turbo Utilities</SidebarMenuItem>
+              <SidebarMenuItem to="#" icon={<Network className="size-4 text-[var(--icon-color)]" />}>
+                State Management
+              </SidebarMenuItem>
+              <SidebarMenuItem to="/turbo-utilities" icon={<CircleGauge className="size-4 text-[var(--icon-color)]" />}>
+                Turbo Utilities
+              </SidebarMenuItem>
               <SidebarMenuItem
                 to="/components/toast"
                 icon={<MessageSquare className="size-4 text-[var(--icon-color)]" />}
