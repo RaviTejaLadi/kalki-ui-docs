@@ -1,13 +1,11 @@
-import { Fragment, lazy, ReactNode, Suspense } from 'react';
-import { BrowserRouter, Outlet, RouteObject, useRoutes, Navigate } from 'react-router-dom';
-
-import TopBar from '@/components/shared/TopBar/TopBar';
+import { BrowserRouter, RouteObject, useRoutes, Navigate } from 'react-router-dom';
+import { Fragment, lazy, Suspense, ReactNode } from 'react';
 import Loading from '@/components/shared/Loading';
 import ErrorBoundary from '../Error/ErrorBoundary';
 import TurboUtilities from '@/pages/TurboUtilities/TurboUtilities';
 import TurboHooks from '@/pages/TurboUtilities/TurboHooks';
-import ScrollToTop from '../common/ScrollToTop/ScrollToTop';
 import ComponentsShowCase from '@/pages/ComponentsShowCase/ComponentsShowCase';
+import { AppLayout } from './AppLayout';
 
 const Home = lazy(() => import('@/pages/homePage/HomePage'));
 const GetStarted = lazy(() => import('@/pages/getStartedPage/GetStartedPage'));
@@ -15,27 +13,18 @@ const Colors = lazy(() => import('@/pages/Colors'));
 const Components = lazy(() => import('@/pages/componentsPage/componentsPage'));
 const NotFoundScreen = lazy(() => import('@/pages/NotFound'));
 
-function Layout() {
-  return (
-    <div className="relative min-h-screen flex flex-col ">
-      <div className="fixed top-0 left-0 right-0 z-50 h-11">
-        <TopBar />
-      </div>
-      <main className="flex-grow pt-11 ">
-        <Suspense fallback={<Loading />}>
-          <Outlet />
-          <ScrollToTop variant="outline" />
-        </Suspense>
-      </main>
-    </div>
-  );
-}
+const DevOnly = ({ children }: { children: ReactNode }) => {
+  if (import.meta.env.MODE !== 'development') {
+    return null;
+  }
+  return <Fragment>{children}</Fragment>;
+};
 
 const AppRoutes = () => {
   const routes: RouteObject[] = [
     {
       path: '/',
-      element: <Layout />,
+      element: <AppLayout />,
       children: [
         {
           index: true,
@@ -63,7 +52,11 @@ const AppRoutes = () => {
         },
         {
           path: '/components-showcase',
-          element: <ComponentsShowCase />,
+          element: (
+            <DevOnly>
+              <ComponentsShowCase />
+            </DevOnly>
+          ),
         },
         {
           path: '404',
@@ -80,24 +73,16 @@ const AppRoutes = () => {
   return useRoutes(routes);
 };
 
-const DevOnly = ({ children }: { children: ReactNode }) => {
-  if (import.meta.env.MODE === 'development') {
-    return <Fragment>{children}</Fragment>;
-  }
-  return <Fragment>{children}</Fragment>;
-};
-
 const Router = () => {
   return (
     <BrowserRouter>
       <Suspense fallback={<Loading />}>
-        <DevOnly>
-          <ErrorBoundary>
-            <AppRoutes />
-          </ErrorBoundary>
-        </DevOnly>
+        <ErrorBoundary>
+          <AppRoutes />
+        </ErrorBoundary>
       </Suspense>
     </BrowserRouter>
   );
 };
+
 export default Router;
