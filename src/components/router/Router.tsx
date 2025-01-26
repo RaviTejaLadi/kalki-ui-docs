@@ -2,10 +2,11 @@ import { BrowserRouter, RouteObject, useRoutes, Navigate } from 'react-router-do
 import { Fragment, lazy, Suspense, ReactNode } from 'react';
 import Loading from '@/components/shared/Loading';
 import ErrorBoundary from '../Error/ErrorBoundary';
-import TurboUtilities from '@/pages/TurboUtilities/TurboUtilities';
-import TurboHooks from '@/pages/TurboUtilities/TurboHooks';
-import ComponentsShowCase from '@/pages/ComponentsShowCase/ComponentsShowCase';
 import { AppLayout } from './AppLayout';
+const TurboUtilities = lazy(() => import('@/pages/TurboUtilities/TurboUtilities'));
+const TurboHooks = lazy(() => import('@/pages/TurboUtilities/TurboHooks'));
+const ComponentsShowCase = lazy(() => import('@/pages/ComponentsShowCase/ComponentsShowCase'));
+const StateManagementPage = lazy(() => import('@/pages/componentsPage/StateManagementPage/StateManagementPage'));
 
 const Home = lazy(() => import('@/pages/homePage/HomePage'));
 const GetStarted = lazy(() => import('@/pages/getStartedPage/GetStartedPage'));
@@ -41,6 +42,10 @@ const AppRoutes = () => {
         {
           path: 'components/*',
           element: <Components />,
+        },
+        {
+          path: 'state-management',
+          element: <StateManagementPage />,
         },
         {
           path: 'turbo-utilities',

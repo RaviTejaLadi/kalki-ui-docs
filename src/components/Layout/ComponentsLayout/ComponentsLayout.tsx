@@ -53,7 +53,7 @@ export default function ComponentsLayout() {
               ))}
             </SidebarGroup>
             <SidebarMenu>
-              <SidebarMenuItem to="#" icon={<Network className="size-4 text-[var(--icon-color)]" />}>
+              <SidebarMenuItem to="/state-management" icon={<Network className="size-4 text-[var(--icon-color)]" />}>
                 State Management
               </SidebarMenuItem>
               <SidebarMenuItem to="/turbo-utilities" icon={<CircleGauge className="size-4 text-[var(--icon-color)]" />}>
