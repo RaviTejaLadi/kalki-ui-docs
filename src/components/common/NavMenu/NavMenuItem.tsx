@@ -10,7 +10,7 @@ import { NavMenuContent } from './NavMenuContent';
 import { cn } from '@/utils';
 
 export const NavMenuItem = forwardRef<HTMLDivElement, NavMenuItemProps>(
-  ({ children, className, openMenuItem, setOpenMenuItem, to, variant = 'light', size = 'sm' }, ref) => {
+  ({ children, className, openMenuItem, setOpenMenuItem, to, variant = 'light', size = 'sm', ...props }, ref) => {
     const buttonRef = useRef<HTMLButtonElement>(null);
     const [contentPosition, setContentPosition] = useState<NavMenuContentPosition>({
       top: 0,
@@ -67,18 +67,23 @@ export const NavMenuItem = forwardRef<HTMLDivElement, NavMenuItemProps>(
             ref={buttonRef}
             onClick={handleItemClick}
             className={navMenuTriggerVariants({ variant, size })}
+            {...props}
           >
             {title?.props.children}
             <ChevronDown className={cn('size-3 transition-transform duration-200', isOpen ? 'rotate-180' : '')} />
           </NavMenuTrigger>
         ) : (
-          <NavMenuLink to={to || '#'} className={cn(navMenuTriggerVariants({ variant, size }), 'bg-inherit')}>
+          <NavMenuLink
+            to={to || '#'}
+            className={cn(navMenuTriggerVariants({ variant, size }), 'bg-inherit')}
+            {...props}
+          >
             {title?.props.children}
           </NavMenuLink>
         )}
 
         {isOpen && hasContent && (
-          <NavMenuContent className={cn(content?.props.className)} position={contentPosition}>
+          <NavMenuContent className={cn(content?.props.className)} position={contentPosition} {...props}>
             {content}
           </NavMenuContent>
         )}

@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface NavMenuProps {
   children: React.ReactNode;
   className?: string;

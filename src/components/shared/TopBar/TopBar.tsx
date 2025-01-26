@@ -44,7 +44,7 @@ const TopBar: React.FC = () => {
     { title: 'Colors', to: '/colors', size: 'xs' as const },
     { title: 'Playgrounds', to: '/playgrounds', size: 'xs' as const },
     { title: 'Turbo Utilities', to: '/turbo-utilities', size: 'xs' as const },
-    { title: 'State Vault', to: '/state-vault', size: 'xs' as const },
+    { title: 'State Vault', to: 'https://state-vault-docs.vercel.app/', size: 'xs' as const },
   ];
 
   return (

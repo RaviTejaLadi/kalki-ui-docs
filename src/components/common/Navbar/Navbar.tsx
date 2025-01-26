@@ -12,6 +12,8 @@ const NavBar = forwardRef<HTMLDivElement, NavBarProps>(({ children, className },
   );
 });
 
+NavBar.displayName = 'NavBar';
+
 export default Object.assign(
   NavBar as React.ForwardRefExoticComponent<NavBarProps & React.RefAttributes<HTMLDivElement>>,
   {
