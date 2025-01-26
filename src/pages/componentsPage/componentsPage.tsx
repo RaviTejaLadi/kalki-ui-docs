@@ -31,6 +31,7 @@ import { TextHighlighterPage, TypographyPage } from './Typo';
 import { FullScreenTogglePage, RipplePage } from './Utilities';
 import React from 'react';
 import ComponentsLayout from '@/components/Layout/ComponentsLayout/ComponentsLayout';
+import ToastPage from './ToastPage/ToastPage';
 
 interface RouteConfig {
   path: string;
@@ -95,6 +96,8 @@ const ROUTES: RouteConfig[] = [
   // Utilities
   { path: 'full-screen-toggle', Component: FullScreenTogglePage },
   { path: 'ripple', Component: RipplePage },
+
+  { path: 'toast', Component: ToastPage },
 ];
 
 const Components = () => {
