@@ -4,9 +4,6 @@ import { X } from 'lucide-react';
 import { ToastProps } from './types';
 import { cn } from '@/utils';
 
-/**
- * Variant styles for the toast component using class-variance-authority
- */
 const toastVariants = cva(
   'relative flex items-center justify-between min-h-[48px] shadow-lg transition-all duration-500 max-w-[calc(100vw-2rem)]',
   {
@@ -47,27 +44,6 @@ const toastVariants = cva(
 
 export type ToastVariantProps = VariantProps<typeof toastVariants>;
 
-/**
- * Toast component for displaying notifications
- *
- * @component
- * @example
- * // Basic usage
- * <Toast
- *   message="Operation successful"
- *   variant="success"
- *   onClose={() => {}}
- * />
- *
- * // With custom icon and auto-close disabled
- * <Toast
- *   message={<span>Custom message with <strong>HTML</strong></span>}
- *   variant="info"
- *   startIcon={<Info className="w-5 h-5" />}
- *   autoClose={false}
- *   onClose={() => {}}
- * />
- */
 export const Toast = forwardRef<HTMLDivElement, ToastProps>(
   (
     {
@@ -128,7 +104,7 @@ export const Toast = forwardRef<HTMLDivElement, ToastProps>(
           {showClose && (
             <button
               onClick={onClose}
-              className="flex-shrink-0 p-1.5 rounded-lg hover:bg-black/10 transition-colors ml-2"
+              className="flex-shrink-0 p-1.5 rounded-lg bg-inherit transition-colors ml-2"
               aria-label="Close"
             >
               <X className="w-4 h-4" />
@@ -139,4 +115,5 @@ export const Toast = forwardRef<HTMLDivElement, ToastProps>(
     );
   }
 );
+
 Toast.displayName = 'Toast';

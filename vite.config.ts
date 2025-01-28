@@ -8,7 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-      'ui-essentials-react-docs': 'ui-essentials-react-docs',
+      'kalki-ui-docs': 'kalki-ui-docs',
     },
     dedupe: ['react', 'react-dom'],
   },

@@ -5,13 +5,9 @@ const ToastContext = createContext<ToastContextValue | undefined>(undefined);
 
 let toastId = 0;
 
-/**
- * Provider component for the toast system
- * Manages the state of all active toasts
- */
 export function ToastProvider({ children }: { children: React.ReactNode }) {
   const [toasts, setToasts] = useState<ToastProps[]>([]);
-  
+
   const removeToast = useCallback((id: number) => {
     setToasts((prev) => prev.filter((toast) => toast.id !== id));
   }, []);
@@ -19,29 +15,21 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
   const addToast = useCallback(
     (toast: Omit<ToastProps, 'id' | 'onClose'>) => {
       const id = toastId++;
-      setToasts((prev) => [...prev, { ...toast, id, onClose: () => removeToast(id) }]);
+      setToasts((prev) => [
+        ...prev,
+        { ...toast, id, onClose: () => removeToast(id) },
+      ]);
     },
     [removeToast]
   );
 
-  return <ToastContext.Provider value={{ toasts, addToast, removeToast }}>{children}</ToastContext.Provider>;
+  return (
+    <ToastContext.Provider value={{ toasts, addToast, removeToast }}>
+      {children}
+    </ToastContext.Provider>
+  );
 }
 
-/**
- * Hook to access toast functionality
- * @returns {ToastContextValue} Toast context value containing toasts array and methods
- * @throws {Error} If used outside of ToastProvider
- * @example
- * const { addToast } = useToast();
- *
- * // Show a success toast
- * addToast({
- *   variant: 'success',
- *   message: 'Operation successful!',
- *   autoClose: 3000,
- *   startIcon: <CheckCircle className="w-5 h-5" />
- * });
- */
 export function useToast() {
   const context = useContext(ToastContext);
   if (!context) {

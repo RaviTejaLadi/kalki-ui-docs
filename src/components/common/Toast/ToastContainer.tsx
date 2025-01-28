@@ -31,20 +31,13 @@ export function ToastContainer({
   style,
 }: ToastContainerProps) {
   const { toasts } = useToast();
-console.log(toasts);
+
   return (
-    <div
-      className={cn(containerVariants({ position }), className)}
-      style={style}
-    >
+    <div className={cn(containerVariants({ position }), className)} style={style}>
       <div className="flex flex-col gap-3 w-[384px] max-w-[calc(100vw-2rem)]">
         {toasts.map((toast) => (
           <div key={toast.id} className="pointer-events-auto">
-            <Toast
-              {...toast}
-              showClose={showClose}
-              rounded={rounded}
-            />
+            <Toast {...toast} showClose={showClose} rounded={rounded} />
           </div>
         ))}
       </div>
