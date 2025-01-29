@@ -18,7 +18,6 @@ export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
   code,
   language = 'jsx',
   lineNumbers = false,
-  title,
   ...rest
 }) => {
   const { theme } = useTheme();
