@@ -20,9 +20,9 @@ const ComponentsOverviewPage: React.FC = () => {
       <Separator />
       <div className="container my-3">
         {categorizedRoutesComponents.map(({ category, components, id }) => (
-          <div className="mb-10" key={id}>
+          <div className="mb-10 py-4" key={id}>
             <h2 className="text-foreground font-semibold">{category}</h2>
-            <Separator className="h-[0.5px] my-2" />
+            <Separator className="h-[0.5px] my-5" />
             <div key={id} id={id} className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {components.map(({ path, label, description, Icon }, idx) => (
                 <Link key={idx} to={path}>
