@@ -43,7 +43,7 @@ const DocumentationRenderer: React.FC<DocumentationRendererProps> = ({ data, cla
               <Tab
                 label="Preview"
                 value="preview"
-                className="h-64 p-2 w-full"
+                className="h-32 border-none max-h-64 flex items-center justify-center p-2 w-full"
                 leftIcon={<Terminal className="size-4" />}
               >
                 {item.snippet}
