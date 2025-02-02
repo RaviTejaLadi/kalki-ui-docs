@@ -1,7 +1,19 @@
 import Box from '@/components/common/Box';
 import Button from '@/components/common/Button';
 import { docsData } from '@/types/docsData';
-import { Globe } from 'lucide-react';
+import {
+  AlertCircle,
+  AlertTriangle,
+  Bell,
+  Check,
+  Ghost,
+  Globe,
+  HelpCircle,
+  Info,
+  Moon,
+  Square,
+  Sun,
+} from 'lucide-react';
 
 export const docs: docsData[] = [
   {
@@ -39,12 +51,23 @@ export const docs: docsData[] = [
       `,
     snippet: (
       <Box style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-        <Button variant="primary">Primary</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="success">Success</Button>
-        <Button variant="danger">Danger</Button>
-        <Button variant="warning">Warning</Button>
-        <Button variant="info">Info</Button>
+        {[
+          'primary' as const,
+          'secondary' as const,
+          'success' as const,
+          'danger' as const,
+          'warning' as const,
+          'info' as const,
+          'help' as const,
+          'light' as const,
+          'dark' as const,
+          'outline' as const,
+          'ghost' as const,
+        ].map((item) => (
+          <Button size="sm" key={item} variant={item}>
+            <Button.Icon>{item}</Button.Icon>
+          </Button>
+        ))}
       </Box>
     ),
   },
@@ -238,22 +261,21 @@ export const docs: docsData[] = [
     snippet: (
       <Box style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
         {[
-          'primary' as const,
-          'secondary' as const,
-          'success' as const,
-          'danger' as const,
-          'warning' as const,
-          'info' as const,
-          'help' as const,
-          'light' as const,
-          'dark' as const,
-          'outline' as const,
-          'ghost' as const,
-        ].map((item) => (
-          <Button size="sm" key={item} variant={item}>
-            <Button.Icon>
-              <Globe className="size-4" />
-            </Button.Icon>
+          { variant: 'primary' as const, icon: <Globe className="size-4" /> },
+          { variant: 'secondary' as const, icon: <Bell className="size-4" /> },
+          { variant: 'success' as const, icon: <Check className="size-4" /> },
+          { variant: 'danger' as const, icon: <AlertTriangle className="size-4" /> },
+          { variant: 'warning' as const, icon: <AlertCircle className="size-4" /> },
+          { variant: 'info' as const, icon: <Info className="size-4" /> },
+          { variant: 'help' as const, icon: <HelpCircle className="size-4" /> },
+          { variant: 'light' as const, icon: <Sun className="size-4" /> },
+          { variant: 'dark' as const, icon: <Moon className="size-4" /> },
+          { variant: 'outline' as const, icon: <Square className="size-4" /> },
+          { variant: 'ghost' as const, icon: <Ghost className="size-4" /> },
+        ].map(({ variant, icon }) => (
+          <Button size="sm" key={variant} variant={variant}>
+            <Button.Icon>{icon}</Button.Icon>
+            <Button.Text>{variant}</Button.Text>
           </Button>
         ))}
       </Box>
@@ -280,12 +302,10 @@ export const rows = [
 ];
 
 export const componentHierarchyCode = `
-  <Button size={} variant={}>
+  <Button>
     <Button.Text>
-      
     </Button.Text>
     <Button.Icon>
-      
     </Button.Icon>
   </Button>
 `;
