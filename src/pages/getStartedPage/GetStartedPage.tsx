@@ -41,7 +41,7 @@ const GetStarted: React.FC = () => {
         </Stepper.Step>
         <Stepper.Step step="3" title="Import the Component">
           <Stepper.Description>
-            Once the package is installed, you can import the components you need from ui-essentials-react. Suppose you
+            Once the package is installed, you can import the components you need from kalki-ui. Suppose you
             want to import a component called Button. Here’s how you can do it:
           </Stepper.Description>
           <Stepper.CodeBlock code={componentCode} />
@@ -80,10 +80,10 @@ const GetStarted: React.FC = () => {
         </Stepper.Step>
         <Stepper.Step title="For more check Documentation :">
           <Stepper.Description>
-            Make sure to check the documentation of ui-essentials-react for specific details on how to import and use
+            Make sure to check the documentation of kalki-ui for specific details on how to import and use
             the components. The documentation will provide detailed information about available components, their props,
             and examples. By following these steps, you can successfully import and use components from the
-            ui-essentials-react package in your React application.
+            kalki-ui package in your React application.
           </Stepper.Description>
         </Stepper.Step>
       </Stepper>

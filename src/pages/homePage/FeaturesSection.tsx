@@ -11,7 +11,7 @@ const featureList: FeaturesProps[] = [
     id: Math.random(),
     title: '📦 Kalki UI Package:',
     description:
-      " Enhance your React projects with the comprehensive 'ui-essentials-react' package, meticulously crafted with React, HTML, CSS, and JavaScript. This all-in-one toolkit is designed to streamline your development process by providing a rich set of essential components for building dynamic and visually appealing user interfaces.",
+      " Enhance your React projects with the comprehensive 'kalki-ui' package, meticulously crafted with React, HTML, CSS, and JavaScript. This all-in-one toolkit is designed to streamline your development process by providing a rich set of essential components for building dynamic and visually appealing user interfaces.",
   },
   {
     id: Math.random(),
@@ -35,7 +35,7 @@ const featureList: FeaturesProps[] = [
     id: Math.random(),
     title: '🧩 Comprehensive Component Set:',
     description:
-      "From basic elements to advanced widgets, 'ui-essentials-react' includes a diverse range of components to cover all your UI needs.",
+      "From basic elements to advanced widgets, 'kalki-ui' includes a diverse range of components to cover all your UI needs.",
   },
   {
     id: Math.random(),

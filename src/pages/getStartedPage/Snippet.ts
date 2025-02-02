@@ -1,13 +1,13 @@
 export const npmSnippet = `
-  npm install ui-essentials-react --save
+  npm install kalki-ui --save
 `;
 
 export const yarnSnippet = `
-  yarn add ui-essentials-react --save
+  yarn add kalki-ui --save
 `;
 
 export const pnpmSnippet = `
-  pnpm add ui-essentials-react --save
+  pnpm add kalki-ui --save
 `;
 
 export const componentCode = `
@@ -40,7 +40,7 @@ export const setupSnippet = `
   import React from "react";
   import ReactDOM from "react-dom/client";
   import App from "./App.tsx";
-  import "ui-essentials-react/dist/index.css"; // import styles in the main file
+  import "kalki-ui/dist/index.css"; // import styles in the main file
 
   ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
