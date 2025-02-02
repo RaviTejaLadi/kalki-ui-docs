@@ -4,20 +4,20 @@ import { colors, getColorValues } from './colorUtils';
 import { Input } from '../Form';
 
 const ColorsWatch: React.FC<{ shade: { value: number; color: string } }> = ({ shade }) => {
-  const [copied, setCopied] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
   const colorValues = getColorValues(shade.color);
-
-  const copyToClipboard = (text: string, type: string) => {
+  const copyToClipboard = () => {
+    const text = `/* ${shade.color} */\nRGB: ${colorValues.rgb}\nHSL: ${colorValues.hsl}\nHEX: ${colorValues.hex}\nTailwind: ${shade.color}`;
     navigator.clipboard.writeText(text);
-    setCopied(type);
-    setTimeout(() => setCopied(null), 2000);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
     <div
-      className="relative flex  flex-col items-center"
+      className="relative flex flex-col items-center"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -25,36 +25,12 @@ const ColorsWatch: React.FC<{ shade: { value: number; color: string } }> = ({ sh
         className={`w-[5.9rem] h-28 ${shade.color} flex border dark:border-gray-200/10 rounded-md hover:shadow-sm relative group`}
       >
         {isHovered && (
-          <div className="absolute inset-0 rounded flex flex-col gap-1 flex-wrap items-center justify-center ">
-            <button
-              onClick={() => copyToClipboard(colorValues.rgb, 'rgb')}
-              className="w-fit bg-background/10 text-muted-foreground bg-opacity-90 hover:bg-opacity-100 text-[0.45rem] py-1 px-2 rounded flex items-center justify-center gap-1"
-            >
-              {copied === 'rgb' ? <Check className="size-2" /> : <Copy className="size-2" />}
-              RGB
-            </button>
-            <button
-              onClick={() => copyToClipboard(colorValues.hsl, 'hsl')}
-              className="w-fit bg-background/10 text-muted-foreground bg-opacity-90 hover:bg-opacity-100 text-[0.45rem] py-1 px-2 rounded flex items-center justify-center gap-1"
-            >
-              {copied === 'hsl' ? <Check className="size-2" /> : <Copy className="size-2" />}
-              HSL
-            </button>
-            <button
-              onClick={() => copyToClipboard(colorValues.hex, 'hex')}
-              className="w-fit bg-background/10 text-muted-foreground bg-opacity-90 hover:bg-opacity-100 text-[0.45rem] py-1 px-2 rounded flex items-center justify-center gap-1"
-            >
-              {copied === 'hex' ? <Check className="size-2" /> : <Copy className="size-2" />}
-              HEX
-            </button>
-            <button
-              onClick={() => copyToClipboard(shade.color, 'tailwind')}
-              className="w-fit bg-background/10 text-muted-foreground bg-opacity-90 hover:bg-opacity-100 text-[0.45rem] py-1 px-2 rounded flex items-center justify-center gap-1"
-            >
-              {copied === 'tailwind' ? <Check className="size-2" /> : <Copy className="size-2" />}
-              TW
-            </button>
-          </div>
+          <button
+            onClick={copyToClipboard}
+            className="absolute bottom-2 right-2 bg-background/10 text-foreground bg-opacity-90 hover:bg-opacity-100 text-[0.45rem] py-1 px-2 rounded flex items-center justify-center gap-1"
+          >
+            {copied ? <Check className="size-5" /> : <Copy className="size-5" />} 
+          </button>
         )}
       </div>
       <span className="mt-1 text-[0.45rem] text-muted-foreground">{shade.value}</span>
@@ -62,28 +38,6 @@ const ColorsWatch: React.FC<{ shade: { value: number; color: string } }> = ({ sh
   );
 };
 
-/**
- * ColorPalette component renders a searchable list of Tailwind CSS colors.
- *
- * @component
- * @example
- * return (
- *   <ColorPalette />
- * )
- *
- * @returns {JSX.Element} The rendered ColorPalette component.
- *
- * The component includes:
- * - A search input to filter colors by name or Tailwind class.
- * - A list of filtered colors displayed with their respective shades.
- * - A message when no colors match the search term.
- *
- * @remarks
- * The component uses Tailwind CSS for styling and assumes the presence of a `colors` array and a `ColorsWatch` component.
- *
- * @hook
- * The component uses the `useState` hook to manage the search term state.
- */
 const ColorPalette: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -110,7 +64,7 @@ const ColorPalette: React.FC = () => {
           </div>
           <Input
             name="search"
-            type="search-"
+            type="search"
             placeholder="Search by color name or Tailwind class..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -119,7 +73,7 @@ const ColorPalette: React.FC = () => {
         </div>
       </div>
 
-      <div className="py-10  text-foreground flex flex-wrap justify-center gap-3  text-sm">
+      <div className="py-10 text-foreground flex flex-wrap justify-center gap-3 text-sm">
         {filteredColors.length > 0 ? (
           filteredColors.map((color) => (
             <div
@@ -135,7 +89,7 @@ const ColorPalette: React.FC = () => {
             </div>
           ))
         ) : (
-          <div className="text-center text-muted-foreground py-10">No colors found matching "{searchTerm}"</div>
+          <div className="text-center text-muted-foreground py-10">No colors found matching &quot;{searchTerm}&quot;</div>
         )}
       </div>
     </div>
