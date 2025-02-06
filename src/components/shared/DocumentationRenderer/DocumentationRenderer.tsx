@@ -6,6 +6,7 @@ import { docsData } from '@/types/docsData';
 import { cn } from '@/utils';
 import { Code, Terminal } from 'lucide-react';
 import React from 'react';
+import DotBackground from '../DotBackground';
 
 /**
  * Props for the DocumentationRenderer component.
@@ -43,10 +44,12 @@ const DocumentationRenderer: React.FC<DocumentationRendererProps> = ({ data, cla
               <Tab
                 label="Preview"
                 value="preview"
-                className="h-32 border-none max-h-64 flex items-center justify-center p-2 w-full"
+                className="h-32 border-none max-h-64  w-full"
                 leftIcon={<Terminal className="size-4" />}
               >
-                {item.snippet}
+                <DotBackground gap={14} color="#94a3b8" size={0.5} >
+                  {item.snippet}
+                </DotBackground>
               </Tab>
               <Tab label="Code" value="code" className="max-h-96" leftIcon={<Code className="size-4" />}>
                 <Box padding="10px">
