@@ -43,7 +43,7 @@ export default function ComponentsLayout() {
                         key={path}
                         to={path}
                         icon={Icon ? <Icon className="size-4 text-[var(--icon-color)]" /> : null}
-                        className="hover:bg-gray-100 dark:hover:bg-gray-200/10"
+                        className="hover:bg-gray-100 dark:hover:bg-gray-200/10 "
                       >
                         {label}
                       </SidebarMenuSubItem>
