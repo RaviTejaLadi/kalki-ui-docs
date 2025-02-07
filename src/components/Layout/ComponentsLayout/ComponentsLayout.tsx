@@ -19,7 +19,7 @@ export default function ComponentsLayout() {
   return (
     <div className="flex min-h-screen">
       <aside className="fixed top-11 left-0 h-screen ">
-        <Sidebar className=" w-[15rem]">
+        <Sidebar className=" w-[13rem]">
           <SidebarBody>
             <SidebarGroup>
               <SidebarGroupLabel>Components</SidebarGroupLabel>
@@ -69,7 +69,7 @@ export default function ComponentsLayout() {
           </SidebarBody>
         </Sidebar>
       </aside>
-      <main className="ml-[15rem] w-full  flex-1 p-6 overflow-y-auto bg-inherit">
+      <main className="ml-[13rem] w-full  flex-1 p-6 overflow-y-auto bg-inherit">
         <Outlet />
       </main>
     </div>
