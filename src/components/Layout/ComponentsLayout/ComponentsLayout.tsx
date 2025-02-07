@@ -60,7 +60,7 @@ export default function ComponentsLayout() {
                 Turbo Utilities
               </SidebarMenuItem>
               <SidebarMenuItem
-                to="/components/toast"
+                to="https://kalki-ui-toast-docs.vercel.app/"
                 icon={<MessageSquare className="size-4 text-[var(--icon-color)]" />}
               >
                 Toast
