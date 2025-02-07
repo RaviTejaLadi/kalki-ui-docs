@@ -6,7 +6,6 @@ import {
   FileInput,
   Radio,
   CheckSquare,
-  TextCursor,
   ChevronDown,
   IdCard,
   UserCircle2,
@@ -41,17 +40,11 @@ import {
   GalleryThumbnails,
   Puzzle,
   FileQuestion,
-  HelpCircle,
-  Sticker,
+  TextCursorInput,
+  Space,
 } from 'lucide-react';
 
-import {
-  DocumentIcon,
-  ViewColumnsIcon,
-  DocumentTextIcon,
-  DocumentCheckIcon,
-  DocumentMagnifyingGlassIcon,
-} from '@heroicons/react/24/outline';
+import { DocumentIcon, ViewColumnsIcon, DocumentTextIcon, DocumentCheckIcon } from '@heroicons/react/24/outline';
 import React from 'react';
 
 interface CategoryRoutesComponentList {
@@ -220,7 +213,7 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         description:
           'Flexible text input component supporting various input types, validation, masking, and advanced formatting options.',
         path: '/components/input',
-        Icon: TextCursor,
+        Icon: TextCursorInput,
       },
       {
         label: 'Radio',
@@ -241,7 +234,7 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         description:
           'Advanced selection component with support for complex data sources, custom rendering, and advanced filtering mechanisms.',
         path: '/components/select',
-        // Icon: Select,
+        Icon: Space ,
       },
       {
         label: 'Textarea',
@@ -249,41 +242,6 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
           'Multi-line text input component with advanced features like auto-resizing, validation, and rich text support.',
         path: '/components/textarea',
         Icon: DocumentTextIcon,
-      },
-    ],
-  },
-  {
-    id: 'guidesAndTools',
-    category: 'Guides and Tools',
-    Icon: HelpCircle,
-    components: [
-      {
-        label: 'Guides',
-        description:
-          'Comprehensive documentation repository with interactive tutorials, API references, and implementation guidelines for the component library.',
-        path: '/components/guides',
-        Icon: DocumentMagnifyingGlassIcon,
-      },
-      {
-        label: 'Head',
-        description:
-          'SEO and metadata management utility for dynamically controlling document head elements and improving web application metadata.',
-        path: '/components/head',
-        Icon: Sticker,
-      },
-      {
-        label: 'Hooks',
-        description:
-          'Reusable function library providing advanced state management, side-effect handling, and component lifecycle optimizations for React applications.',
-        path: '/components/hooks',
-        Icon: Puzzle,
-      },
-      {
-        label: 'Icons',
-        description:
-          'Comprehensive, scalable icon library supporting multiple formats, providing semantic and accessible graphical representations for user interfaces.',
-        path: '/components/icons',
-        Icon: FileQuestion,
       },
     ],
   },
@@ -363,39 +321,11 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         Icon: Expand,
       },
       {
-        label: 'Ripple',
-        description:
-          'Material design-inspired touch feedback mechanism creating interactive, animated response effects for user interactions.',
-        path: '/components/ripple',
-        Icon: Target,
-      },
-      {
         label: 'Tabs',
         description:
           'Flexible content organization component supporting dynamic, accessible tab interfaces with responsive design and keyboard navigation.',
         path: '/components/tabs',
         Icon: CreditCard,
-      },
-    ],
-  },
-  {
-    id: 'other',
-    category: 'Other',
-    Icon: Sticker,
-    components: [
-      {
-        label: 'Other Products',
-        description:
-          'Catalog of supplementary tools, libraries, and product integrations within the component ecosystem.',
-        path: '/components/otherProducts',
-        Icon: Layers,
-      },
-      {
-        label: 'State Management',
-        description:
-          'Advanced state orchestration tools providing complex application state synchronization, persistence, and cross-component communication strategies.',
-        path: '/components/stateManagement',
-        Icon: Container,
       },
     ],
   },
@@ -440,7 +370,7 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         Icon: CreditCard,
       },
       {
-        label: 'ContentScrollable',
+        label: 'Content Scrollable',
         description:
           'Advanced scrolling container with enhanced performance, virtualization support, and smooth scrolling behavior for large content sets.',
         path: '/components/contentScrollable',
@@ -468,7 +398,7 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         Icon: FileJson,
       },
       {
-        label: 'SectionHeader',
+        label: 'Section Header',
         description:
           'Responsive typography component for creating consistent, semantically structured section headings with advanced styling capabilities.',
         path: '/components/sectionHeader',
