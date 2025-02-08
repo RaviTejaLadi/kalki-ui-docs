@@ -1,6 +1,6 @@
 import { SectionHeader } from '@/components/common/SectionHeader/SectionHeader';
 import { Stepper } from '@/components/common/Stepper/Stepper';
-import { Tab, Tabs } from '@/components/common/Tabs/Tabs';
+import { Tab, Tabs } from '@/components/common/Tabs';
 import { usage } from './tabsData';
 import { compExampleCode, componentCode, setupSnippet } from './Snippet';
 import { Code, Terminal } from 'lucide-react';

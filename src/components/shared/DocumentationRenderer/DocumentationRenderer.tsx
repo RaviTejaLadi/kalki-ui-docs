@@ -1,7 +1,7 @@
 import Box from '@/components/common/Box';
 import { SectionHeader } from '@/components/common/SectionHeader/SectionHeader';
 import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
-import { Tab, Tabs } from '@/components/common/Tabs/Tabs';
+import { Tab, Tabs } from '@/components/common/Tabs';
 import { docsData } from '@/types/docsData';
 import { cn } from '@/utils';
 import { Code, Terminal } from 'lucide-react';

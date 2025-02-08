@@ -3,29 +3,7 @@ import { cva } from 'class-variance-authority';
 import Box, { BoxProps } from '../Box';
 import { cn } from '@/utils';
 
-interface TabProps extends BoxProps {
-  label: string;
-  value: string;
-  children: ReactNode;
-  leftIcon?: ReactNode;
-  rightIcon?: ReactNode;
-  disabled?: boolean;
-  className?: string;
-}
-
-interface TabsProps {
-  children: React.ReactNode;
-  active?: string;
-  onChange?: (value: string) => void;
-  variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'help' | 'info' | 'dark' | 'light';
-  size?: 'sm' | 'md' | 'lg';
-  headerStyles?: CSSProperties;
-  bodyStyles?: CSSProperties;
-  className?: string;
-  style?: CSSProperties;
-  title?: string;
-}
-
+// #region tabButtonStyles
 const tabButtonStyles = cva(
   'relative flex items-center justify-center rounded-md transition-all duration-300 ease-in-out mr-2 font-medium hover:shadow-sm group',
   {
@@ -114,7 +92,35 @@ const tabButtonStyles = cva(
     },
   }
 );
+// #endregion
 
+// #region types
+interface TabProps extends BoxProps {
+  label: string;
+  value: string;
+  children: ReactNode;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
+  disabled?: boolean;
+  className?: string;
+}
+
+interface TabsProps {
+  children: React.ReactNode;
+  active?: string;
+  onChange?: (value: string) => void;
+  variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'help' | 'info' | 'dark' | 'light';
+  size?: 'sm' | 'md' | 'lg';
+  headerStyles?: CSSProperties;
+  bodyStyles?: CSSProperties;
+  className?: string;
+  style?: CSSProperties;
+  title?: string;
+}
+
+// #endregion
+
+// #region Tabs
 export const Tabs: React.FC<TabsProps> = ({
   children,
   active,
