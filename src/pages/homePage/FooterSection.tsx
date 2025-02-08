@@ -36,6 +36,7 @@ export const FooterSection = () => {
     { label: 'FAQ', to: '#' },
     { label: 'Feedback', to: '#' },
   ];
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="mx-10 pt-24 sm:pt-32 sm:pb-10">
@@ -61,7 +62,7 @@ export const FooterSection = () => {
         {/* Copyright Section */}
         <section className="text-xs">
           <h3 className="text-foreground">
-            Copyright &copy; 2024 Designed and developed by
+            Copyright &copy; {currentYear} Designed and developed by
             <Link
               target="_blank"
               to="#"
