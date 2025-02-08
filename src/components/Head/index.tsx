@@ -9,7 +9,7 @@ const APP_TITLE = import.meta.env.VITE_APP_TITLE;
 const APP_DESCRIPTION = import.meta.env.VITE_APP_DESCRIPTION;
 
 /**
- * SeoMetaData component is responsible for setting up the SEO metadata for the page.
+ * Head component is responsible for setting up the SEO metadata for the page.
  * It uses the `react-helmet` library to manage the document head.
  *
  * @component
@@ -18,12 +18,12 @@ const APP_DESCRIPTION = import.meta.env.VITE_APP_DESCRIPTION;
  * @param {string} [props.description] - The description of the page. If not provided, a default description is used.
  *
  * @example
- * <SeoMetaData title="Home Page" description="Welcome to the home page" />
+ * <Head title="Home Page" description="Welcome to the home page" />
  *
  * @returns {JSX.Element} The Helmet component with the SEO metadata.
  */
 
-export default function SeoMetaData({ title, description }: Props) {
+export default function Head({ title, description }: Props) {
   return (
     <Helmet>
       <title>{`${title} | ${APP_TITLE}`}</title>

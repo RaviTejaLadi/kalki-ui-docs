@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import Head from '@/components/SeoMetaData/SeoMetaData';
+import Head from '@/components/Head';
 
 /**
  * Renders a 404 Not Found screen component.
