@@ -4,6 +4,7 @@ import Box from '../Box';
 import Button from '../Button';
 import { cn } from '@/utils';
 
+// #region type
 interface TextCarouselProps {
   children: ReactNode;
   interval?: number;
@@ -12,30 +13,9 @@ interface TextCarouselProps {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl';
   variant?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'outline';
 }
+// #endregion
 
-/**
- * A carousel component that displays text content with navigation controls.
- *
- * @component
- * @param {Object} props - The component props
- * @param {ReactNode} props.children - The content to be displayed in the carousel
- * @param {number} [props.interval=0] - The interval in milliseconds between automatic transitions. Set to 0 to disable auto-transition
- * @param {string} [props.className=''] - Additional CSS classes to apply to the component
- * @param {CSSProperties} [props.style] - Custom inline styles
- * @param {string} [props.size='xs'] - Size variant for the navigation buttons
- * @param {string} [props.variant] - Visual variant for the navigation buttons
- * @param {React.Ref<HTMLDivElement>} ref - Ref object for the carousel container
- *
- * @returns {ReactElement} A carousel component with navigation buttons
- *
- * @example
- * ```tsx
- * <TextCarousel interval={3000} size="sm">
- *   <div>First slide</div>
- *   <div>Second slide</div>
- * </TextCarousel>
- * ```
- */
+// #region TextCarousel
 const TextCarousel = forwardRef<HTMLDivElement, TextCarouselProps>(
   ({ children, interval = 0, className = '', style, size = 'xs', variant, ...rest }, ref) => {
     const [index, setIndex] = useState(0);
@@ -87,4 +67,8 @@ const TextCarousel = forwardRef<HTMLDivElement, TextCarouselProps>(
 );
 
 TextCarousel.displayName = 'TextCarousel';
+// #endregion
+
+// #region export
 export default TextCarousel;
+export type { TextCarouselProps };
