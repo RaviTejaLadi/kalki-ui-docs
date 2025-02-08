@@ -1,34 +1,62 @@
-import { FC } from 'react';
+import { forwardRef, ReactNode } from 'react';
 import { cn } from '@/utils';
-import { paragraphVariants } from './paragraphVariants';
-import { ParagraphProps } from './types';
+import { cva, VariantProps } from 'class-variance-authority';
 
-/**
- * A reusable Paragraph component that renders text with customizable styles.
- *
- * @component
- * @param {Object} props - The component props
- * @param {ReactNode} props.children - The content to be rendered within the paragraph
- * @param {string} [props.size] - The size variant of the paragraph text
- * @param {string} [props.className] - Additional CSS classes to be applied
- * @param {(event: MouseEvent<HTMLParagraphElement>) => void} [props.onClick] - Click event handler
- * @param {...HTMLAttributes<HTMLParagraphElement>} props - Additional HTML paragraph attributes
- *
- * @returns {JSX.Element} A styled paragraph element
- *
- * @example
- * ```tsx
- * <Paragraph size="sm" className="custom-class">
- *   This is a paragraph text
- * </Paragraph>
- * ```
- */
-const Paragraph: FC<ParagraphProps> = ({ children, size, className, onClick, ...props }) => {
-  return (
-    <p className={cn(paragraphVariants({ size, ...props }), className)} onClick={onClick}>
-      {children}
-    </p>
-  );
-};
+// #region paragraphVariants
+const paragraphVariants = cva('leading-7', {
+  variants: {
+    size: {
+      default: 'text-base',
+      xs: 'text-xs',
+      sm: 'text-sm',
+      md: 'text-base',
+      lg: 'text-lg',
+      xl: 'text-xl',
+      '2xl': 'text-2xl',
+      '3xl': 'text-3xl',
+    },
+    underline: { true: 'underline' },
+    overline: { true: 'overline' },
+    dashed: { true: 'line-through' },
+    italic: { true: 'italic' },
+    strong: { true: 'font-bold' },
+    strikethrough: { true: 'line-through' },
+    marked: { true: 'bg-yellow-200' },
+    smaller: { true: 'text-sm' },
+    deleted: { true: 'line-through' },
+    inserted: { true: 'underline' },
+  },
+  defaultVariants: {
+    size: 'default',
+  },
+});
 
+// #endregion
+
+// #region type
+interface ParagraphProps extends VariantProps<typeof paragraphVariants> {
+  children: ReactNode;
+  className?: string;
+  onClick?: () => void;
+}
+// #endregion
+
+// #region Paragraph
+const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
+  ({ children, size, className, onClick, ...props }, ref) => {
+    return (
+      <p ref={ref} className={cn(paragraphVariants({ size, ...props }), className)} onClick={onClick}>
+        {children}
+      </p>
+    );
+  }
+);
+
+Paragraph.displayName = 'Paragraph';
+// #endregion
+
+// #region export
 export default Paragraph;
+export { paragraphVariants };
+export type { ParagraphProps };
+// #endregion
