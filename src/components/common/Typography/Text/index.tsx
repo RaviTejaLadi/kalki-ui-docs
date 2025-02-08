@@ -1,34 +1,58 @@
-import { forwardRef, CSSProperties } from 'react';
+import React, { forwardRef, CSSProperties } from 'react';
 import { cn } from '@/utils';
-import { TextProps } from './types';
-import { textVariants } from './textVariants';
+import { cva, VariantProps } from 'class-variance-authority';
 
-/**
- * A flexible text component that supports various text styles and decorations.
- *
- * @component
- * @param {Object} props - Component properties
- * @param {'default' | string} [props.variant='default'] - Text variant style
- * @param {'md' | string} [props.size='md'] - Text size
- * @param {string} [props.fontSize=''] - Custom font size
- * @param {string} [props.color=''] - Text color
- * @param {boolean} [props.underline] - Applies underline decoration
- * @param {boolean} [props.overline] - Applies overline decoration
- * @param {boolean} [props.dashed] - Applies line-through decoration
- * @param {boolean} [props.italic] - Applies italic style
- * @param {boolean} [props.strong] - Applies bold font weight
- * @param {boolean} [props.strikethrough] - Applies line-through decoration
- * @param {boolean} [props.marked] - Highlights text with yellow background
- * @param {boolean} [props.smaller] - Reduces font size to 0.8em
- * @param {boolean} [props.deleted] - Applies line-through decoration
- * @param {boolean} [props.inserted] - Applies underline decoration
- * @param {ReactNode} props.children - Content to be rendered
- * @param {string | number} [props.fontWeight] - Custom font weight
- * @param {CSSProperties} [props.style] - Additional CSS styles
- * @param {string} [props.className] - Additional CSS classes
- *
- * @returns {JSX.Element} A paragraph element with the specified text styling
- */
+// #region textVariants
+const textVariants = cva('block', {
+  variants: {
+    variant: {
+      default: 'text-black',
+      primary: 'text-blue-500',
+      secondary: 'text-gray-600',
+      success: 'text-green-500',
+      info: 'text-cyan-500',
+      warning: 'text-yellow-500',
+      danger: 'text-red-500',
+      help: 'text-purple-600',
+    },
+    size: {
+      xs: 'text-xs leading-4',
+      sm: 'text-sm leading-5',
+      md: 'text-base leading-6',
+      lg: 'text-lg leading-7',
+      xl: 'text-xl leading-8',
+      '2xl': 'text-2xl leading-9',
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+    size: 'md',
+  },
+});
+// #endregion
+
+// #region types
+interface TextProps extends VariantProps<typeof textVariants> {
+  children: React.ReactNode;
+  className?: string;
+  color?: string;
+  fontSize?: string;
+  fontWeight?: string;
+  style?: CSSProperties;
+  underline?: boolean;
+  overline?: boolean;
+  dashed?: boolean;
+  italic?: boolean;
+  strong?: boolean;
+  strikethrough?: boolean;
+  marked?: boolean;
+  smaller?: boolean;
+  deleted?: boolean;
+  inserted?: boolean;
+}
+// #endregion
+
+// #region Text
 const Text = forwardRef<HTMLParagraphElement, TextProps>(
   (
     {
@@ -84,5 +108,7 @@ const Text = forwardRef<HTMLParagraphElement, TextProps>(
 );
 
 Text.displayName = 'Text';
+// #endregion
 
+// #region export
 export default Text;
