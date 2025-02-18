@@ -1,8 +1,7 @@
 import Avatar from '@/components/common/Avatar';
 import { docsData } from '@/types/docsData';
-import Box from '@/components/common/Box';
 
-const pic=" https://github.com/shadcn.png"
+const pic = ' https://github.com/shadcn.png';
 
 export const docs: docsData[] = [
   {
@@ -15,103 +14,12 @@ const App = () => (
   <Avatar src="https://example.com/avatar.jpg" />
 );
       `,
-    snippet: <Avatar src={pic} />,
-  },
-  {
-    title: 'Custom Size Avatar',
-    desc: 'This example shows how to customize the size of the Avatar component by specifying width and height properties.',
-    code: `
-import { Avatar } from 'react-ui-essentials';
-
-const App = () => (
-  <Avatar src="https://example.com/avatar.jpg" width="100px" height="100px" />
-);
-      `,
-    snippet: <Avatar src={pic} width="100px" height="100px" />,
-  },
-  {
-    title: 'Fluid Avatar',
-    desc: 'This example demonstrates the usage of the fluid property, which makes the image contain its content.',
-    code: `
-import { Avatar } from 'react-ui-essentials';
-
-const App = () => (
-  <Avatar src="https://example.com/avatar.jpg" fluid />
-);
-      `,
     snippet: (
-      <Box style={{ display: 'flex', justifyContent: 'flex-start', alignItem: 'center' }}>
-        <Avatar src={pic} width="30px" height="30px" alt="avatar" fluid />
-        <Avatar src={pic} width="40px" height="40px" alt="avatar" fluid />
-        <Avatar src={pic} width="50px" height="50px" alt="avatar" fluid />
-        <Avatar src={pic} width="60px" height="60px" alt="avatar" fluid />
-      </Box>
+      <Avatar>
+        <Avatar.Image src={pic} alt="avatar" />
+        <Avatar.Fallback>SC</Avatar.Fallback>
+      </Avatar>
     ),
-  },
-  {
-    title: 'Avatar with Curved Borders',
-    desc: 'This example shows how to use the curvedBorder property to apply a 5px border radius to the Avatar.',
-    code: `
-import { Avatar } from 'react-ui-essentials';
-
-const App = () => (
-  <Avatar src="https://example.com/avatar.jpg" curvedBorder />
-);
-      `,
-    snippet: (
-      <Box style={{ display: 'flex', justifyContent: 'flex-start', alignItem: 'center' }}>
-        <Avatar src={pic} width="30px" height="30px" alt="avatar" curvedBorder />
-        <Avatar src={pic} width="40px" height="40px" alt="avatar" curvedBorder />
-        <Avatar src={pic} width="50px" height="50px" alt="avatar" curvedBorder />
-        <Avatar src={pic} width="60px" height="60px" alt="avatar" curvedBorder />
-      </Box>
-    ),
-  },
-  {
-    title: 'Circular Avatar',
-    desc: 'This example demonstrates the usage of the circle property to make the Avatar image circular.',
-    code: `
-import { Avatar } from 'react-ui-essentials';
-
-const App = () => (
-  <Avatar src="https://example.com/avatar.jpg" circle />
-);
-      `,
-    snippet: (
-      <Box style={{ display: 'flex', justifyContent: 'flex-start', alignItem: 'center' }}>
-        <Avatar src={pic} width="30px" height="30px" alt="avatar" circle />
-        <Avatar src={pic} width="40px" height="40px" alt="avatar" circle />
-        <Avatar src={pic} width="50px" height="50px" alt="avatar" circle />
-        <Avatar src={pic} width="60px" height="60px" alt="avatar" circle />
-      </Box>
-    ),
-  },
-  {
-    title: 'Avatar with Custom Alt Text',
-    desc: 'This example shows how to specify custom alt text for the Avatar component.',
-    code: `
-import { Avatar } from 'react-ui-essentials';
-
-const App = () => (
-  <Avatar src="https://example.com/avatar.jpg" alt="User Avatar" />
-);
-      `,
-    snippet: <Avatar src={pic} alt="User Avatar" />,
-  },
-  {
-    title: 'Avatar with Additional Properties',
-    desc: 'This example demonstrates passing additional properties to the Avatar component, such as an onClick handler.',
-    code: `
-import { Avatar } from 'react-ui-essentials';
-
-const App = () => (
-  <Avatar
-    src="https://example.com/avatar.jpg"
-    onClick={() => alert('Avatar clicked')}
-  />
-);
-      `,
-    snippet: <Avatar src={pic} onClick={() => alert('Avatar clicked')} />,
   },
 ];
 
