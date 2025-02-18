@@ -42,7 +42,6 @@ const TopBar: React.FC = () => {
     { title: 'Get Started', to: '/get-started', size: 'xs' as const },
     { title: 'Components', to: '/components', size: 'xs' as const },
     { title: 'Blocks', to: '/blocks', size: 'xs' as const },
-    { title: 'Turbo Utilities', to: '/turbo-utilities', size: 'xs' as const },
     { title: 'State Vault', to: 'https://state-vault-docs.vercel.app/', size: 'xs' as const },
     { title: 'Colors', to: '/colors', size: 'xs' as const },
   ];
