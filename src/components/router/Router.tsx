@@ -3,8 +3,6 @@ import { Fragment, lazy, Suspense, ReactNode } from 'react';
 import Loading from '@/components/shared/Loading';
 import ErrorBoundary from '../Error/ErrorBoundary';
 import { AppLayout } from './AppLayout';
-const TurboUtilities = lazy(() => import('@/pages/TurboUtilities/TurboUtilities'));
-const TurboHooks = lazy(() => import('@/pages/TurboUtilities/TurboHooks'));
 const ComponentsShowCase = lazy(() => import('@/pages/ComponentsShowCase/ComponentsShowCase'));
 const StateManagementPage = lazy(() => import('@/pages/componentsPage/StateManagementPage/StateManagementPage'));
 
@@ -46,14 +44,6 @@ const AppRoutes = () => {
         {
           path: 'state-management',
           element: <StateManagementPage />,
-        },
-        {
-          path: 'turbo-utilities',
-          element: <TurboUtilities />,
-        },
-        {
-          path: '/turbo-utilities/hooks',
-          element: <TurboHooks />,
         },
         {
           path: '/components-showcase',
