@@ -1,11 +1,11 @@
 import { useHover } from '@/modules/hooks';
 
 const UseHoverExample = () => {
-  const { ref, hovered } = useHover();
+  const {  hovered } = useHover();
   
   return (
     <button
-      ref={ref}
+      // ref={ref}
       className={`w-[200px] h-[100px] ${
       hovered ? 'bg-blue-500' : 'bg-gray-500'
       } text-white flex justify-center items-center`}

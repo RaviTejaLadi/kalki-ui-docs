@@ -1,7 +1,8 @@
 import Avatar from '@/components/common/Avatar';
-import pic from './avater.jpg';
 import { docsData } from '@/types/docsData';
 import Box from '@/components/common/Box';
+
+const pic=" https://github.com/shadcn.png"
 
 export const docs: docsData[] = [
   {
