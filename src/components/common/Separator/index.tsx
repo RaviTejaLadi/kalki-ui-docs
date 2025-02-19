@@ -2,6 +2,7 @@ import { forwardRef, ReactNode, CSSProperties } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils';
 
+// #region separatorVariants
 const separatorVariants = cva('relative', {
   variants: {
     orientation: {
@@ -20,6 +21,9 @@ const separatorVariants = cva('relative', {
   },
 });
 
+// #endregion
+
+// #region types
 interface SeparatorProps extends VariantProps<typeof separatorVariants> {
   children?: ReactNode;
   className?: string;
@@ -29,6 +33,9 @@ interface SeparatorProps extends VariantProps<typeof separatorVariants> {
   style?: CSSProperties;
 }
 
+// #endregion
+
+// #region Separator
 const Separator = forwardRef<HTMLDivElement, SeparatorProps>(
   (
     {
@@ -81,5 +88,9 @@ const Separator = forwardRef<HTMLDivElement, SeparatorProps>(
 );
 
 Separator.displayName = 'Separator';
+// #endregion
 
+// #region exports
 export default Separator;
+export type { SeparatorProps };
+export { separatorVariants };

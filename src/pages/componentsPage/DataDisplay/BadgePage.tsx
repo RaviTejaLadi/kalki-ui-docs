@@ -1,5 +1,5 @@
 import { SectionHeader } from '@/components/common/SectionHeader/SectionHeader';
-import Separator from '@/components/common/Separator/Separator';
+import Separator from '@/components/common/Separator';
 import TableList from '@/components/common/Table/TableList';
 import { docs, columns, rows } from './data/badgeDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';

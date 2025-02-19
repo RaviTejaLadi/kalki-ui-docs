@@ -1,7 +1,7 @@
 import { SectionHeader } from '@/components/common/SectionHeader/SectionHeader';
 import React from 'react';
 import Link from '@/components/common/Link';
-import Separator from '@/components/common/Separator/Separator';
+import Separator from '@/components/common/Separator';
 import Card, { CardContent, CardDescription, CardTitle, CardHeader } from '@/components/common/Card';
 import { categorizedRoutesComponents } from '@/components/Layout/ComponentsLayout/categorizedRoutesComponents';
 

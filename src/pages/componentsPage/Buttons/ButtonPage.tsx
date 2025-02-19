@@ -1,5 +1,5 @@
 import { SectionHeader } from '@/components/common/SectionHeader/SectionHeader';
-import Separator from '@/components/common/Separator/Separator';
+import Separator from '@/components/common/Separator';
 import TableList from '@/components/common/Table/TableList';
 import React from 'react';
 import { docs, columns, componentHierarchyCode, rows } from './data/buttonDocs';
