@@ -21,7 +21,7 @@ export const docs: docsData[] = [
     desc: 'This example demonstrates the most basic usage of the Button component with default properties.',
     code: `
   import React from 'react';
-  import { Button } from 'react-ui-essentials';
+  import { Button } from 'kalki-ui';
     
   const App = () => (
     <Button onClick={() => alert('Button clicked!')}>
@@ -36,7 +36,7 @@ export const docs: docsData[] = [
     desc: 'This example shows different variants of the Button component.',
     code: `
   import React from 'react';
-  import { Button } from 'react-ui-essentials';
+  import { Button } from 'kalki-ui';
     
   const App = () => (
     <>
@@ -76,7 +76,7 @@ export const docs: docsData[] = [
     desc: 'This example demonstrates different sizes of the Button component.',
     code: `
   import React from 'react';
-  import { Button } from 'react-ui-essentials';
+  import { Button } from 'kalki-ui';
     
   const App = () => (
     <>
@@ -99,7 +99,7 @@ export const docs: docsData[] = [
     desc: 'This example shows how to create a raised button with a shadow effect.',
     code: `
   import React from 'react';
-  import { Button } from 'react-ui-essentials';
+  import { Button } from 'kalki-ui';
     
   const App = () => (
     <Button raised variant="primary">
@@ -118,7 +118,7 @@ export const docs: docsData[] = [
     desc: 'This example demonstrates how to create a button with rounded corners.',
     code: `
   import React from 'react';
-  import { Button } from 'react-ui-essentials';
+  import { Button } from 'kalki-ui';
     
   const App = () => (
     <Button rounded variant="success">
@@ -137,7 +137,7 @@ export const docs: docsData[] = [
     desc: 'This example shows a disabled button.',
     code: `
   import React from 'react';
-  import { Button } from 'react-ui-essentials';
+  import { Button } from 'kalki-ui';
     
   const App = () => (
     <Button disabled>
@@ -152,7 +152,7 @@ export const docs: docsData[] = [
     desc: 'This example demonstrates how to use ButtonIcon and ButtonText components together.',
     code: `
   import React from 'react';
-  import { Button } from 'react-ui-essentials';
+  import { Button } from 'kalki-ui';
     
   const App = () => (
     <Button variant="primary">
@@ -175,7 +175,7 @@ export const docs: docsData[] = [
     desc: 'This example shows how to apply custom styles to the Button component.',
     code: `
   import React from "react";
-  import { Button } from "react-ui-essentials";
+  import { Button } from "kalki-ui";
       
   const App = () => (
     <Button
@@ -212,7 +212,7 @@ export const docs: docsData[] = [
     desc: 'This example demonstrates how to use the onClick prop to handle button clicks.',
     code: `
   import React, { useState } from 'react';
-  import { Button } from 'react-ui-essentials';
+  import { Button } from 'kalki-ui';
     
   const App = () => {
     const [count, setCount] = useState(0);
@@ -241,7 +241,7 @@ export const docs: docsData[] = [
     desc: '',
     code: `
   import React, { useState } from 'react';
-  import { Button,Box } from 'react-ui-essentials';
+  import { Button,Box } from 'kalki-ui';
     
   const App = () => {
     

@@ -11,13 +11,13 @@ export const pnpmSnippet = `
 `;
 
 export const componentCode = `
-  import { Button } from 'react-ui-essentials';
+  import { Button } from 'kalki-ui';
 
 `;
 
 export const compExampleCode = `
   import React from 'react';
-  import { Button } from 'react-ui-essentials';
+  import { Button } from 'kalki-ui';
 
   const App = () => (
     <div>

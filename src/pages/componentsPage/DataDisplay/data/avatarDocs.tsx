@@ -8,7 +8,7 @@ export const docs: docsData[] = [
     title: 'Basic Avatar',
     desc: 'This example demonstrates the most basic usage of the Avatar component with a source image, default alt text, and default size.',
     code: `
-import { Avatar } from 'react-ui-essentials';
+import { Avatar } from 'kalki-ui';
 
 const App = () => (
   <Avatar src="https://example.com/avatar.jpg" />

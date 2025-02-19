@@ -10,7 +10,7 @@ export const docs: docsData[] = [
     desc: 'This example demonstrates the most basic usage of the LinkButton component with default properties.',
     code: `
 import React from 'react';
-import { LinkButton } from 'react-ui-essentials';
+import { LinkButton } from 'kalki-ui';
   
 const App = () => (
   <LinkButton onClick={() => alert('LinkButton clicked!')}>
@@ -30,7 +30,7 @@ const App = () => (
     desc: 'This example shows different variants of the LinkButton component.',
     code: `
 import React from 'react';
-import { LinkButton } from 'react-ui-essentials';
+import { LinkButton } from 'kalki-ui';
   
 const App = () => (
   <>
@@ -59,7 +59,7 @@ const App = () => (
     desc: 'This example demonstrates different sizes of the LinkButton component.',
     code: `
 import React from 'react';
-import { LinkButton } from 'react-ui-essentials';
+import { LinkButton } from 'kalki-ui';
   
 const App = () => (
   <>
@@ -82,7 +82,7 @@ const App = () => (
     desc: 'This example shows how to create a raised LinkButton with a shadow effect.',
     code: `
 import React from 'react';
-import { LinkButton } from 'react-ui-essentials';
+import { LinkButton } from 'kalki-ui';
   
 const App = () => (
   <LinkButton raised variant="primary">
@@ -101,7 +101,7 @@ const App = () => (
     desc: 'This example demonstrates how to create a LinkButton with rounded corners.',
     code: `
 import React from 'react';
-import { LinkButton } from 'react-ui-essentials';
+import { LinkButton } from 'kalki-ui';
   
 const App = () => (
   <LinkButton rounded variant="success">
@@ -120,7 +120,7 @@ const App = () => (
     desc: 'This example demonstrates how to use LinkButtonIcon and LinkButtonText components together.',
     code: `
 import React from 'react';
-import { LinkButton } from 'react-ui-essentials';
+import { LinkButton } from 'kalki-ui';
   
 const App = () => (
   <LinkButton variant="primary">
@@ -143,7 +143,7 @@ const App = () => (
     desc: 'This example shows how to apply custom styles to the LinkButton component.',
     code: `
 import React from 'react';
-import { LinkButton } from 'react-ui-essentials';
+import { LinkButton } from 'kalki-ui';
   
 const App = () => (
   <LinkButton 
@@ -180,7 +180,7 @@ const App = () => (
     desc: '',
     code: `
 import React, { useState } from 'react';
-import { LinkButton,Box } from 'react-ui-essentials';
+import { LinkButton,Box } from 'kalki-ui';
   
 const App = () => {
   

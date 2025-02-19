@@ -8,7 +8,7 @@ export const docs: docsData[] = [
 //     desc: "A simple LinkBar with default settings",
 //     code: `
 // import React from "react";
-// import { LinkBar } from "react-ui-essentials";
+// import { LinkBar } from "kalki-ui";
     
 // const BasicLinkBar = () => {
 //   const links = [
@@ -26,7 +26,7 @@ export const docs: docsData[] = [
 //     desc: "LinkBar with start and end icons for links",
 //     code: `
 // import React from "react";
-// import { LinkBar, RoundedIcons } from "react-ui-essentials";
+// import { LinkBar, RoundedIcons } from "kalki-ui";
 // const { Home, Settings, Person } = RoundedIcons;
     
 // const LinkBarwithIcons = () => {
@@ -45,7 +45,7 @@ export const docs: docsData[] = [
 //     desc: "LinkBar with custom width and height",
 //     code: `
 // import React from "react";
-// import { LinkBar } from "react-ui-essentials";
+// import { LinkBar } from "kalki-ui";
 
 // const CustomSizedLinkBar = () => {
 //   let links = [
@@ -63,7 +63,7 @@ export const docs: docsData[] = [
 //     desc: "LinkBar with scroll controls hidden",
 //     code: `
 // import React from "react";
-// import { LinkBar } from "react-ui-essentials";
+// import { LinkBar } from "kalki-ui";
 
 // const LinkBarWithoutControls = () => {
 //   return (
@@ -85,7 +85,7 @@ export const docs: docsData[] = [
 //     desc: "LinkBar with custom size and variant for control buttons",
 //     code: `
 // import React from "react";
-// import { LinkBar } from "react-ui-essentials";
+// import { LinkBar } from "kalki-ui";
 
 // const LinkBarWithCustomControlButtons = () => {
 //   return (
@@ -108,7 +108,7 @@ export const docs: docsData[] = [
     desc: "LinkBar with many links to demonstrate scrolling",
     code: `
 import React from "react";
-import { LinkBar } from "react-ui-essentials";
+import { LinkBar } from "kalki-ui";
 
 const LinkBarWithManyLinks = () => {
   let links = [

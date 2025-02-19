@@ -7,7 +7,7 @@ export const docs: docsData[] = [
     desc: 'This example demonstrates the basic usage of the CloseButton component.',
     code: `
 import React from 'react';
-import { CloseButton } from 'react-ui-essentials';
+import { CloseButton } from 'kalki-ui';
   
 const App = () => (
   <CloseButton onClick={() => console.log('Close button clicked')} />
@@ -20,7 +20,7 @@ const App = () => (
     desc: 'This example shows how to use different sizes of the CloseButton.',
     code: `
 import React from 'react';
-import { CloseButton } from 'react-ui-essentials';
+import { CloseButton } from 'kalki-ui';
   
 const App = () => (
   <div>
@@ -43,7 +43,7 @@ const App = () => (
     desc: 'This example demonstrates how to use different variants of the CloseButton.',
     code: `
 import React from 'react';
-import { CloseButton } from 'react-ui-essentials';
+import { CloseButton } from 'kalki-ui';
   
 const App = () => (
   <div>
@@ -64,7 +64,7 @@ const App = () => (
     desc: 'This example shows how to create a disabled CloseButton.',
     code: `
 import React from 'react';
-import { CloseButton } from 'react-ui-essentials';
+import { CloseButton } from 'kalki-ui';
   
 const App = () => (
   <CloseButton disabled onClick={() => console.log('This will not be called')} />
