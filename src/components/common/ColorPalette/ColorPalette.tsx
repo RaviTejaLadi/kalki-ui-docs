@@ -22,7 +22,7 @@ const ColorsWatch: React.FC<{ shade: { value: number; color: string } }> = ({ sh
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className={`w-[5.9rem] h-28 ${shade.color} flex border dark:border-gray-200/10 rounded-md hover:shadow-sm relative group`}
+        className={`size-[5.9rem]  ${shade.color} flex border dark:border-gray-200/10 rounded-md hover:shadow-sm relative group`}
       >
         {isHovered && (
           <button
