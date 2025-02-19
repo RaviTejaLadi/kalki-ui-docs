@@ -1,16 +1,22 @@
-import React, { forwardRef, ReactNode } from 'react';
+import React, { forwardRef, PropsWithChildren, ReactNode } from 'react';
 import DotSeparator from '../DotSeparator';
 import Link from '../Link';
 import { LinkProps } from '../Link/Link';
 
-interface SimpleFooterProps {
+// #region types
+interface SimpleFooterLinkProps extends LinkProps {
+  to: string;
   children: ReactNode;
 }
-const SimpleFooter = forwardRef<HTMLDivElement, SimpleFooterProps>(({ children }, ref) => {
+// #endregion
+
+// #region SimpleFooter
+const SimpleFooter = forwardRef<HTMLDivElement, PropsWithChildren>(({ children, ...rest }, ref) => {
   return (
     <div
       ref={ref}
       className="flex items-center justify-center space-x-2 px-3 pb-1 text-2xs text-muted-foreground xs:pb-0"
+      {...rest}
     >
       {children}
     </div>
@@ -19,26 +25,24 @@ const SimpleFooter = forwardRef<HTMLDivElement, SimpleFooterProps>(({ children }
 
 SimpleFooter.displayName = 'SimpleFooter';
 
-interface SimpleFooterLinkProps extends LinkProps {
-  to: string;
-  children: ReactNode;
-}
-
-const SimpleFooterLink = forwardRef<HTMLAnchorElement, SimpleFooterLinkProps>(({ to, children }, ref) => {
+const SimpleFooterLink = forwardRef<HTMLAnchorElement, SimpleFooterLinkProps>(({ to, children, ...rest }, ref) => {
   return (
-    <Link ref={ref} to={to} className="underline-offset-4 hover:text-primary hover:underline">
+    <Link ref={ref} to={to} className="underline-offset-4 hover:text-primary hover:underline" {...rest}>
       {children}
     </Link>
   );
 });
 SimpleFooterLink.displayName = 'SimpleFooterLink';
 
+// #endregion
+
+// #region exports
 export default Object.assign(
-  SimpleFooter as React.ForwardRefExoticComponent<SimpleFooterProps & React.RefAttributes<HTMLButtonElement>>,
+  SimpleFooter as React.ForwardRefExoticComponent<PropsWithChildren & React.RefAttributes<HTMLButtonElement>>,
   {
     Link: SimpleFooterLink,
     Separator: DotSeparator,
   }
 );
 export { SimpleFooterLink, DotSeparator };
-export type { SimpleFooterProps, SimpleFooterLinkProps };
+export type { SimpleFooterLinkProps };
