@@ -1,11 +1,39 @@
 import React, { forwardRef } from 'react';
-import { type VariantProps } from 'class-variance-authority';
+import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils';
-import { spinnerVariants } from './spinnerVariants';
 
+// #region spinnerVariants
+const spinnerVariants = cva('inline-block animate-spin', {
+  variants: {
+    variant: {
+      primary: 'text-blue-600',
+      secondary: 'text-gray-600',
+      success: 'text-green-600',
+      danger: 'text-red-600',
+      warning: 'text-yellow-500',
+      info: 'text-cyan-600',
+      light: 'text-gray-200',
+      dark: 'text-gray-800',
+    },
+    size: {
+      sm: 'w-6 h-6',
+      md: 'w-9 h-9',
+      lg: 'w-12 h-12',
+      xl: 'w-16 h-16',
+    },
+  },
+  defaultVariants: {
+    variant: 'primary',
+    size: 'sm',
+  },
+});
+// #endregion
+
+// #region types
 interface SpinnerProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof spinnerVariants> {
   className?: string;
 }
+// #endregion
 
 /**
  * A customizable spinner component for loading states.
@@ -24,6 +52,7 @@ interface SpinnerProps extends React.HTMLAttributes<HTMLDivElement>, VariantProp
  *
  * @returns {JSX.Element} A spinning loader component
  */
+// #region Spinner
 const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(({ variant, size, className = '', ...rest }, ref) => {
   return (
     <div ref={ref} className={cn(spinnerVariants({ variant, size }), className)} {...rest}>
@@ -40,5 +69,10 @@ const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(({ variant, size, class
 });
 
 Spinner.displayName = 'Spinner';
+// #endregion
 
+// #region exports
 export default Spinner;
+export { spinnerVariants };
+export type { SpinnerProps };
+// #endregion
