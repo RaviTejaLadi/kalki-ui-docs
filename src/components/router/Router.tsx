@@ -1,5 +1,5 @@
 import { BrowserRouter, RouteObject, useRoutes, Navigate } from 'react-router-dom';
-import { Fragment, lazy, Suspense, ReactNode } from 'react';
+import { lazy, Suspense } from 'react';
 import Loading from '@/components/shared/Loading';
 import ErrorBoundary from '../Error/ErrorBoundary';
 import { AppLayout } from './AppLayout';
@@ -12,12 +12,12 @@ const Colors = lazy(() => import('@/pages/Colors'));
 const Components = lazy(() => import('@/pages/componentsPage/componentsPage'));
 const NotFoundScreen = lazy(() => import('@/pages/NotFound'));
 
-const DevOnly = ({ children }: { children: ReactNode }) => {
-  if (import.meta.env.MODE !== 'development') {
-    return null;
-  }
-  return <Fragment>{children}</Fragment>;
-};
+// const DevOnly = ({ children }: { children: ReactNode }) => {
+//   if (import.meta.env.MODE !== 'development') {
+//     return null;
+//   }
+//   return <Fragment>{children}</Fragment>;
+// };
 
 const AppRoutes = () => {
   const routes: RouteObject[] = [
