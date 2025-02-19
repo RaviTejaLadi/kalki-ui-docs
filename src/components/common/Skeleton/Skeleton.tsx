@@ -1,4 +1,5 @@
 import { cn } from '@/utils';
+import React from 'react';
 
 /**
  * A component that displays a loading skeleton animation.
