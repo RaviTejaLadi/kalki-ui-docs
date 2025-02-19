@@ -7,7 +7,6 @@ import { TableRow } from './TableRow';
 import { TableCell } from './TableCell';
 import { TableProps } from './types';
 
-
 const Table = forwardRef<HTMLTableElement, TableProps>(({ children, className, style, ...rest }, ref) => {
   return (
     <div className="overflow-x-auto rounded-md border dark:border-gray-200/10">

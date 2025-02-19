@@ -1,5 +1,11 @@
+import ComingSoonPage from '@/pages/ComingSoonPage';
+
 const ListsPage = () => {
-  return <div>ListsPage</div>;
+  return (
+    <div>
+      <ComingSoonPage />
+    </div>
+  );
 };
 
 export default ListsPage;

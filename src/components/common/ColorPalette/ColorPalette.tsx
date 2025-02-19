@@ -29,7 +29,7 @@ const ColorsWatch: React.FC<{ shade: { value: number; color: string } }> = ({ sh
             onClick={copyToClipboard}
             className="absolute bottom-2 right-2 bg-background/10 text-foreground bg-opacity-90 hover:bg-opacity-100 text-[0.45rem] py-1 px-2 rounded flex items-center justify-center gap-1"
           >
-            {copied ? <Check className="size-5" /> : <Copy className="size-5" />} 
+            {copied ? <Check className="size-5" /> : <Copy className="size-5" />}
           </button>
         )}
       </div>
@@ -89,7 +89,9 @@ const ColorPalette: React.FC = () => {
             </div>
           ))
         ) : (
-          <div className="text-center text-muted-foreground py-10">No colors found matching &quot;{searchTerm}&quot;</div>
+          <div className="text-center text-muted-foreground py-10">
+            No colors found matching &quot;{searchTerm}&quot;
+          </div>
         )}
       </div>
     </div>

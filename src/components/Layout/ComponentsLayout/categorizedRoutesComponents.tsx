@@ -234,7 +234,7 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         description:
           'Advanced selection component with support for complex data sources, custom rendering, and advanced filtering mechanisms.',
         path: '/components/select',
-        Icon: Space ,
+        Icon: Space,
       },
       {
         label: 'Textarea',

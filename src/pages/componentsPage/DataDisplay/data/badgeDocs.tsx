@@ -26,7 +26,7 @@ const App = () => (
           'dark' as const,
         ].map((item) => (
           <Badge size="sm" key={item} variant={item} style={{ margin: '0px 4px' }}>
-             {item}
+            {item}
           </Badge>
         ))}
       </>

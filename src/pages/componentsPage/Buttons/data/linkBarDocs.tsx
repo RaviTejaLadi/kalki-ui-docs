@@ -1,111 +1,110 @@
-
-import { docsData } from "@/types/docsData";
-import LinkBarWithManyLinks from "../examples/LinkBar/LinkBarWithManyLinks";
+import { docsData } from '@/types/docsData';
+import LinkBarWithManyLinks from '../examples/LinkBar/LinkBarWithManyLinks';
 
 export const docs: docsData[] = [
-//   {
-//     title: "Basic LinkBar",
-//     desc: "A simple LinkBar with default settings",
-//     code: `
-// import React from "react";
-// import { LinkBar } from "kalki-ui";
-    
-// const BasicLinkBar = () => {
-//   const links = [
-//     { name: "Home", url: "/" },
-//     { name: "About", url: "/about" },
-//     { name: "Contact", url: "/contact" },
-//   ];
-//   return <LinkBar links={links} currentPath="/" />;
-// };
-//     `,
-//     snippet: <BasicLinkBar />,
-//   },
-//   {
-//     title: "LinkBar with Icons",
-//     desc: "LinkBar with start and end icons for links",
-//     code: `
-// import React from "react";
-// import { LinkBar, RoundedIcons } from "kalki-ui";
-// const { Home, Settings, Person } = RoundedIcons;
-    
-// const LinkBarwithIcons = () => {
-//   links = [
-//     { name: "Home", url: "/", startIcon: <Home /> },
-//     { name: "Settings", url: "/settings", endIcon: <Settings /> },
-//     { name: "Profile", url: "/profile", startIcon: <Person /> },
-//   ];
-//   return <LinkBar links={links} activeLinkUrl="/settings" />;
-// };
-//     `,
-//     snippet: <LinkBarwithIcons />,
-//   },
-//   {
-//     title: "Custom Sized LinkBar",
-//     desc: "LinkBar with custom width and height",
-//     code: `
-// import React from "react";
-// import { LinkBar } from "kalki-ui";
+  //   {
+  //     title: "Basic LinkBar",
+  //     desc: "A simple LinkBar with default settings",
+  //     code: `
+  // import React from "react";
+  // import { LinkBar } from "kalki-ui";
 
-// const CustomSizedLinkBar = () => {
-//   let links = [
-//     { name: "Option 1", url: "/option1" },
-//     { name: "Option 2", url: "/option2" },
-//     { name: "Option 3", url: "/option3" },
-//   ];
-//   return <LinkBar links={links} width="300px" height="50px" />;
-// };
-//     `,
-//     snippet: <CustomSizedLinkBar />,
-//   },
-//   {
-//     title: "LinkBar without Controls",
-//     desc: "LinkBar with scroll controls hidden",
-//     code: `
-// import React from "react";
-// import { LinkBar } from "kalki-ui";
+  // const BasicLinkBar = () => {
+  //   const links = [
+  //     { name: "Home", url: "/" },
+  //     { name: "About", url: "/about" },
+  //     { name: "Contact", url: "/contact" },
+  //   ];
+  //   return <LinkBar links={links} currentPath="/" />;
+  // };
+  //     `,
+  //     snippet: <BasicLinkBar />,
+  //   },
+  //   {
+  //     title: "LinkBar with Icons",
+  //     desc: "LinkBar with start and end icons for links",
+  //     code: `
+  // import React from "react";
+  // import { LinkBar, RoundedIcons } from "kalki-ui";
+  // const { Home, Settings, Person } = RoundedIcons;
 
-// const LinkBarWithoutControls = () => {
-//   return (
-//     <LinkBar
-//       links={[
-//         { name: "Tab 1", url: "/tab1" },
-//         { name: "Tab 2", url: "/tab2" },
-//         { name: "Tab 3", url: "/tab3" },
-//       ]}
-//       showControls={false}
-//     />
-//   );
-// };
-//     `,
-//     snippet: <LinkBarWithoutControls />,
-//   },
-//   {
-//     title: "LinkBar with Custom Control Buttons",
-//     desc: "LinkBar with custom size and variant for control buttons",
-//     code: `
-// import React from "react";
-// import { LinkBar } from "kalki-ui";
+  // const LinkBarwithIcons = () => {
+  //   links = [
+  //     { name: "Home", url: "/", startIcon: <Home /> },
+  //     { name: "Settings", url: "/settings", endIcon: <Settings /> },
+  //     { name: "Profile", url: "/profile", startIcon: <Person /> },
+  //   ];
+  //   return <LinkBar links={links} activeLinkUrl="/settings" />;
+  // };
+  //     `,
+  //     snippet: <LinkBarwithIcons />,
+  //   },
+  //   {
+  //     title: "Custom Sized LinkBar",
+  //     desc: "LinkBar with custom width and height",
+  //     code: `
+  // import React from "react";
+  // import { LinkBar } from "kalki-ui";
 
-// const LinkBarWithCustomControlButtons = () => {
-//   return (
-//     <LinkBar
-//       links={[
-//         { name: "Product A", url: "/product-a" },
-//         { name: "Product B", url: "/product-b" },
-//         { name: "Product C", url: "/product-c" },
-//       ]}
-//       controlsSize="md"
-//       controlsVariant="primary"
-//     />
-//   );
-// };
-//     `,
-//     snippet: <LinkBarWithCustomControlButtons />,
-//   },
+  // const CustomSizedLinkBar = () => {
+  //   let links = [
+  //     { name: "Option 1", url: "/option1" },
+  //     { name: "Option 2", url: "/option2" },
+  //     { name: "Option 3", url: "/option3" },
+  //   ];
+  //   return <LinkBar links={links} width="300px" height="50px" />;
+  // };
+  //     `,
+  //     snippet: <CustomSizedLinkBar />,
+  //   },
+  //   {
+  //     title: "LinkBar without Controls",
+  //     desc: "LinkBar with scroll controls hidden",
+  //     code: `
+  // import React from "react";
+  // import { LinkBar } from "kalki-ui";
+
+  // const LinkBarWithoutControls = () => {
+  //   return (
+  //     <LinkBar
+  //       links={[
+  //         { name: "Tab 1", url: "/tab1" },
+  //         { name: "Tab 2", url: "/tab2" },
+  //         { name: "Tab 3", url: "/tab3" },
+  //       ]}
+  //       showControls={false}
+  //     />
+  //   );
+  // };
+  //     `,
+  //     snippet: <LinkBarWithoutControls />,
+  //   },
+  //   {
+  //     title: "LinkBar with Custom Control Buttons",
+  //     desc: "LinkBar with custom size and variant for control buttons",
+  //     code: `
+  // import React from "react";
+  // import { LinkBar } from "kalki-ui";
+
+  // const LinkBarWithCustomControlButtons = () => {
+  //   return (
+  //     <LinkBar
+  //       links={[
+  //         { name: "Product A", url: "/product-a" },
+  //         { name: "Product B", url: "/product-b" },
+  //         { name: "Product C", url: "/product-c" },
+  //       ]}
+  //       controlsSize="md"
+  //       controlsVariant="primary"
+  //     />
+  //   );
+  // };
+  //     `,
+  //     snippet: <LinkBarWithCustomControlButtons />,
+  //   },
   {
-    title: "LinkBar with Many Links",
-    desc: "LinkBar with many links to demonstrate scrolling",
+    title: 'LinkBar with Many Links',
+    desc: 'LinkBar with many links to demonstrate scrolling',
     code: `
 import React from "react";
 import { LinkBar } from "kalki-ui";
@@ -161,23 +160,23 @@ const LinkBarWithManyLinks = () => {
   },
 ];
 
-export const columns = ["Name", "Type", "Default", "Description"];
+export const columns = ['Name', 'Type', 'Default', 'Description'];
 export const rows = [
   [
-    "links",
-    "array",
-    "Required",
+    'links',
+    'array',
+    'Required',
     "An array of link objects. Each object should have 'name' and 'url' properties, and optionally 'startIcon' and 'endIcon'.",
   ],
-  ["activeLinkUrl", "string", "-", "The URL of the currently active link. This link will be highlighted."],
-  ["controlsSize", "string", "sm", "Size of the control buttons. Possible values are 'sm', 'md', 'lg'."],
+  ['activeLinkUrl', 'string', '-', 'The URL of the currently active link. This link will be highlighted.'],
+  ['controlsSize', 'string', 'sm', "Size of the control buttons. Possible values are 'sm', 'md', 'lg'."],
   [
-    "controlsVariant",
-    "string",
-    "light",
+    'controlsVariant',
+    'string',
+    'light',
     "Variant of the control buttons. Possible values depend on your Button component's variants.",
   ],
-  ["showControls", "boolean", "true", "Whether to show the scroll control buttons."],
-  ["width", "string", "100%", "Width of the LinkBar container."],
-  ["height", "string", "40px", "Height of the LinkBar container."],
+  ['showControls', 'boolean', 'true', 'Whether to show the scroll control buttons.'],
+  ['width', 'string', '100%', 'Width of the LinkBar container.'],
+  ['height', 'string', '40px', 'Height of the LinkBar container.'],
 ];

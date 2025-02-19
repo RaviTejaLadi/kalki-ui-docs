@@ -78,7 +78,7 @@ interface LinkTextProps {
 
 // LinkButton Component
 const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(
-  ({ variant, size, to="", children, className, raised, rounded, ...rest }, ref) => {
+  ({ variant, size, to = '', children, className, raised, rounded, ...rest }, ref) => {
     return (
       <Link ref={ref} to={to} className={linkVariants({ variant, size, raised, rounded, className })} {...rest}>
         {children}

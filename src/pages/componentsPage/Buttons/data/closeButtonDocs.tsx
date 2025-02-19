@@ -74,7 +74,7 @@ const App = () => (
   },
 ];
 
-export const columns:string[] = ['Name', 'Type', 'Default', 'Description'];
+export const columns: string[] = ['Name', 'Type', 'Default', 'Description'];
 export const rows = [
   ['variant', 'string', "'light'", "The visual variant of the button. Can be 'light' or 'dark'."],
   ['size', 'string', "'sm'", "The size of the button. Can be 'sm', 'md', or 'lg'."],

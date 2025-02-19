@@ -11,4 +11,4 @@ export const NavMenuLink = forwardRef<HTMLAnchorElement, NavMenuLinkProps>(
   )
 );
 
-NavMenuLink.displayName="NavMenuLink"
+NavMenuLink.displayName = 'NavMenuLink';

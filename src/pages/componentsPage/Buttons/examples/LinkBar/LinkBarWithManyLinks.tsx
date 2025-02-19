@@ -64,7 +64,7 @@ const LinkBarWithManyLinks = () => {
       onUrlChange={handleUrlChange}
       className="w-full  mx-auto "
     >
-      <LinkBar.Control  position="left" />
+      <LinkBar.Control position="left" />
 
       <LinkBar.Content className="px-2">
         {links.map((link, index) => (

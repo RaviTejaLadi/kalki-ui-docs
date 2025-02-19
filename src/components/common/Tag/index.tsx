@@ -87,6 +87,6 @@ export default Object.assign(Tag as React.ForwardRefExoticComponent<TagProps & R
   Close: TagClose,
 });
 
-export { TagIcon, TagClose, TagText,tagVariants };
+export { TagIcon, TagClose, TagText, tagVariants };
 
 export type { TagProps, TagIconProps, TagTextProps, TagCloseButtonProps };
