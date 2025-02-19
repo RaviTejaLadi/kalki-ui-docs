@@ -1,8 +1,24 @@
 import { cn } from '@/utils';
-import React, { forwardRef } from 'react';
-import { OrderedListProps } from './interface';
-import { OrderedListItem } from './OrderedListItem';
+import React, { CSSProperties, forwardRef, ReactNode } from 'react';
 
+// #region types
+type ListStyleType = '1' | 'A' | 'a' | 'I' | 'i';
+
+interface OrderedListItemProps extends React.LiHTMLAttributes<HTMLLIElement> {
+  children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
+}
+
+interface OrderedListProps extends Omit<React.OlHTMLAttributes<HTMLOListElement>, 'type'> {
+  children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
+  type?: ListStyleType;
+}
+// #endregion
+
+// #region OrderedList
 const OrderedList = forwardRef<HTMLOListElement, OrderedListProps>(
   ({ children, type = '1', className = '', style, ...rest }, ref) => {
     const combinedStyle = {
@@ -31,6 +47,16 @@ const OrderedList = forwardRef<HTMLOListElement, OrderedListProps>(
 
 OrderedList.displayName = 'OrderedList';
 
+const OrderedListItem: React.FC<OrderedListItemProps> = ({ children, className = '', style, ...rest }) => {
+  return (
+    <li className={cn('mb-1 text-black', className)} style={style} {...rest}>
+      {children}
+    </li>
+  );
+};
+// #endregion
+
+// #region exports
 export default Object.assign(
   OrderedList as React.ForwardRefExoticComponent<OrderedListProps & React.RefAttributes<HTMLOListElement>>,
   {
@@ -39,3 +65,4 @@ export default Object.assign(
 );
 
 export { OrderedListItem };
+export type { OrderedListProps, OrderedListItemProps, ListStyleType };
