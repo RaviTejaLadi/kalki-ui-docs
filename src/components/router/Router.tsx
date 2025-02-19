@@ -47,11 +47,7 @@ const AppRoutes = () => {
         },
         {
           path: '/components-showcase',
-          element: (
-            <DevOnly>
-              <ComponentsShowCase />
-            </DevOnly>
-          ),
+          element: <ComponentsShowCase />,
         },
         {
           path: '404',
