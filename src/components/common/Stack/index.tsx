@@ -1,7 +1,36 @@
-import React, { forwardRef, CSSProperties } from 'react';
+import React, { forwardRef, CSSProperties, ReactNode } from 'react';
 import { cn } from '@/utils';
-import { StackProps } from './types';
-import { StackItem } from './StackItem';
+import Box from '../Box';
+
+// #region types
+type JustifyContent = 'start' | 'center' | 'end' | 'between' | 'around';
+
+type AlignItems = 'start' | 'center' | 'end' | 'stretch';
+
+type AlignContent = 'start' | 'center' | 'end' | 'stretch';
+
+type FlexWrap = 'wrap' | 'nowrap';
+type Direction = 'row' | 'column';
+
+interface StackItemProps {
+  children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
+}
+
+interface StackProps {
+  direction?: Direction;
+  justifyContent?: JustifyContent;
+  alignItems?: AlignItems;
+  alignContent?: AlignContent;
+  flexWrap?: FlexWrap;
+  spacing?: number;
+  padding?: string;
+  className?: string;
+  children?: ReactNode;
+  style?: CSSProperties;
+}
+// #endregion
 
 /**
  * A flexible container component that manages the layout and spacing of its children.
@@ -27,6 +56,8 @@ import { StackItem } from './StackItem';
  * </Stack>
  * ```
  */
+
+// #region Stack
 const Stack = forwardRef<HTMLDivElement, StackProps>(
   (
     {
@@ -84,6 +115,25 @@ const Stack = forwardRef<HTMLDivElement, StackProps>(
 
 Stack.displayName = 'Stack';
 
+/**
+ * A component that represents an item within a Stack layout.
+ *
+ * @component
+ * @param {object} props - The component props
+ * @param {React.ReactNode} props.children - The content to be rendered inside the stack item
+ * @param {string} [props.className] - Additional CSS class names to apply to the stack item
+ * @param {React.CSSProperties} [props.style] - Custom inline styles to apply to the stack item
+ * @returns {JSX.Element} A Box component containing the stack item content
+ */
+const StackItem: React.FC<StackItemProps> = ({ children, className, style, ...rest }) => (
+  <Box className={className} style={style} {...rest}>
+    {children}
+  </Box>
+);
+
+// #endregion
+
+// #region exports
 export default Object.assign(
   Stack as React.ForwardRefExoticComponent<StackProps & React.RefAttributes<HTMLDivElement>>,
   {
@@ -92,3 +142,5 @@ export default Object.assign(
 );
 
 export { StackItem };
+
+export type { StackProps, StackItemProps, JustifyContent, AlignItems, AlignContent, FlexWrap, Direction };
