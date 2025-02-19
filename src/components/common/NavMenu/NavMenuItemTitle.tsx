@@ -7,3 +7,4 @@ export const NavMenuItemTitle = forwardRef<HTMLSpanElement, NavMenuItemTitleProp
     {children}
   </span>
 ));
+NavMenuItemTitle.displayName="NavMenuItemTitle"

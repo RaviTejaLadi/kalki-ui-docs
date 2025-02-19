@@ -34,6 +34,7 @@ const NavMenu = forwardRef<HTMLDivElement, NavMenuProps>(({ children, className 
     </div>
   );
 });
+NavMenu.displayName = 'NavMenu';
 
 export default Object.assign(
   NavMenu as React.ForwardRefExoticComponent<NavMenuProps & React.RefAttributes<HTMLDivElement>>,

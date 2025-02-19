@@ -9,3 +9,4 @@ export const NavMenuItemContent = forwardRef<HTMLDivElement, NavMenuItemContentP
     </div>
   )
 );
+NavMenuItemContent.displayName="NavMenuItemContent"

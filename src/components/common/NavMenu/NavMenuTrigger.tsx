@@ -9,3 +9,5 @@ export const NavMenuTrigger = forwardRef<HTMLButtonElement, NavMenuTriggerProps>
     </button>
   )
 );
+
+NavMenuTrigger.displayName = 'NavMenuTrigger';

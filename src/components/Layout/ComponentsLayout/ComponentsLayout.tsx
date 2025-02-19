@@ -15,9 +15,9 @@ import { categorizedRoutesComponents } from './categorizedRoutesComponents';
 import Link from '@/components/common/Link';
 import { cn } from '@/utils';
 
-export const AppSideBar = () => {
+export const AppSideBar = ({ className }: { className?: string }) => {
   return (
-    <Sidebar className=" w-[13rem]">
+    <Sidebar className={cn(className, 'w-[13rem]')}>
       <SidebarBody>
         <SidebarGroup>
           <SidebarGroupLabel>Components</SidebarGroupLabel>
@@ -29,7 +29,7 @@ export const AppSideBar = () => {
                   icon={Icon ? <Icon className="size-4 text-[var(--icon-color)]" /> : null}
                   className="hover:bg-gray-100 dark:hover:bg-gray-200/10"
                 >
-                  <Link to={path || '#'} className={cn('text-muted-foreground text-xs  hover:text-muted-foreground')}>
+                  <Link to={path || '#'} className={cn('text-muted-foreground text-xs hover:text-muted-foreground')}>
                     {category.slice(0, 15)}
                   </Link>
                 </SidebarMenuSubButton>
@@ -38,7 +38,7 @@ export const AppSideBar = () => {
                     key={path}
                     to={path}
                     icon={Icon ? <Icon className="size-4 text-[var(--icon-color)]" /> : null}
-                    className="hover:bg-gray-100 dark:hover:bg-gray-200/10 "
+                    className="hover:bg-gray-100 dark:hover:bg-gray-200/10"
                   >
                     {label}
                   </SidebarMenuSubItem>
@@ -69,10 +69,10 @@ export const AppSideBar = () => {
 export default function ComponentsLayout() {
   return (
     <div className="flex min-h-screen">
-      <aside className="fixed top-11 left-0 h-screen ">
+      <aside className="fixed top-11 left-0 h-screen hidden md:block">
         <AppSideBar />
       </aside>
-      <main className="ml-[13rem] w-full  flex-1 p-6 overflow-y-auto bg-inherit">
+      <main className="ml-0 md:ml-[13rem] w-full flex-1 p-6 overflow-y-auto bg-inherit">
         <Outlet />
       </main>
     </div>

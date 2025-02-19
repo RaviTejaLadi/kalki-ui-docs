@@ -12,3 +12,5 @@ export const NavMenuList = forwardRef<HTMLUListElement, NavMenuListProps>(
     </ul>
   )
 );
+
+NavMenuList.displayName = 'NavMenuList';
