@@ -5,10 +5,10 @@ export const drawerVariants = cva(
   {
     variants: {
       position: {
-        top: 'top-0 left-0 transform rounded-b-2xl -translate-y-full w-full',
-        right: 'top-0  right-0 transform border rounded-l-2xl translate-x-full h-full',
-        bottom: 'bottom-0 left-0 transform rounded-t-2xl translate-y-full w-full',
-        left: 'top-0 left-0 transform rounded-r-2xl -translate-x-full h-full',
+        top: 'top-0 left-0 transform  -translate-y-full w-full',
+        right: 'top-0  right-0 transform border  translate-x-full h-full',
+        bottom: 'bottom-0 left-0 transform  translate-y-full w-full',
+        left: 'top-0 left-0 transform  -translate-x-full h-full',
       },
       open: {
         true: 'transform-none',
