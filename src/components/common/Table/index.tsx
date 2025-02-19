@@ -127,3 +127,5 @@ export default Object.assign(
 );
 
 export { TableHead, TableBody, TableCell, TableFooter, TableRow };
+
+export type { TableProps, TableSectionProps, TableRowProps, TableCellProps };
