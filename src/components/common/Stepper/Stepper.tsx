@@ -23,15 +23,15 @@ interface StepperProps {
   className?: string;
 }
 
-interface StepperComponent extends StepperProps {
-  Step: React.FC<StepProps>;
-  CodeBlock: React.FC<CodeBlockProps>;
-  Description: React.FC<DescriptionProps>;
-}
+// interface StepperComponent extends StepperProps {
+//   Step: React.FC<StepProps>;
+//   CodeBlock: React.FC<CodeBlockProps>;
+//   Description: React.FC<DescriptionProps>;
+// }
 
 const StepperContext = createContext({});
 
-export const Stepper = ({ children, className }: StepperComponent) => {
+export const Stepper = ({ children, className }: StepperProps) => {
   return (
     <StepperContext.Provider value={{}}>
       <div className={cn('w-full mx-auto p-6 bg-white text-foreground dark:bg-inherit dark:text-gray-100', className)}>
