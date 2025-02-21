@@ -22,14 +22,18 @@ const ColorsWatch: React.FC<{ shade: { value: number; color: string } }> = ({ sh
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className={`size-[5.9rem]  ${shade.color} flex border dark:border-gray-200/10 rounded-md hover:shadow-sm relative group`}
+        className={`size-[3rem]  ${shade.color} flex border dark:border-gray-200/10 rounded-md hover:shadow-sm relative group`}
       >
         {isHovered && (
           <button
             onClick={copyToClipboard}
-            className="absolute bottom-2 right-2 bg-background/10 text-foreground bg-opacity-90 hover:bg-opacity-100 text-[0.45rem] py-1 px-2 rounded flex items-center justify-center gap-1"
+            className="absolute bottom-1 right-1 bg-background/10 text-foreground bg-opacity-90 hover:bg-opacity-100 text-[0.45rem] py-1 px-2 rounded flex items-end justify-end gap-1"
           >
-            {copied ? <Check className="size-5" /> : <Copy className="size-5" />}
+            {copied ? (
+              <Check className="size-2 text-[var(--icon-color)]" />
+            ) : (
+              <Copy className="size-2 text-[var(--icon-color)]" />
+            )}
           </button>
         )}
       </div>
@@ -80,7 +84,7 @@ const ColorPalette: React.FC = () => {
               key={color.name}
               className="border w-[45%] bg-background dark:bg-inherit dark:border-gray-200/10 shadow-sm rounded-md px-3 py-2"
             >
-              <h3 className="text-sm text-foreground font-semibold mb-4">{color.name}</h3>
+              <h3 className="text-sm text-muted-foreground tracking-wider font-semibold mb-4">{color.name}</h3>
               <div className="flex justify-center flex-wrap space-x-2 overflow-auto">
                 {color.shades.map((shade) => (
                   <ColorsWatch key={shade.value} shade={shade} />
