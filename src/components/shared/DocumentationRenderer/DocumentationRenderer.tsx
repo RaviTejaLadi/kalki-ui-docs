@@ -40,16 +40,14 @@ const DocumentationRenderer: React.FC<DocumentationRendererProps> = ({ data, cla
               <SectionHeader.Title className="tracking-wide">{item.title}</SectionHeader.Title>
               <SectionHeader.SubTitle className="tracking-wide">{item.desc}</SectionHeader.SubTitle>
             </SectionHeader>
-            <Tabs variant="light" size="sm" title="PreviewCodeTabs">
+            <Tabs variant="light" size="sm"  >
               <Tab
                 label="Preview"
                 value="preview"
-                className="border-none min-h-[350px] w-full flex items-center justify-center"
+                className="border-none min-h-[350px] w-full"
                 leftIcon={<Terminal className="size-4" />}
               >
-                {/* <DotBackground gap={14} color="#94a3b8" size={0.5}> */}
                 {item.snippet}
-                {/* </DotBackground> */}
               </Tab>
               <Tab label="Code" value="code" className="max-h-96" leftIcon={<Code className="size-4" />}>
                 <Box padding="10px">
