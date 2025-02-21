@@ -44,7 +44,7 @@ const DocumentationRenderer: React.FC<DocumentationRendererProps> = ({ data, cla
               <Tab
                 label="Preview"
                 value="preview"
-                className="h-32 border-none max-h-64  w-full"
+                className="h-32 border-none min-h-[350px]  w-full"
                 leftIcon={<Terminal className="size-4" />}
               >
                 <DotBackground gap={14} color="#94a3b8" size={0.5}>
