@@ -170,7 +170,6 @@ function OpenAccordion() {
   },
   {
     title: 'Accordion with All Available Variants',
-    desc: 'This example demonstrates how t',
     code: `
 import { Accordion } from 'react-ui-essentials';
 

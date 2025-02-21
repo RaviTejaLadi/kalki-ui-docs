@@ -10,7 +10,7 @@ import React from 'react';
  */
 interface docsData {
   title: string;
-  desc: string;
+  desc?: string;
   code: string;
   snippet: React.ReactNode;
 }
