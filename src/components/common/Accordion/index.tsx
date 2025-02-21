@@ -1,4 +1,4 @@
-import {
+import React, {
   forwardRef,
   useState,
   useCallback,
@@ -228,7 +228,7 @@ const AccordionHeader: React.FC<AccordionHeaderProps> = ({
 
 const AccordionItem: React.FC<AccordionItemProps> = ({ children, className, style, ...rest }) => {
   return (
-    <div className={cn('border-b border-gray-200 last:border-b-0', className)} style={style} {...rest}>
+    <div className={cn('border-[.5px] dark:border-gray-200/10 last:border-b-0', className)} style={style} {...rest}>
       {children}
     </div>
   );
