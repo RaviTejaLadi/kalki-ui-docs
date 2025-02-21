@@ -42,6 +42,7 @@ import {
   FileQuestion,
   TextCursorInput,
   Space,
+  Pilcrow,
 } from 'lucide-react';
 
 import { DocumentIcon, ViewColumnsIcon, DocumentTextIcon, DocumentCheckIcon } from '@heroicons/react/24/outline';
@@ -434,9 +435,15 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
       },      {
         label: 'Heading',
         description:
-          'Comprehensive typographic system providing responsive type scales, font management, and consistent text styling across applications.',
+          'Headings are titles or subtitles that you want to display on a webpage.',
         path: '/components/heading',
         Icon: Heading,
+      },      {
+        label: 'Paragraph',
+        description:
+          'A paragraph always starts on a new line, and browsers automatically add some white space (a margin) before and after a paragraph.',
+        path: '/components/paragraph',
+        Icon: Pilcrow,
       },
     ],
   },

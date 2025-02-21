@@ -61,7 +61,8 @@ export const docs: docsData[] = [
   },
 ];
 
-export const paraPropsRows = [
+export const columns = ['Name', 'Type', 'Default', 'Description'];
+export const rows = [
   ['size', 'string', 'default', 'Sets the text size of the paragraph. Options: default, xs, sm, md, lg, xl, 2xl, 3xl'],
   ['underline', 'boolean', 'false', 'If true, the text will be underlined.'],
   ['overline', 'boolean', 'false', 'If true, the text will be overline.'],
