@@ -3,7 +3,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import { createElement, forwardRef, ReactNode } from 'react';
 
 // #region headingVariants
-const headingVariants = cva('font-heading scroll-m-20', {
+const headingVariants = cva('font-heading text-foreground scroll-m-20', {
   variants: {
     size: {
       h1: 'text-4xl lg:text-5xl font-bold',

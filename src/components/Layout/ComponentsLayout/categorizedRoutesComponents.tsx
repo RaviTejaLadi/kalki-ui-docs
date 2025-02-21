@@ -431,6 +431,12 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
           'Comprehensive typographic system providing responsive type scales, font management, and consistent text styling across applications.',
         path: '/components/typography',
         Icon: Type,
+      },      {
+        label: 'Heading',
+        description:
+          'Comprehensive typographic system providing responsive type scales, font management, and consistent text styling across applications.',
+        path: '/components/heading',
+        Icon: Heading,
       },
     ],
   },

@@ -82,7 +82,7 @@ export const docs: docsData[] = [
 ];
 
 export const columns = ['Name', 'Type', 'Default', 'Description'];
-export const headingPropsRows = [
+export const rows = [
   ['size', 'string', 'h6', "Sets the HTML heading tag. Options: 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'."],
   ['underline', 'boolean', 'false', 'If true, the text will be underlined.'],
   ['overline', 'boolean', 'false', 'If true, the text will be overline.'],

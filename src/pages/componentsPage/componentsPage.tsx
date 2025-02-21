@@ -27,7 +27,7 @@ import {
   TextareaPage,
 } from './FormsPage';
 import { BreadcrumbPage, CarouselPage, DrawerPage, LinkPage, TabsPage } from './Navigation';
-import { TextHighlighterPage, TypographyPage } from './Typo';
+import { TextHighlighterPage, TypographyPage,HeadingPage } from './Typo';
 import { FullScreenTogglePage, RipplePage } from './Utilities';
 import React from 'react';
 import ComponentsLayout from '@/components/Layout/ComponentsLayout/ComponentsLayout';
@@ -90,6 +90,8 @@ const ROUTES: RouteConfig[] = [
 
   // Typography
   { path: 'typography', Component: TypographyPage },
+  { path: 'heading', Component: HeadingPage },
+
   { path: 'text-highlighter', Component: TextHighlighterPage },
 
   // Utilities

@@ -3,7 +3,7 @@ import { cn } from '@/utils';
 import { cva, VariantProps } from 'class-variance-authority';
 
 // #region paragraphVariants
-const paragraphVariants = cva('leading-7', {
+const paragraphVariants = cva('leading-7 text-muted-foreground', {
   variants: {
     size: {
       default: 'text-base',
