@@ -394,7 +394,7 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         label: 'Section Header',
         description:
           'Responsive typography component for creating consistent, semantically structured section headings with advanced styling capabilities.',
-        path: '/components/sectionHeader',
+        path: '/components/section-header',
         Icon: Heading,
       },
       {
