@@ -95,30 +95,31 @@ const ResizeHandle = React.memo(
     withHandle?: boolean;
   }) => (
     <div
-      className={`flex items-center justify-center bg-gray-200 ${
-        orientation === 'horizontal' ? 'w-[.8px] cursor-ew-resize' : 'h-[.8px] cursor-ns-resize'
-      }`}
+      className={cn(
+        'flex items-center justify-center border dark:border-gray-200/10',
+        orientation === 'horizontal' ? 'w-[.5px] cursor-ew-resize' : 'h-[.5px] cursor-ns-resize'
+      )}
       onMouseDown={onMouseDown}
     >
       {withHandle && orientation === 'horizontal' ? (
         <Box
           width="12px"
           height="13px"
-          className="flex items-center justify-center rounded bg-gray-200"
+          className="flex items-center justify-center rounded bg-background dark:bg-inherit"
           padding="1px"
           outlined
         >
-          <GripVertical className="text-gray-400 size-3" />
+          <GripVertical className="text-[var(--icon-color)] size-3" />
         </Box>
       ) : (
         <Box
           width="15px"
           height="10px"
-          className="flex items-center justify-center rounded bg-gray-200"
+          className="flex items-center justify-center rounded bg-background dark:bg-inherit"
           padding="1px"
           outlined
         >
-          <GripHorizontal className="text-gray-400 size-3" />
+          <GripHorizontal className="text-[var(--icon-color)] size-3" />
         </Box>
       )}
     </div>
@@ -153,7 +154,9 @@ const Splitter = forwardRef<HTMLDivElement, SplitterProps>(
     return (
       <div
         className={cn(
-          `flex ${orientation === 'horizontal' ? 'flex-row' : 'flex-col'} w-full h-full border rounded-md`,
+          'flex',
+          orientation === 'horizontal' ? 'flex-row' : 'flex-col',
+          'w-full h-full border dark:border-gray-200/10',
           className
         )}
         style={{ height }}
