@@ -6,7 +6,7 @@ import { cn } from '@/utils';
 const separatorVariants = cva('relative', {
   variants: {
     orientation: {
-      horizontal: 'w-full border-t flex items-center',
+      horizontal: 'w-full border-t border-t-gray-200 dark:border-t-gray-200/10 flex items-center',
       vertical: 'h-full flex-col border-l inline-flex',
     },
     position: {
