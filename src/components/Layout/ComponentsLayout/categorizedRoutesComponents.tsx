@@ -374,7 +374,7 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         label: 'Content Scrollable',
         description:
           'Advanced scrolling container with enhanced performance, virtualization support, and smooth scrolling behavior for large content sets.',
-        path: '/components/contentScrollable',
+        path: '/components/content-scrollable',
         Icon: ScrollText,
       },
       {
