@@ -24,7 +24,6 @@ import {
   AlignCenter,
   Loader2,
   Layers,
-  Container,
   ScrollText,
   CreditCard,
   SplitSquareVertical,
@@ -376,13 +375,6 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
           'Advanced scrolling container with enhanced performance, virtualization support, and smooth scrolling behavior for large content sets.',
         path: '/components/content-scrollable',
         Icon: ScrollText,
-      },
-      {
-        label: 'Fieldset',
-        description:
-          'Semantic form grouping component providing visual and logical organization for related form controls with enhanced accessibility.',
-        path: '/components/fieldset',
-        Icon: Container,
       },
       {
         label: 'Figure',
