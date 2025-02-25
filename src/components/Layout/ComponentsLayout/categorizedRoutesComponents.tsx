@@ -296,7 +296,7 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         label: 'Breadcrumb',
         description:
           'Hierarchical navigation component providing clear user context and efficient site traversal with responsive and accessible design.',
-        path: '/components/breadCrum',
+        path: '/components/breadcrumb',
         Icon: Target,
       },
       {
