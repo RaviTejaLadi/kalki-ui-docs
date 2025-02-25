@@ -18,9 +18,9 @@ const data = { name: "John Doe", age: 30, city: "New York" };
     code: `
 const data = { fruits: ["apple", "banana", "orange"], count: 3 };
 
-<JsonViewer data={data} title="Fruit Inventory" />
+<JsonViewer data={data} />
       `,
-    snippet: <JsonViewer data={{ fruits: ['apple', 'banana', 'orange'], count: 3 }} title="Fruit Inventory" />,
+    snippet: <JsonViewer data={{ fruits: ['apple', 'banana', 'orange'], count: 3 }}  />,
   },
   {
     title: 'Custom Dimensions',
@@ -28,9 +28,9 @@ const data = { fruits: ["apple", "banana", "orange"], count: 3 };
     code: `
 const data = { key1: "value1", key2: "value2", key3: "value3" };
 
-<JsonViewer data={data} width="300px" height="200px" />
+<JsonViewer data={data}  />
       `,
-    snippet: <JsonViewer data={{ key1: 'value1', key2: 'value2', key3: 'value3' }} width="300px" height="200px" />,
+    snippet: <JsonViewer data={{ key1: 'value1', key2: 'value2', key3: 'value3' }}  />,
   },
   {
     title: 'Custom Indentation',
@@ -71,10 +71,10 @@ const data = {
     code: `
 const data = { id: 1, status: "active", tags: ["important", "urgent"] };
 
-<JsonViewer data={data} margin="20px" padding="15px" />
+<JsonViewer data={data} />
       `,
     snippet: (
-      <JsonViewer data={{ id: 1, status: 'active', tags: ['important', 'urgent'] }} margin="20px" padding="15px" />
+      <JsonViewer data={{ id: 1, status: 'active', tags: ['important', 'urgent'] }}  />
     ),
   },
   {
@@ -144,19 +144,13 @@ const data = {
     desc: 'JSON viewer with a custom React node as title',
     code: `
 const data = { status: "success", message: "Operation completed" };
-        
-const CustomTitle = () => (
-  <span style={{ color: 'green', fontWeight: 'bold' }}>
-    Response Data
-  </span>
-);
-        
-<JsonViewer data={data} title={<CustomTitle />} />
+             
+<JsonViewer data={data}  />
       `,
     snippet: (
       <JsonViewer
         data={{ status: 'success', message: 'Operation completed' }}
-        title={<span style={{ color: 'green', fontWeight: 'bold' }}>Response Data</span>}
+        
       />
     ),
   },

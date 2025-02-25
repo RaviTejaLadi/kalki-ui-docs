@@ -4,7 +4,6 @@ import Loading from '@/components/shared/Loading';
 import ErrorBoundary from '../Error/ErrorBoundary';
 import { AppLayout } from './AppLayout';
 const ComponentsShowCase = lazy(() => import('@/pages/ComponentsShowCase/ComponentsShowCase'));
-const StateManagementPage = lazy(() => import('@/pages/componentsPage/StateManagementPage/StateManagementPage'));
 
 const Home = lazy(() => import('@/pages/homePage/HomePage'));
 const GetStarted = lazy(() => import('@/pages/getStartedPage/GetStartedPage'));
@@ -40,10 +39,6 @@ const AppRoutes = () => {
         {
           path: 'components/*',
           element: <Components />,
-        },
-        {
-          path: 'state-management',
-          element: <StateManagementPage />,
         },
         {
           path: '/components-showcase',

@@ -10,7 +10,7 @@ import Sidebar, {
   SidebarMenuSubItem,
   SidebarGroupContent,
 } from '@/components/common/SideBar';
-import { CircleGauge, MessageSquare, Network } from 'lucide-react';
+import { CircleGauge, MessageSquare } from 'lucide-react';
 import { categorizedRoutesComponents } from './categorizedRoutesComponents';
 import Link from '@/components/common/Link';
 import { cn } from '@/utils';
@@ -48,9 +48,6 @@ export const AppSideBar = ({ className }: { className?: string }) => {
           ))}
         </SidebarGroup>
         <SidebarMenu>
-          <SidebarMenuItem to="/state-management" icon={<Network className="size-4 text-[var(--icon-color)]" />}>
-            State Management
-          </SidebarMenuItem>
           <SidebarMenuItem to="/turbo-utilities" icon={<CircleGauge className="size-4 text-[var(--icon-color)]" />}>
             Turbo Utilities
           </SidebarMenuItem>
