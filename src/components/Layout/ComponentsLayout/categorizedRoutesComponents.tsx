@@ -387,7 +387,7 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         label: 'JSON Viewer',
         description:
           'Interactive data exploration tool for rendering structured JSON data with syntax highlighting, collapsible sections, and copy functionality.',
-        path: '/components/jsonViewer',
+        path: '/components/json-viewer',
         Icon: FileJson,
       },
       {
