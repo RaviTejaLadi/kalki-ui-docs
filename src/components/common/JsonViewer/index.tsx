@@ -1,39 +1,24 @@
-import React, { useState, useEffect, useRef, forwardRef, createContext, useContext } from 'react';
-import Box from '../Box';
+import React, { useState, useEffect, useRef, forwardRef } from 'react';
 import { Clipboard, ClipboardCheck } from 'lucide-react';
-import { JsonViewerContextType, JsonViewerProps } from './interface';
-import { JsonViewerHeader } from './JsonViewerHeader';
-import { JsonViewerContent } from './JsonViewerContent';
+import Button from '../Button';
+import { cn } from '@/utils';
+import Div from '../Div';
 
-export const JsonViewerContext = createContext<JsonViewerContextType | null>(null);
+// #region types
+type JsonReplacer = ((key: string, value: any) => any) | (number | string)[] | null;
 
-export const useJsonViewer = () => {
-  const context = useContext(JsonViewerContext);
-  if (!context) {
-    throw new Error('JsonViewer compound components must be used within JsonViewer');
-  }
-  return context;
-};
+interface JsonViewerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
+  indentation?: number;
+  replacer?: JsonReplacer;
+  data: object | any[];
+  className?: string;
+}
 
+// #endregion
+
+// #region components
 const JsonViewerComponent = forwardRef<HTMLDivElement, JsonViewerProps>(
-  (
-    {
-      width = 'auto',
-      height = 'auto',
-      indentation = 4,
-      replacer = null,
-      margin = '10px',
-      padding = '5px',
-      data,
-      children,
-      title,
-      copy = true,
-      className,
-      style,
-      ...rest
-    },
-    ref
-  ) => {
+  ({ indentation = 4, replacer = null, data, className, style, ...rest }, ref) => {
     const [jsonData, setJsonData] = useState<string>('');
     const [copyButtonText, setCopyButtonText] = useState(<Clipboard className="size-3" />);
     const containerRef = useRef<HTMLPreElement>(null);
@@ -50,7 +35,7 @@ const JsonViewerComponent = forwardRef<HTMLDivElement, JsonViewerProps>(
           formattedJsonData = JSON.stringify(data, null, indentation);
         }
       } catch (error) {
-        console.error('Error stringifying JSON:', error);
+        console.error('Error stringify JSON:', error);
         formattedJsonData = 'Error formatting JSON data';
       }
       const formattedData = formattedJsonData?.replace(
@@ -58,15 +43,15 @@ const JsonViewerComponent = forwardRef<HTMLDivElement, JsonViewerProps>(
         (match) => {
           let classString = '';
           if (/^"/.test(match)) {
-            classString = match.endsWith(':') ? 'text-gray-800 font-semibold' : 'text-pink-500';
+            classString = match.endsWith(':') ? 'text-muted-foreground font-semibold' : 'text-pink-500';
           } else if (/true|false|null|undefined/.test(match)) {
             classString = 'text-blue-400';
           } else if (/\d+(\.\d+)?/.test(match)) {
             classString = 'text-blue-500';
           } else if (/\{|\}/.test(match)) {
-            classString = 'text-gray-700';
+            classString = 'text-muted-foreground';
           } else if (/\[|\]/.test(match)) {
-            classString = 'text-gray-700';
+            classString = 'text-muted-foreground';
           } else if (/\/(\/|[^/])+\//.test(match)) {
             classString = 'text-red-500';
           } else if (/\[object (Object|Array)\]/.test(match)) {
@@ -95,9 +80,9 @@ const JsonViewerComponent = forwardRef<HTMLDivElement, JsonViewerProps>(
         navigator.clipboard
           .writeText(textContent)
           .then(() => {
-            setCopyButtonText(<ClipboardCheck className="size-3" />);
+            setCopyButtonText(<ClipboardCheck className="size-3 text-[var(--icon-color)]" />);
             setTimeout(() => {
-              setCopyButtonText(<Clipboard className="size-3" />);
+              setCopyButtonText(<Clipboard className="size-3 text-[var(--icon-color)]" />);
             }, 2000);
           })
           .catch((err) => {
@@ -106,48 +91,38 @@ const JsonViewerComponent = forwardRef<HTMLDivElement, JsonViewerProps>(
       }
     };
 
-    const contextValue: JsonViewerContextType = {
-      jsonData,
-      copyToClipboard: handleCopyToClipboard,
-      copyButtonText,
-    };
-
-    // Handle legacy and modern usage
-    const renderContent = () => {
-      if (children) {
-        return children;
-      }
-      return (
-        <>
-          {(title || copy) && <JsonViewerHeader>{title}</JsonViewerHeader>}
-          <JsonViewerContent />
-        </>
-      );
-    };
-
     return (
-      <JsonViewerContext.Provider value={contextValue}>
-        <Box
-          ref={ref}
-          className={`${className || ''} border rounded-lg overflow-auto`}
-          style={{ margin, padding, width, height, ...style }}
-          {...rest}
+      <Div
+        ref={ref}
+        className={cn('border group dark:border-gray-200/10 relative rounded-lg overflow-auto', className)}
+        style={{ ...style }}
+        {...rest}
+      >
+        <Button
+          variant="light"
+          size="xs"
+          className="invisible group-hover:visible right-2 top-2 absolute"
+          onClick={handleCopyToClipboard}
         >
-          {renderContent()}
-        </Box>
-      </JsonViewerContext.Provider>
+          {copyButtonText}
+        </Button>
+        <pre
+          ref={containerRef}
+          className={cn(
+            'whitespace-pre-wrap p-2 bg-gray-50 dark:bg-gray-100/10 rounded max-h-[100vh] overflow-auto text-sm'
+          )}
+          dangerouslySetInnerHTML={{ __html: jsonData }}
+        />
+      </Div>
     );
   }
 );
 
 JsonViewerComponent.displayName = 'JsonViewer';
+// #endregion
 
-export default Object.assign(
-  JsonViewerComponent as React.ForwardRefExoticComponent<JsonViewerProps & React.RefAttributes<HTMLDivElement>>,
-  {
-    Header: JsonViewerHeader,
-    Content: JsonViewerContent,
-  }
-);
+// #region export
+export default JsonViewerComponent;
 
-export { JsonViewerHeader, JsonViewerContent };
+export type { JsonViewerProps, JsonReplacer };
+// #endregion

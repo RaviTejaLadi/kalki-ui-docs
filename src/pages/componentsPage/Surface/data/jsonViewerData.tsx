@@ -1,4 +1,4 @@
-import JsonViewer from '@/components/common/JsonViewer/JsonViewer';
+import JsonViewer from '@/components/common/JsonViewer';
 import { docsData } from '@/types/docsData';
 
 export const docs: docsData[] = [
