@@ -75,7 +75,7 @@ export const NavMenuItem = forwardRef<HTMLDivElement, NavMenuItemProps>(
         ) : (
           <NavMenuLink
             to={to || '#'}
-            className={cn(navMenuTriggerVariants({ variant, size }),)}
+            className={cn(navMenuTriggerVariants({ variant, size }), 'bg-background')}
             {...props}
           >
             {title?.props.children}
