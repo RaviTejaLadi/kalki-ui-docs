@@ -1,5 +1,5 @@
 import React, { ButtonHTMLAttributes, forwardRef, ReactNode } from 'react';
-import { Loader } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils';
 
@@ -160,7 +160,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {isPending ? (
           <span className="flex gap-2 items-center justify-center">
-            {loader || <Loader className="size-4 animate-spin" />}
+            {loader || <Loader2 className="size-3 animate-spin" />}
             <span>{isPendingText}</span>
           </span>
         ) : (
