@@ -22,9 +22,6 @@
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
@@ -72,9 +69,6 @@
 
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
 
     --primary: #1d4ed8;
     --primary-foreground: #ffffff;
