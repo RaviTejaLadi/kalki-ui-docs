@@ -22,7 +22,7 @@ const ColorsWatch: React.FC<{ shade: { value: number; color: string } }> = ({ sh
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className={`size-[3rem]  ${shade.color} flex border dark:border-gray-200/10 rounded-md hover:shadow-sm relative group`}
+        className={`h-[3rem] w-[5rem]  ${shade.color} flex border dark:border-gray-200/10 rounded-[.3rem] hover:shadow-sm relative group`}
       >
         {isHovered && (
           <button
@@ -82,10 +82,10 @@ const ColorPalette: React.FC = () => {
           filteredColors.map((color) => (
             <div
               key={color.name}
-              className="border w-[45%] bg-background dark:bg-inherit dark:border-gray-200/10 shadow-sm rounded-md px-3 py-2"
+              className=" w-full flex items-center gap-x-4 bg-background dark:bg-inherit shadow-sm rounded-md px-3 py-2"
             >
-              <h3 className="text-sm text-muted-foreground tracking-wider font-semibold mb-4">{color.name}</h3>
-              <div className="flex justify-center flex-wrap space-x-2 overflow-auto">
+              <h3 className="text-sm w-[5rem] text-muted-foreground tracking-wider font-semibold mb-4">{color.name}</h3>
+              <div className="flex justify-center flex-wrap space-x-1 overflow-auto">
                 {color.shades.map((shade) => (
                   <ColorsWatch key={shade.value} shade={shade} />
                 ))}
