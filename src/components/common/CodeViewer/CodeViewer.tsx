@@ -17,7 +17,7 @@ import { javascript } from '@codemirror/lang-javascript';
 
 const EmptyState = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-full bg-background dark:bg-inherit text-gray-600">
+    <div className="flex flex-col items-center justify-center h-full bg-background text-gray-600">
       {/* Main content */}
       <div className="flex flex-col items-center space-y-6 max-w-lg text-center p-8">
         {/* Icon Grid */}
@@ -61,7 +61,7 @@ const EmptyState = () => {
       </div>
 
       {/* Footer */}
-      <div className="w-full h-5 py-3 px-4 border-t border-gray-200 bg-background dark:bg-inherit dark:border-gray-200/10">
+      <div className="w-full h-5 py-3 px-4 border-t border-gray-200 bg-background dark:border-gray-200/10">
         <div className="flex items-center justify-between text-xs text-muted-foreground">
           <div className="flex items-center">
             <Settings className="size-3 mr-1" />
@@ -146,14 +146,14 @@ const CodeViewer = forwardRef<HTMLDivElement, CodeViewerProps>(
         }
         setSelectedFile(allFiles[0]);
       }
-    }, [defaultFileOpen, allFiles]);
+    }, [defaultFileOpen, allFiles, selectedFile]);
 
     return (
       <CodeViewerContext.Provider value={{ selectedFile, setSelectedFile, allFiles }}>
         <div
           ref={ref}
           className={cn(
-            'relative h-screen m-4 border rounded-md overflow-hidden bg-background dark:bg-inherit border-gray-200 dark:border-gray-200/10',
+            'relative h-screen m-4 border rounded-md overflow-hidden bg-background border-gray-200 dark:border-gray-200/10',
             className
           )}
         >
@@ -164,6 +164,7 @@ const CodeViewer = forwardRef<HTMLDivElement, CodeViewerProps>(
   }
 );
 
+CodeViewer.displayName = 'CodeViewer';
 interface CodeViewerExplorerProps {
   children: ReactNode;
   className?: string;
@@ -173,10 +174,7 @@ const CodeViewerExplorer = forwardRef<HTMLDivElement, CodeViewerExplorerProps>((
   return (
     <div
       ref={ref}
-      className={cn(
-        ' w-64 min-w-64 border-r border-gray-200 dark:border-gray-200/10 dark:bg-inherit bg-background',
-        className
-      )}
+      className={cn(' w-64 min-w-64 border-r border-gray-200 dark:border-gray-200/10 bg-background', className)}
     >
       <div className="px-4  py-2  h-10 border-b border-gray-200 dark:border-gray-200/10 flex items-center">
         <h2 className="text-xs font-medium text-muted-foreground">Files</h2>
@@ -223,6 +221,7 @@ const CodeViewerFolder = forwardRef<HTMLDivElement, CodeViewerFolderProps>(({ na
     </div>
   );
 });
+CodeViewerFolder.displayName = 'CodeViewerFolder';
 
 // File component remains mostly the same, but uses the new FileType
 interface CodeViewerFileProps {
@@ -261,6 +260,7 @@ const CodeViewerFile = forwardRef<HTMLDivElement, CodeViewerFileProps>(
     );
   }
 );
+CodeViewerFile.displayName = 'CodeViewerFile';
 
 interface CodeViewerPreviewProps {
   className?: string;
@@ -270,7 +270,7 @@ interface CodeViewerPreviewProps {
 }
 
 const CodeViewerPreview = forwardRef<HTMLDivElement, CodeViewerPreviewProps>(
-  ({ className, language = 'jsx', lineNumbers = false, title, ...rest }, ref) => {
+  ({ className, language = 'jsx', lineNumbers = false, ...rest }, ref) => {
     const { selectedFile } = useCodeViewer();
 
     const getLanguageExtension = () => {
@@ -296,7 +296,7 @@ const CodeViewerPreview = forwardRef<HTMLDivElement, CodeViewerPreviewProps>(
               <span className="text-xs text-muted-foreground">{selectedFile.name}</span>
               <button
                 onClick={copyContent}
-                className="flex items-center gap-1 text-xs p-1 hover:bg-gray-200/10 rounded border-gray-200 dark:border-gray-200/10 dark:bg-inherit bg-background hover:bg-opacity-75"
+                className="flex items-center gap-1 text-xs p-1 hover:bg-gray-200/10 rounded border-gray-200 dark:border-gray-200/10 bg-background hover:bg-opacity-75"
               >
                 <Clipboard className="size-4 text-[var(--icon-color)]" />
               </button>
@@ -316,7 +316,7 @@ const CodeViewerPreview = forwardRef<HTMLDivElement, CodeViewerPreviewProps>(
                 })}
                 extensions={[getLanguageExtension()]}
                 basicSetup={{
-                  lineNumbers: true,
+                  lineNumbers: lineNumbers,
                   foldGutter: true,
                   highlightActiveLineGutter: true,
                   highlightActiveLine: true,

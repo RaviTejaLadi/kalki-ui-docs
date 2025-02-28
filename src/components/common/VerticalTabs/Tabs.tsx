@@ -71,7 +71,7 @@ const TabList = ({ children, title, className }: TabListProps) => {
   const { isMobile } = useTabs();
 
   return (
-    <div className={cn('bg-inherit transition-all duration-200', isMobile ? 'w-full' : 'w-80', className)}>
+    <div className={cn(' transition-all duration-200', isMobile ? 'w-full' : 'w-80', className)}>
       {title && <div className="px-4 py-3 font-medium text-sm text-foreground dark:text-gray-200">{title}</div>}
       <nav className={cn('flex', isMobile ? 'flex-row overflow-x-auto scrollbar-hide' : 'flex-col')}>{children}</nav>
     </div>

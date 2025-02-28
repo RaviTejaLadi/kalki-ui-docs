@@ -35,7 +35,7 @@ const components: Component[] = [
 ];
 const ComponentsShowCase: React.FC = () => {
   return (
-    <div className="py-32 bg-background dark:bg-inherit">
+    <div className="py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-4xl font-bold text-foreground">Component Showcase</h2>

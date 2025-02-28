@@ -4,7 +4,7 @@ import { forwardRef, InputHTMLAttributes } from 'react';
 
 const inputStyles = cva(
   [
-    'w-full border-[1px] rounded-md bg-background dark:bg-inherit dark:border-gray-200/10',
+    'w-full border-[1px] rounded-md bg-background dark:border-gray-200/10',
     'hover:shadow-sm focus:border-gray-500/10 focus:ring-2 focus:ring-gray-200/10',
     'flex px-3 py-2 border-input ring-offset-background',
     'file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground',

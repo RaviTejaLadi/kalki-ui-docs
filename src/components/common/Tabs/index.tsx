@@ -202,7 +202,7 @@ export const Tabs: React.FC<TabsProps> = ({
         role="tablist"
         aria-orientation="horizontal"
         className={cn(
-          'flex mb-2 p-1 items-center bg-inherit border rounded-md overflow-x-auto dark:bg-gray-800 dark:border-gray-700',
+          'flex mb-2 p-1 items-center border rounded-md overflow-x-auto dark:bg-gray-800 dark:border-gray-700',
           headerStyles
         )}
         onKeyDown={handleKeyNavigation}
@@ -243,7 +243,7 @@ export const Tabs: React.FC<TabsProps> = ({
       </div>
       <div
         className={cn(
-          'bg-background border flex items-center rounded-md overflow-y-auto dark:bg-inherit dark:border-gray-200/10',
+          'bg-background border flex items-center rounded-md overflow-y-auto dark:border-gray-200/10',
           bodyStyles
         )}
       >

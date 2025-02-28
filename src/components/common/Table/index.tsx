@@ -35,7 +35,7 @@ const Table = forwardRef<HTMLTableElement, TableProps>(({ children, className, s
       <table
         ref={ref}
         className={cn(
-          'w-full border-collapse border border-gray-200 rounded-md text-sm bg-background dark:bg-inherit dark:border-gray-200/10 shadow-sm overflow-hidden',
+          'w-full border-collapse border border-gray-200 rounded-md text-sm bg-background dark:border-gray-200/10 shadow-sm overflow-hidden',
           className
         )}
         style={style}
@@ -53,7 +53,7 @@ const TableHead: React.FC<TableSectionProps> = ({ children, className, style, ..
   return (
     <thead
       className={cn(
-        'bg-gray-50 dark:bg-inherit dark:border-gray-200/10 text-foreground text-left uppercase text-xs font-semibold border-b border-gray-200',
+        'bg-background dark:border-gray-200/10 text-foreground text-left uppercase text-xs font-semibold border-b border-gray-200',
         className
       )}
       style={style}

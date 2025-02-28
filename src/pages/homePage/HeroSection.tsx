@@ -61,7 +61,7 @@ export const HeroSection = () => {
                 <Button
                   size="xs"
                   variant="outline"
-                  className="w-5/6 md:w-1/4 text-foreground text-xs hover:text-purple-400 dark:bg-inherit font-bold group/arrow"
+                  className="w-5/6 md:w-1/4 text-foreground text-xs hover:text-purple-400 font-bold group/arrow"
                 >
                   Get Started
                   <ArrowRight className="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />

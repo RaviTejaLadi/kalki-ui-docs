@@ -105,7 +105,7 @@ const ResizeHandle = React.memo(
         <Box
           width="12px"
           height="13px"
-          className="flex items-center justify-center rounded bg-background dark:bg-inherit"
+          className="flex items-center justify-center rounded bg-background"
           padding="1px"
           outlined
         >
@@ -115,7 +115,7 @@ const ResizeHandle = React.memo(
         <Box
           width="15px"
           height="10px"
-          className="flex items-center justify-center rounded bg-background dark:bg-inherit"
+          className="flex items-center justify-center rounded bg-background"
           padding="1px"
           outlined
         >

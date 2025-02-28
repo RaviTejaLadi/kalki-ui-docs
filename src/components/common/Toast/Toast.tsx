@@ -104,7 +104,7 @@ export const Toast = forwardRef<HTMLDivElement, ToastProps>(
           {showClose && (
             <button
               onClick={onClose}
-              className="flex-shrink-0 p-1.5 rounded-lg bg-inherit transition-colors ml-2"
+              className="flex-shrink-0 p-1.5 rounded-lg transition-colors ml-2"
               aria-label="Close"
             >
               <X className="w-4 h-4" />

@@ -34,7 +34,7 @@ const StepperContext = createContext({});
 export const Stepper = ({ children, className }: StepperProps) => {
   return (
     <StepperContext.Provider value={{}}>
-      <div className={cn('w-full mx-auto p-6 bg-white text-foreground dark:bg-inherit dark:text-gray-100', className)}>
+      <div className={cn('w-full mx-auto p-6 bg-white text-foreground dark:text-gray-100', className)}>
         <div className="relative">{children}</div>
       </div>
     </StepperContext.Provider>

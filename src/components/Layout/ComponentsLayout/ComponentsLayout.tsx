@@ -69,7 +69,7 @@ export default function ComponentsLayout() {
       <aside className="fixed top-11 left-0 h-screen hidden md:block">
         <AppSideBar />
       </aside>
-      <main className="ml-0 md:ml-[13rem] w-full flex-1 p-6 overflow-y-auto bg-inherit">
+      <main className="ml-0 md:ml-[13rem] w-full flex-1 p-6 overflow-y-auto">
         <Outlet />
       </main>
     </div>

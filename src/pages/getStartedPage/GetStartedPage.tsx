@@ -24,7 +24,7 @@ const GetStarted: React.FC = () => {
           project. You can install it using npm or yarn or pnpm. Here’s how you can do it:
         </SectionHeader.SubTitle>
       </SectionHeader>
-      <Stepper className="bg-inherit">
+      <Stepper>
         <Stepper.Step step="1" title="Install the Package">
           <Stepper.Description>Install the package in your project directory with:</Stepper.Description>
           <Tabs variant="secondary" size="sm">

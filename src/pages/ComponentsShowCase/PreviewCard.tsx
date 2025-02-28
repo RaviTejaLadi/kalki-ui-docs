@@ -8,7 +8,7 @@ interface PreviewCardProps {
 
 export function PreviewCard({ name, description, preview }: PreviewCardProps) {
   return (
-    <div className="hover:shadow-md hover:border-blue-600 bg-background dark:bg-inherit dark:border-gray-200/10 px-4 py-6 rounded-lg shadow-sm border  transition-all duration-300">
+    <div className="hover:shadow-md hover:border-blue-600 bg-background dark:border-gray-200/10 px-4 py-6 rounded-lg shadow-sm border  transition-all duration-300">
       <div className="h-[25%]">
         <h3 className="text-xl font-semibold mb-2 text-foreground">{name}</h3>
         <p className="text-muted-foreground text-sm mb-6">{description}</p>
