@@ -43,10 +43,7 @@ const Ripple = forwardRef<HTMLDivElement, RippleProps>(
     return (
       <div
         ref={ref}
-        className={cn(
-          'relative inline-flex items-center justify-center overflow-hidden',
-          className
-        )}
+        className={cn('relative inline-flex items-center justify-center overflow-hidden', className)}
         style={{
           ...style,
           WebkitTapHighlightColor: 'transparent',

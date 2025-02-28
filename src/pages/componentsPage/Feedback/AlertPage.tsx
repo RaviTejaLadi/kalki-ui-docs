@@ -10,8 +10,8 @@ const AlertPage = () => {
       <SectionHeader variant="transparent" size="sm">
         <SectionHeader.Title className="tracking-wide">Alerts</SectionHeader.Title>
         <SectionHeader.SubTitle className="tracking-wide">
-        Alerts are used to capture the user&apos;s attention for various reasons such as informing them of important
-        events, errors, warnings, or other significant information.
+          Alerts are used to capture the user&apos;s attention for various reasons such as informing them of important
+          events, errors, warnings, or other significant information.
         </SectionHeader.SubTitle>
       </SectionHeader>
       <Separator />

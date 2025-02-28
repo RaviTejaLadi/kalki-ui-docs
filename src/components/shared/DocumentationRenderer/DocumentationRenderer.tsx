@@ -40,7 +40,7 @@ const DocumentationRenderer: React.FC<DocumentationRendererProps> = ({ data, cla
               <SectionHeader.Title className="tracking-wide">{item.title}</SectionHeader.Title>
               <SectionHeader.SubTitle className="tracking-wide">{item.desc}</SectionHeader.SubTitle>
             </SectionHeader>
-            <Tabs variant="light" size="sm"  >
+            <Tabs variant="light" size="sm">
               <Tab
                 label="Preview"
                 value="preview"

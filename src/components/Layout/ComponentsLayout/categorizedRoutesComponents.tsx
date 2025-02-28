@@ -424,13 +424,14 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
           'Comprehensive typographic system providing responsive type scales, font management, and consistent text styling across applications.',
         path: '/components/typography',
         Icon: Type,
-      },      {
+      },
+      {
         label: 'Heading',
-        description:
-          'Headings are titles or subtitles that you want to display on a webpage.',
+        description: 'Headings are titles or subtitles that you want to display on a webpage.',
         path: '/components/heading',
         Icon: Heading,
-      },      {
+      },
+      {
         label: 'Paragraph',
         description:
           'A paragraph always starts on a new line, and browsers automatically add some white space (a margin) before and after a paragraph.',

@@ -9,7 +9,7 @@ export const BasicModalExample = () => {
     <div>
       <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
       {isOpen && (
-        <Modal open={isOpen} size="md" onClose={() => setIsOpen(false)} position="top" >
+        <Modal open={isOpen} size="md" onClose={() => setIsOpen(false)} position="top">
           <Modal.Header closeButton onClose={() => setIsOpen(false)}>
             <Modal.Title>Modal Title</Modal.Title>
           </Modal.Header>

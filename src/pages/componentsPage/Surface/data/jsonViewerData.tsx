@@ -20,7 +20,7 @@ const data = { fruits: ["apple", "banana", "orange"], count: 3 };
 
 <JsonViewer data={data} />
       `,
-    snippet: <JsonViewer data={{ fruits: ['apple', 'banana', 'orange'], count: 3 }}  />,
+    snippet: <JsonViewer data={{ fruits: ['apple', 'banana', 'orange'], count: 3 }} />,
   },
   {
     title: 'Custom Dimensions',
@@ -30,7 +30,7 @@ const data = { key1: "value1", key2: "value2", key3: "value3" };
 
 <JsonViewer data={data}  />
       `,
-    snippet: <JsonViewer data={{ key1: 'value1', key2: 'value2', key3: 'value3' }}  />,
+    snippet: <JsonViewer data={{ key1: 'value1', key2: 'value2', key3: 'value3' }} />,
   },
   {
     title: 'Custom Indentation',
@@ -73,9 +73,7 @@ const data = { id: 1, status: "active", tags: ["important", "urgent"] };
 
 <JsonViewer data={data} />
       `,
-    snippet: (
-      <JsonViewer data={{ id: 1, status: 'active', tags: ['important', 'urgent'] }}  />
-    ),
+    snippet: <JsonViewer data={{ id: 1, status: 'active', tags: ['important', 'urgent'] }} />,
   },
   {
     title: 'With Replacer Function',
@@ -147,12 +145,7 @@ const data = { status: "success", message: "Operation completed" };
              
 <JsonViewer data={data}  />
       `,
-    snippet: (
-      <JsonViewer
-        data={{ status: 'success', message: 'Operation completed' }}
-        
-      />
-    ),
+    snippet: <JsonViewer data={{ status: 'success', message: 'Operation completed' }} />,
   },
 ];
 

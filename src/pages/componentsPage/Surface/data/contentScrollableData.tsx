@@ -36,7 +36,7 @@ const variants = [
   'dark' as const,
 ];
 
-export const docs:docsData[] = [
+export const docs: docsData[] = [
   {
     title: 'Basic Usage',
     desc: 'This example demonstrates the most basic usage of the ContentScrollable component. It creates a scrollable container with a fixed height.',

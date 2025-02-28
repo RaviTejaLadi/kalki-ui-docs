@@ -158,7 +158,9 @@ function OpenAccordion() {
     snippet: (
       <Accordion>
         <Accordion.Item>
-          <Accordion.Header eventKey="0" open>Initially Open Item</Accordion.Header>
+          <Accordion.Header eventKey="0" open>
+            Initially Open Item
+          </Accordion.Header>
           <Accordion.Body eventKey="0">This accordion item is open by default.</Accordion.Body>
         </Accordion.Item>
         <Accordion.Item>
