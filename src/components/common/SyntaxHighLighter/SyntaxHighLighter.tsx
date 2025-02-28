@@ -6,6 +6,9 @@ import { javascript } from '@codemirror/lang-javascript';
 import { html } from '@codemirror/lang-html';
 import { css } from '@codemirror/lang-css';
 import { useTheme } from '@/context/ThemeContext';
+import { cn } from '@/utils';
+import Button from '../Button';
+import Spinner from '../Spinner/Spinner';
 
 interface SyntaxHighlighterProps {
   code: string;
@@ -61,66 +64,33 @@ export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
     }
   }, [code]);
 
-  const themeStyles = {
-    light: {
-      background: 'bg-white/30',
-      text: 'text-gray-800',
-      border: 'border-white/20',
-      buttonHover: 'hover:bg-white/20',
-      loadingBackground: 'bg-white/10',
-      icon: 'text-gray-600',
-      shadow: 'shadow-xl shadow-gray-200/20',
-      glassShadow: 'before:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1)]',
-    },
-    dark: {
-      background: 'bg-gray-950/30',
-      text: 'text-gray-200',
-      border: 'border-gray-800/30',
-      buttonHover: 'hover:bg-gray-700/30',
-      loadingBackground: 'bg-gray-900/30',
-      icon: 'text-gray-300',
-      shadow: 'shadow-md shadow-black/20',
-      glassShadow: 'before:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)]',
-    },
-  };
-
-  const currentTheme = theme === 'light' ? themeStyles.light : themeStyles.dark;
-
   return (
     <div
       className={`group relative border rounded-xl overflow-hidden backdrop-blur-xl backdrop-saturate-150 
-      ${currentTheme.background} ${currentTheme.border} ${currentTheme.shadow} mb-6 
-      before:absolute before:inset-0 before:rounded-xl ${currentTheme.glassShadow}`}
+      bg-background dark:border-gray-200/10 mb-6 
+      before:absolute before:inset-0 before:rounded-xl`}
     >
       <div className="relative">
         <div className="absolute right-4 top-4 z-10">
-          <button
+          <Button
             onClick={handleCopy}
-            className={`opacity-0 group-hover:opacity-100 p-2 rounded-lg transition-all duration-200 
-            ${currentTheme.buttonHover} ${currentTheme.background} 
-            active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-500/40`}
+            className="invisible group-hover:visible"
+            variant="outline"
             title={isCopied ? 'Copied!' : 'Copy code'}
             aria-label={isCopied ? 'Copied!' : 'Copy code'}
           >
             {isCopied ? (
-              <Check className={`${currentTheme.icon} transition-all duration-200 size-4`} />
+              <Check className={cn('text-[var(--icon-color)] transition-all duration-200 size-3')} />
             ) : (
-              <Clipboard className={`${currentTheme.icon} transition-all duration-200 size-4`} />
+              <Clipboard className={cn('text-[var(--icon-color)] transition-all duration-200 size-3')} />
             )}
-          </button>
+          </Button>
         </div>
 
         <div className="relative">
           {isLoading ? (
-            <div
-              className={`flex justify-center items-center h-24 ${currentTheme.loadingBackground} 
-              ${currentTheme.text}`}
-            >
-              <div className="animate-pulse flex items-center space-x-2">
-                <div className="w-2 h-2 bg-current rounded-full animate-bounce" />
-                <div className="w-2 h-2 bg-current rounded-full animate-bounce delay-100" />
-                <div className="w-2 h-2 bg-current rounded-full animate-bounce delay-200" />
-              </div>
+            <div className="flex justify-center items-center h-24">
+              <Spinner variant="secondary" />
             </div>
           ) : (
             <CodeMirror
@@ -133,7 +103,7 @@ export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
                   fontFamily:
                     'Fira Code VF, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace',
                   selection: theme === 'light' ? 'rgba(66, 153, 225, 0.2)' : 'rgba(66, 153, 225, 0.3)',
-                  caret: currentTheme.text,
+                  caret: 'text-muted-foreground',
                   gutterBackground: 'transparent',
                   gutterForeground: theme === 'light' ? '#64748b' : '#94a3b8',
                   lineHighlight: theme === 'light' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.2)',
