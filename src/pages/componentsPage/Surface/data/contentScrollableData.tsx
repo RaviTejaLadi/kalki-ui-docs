@@ -41,7 +41,7 @@ export const docs:docsData[] = [
     title: 'Basic Usage',
     desc: 'This example demonstrates the most basic usage of the ContentScrollable component. It creates a scrollable container with a fixed height.',
     code: `
-import { ContentScrollable } from "react-ui-essentials";
+import { ContentScrollable } from "kalki-ui";
 
 function BasicContentScrollable() {
   return (
@@ -78,7 +78,7 @@ function BasicContentScrollable() {
     title: 'Custom Width and Height',
     desc: 'This example shows how to set both custom width and height for the scrollable container.',
     code: `
-import { ContentScrollable } from "react-ui-essentials";
+import { ContentScrollable } from "kalki-ui";
 
 function CustomSizeContentScrollable() {
   return (
@@ -102,7 +102,7 @@ function CustomSizeContentScrollable() {
     title: 'With Variant',
     desc: 'This example demonstrates how to use the variant prop to apply different styles to the scrollable container.',
     code: `
-import { ContentScrollable } from "react-ui-essentials";
+import { ContentScrollable } from "kalki-ui";
 
 function VariantContentScrollable() {
   return (
@@ -126,7 +126,7 @@ function VariantContentScrollable() {
     title: 'With Custom Styling',
     desc: 'This advanced example shows how to apply custom styles to the ContentScrollable component using inline styles and custom CSS classes.',
     code: `
-import { ContentScrollable } from "react-ui-essentials";
+import { ContentScrollable } from "kalki-ui";
 import styles from './CustomStyles.module.css';
 
 function CustomStyledContentScrollable() {
@@ -183,7 +183,7 @@ function CustomStyledContentScrollable() {
     desc: 'This advanced example demonstrates how to use the ContentScrollable component with dynamic content controlled by React state.',
     code: `
 import React, { useState } from 'react';
-import { ContentScrollable } from "react-ui-essentials";
+import { ContentScrollable } from "kalki-ui";
 
 function DynamicContentScrollable() {
   const [items, setItems] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
@@ -213,7 +213,7 @@ function DynamicContentScrollable() {
     desc: 'This example demonstrates using ContentScrollable to display a color palette, utilizing multiple variants.',
     code: `
 import React from 'react';
-import { ContentScrollable } from "react-ui-essentials";
+import { ContentScrollable } from "kalki-ui";
 
 function ColorPaletteViewer() {
   const variants = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];

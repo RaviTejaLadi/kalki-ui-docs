@@ -10,7 +10,7 @@ export const docs: docsData[] = [
     title: 'Basic Alert',
     desc: "This example demonstrates the most basic usage of the Alert component. By default, the Alert uses the 'primary' variant, which typically represents a neutral informational message. The Alert component wraps its children, allowing you to include any content inside. This is useful for simple notifications or messages that don't require additional structure.",
     code: `
-import { Alert } from "react-ui-essentials";
+import { Alert } from "kalki-ui";
 
 function BasicAlert() {
   return (
@@ -26,7 +26,7 @@ function BasicAlert() {
     title: 'Alert with Different Variants',
     desc: "The Alert component supports multiple visual variants to convey different types of messages. This example showcases four common variants: 'success', 'danger', 'warning', and 'info'. Each variant typically has a distinct color scheme and might include an icon (depending on your CSS implementation). Use 'success' for positive messages, 'danger' for errors or critical issues, 'warning' for cautionary messages, and 'info' for general information. This flexibility allows you to effectively communicate the nature of the message to the user.",
     code: `
-import { Alert } from "react-ui-essentials";
+import { Alert } from "kalki-ui";
 
 function VariantAlerts() {
   return (
@@ -52,7 +52,7 @@ function VariantAlerts() {
     title: 'Alert with Header, Body, and Footer',
     desc: 'This example illustrates the use of compound components to create a more structured Alert. The Alert.Header can be used for titles or summary information. The Alert.Body is ideal for the main content or detailed message. The Alert.Footer can contain additional information, links, or actions related to the alert. This structure is particularly useful for complex notifications that require clear organization of information. It also allows for consistent styling across different parts of the alert, improving readability and user experience.',
     code: `
-import { Alert } from "react-ui-essentials";
+import { Alert } from "kalki-ui";
 
 function StructuredAlert() {
   return (
@@ -78,7 +78,7 @@ function StructuredAlert() {
     title: 'Alert with Custom Styling',
     desc: "This example shows how to apply custom inline styles to the Alert component, allowing for further customization beyond the predefined variants. Here, we're adding a custom border and border-radius to the alert. This technique is useful when you need to create a unique visual treatment for a specific instance of an alert, without affecting the global styles. It's important to note that while inline styles provide quick customization, for more complex or reusable styles, you might want to consider using CSS modules or a CSS-in-JS solution for better maintainability.",
     code: `
-import { Alert } from "react-ui-essentials";
+import { Alert } from "kalki-ui";
 
 function CustomStyledAlert() {
   return (

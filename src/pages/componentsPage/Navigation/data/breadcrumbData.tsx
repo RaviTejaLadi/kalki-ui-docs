@@ -8,7 +8,7 @@ export const docs: docsData[] = [
     desc: 'This example demonstrates the most basic usage of the Breadcrumb component with default properties.',
     code: `
 import React from 'react';
-import { Breadcrumb } from 'react-ui-essentials';
+import { Breadcrumb } from 'kalki-ui';
 
 const App = () => (
   <Breadcrumb>
@@ -31,7 +31,7 @@ const App = () => (
     desc: 'This example shows how to use a custom separator between Breadcrumb items.',
     code: `
 import React from 'react';
-import { Breadcrumb } from 'react-ui-essentials';
+import { Breadcrumb } from 'kalki-ui';
 
 const App = () => (
   <Breadcrumb separator={<ArrowRight size={12} color="#666" />}>
@@ -54,7 +54,7 @@ const App = () => (
     desc: 'This example demonstrates how to apply custom styles to the Breadcrumb component.',
     code: `
 import React from 'react';
-import { Breadcrumb } from 'react-ui-essentials';
+import { Breadcrumb } from 'kalki-ui';
 
 const App = () => (
       <Breadcrumb >

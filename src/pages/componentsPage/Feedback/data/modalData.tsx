@@ -7,7 +7,7 @@ export const docs: docsData[] = [
     desc: 'A simple modal with a header, body, and footer.',
     code: `
 import React, { useState } from 'react';
-import { Modal } from "react-ui-essentials";
+import { Modal } from "kalki-ui";
 
 const BasicModalExample = () => {
   const [isOpen, setIsOpen] = useState(false);

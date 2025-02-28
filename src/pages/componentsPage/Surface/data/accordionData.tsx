@@ -7,7 +7,7 @@ export const docs: docsData[] = [
     title: 'Basic Accordion',
     desc: 'This example demonstrates the basic usage of the Accordion component. It shows how to create a simple accordion with two items.',
     code: `
-import { Accordion } from 'react-ui-essentials';
+import { Accordion } from 'kalki-ui';
 
 function BasicAccordion() {
   return (
@@ -45,7 +45,7 @@ function BasicAccordion() {
     title: 'Accordion with Custom Variant',
     desc: "This example shows how to use a custom variant for the Accordion. The 'secondary' variant is used here, which may have a different visual style.",
     code: `
-import { Accordion } from 'react-ui-essentials';
+import { Accordion } from 'kalki-ui';
 
 function SecondaryAccordion() {
   return (
@@ -73,7 +73,7 @@ function SecondaryAccordion() {
     title: 'Accordion with Custom Size',
     desc: "This example demonstrates how to use a custom size for the Accordion. The 'lg' size is used here for a larger accordion.",
     code: `
-import { Accordion } from 'react-ui-essentials';
+import { Accordion } from 'kalki-ui';
 
 function LargeAccordion() {
   return (
@@ -101,7 +101,7 @@ function LargeAccordion() {
     title: 'Accordion with Custom Icon',
     desc: 'This example shows how to use a custom icon in the Accordion Header. A custom icon is passed to replace the default arrow icon.',
     code: `
-import { Accordion } from 'react-ui-essentials';
+import { Accordion } from 'kalki-ui';
 import CustomIcon from './CustomIcon';
 
 function CustomIconAccordion() {
@@ -134,7 +134,7 @@ function CustomIconAccordion() {
     title: 'Accordion with Initially Open Item',
     desc: "This example demonstrates how to have an accordion item open by default using the 'open' prop on the AccordionHeader.",
     code: `
-import { Accordion } from 'react-ui-essentials';
+import { Accordion } from 'kalki-ui';
 
 function OpenAccordion() {
   return (
@@ -171,7 +171,7 @@ function OpenAccordion() {
   {
     title: 'Accordion with All Available Variants',
     code: `
-import { Accordion } from 'react-ui-essentials';
+import { Accordion } from 'kalki-ui';
 
 function Variants() {
   return (

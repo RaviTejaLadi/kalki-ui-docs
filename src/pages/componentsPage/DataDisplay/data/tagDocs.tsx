@@ -9,7 +9,7 @@ export const docs: docsData[] = [
     desc: 'A simple tag with text content.',
     code: `
 import React from 'react';
-import { Tag } from "react-ui-essentials";
+import { Tag } from "kalki-ui";
 
 const BasicTagExample = () => (
   <Tag>Basic Tag</Tag>
@@ -22,7 +22,7 @@ const BasicTagExample = () => (
     desc: 'A tag with a custom variant and size.',
     code: `
 import React from 'react';
-import { Tag } from "react-ui-essentials";
+import { Tag } from "kalki-ui";
 
 const CustomTagExample = () => (
   <Tag variant="success" size="lg">Success</Tag>
@@ -39,8 +39,8 @@ const CustomTagExample = () => (
     desc: 'A tag with an icon and text.',
     code: `
 import React from 'react';
-import { Tag } from "react-ui-essentials";
-import { RoundedIcons } from "react-ui-essentials-icons";
+import { Tag } from "kalki-ui";
+import { RoundedIcons } from "kalki-ui-icons";
 const { Dataset } = RoundedIcons;
 
 const IconTagExample = () => (
@@ -65,7 +65,7 @@ const IconTagExample = () => (
     desc: 'A group of tags with different variants.',
     code: `
 import React from 'react';
-import { Tag } from "react-ui-essentials";
+import { Tag } from "kalki-ui";
 
 const MultipleTagsExample = () => (
   <div>

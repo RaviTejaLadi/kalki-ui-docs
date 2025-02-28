@@ -8,7 +8,7 @@ export const docs: docsData[] = [
     title: 'Basic Banner',
     desc: 'This example demonstrates the basic usage of the refactored Banner component.',
     code: `
-import { Banner } from "react-ui-essentials";
+import { Banner } from "kalki-ui";
 
 const App = () => (
   <Banner>
@@ -28,7 +28,7 @@ const App = () => (
     title: 'Large Banner',
     desc: 'This example demonstrates the usage of the large size for the Banner component.',
     code: `
-import { Banner } from "react-ui-essentials";
+import { Banner } from "kalki-ui";
 
 const App = () => (
   <Banner size="lg">
@@ -48,7 +48,7 @@ const App = () => (
     title: 'Banner with Custom Styles',
     desc: 'This example demonstrates how to apply custom styles to the Banner component using the style prop.',
     code: `
-import { Banner } from "react-ui-essentials";
+import { Banner } from "kalki-ui";
 
 const App = () => (
   <Banner style={{ backgroundColor: '#f0f0f0', color: '#333' }}>
@@ -68,7 +68,7 @@ const App = () => (
     title: 'Banner with All Available Variants',
     desc: 'This example shows all available variants of the Banner component.',
     code: `
-import { Banner, Box, Heading, Paragraph } from "react-ui-essentials";
+import { Banner, Box, Heading, Paragraph } from "kalki-ui";
 
 const App = () => (
   <Box padding="10px" style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
