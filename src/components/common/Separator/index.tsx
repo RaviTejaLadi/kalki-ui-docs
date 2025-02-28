@@ -42,7 +42,7 @@ const Separator = forwardRef<HTMLDivElement, SeparatorProps>(
       orientation = 'horizontal',
       position = 'center',
       thickness = '1px',
-      color = '#e4e4e7',
+      color = 'border',
       className,
       children,
       margin,
