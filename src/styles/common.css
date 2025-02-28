@@ -1,0 +1,49 @@
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--icon-color);
+    border-radius: 5px;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--icon-color) transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-thumb {
+        background: hsl(215 14% 65%);
+        /* gray5 */
+    }
+
+    * {
+        scrollbar-color: hsl(215 14% 65%) transparent;
+        /* gray5 */
+    }
+}
+
+.animate-reveal {
+    animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-gradient {
+    animation: gradient 8s linear infinite;
+}
+
+.animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+}
+
+.bg-300\% {
+    background-size: 300% 100%;
+}
+
+.animate-loading-bar {
+    animation: loading-bar 1.5s infinite ease-in-out;
+}

@@ -16,7 +16,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import './index.css';
+import './styles/base.css';
+import './styles/common.css';
+import './styles/key-frames.css';
+import './styles/index.css';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import 'kalki-ui/dist/index.css';
 
