@@ -77,14 +77,11 @@ const ColorPalette: React.FC = () => {
         </div>
       </div>
 
-      <div className="py-10 text-foreground flex flex-wrap justify-center gap-3 text-sm">
+      <div className="py-10 text-foreground flex flex-wrap items-center justify-center gap-3 text-sm">
         {filteredColors.length > 0 ? (
           filteredColors.map((color) => (
-            <div
-              key={color.name}
-              className=" w-full flex items-center gap-x-4 bg-background dark:bg-inherit shadow-sm rounded-md px-3 py-2"
-            >
-              <h3 className="text-sm w-[5rem] text-muted-foreground tracking-wider font-semibold mb-4">{color.name}</h3>
+            <div key={color.name} className=" w-full flex items-center gap-x-4 bg-background rounded-md px-3 py-2">
+              <h3 className="text-xs w-[5rem] text-muted-foreground tracking-wider font-semibold mb-4">{color.name}</h3>
               <div className="flex justify-center flex-wrap space-x-1 overflow-auto">
                 {color.shades.map((shade) => (
                   <ColorsWatch key={shade.value} shade={shade} />
