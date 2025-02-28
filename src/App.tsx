@@ -11,7 +11,7 @@ import { ThemeProvider } from './context/ThemeContext';
  */
 export default function App() {
   return (
-    <div className="bg-background dark:bg-background/90">
+    <div className="bg-background dark:bg-background">
       <HelmetProvider>
         <ThemeProvider>
           <Router />
