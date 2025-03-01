@@ -2,7 +2,8 @@ import React, { ButtonHTMLAttributes, useEffect, useState } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 import { ChevronUp } from 'lucide-react';
 
-const buttonVariants = cva(
+// #region scrollButtonVariants
+const scrollButtonVariants = cva(
   'fixed z-100 rounded-md shadow-lg transition-all duration-300 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2',
   {
     variants: {
@@ -47,11 +48,16 @@ const buttonVariants = cva(
   }
 );
 
-interface ScrollToTopProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+// #endregion
+
+// #region types
+interface ScrollToTopProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof scrollButtonVariants> {
   threshold?: number;
   smooth?: boolean;
 }
+// #endregion
 
+// #region ScrollToTop
 const ScrollToTop: React.FC<ScrollToTopProps> = ({
   threshold = 400,
   smooth = true,
@@ -88,7 +94,7 @@ const ScrollToTop: React.FC<ScrollToTopProps> = ({
   return (
     <button
       onClick={scrollToTop}
-      className={buttonVariants({ size, position, variant })}
+      className={scrollButtonVariants({ size, position, variant })}
       style={{
         opacity: isVisible ? 1 : 0,
         transform: `scale(${isVisible ? 1 : 0.8}) ${position === 'center' ? 'translateX(-50%)' : ''}`,
@@ -101,5 +107,8 @@ const ScrollToTop: React.FC<ScrollToTopProps> = ({
     </button>
   );
 };
+// #endregion
 
+// #region exports
 export default ScrollToTop;
+export { scrollButtonVariants };

@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import TopBar from '../shared/TopBar/TopBar';
 import { Outlet } from 'react-router-dom';
-import ScrollToTop from '../common/ScrollToTop/ScrollToTop';
+import ScrollToTop from '../common/ScrollToTop';
 import Loading from '../shared/Loading';
 
 export const AppLayout = () => {
