@@ -31,7 +31,7 @@ ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
     <ToastProvider>
       <App />
-      <ToastContainer position="top-center" />
+      <ToastContainer position="top-center" showClose={false} />
     </ToastProvider>
   </React.StrictMode>
 );
