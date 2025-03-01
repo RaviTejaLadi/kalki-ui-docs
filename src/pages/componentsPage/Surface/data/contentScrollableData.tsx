@@ -2,6 +2,7 @@ import Box from '@/components/common/Box';
 import Button from '@/components/common/Button';
 import ContentScrollable from '@/components/common/ContentScrollable';
 import { docsData } from '@/types/docsData';
+import { faker } from '@faker-js/faker/.';
 import { useState } from 'react';
 
 function DynamicContentScrollable() {
@@ -36,6 +37,8 @@ const variants = [
   'dark' as const,
 ];
 
+const para=faker.lorem.paragraphs(15)
+
 export const docs: docsData[] = [
   {
     title: 'Basic Usage',
@@ -57,20 +60,7 @@ function BasicContentScrollable() {
       <ContentScrollable variant="info" height="200px">
         <p>This is some content that will be scrollable.</p>
         <p>If the content exceeds the height of 200px, a scrollbar will appear.</p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto quibusdam dolorum, qui dicta, distinctio
-        odio dignissimos commodi aliquid facilis molestiae sapiente vel ut excepturi? Id nulla repellendus laborum
-        corrupti excepturi! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto quibusdam dolorum, qui
-        dicta, distinctio odio dignissimos commodi aliquid facilis molestiae sapiente vel ut excepturi? Id nulla
-        repellendus laborum corrupti excepturi! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto
-        quibusdam dolorum, qui dicta, distinctio odio dignissimos commodi aliquid facilis molestiae sapiente vel ut
-        excepturi? Id nulla repellendus laborum corrupti excepturi! Lorem ipsum dolor, sit amet consectetur adipisicing
-        elit. Architecto quibusdam dolorum, qui dicta, distinctio odio dignissimos commodi aliquid facilis molestiae
-        sapiente vel ut excepturi? Id nulla repellendus laborum corrupti excepturi! Lorem ipsum dolor, sit amet
-        consectetur adipisicing elit. Architecto quibusdam dolorum, qui dicta, distinctio odio dignissimos commodi
-        aliquid facilis molestiae sapiente vel ut excepturi? Id nulla repellendus laborum corrupti excepturi! Lorem
-        ipsum dolor, sit amet consectetur adipisicing elit. Architecto quibusdam dolorum, qui dicta, distinctio odio
-        dignissimos commodi aliquid facilis molestiae sapiente vel ut excepturi? Id nulla repellendus laborum corrupti
-        excepturi!
+        <p>{para}</p>
       </ContentScrollable>
     ),
   },
@@ -95,6 +85,7 @@ function CustomSizeContentScrollable() {
         <h2>Custom Size Scrollable Content</h2>
         <p>This container has a height of 300px and a width of 50% of its parent.</p>
         {/* Imagine more content here */}
+        <p>{para}</p>
       </ContentScrollable>
     ),
   },
@@ -119,6 +110,7 @@ function VariantContentScrollable() {
         <h3>Primary Variant Scrollable Content</h3>
         <p>This container uses the &apos;primary&apos; variant styling.</p>
         {/* Imagine more content here */}
+        <p>{para}</p>
       </ContentScrollable>
     ),
   },
@@ -175,6 +167,7 @@ function CustomStyledContentScrollable() {
         <h2>Custom Styled Scrollable Content</h2>
         <p>This container has custom styles applied using both inline styles and a custom CSS class.</p>
         {/* Imagine more content here */}
+        <p>{para}</p>
       </ContentScrollable>
     ),
   },

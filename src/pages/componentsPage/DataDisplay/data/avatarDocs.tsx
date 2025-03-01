@@ -1,7 +1,8 @@
 import Avatar from '@/components/common/Avatar';
 import { docsData } from '@/types/docsData';
+import { faker } from '@faker-js/faker';
 
-const pic = ' https://github.com/shadcn.png';
+const pic = faker.image.avatar();
 
 export const docs: docsData[] = [
   {
