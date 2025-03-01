@@ -3,12 +3,23 @@ import { Stepper } from '@/components/common/Stepper/Stepper';
 import { Tab, Tabs } from '@/components/common/Tabs';
 import { usage } from './tabsData';
 import { compExampleCode, componentCode, setupSnippet } from './Snippet';
-import { Code, Terminal } from 'lucide-react';
+import { BoxIcon, Code, Terminal } from 'lucide-react';
 import Button from '@/components/common/Button';
 import Box from '@/components/common/Box';
 import React from 'react';
+import { useToast, ToastVariant } from 'kalki-ui-toast';
 
 const GetStarted: React.FC = () => {
+  const { addToast } = useToast();
+
+  const showToast = (variant: ToastVariant) => {
+    addToast({
+      message: variant,
+      variant: variant,
+      icon: <BoxIcon className="w-5 h-5" />,
+    });
+  };
+
   return (
     <div className="container">
       <SectionHeader variant="transparent" className="mb-5" size="sm">
@@ -67,7 +78,7 @@ const GetStarted: React.FC = () => {
                   'light' as const,
                   'dark' as const,
                 ].map((item) => (
-                  <Button size="xs" key={item} variant={item} onClick={() => alert('Button clicked!')}>
+                  <Button size="xs" key={item} variant={item} onClick={() => showToast(item)}>
                     Click Me
                   </Button>
                 ))}

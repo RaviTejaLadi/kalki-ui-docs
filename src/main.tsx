@@ -22,12 +22,16 @@ import './styles/common.css';
 import './styles/key-frames.css';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import 'kalki-ui/dist/index.css';
+import { ToastProvider, ToastContainer } from 'kalki-ui-toast';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) throw new Error('Failed to find the root element');
 
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
-    <App />
+    <ToastProvider>
+      <App />
+      <ToastContainer position="top-center" />
+    </ToastProvider>
   </React.StrictMode>
 );
