@@ -20,8 +20,8 @@ const radioStyles = cva(
 
 interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>, VariantProps<typeof radioStyles> {
   name: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   size?: 'sm' | 'md' | 'lg';
 }
 

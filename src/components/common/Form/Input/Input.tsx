@@ -8,7 +8,7 @@ const inputStyles = cva(
     'hover:shadow-sm focus:border-gray-500/10 focus:ring-2 focus:ring-gray-200/10',
     'flex px-3 py-2 border-input ring-offset-background',
     'file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground',
-    'placeholder:text-muted-foreground',
+    'placeholder:text-muted-foreground text-foreground',
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
     'disabled:cursor-not-allowed disabled:opacity-50',
     'md:text-sm outline-none',

@@ -4,6 +4,7 @@ import { FeaturesSection } from './FeaturesSection';
 import ComponentCategoriesSection from './ComponentCategoriesSection';
 import Div from '@/components/common/Div';
 import Head from '@/components/Head';
+import ContactForm from './ContactForm';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <FeaturesSection />
       <ComponentCategoriesSection />
       <FooterSection />
+      <ContactForm />
     </Div>
   );
 }

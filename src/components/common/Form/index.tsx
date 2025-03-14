@@ -30,6 +30,8 @@ const Form = forwardRef<HTMLFormElement, FormProps>(
   }
 );
 
+Form.displayName = 'Form';
+
 export default Object.assign(
   Form as React.ForwardRefExoticComponent<FormProps & React.RefAttributes<HTMLFormElement>>,
   {

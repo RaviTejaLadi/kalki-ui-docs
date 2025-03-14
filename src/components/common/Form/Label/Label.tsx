@@ -3,14 +3,14 @@ import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils';
 
 const labelStyles = cva(
-  'block font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground',
+  'block font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground',
   {
     variants: {
       size: {
-        xs: 'text-xs',
-        sm: 'text-sm',
-        md: 'text-base',
-        lg: 'text-lg',
+        xs: 'text-3xs',
+        sm: 'text-2xs',
+        md: 'text-2xs',
+        lg: 'text-sm',
       },
     },
     defaultVariants: {
