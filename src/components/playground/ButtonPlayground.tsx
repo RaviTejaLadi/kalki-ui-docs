@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { CheckCircle2, Settings, ArrowRight } from 'lucide-react';
-import Card, { CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../common/Card';
+import Card, { CardContent } from '../common/Card';
 import Button from '../common/Button';
+import { SyntaxHighlighter } from '../common/SyntaxHighLighter/SyntaxHighLighter';
+
 type Variant =
   | 'primary'
   | 'secondary'
@@ -65,16 +67,83 @@ const ButtonPlayground = () => {
     setSettings((prev) => ({ ...prev, [key]: value }));
   };
 
+  const generateCode = () => {
+    let code = `<Button\n`;
+    code += `  variant="${settings.variant}"\n`;
+    code += `  size="${settings.size}"\n`;
+    if (settings.raised) code += `  raised\n`;
+    if (settings.rounded) code += `  rounded\n`;
+    if (settings.disabled) code += `  disabled\n`;
+    if (settings.isPending) code += `  isPending isPendingText="Loading..."\n`;
+    code += `>\n`;
+
+    if (settings.withIcon && !settings.isPending) {
+      code += `  <Button.Icon>\n`;
+      code += `    ${
+        settings.variant === 'success' ? '<CheckCircle2 className="size-4" />' : '<Settings className="size-4" />'
+      }\n`;
+      code += `  </Button.Icon>\n`;
+    }
+
+    if (settings.withText) {
+      code += `  <Button.Text>\n`;
+      code += `    ${settings.variant.charAt(0).toUpperCase() + settings.variant.slice(1)} Button\n`;
+      code += `  </Button.Text>\n`;
+    }
+
+    if (settings.withIcon && !settings.isPending) {
+      code += `  <Button.Icon className="ml-1">\n`;
+      code += `    <ArrowRight className="size-4" />\n`;
+      code += `  </Button.Icon>\n`;
+    }
+
+    code += `</Button>`;
+
+    return code;
+  };
+
   return (
-    <div className="w-full max-w-4xl mx-auto">
+    <div className="w-full my-3">
       <Card className="w-full mb-6">
-        <CardHeader>
-          <CardTitle>Props</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="flex flex-col gap-6">
+        <CardContent className="flex flex-col gap-4">
+          <div className="w-full">
+            <h3 className="text-sm font-medium mb-4">Preview</h3>
+            <div className="p-8 flex justify-center items-center bg-gray-50 dark:bg-gray-900 rounded-lg">
+              <Button
+                variant={settings.variant}
+                size={settings.size}
+                raised={settings.raised}
+                rounded={settings.rounded}
+                disabled={settings.disabled}
+                isPending={settings.isPending}
+                isPendingText="Loading..."
+              >
+                {settings.withIcon && !settings.isPending && (
+                  <Button.Icon>
+                    {settings.variant === 'success' ? (
+                      <CheckCircle2 className="size-4" />
+                    ) : (
+                      <Settings className="size-4" />
+                    )}
+                  </Button.Icon>
+                )}
+                {settings.withText && (
+                  <Button.Text>
+                    {settings.variant.charAt(0).toUpperCase() + settings.variant.slice(1)} Button
+                  </Button.Text>
+                )}
+                {settings.withIcon && !settings.isPending && (
+                  <Button.Icon className="ml-1">
+                    <ArrowRight className="size-4" />
+                  </Button.Icon>
+                )}
+              </Button>
+            </div>
+          </div>
+          <hr className="dark:border-gray-200/10" />
+          <div className="flex flex-col gap-10">
             {/* Controls */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="flex flex-col gap-10">
               <div>
                 <label className="block text-sm font-medium mb-1">Variant</label>
                 <div className="flex flex-wrap gap-2">
@@ -189,83 +258,11 @@ const ButtonPlayground = () => {
             </div>
           </div>
         </CardContent>
-
-        <CardFooter className="flex flex-col">
-          <div className="w-full pt-6 border-t">
-            <h3 className="text-sm font-medium mb-4">Preview</h3>
-            <div className="p-8 flex justify-center items-center bg-gray-50 dark:bg-gray-900 rounded-lg">
-              <Button
-                variant={settings.variant}
-                size={settings.size}
-                raised={settings.raised}
-                rounded={settings.rounded}
-                disabled={settings.disabled}
-                isPending={settings.isPending}
-                isPendingText="Loading..."
-              >
-                {settings.withIcon && !settings.isPending && (
-                  <Button.Icon>
-                    {settings.variant === 'success' ? (
-                      <CheckCircle2 className="size-4" />
-                    ) : (
-                      <Settings className="size-4" />
-                    )}
-                  </Button.Icon>
-                )}
-                {settings.withText && (
-                  <Button.Text>
-                    {settings.variant.charAt(0).toUpperCase() + settings.variant.slice(1)} Button
-                  </Button.Text>
-                )}
-                {settings.withIcon && !settings.isPending && (
-                  <Button.Icon className="ml-1">
-                    <ArrowRight className="size-4" />
-                  </Button.Icon>
-                )}
-              </Button>
-            </div>
-          </div>
-        </CardFooter>
       </Card>
 
       <Card className="w-full">
-        <CardHeader>
-          <CardTitle>Generated Code</CardTitle>
-          <CardDescription>Copy and paste this code to use your configured button</CardDescription>
-        </CardHeader>
         <CardContent>
-          <pre className="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm">
-            <code>{`<Button
-  variant="${settings.variant}"
-  size="${settings.size}"
-  ${settings.raised ? 'raised' : ''}
-  ${settings.rounded ? 'rounded' : ''}
-  ${settings.disabled ? 'disabled' : ''}
-  ${settings.isPending ? 'isPending isPendingText="Loading..."' : ''}
->
-  ${
-    settings.withIcon && !settings.isPending
-      ? `<Button.Icon>
-    ${settings.variant === 'success' ? '<CheckCircle2 className="size-4" />' : '<Settings className="size-4" />'}
-  </Button.Icon>`
-      : ''
-  }
-  ${
-    settings.withText
-      ? `<Button.Text>
-    ${settings.variant.charAt(0).toUpperCase() + settings.variant.slice(1)} Button
-  </Button.Text>`
-      : ''
-  }
-  ${
-    settings.withIcon && !settings.isPending
-      ? `<Button.Icon className="ml-1">
-    <ArrowRight className="size-4" />
-  </Button.Icon>`
-      : ''
-  }
-</Button>`}</code>
-          </pre>
+          <SyntaxHighlighter code={generateCode()} language="jsx" />
         </CardContent>
       </Card>
     </div>
