@@ -5,6 +5,7 @@ import React from 'react';
 import { docs, columns, componentHierarchyCode, rows } from './data/buttonDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
+// import ButtonPlayground from '@/components/playground/ButtonPlayground';
 
 const ButtonPage: React.FC = () => {
   return (
@@ -17,6 +18,8 @@ const ButtonPage: React.FC = () => {
           submissions, invoking JavaScript functions, or navigation, among other behaviors.
         </SectionHeader.SubTitle>
       </SectionHeader>
+      {/* <Separator />
+      <ButtonPlayground /> */}
       <Separator />
       <DocumentationRenderer className="my-4" data={docs} />
       <SectionHeader variant="transparent" size="sm">
