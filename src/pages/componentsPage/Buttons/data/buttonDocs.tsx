@@ -20,7 +20,6 @@ export const docs: docsData[] = [
     title: 'Basic Button',
     desc: 'This example demonstrates the most basic usage of the Button component with default properties.',
     code: `
-  import React from 'react';
   import { Button } from 'kalki-ui';
     
   const App = () => (
@@ -35,7 +34,6 @@ export const docs: docsData[] = [
     title: 'Button Variants',
     desc: 'This example shows different variants of the Button component.',
     code: `
-  import React from 'react';
   import { Button } from 'kalki-ui';
     
   const App = () => (
@@ -75,7 +73,6 @@ export const docs: docsData[] = [
     title: 'Button Sizes',
     desc: 'This example demonstrates different sizes of the Button component.',
     code: `
-  import React from 'react';
   import { Button } from 'kalki-ui';
     
   const App = () => (
@@ -98,7 +95,6 @@ export const docs: docsData[] = [
     title: 'Raised Button',
     desc: 'This example shows how to create a raised button with a shadow effect.',
     code: `
-  import React from 'react';
   import { Button } from 'kalki-ui';
     
   const App = () => (
@@ -117,7 +113,6 @@ export const docs: docsData[] = [
     title: 'Rounded Button',
     desc: 'This example demonstrates how to create a button with rounded corners.',
     code: `
-  import React from 'react';
   import { Button } from 'kalki-ui';
     
   const App = () => (
@@ -136,7 +131,6 @@ export const docs: docsData[] = [
     title: 'Disabled Button',
     desc: 'This example shows a disabled button.',
     code: `
-  import React from 'react';
   import { Button } from 'kalki-ui';
     
   const App = () => (
@@ -151,7 +145,6 @@ export const docs: docsData[] = [
     title: 'Button with Icon and Text',
     desc: 'This example demonstrates how to use ButtonIcon and ButtonText components together.',
     code: `
-  import React from 'react';
   import { Button } from 'kalki-ui';
     
   const App = () => (
@@ -174,7 +167,6 @@ export const docs: docsData[] = [
     title: 'Custom Styled Button',
     desc: 'This example shows how to apply custom styles to the Button component.',
     code: `
-  import React from "react";
   import { Button } from "kalki-ui";
       
   const App = () => (
@@ -211,7 +203,6 @@ export const docs: docsData[] = [
     title: 'Button with onClick Handler',
     desc: 'This example demonstrates how to use the onClick prop to handle button clicks.',
     code: `
-  import React, { useState } from 'react';
   import { Button } from 'kalki-ui';
     
   const App = () => {
@@ -240,7 +231,6 @@ export const docs: docsData[] = [
     title: 'Button with only Icon',
     desc: '',
     code: `
-  import React, { useState } from 'react';
   import { Button,Box } from 'kalki-ui';
     
   const App = () => {
