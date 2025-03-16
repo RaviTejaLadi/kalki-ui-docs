@@ -1,12 +1,9 @@
-import Box from '@/components/common/Box';
 import { SectionHeader } from '@/components/common/SectionHeader/SectionHeader';
 import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
-import { Tab, Tabs } from '@/components/common/Tabs';
 import { docsData } from '@/types/docsData';
 import { cn } from '@/utils';
-import { Code, Terminal } from 'lucide-react';
 import React from 'react';
-// import DotBackground from '../DotBackground';
+import SnippetDisplay from '../SnippetDisplay';
 
 /**
  * Props for the DocumentationRenderer component.
@@ -40,21 +37,10 @@ const DocumentationRenderer: React.FC<DocumentationRendererProps> = ({ data, cla
               <SectionHeader.Title className="tracking-wide">{item.title}</SectionHeader.Title>
               <SectionHeader.SubTitle className="tracking-wide">{item.desc}</SectionHeader.SubTitle>
             </SectionHeader>
-            <Tabs variant="light" size="sm">
-              <Tab
-                label="Preview"
-                value="preview"
-                className="border-none min-h-[350px] w-full"
-                leftIcon={<Terminal className="size-4" />}
-              >
-                {item.snippet}
-              </Tab>
-              <Tab label="Code" value="code" className="max-h-96" leftIcon={<Code className="size-4" />}>
-                <Box padding="10px">
-                  <SyntaxHighlighter code={item.code} language="jsx" />
-                </Box>
-              </Tab>
-            </Tabs>
+            <SnippetDisplay
+              snippet={item.snippet}
+              highlighter={<SyntaxHighlighter code={item.code} language="jsx" />}
+            />
           </div>
         );
       })}
