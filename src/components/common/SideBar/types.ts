@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
 }

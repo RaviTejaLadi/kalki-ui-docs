@@ -23,11 +23,12 @@ export const AppSideBar = ({ className }: { className?: string }) => {
           <SidebarGroupLabel>Components</SidebarGroupLabel>
           {categorizedRoutesComponents.map(({ category, components, path, Icon }) => (
             <SidebarGroupContent key={path}>
-              <SidebarMenuSub>
+              <SidebarMenuSub defaultOpen>
                 <SidebarMenuSubButton
                   title={category}
                   icon={Icon ? <Icon className="size-4 text-[var(--icon-color)]" /> : null}
                   className="hover:bg-gray-100 dark:hover:bg-gray-200/10"
+                  isOpen
                 >
                   <Link to={path || '#'} className={cn('text-muted-foreground text-xs hover:text-muted-foreground')}>
                     {category.slice(0, 15)}

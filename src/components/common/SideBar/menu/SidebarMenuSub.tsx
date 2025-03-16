@@ -13,6 +13,7 @@ export const SidebarMenuSub = React.forwardRef<HTMLDivElement, SidebarMenuSubPro
     return (
       <div ref={ref} className={cn('space-y-1 ', className)} {...props}>
         {React.Children.map(children, (child) => {
+          console.log(child);
           if (React.isValidElement(child)) {
             return React.cloneElement(child as React.ReactElement<any>, {
               isOpen,
