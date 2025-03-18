@@ -9,7 +9,7 @@ export default function ComponentCategoriesSection() {
       <Tabs defaultTab="buttons">
         <Tabs.List title="✨ Component Showcase ✨">
           {categorizedRoutesComponents.map((category, index) => (
-            <Tabs.Trigger key={index} id={category.id}>
+            <Tabs.Trigger key={index} id={category.id} className="dark:border-gray-200/10">
               {category.category}
             </Tabs.Trigger>
           ))}
