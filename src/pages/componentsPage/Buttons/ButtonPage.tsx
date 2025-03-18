@@ -6,6 +6,7 @@ import { docs, columns, componentHierarchyCode, rows } from './data/buttonDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
 import ButtonPlayground from '@/components/playground/ButtonPlayground';
+import Div from '@/components/common/Div';
 
 const ButtonPage: React.FC = () => {
   return (
@@ -26,10 +27,12 @@ const ButtonPage: React.FC = () => {
         <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
       </SectionHeader>
       <TableList columns={columns} rows={rows} code CodeColumn={0} />
-      <SectionHeader variant="transparent" size="sm">
+      <SectionHeader variant="transparent" size="sm" className="mt-4">
         <SectionHeader.Title className="tracking-wide">Component Hiraricy</SectionHeader.Title>
       </SectionHeader>
-      <SyntaxHighlighter code={componentHierarchyCode} language="html" />
+      <Div borderStyle="solid">
+        <SyntaxHighlighter code={componentHierarchyCode} language="html" />
+      </Div>
     </div>
   );
 };
