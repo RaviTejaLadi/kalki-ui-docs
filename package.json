@@ -40,7 +40,6 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@faker-js/faker": "^9.5.1",
     "@types/lodash": "^4.17.13",
     "@types/node": "^22.10.1",
     "@types/react": "^18.3.18",
