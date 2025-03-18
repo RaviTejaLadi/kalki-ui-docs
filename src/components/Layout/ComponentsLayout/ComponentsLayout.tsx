@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Sidebar, {
   SidebarBody,
   SidebarMenu,
@@ -16,6 +16,7 @@ import Link from '@/components/common/Link';
 import { cn } from '@/utils';
 
 export const AppSideBar = ({ className }: { className?: string }) => {
+  const location = useLocation();
   return (
     <Sidebar className={cn(className, 'w-[13rem]')}>
       <SidebarBody>
@@ -34,16 +35,22 @@ export const AppSideBar = ({ className }: { className?: string }) => {
                     {category.slice(0, 15)}
                   </Link>
                 </SidebarMenuSubButton>
-                {components.map(({ path, label, Icon }) => (
-                  <SidebarMenuSubItem
-                    key={path}
-                    to={path}
-                    icon={Icon ? <Icon className="size-4 text-[var(--icon-color)]" /> : null}
-                    className="hover:bg-gray-100 dark:hover:bg-gray-200/10"
-                  >
-                    {label}
-                  </SidebarMenuSubItem>
-                ))}
+                {components.map(({ path, label, Icon }) => {
+                  const isActive = location.pathname === path;
+                  return (
+                    <SidebarMenuSubItem
+                      key={path}
+                      to={path}
+                      icon={Icon ? <Icon className="size-4 text-[var(--icon-color)]" /> : null}
+                      className={cn(
+                        'hover:bg-gray-100 dark:hover:bg-gray-200/10',
+                        isActive && 'bg-gray-100 dark:bg-gray-200/10 font-medium text-foreground'
+                      )}
+                    >
+                      {label}
+                    </SidebarMenuSubItem>
+                  );
+                })}
               </SidebarMenuSub>
             </SidebarGroupContent>
           ))}
