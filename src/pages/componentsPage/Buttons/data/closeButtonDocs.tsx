@@ -31,7 +31,7 @@ const App = () => (
 );
       `,
     snippet: (
-      <div>
+      <div className="space-y-2">
         <CloseButton size="sm" onClick={() => console.log('Small button clicked')} />
         <CloseButton size="md" onClick={() => console.log('Medium button clicked')} />
         <CloseButton size="lg" onClick={() => console.log('Large button clicked')} />
@@ -53,7 +53,7 @@ const App = () => (
 );
       `,
     snippet: (
-      <div>
+      <div className="space-y-2">
         <CloseButton variant="light" onClick={() => console.log('Light variant clicked')} />
         <CloseButton variant="dark" onClick={() => console.log('Dark variant clicked')} />
       </div>
