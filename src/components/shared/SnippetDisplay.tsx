@@ -75,7 +75,7 @@ const SnippetDisplay: React.FC<SnippetDisplayProps> = ({ snippet, highlighter })
       ref={containerRef}
       className="w-auto h-auto border dark:border-gray-200/10 bg-background rounded-lg overflow-hidden flex flex-col"
     >
-      <div className="flex">
+      <div className="flex h-[400px]">
         <div
           className=" flex justify-center items-center overflow-auto  relative"
           style={{ width: componentWidth ? `${componentWidth}px` : '100%' }}

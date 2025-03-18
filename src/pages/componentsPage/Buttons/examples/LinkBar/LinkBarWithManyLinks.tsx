@@ -62,7 +62,7 @@ const LinkBarWithManyLinks = () => {
       rounded="none"
       activeUrl={activeUrl}
       onUrlChange={handleUrlChange}
-      className="w-full  mx-auto "
+      className="w-[50rem]"
     >
       <LinkBar.Control position="left" />
 
