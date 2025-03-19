@@ -1,10 +1,9 @@
-import React, { useState, useLayoutEffect, forwardRef, MouseEvent } from 'react';
+import React, { useState, useLayoutEffect, forwardRef, useRef, useEffect } from 'react';
 import { cn } from '@/utils';
 
 interface RippleProps extends React.HTMLAttributes<HTMLDivElement> {
   duration?: number;
   color?: string;
-  children?: React.ReactNode;
 }
 
 const useDebouncedRippleCleanUp = (rippleCount: number, duration: number, cleanUpFunction: () => void) => {
@@ -24,34 +23,61 @@ const useDebouncedRippleCleanUp = (rippleCount: number, duration: number, cleanU
 };
 
 const Ripple = forwardRef<HTMLDivElement, RippleProps>(
-  ({ duration = 850, color = 'rgba(255, 255, 255, 0.7)', className, style, children, ...rest }, ref) => {
+  ({ duration = 850, color = 'rgba(255, 255, 255, 0.7)', className, style, ...rest }, ref) => {
     const [rippleArray, setRippleArray] = useState<{ x: number; y: number; size: number }[]>([]);
+    const containerRef = useRef<HTMLDivElement | null>(null);
+    const combinedRef = (node: HTMLDivElement) => {
+      containerRef.current = node;
+      if (typeof ref === 'function') {
+        ref(node);
+      } else if (ref) {
+        ref.current = node;
+      }
+    };
 
     useDebouncedRippleCleanUp(rippleArray.length, duration, () => {
       setRippleArray([]);
     });
 
-    const addRipple = (event: MouseEvent<HTMLDivElement>) => {
-      const rippleContainer = event.currentTarget.getBoundingClientRect();
-      const size = Math.max(rippleContainer.width, rippleContainer.height);
-      const x = event.clientX - rippleContainer.left - size / 2;
-      const y = event.clientY - rippleContainer.top - size / 2;
-      const newRipple = { x, y, size };
-      setRippleArray((prev) => [...prev, newRipple]);
-    };
+    // Find the parent element to attach the click listener
+    useEffect(() => {
+      const container = containerRef.current;
+      if (!container) return;
+
+      const parent = container.parentElement;
+      if (!parent) return;
+
+      const handleParentClick = (event: globalThis.MouseEvent) => {
+        const rect = parent.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = event.clientX - rect.left - size / 2;
+        const y = event.clientY - rect.top - size / 2;
+
+        setRippleArray((prev) => [...prev, { x, y, size }]);
+      };
+
+      // Use plain DOM event listener since we're attaching to parent
+      parent.addEventListener('mousedown', handleParentClick);
+
+      return () => {
+        parent.removeEventListener('mousedown', handleParentClick);
+      };
+    }, []);
 
     return (
       <div
-        ref={ref}
-        className={cn('relative inline-flex items-center justify-center overflow-hidden', className)}
+        ref={combinedRef}
+        className={cn('absolute inset-0 overflow-hidden pointer-events-none', className)}
         style={{
           ...style,
-          WebkitTapHighlightColor: 'transparent',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
         }}
-        onMouseDown={addRipple}
         {...rest}
       >
-        {children}
         {rippleArray.map((ripple, index) => (
           <span
             key={`ripple_${index}`}
@@ -65,7 +91,9 @@ const Ripple = forwardRef<HTMLDivElement, RippleProps>(
               borderRadius: '50%',
               animation: `ripple ${duration}ms cubic-bezier(0.4, 0, 0.2, 1)`,
               position: 'absolute',
-              transform: 'translate(-50%, -50%) scale(0)',
+              transform: 'scale(0)',
+              opacity: '0.3',
+              animationFillMode: 'forwards',
             }}
           />
         ))}
