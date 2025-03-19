@@ -10,6 +10,7 @@ const GetStarted = lazy(() => import('@/pages/getStartedPage/GetStartedPage'));
 const Colors = lazy(() => import('@/pages/Colors'));
 const Components = lazy(() => import('@/pages/componentsPage/componentsPage'));
 const NotFoundScreen = lazy(() => import('@/pages/NotFound'));
+const Blocks = lazy(() => import('@/pages/blocks'));
 
 // const DevOnly = ({ children }: { children: ReactNode }) => {
 //   if (import.meta.env.MODE !== 'development') {
@@ -43,6 +44,10 @@ const AppRoutes = () => {
         {
           path: '/components-showcase',
           element: <ComponentsShowCase />,
+        },
+        {
+          path: '/blocks',
+          element: <Blocks />,
         },
         {
           path: '404',
