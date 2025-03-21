@@ -45,7 +45,7 @@ interface ParagraphProps extends VariantProps<typeof paragraphVariants> {
 const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
   ({ children, size, className, onClick, ...props }, ref) => {
     return (
-      <p ref={ref} className={cn(paragraphVariants({ size, ...props }), className)} onClick={onClick}>
+      <p ref={ref} className={cn(paragraphVariants({ size }), className)} onClick={onClick} {...props}>
         {children}
       </p>
     );

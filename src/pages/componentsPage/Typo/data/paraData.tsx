@@ -31,7 +31,7 @@ export const docs: docsData[] = [
 <Paragraph inserted>Inserted Paragraph</Paragraph>
     `,
     snippet: (
-      <Box padding="10px">
+      <Box padding="10px" className="space-y-2">
         <Paragraph underline>Underlined Paragraph</Paragraph>
         <Paragraph overline>Overline Paragraph</Paragraph>
         <Paragraph dashed>Dashed Paragraph</Paragraph>
@@ -49,13 +49,15 @@ export const docs: docsData[] = [
     title: 'Custom Styling',
     desc: 'Demonstrates the flexibility of the Paragraph component in accepting custom styling properties. This example shows how to directly apply custom font size, color, and font weight to create a unique paragraph style. This feature allows for fine-grained control over text appearance, enabling perfect alignment with specific design requirements or brand guidelines.',
     code: `
-<Paragraph className="text-red font-semibold">
+<Paragraph className="text-red-300 font-semibold">
   Custom Styled Paragraph
 </Paragraph>
     `,
     snippet: (
       <Box padding="10px">
-        <Paragraph className="text-red font-semibold">Custom Styled Paragraph</Paragraph>
+        <Paragraph  className="text-red-900 font-semibold">
+          Custom Styled Paragraph
+        </Paragraph>
       </Box>
     ),
   },
