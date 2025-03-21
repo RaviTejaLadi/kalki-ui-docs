@@ -14,6 +14,8 @@ import {
   Square,
   Sun,
 } from 'lucide-react';
+import BasicButton from '../examples/Button/BasicButton';
+import CounterButton from '../examples/Button/CounterButton';
 
 export const docs: docsData[] = [
   {
@@ -28,7 +30,7 @@ export const docs: docsData[] = [
     </Button>
   );
       `,
-    snippet: <Button onClick={() => alert('Button clicked!')}>Click me</Button>,
+    snippet: <BasicButton />,
   },
   {
     title: 'Button Variants',
@@ -218,14 +220,7 @@ export const docs: docsData[] = [
     );
   };
       `,
-    snippet: (
-      <Button
-        // onClick={}
-        variant="info"
-      >
-        Clicked 0 times
-      </Button>
-    ),
+    snippet: <CounterButton />,
   },
   {
     title: 'Button with only Icon',

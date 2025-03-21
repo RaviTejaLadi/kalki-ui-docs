@@ -9,6 +9,7 @@ import { useTheme } from '@/context/ThemeContext';
 import { cn } from '@/utils';
 import Button from '../Button';
 import Spinner from '../Spinner/Spinner';
+import { useToast } from 'kalki-ui-toast';
 
 interface SyntaxHighlighterProps {
   code: string;
@@ -26,6 +27,15 @@ export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
   const { theme } = useTheme();
   const [isLoading, setIsLoading] = useState(true);
   const [isCopied, setIsCopied] = useState(false);
+
+  const { addToast } = useToast();
+
+  const showToast = () => {
+    addToast({
+      message: 'copied to clipboard',
+      variant: 'default',
+    });
+  };
 
   const languageMap = {
     typescript: [javascript({ typescript: true })],
@@ -52,7 +62,7 @@ export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
     try {
       await navigator.clipboard.writeText(code.trim());
       setIsCopied(true);
-
+      showToast();
       const timer = setTimeout(() => {
         setIsCopied(false);
       }, 2000);
