@@ -9,7 +9,23 @@ export const docs: docsData[] = [
 import { Badge } from "kalki-ui";
 
 const App = () => (
-  <Badge>Primary Badge</Badge>
+      <>
+        {[
+          'primary' as const,
+          'secondary' as const,
+          'success' as const,
+          'danger' as const,
+          'warning' as const,
+          'info' as const,
+          'help' as const,
+          'light' as const,
+          'dark' as const,
+        ].map((item) => (
+          <Badge size="sm" key={item} variant={item} style={{ margin: '0px 4px' }}>
+            {item}
+          </Badge>
+        ))}
+      </>
 );
       `,
     snippet: (
