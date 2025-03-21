@@ -106,54 +106,87 @@ export const docs: docsData[] = [
     title: 'LinkBar with Many Links',
     desc: 'LinkBar with many links to demonstrate scrolling',
     code: `
-import React from "react";
+import React,{ useState } from "react";
 import { LinkBar } from "kalki-ui";
 
 const LinkBarWithManyLinks = () => {
-  let links = [
-    { name: "JavaScript", url: "/javascript", startIcon: "✨" },
-    { name: "Python", url: "/python", endIcon: "🐍" },
-    { name: "Java", url: "/java" },
-    { name: "C++", url: "/cpp", startIcon: "💻" },
-    { name: "C#", url: "/csharp", endIcon: "🔧" },
-    { name: "Ruby", url: "/ruby", startIcon: "💎" },
-    { name: "Swift", url: "/swift" },
-    { name: "Go", url: "/go", endIcon: "🚀" },
-    { name: "Kotlin", url: "/kotlin" },
-    { name: "PHP", url: "/php", startIcon: "🐘" },
-    { name: "TypeScript", url: "/typescript" },
-    { name: "Scala", url: "/scala", startIcon: "📐" },
-    { name: "R", url: "/r", endIcon: "📊" },
-    { name: "Perl", url: "/perl" },
-    { name: "Haskell", url: "/haskell", startIcon: "🔢" },
-    { name: "Rust", url: "/rust", endIcon: "🦀" },
-    { name: "Elixir", url: "/elixir" },
-    { name: "Dart", url: "/dart", startIcon: "🎯" },
-    { name: "Lua", url: "/lua" },
-    { name: "Clojure", url: "/clojure", startIcon: "🔗" },
-    { name: "F#", url: "/fsharp" },
-    { name: "Matlab", url: "/matlab", endIcon: "📈" },
-    { name: "Julia", url: "/julia", startIcon: "📊" },
-    { name: "Erlang", url: "/erlang" },
-    { name: "Objective-C", url: "/objective-c", endIcon: "🍏" },
-    { name: "Groovy", url: "/groovy", startIcon: "🎵" },
-    { name: "Fortran", url: "/fortran" },
-    { name: "Ada", url: "/ada", endIcon: "🏛️" },
-    { name: "COBOL", url: "/cobol" },
-    { name: "Visual Basic", url: "/visual-basic", startIcon: "🖥️" },
-    { name: "Scheme", url: "/scheme" },
-    { name: "Prolog", url: "/prolog", endIcon: "🤖" },
-    { name: "Lisp", url: "/lisp" },
-    { name: "Shell", url: "/shell", startIcon: "🐚" },
-    { name: "VHDL", url: "/vhdl" },
-    { name: "Verilog", url: "/verilog", endIcon: "🔌" },
-    { name: "Racket", url: "/racket" },
-    { name: "Smalltalk", url: "/smalltalk", startIcon: "💬" },
-    { name: "Pascal", url: "/pascal" },
-    { name: "ABAP", url: "/abap", endIcon: "🏢" },
-    { name: "SAS", url: "/sas" },
+  const [activeUrl, setActiveUrl] = useState('/home');
+
+  const handleUrlChange = (to: string) => {
+    setActiveUrl(to);
+  };
+
+  interface Link {
+    label: string;
+    to: string;
+    icon?: string;
+  }
+    
+  const links: Link[] = [
+    { label: 'JavaScript', to: '/javascript', icon: '✨' },
+    { label: 'Python', to: '/python', icon: '🐍' },
+    { label: 'Java', to: '/java' },
+    { label: 'C++', to: '/cpp', icon: '💻' },
+    { label: 'C#', to: '/csharp', icon: '🔧' },
+    { label: 'Ruby', to: '/ruby', icon: '💎' },
+    { label: 'Swift', to: '/swift' },
+    { label: 'Go', to: '/go', icon: '🚀' },
+    { label: 'Kotlin', to: '/kotlin' },
+    { label: 'PHP', to: '/php', icon: '🐘' },
+    { label: 'TypeScript', to: '/typescript' },
+    { label: 'Scala', to: '/scala', icon: '📐' },
+    { label: 'R', to: '/r', icon: '📊' },
+    { label: 'Perl', to: '/perl' },
+    { label: 'Haskell', to: '/haskell', icon: '🔢' },
+    { label: 'Rust', to: '/rust', icon: '🦀' },
+    { label: 'Elixir', to: '/elixir' },
+    { label: 'Dart', to: '/dart', icon: '🎯' },
+    { label: 'Lua', to: '/lua' },
+    { label: 'Clojure', to: '/clojure', icon: '🔗' },
+    { label: 'F#', to: '/fsharp' },
+    { label: 'Matlab', to: '/matlab', icon: '📈' },
+    { label: 'Julia', to: '/julia', icon: '📊' },
+    { label: 'Erlang', to: '/erlang' },
+    { label: 'Objective-C', to: '/objective-c', icon: '🍏' },
+    { label: 'Groovy', to: '/groovy', icon: '🎵' },
+    { label: 'Fortran', to: '/fortran' },
+    { label: 'Ada', to: '/ada', icon: '🏛️' },
+    { label: 'COBOL', to: '/cobol' },
+    { label: 'Visual Basic', to: '/visual-basic', icon: '🖥️' },
+    { label: 'Scheme', to: '/scheme' },
+    { label: 'Prolog', to: '/prolog', icon: '🤖' },
+    { label: 'Lisp', to: '/lisp' },
+    { label: 'Shell', to: '/shell', icon: '🐚' },
+    { label: 'VHDL', to: '/vhdl' },
+    { label: 'Verilog', to: '/verilog', icon: '🔌' },
+    { label: 'Racket', to: '/racket' },
+    { label: 'Smalltalk', to: '/smalltalk', icon: '💬' },
+    { label: 'Pascal', to: '/pascal' },
+    { label: 'ABAP', to: '/abap', icon: '🏢' },
+    { label: 'SAS', to: '/sas' },
   ];
-  return <LinkBar links={links} width="100%" />;
+  return (
+    <LinkBar
+      variant="default"
+      size="sm"
+      rounded="none"
+      activeUrl={activeUrl}
+      onUrlChange={handleUrlChange}
+      className="w-[50rem]"
+    >
+      <LinkBar.Control position="left" />
+
+      <LinkBar.Content className="px-2">
+        {links.map((link, index) => (
+          <LinkBar.Link key={index} to={"#-{link.to}"} icon={link.icon}>
+            {link.label}
+          </LinkBar.Link>
+        ))}
+      </LinkBar.Content>
+
+      <LinkBar.Control position="right" />
+    </LinkBar>
+  );
 };
     `,
     snippet: <LinkBarWithManyLinks />,
