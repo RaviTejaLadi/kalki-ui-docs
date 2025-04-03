@@ -1,7 +1,6 @@
 import {
   LayoutGrid,
   Box,
-  Grid3x3,
   AlignVerticalSpaceAround,
   FileInput,
   Radio,
@@ -31,7 +30,6 @@ import {
   Image,
   Flag,
   FileJson,
-  Grid,
   Target,
   Expand,
   NavigationIcon,
@@ -256,27 +254,6 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
           'Fundamental layout primitive for creating flexible, responsive container components with configurable spacing and alignment.',
         path: '/components/box',
         Icon: Box,
-      },
-      {
-        label: 'Grid Background',
-        description:
-          'Responsive visual grid overlay system for creating consistent layout guidelines and design alignment patterns.',
-        path: '/components/gridBackground',
-        Icon: Grid,
-      },
-      {
-        label: 'Grid System',
-        description:
-          'Responsive layout framework implementing a flexible, mobile-first grid system with customizable breakpoints and column configurations.',
-        path: '/components/gridSystem',
-        Icon: Grid3x3,
-      },
-      {
-        label: 'Layouts',
-        description:
-          'Comprehensive layout management system providing responsive container components with advanced styling, padding, and responsive design capabilities.',
-        path: '/components/box',
-        Icon: Layers,
       },
       {
         label: 'Stack',
