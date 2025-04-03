@@ -1,7 +1,7 @@
 import Box from '@/components/common/Box';
 import Button from '@/components/common/Button';
 import Ripple from '@/components/common/Ripple/Ripple';
-import { Heading, Paragraph } from '@/components/common/Typography';
+import { Paragraph } from '@/components/common/Typography';
 import { docsData } from '@/types/docsData';
 
 export const docs: docsData[] = [
@@ -137,24 +137,6 @@ export const docs: docsData[] = [
           Circular Ripple
           <Ripple />
         </Box>
-      </Box>
-    ),
-  },
-  {
-    title: 'Ripple on a Card',
-    desc: 'Adding a ripple effect to a card-like component',
-    code: `
-      <Box width="300px" padding="20px" className="border">
-        <Heading size="h3">Card Title</Heading>
-        <Paragraph>This is some content inside a card with a ripple effect.</Paragraph>
-        <Ripple color="rgba(0, 0, 0, 0.1)" />
-      </Box>
-      `,
-    snippet: (
-      <Box className="border">
-        <Heading size="h3">Card Title</Heading>
-        <Paragraph>This is some content inside a card with a ripple effect.</Paragraph>
-        <Ripple />
       </Box>
     ),
   },
