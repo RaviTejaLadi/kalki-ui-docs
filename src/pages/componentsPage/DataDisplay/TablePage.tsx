@@ -35,37 +35,37 @@ const TablePage = () => {
       </SectionHeader>
       <Div className="space-y-5">
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Table
           </Heading>
           <TableList columns={columns} rows={tableRows} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Table Header
           </Heading>
           <TableList columns={columns} rows={tableHeadRows} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Table Body
           </Heading>
           <TableList columns={columns} rows={tableBodyRows} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Table Footer
           </Heading>
           <TableList columns={columns} rows={tableFooterRows} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Table Row
           </Heading>
           <TableList columns={columns} rows={tableRowRows} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Table Cell
           </Heading>
           <TableList columns={columns} rows={tableCellRows} code CodeColumn={0} />

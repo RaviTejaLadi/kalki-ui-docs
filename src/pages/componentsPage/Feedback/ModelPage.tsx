@@ -27,31 +27,31 @@ const ModelPage = () => {
       </SectionHeader>
       <Div className="space-y-5">
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Modal
           </Heading>
           <TableList columns={columns} rows={modalProps} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Modal Header
           </Heading>
           <TableList columns={columns} rows={modalHeaderProps} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Modal Body
           </Heading>
           <TableList columns={columns} rows={modalBodyProps} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Modal Footer
           </Heading>
           <TableList columns={columns} rows={modalFooterProps} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Modal Title
           </Heading>
           <TableList columns={columns} rows={modalTitleProps} code CodeColumn={0} />

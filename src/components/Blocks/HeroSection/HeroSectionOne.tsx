@@ -17,7 +17,7 @@ const HeroSectionOne = () => {
           <Paragraph className="text-sm font-medium">Kalki UI is out! See what&apos;s new</Paragraph>
         </Link>
         <Heading
-          size="h1"
+          as="h1"
           className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
         >
           We invest in the world’s potential

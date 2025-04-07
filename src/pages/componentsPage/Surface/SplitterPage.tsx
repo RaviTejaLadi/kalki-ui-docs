@@ -19,13 +19,13 @@ const SplitterPage = () => {
       </SectionHeader>
       <Div className="space-y-5">
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Splitter
           </Heading>
           <TableList columns={columns} rows={splitterProps} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Splitter Pane
           </Heading>
           <TableList columns={columns} rows={splitterPaneProps} code CodeColumn={0} />

@@ -104,7 +104,7 @@ const App = () => (
         ].map((item) => (
           <Banner key={item} variant={item} size="sm">
             <Banner.Title>
-              <Heading size="h5">{item.charAt(0).toUpperCase() + item.slice(1)} Banner</Heading>
+              <Heading as="h5">{item.charAt(0).toUpperCase() + item.slice(1)} Banner</Heading>
             </Banner.Title>
             <Banner.SubTitle>
               <Paragraph>This is a {item} variant banner</Paragraph>

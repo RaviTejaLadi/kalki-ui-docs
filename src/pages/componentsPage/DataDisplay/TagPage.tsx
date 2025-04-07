@@ -35,25 +35,25 @@ const TagPage = () => {
       </SectionHeader>
       <Div className="space-y-5">
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Tag
           </Heading>
           <TableList columns={columns} rows={tagProps} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Tag Icon
           </Heading>
           <TableList columns={columns} rows={tagIconProps} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Tag Text
           </Heading>
           <TableList columns={columns} rows={tagTextProps} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Tag Close Button
           </Heading>
           <TableList columns={columns} rows={tagCloseButtonProps} code CodeColumn={0} />

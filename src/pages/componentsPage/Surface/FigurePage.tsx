@@ -19,19 +19,19 @@ const FigurePage = () => {
       </SectionHeader>
       <Div className="space-y-5">
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Figure
           </Heading>
           <TableList columns={columns} rows={figureProps} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Figure Image
           </Heading>
           <TableList columns={columns} rows={figureImageProps} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Figure Caption
           </Heading>
           <TableList columns={columns} rows={figureCaptionProps} code CodeColumn={0} />

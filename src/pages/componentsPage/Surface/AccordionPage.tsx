@@ -30,25 +30,25 @@ const AccordionPage = () => {
       </SectionHeader>
       <Div className="space-y-5">
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Accordion
           </Heading>
           <TableList columns={columns} rows={accordionProps} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Accordion Header
           </Heading>
           <TableList columns={columns} rows={accordionHeaderProps} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Accordion Body
           </Heading>
           <TableList columns={columns} rows={accordionBodyProps} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Accordion Item
           </Heading>
           <TableList columns={columns} rows={accordionItemProps} code CodeColumn={0} />
