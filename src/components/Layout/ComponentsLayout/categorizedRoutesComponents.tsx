@@ -396,13 +396,6 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         Icon: Highlighter,
       },
       {
-        label: 'Typography',
-        description:
-          'Comprehensive typographic system providing responsive type scales, font management, and consistent text styling across applications.',
-        path: '/components/typography',
-        Icon: Type,
-      },
-      {
         label: 'Heading',
         description: 'Headings are titles or subtitles that you want to display on a webpage.',
         path: '/components/heading',
