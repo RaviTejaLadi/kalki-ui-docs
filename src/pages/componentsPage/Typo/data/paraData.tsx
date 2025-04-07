@@ -19,16 +19,18 @@ export const docs: docsData[] = [
     title: 'Styling Options',
     desc: 'Showcases various text decoration and styling options available for the Paragraph component. These options include underline, overline, dashed underline, italics, bold (strong), strikethrough, highlighting (marked), size adjustment, and text deletion/insertion effects. This flexibility allows for rich text formatting and emphasis within paragraphs, enhancing readability and visual appeal.',
     code: `
-<Paragraph underline>Underlined Paragraph</Paragraph>
-<Paragraph overline>Overline Paragraph</Paragraph>
-<Paragraph dashed>Dashed Paragraph</Paragraph>
-<Paragraph italic>Italic Paragraph</Paragraph>
-<Paragraph strong>Strong Paragraph</Paragraph>
-<Paragraph strikethrough>Strikethrough Paragraph</Paragraph>
-<Paragraph marked>Marked Paragraph</Paragraph>
-<Paragraph smaller>Smaller Paragraph</Paragraph>
-<Paragraph deleted>Deleted Paragraph</Paragraph>
-<Paragraph inserted>Inserted Paragraph</Paragraph>
+      <Box padding="10px" className="space-y-2">
+        <Paragraph underline>Underlined Paragraph</Paragraph>
+        <Paragraph overline>Overline Paragraph</Paragraph>
+        <Paragraph dashed>Dashed Paragraph</Paragraph>
+        <Paragraph italic>Italic Paragraph</Paragraph>
+        <Paragraph strong>Strong Paragraph</Paragraph>
+        <Paragraph strikethrough>Strikethrough Paragraph</Paragraph>
+        <Paragraph marked>Marked Paragraph</Paragraph>
+        <Paragraph smaller>Smaller Paragraph</Paragraph>
+        <Paragraph deleted>Deleted Paragraph</Paragraph>
+        <Paragraph inserted>Inserted Paragraph</Paragraph>
+      </Box>
     `,
     snippet: (
       <Box padding="10px" className="space-y-2">
