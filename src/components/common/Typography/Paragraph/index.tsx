@@ -1,4 +1,4 @@
-import { forwardRef, ReactNode } from 'react';
+import { createElement, forwardRef, ReactNode } from 'react';
 import { cn } from '@/utils';
 import { cva, VariantProps } from 'class-variance-authority';
 
@@ -44,10 +44,16 @@ interface ParagraphProps extends VariantProps<typeof paragraphVariants> {
 // #region Paragraph
 const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
   ({ children, size, className, onClick, ...props }, ref) => {
-    return (
-      <p ref={ref} className={cn(paragraphVariants({ size }), className)} onClick={onClick} {...props}>
-        {children}
-      </p>
+    const element = 'p';
+    return createElement(
+      element,
+      {
+        ref,
+        className: cn(paragraphVariants({ size, ...props }), className),
+        onClick,
+        ...props,
+      },
+      children
     );
   }
 );

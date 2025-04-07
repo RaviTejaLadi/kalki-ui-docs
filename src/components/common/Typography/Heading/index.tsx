@@ -39,17 +39,21 @@ interface HeadingProps extends VariantProps<typeof headingVariants> {
 // #endregion
 
 // #region Heading
-const Heading = forwardRef<HTMLParagraphElement, HeadingProps>(({ children, as, className, onClick, ...props }) => {
-  const element = as || 'h1';
-  return createElement(
-    element,
-    {
-      className: cn(headingVariants({ as, ...props }), className),
-      onClick: onClick,
-    },
-    children
-  );
-});
+const Heading = forwardRef<HTMLParagraphElement, HeadingProps>(
+  ({ children, as, className, onClick, ...props }, ref) => {
+    const element = as || 'h1';
+    return createElement(
+      element,
+      {
+        ref,
+        className: cn(headingVariants({ as, ...props }), className),
+        onClick,
+        ...props,
+      },
+      children
+    );
+  }
+);
 
 Heading.displayName = 'Heading';
 // #endregion
