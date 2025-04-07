@@ -7,7 +7,9 @@ export const docs: docsData[] = [
     title: 'Basic Usage',
     desc: "Demonstrates the Heading component's versatility in creating different levels of headings from h1 to h6. Each heading size is showcased to illustrate the hierarchy and default styling applied to different heading levels.",
     code: `
-<Heading >H1 Heading</Heading>
+      <Box padding="10px">
+        <Heading>H1 Heading</Heading>
+      </Box>
       `,
     snippet: (
       <Box padding="10px">
@@ -19,47 +21,69 @@ export const docs: docsData[] = [
     title: 'Styling Options',
     desc: 'Illustrates various text decoration and styling options available for the Heading component. These options include underline, overline, dashed underline, italics, bold (strong), strikethrough, highlighting (marked), size adjustment, and text deletion/insertion effects.',
     code: `
-<Heading underline>Underlined Heading</Heading>
-<Heading overline>Overline Heading</Heading>
-<Heading dashed>Dashed Heading</Heading>
-<Heading italic>Italic Heading</Heading>
-<Heading strong>Strong Heading</Heading>
-<Heading strikethrough>Strikethrough Heading</Heading>
-<Heading marked>Marked Heading</Heading>
-<Heading smaller>Smaller Heading</Heading>
-<Heading deleted>Deleted Heading</Heading>
-<Heading inserted>Inserted Heading</Heading>
+      <Box padding="10px">
+        <Heading as="h3" underline>
+          Underlined Heading
+        </Heading>
+        <Heading as="h3" overline>
+          Overline Heading
+        </Heading>
+        <Heading as="h3" dashed>
+          Dashed Heading
+        </Heading>
+        <Heading as="h3" italic>
+          Italic Heading
+        </Heading>
+        <Heading as="h3" strong>
+          Strong Heading
+        </Heading>
+        <Heading as="h3" strikethrough>
+          Strikethrough Heading
+        </Heading>
+        <Heading as="h3" marked>
+          Marked Heading
+        </Heading>
+        <Heading as="h3" smaller>
+          Smaller Heading
+        </Heading>
+        <Heading as="h3" deleted>
+          Deleted Heading
+        </Heading>
+        <Heading as="h3" inserted>
+          Inserted Heading
+        </Heading>
+      </Box>
 `,
     snippet: (
       <Box padding="10px">
-        <Heading size="h3" underline>
+        <Heading as="h3" underline>
           Underlined Heading
         </Heading>
-        <Heading size="h3" overline>
+        <Heading as="h3" overline>
           Overline Heading
         </Heading>
-        <Heading size="h3" dashed>
+        <Heading as="h3" dashed>
           Dashed Heading
         </Heading>
-        <Heading size="h3" italic>
+        <Heading as="h3" italic>
           Italic Heading
         </Heading>
-        <Heading size="h3" strong>
+        <Heading as="h3" strong>
           Strong Heading
         </Heading>
-        <Heading size="h3" strikethrough>
+        <Heading as="h3" strikethrough>
           Strikethrough Heading
         </Heading>
-        <Heading size="h3" marked>
+        <Heading as="h3" marked>
           Marked Heading
         </Heading>
-        <Heading size="h3" smaller>
+        <Heading as="h3" smaller>
           Smaller Heading
         </Heading>
-        <Heading size="h3" deleted>
+        <Heading as="h3" deleted>
           Deleted Heading
         </Heading>
-        <Heading size="h3" inserted>
+        <Heading as="h3" inserted>
           Inserted Heading
         </Heading>
       </Box>
@@ -83,7 +107,7 @@ export const docs: docsData[] = [
 
 export const columns = ['Name', 'Type', 'Default', 'Description'];
 export const rows = [
-  ['size', 'string', 'h6', "Sets the HTML heading tag. Options: 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'."],
+  ['as', 'string', 'h6', "Sets the HTML heading tag. Options: 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'."],
   ['underline', 'boolean', 'false', 'If true, the text will be underlined.'],
   ['overline', 'boolean', 'false', 'If true, the text will be overline.'],
   ['dashed', 'boolean', 'false', 'If true, the text will have a dashed line-through.'],

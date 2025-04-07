@@ -5,7 +5,7 @@ import { createElement, forwardRef, ReactNode } from 'react';
 // #region headingVariants
 const headingVariants = cva('font-heading text-foreground scroll-m-20', {
   variants: {
-    size: {
+    as: {
       h1: 'text-4xl lg:text-5xl font-bold',
       h2: 'text-3xl lg:text-4xl font-semibold',
       h3: 'text-2xl lg:text-3xl font-semibold',
@@ -25,7 +25,7 @@ const headingVariants = cva('font-heading text-foreground scroll-m-20', {
     inserted: { true: 'underline' },
   },
   defaultVariants: {
-    size: 'h1',
+    as: 'h1',
   },
 });
 // #endregion
@@ -39,12 +39,12 @@ interface HeadingProps extends VariantProps<typeof headingVariants> {
 // #endregion
 
 // #region Heading
-const Heading = forwardRef<HTMLParagraphElement, HeadingProps>(({ children, size, className, onClick, ...props }) => {
-  const element = size || 'h1';
+const Heading = forwardRef<HTMLParagraphElement, HeadingProps>(({ children, as, className, onClick, ...props }) => {
+  const element = as || 'h1';
   return createElement(
     element,
     {
-      className: cn(headingVariants({ size, ...props }), className),
+      className: cn(headingVariants({ as, ...props }), className),
       onClick: onClick,
     },
     children
