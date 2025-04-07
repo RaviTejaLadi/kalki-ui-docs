@@ -16,7 +16,7 @@ const SectionHeaderPage = () => {
   return (
     <div className="container">
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">SectionHeader</SectionHeader.Title>
+        <SectionHeader.Title className="tracking-wide">Section Header</SectionHeader.Title>
       </SectionHeader>
       <Separator />
       <DocumentationRenderer className="my-4" data={docs} />
@@ -25,19 +25,19 @@ const SectionHeaderPage = () => {
       </SectionHeader>
       <Div className="space-y-5">
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Section Header
           </Heading>
           <TableList columns={columns} rows={sectionHeaderProps} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Section Header Title
           </Heading>
           <TableList columns={columns} rows={sectionHeaderTitleProps} code CodeColumn={0} />
         </Div>
         <Div>
-          <Heading size="h6" className="mb-2 text-muted-foreground">
+          <Heading as="h6" className="mb-2 text-muted-foreground">
             Section Header SubTitle
           </Heading>
           <TableList columns={columns} rows={sectionHeaderSubTitleProps} code CodeColumn={0} />

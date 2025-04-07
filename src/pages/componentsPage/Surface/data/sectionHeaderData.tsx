@@ -3,64 +3,64 @@ import { docsData } from '@/types/docsData';
 
 export const docs: docsData[] = [
   {
-    title: 'Basic SectionHeader',
+    title: 'Basic Section Header',
     desc: 'A simple section header with title and subtitle',
     code: `
-<SectionHeader>
-  <SectionHeader.Title>Main Title</SectionHeader.Title>
-  <SectionHeader.SubTitle>This is a subtitle</SectionHeader.SubTitle>
-</SectionHeader>
+      <SectionHeader className="w-[60rem]">
+        <SectionHeader.Title>Main Title</SectionHeader.Title>
+        <SectionHeader.SubTitle>This is a subtitle</SectionHeader.SubTitle>
+      </SectionHeader>
       `,
     snippet: (
-      <SectionHeader>
+      <SectionHeader className="w-[60rem]">
         <SectionHeader.Title>Main Title</SectionHeader.Title>
         <SectionHeader.SubTitle>This is a subtitle</SectionHeader.SubTitle>
       </SectionHeader>
     ),
   },
   {
-    title: 'Right-aligned SectionHeader',
+    title: 'Right-aligned Section Header',
     desc: 'A section header with right alignment',
     code: `
-<SectionHeader align="right">
-  <SectionHeader.Title>Right Aligned</SectionHeader.Title>
-  <SectionHeader.SubTitle>This header is aligned to the right</SectionHeader.SubTitle>
-</SectionHeader>
+      <SectionHeader align="right" className="w-[60rem]">
+        <SectionHeader.Title>Right Aligned</SectionHeader.Title>
+        <SectionHeader.SubTitle>This header is aligned to the right</SectionHeader.SubTitle>
+      </SectionHeader>
       `,
     snippet: (
-      <SectionHeader align="right">
+      <SectionHeader align="right" className="w-[60rem]">
         <SectionHeader.Title>Right Aligned</SectionHeader.Title>
         <SectionHeader.SubTitle>This header is aligned to the right</SectionHeader.SubTitle>
       </SectionHeader>
     ),
   },
   {
-    title: 'Centered SectionHeader',
+    title: 'Centered Section Header',
     desc: 'A section header with center alignment',
     code: `
-<SectionHeader align="center">
-  <SectionHeader.Title>Centered Header</SectionHeader.Title>
-  <SectionHeader.SubTitle>This header is centered</SectionHeader.SubTitle>
-</SectionHeader>
+      <SectionHeader align="center" className="w-[60rem]">
+        <SectionHeader.Title>Centered Header</SectionHeader.Title>
+        <SectionHeader.SubTitle>This header is centered</SectionHeader.SubTitle>
+      </SectionHeader>
       `,
     snippet: (
-      <SectionHeader align="center">
+      <SectionHeader align="center" className="w-[60rem]">
         <SectionHeader.Title>Centered Header</SectionHeader.Title>
         <SectionHeader.SubTitle>This header is centered</SectionHeader.SubTitle>
       </SectionHeader>
     ),
   },
   {
-    title: 'Large SectionHeader',
+    title: 'Large Section Header',
     desc: 'A section header with large size',
     code: `
-<SectionHeader size="lg">
-  <SectionHeader.Title>Large Header</SectionHeader.Title>
-  <SectionHeader.SubTitle>This is a large-sized header</SectionHeader.SubTitle>
-</SectionHeader>
+      <SectionHeader size="lg" className="w-[60rem]">
+        <SectionHeader.Title>Large Header</SectionHeader.Title>
+        <SectionHeader.SubTitle>This is a large-sized header</SectionHeader.SubTitle>
+      </SectionHeader>
       `,
     snippet: (
-      <SectionHeader size="lg">
+      <SectionHeader size="lg" className="w-[60rem]">
         <SectionHeader.Title>Large Header</SectionHeader.Title>
         <SectionHeader.SubTitle>This is a large-sized header</SectionHeader.SubTitle>
       </SectionHeader>
@@ -70,29 +70,29 @@ export const docs: docsData[] = [
     title: 'Custom Padding and Margin',
     desc: 'A section header with custom padding and margin',
     code: `
-<SectionHeader className="p-2 m-2">
-  <SectionHeader.Title>Custom Spacing</SectionHeader.Title>
-  <SectionHeader.SubTitle>This header has custom padding and margin</SectionHeader.SubTitle>
-</SectionHeader>
+      <SectionHeader className="p-2 m-2 w-[60rem]">
+        <SectionHeader.Title>Custom Spacing</SectionHeader.Title>
+        <SectionHeader.SubTitle>This header has custom padding and margin</SectionHeader.SubTitle>
+      </SectionHeader>
       `,
     snippet: (
-      <SectionHeader className="p-2 m-2">
+      <SectionHeader className="p-2 m-2 w-[60rem]">
         <SectionHeader.Title>Custom Spacing</SectionHeader.Title>
         <SectionHeader.SubTitle>This header has custom padding and margin</SectionHeader.SubTitle>
       </SectionHeader>
     ),
   },
   {
-    title: 'SectionHeader with Custom Styles',
+    title: 'Section Header with Custom Styles',
     desc: 'A section header with custom inline styles',
     code: `
-<SectionHeader style={{ backgroundColor: '#f0f0f0', borderRadius: '8px' }}>
-  <SectionHeader.Title style={{ color: '#333' }}>Custom Styled Header</SectionHeader.Title>
-  <SectionHeader.SubTitle style={{ fontStyle: 'italic' }}>With custom styles applied</SectionHeader.SubTitle>
-</SectionHeader>
+      <SectionHeader className="w-[60rem]" style={{ backgroundColor: '#f0f0f0', borderRadius: '8px' }}>
+        <SectionHeader.Title style={{ color: '#333' }}>Custom Styled Header</SectionHeader.Title>
+        <SectionHeader.SubTitle style={{ fontStyle: 'italic' }}>With custom styles applied</SectionHeader.SubTitle>
+      </SectionHeader>
       `,
     snippet: (
-      <SectionHeader style={{ backgroundColor: '#f0f0f0', borderRadius: '8px' }}>
+      <SectionHeader className="w-[60rem]" style={{ backgroundColor: '#f0f0f0', borderRadius: '8px' }}>
         <SectionHeader.Title style={{ color: '#333' }}>Custom Styled Header</SectionHeader.Title>
         <SectionHeader.SubTitle style={{ fontStyle: 'italic' }}>With custom styles applied</SectionHeader.SubTitle>
       </SectionHeader>
