@@ -30,7 +30,7 @@ export const docs: docsData[] = [
     title: 'Basic Vertical Splitter',
     desc: 'A simple vertical splitter with default 50/50 split',
     code: `
-<Splitter orientation="vertical" height="400px">
+<Splitter orientation="vertical" height="400px" className="w-[60rem]">
   <Splitter.Pane>
     <div>Left Pane content</div>
   </Splitter.Pane>
@@ -40,7 +40,7 @@ export const docs: docsData[] = [
 </Splitter>
     `,
     snippet: (
-      <Splitter orientation="vertical" height="400px">
+      <Splitter orientation="vertical" height="400px" className="w-[60rem]">
         <Splitter.Pane>
           <div className="text-foreground p-2">Left Pane content</div>
         </Splitter.Pane>
@@ -54,7 +54,7 @@ export const docs: docsData[] = [
     title: 'Horizontal Splitter',
     desc: 'A horizontal splitter with default 50/50 split',
     code: `
-<Splitter orientation="horizontal">
+<Splitter orientation="horizontal" className="w-[60rem]">
   <Splitter.Pane>
     <div>Top Pane content</div>
   </Splitter.Pane>
@@ -64,7 +64,7 @@ export const docs: docsData[] = [
 </Splitter>
     `,
     snippet: (
-      <Splitter orientation="horizontal" height="400px">
+      <Splitter orientation="horizontal" height="400px" className="w-[60rem]">
         <Splitter.Pane>
           <div className="text-foreground p-2">Top Pane content</div>
         </Splitter.Pane>
@@ -78,7 +78,7 @@ export const docs: docsData[] = [
     title: 'Three-Pane Vertical Splitter',
     desc: 'A vertical splitter with three Panes',
     code: `
-<Splitter orientation="vertical" height="400px">
+<Splitter orientation="vertical" height="400px" className="w-[60rem]">
   <Splitter.Pane>
     <div>Left Pane content</div>
   </Splitter.Pane>
@@ -91,7 +91,7 @@ export const docs: docsData[] = [
 </Splitter>
     `,
     snippet: (
-      <Splitter orientation="vertical" height="400px">
+      <Splitter orientation="vertical" height="400px" className="w-[60rem]">
         <Splitter.Pane>
           <div className="text-foreground p-2">Left Pane content</div>
         </Splitter.Pane>
@@ -108,7 +108,7 @@ export const docs: docsData[] = [
     title: 'Custom Initial Sizes',
     desc: 'A vertical splitter with custom initial sizes',
     code: `
-<Splitter orientation="vertical" height="400px">
+<Splitter orientation="vertical" height="400px" className="w-[60rem]">
   <Splitter.Pane initialSize="30%">
     <div>Left Pane (30%)</div>
   </Splitter.Pane>
@@ -118,7 +118,7 @@ export const docs: docsData[] = [
 </Splitter>
     `,
     snippet: (
-      <Splitter orientation="vertical" height="400px">
+      <Splitter orientation="vertical" height="400px" className="w-[60rem]">
         <Splitter.Pane initialSize="30%">
           <div className="text-foreground p-2">Left Pane (30%)</div>
         </Splitter.Pane>
@@ -132,7 +132,7 @@ export const docs: docsData[] = [
     title: 'Minimum and Maximum Sizes',
     desc: 'A vertical splitter with minimum and maximum size constraints',
     code: `
-<Splitter orientation="vertical" height="400px">
+<Splitter orientation="vertical" height="400px" className="w-[60rem]">
   <Splitter.Pane minSize="20%" maxSize="80%">
     <div>Left Pane (20% - 80%)</div>
   </Splitter.Pane>
@@ -142,7 +142,7 @@ export const docs: docsData[] = [
 </Splitter>
     `,
     snippet: (
-      <Splitter orientation="vertical" height="400px">
+      <Splitter orientation="vertical" height="400px" className="w-[60rem]">
         <Splitter.Pane minSize="20%" maxSize="80%">
           <div className="text-foreground p-2">Left Pane (20% - 80%)</div>
         </Splitter.Pane>
@@ -156,7 +156,7 @@ export const docs: docsData[] = [
     title: 'Nested Splitters',
     desc: 'A vertical splitter with a nested horizontal splitter',
     code: `
-<Splitter orientation="vertical" height="400px">
+<Splitter orientation="vertical" height="400px" className="w-[60rem]">
   <Splitter.Pane>
     <div>Left Pane content</div>
   </Splitter.Pane>
@@ -173,7 +173,7 @@ export const docs: docsData[] = [
 </Splitter>
     `,
     snippet: (
-      <Splitter orientation="vertical" height="400px">
+      <Splitter orientation="vertical" height="400px" className="w-[60rem]">
         <Splitter.Pane>
           <div className="text-foreground p-2">Left Pane content</div>
         </Splitter.Pane>
@@ -194,7 +194,7 @@ export const docs: docsData[] = [
     title: 'Fixed Height Splitter',
     desc: 'A vertical splitter with a fixed height',
     code: `
-<Splitter orientation="vertical" height="300px">
+<Splitter orientation="vertical" height="300px" className="w-[60rem]">
   <Splitter.Pane>
     <div>Left Pane content</div>
   </Splitter.Pane>
@@ -204,7 +204,7 @@ export const docs: docsData[] = [
 </Splitter>
     `,
     snippet: (
-      <Splitter orientation="vertical" height="300px">
+      <Splitter orientation="vertical" height="300px" className="w-[60rem]">
         <Splitter.Pane>
           <div className="text-foreground p-2">Left Pane content</div>
         </Splitter.Pane>
@@ -218,7 +218,7 @@ export const docs: docsData[] = [
     title: 'Pixel-Based Sizes',
     desc: 'A vertical splitter with initial sizes specified in pixels',
     code: `
-<Splitter orientation="vertical" height="400px">
+<Splitter orientation="vertical" height="400px" className="w-[60rem]">
   <Splitter.Pane initialSize="200px">
     <div>Left Pane (200px)</div>
   </Splitter.Pane>
@@ -228,7 +228,7 @@ export const docs: docsData[] = [
 </Splitter>
     `,
     snippet: (
-      <Splitter orientation="vertical" height="400px">
+      <Splitter orientation="vertical" height="400px" className="w-[60rem]">
         <Splitter.Pane initialSize="200px">
           <div className="text-foreground p-2">Left Pane (200px)</div>
         </Splitter.Pane>
@@ -242,7 +242,7 @@ export const docs: docsData[] = [
     title: 'Four-Pane Horizontal Splitter',
     desc: 'A horizontal splitter with four Panes',
     code: `
-<Splitter orientation="horizontal" height="600px">
+<Splitter orientation="horizontal" height="600px" className="w-[60rem]">
   <Splitter.Pane>
     <div>First Pane</div>
   </Splitter.Pane>
@@ -258,7 +258,7 @@ export const docs: docsData[] = [
 </Splitter>
     `,
     snippet: (
-      <Splitter orientation="horizontal" height="600px">
+      <Splitter orientation="horizontal" height="600px" className="w-[60rem]">
         <Splitter.Pane>
           <div className="text-foreground p-2">First Pane</div>
         </Splitter.Pane>
@@ -278,7 +278,7 @@ export const docs: docsData[] = [
     title: 'Uneven Three-Pane Splitter',
     desc: 'A vertical splitter with three Panes and custom initial sizes',
     code: `
-<Splitter orientation="vertical" height="400px">
+<Splitter orientation="vertical" height="400px" className="w-[60rem]">
   <Splitter.Pane initialSize="20%">
     <div>Left Pane (20%)</div>
   </Splitter.Pane>
@@ -291,7 +291,7 @@ export const docs: docsData[] = [
 </Splitter>
     `,
     snippet: (
-      <Splitter orientation="vertical" height="400px">
+      <Splitter orientation="vertical" height="400px" className="w-[60rem]">
         <Splitter.Pane initialSize="20%">
           <div className="text-foreground p-2">Left Pane (20%)</div>
         </Splitter.Pane>
@@ -308,7 +308,7 @@ export const docs: docsData[] = [
     title: 'Combination of Percentage and Pixel Sizes',
     desc: 'A vertical splitter with mixed initial size units',
     code: `
-<Splitter orientation="vertical" height="400px">
+<Splitter orientation="vertical" height="400px" className="w-[60rem]">
   <Splitter.Pane initialSize="25%">
     <div>Left Pane (25%)</div>
   </Splitter.Pane>
@@ -321,7 +321,7 @@ export const docs: docsData[] = [
 </Splitter>
     `,
     snippet: (
-      <Splitter orientation="vertical" height="400px">
+      <Splitter orientation="vertical" height="400px" className="w-[60rem]">
         <Splitter.Pane initialSize="25%">
           <div className="text-foreground p-2">Left Pane (25%)</div>
         </Splitter.Pane>
@@ -338,7 +338,7 @@ export const docs: docsData[] = [
     title: 'Complex Nested Splitters',
     desc: 'A complex layout with nested vertical and horizontal splitters',
     code: `
-<Splitter orientation="vertical" height="400px">
+<Splitter orientation="vertical" height="400px" className="w-[60rem]">
   <Splitter.Pane initialSize="30%">
     <div>Left Pane</div>
   </Splitter.Pane>
@@ -362,7 +362,7 @@ export const docs: docsData[] = [
 </Splitter>
     `,
     snippet: (
-      <Splitter orientation="vertical" height="400px">
+      <Splitter orientation="vertical" height="400px" className="w-[60rem]">
         <Splitter.Pane initialSize="30%">
           <div className="text-foreground p-2">Left Pane</div>
         </Splitter.Pane>
