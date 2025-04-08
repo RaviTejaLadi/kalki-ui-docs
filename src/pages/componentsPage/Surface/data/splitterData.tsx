@@ -1,4 +1,4 @@
-import Splitter from '@/components/common/Splitter/Splitter';
+import Splitter from '@/components/common/Splitter';
 import { docsData } from '@/types/docsData';
 
 export const columns = ['Name', 'Type', 'Default', 'Description'];
