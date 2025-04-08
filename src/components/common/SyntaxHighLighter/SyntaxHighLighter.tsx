@@ -30,12 +30,12 @@ export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
 
   const { addToast } = useToast();
 
-  const showToast = () => {
+  const showToast = useCallback(() => {
     addToast({
       message: 'copied to clipboard',
       variant: 'default',
     });
-  };
+  }, [addToast]);
 
   const languageMap = {
     typescript: [javascript({ typescript: true })],
@@ -72,7 +72,7 @@ export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
       console.error('Failed to copy code:', err);
       setIsCopied(false);
     }
-  }, [code]);
+  }, [code, showToast]);
 
   return (
     <div
