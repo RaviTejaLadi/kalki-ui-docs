@@ -1,5 +1,6 @@
 import { VariantProps } from 'class-variance-authority';
 import { imageVariants } from './imageVariants';
+import React from 'react';
 
 type LoadingStrategy = 'lazy' | 'eager';
 type ObjectFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
@@ -16,6 +17,7 @@ interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement>, VariantP
   onLoad?: () => void;
   onError?: () => void;
   className?: string;
+  imgClassName?: string;
   variant?: 'default' | 'rounded' | 'circle';
   sizes?: string;
   placeholder?: 'blur' | 'empty';

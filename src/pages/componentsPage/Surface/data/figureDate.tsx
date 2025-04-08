@@ -15,7 +15,7 @@ export const docs: docsData[] = [
       `,
     snippet: (
       <Figure width="600px">
-        <Figure.Image src={pic} alt="Example" />
+        <Figure.Image src={pic} alt="Example"  className="rounded-md" />
         <Figure.Caption>This is a sample image</Figure.Caption>
       </Figure>
     ),

@@ -20,6 +20,7 @@ const Image: React.FC<ImageProps> = ({
   sizes,
   placeholder = 'empty',
   blurDataURL,
+  imgClassName,
   ...rest
 }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -78,7 +79,7 @@ const Image: React.FC<ImageProps> = ({
         className={cn(
           imageVariants({ variant, objectFit }),
           isLoading ? 'opacity-0' : 'opacity-100',
-          error && 'hidden'
+          error && 'hidden',imgClassName
         )}
         {...rest}
       />

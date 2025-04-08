@@ -24,7 +24,7 @@ export const FigureImage = forwardRef<HTMLImageElement, FigureImageProps>(
         <Image
           src={src}
           alt={alt}
-          className={cn('w-full h-full object-cover rounded-md', className)}
+          imgClassName={cn('w-full h-full object-cover rounded-md', className)}
           style={style}
           {...rest}
         />
