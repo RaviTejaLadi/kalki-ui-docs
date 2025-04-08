@@ -1,5 +1,5 @@
-import { CSSProperties, ReactNode } from 'react';
-import { ImageProps } from '../Image/types';
+import React, { CSSProperties, ReactNode } from 'react';
+import { ImageProps } from '../Image';
 
 /**
  * Props for the Figure component.

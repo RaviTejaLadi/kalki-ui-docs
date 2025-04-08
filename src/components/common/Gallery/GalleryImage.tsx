@@ -1,7 +1,6 @@
 import { forwardRef } from 'react';
-import Image from '../Image';
+import Image, { ImageProps } from '../Image';
 import { cn } from '@/utils';
-import { ImageProps } from '../Image/types';
 
 /**
  * `GalleryImage` is a React component that renders an image within a div container.
