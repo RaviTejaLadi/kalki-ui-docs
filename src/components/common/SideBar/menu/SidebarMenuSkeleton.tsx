@@ -1,4 +1,5 @@
-import { Skeleton } from '../../Skeleton/Skeleton';
+import React from 'react';
+import { Skeleton } from '../../Skeleton';
 
 export const SidebarMenuSkeleton: React.FC = () => {
   return (
