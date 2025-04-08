@@ -110,8 +110,8 @@ export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
               theme={andromedaInit({
                 settings: {
                   background: 'transparent',
-                  fontFamily:
-                    'Fira Code VF, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace',
+                  fontSize: '14px',
+                  fontFamily: 'IBM Plex Mono, monospace',
                   selection: theme === 'light' ? 'rgba(66, 153, 225, 0.2)' : 'rgba(66, 153, 225, 0.3)',
                   caret: 'text-muted-foreground',
                   gutterBackground: 'transparent',
@@ -127,7 +127,7 @@ export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
                 highlightActiveLine: false,
                 tabSize: 2,
               }}
-              className="text-sm font-medium leading-6"
+              className="text-sm font-bold"
               {...rest}
             />
           )}
