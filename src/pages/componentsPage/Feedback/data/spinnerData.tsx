@@ -1,4 +1,4 @@
-import Spinner from '@/components/common/Spinner/Spinner';
+import Spinner from '@/components/common/Spinner';
 import { docsData } from '@/types/docsData';
 
 export const columns = ['Name', 'Type', 'Default', 'Description'];

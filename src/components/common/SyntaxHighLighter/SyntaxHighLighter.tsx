@@ -8,7 +8,7 @@ import { css } from '@codemirror/lang-css';
 import { useTheme } from '@/context/ThemeContext';
 import { cn } from '@/utils';
 import Button from '../Button';
-import Spinner from '../Spinner/Spinner';
+import Spinner from '../Spinner';
 import { useToast } from 'kalki-ui-toast';
 
 interface SyntaxHighlighterProps {
