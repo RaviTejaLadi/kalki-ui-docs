@@ -1,8 +1,68 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { cn } from '@/utils';
-import { imageVariants } from './imageVariants';
-import { BlurPlaceholder } from './BlurPlaceholder';
-import { ImageProps } from './types';
+import { cva, VariantProps } from 'class-variance-authority';
+
+// #region imageVariants
+const imageVariants = cva('transition-opacity duration-300 ease-in-out', {
+  variants: {
+    variant: {
+      default: 'rounded-none',
+      rounded: 'rounded-lg',
+      circle: 'rounded-full',
+    },
+    objectFit: {
+      contain: 'object-contain',
+      cover: 'object-cover',
+      fill: 'object-fill',
+      none: 'object-none',
+      'scale-down': 'object-scale-down',
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+    objectFit: 'cover',
+  },
+});
+// #endRegion
+
+// #region types
+type LoadingStrategy = 'lazy' | 'eager';
+type ObjectFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
+
+interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement>, VariantProps<typeof imageVariants> {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  quality?: number;
+  priority?: boolean;
+  loading?: LoadingStrategy;
+  objectFit?: ObjectFit;
+  onLoad?: () => void;
+  onError?: () => void;
+  className?: string;
+  imgClassName?: string;
+  variant?: 'default' | 'rounded' | 'circle';
+  sizes?: string;
+  placeholder?: 'blur' | 'empty';
+  blurDataURL?: string;
+}
+// #endregion
+
+// #region Image
+const BlurPlaceholder: React.FC<{
+  dataURL: string;
+  className?: string;
+}> = ({ dataURL, className }) => (
+  <div
+    className={cn('absolute inset-0 filter blur-lg scale-110 transform', className)}
+    style={{
+      backgroundImage: `url(${dataURL})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}
+  />
+);
 
 const Image: React.FC<ImageProps> = ({
   src,
@@ -79,7 +139,8 @@ const Image: React.FC<ImageProps> = ({
         className={cn(
           imageVariants({ variant, objectFit }),
           isLoading ? 'opacity-0' : 'opacity-100',
-          error && 'hidden',imgClassName
+          error && 'hidden',
+          imgClassName
         )}
         {...rest}
       />
@@ -92,5 +153,10 @@ const Image: React.FC<ImageProps> = ({
     </div>
   );
 };
+// #endRegion
 
+// #region export
 export default Image;
+export { imageVariants };
+export type { ImageProps, ObjectFit, LoadingStrategy };
+// #endRegion
