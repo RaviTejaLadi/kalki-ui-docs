@@ -37,7 +37,11 @@ const HeroSectionThree = () => {
             </Button>
 
             <Button variant="outline" className="w-5/6 md:w-1/4 font-bold ">
-              <Link to="https://github.com/nobruf/shadcn-landing-page.git" className="text-sm text-white hover:text-white" target="_blank">
+              <Link
+                to="https://github.com/nobruf/shadcn-landing-page.git"
+                className="text-sm text-white hover:text-white"
+                target="_blank"
+              >
                 Github respository
               </Link>
             </Button>

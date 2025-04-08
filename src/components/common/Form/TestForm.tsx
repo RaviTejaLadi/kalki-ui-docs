@@ -297,9 +297,9 @@ FormSwitch.displayName = 'FormSwitch';
 // Form Button
 
 export const FormButton = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'primary', size = 'md',children, ...props }, ref) => {
+  ({ className, variant = 'primary', size = 'md', children, ...props }, ref) => {
     return (
-      <Button ref={ref}  variant={variant} size={size} className={className} {...props}>
+      <Button ref={ref} variant={variant} size={size} className={className} {...props}>
         {children}
       </Button>
     );

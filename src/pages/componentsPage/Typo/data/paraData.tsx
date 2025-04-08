@@ -57,9 +57,7 @@ export const docs: docsData[] = [
     `,
     snippet: (
       <Box padding="10px">
-        <Paragraph  className="text-red-900 font-semibold">
-          Custom Styled Paragraph
-        </Paragraph>
+        <Paragraph className="text-red-900 font-semibold">Custom Styled Paragraph</Paragraph>
       </Box>
     ),
   },
