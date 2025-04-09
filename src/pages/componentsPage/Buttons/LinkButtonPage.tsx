@@ -2,7 +2,7 @@ import { SectionHeader } from '@/components/common/SectionHeader';
 import Separator from '@/components/common/Separator';
 import TableList from '@/components/common/Table/TableList';
 import React from 'react';
-import { docs, columns, rows,componentHierarchyCode } from './data/linkButtonDocs';
+import { docs, columns, rows, componentHierarchyCode } from './data/linkButtonDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import Div from '@/components/common/Div';
 import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';

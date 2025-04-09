@@ -36,3 +36,12 @@ export const rows = [
   ['curvedBorder', 'bool', 'null', 'for curved borders'],
   ['circle', 'bool', 'null', 'for circular avatar'],
 ];
+
+export const componentHierarchyCode = `
+  <Avatar>
+    <Avatar.Image  />
+    <Avatar.Fallback>
+    
+    </Avatar.Fallback>
+  </Avatar>
+`;

@@ -1,7 +1,7 @@
 import { SectionHeader } from '@/components/common/SectionHeader';
 import Separator from '@/components/common/Separator';
 import TableList from '@/components/common/Table/TableList';
-import { docs, columns, rows,componentHierarchyCode } from './data/linkBarDocs';
+import { docs, columns, rows, componentHierarchyCode } from './data/linkBarDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import Div from '@/components/common/Div';
 import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
