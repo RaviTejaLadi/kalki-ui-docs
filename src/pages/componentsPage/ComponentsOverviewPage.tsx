@@ -1,4 +1,4 @@
-import { SectionHeader } from '@/components/common/SectionHeader/SectionHeader';
+import { SectionHeader } from '@/components/common/SectionHeader';
 import React from 'react';
 import Link from '@/components/common/Link';
 import Separator from '@/components/common/Separator';

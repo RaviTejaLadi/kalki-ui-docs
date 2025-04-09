@@ -1,4 +1,4 @@
-import { SectionHeader } from '@/components/common/SectionHeader/SectionHeader';
+import { SectionHeader } from '@/components/common/SectionHeader';
 import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
 import { docsData } from '@/types/docsData';
 import { cn } from '@/utils';

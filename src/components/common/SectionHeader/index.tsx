@@ -3,25 +3,7 @@ import React, { createContext, useContext } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils';
 
-type Size = 'sm' | 'md' | 'lg';
-
-// Context for sharing size prop
-type SectionHeaderContextType = {
-  size: Size;
-};
-
-const SectionHeaderContext = createContext<SectionHeaderContextType>({
-  size: 'md',
-});
-
-const useSectionHeaderContext = () => {
-  const context = useContext(SectionHeaderContext);
-  if (!context) {
-    throw new Error('Section Header compound components cannot be rendered outside the Section Header component');
-  }
-  return context;
-};
-
+// #region sectionHeaderVariants
 const sectionHeaderVariants = cva('w-full flex', {
   variants: {
     variant: {
@@ -46,6 +28,15 @@ const sectionHeaderVariants = cva('w-full flex', {
     align: 'left',
   },
 });
+// #endregion sectionHeaderVariants
+
+// #region types
+type Size = 'sm' | 'md' | 'lg';
+
+// Context for sharing size prop
+type SectionHeaderContextType = {
+  size: Size;
+};
 
 const titleVariants: Record<Size, string> = {
   sm: 'text-lg font-semibold tracking-tight dark:text-white',
@@ -59,7 +50,6 @@ const subtitleVariants: Record<Size, string> = {
   lg: 'text-md text-muted-foreground dark:text-gray-400',
 };
 
-// Props interfaces
 interface SectionHeaderRootProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'size'> {
   variant?: VariantProps<typeof sectionHeaderVariants>['variant'];
   size?: Size;
@@ -70,7 +60,23 @@ interface SectionHeaderRootProps extends Omit<React.HTMLAttributes<HTMLDivElemen
 type SectionHeaderTitleProps = Omit<React.HTMLAttributes<HTMLHeadingElement>, 'size'>;
 
 type SectionHeaderSubTitleProps = Omit<React.HTMLAttributes<HTMLParagraphElement>, 'size'>;
+// #endregion types
 
+// #region Create context for SectionHeader
+const SectionHeaderContext = createContext<SectionHeaderContextType>({
+  size: 'md',
+});
+
+const useSectionHeaderContext = () => {
+  const context = useContext(SectionHeaderContext);
+  if (!context) {
+    throw new Error('Section Header compound components cannot be rendered outside the Section Header component');
+  }
+  return context;
+};
+// #endregion Create context for SectionHeader
+
+// #region SectionHeader components
 const SectionHeader = React.forwardRef<HTMLDivElement, SectionHeaderRootProps>(
   ({ className, variant, size = 'md', align, children, ...props }, ref) => {
     return (
@@ -107,11 +113,16 @@ const SectionHeaderSubTitle = React.forwardRef<HTMLParagraphElement, SectionHead
   }
 );
 SectionHeaderSubTitle.displayName = 'SectionHeaderSubTitle';
+// #endregion SectionHeader components
 
-const SectionHeaderRoot = Object.assign(SectionHeader, {
-  Title: SectionHeaderTitle,
-  SubTitle: SectionHeaderSubTitle,
-});
+// #region Export components and types
+const SectionHeaderRoot = Object.assign(
+  SectionHeader as React.ForwardRefExoticComponent<SectionHeaderRootProps & React.RefAttributes<HTMLDivElement>>,
+  {
+    Title: SectionHeaderTitle,
+    SubTitle: SectionHeaderSubTitle,
+  }
+);
 
 export {
   SectionHeaderRoot as SectionHeader,
@@ -119,3 +130,4 @@ export {
   type SectionHeaderTitleProps,
   type SectionHeaderSubTitleProps,
 };
+// #endregion Export components and types

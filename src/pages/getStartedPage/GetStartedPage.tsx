@@ -1,4 +1,4 @@
-import { SectionHeader } from '@/components/common/SectionHeader/SectionHeader';
+import { SectionHeader } from '@/components/common/SectionHeader';
 import { Stepper } from '@/components/common/Stepper/Stepper';
 import { Tab, Tabs } from '@/components/common/Tabs';
 import { usage } from './tabsData';
