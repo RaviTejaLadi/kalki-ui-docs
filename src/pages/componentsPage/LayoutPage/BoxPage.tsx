@@ -19,7 +19,8 @@ const BoxPage = () => {
           application.
         </SectionHeader.SubTitle>
       </SectionHeader>
-      <Separator /> <DocumentationRenderer data={docs} />
+      <Separator />
+      <DocumentationRenderer data={docs} />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
       </SectionHeader>
