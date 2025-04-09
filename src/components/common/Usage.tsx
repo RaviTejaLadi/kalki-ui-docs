@@ -53,7 +53,7 @@ const Usage = () => {
           'light' as const,
           'dark' as const,
         ].map((item) => (
-          <Accordion size="sm" className="mb-4" variant={item}>
+          <Accordion size="sm" className="mb-4" variant={item} key={item}>
             <Accordion.Item>
               <Accordion.Header eventKey="1">Header 1</Accordion.Header>
               <Accordion.Body eventKey="1">
@@ -80,7 +80,7 @@ const Usage = () => {
           'success' as const,
           'light' as const,
         ].map((item) => (
-          <Alert className="mb-4 " variant={item}>
+          <Alert className="mb-4 " variant={item} key={item}>
             <Alert.Header>Header 1</Alert.Header>
             <Alert.Body>
               lore m ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
@@ -119,7 +119,7 @@ const Usage = () => {
           'dark' as const,
           'outline' as const,
         ].map((item) => (
-          <Badge variant={item} size="sm">
+          <Badge variant={item} size="sm" key={item}>
             <Badge.Icon>
               <Bug className="size-4" />
             </Badge.Icon>
@@ -142,7 +142,7 @@ const Usage = () => {
           'light' as const,
           'dark' as const,
         ].map((item) => (
-          <Banner variant={item} size="sm">
+          <Banner variant={item} size="sm" key={item}>
             <Banner.Title>{item}</Banner.Title>
             <Banner.SubTitle>Subtitle</Banner.SubTitle>
           </Banner>
@@ -172,7 +172,7 @@ const Usage = () => {
           'ghost' as const,
           'link' as const,
         ].map((item) => (
-          <Button variant={item} isPending={false} size="xs">
+          <Button variant={item} isPending={false} size="xs" key={item}>
             {item}
           </Button>
         ))}
@@ -229,7 +229,7 @@ const Usage = () => {
           'light' as const,
           'dark' as const,
         ].map((item) => (
-          <Code variant={item} size="sm">
+          <Code variant={item} size="sm" key={item}>
             {`() => console.log('Close button clicked')`}
           </Code>
         ))}
@@ -247,7 +247,7 @@ const Usage = () => {
           'light' as const,
           'dark' as const,
         ].map((item) => (
-          <ContentScrollable height="200px" width="200px" variant={item}>
+          <ContentScrollable height="200px" width="200px" variant={item} key={item}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur impedit reprehenderit laboriosam facere
             deserunt voluptate illum amet tenetur voluptatibus architecto quaerat aliquam quia excepturi eos eius modi,
             obcaecati consequatur. Numquam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur impedit
