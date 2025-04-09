@@ -1,5 +1,5 @@
 import Box from '@/components/common/Box';
-import LinkButton from '@/components/common/LinkButton/LinkButton';
+import LinkButton from '@/components/common/LinkButton';
 import Ripple from '@/components/common/Ripple/Ripple';
 import { docsData } from '@/types/docsData';
 import { Terminal } from 'lucide-react';

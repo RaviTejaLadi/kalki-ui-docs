@@ -3,7 +3,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import Link from '../Link';
 import { cn } from '@/utils';
 
-// LinkButton Variants
+// #region linkVariants
 export const linkVariants = cva(
   'inline-flex justify-center items-center font-normal text-center whitespace-nowrap align-middle select-none transition-colors duration-150 ease-in-out focus:outline-none',
   {
@@ -55,8 +55,9 @@ export const linkVariants = cva(
     },
   }
 );
+// #endregion linkVariants
 
-// Interfaces for Components
+// #region types
 interface LinkButtonProps extends VariantProps<typeof linkVariants> {
   to?: string;
   children: React.ReactNode;
@@ -75,8 +76,9 @@ interface LinkTextProps {
   style?: React.CSSProperties;
   children?: React.ReactNode;
 }
+// #endregion types
 
-// LinkButton Component
+// #region LinkButton Component
 const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(
   ({ variant, size, to = '', children, className, raised, rounded, ...rest }, ref) => {
     return (
@@ -103,8 +105,9 @@ const LinkText = forwardRef<HTMLDivElement, LinkTextProps>(({ children, classNam
   </div>
 ));
 LinkText.displayName = 'LinkText';
+// #endregion LinkButton Component
 
-// Export Components and Types
+// #region Export Components and Types
 export default Object.assign(
   LinkButton as React.ForwardRefExoticComponent<LinkButtonProps & React.RefAttributes<HTMLAnchorElement>>,
   {
@@ -115,3 +118,4 @@ export default Object.assign(
 
 export { LinkIcon, LinkText };
 export type { LinkButtonProps, LinkIconProps, LinkTextProps };
+// #endregion Export Components and Types
