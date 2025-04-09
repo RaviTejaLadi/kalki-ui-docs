@@ -15,6 +15,7 @@ import Link from '../Link';
 import Button from '../Button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
+// #region linkVariants
 const linkVariants = cva(
   'inline-flex items-center px-2 mx-1 text-sm font-medium rounded-md transition-all duration-200',
   {
@@ -29,7 +30,9 @@ const linkVariants = cva(
     },
   }
 );
+// #endregion linkVariants
 
+// #region linkBarVariants
 const linkBarVariants = cva('flex items-center justify-center transition-all', {
   variants: {
     variant: {
@@ -65,6 +68,9 @@ const linkBarVariants = cva('flex items-center justify-center transition-all', {
   },
 });
 
+// #endregion linkBarVariants
+
+// #region types
 interface LinkBarContextValue {
   activeUrl?: string;
   onUrlChange?: (url: string) => void;
@@ -106,9 +112,13 @@ interface LinkBarContentProps {
   children: ReactNode;
   className?: string;
 }
+// #endregion types
 
+// #region context
 const LinkBarContext = createContext<LinkBarContextValue>({});
+// #endregion context
 
+// #region components
 const LinkBar = forwardRef<HTMLDivElement, LinkBarProps>(
   ({ children, className, variant, size, rounded, activeUrl, onUrlChange, ...props }, ref) => {
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -207,7 +217,9 @@ const LinkBarLink = forwardRef<HTMLAnchorElement, LinkProps>(
   }
 );
 LinkBarLink.displayName = 'LinkBar.Link';
+// #endregion components
 
+// #region exports
 export default Object.assign(
   LinkBar as React.ForwardRefExoticComponent<LinkBarProps & React.RefAttributes<HTMLDivElement>>,
   {
@@ -217,4 +229,6 @@ export default Object.assign(
   }
 );
 
-export { LinkBarContent, LinkBarLink, LinkBarControl };
+export { LinkBarContent, LinkBarLink, LinkBarControl, linkBarVariants, linkVariants };
+export type { LinkBarProps, LinkProps, ControlsProps };
+// #endregion exports

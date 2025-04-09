@@ -1,4 +1,4 @@
-import LinkBar from '@/components/common/LinkBar/LinkBar';
+import LinkBar from '@/components/common/LinkBar';
 import { useState } from 'react';
 
 const LinkBarWithManyLinks = () => {
