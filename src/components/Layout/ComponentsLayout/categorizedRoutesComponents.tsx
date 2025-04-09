@@ -20,7 +20,7 @@ import {
   BarChart,
   AlertTriangle,
   LayoutPanelTop,
-  AlignCenter,
+  // AlignCenter,
   Loader2,
   Layers,
   ScrollText,
@@ -157,13 +157,13 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         path: '/components/model',
         Icon: LayoutPanelTop,
       },
-      {
-        label: 'Popover',
-        description:
-          'Dynamically positioned floating containers that provide contextual information, tooltips, or additional details adjacent to trigger elements with responsive positioning.',
-        path: '/components/popover',
-        Icon: AlignCenter,
-      },
+      // {
+      //   label: 'Popover',
+      //   description:
+      //     'Dynamically positioned floating containers that provide contextual information, tooltips, or additional details adjacent to trigger elements with responsive positioning.',
+      //   path: '/components/popover',
+      //   Icon: AlignCenter,
+      // },
       {
         label: 'Spinner',
         description:
