@@ -213,3 +213,15 @@ export const rows = [
   ['width', 'string', '100%', 'Width of the LinkBar container.'],
   ['height', 'string', '40px', 'Height of the LinkBar container.'],
 ];
+
+export const componentHierarchyCode = `
+  <LinkBar>
+    <LinkBar.Control position="left" />
+    <LinkBar.Content>
+         <LinkBar.Link>
+           
+        </LinkBar.Link>
+    </LinkBar.Content>
+    <LinkBar.Control position="right" />
+  </LinkBar>
+`;

@@ -83,3 +83,7 @@ export const rows = [
   ['className', 'string', "''", 'Additional CSS class names to be added to the button.'],
   ['style', 'object', '{}', 'Additional inline styles to be applied to the button.'],
 ];
+
+export const componentHierarchyCode = `
+  <CloseButton />
+`;

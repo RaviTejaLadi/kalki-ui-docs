@@ -236,3 +236,14 @@ export const rows = [
   ['style', 'object', '{}', 'to provide custom styles to LinkButton component.'],
   ['rounded', 'bool', 'false', 'Add a circular border radius to the LinkButton.'],
 ];
+
+export const componentHierarchyCode = `
+  <LinkButton >
+    <LinkButton.Icon>
+
+    </LinkButton.Icon>
+    <LinkButton.Text>
+
+    </LinkButton.Text>
+  </LinkButton>
+`;

@@ -28,7 +28,7 @@ const ButtonPage: React.FC = () => {
       </SectionHeader>
       <TableList columns={columns} rows={rows} code CodeColumn={0} />
       <SectionHeader variant="transparent" size="sm" className="mt-4">
-        <SectionHeader.Title className="tracking-wide">Component Hiraricy</SectionHeader.Title>
+        <SectionHeader.Title className="tracking-wide">Component Hierarchy</SectionHeader.Title>
       </SectionHeader>
       <Div borderStyle="solid">
         <SyntaxHighlighter code={componentHierarchyCode} language="html" />

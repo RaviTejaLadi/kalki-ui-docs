@@ -2,8 +2,10 @@ import { SectionHeader } from '@/components/common/SectionHeader';
 import Separator from '@/components/common/Separator';
 import TableList from '@/components/common/Table/TableList';
 import React from 'react';
-import { docs, columns, rows } from './data/linkButtonDocs';
+import { docs, columns, rows,componentHierarchyCode } from './data/linkButtonDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
+import Div from '@/components/common/Div';
+import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
 
 const LinkButtonPage: React.FC = () => {
   return (
@@ -22,9 +24,12 @@ const LinkButtonPage: React.FC = () => {
         <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
       </SectionHeader>
       <TableList columns={columns} rows={rows} code CodeColumn={0} />
-      <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Component Hiraricy</SectionHeader.Title>
+      <SectionHeader variant="transparent" size="sm" className="mt-4">
+        <SectionHeader.Title className="tracking-wide">Component Hierarchy</SectionHeader.Title>
       </SectionHeader>
+      <Div borderStyle="solid">
+        <SyntaxHighlighter code={componentHierarchyCode} language="html" />
+      </Div>
     </div>
   );
 };

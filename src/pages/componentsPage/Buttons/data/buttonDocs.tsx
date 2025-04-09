@@ -289,8 +289,10 @@ export const rows = [
 export const componentHierarchyCode = `
   <Button>
     <Button.Text>
+
     </Button.Text>
     <Button.Icon>
+    
     </Button.Icon>
   </Button>
 `;
