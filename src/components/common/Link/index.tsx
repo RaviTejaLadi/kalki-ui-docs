@@ -1,7 +1,29 @@
 import { forwardRef, AnchorHTMLAttributes, HTMLAttributeReferrerPolicy, MouseEventHandler, ReactNode } from 'react';
 import { cn } from '@/utils';
-import { linkVariants } from './linkVariants';
+import { cva } from 'class-variance-authority';
 
+// #region linkVariants
+const linkVariants = cva('no-underline transition-colors duration-300', {
+  variants: {
+    variant: {
+      default: 'text-blue-500 hover:text-blue-700',
+      subtle: 'text-gray-500 hover:text-gray-700',
+    },
+    size: {
+      sm: 'text-sm',
+      md: 'text-base',
+      lg: 'text-lg',
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+    size: 'md',
+  },
+});
+
+// #endregion linkVariants
+
+// #region LinkProps
 interface LinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'target'> {
   to: string;
   children: ReactNode;
@@ -15,7 +37,9 @@ interface LinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'targe
   referrerPolicy?: HTMLAttributeReferrerPolicy;
   type?: string;
 }
+// #endregion LinkProps
 
+// #region Link
 const Link = forwardRef<HTMLAnchorElement, LinkProps>(
   ({ to, children, target, rel, className, onClick, download, hrefLang, ping, referrerPolicy, type, ...rest }, ref) => {
     const isExternal = /^(https?:\/\/|mailto:|tel:)/.test(to);
@@ -54,5 +78,8 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>(
 );
 
 Link.displayName = 'Link';
+// #endregion Link
+// #region Export
 export default Link;
-export type { LinkProps };
+export { type LinkProps, linkVariants };
+// #endregion Export

@@ -1,5 +1,5 @@
 import { forwardRef, MouseEvent, useContext } from 'react';
-import Link from '../Link/Link';
+import Link from '../Link';
 import { LinkProps } from './interface';
 import { LinkBarContext } from './context';
 import { linkVariants } from './linkVariants';

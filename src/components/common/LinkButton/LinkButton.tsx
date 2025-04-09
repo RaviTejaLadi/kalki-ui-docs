@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
-import Link from '../Link/Link';
+import Link from '../Link';
 import { cn } from '@/utils';
 
 // LinkButton Variants

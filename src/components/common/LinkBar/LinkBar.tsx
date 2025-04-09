@@ -11,7 +11,7 @@ import React, {
 } from 'react';
 import { cn } from '@/utils';
 import { cva, VariantProps } from 'class-variance-authority';
-import Link from '../Link/Link';
+import Link from '../Link';
 import Button from '../Button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
