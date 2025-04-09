@@ -12,8 +12,8 @@ import Sidebar, {
 } from '@/components/common/SideBar';
 import { MessageSquare } from 'lucide-react';
 import { categorizedRoutesComponents } from './categorizedRoutesComponents';
-import Link from '@/components/common/Link';
 import { cn } from '@/utils';
+import Link from '@/components/common/Link';
 
 export const AppSideBar = ({ className }: { className?: string }) => {
   const location = useLocation();

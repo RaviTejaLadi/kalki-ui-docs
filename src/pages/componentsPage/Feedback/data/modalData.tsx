@@ -32,9 +32,10 @@ const BasicModalExample = () => {
 }
       `,
     snippet: <BasicModalExample />,
-  },  {
-    title: "Different Sizes Modal",
-    desc: "",
+  },
+  {
+    title: 'Different Sizes Modal',
+    desc: '',
     code: `
 import React, { useState } from "react";
 import { Modal, Button, Box } from "react-ui-essentials";

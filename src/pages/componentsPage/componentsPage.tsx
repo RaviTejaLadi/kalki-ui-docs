@@ -30,7 +30,7 @@ import { TextHighlighterPage, TypographyPage, HeadingPage, ParagraphPage } from 
 import { FullScreenTogglePage, RipplePage } from './Utilities';
 import React from 'react';
 import ComponentsLayout from '@/components/Layout/ComponentsLayout/ComponentsLayout';
-
+import { BoxPage, StackPage } from './LayoutPage';
 interface RouteConfig {
   path: string;
   Component: React.ComponentType;
@@ -96,6 +96,10 @@ const ROUTES: RouteConfig[] = [
   // Utilities
   { path: 'full-screen-toggle', Component: FullScreenTogglePage },
   { path: 'ripple', Component: RipplePage },
+
+  // Layout
+  { path: 'box', Component: BoxPage },
+  { path: 'stack', Component: StackPage },
 ];
 
 const Components = () => {
