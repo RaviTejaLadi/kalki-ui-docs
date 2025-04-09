@@ -1,5 +1,6 @@
 import { docsData } from '@/types/docsData';
 import { BasicModalExample } from '../examples/BasicModalExample';
+import DifferentSizes from '../examples/DifferentSizes';
 
 export const docs: docsData[] = [
   {
@@ -31,6 +32,45 @@ const BasicModalExample = () => {
 }
       `,
     snippet: <BasicModalExample />,
+  },  {
+    title: "Different Sizes Modal",
+    desc: "",
+    code: `
+import React, { useState } from "react";
+import { Modal, Button, Box } from "react-ui-essentials";
+
+const DifferentSizes = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [size, setSize] = useState("sm");
+
+  const handleModal = (size, opt) => {
+    setSize(size);
+    setIsOpen(opt);
+  };
+
+  return (
+    <Box>
+      <Box>
+        {["sm", "md", "lg", "xl", "xxl", "fullscreen"].map((size) => (
+          <Button key={size} onClick={() => handleModal(size, true)}>
+            {size}
+          </Button>
+        ))}
+      </Box>
+      <Button onClick={() => setIsOpen(true)}>Open Large Modal</Button>
+      <Modal openModal={isOpen} size={size}>
+        <Modal.Header closeButton onClose={() => setIsOpen(false)}>
+          <Modal.Title>Large Modal</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>This is a large-sized modal.</p>
+        </Modal.Body>
+      </Modal>
+    </Box>
+  );
+};
+      `,
+    snippet: <DifferentSizes />,
   },
 ];
 
