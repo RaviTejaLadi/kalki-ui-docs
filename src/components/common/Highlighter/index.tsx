@@ -1,8 +1,125 @@
 import { cn } from '@/utils';
 import React, { forwardRef, useMemo } from 'react';
-import { highlightedTextVariants } from './highlightedTextVariants';
-import { defaultColors, HighlighterProps } from './types';
+import { cva, VariantProps } from 'class-variance-authority';
 
+// #region highlightedTextVariants
+const highlightedTextVariants = cva(
+  [
+    'inline-flex items-center justify-center',
+    'transition-all duration-200 ease-in-out',
+    'hover:opacity-90 cursor-pointer',
+    'whitespace-normal align-baseline',
+  ],
+  {
+    variants: {
+      variant: {
+        solid: ['border-transparent text-white', 'rounded px-2 py-0'],
+        outlined: ['bg-transparent border-2', 'rounded px-2 py-0.5'],
+        underline: ['border-b-2 border-t-0 border-x-0', 'rounded-none px-2 py-0.5'],
+        pill: ['rounded-full px-3 py-0.5', 'border-transparent text-white'],
+        gradient: [
+          'border-transparent text-white',
+          'rounded px-2 py-0.5',
+          'bg-gradient-to-r from-current to-current/80',
+        ],
+        glass: ['backdrop-blur-sm bg-opacity-20', 'rounded px-2 py-0', 'border border-white/20', 'shadow-sm'],
+        shadow: ['border-transparent text-white', 'rounded px-2 py-0.5', 'shadow-md hover:shadow-lg'],
+        floating: ['border-transparent text-white', 'rounded px-2 py-0.5', 'shadow-md hover:-translate-y-0.5'],
+        minimal: ['border-b border-t-0 border-x-0', 'px-0.5', 'hover:border-b-2'],
+        tag: [
+          'border-transparent text-white',
+          'rounded px-2 py-0.5',
+          "before:content-['#'] before:opacity-50 before:mr-0.5",
+        ],
+      },
+      emphasis: {
+        normal: 'font-normal',
+        medium: 'font-medium',
+        semibold: 'font-semibold',
+        bold: 'font-bold',
+      },
+      sizing: {
+        inherit: '',
+        compact: 'mx-0.5 leading-none',
+        comfortable: 'mx-1 leading-normal',
+        relaxed: 'mx-1.5 my-1 leading-relaxed',
+      },
+    },
+    defaultVariants: {
+      variant: 'solid',
+      emphasis: 'medium',
+      sizing: 'inherit',
+    },
+  }
+);
+// #endregion
+
+// #region defaultColors
+const defaultColors: string[] = [
+  '#D65DB1',
+  '#a99dfb',
+  '#00C9A7',
+  '#a8dadc',
+  '#a9def9',
+  '#ef476f',
+  '#FF9671',
+  '#FFC75F',
+  '#F9F871',
+  '#84a59d',
+  '#76c893',
+  '#2ec4b6',
+  '#e27396',
+  '#00a5cf',
+  '#ffff3f',
+  '#C34A36',
+  '#ffb703',
+  '#ee6c4d',
+  '#adc178',
+  '#a6e22d',
+  '#845EC2',
+];
+
+// #endregion
+
+// #region types
+/**
+ * Props for the Highlighter component.
+ *
+ * @extends React.HTMLAttributes<HTMLSpanElement>
+ * @extends VariantProps<typeof highlightedTextVariants>
+ *
+ * @property {string} children - The text content to be highlighted.
+ * @property {string[]} [highlightText] - An array of strings to be highlighted within the children text.
+ * @property {string[]} [colorsList] - An array of colors to be used for highlighting.
+ * @property {string} [className] - Additional class names to apply to the highlighter component.
+ * @property {string} [textClassName] - Additional class names to apply to the text within the highlighter component.
+ * @property {'solid' | 'outlined' | 'underline' | 'pill' | 'gradient' | 'glass' | 'shadow' | 'floating' | 'minimal' | 'tag'} [variant] - The visual style variant of the highlighter.
+ * @property {'normal' | 'medium' | 'semibold' | 'bold'} [emphasis] - The emphasis level of the highlighted text.
+ * @property {'inherit' | 'compact' | 'comfortable' | 'relaxed'} [sizing] - The sizing of the highlighter component.
+ */
+interface HighlighterProps extends React.HTMLAttributes<HTMLSpanElement>, VariantProps<typeof highlightedTextVariants> {
+  children: string;
+  highlightText?: string[];
+  colorsList?: string[];
+  className?: string;
+  textClassName?: string;
+  variant?:
+    | 'solid'
+    | 'outlined'
+    | 'underline'
+    | 'pill'
+    | 'gradient'
+    | 'glass'
+    | 'shadow'
+    | 'floating'
+    | 'minimal'
+    | 'tag';
+  emphasis?: 'normal' | 'medium' | 'semibold' | 'bold';
+  sizing?: 'inherit' | 'compact' | 'comfortable' | 'relaxed';
+}
+// #endregion
+
+// #region Highlighter component
 /**
  * Highlighter component that highlights specified text within its children.
  *
@@ -109,5 +226,9 @@ const Highlighter = forwardRef<HTMLSpanElement, HighlighterProps>(
 );
 
 Highlighter.displayName = 'Highlighter';
+// #endregion
 
+// #region export
 export default Highlighter;
+export { type HighlighterProps, defaultColors, highlightedTextVariants };
+// #endregion
