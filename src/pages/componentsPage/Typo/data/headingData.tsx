@@ -7,7 +7,7 @@ export const docs: docsData[] = [
     title: 'Basic Usage',
     desc: "Demonstrates the Heading component's versatility in creating different levels of headings from h1 to h6. Each heading size is showcased to illustrate the hierarchy and default styling applied to different heading levels.",
     code: `
-      <Box padding="10px">
+      <Box padding="10px" className="text-center">
         <Heading as="h1">H1 Heading</Heading>
         <Heading as="h2">H2 Heading</Heading>
         <Heading as="h3">H3 Heading</Heading>
@@ -17,7 +17,7 @@ export const docs: docsData[] = [
       </Box>
       `,
     snippet: (
-      <Box padding="10px">
+      <Box padding="10px" className="text-center">
         <Heading as="h1">H1 Heading</Heading>
         <Heading as="h2">H2 Heading</Heading>
         <Heading as="h3">H3 Heading</Heading>
