@@ -9,14 +9,10 @@ export const docs: docsData[] = [
     title: 'Basic LinkButton',
     desc: 'This example demonstrates the most basic usage of the LinkButton component with default properties.',
     code: `
-import React from 'react';
-import { LinkButton } from 'kalki-ui';
-  
-const App = () => (
-  <LinkButton onClick={() => alert('LinkButton clicked!')}>
-    Click me
-  </LinkButton>
-);
+      <LinkButton>
+        Click me
+        <Ripple />
+      </LinkButton>
       `,
     snippet: (
       <LinkButton>
@@ -29,19 +25,14 @@ const App = () => (
     title: 'LinkButton Variants',
     desc: 'This example shows different variants of the LinkButton component.',
     code: `
-import React from 'react';
-import { LinkButton } from 'kalki-ui';
-  
-const App = () => (
-  <>
-    <LinkButton variant="primary">Primary</LinkButton>
-    <LinkButton variant="secondary">Secondary</LinkButton>
-    <LinkButton variant="success">Success</LinkButton>
-    <LinkButton variant="danger">Danger</LinkButton>
-    <LinkButton variant="warning">Warning</LinkButton>
-    <LinkButton variant="info">Info</LinkButton>
-  </>
-);
+      <Box style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+        <LinkButton variant="primary">Primary</LinkButton>
+        <LinkButton variant="secondary">Secondary</LinkButton>
+        <LinkButton variant="success">Success</LinkButton>
+        <LinkButton variant="danger">Danger</LinkButton>
+        <LinkButton variant="warning">Warning</LinkButton>
+        <LinkButton variant="info">Info</LinkButton>
+      </Box>
       `,
     snippet: (
       <Box style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -58,16 +49,11 @@ const App = () => (
     title: 'LinkButton Sizes',
     desc: 'This example demonstrates different sizes of the LinkButton component.',
     code: `
-import React from 'react';
-import { LinkButton } from 'kalki-ui';
-  
-const App = () => (
-  <>
-    <LinkButton size="sm">Small</LinkButton>
-    <LinkButton size="md">Medium</LinkButton>
-    <LinkButton size="lg">Large</LinkButton>
-  </>
-);
+      <Box style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+        <LinkButton size="sm">Small</LinkButton>
+        <LinkButton size="md">Medium</LinkButton>
+        <LinkButton size="lg">Large</LinkButton>
+      </Box>
       `,
     snippet: (
       <Box style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -81,14 +67,9 @@ const App = () => (
     title: 'Raised LinkButton',
     desc: 'This example shows how to create a raised LinkButton with a shadow effect.',
     code: `
-import React from 'react';
-import { LinkButton } from 'kalki-ui';
-  
-const App = () => (
-  <LinkButton raised variant="primary">
-    Raised LinkButton
-  </LinkButton>
-);
+      <LinkButton raised variant="primary">
+        Raised LinkButton
+      </LinkButton>
       `,
     snippet: (
       <LinkButton raised variant="primary">
@@ -100,14 +81,9 @@ const App = () => (
     title: 'Rounded LinkButton',
     desc: 'This example demonstrates how to create a LinkButton with rounded corners.',
     code: `
-import React from 'react';
-import { LinkButton } from 'kalki-ui';
-  
-const App = () => (
-  <LinkButton rounded variant="success">
-    Rounded LinkButton
-  </LinkButton>
-);
+      <LinkButton rounded variant="success">
+        Rounded LinkButton
+      </LinkButton>
       `,
     snippet: (
       <LinkButton rounded variant="success">
@@ -119,17 +95,10 @@ const App = () => (
     title: 'LinkButton with Icon and Text',
     desc: 'This example demonstrates how to use LinkButtonIcon and LinkButtonText components together.',
     code: `
-import React from 'react';
-import { LinkButton } from 'kalki-ui';
-  
-const App = () => (
-  <LinkButton variant="primary">
-    <LinkButton.Icon>
-        💖
-    </LinkButton.Icon>
-    <LinkButton.Text>Like</LinkButton.Text>
-  </LinkButton>
-);
+      <LinkButton variant="primary">
+        <LinkButton.Icon>💖</LinkButton.Icon>
+        <LinkButton.Text>Like</LinkButton.Text>
+      </LinkButton>
       `,
     snippet: (
       <LinkButton variant="primary">
@@ -139,63 +108,27 @@ const App = () => (
     ),
   },
   {
-    title: 'Custom Styled LinkButton',
-    desc: 'This example shows how to apply custom styles to the LinkButton component.',
-    code: `
-import React from 'react';
-import { LinkButton } from 'kalki-ui';
-  
-const App = () => (
-  <LinkButton 
-    style={{ 
-      backgroundColor: '#6200ea', 
-      color: '#ffffff',
-      padding: '10px 20px',
-      fontSize: '16px',
-      fontWeight: 'bold',
-      textTransform: 'uppercase'
-    }}
-  >
-    Custom LinkButton
-  </LinkButton>
-);
-      `,
-    snippet: (
-      <LinkButton
-        style={{
-          backgroundColor: '#6200ea',
-          color: '#ffffff',
-          padding: '10px 20px',
-          fontSize: '16px',
-          fontWeight: 'bold',
-          textTransform: 'uppercase',
-        }}
-      >
-        Custom LinkButton
-      </LinkButton>
-    ),
-  },
-  {
     title: 'LinkButton with only Icon',
     desc: '',
     code: `
-import React, { useState } from 'react';
-import { LinkButton,Box } from 'kalki-ui';
-  
-const App = () => {
-  
-  return (
-    <Box style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
-      {["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"].map((item) => (
-        <LinkButton size="sm" variant={item}>
-          <LinkButton.Icon>
-            <RoundedIcons.Terminal width="20px" height="20px" />
-          </LinkButton.Icon>
-        </LinkButton>
-      ))}
-    </Box>
-  );
-};
+      <Box style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+        {[
+          'primary' as const,
+          'secondary' as const,
+          'success' as const,
+          'danger' as const,
+          'warning' as const,
+          'info' as const,
+          'light' as const,
+          'dark' as const,
+        ].map((item) => (
+          <LinkButton key={item} size="sm" variant={item}>
+            <LinkButton.Icon>
+              <Terminal width="20px" height="20px" />
+            </LinkButton.Icon>
+          </LinkButton>
+        ))}
+      </Box>
       `,
     snippet: (
       <Box style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
