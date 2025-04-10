@@ -1,66 +1,39 @@
-import Box from '@/components/common/Box';
-import Button from '@/components/common/Button';
 import ContentScrollable from '@/components/common/ContentScrollable';
 import { docsData } from '@/types/docsData';
-import { useState } from 'react';
-
-function DynamicContentScrollable() {
-  const [items, setItems] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
-
-  const addItem = () => {
-    setItems((prevItems) => [...prevItems, prevItems.length + 1]);
-  };
-
-  return (
-    <div>
-      <Button onClick={addItem}>Add Item</Button>
-      <ContentScrollable variant="success" height="300px" width="700px">
-        {items.map((item) => (
-          <Box key={item} width="90%" outlined padding="10px" margin="10px">
-            Item {item}
-          </Box>
-        ))}
-      </ContentScrollable>
-    </div>
-  );
-}
-
-const variants = [
-  'primary' as const,
-  'secondary' as const,
-  'success' as const,
-  'danger' as const,
-  'warning' as const,
-  'info' as const,
-  'light' as const,
-  'dark' as const,
-];
-
-const para =
-  "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.";
 
 export const docs: docsData[] = [
   {
     title: 'Basic Usage',
     desc: 'This example demonstrates the most basic usage of the ContentScrollable component. It creates a scrollable container with a fixed height.',
     code: `
-import { ContentScrollable } from "kalki-ui";
-
-function BasicContentScrollable() {
-  return (
-    <ContentScrollable height="200px">
-      <p>This is some content that will be scrollable.</p>
-      <p>If the content exceeds the height of 200px, a scrollbar will appear.</p>
-      {/* Add more content here to see the scrolling effect */}
-    </ContentScrollable>
-  );
-}
+      <ContentScrollable variant="info" height="200px">
+        <p>This is some content that will be scrollable.</p>
+        <p>If the content exceeds the height of 200px, a scrollbar will appear.</p>
+        <p>
+          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+          some form, by injected humour, or randomised words which don't look even slightly believable. If you are going
+          to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of
+          text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making
+          this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a
+          handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem
+          Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+        </p>
+      </ContentScrollable>
       `,
     snippet: (
       <ContentScrollable variant="info" height="200px">
         <p>This is some content that will be scrollable.</p>
         <p>If the content exceeds the height of 200px, a scrollbar will appear.</p>
-        <p>{para}</p>
+        <p>
+          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+          some form, by injected humour, or randomised words which don&apos;t look even slightly believable. If you are
+          going to use a passage of Lorem Ipsum, you need to be sure there isn&apos;t anything embarrassing hidden in
+          the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as
+          necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words,
+          combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The
+          generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words
+          etc.
+        </p>
       </ContentScrollable>
     ),
   },
@@ -68,24 +41,36 @@ function BasicContentScrollable() {
     title: 'Custom Width and Height',
     desc: 'This example shows how to set both custom width and height for the scrollable container.',
     code: `
-import { ContentScrollable } from "kalki-ui";
-
-function CustomSizeContentScrollable() {
-  return (
-    <ContentScrollable height="300px" width="50%">
-      <h2>Custom Size Scrollable Content</h2>
-      <p>This container has a height of 300px and a width of 50% of its parent.</p>
-      {/* Add more content here */}
-    </ContentScrollable>
-  );
-}
+      <ContentScrollable height="300px" width="50%">
+        <h2>Custom Size Scrollable Content</h2>
+        <p>This container has a height of 300px and a width of 50% of its parent.</p>
+        {/* Imagine more content here */}
+        <p>
+          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+          some form, by injected humour, or randomised words which don't look even slightly believable. If you are going
+          to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of
+          text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making
+          this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a
+          handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem
+          Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+        </p>
+      </ContentScrollable>
       `,
     snippet: (
       <ContentScrollable height="300px" width="50%">
         <h2>Custom Size Scrollable Content</h2>
         <p>This container has a height of 300px and a width of 50% of its parent.</p>
         {/* Imagine more content here */}
-        <p>{para}</p>
+        <p>
+          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+          some form, by injected humour, or randomised words which don&apos;t look even slightly believable. If you are
+          going to use a passage of Lorem Ipsum, you need to be sure there isn&apos;t anything embarrassing hidden in
+          the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as
+          necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words,
+          combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The
+          generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words
+          etc.
+        </p>
       </ContentScrollable>
     ),
   },
@@ -93,24 +78,34 @@ function CustomSizeContentScrollable() {
     title: 'With Variant',
     desc: 'This example demonstrates how to use the variant prop to apply different styles to the scrollable container.',
     code: `
-import { ContentScrollable } from "kalki-ui";
-
-function VariantContentScrollable() {
-  return (
-    <ContentScrollable height="250px" variant="primary">
-      <h3>Primary Variant Scrollable Content</h3>
-      <p>This container uses the 'primary' variant styling.</p>
-      {/* Add more content here */}
-    </ContentScrollable>
-  );
-}
+      <ContentScrollable height="250px" variant="primary">
+        <h3>Primary Variant Scrollable Content</h3>
+        <p>This container uses the &apos;primary&apos; variant styling.</p>
+        <p>
+          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+          some form, by injected humour, or randomised words which don't look even slightly believable. If you are going
+          to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of
+          text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making
+          this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a
+          handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem
+          Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+        </p>
+      </ContentScrollable>
       `,
     snippet: (
       <ContentScrollable height="250px" variant="primary">
         <h3>Primary Variant Scrollable Content</h3>
         <p>This container uses the &apos;primary&apos; variant styling.</p>
-        {/* Imagine more content here */}
-        <p>{para}</p>
+        <p>
+          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+          some form, by injected humour, or randomised words which don&apos;t look even slightly believable. If you are
+          going to use a passage of Lorem Ipsum, you need to be sure there isn&apos;t anything embarrassing hidden in
+          the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as
+          necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words,
+          combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The
+          generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words
+          etc.
+        </p>
       </ContentScrollable>
     ),
   },
@@ -118,121 +113,34 @@ function VariantContentScrollable() {
     title: 'With Custom Styling',
     desc: 'This advanced example shows how to apply custom styles to the ContentScrollable component using inline styles and custom CSS classes.',
     code: `
-import { ContentScrollable } from "kalki-ui";
-import styles from './CustomStyles.module.css';
-
-function CustomStyledContentScrollable() {
-  return (
-    <ContentScrollable 
-      height="400px" 
-      width="300px"
-      className={styles.customScrollable}
-      style={{ 
-        border: '2px solid #007bff', 
-        borderRadius: '8px',
-        padding: '16px'
-      }}
-    >
-      <h2>Custom Styled Scrollable Content</h2>
-      <p>This container has custom styles applied using both inline styles and a custom CSS class.</p>
-      {/* Add more content here */}
-    </ContentScrollable>
-  );
-}
-
-// In CustomStyles.module.css
-.customScrollable {
-  background-color: #f8f9fa;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.customScrollable::-webkit-scrollbar {
-  width: 8px;
-}
-.customScrollable::-webkit-scrollbar-thumb {
-  background-color: #007bff;
-  border-radius: 4px;
-}
-      `,
-    snippet: (
-      <ContentScrollable
-        height="400px"
-        width="300px"
-        className="customScrollable"
-        style={{
-          border: '2px solid #007bff',
-          borderRadius: '8px',
-          padding: '16px',
-        }}
-      >
+      <ContentScrollable height="400px" width="300px" className="p-2 rounded-md border-2">
         <h2>Custom Styled Scrollable Content</h2>
         <p>This container has custom styles applied using both inline styles and a custom CSS class.</p>
-        {/* Imagine more content here */}
-        <p>{para}</p>
+        <p>
+          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+          some form, by injected humour, or randomised words which don't look even slightly believable. If you are going
+          to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of
+          text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making
+          this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a
+          handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem
+          Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+        </p>
       </ContentScrollable>
-    ),
-  },
-  {
-    title: 'Dynamic Content with State',
-    desc: 'This advanced example demonstrates how to use the ContentScrollable component with dynamic content controlled by React state.',
-    code: `
-import React, { useState } from 'react';
-import { ContentScrollable } from "kalki-ui";
-
-function DynamicContentScrollable() {
-  const [items, setItems] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
-
-  const addItem = () => {
-    setItems((prevItems) => [...prevItems, prevItems.length + 1]);
-  };
-
-  return (
-    <div>
-      <Button onClick={addItem}>Add Item</Button>
-      <ContentScrollable variant="success" height="300px" width="700px">
-        {items.map((item) => (
-          <Box key={item} width="98%" outlined padding="10px" margin="10px">
-            Item {item}
-          </Box>
-        ))}
-      </ContentScrollable>
-    </div>
-  );
-}
       `,
-    snippet: <DynamicContentScrollable />,
-  },
-  {
-    title: 'Color Palette Viewer',
-    desc: 'This example demonstrates using ContentScrollable to display a color palette, utilizing multiple variants.',
-    code: `
-import React from 'react';
-import { ContentScrollable } from "kalki-ui";
-
-function ColorPaletteViewer() {
-  const variants = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
-
-  return (
-    <ContentScrollable height="300px" width="200px" variant="light">
-      {variants.map(variant => (
-        <div key={variant} style={{padding: '20px', textAlign: 'center'}}>
-          <ContentScrollable height="50px" width="90%" variant={variant}>
-            {variant.charAt(0).toUpperCase() + variant.slice(1)}
-          </ContentScrollable>
-        </div>
-      ))}
-    </ContentScrollable>
-  );
-}
-    `,
     snippet: (
-      <ContentScrollable height="300px" width="200px" variant="light">
-        {variants.map((variant) => (
-          <div key={variant} style={{ padding: '20px', textAlign: 'center' }}>
-            <ContentScrollable height="50px" width="90%" variant={variant}>
-              {variant.charAt(0).toUpperCase() + variant.slice(1)}
-            </ContentScrollable>
-          </div>
-        ))}
+      <ContentScrollable height="400px" width="300px" className="p-2 rounded-md border-2">
+        <h2>Custom Styled Scrollable Content</h2>
+        <p>This container has custom styles applied using both inline styles and a custom CSS class.</p>
+        <p>
+          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+          some form, by injected humour, or randomised words which don&apos;t look even slightly believable. If you are
+          going to use a passage of Lorem Ipsum, you need to be sure there isn&apos;t anything embarrassing hidden in
+          the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as
+          necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words,
+          combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The
+          generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words
+          etc.
+        </p>
       </ContentScrollable>
     ),
   },
