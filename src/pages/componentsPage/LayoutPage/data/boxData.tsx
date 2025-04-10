@@ -6,14 +6,10 @@ export const docs: docsData[] = [
     title: 'Basic Box',
     desc: 'This example demonstrates the most basic usage of the Box component with default properties.',
     code: `
-import { Box } from "react-ui-essentials";
-
-const App = () => (
   <Box backgroundColor="#e0f7fa" padding="20px">
     <h2>Simple Box</h2>
     <p>This is a simple box with background color and padding.</p>
   </Box>
-);
       `,
     snippet: (
       <Box backgroundColor="#e0f7fa" padding="20px">
@@ -26,14 +22,10 @@ const App = () => (
     title: 'Box with Custom Dimensions',
     desc: 'This example shows how to use the Box component with custom width and height.',
     code: `
-import { Box } from "react-ui-essentials";
-  
-const App = () => (
   <Box width="300px" height="150px" backgroundColor="#ffecb3" padding="10px">
     <h2>Custom Size Box</h2>
     <p>This box has a custom width and height.</p>
   </Box>
-);
       `,
     snippet: (
       <Box width="300px" height="150px" backgroundColor="#ffecb3" padding="10px">
@@ -47,14 +39,10 @@ const App = () => (
     title: 'Outlined Box',
     desc: 'This example demonstrates how to add an outline to the Box using the outlined prop.',
     code: `
-import { Box } from "react-ui-essentials";
-
-const App = () => (
   <Box outlined padding="20px" margin="10px" style={{ borderColor: "#1976d2", borderWidth: "2px" }}>
     <h2>Outlined Box</h2>
     <p>This box has a custom outline.</p>
   </Box>
-);
       `,
     snippet: (
       <Box outlined padding="20px" margin="10px" style={{ borderColor: '#1976d2', borderWidth: '2px' }}>
@@ -67,9 +55,6 @@ const App = () => (
     title: 'Box with Mixed Styles',
     desc: 'This example demonstrates how to customize the text and background colors of the Box.',
     code: `
-import { Box } from "react-ui-essentials";
-
-const App = () => (
     <Box
       width="250px"
       height="150px"
@@ -84,7 +69,6 @@ const App = () => (
       <h2>Mixed Styles Box</h2>
       <p>This box combines various styles.</p>
     </Box>
-);
       `,
     snippet: (
       <Box
