@@ -36,19 +36,19 @@ export const docs: docsData[] = [
     snippet: (
       <Carousel size="md">
         <Carousel.Slides>
-          <Image src={dog1} alt="Slide 1" />
-          <Image src={dog2} alt="Slide 2" />
-          <Image src={dog3} alt="Slide 3" />
-          <Image src={dog4} alt="Slide 4" />
+          <Image src={dog1} objectFit="cover" alt="Slide 1" />
+          <Image src={dog2} objectFit="cover" alt="Slide 2" />
+          <Image src={dog3} objectFit="cover" alt="Slide 3" />
+          <Image src={dog4} objectFit="cover" alt="Slide 4" />
         </Carousel.Slides>
         <Carousel.Controls>
-          <Button>
+          <Button variant="light">
             <Button.Icon>
               <ChevronLeft width="20px" height="20px" />
             </Button.Icon>
             <Button.Text>Previous</Button.Text>
           </Button>
-          <Button>
+          <Button variant="light">
             <Button.Text>Next</Button.Text>
             <Button.Icon>
               <ChevronRight width="20px" height="20px" />
