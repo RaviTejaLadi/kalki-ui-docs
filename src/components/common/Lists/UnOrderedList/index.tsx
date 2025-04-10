@@ -36,7 +36,7 @@ UnOrderedList.displayName = 'UnorderedList';
 
 const UnOrderedListItem: React.FC<UnOrderedListItemProps> = ({ children, className = '', style, ...rest }) => {
   return (
-    <li className={cn('mb-1 text-black', className)} style={style} {...rest}>
+    <li className={cn('mb-1 text-muted-foreground', className)} style={style} {...rest}>
       {children}
     </li>
   );
