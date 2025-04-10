@@ -196,7 +196,11 @@ const TextHighlighter: React.FC<TextHighlighterProps> = ({
     [colorsList, defaultVariant, defaultEmphasis, defaultSizing]
   );
 
-  return <HighlightContext.Provider value={contextValue}>{children}</HighlightContext.Provider>;
+  return (
+    <HighlightContext.Provider value={contextValue}>
+      <div className="text-muted-foreground">{children}</div>
+    </HighlightContext.Provider>
+  );
 };
 
 const TextHighlighterInfo: React.FC<TextHighlighterInfoProps> = ({ children, variant = 'dark', className }) => {
