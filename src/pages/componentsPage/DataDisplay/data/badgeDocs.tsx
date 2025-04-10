@@ -6,9 +6,6 @@ export const docs: docsData[] = [
     title: 'Basic Badge',
     desc: 'This example demonstrates the most basic usage of the Badge component with default size (small) and primary variant.',
     code: `
-import { Badge } from "kalki-ui";
-
-const App = () => (
       <>
         {[
           'primary' as const,
@@ -26,7 +23,6 @@ const App = () => (
           </Badge>
         ))}
       </>
-);
       `,
     snippet: (
       <>
@@ -52,11 +48,7 @@ const App = () => (
     title: 'Medium Badge',
     desc: 'This example shows how to use the Badge component with a medium size.',
     code: `
-import { Badge } from "kalki-ui";
-
-const App = () => (
-  <Badge size="md">Medium Badge</Badge>
-);
+    <Badge size="md">Medium Badge</Badge>
       `,
     snippet: <Badge size="md">Medium Badge</Badge>,
   },
@@ -64,11 +56,7 @@ const App = () => (
     title: 'Large Badge',
     desc: 'This example shows how to use the Badge component with a large size.',
     code: `
-import { Badge } from "kalki-ui";
-
-const App = () => (
-  <Badge size="lg">Large Badge</Badge>
-);
+    <Badge size="lg">Large Badge</Badge>
       `,
     snippet: <Badge size="lg">Large Badge</Badge>,
   },
@@ -76,11 +64,7 @@ const App = () => (
     title: 'Secondary Variant Badge',
     desc: 'This example demonstrates the usage of the secondary variant for the Badge component.',
     code: `
-import { Badge } from "kalki-ui";
-
-const App = () => (
-  <Badge variant="secondary">Secondary Badge</Badge>
-);
+    <Badge variant="secondary">Secondary Badge</Badge>
       `,
     snippet: <Badge variant="secondary">Secondary Badge</Badge>,
   },
@@ -88,11 +72,7 @@ const App = () => (
     title: 'Success Variant Badge',
     desc: 'This example shows how to use the success variant for the Badge component.',
     code: `
-import { Badge } from "kalki-ui";
-
-const App = () => (
-  <Badge variant="success">Success Badge</Badge>
-);
+    <Badge variant="success">Success Badge</Badge>
       `,
     snippet: <Badge variant="success">Success Badge</Badge>,
   },
@@ -100,11 +80,7 @@ const App = () => (
     title: 'Danger Variant Badge',
     desc: 'This example demonstrates the usage of the danger variant for the Badge component.',
     code: `
-import { Badge } from "kalki-ui";
-
-const App = () => (
-  <Badge variant="danger">Danger Badge</Badge>
-);
+    <Badge variant="danger">Danger Badge</Badge>
       `,
     snippet: <Badge variant="danger">Danger Badge</Badge>,
   },
@@ -112,11 +88,7 @@ const App = () => (
     title: 'Warning Variant Badge',
     desc: 'This example shows how to use the warning variant for the Badge component.',
     code: `
-import { Badge } from "kalki-ui";
-
-const App = () => (
-  <Badge variant="warning">Warning Badge</Badge>
-);
+    <Badge variant="warning">Warning Badge</Badge>
       `,
     snippet: <Badge variant="warning">Warning Badge</Badge>,
   },
@@ -124,11 +96,7 @@ const App = () => (
     title: 'Info Variant Badge',
     desc: 'This example demonstrates the usage of the info variant for the Badge component.',
     code: `
-import { Badge } from "kalki-ui";
-
-const App = () => (
   <Badge variant="info">Info Badge</Badge>
-);
       `,
     snippet: <Badge variant="info">Info Badge</Badge>,
   },
@@ -136,11 +104,7 @@ const App = () => (
     title: 'Light Variant Badge',
     desc: 'This example shows how to use the light variant for the Badge component.',
     code: `
-import { Badge } from "kalki-ui";
-
-const App = () => (
   <Badge variant="light">Light Badge</Badge>
-);
       `,
     snippet: <Badge variant="light">Light Badge</Badge>,
   },
@@ -148,11 +112,7 @@ const App = () => (
     title: 'Dark Variant Badge',
     desc: 'This example demonstrates the usage of the dark variant for the Badge component.',
     code: `
-import { Badge } from "kalki-ui";
-
-const App = () => (
   <Badge variant="dark">Dark Badge</Badge>
-);
       `,
     snippet: <Badge variant="dark">Dark Badge</Badge>,
   },
@@ -160,11 +120,7 @@ const App = () => (
     title: 'Pill Badge',
     desc: 'This example shows how to use the pill property to create a rounded badge.',
     code: `
-import { Badge } from "kalki-ui";
-
-const App = () => (
   <Badge pill>Pill Badge</Badge>
-);
       `,
     snippet: <Badge pill>Pill Badge</Badge>,
   },
@@ -172,11 +128,7 @@ const App = () => (
     title: 'Large Pill Badge with Danger Variant',
     desc: 'This example combines the pill, size, and variant properties to create a large, rounded badge with the danger variant.',
     code: `
-import { Badge } from "kalki-ui";
-
-const App = () => (
   <Badge size="lg" variant="danger" pill>Large Danger Pill Badge</Badge>
-);
       `,
     snippet: (
       <Badge size="lg" variant="danger" pill>
@@ -188,11 +140,7 @@ const App = () => (
     title: 'Badge with Additional Properties',
     desc: 'This example demonstrates passing additional properties to the Badge component, such as an onClick handler.',
     code: `
-import { Badge } from "kalki-ui";
-
-const App = () => (
   <Badge onClick={() => alert('Badge clicked')}>Clickable Badge</Badge>
-);
       `,
     snippet: <Badge onClick={() => alert('Badge clicked')}>Clickable Badge</Badge>,
   },
