@@ -392,7 +392,7 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         label: 'Text Highlighter',
         description:
           'Advanced text annotation utility for dynamically marking and styling text segments with customizable highlighting strategies.',
-        path: '/components/textHighlighter',
+        path: '/components/text-highlighter',
         Icon: Highlighter,
       },
       {
