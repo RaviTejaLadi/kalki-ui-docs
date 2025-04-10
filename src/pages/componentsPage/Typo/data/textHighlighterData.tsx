@@ -1,8 +1,3 @@
-// import { CaseInsensitiveHighlightExample } from '../examples/CaseInsensitiveHighlightExample';
-// import { CustomColorHighlightExample } from '../examples/CustomColorHighlightExample';
-// import { DynamicHighlightExample } from '../examples/DynamicHighlightExample';
-// import { ParagraphHighlightExample } from '../examples/ParagraphHighlightExample';
-
 import { docsData } from '@/types/docsData';
 import { BasicHighlightExample } from '../examples/BasicHighlightExample';
 
