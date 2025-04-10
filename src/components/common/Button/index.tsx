@@ -146,12 +146,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       size,
       raised,
       rounded,
-      className,
     });
 
     return (
       <button
-        className={buttonClasses}
+        className={cn(buttonClasses, className)}
         style={style}
         onClick={onClick}
         disabled={disabled || isPending}
