@@ -6,31 +6,24 @@ export const docs: docsData[] = [
     title: 'Basic Usage',
     desc: 'A simple Table component with default styling.',
     code: `
-import React from 'react';
-import { Table } from './Table';
-
-const BasicExample = () => {
-return (
-    <Table>
+      <Table>
         <Table.Head>
-            <Table.Row>
+          <Table.Row>
             <Table.Cell isHeader>Header 1</Table.Cell>
             <Table.Cell isHeader>Header 2</Table.Cell>
-            </Table.Row>
+          </Table.Row>
         </Table.Head>
         <Table.Body>
-            <Table.Row>
+          <Table.Row>
             <Table.Cell>Row 1, Cell 1</Table.Cell>
             <Table.Cell>Row 1, Cell 2</Table.Cell>
-            </Table.Row>
-            <Table.Row>
+          </Table.Row>
+          <Table.Row>
             <Table.Cell>Row 2, Cell 1</Table.Cell>
             <Table.Cell>Row 2, Cell 2</Table.Cell>
-            </Table.Row>
+          </Table.Row>
         </Table.Body>
-    </Table>
-);
-};
+      </Table>
       `,
     snippet: (
       <Table>
