@@ -1,5 +1,5 @@
-import Box from "@/components/common/Box";
-import Stack from "@/components/common/Stack";
+import Box from '@/components/common/Box';
+import Stack from '@/components/common/Stack';
 
 export const NestedStacksExample = () => (
   <Stack direction="column" spacing={20}>

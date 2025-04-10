@@ -1,5 +1,5 @@
-import Box from "@/components/common/Box";
-import Stack from "@/components/common/Stack";
+import Box from '@/components/common/Box';
+import Stack from '@/components/common/Stack';
 
 export const BasicHorizontalStackExample = () => (
   <Stack spacing={10}>

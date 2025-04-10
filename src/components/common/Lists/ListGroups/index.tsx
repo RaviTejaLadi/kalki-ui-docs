@@ -100,7 +100,7 @@ const useListGroup = () => {
 // #region ListGroups
 const ListGroups = forwardRef<HTMLUListElement, ListGroupProps>(
   (
-    { width, size, variant = 'primary', className, style, showDividers = true, showArrows = true, children, ...rest },
+    { width, size, variant = 'primary', className, style, showDividers = true, showArrows = false, children, ...rest },
     ref
   ) => {
     const currentVariant = (variant || 'primary') as VariantType;

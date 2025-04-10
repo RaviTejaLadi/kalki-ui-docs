@@ -1,7 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
 import ComponentsOverviewPage from './ComponentsOverviewPage';
 import { ButtonsPreview, ButtonPage, LinkButtonPage, LinkBarPage, CloseButtonPage } from './Buttons';
-import { AvatarPage, BadgePage, ListsPage, TablePage, TagPage } from './DataDisplay';
+import {
+  AvatarPage,
+  BadgePage,
+  ListGroupPage,
+  TablePage,
+  TagPage,
+  UnOrderedList,
+  OrderedListPage,
+} from './DataDisplay';
 import { AlertPage, ModelPage, PopoverPage, SpinnerPage } from './Feedback';
 import {
   AccordionPage,
@@ -47,7 +55,9 @@ const ROUTES: RouteConfig[] = [
   // Data Display
   { path: 'avatar', Component: AvatarPage },
   { path: 'badge', Component: BadgePage },
-  { path: 'lists', Component: ListsPage },
+  { path: 'list-group', Component: ListGroupPage },
+  { path: 'ordered-list', Component: OrderedListPage },
+  { path: 'un-ordered-list', Component: UnOrderedList },
   { path: 'table', Component: TablePage },
   { path: 'tag', Component: TagPage },
 

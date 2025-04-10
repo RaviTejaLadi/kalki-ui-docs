@@ -2,7 +2,6 @@ import Box from '@/components/common/Box';
 import TextHighlighter from '@/components/common/TextHighlighter';
 
 export const BasicHighlightExample = () => {
-
   return (
     <Box style={{ lineHeight: '30px' }}>
       <TextHighlighter>

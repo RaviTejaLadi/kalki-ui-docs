@@ -47,4 +47,3 @@ export const rows = [
     'An optional array of custom colors to use for highlighting. If not provided or if there are more words to highlight than colors provided, it will use default colors.',
   ],
 ];
-

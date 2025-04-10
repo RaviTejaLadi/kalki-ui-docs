@@ -40,6 +40,8 @@ import {
   TextCursorInput,
   Space,
   Pilcrow,
+  Rows4,
+  ListOrdered,
 } from 'lucide-react';
 
 import { DocumentIcon, ViewColumnsIcon, DocumentTextIcon, DocumentCheckIcon } from '@heroicons/react/24/outline';
@@ -116,10 +118,24 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         Icon: BadgeInfo,
       },
       {
-        label: 'Lists',
+        label: 'List Group',
         description:
           'Flexible components for rendering collections of items in various formats, supporting dynamic content rendering and accessibility standards.',
-        path: '/components/lists',
+        path: '/components/list-group',
+        Icon: Rows4,
+      },
+      {
+        label: 'Ordered List',
+        description:
+          'Flexible components for rendering collections of items in various formats, supporting dynamic content rendering and accessibility standards.',
+        path: '/components/ordered-list',
+        Icon: ListOrdered,
+      },
+      {
+        label: 'Un Ordered List',
+        description:
+          'Flexible components for rendering collections of items in various formats, supporting dynamic content rendering and accessibility standards.',
+        path: '/components/un-ordered-list',
         Icon: List,
       },
       {
