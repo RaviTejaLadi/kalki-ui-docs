@@ -8,14 +8,10 @@ export const docs: docsData[] = [
     title: 'Basic Avatar',
     desc: 'This example demonstrates the most basic usage of the Avatar component with a source image, default alt text, and default size.',
     code: `
-import Avatar from 'kalki-ui';
-
-const App = () => (
-    <Avatar>
-      <Avatar.Image src={pic} alt="avatar" />
-      <Avatar.Fallback>SC</Avatar.Fallback>
-    </Avatar>
-);
+      <Avatar>
+        <Avatar.Image src={pic} alt="avatar" />
+        <Avatar.Fallback>SC</Avatar.Fallback>
+      </Avatar>
       `,
     snippet: (
       <Avatar>
