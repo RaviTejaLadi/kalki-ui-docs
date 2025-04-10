@@ -10,10 +10,6 @@ export const docs: docsData[] = [
     title: 'Basic Horizontal Stack',
     desc: 'A simple horizontal stack of items with default spacing.',
     code: `
-import React from "react";
-import { Stack, Box } from "react-ui-essentials";
-
-export const BasicHorizontalStackExample = () => (
   <Stack>
     <Stack.Item>
       <Box padding="10px" shadow="sm" rounded>
@@ -31,7 +27,6 @@ export const BasicHorizontalStackExample = () => (
       </Box>
     </Stack.Item>
   </Stack>
-);
       `,
     snippet: <BasicHorizontalStackExample />,
   },
@@ -39,10 +34,6 @@ export const BasicHorizontalStackExample = () => (
     title: 'Vertical Stack with Custom Spacing',
     desc: 'A vertical stack of items with custom spacing.',
     code: `
-import React from "react";
-import { Stack, Box } from "react-ui-essentials";
-
-export const VerticalStackExample = () => (
   <Stack direction="column" spacing={20}>
     <Stack.Item>
       <Box padding="10px" shadow="sm" rounded>
@@ -60,7 +51,6 @@ export const VerticalStackExample = () => (
       </Box>
     </Stack.Item>
   </Stack>
-);
       `,
     snippet: <VerticalStackExample />,
   },
@@ -68,10 +58,6 @@ export const VerticalStackExample = () => (
     title: 'Stack with Custom Alignment',
     desc: 'A stack with custom justification and alignment.',
     code: `
-import React from "react";
-import { Stack, Box } from "react-ui-essentials";
-
-export const AlignedStackExample = () => (
   <Stack justifyContent="center" alignItems="center" style={{ height: "200px", border: "1px solid #ccc" }}>
     <Stack.Item>
       <Box padding="10px" shadow="sm" rounded>
@@ -79,7 +65,6 @@ export const AlignedStackExample = () => (
       </Box>
     </Stack.Item>
   </Stack>
-);
       `,
     snippet: <AlignedStackExample />,
   },
@@ -87,10 +72,6 @@ export const AlignedStackExample = () => (
     title: 'Wrapped Stack',
     desc: 'A stack that wraps its items when they exceed the container width.',
     code: `
-import React from "react";
-import { Stack, Box } from "react-ui-essentials";
-
-export const WrappedStackExample = () => (
   <Stack flexWrap="wrap" spacing={10} style={{ maxWidth: "300px" }}>
     {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
       <Stack.Item key={item} style={{ padding: "10px" }}>
@@ -100,7 +81,6 @@ export const WrappedStackExample = () => (
       </Stack.Item>
     ))}
   </Stack>
-);
       `,
     snippet: <WrappedStackExample />,
   },
@@ -108,10 +88,6 @@ export const WrappedStackExample = () => (
     title: 'Nested Stacks',
     desc: 'An example of nested stacks for more complex layouts.',
     code: `
-import React from "react";
-import { Stack, Box } from "react-ui-essentials";
-
-export const NestedStacksExample = () => (
   <Stack direction="column" spacing={20}>
     <Stack.Item>
       <Stack spacing={10}>
@@ -146,8 +122,6 @@ export const NestedStacksExample = () => (
       </Box>
     </Stack.Item>
   </Stack>
-);
-    
       `,
     snippet: <NestedStacksExample />,
   },
