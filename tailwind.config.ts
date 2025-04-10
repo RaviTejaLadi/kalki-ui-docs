@@ -23,7 +23,7 @@ module.exports = {
       md: ['0.85rem', '1.3rem'],
       lg: ['1.1rem', '1.6rem'],
       xl: ['1.2rem', '1.75rem'],
-      '2xl': ['1.45 rem', '2rem'],
+      '2xl': ['1.45rem', '2rem'],
       '3xl': ['1.825rem', '2.25rem'],
       '4xl': ['2.2rem', '2.5rem'],
     },
