@@ -5,7 +5,6 @@ import { Clipboard, Check } from 'lucide-react';
 import { javascript } from '@codemirror/lang-javascript';
 import { html } from '@codemirror/lang-html';
 import { css } from '@codemirror/lang-css';
-import { useTheme } from '@/context/ThemeContext';
 import { cn } from '@/utils';
 import Button from '../Button';
 import Spinner from '../Spinner';
@@ -24,7 +23,6 @@ export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
   lineNumbers = false,
   ...rest
 }) => {
-  const { theme } = useTheme();
   const [isLoading, setIsLoading] = useState(true);
   const [isCopied, setIsCopied] = useState(false);
 
@@ -112,11 +110,11 @@ export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
                   background: 'transparent',
                   fontSize: '14px',
                   fontFamily: 'IBM Plex Mono, monospace',
-                  selection: theme === 'light' ? 'rgba(66, 153, 225, 0.2)' : 'rgba(66, 153, 225, 0.3)',
+                  selection: 'rgba(66, 153, 225, 0.3)',
                   caret: 'text-muted-foreground',
                   gutterBackground: 'transparent',
-                  gutterForeground: theme === 'light' ? '#64748b' : '#94a3b8',
-                  lineHighlight: theme === 'light' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.2)',
+                  gutterForeground: '#94a3b8',
+                  lineHighlight: 'rgba(0, 0, 0, 0.2)',
                 },
               })}
               extensions={getLanguageExtension()}
