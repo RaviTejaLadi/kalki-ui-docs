@@ -8,12 +8,7 @@ export const docs: docsData[] = [
     title: 'Basic Tag',
     desc: 'A simple tag with text content.',
     code: `
-import React from 'react';
-import { Tag } from "kalki-ui";
-
-const BasicTagExample = () => (
-  <Tag>Basic Tag</Tag>
-);
+    <Tag>Basic Tag</Tag>
       `,
     snippet: <Tag>Basic Tag</Tag>,
   },
@@ -21,12 +16,9 @@ const BasicTagExample = () => (
     title: 'Tag with Custom Variant and Size',
     desc: 'A tag with a custom variant and size.',
     code: `
-import React from 'react';
-import { Tag } from "kalki-ui";
-
-const CustomTagExample = () => (
-  <Tag variant="success" size="lg">Success</Tag>
-);
+      <Tag variant="success" size="lg">
+        Success
+      </Tag>
       `,
     snippet: (
       <Tag variant="success" size="lg">
@@ -38,17 +30,12 @@ const CustomTagExample = () => (
     title: 'Tag with Icon',
     desc: 'A tag with an icon and text.',
     code: `
-import React from 'react';
-import { Tag } from "kalki-ui";
-import { RoundedIcons } from "kalki-ui-icons";
-const { Dataset } = RoundedIcons;
-
-const IconTagExample = () => (
-  <Tag>
-    <Tag.Icon><Dataset /></Tag.Icon>
-    <Tag.Text>Favorite</Tag.Text>
-  </Tag>
-);
+      <Tag>
+        <Tag.Icon>
+          <GlassWaterIcon className="size-3" />
+        </Tag.Icon>
+        <Tag.Text>Favorite</Tag.Text>
+      </Tag>
       `,
     snippet: (
       <Tag>
@@ -64,19 +51,14 @@ const IconTagExample = () => (
     title: 'Multiple Tags',
     desc: 'A group of tags with different variants.',
     code: `
-import React from 'react';
-import { Tag } from "kalki-ui";
-
-const MultipleTagsExample = () => (
-  <div>
-    <Tag variant="primary">Primary</Tag>
-    <Tag variant="secondary">Secondary</Tag>
-    <Tag variant="success">Success</Tag>
-    <Tag variant="danger">Danger</Tag>
-    <Tag variant="warning">Warning</Tag>
-    <Tag variant="info">Info</Tag>
-  </div>
-);
+      <Box style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+        <Tag variant="primary">Primary</Tag>
+        <Tag variant="secondary">Secondary</Tag>
+        <Tag variant="success">Success</Tag>
+        <Tag variant="danger">Danger</Tag>
+        <Tag variant="warning">Warning</Tag>
+        <Tag variant="info">Info</Tag>
+      </Box>
       `,
     snippet: (
       <Box style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
