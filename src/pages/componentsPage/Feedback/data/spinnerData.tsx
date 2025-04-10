@@ -23,13 +23,7 @@ export const docs: docsData[] = [
     title: 'Default Spinner',
     desc: "This is the default spinner with the 'primary' variant and 'md' size.",
     code: `
-import { Spinner } from 'kalki-ui';
-
-const App = () => (
   <Spinner />
-);
-
-export default App;
     `,
     snippet: <Spinner />,
   },
@@ -37,13 +31,7 @@ export default App;
     title: 'Custom Variant Spinner',
     desc: "This spinner uses the 'success' variant to display a green spinner.",
     code: `
-import { Spinner } from 'kalki-ui';
-
-const App = () => (
   <Spinner variant="success" />
-);
-
-export default App;
     `,
     snippet: <Spinner variant="success" />,
   },
@@ -51,13 +39,7 @@ export default App;
     title: 'Custom Size Spinner',
     desc: "This spinner uses the 'lg' size to display a larger spinner.",
     code: `
-import { Spinner } from 'kalki-ui';
-
-const App = () => (
   <Spinner size="lg" />
-);
-
-export default App;
     `,
     snippet: <Spinner size="lg" />,
   },
@@ -65,13 +47,7 @@ export default App;
     title: 'Custom Variant and Size Spinner',
     desc: "This spinner uses both the 'danger' variant and 'xl' size for a large red spinner.",
     code: `
-import { Spinner } from 'kalki-ui';
-
-const App = () => (
   <Spinner variant="danger" size="xl" />
-);
-
-export default App;
     `,
     snippet: <Spinner variant="danger" size="xl" />,
   },
@@ -79,13 +55,7 @@ export default App;
     title: 'Spinner with Additional Props',
     desc: "This spinner includes additional props such as 'aria-label' for accessibility.",
     code: `
-import { Spinner } from 'kalki-ui';
-
-const App = () => (
   <Spinner variant="info" size="sm" aria-label="Loading..." />
-);
-
-export default App;
     `,
     snippet: <Spinner variant="info" size="sm" aria-label="Loading..." />,
   },
