@@ -1,3 +1,5 @@
+import Table from '@/components/common/Table';
+import { Heading } from '@/components/common/Typography';
 import React, { useEffect, useState, useRef } from 'react';
 
 interface SystemInfo {
@@ -143,34 +145,34 @@ const SystemInfoTable: React.FC = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">System Information</h1>
-      <table className="table-auto w-full border-collapse border border-gray-300">
-        <thead>
-          <tr className="bg-gray-100">
-            <th className="border border-gray-300 px-4 py-2 text-left">Property</th>
-            <th className="border border-gray-300 px-4 py-2 text-left">Value</th>
-          </tr>
-        </thead>
-        <tbody>
+      <Heading className="text-2xl font-bold mb-4">System Information</Heading>
+      <Table>
+        <Table.Head>
+          <Table.Row>
+            <Table.Cell isHeader>Property</Table.Cell>
+            <Table.Cell isHeader>Value</Table.Cell>
+          </Table.Row>
+        </Table.Head>
+        <Table.Body>
           {systemInfo.map((info, index) => (
-            <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-              <td className="border border-gray-300 px-4 py-2">{info.key}</td>
-              <td className="border border-gray-300 px-4 py-2">{info.value?.toString() || 'N/A'}</td>
-            </tr>
+            <Table.Row key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+              <Table.Cell className="border border-gray-300 px-4 py-2">{info.key}</Table.Cell>
+              <Table.Cell className="border border-gray-300 px-4 py-2">{info.value?.toString() || 'N/A'}</Table.Cell>
+            </Table.Row>
           ))}
-        </tbody>
-      </table>
+        </Table.Body>
+      </Table>
 
       {locationInfo && (
         <div className="mt-8">
-          <h2 className="text-xl font-bold mb-2">Location Information</h2>
-          <p>IP Address: {locationInfo.ip}</p>
-          <p>City: {locationInfo.city}</p>
-          <p>Region: {locationInfo.region}</p>
-          <p>Country: {locationInfo.country}</p>
-          <p>Latitude: {locationInfo.latitude}</p>
-          <p>Longitude: {locationInfo.longitude}</p>
-          <p>Timezone: {locationInfo.timezone}</p>
+          <h2 className="text-xl font-bold mb-2 text-foreground">Location Information</h2>
+          <p className="text-muted-foreground">IP Address: {locationInfo.ip}</p>
+          <p className="text-muted-foreground">City: {locationInfo.city}</p>
+          <p className="text-muted-foreground">Region: {locationInfo.region}</p>
+          <p className="text-muted-foreground">Country: {locationInfo.country}</p>
+          <p className="text-muted-foreground">Latitude: {locationInfo.latitude}</p>
+          <p className="text-muted-foreground">Longitude: {locationInfo.longitude}</p>
+          <p className="text-muted-foreground">Timezone: {locationInfo.timezone}</p>
         </div>
       )}
 
