@@ -58,6 +58,114 @@ export const docs: docsData[] = [
       </Carousel>
     ),
   },
+  {
+    title: 'Carousel with Content',
+    desc: 'A carousel with images and corresponding text content',
+    code: `
+      <Carousel size="md">
+        <Carousel.Slides>
+          <Image src={dog1} objectFit="cover" alt="Slide 1" />
+          <Image src={dog2} objectFit="cover" alt="Slide 2" />
+          <Image src={dog3} objectFit="cover" alt="Slide 3" />
+        </Carousel.Slides>
+        <Carousel.Content>
+          <h3>Dog 1</h3>
+          <h3>Dog 2</h3>
+          <h3>Dog 3</h3>
+        </Carousel.Content>
+        <Carousel.Controls>
+          <Button variant="light">
+            <Button.Text>Previous</Button.Text>
+          </Button>
+          <Button variant="light">
+            <Button.Text>Next</Button.Text>
+          </Button>
+        </Carousel.Controls>
+      </Carousel>
+    `,
+    snippet: (
+      <Carousel size="md">
+        <Carousel.Slides>
+          <Image src={dog1} objectFit="cover" alt="Slide 1" />
+          <Image src={dog2} objectFit="cover" alt="Slide 2" />
+          <Image src={dog3} objectFit="cover" alt="Slide 3" />
+        </Carousel.Slides>
+        <Carousel.Content>
+          <h3>Dog 1</h3>
+          <h3>Dog 2</h3>
+          <h3>Dog 3</h3>
+        </Carousel.Content>
+        <Carousel.Controls>
+          <Button variant="light">
+            <Button.Text>Previous</Button.Text>
+          </Button>
+          <Button variant="light">
+            <Button.Text>Next</Button.Text>
+          </Button>
+        </Carousel.Controls>
+      </Carousel>
+    ),
+  },
+  {
+    title: 'Carousel with Dots',
+    desc: 'A carousel with navigation dots for direct slide selection',
+    code: `
+      <Carousel size="md">
+        <Carousel.Slides>
+          <Image src={dog1} objectFit="cover" alt="Slide 1" />
+          <Image src={dog2} objectFit="cover" alt="Slide 2" />
+          <Image src={dog3} objectFit="cover" alt="Slide 3" />
+        </Carousel.Slides>
+        <Carousel.Dots />
+      </Carousel>
+    `,
+    snippet: (
+      <Carousel size="md">
+        <Carousel.Slides>
+          <Image src={dog1} objectFit="cover" alt="Slide 1" />
+          <Image src={dog2} objectFit="cover" alt="Slide 2" />
+          <Image src={dog3} objectFit="cover" alt="Slide 3" />
+        </Carousel.Slides>
+        <Carousel.Dots />
+      </Carousel>
+    ),
+  },
+  {
+    title: 'Custom Styled Carousel',
+    desc: 'A carousel with custom styling applied to its components',
+    code: `
+      <Carousel className="bg-[#9b9999] border">
+        <Carousel.Slides className="border rounded-md shadow-lg">
+          <Image src={dog1} objectFit="cover" alt="Slide 1" />
+          <Image src={dog2} objectFit="cover" alt="Slide 2" />
+        </Carousel.Slides>
+        <Carousel.Content className="text-foreground p-2 text-center">
+          <p>Content 1</p>
+          <p>Content 2</p>
+        </Carousel.Content>
+        <Carousel.Controls className="border p-2 rounded-md">
+          <Button>Previous</Button>
+          <Button>Next</Button>
+        </Carousel.Controls>
+      </Carousel>
+    `,
+    snippet: (
+      <Carousel className="bg-[#9b9999] border">
+        <Carousel.Slides className="border rounded-md shadow-lg">
+          <Image src={dog1} objectFit="cover" alt="Slide 1" />
+          <Image src={dog2} objectFit="cover" alt="Slide 2" />
+        </Carousel.Slides>
+        <Carousel.Content className="text-foreground p-2 text-center">
+          <p>Content 1</p>
+          <p>Content 2</p>
+        </Carousel.Content>
+        <Carousel.Controls className="border p-2 rounded-md">
+          <Button>Previous</Button>
+          <Button>Next</Button>
+        </Carousel.Controls>
+      </Carousel>
+    ),
+  },
 ];
 
 export const columns = ['Name', 'Type', 'Default', 'Description'];
