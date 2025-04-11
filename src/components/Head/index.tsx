@@ -1,12 +1,5 @@
+import { IMetaData } from '@/types/metaData';
 import { Helmet } from 'react-helmet-async';
-
-type Props = {
-  title: string;
-  description?: string;
-};
-
-const APP_TITLE = import.meta.env.VITE_APP_TITLE;
-const APP_DESCRIPTION = import.meta.env.VITE_APP_DESCRIPTION;
 
 /**
  * Head component is responsible for setting up the SEO metadata for the page.
@@ -23,13 +16,13 @@ const APP_DESCRIPTION = import.meta.env.VITE_APP_DESCRIPTION;
  * @returns {JSX.Element} The Helmet component with the SEO metadata.
  */
 
-export default function Head({ title, description }: Props) {
+export default function Head({ title, description }: IMetaData) {
   return (
     <Helmet>
-      <title>{`${title} | ${APP_TITLE}`}</title>
-      <meta name="description" content={description ?? `This is ${APP_DESCRIPTION}`} />
-      <meta property="og:title" content={`${title} | ${APP_TITLE}`} />
-      <meta property="og:description" content={description ?? `This is ${APP_DESCRIPTION}`} />
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
       <meta name="robots" content="noindex" />
     </Helmet>
   );
