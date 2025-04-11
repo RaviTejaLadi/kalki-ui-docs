@@ -16,7 +16,7 @@ import Div from '@/components/common/Div';
 
 const CarouselPage = () => {
   return (
-    <div>
+    <div className="container">
       <SectionHeader variant="transparent" size="sm">
         <SectionHeader.Title className="tracking-wide">Carousel</SectionHeader.Title>
         <SectionHeader.SubTitle className="tracking-wide">
