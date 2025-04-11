@@ -5,12 +5,19 @@ import { docs, columns, rows, componentHierarchyCode } from './data/linkBarDocs'
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import Div from '@/components/common/Div';
 import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
+import { IMetaData } from '@/types/metaData';
+import Head from '@/components/Head';
+
+const metaData: IMetaData = {
+  title: 'LinkBar',
+};
 
 const LinkBarPage = () => {
   return (
     <div className="container">
+      <Head {...metaData} />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">LinkBar</SectionHeader.Title>
+        <SectionHeader.Title className="tracking-wide">{metaData.title}</SectionHeader.Title>
       </SectionHeader>
       <Separator />
       <DocumentationRenderer className="my-4" data={docs} />
