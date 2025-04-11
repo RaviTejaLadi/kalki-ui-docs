@@ -5,16 +5,22 @@ import { columns, docs, ListGroupsRows, ListGroupsItemRows } from './data/ListGr
 import Div from '@/components/common/Div';
 import { Heading } from '@/components/common/Typography';
 import TableList from '@/components/common/Table/TableList';
+import { IMetaData } from '@/types/metaData';
+import Head from '@/components/Head';
+
+const metaData: IMetaData = {
+  title: 'List Group',
+  description: `Lists are used to group related content in a structured, easy-to-read manner. The main types of lists are
+          unordered lists, ordered lists , and list groups (custom styled).`,
+};
 
 const ListGroupPage = () => {
   return (
     <div className="container">
+      <Head {...metaData} />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">List Group</SectionHeader.Title>
-        <SectionHeader.SubTitle className="tracking-wide">
-          Lists are used to group related content in a structured, easy-to-read manner. The main types of lists are
-          unordered lists, ordered lists , and list groups (custom styled).
-        </SectionHeader.SubTitle>
+        <SectionHeader.Title className="tracking-wide">{metaData.title}</SectionHeader.Title>
+        <SectionHeader.SubTitle className="tracking-wide">{metaData.description}</SectionHeader.SubTitle>
       </SectionHeader>
       <Separator />
       <DocumentationRenderer data={docs} />
