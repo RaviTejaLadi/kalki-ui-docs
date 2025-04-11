@@ -6,17 +6,21 @@ import { docs, columns, rows, componentHierarchyCode } from './data/linkButtonDo
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import Div from '@/components/common/Div';
 import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
+import { IMetaData } from '@/types/metaData';
+import Head from '@/components/Head';
 
+const metaData: IMetaData = {
+  title: 'Link Button',
+  description: `Button is used to perform various actions when interacted with by users. It’s one of the most common
+          interactive elements in web applications and websites. The button can trigger actions such as form
+          submissions, invoking JavaScript functions, or navigation, among other behaviors.`,
+};
 const LinkButtonPage: React.FC = () => {
   return (
     <div className="container">
+      <Head {...metaData} />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Button</SectionHeader.Title>
-        <SectionHeader.SubTitle className="tracking-wide">
-          Button is used to perform various actions when interacted with by users. It’s one of the most common
-          interactive elements in web applications and websites. The button can trigger actions such as form
-          submissions, invoking JavaScript functions, or navigation, among other behaviors.
-        </SectionHeader.SubTitle>
+        <SectionHeader.Title className="tracking-wide">{metaData.title}</SectionHeader.Title>
       </SectionHeader>
       <Separator />
       <DocumentationRenderer className="my-4" data={docs} />
