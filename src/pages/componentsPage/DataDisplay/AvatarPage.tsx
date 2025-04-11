@@ -5,15 +5,21 @@ import { docs, columns, rows, componentHierarchyCode } from './data/avatarDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
 import Div from '@/components/common/Div';
+import { IMetaData } from '@/types/metaData';
+import Head from '@/components/Head';
+
+const metaData: IMetaData = {
+  title: 'Avatar',
+  description: `Avatar represents people using icons, labels and images.`,
+};
 
 const AvatarPage = () => {
   return (
     <div className="container">
+      <Head {...metaData} />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Avatar</SectionHeader.Title>
-        <SectionHeader.SubTitle className="tracking-wide">
-          Avatar represents people using icons, labels and images.
-        </SectionHeader.SubTitle>
+        <SectionHeader.Title className="tracking-wide">{metaData.title}</SectionHeader.Title>
+        <SectionHeader.SubTitle className="tracking-wide">{metaData.description}</SectionHeader.SubTitle>
       </SectionHeader>
       <Separator />
       <DocumentationRenderer className="my-4" data={docs} />
