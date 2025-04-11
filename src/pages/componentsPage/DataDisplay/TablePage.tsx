@@ -14,15 +14,21 @@ import {
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { Heading } from '@/components/common/Typography';
 import Div from '@/components/common/Div';
+import { IMetaData } from '@/types/metaData';
+import Head from '@/components/Head';
+
+const metaData: IMetaData = {
+  title: 'Table',
+  description: `Table is used to display data in a structured, grid-like format consisting of rows and columns.`,
+};
 
 const TablePage = () => {
   return (
     <div className="container">
+      <Head {...metaData} />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Tables</SectionHeader.Title>
-        <SectionHeader.SubTitle className="tracking-wide">
-          Table is used to display data in a structured, grid-like format consisting of rows and columns.
-        </SectionHeader.SubTitle>
+        <SectionHeader.Title className="tracking-wide">{metaData.title}</SectionHeader.Title>
+        <SectionHeader.SubTitle className="tracking-wide">{metaData.description}</SectionHeader.SubTitle>
         <SectionHeader.SubTitle className="tracking-wide">
           Tables are ideal for presenting data that is best understood in a row-column format, such as statistics,
           schedules, comparisons, financial information, and any data that needs to be organized clearly.
