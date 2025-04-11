@@ -19,8 +19,9 @@ const AccordionPage = () => {
       <SectionHeader variant="transparent" size="sm">
         <SectionHeader.Title className="tracking-wide">Accordion</SectionHeader.Title>
         <SectionHeader.SubTitle className="tracking-wide">
-          An accordion is a vertically stacked list of items where each item can be expanded or collapsed to reveal or
-          hide content. It allows users to manage and navigate large amounts of information within a limited space.
+          Users can expand an accordion section by clicking or tapping on a header, revealing additional details or
+          subcategories. Accordions are often used for organizing content hierarchies, FAQs, or collapsible forms,
+          enhancing user experience by reducing clutter and providing a structured, user-friendly interface.
         </SectionHeader.SubTitle>
       </SectionHeader>
       <Separator />
