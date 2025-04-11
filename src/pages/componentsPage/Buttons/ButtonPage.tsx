@@ -22,12 +22,8 @@ const ButtonPage: React.FC = () => {
     <div className="container">
       <Head {...metaData} />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Button</SectionHeader.Title>
-        <SectionHeader.SubTitle className="tracking-wide">
-          Button is used to perform various actions when interacted with by users. It’s one of the most common
-          interactive elements in web applications and websites. The button can trigger actions such as form
-          submissions, invoking JavaScript functions, or navigation, among other behaviors.
-        </SectionHeader.SubTitle>
+        <SectionHeader.Title className="tracking-wide">{metaData.title}</SectionHeader.Title>
+        <SectionHeader.SubTitle className="tracking-wide">{metaData.description}</SectionHeader.SubTitle>
       </SectionHeader>
       <Separator />
       <ButtonPlayground />
