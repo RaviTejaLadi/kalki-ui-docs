@@ -307,13 +307,6 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         Icon: SidebarClose,
       },
       {
-        label: 'FullScreen Toggle',
-        description:
-          'Adaptive control for managing viewport modes, supporting immersive content experiences across different device types.',
-        path: '/components/fullScreenToggle',
-        Icon: Expand,
-      },
-      {
         label: 'Tabs',
         description:
           'Flexible content organization component supporting dynamic, accessible tab interfaces with responsive design and keyboard navigation.',
@@ -437,6 +430,12 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
           'Touch feedback utility implementing material design-inspired interactive animations for enhanced user interaction feedback.',
         path: '/components/ripple',
         Icon: Target,
+      },      {
+        label: 'FullScreen Toggle',
+        description:
+          'Adaptive control for managing viewport modes, supporting immersive content experiences across different device types.',
+        path: '/components/full-screen-toggle',
+        Icon: Expand,
       },
     ],
   },
