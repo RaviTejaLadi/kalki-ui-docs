@@ -14,12 +14,19 @@ import DocumentationRenderer from '@/components/shared/DocumentationRenderer/Doc
 import Div from '@/components/common/Div';
 import { Heading } from '@/components/common/Typography';
 import UnOrderedList from '@/components/common/Lists/UnOrderedList';
+import { IMetaData } from '@/types/metaData';
+import Head from '@/components/Head';
 
+const metaData: IMetaData = {
+  title: 'Tag',
+  description: additionalNotes[0],
+};
 const TagPage = () => {
   return (
     <div className="container">
+      <Head {...metaData} />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Tag</SectionHeader.Title>
+        <SectionHeader.Title className="tracking-wide">{metaData.title}</SectionHeader.Title>
         <SectionHeader.SubTitle>
           {additionalNotes.map((note, index) => (
             <UnOrderedList key={index}>
