@@ -6,16 +6,22 @@ import DocumentationRenderer from '@/components/shared/DocumentationRenderer/Doc
 import CloseButtonPlayground from '@/components/playground/CloseButtonPlayground';
 import Div from '@/components/common/Div';
 import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
+import { IMetaData } from '@/types/metaData';
+import Head from '@/components/Head';
+
+const metaData: IMetaData = {
+  title: 'Close Button',
+  description: `The CloseButton component is a customizable button that displays a close icon. It can be used in various
+          contexts where a close or dismiss action is needed.`,
+};
 
 const CloseButtonPage = () => {
   return (
     <div className="container">
+      <Head {...metaData} />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Close Button</SectionHeader.Title>
-        <SectionHeader.SubTitle className="tracking-wide">
-          The CloseButton component is a customizable button that displays a close icon. It can be used in various
-          contexts where a close or dismiss action is needed.
-        </SectionHeader.SubTitle>
+        <SectionHeader.Title className="tracking-wide">{metaData.title}</SectionHeader.Title>
+        <SectionHeader.SubTitle className="tracking-wide">{metaData.description}</SectionHeader.SubTitle>
       </SectionHeader>
       <Separator />
       <CloseButtonPlayground />
