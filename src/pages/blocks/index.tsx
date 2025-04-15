@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import React from 'react';
-import HeroSectionPage from './HeroSectionPage';
+import HeroSectionPage from './HeroSectionPage/HeroSectionPage';
 import BlocksLayout from '@/components/Layout/BlocksLayout/BlocksLayout';
 import BlocksOverViewPage from './BlocksOverViewPage';
-import CardsPage from './CardsPage';
+import CardsPage from './CardsPage/CardsPage';
 
 interface RouteConfig {
   path: string;
