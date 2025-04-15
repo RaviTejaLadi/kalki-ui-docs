@@ -78,11 +78,19 @@ module.exports = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        neon: {
+          400: '#6ee7b7',
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+      },
+      boxShadow: {
+        glow: '0 0 8px 2px rgba(110, 231, 183, 0.6)',
+        retro: '2px 2px 0px 1px rgba(251, 191, 36, 0.8)',
+        futuristic: '0 0 12px 4px rgba(110, 231, 183, 0.3)',
       },
     },
   },
