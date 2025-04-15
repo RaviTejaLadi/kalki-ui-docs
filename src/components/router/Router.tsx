@@ -46,7 +46,7 @@ const AppRoutes = () => {
           element: <ComponentsShowCase />,
         },
         {
-          path: '/blocks',
+          path: '/blocks/*',
           element: <Blocks />,
         },
         {
