@@ -1,6 +1,11 @@
 // import HeroSectionOne from '@/components/Blocks/HeroSection/HeroSectionOne';
 // import HeroSectionThree from '@/components/Blocks/HeroSection/HeroSectionThree';
 // import HeroSectionTwo from '@/components/Blocks/HeroSection/HeroSectionTwo';
+// import CardFive from '@/components/Blocks/Cards/CardFive';
+// import CardFour from '@/components/Blocks/Cards/CardFour';
+// import CardOne from '@/components/Blocks/Cards/CardOne';
+// import CardThree from '@/components/Blocks/Cards/CardThree';
+// import CardTwo from '@/components/Blocks/Cards/CardTwo';
 import Separator from '@/components/common/Separator';
 
 const Blocks = () => {
@@ -17,6 +22,11 @@ const Blocks = () => {
       {/* <HeroSectionOne /> */}
       {/* <HeroSectionTwo /> */}
       {/* <HeroSectionThree /> */}
+      {/* <CardOne />
+      <CardTwo />
+      <CardThree />
+      <CardFour />
+      <CardFive /> */}
     </div>
   );
 };
