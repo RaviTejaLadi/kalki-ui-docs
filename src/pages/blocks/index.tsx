@@ -3,13 +3,17 @@ import React from 'react';
 import HeroSectionPage from './HeroSectionPage';
 import BlocksLayout from '@/components/Layout/BlocksLayout/BlocksLayout';
 import BlocksOverViewPage from './BlocksOverViewPage';
+import CardsPage from './CardsPage';
 
 interface RouteConfig {
   path: string;
   Component: React.ComponentType;
 }
 
-const ROUTES: RouteConfig[] = [{ path: 'hero-section', Component: HeroSectionPage }];
+const ROUTES: RouteConfig[] = [
+  { path: 'hero-section', Component: HeroSectionPage },
+  { path: 'cards', Component: CardsPage },
+];
 const Blocks = () => {
   return (
     <Routes>
