@@ -42,7 +42,7 @@ const HeroSectionThree = () => {
                 className="text-sm text-white hover:text-white"
                 target="_blank"
               >
-                Github respository
+                Github repository
               </Link>
             </Button>
           </div>
