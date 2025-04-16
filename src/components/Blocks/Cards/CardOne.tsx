@@ -3,7 +3,7 @@ import Card, { CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 const CardOne = () => {
   return (
-    <Card className="m-4">
+    <Card className="m-4 w-[500px]">
       <CardHeader>
         <CardTitle>Card Title 1</CardTitle>
         <CardDescription>Some brief description about the card content.</CardDescription>

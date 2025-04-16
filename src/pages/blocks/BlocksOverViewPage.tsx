@@ -17,13 +17,11 @@ const BlocksOverViewPage = () => {
       <div className="p-2 flex flex-wrap items-center gap-4">
         {categorizedBlocksRoutesData.map((item, index) => {
           return (
-            <Card key={index} className="w-[15rem]">
-              <CardContent>
-                <Link to={item.path} className="w-auto font-medium truncate">
-                  {item.category}
-                </Link>
-              </CardContent>
-            </Card>
+            <Link to={item.path} key={index}>
+              <Card className="w-[15rem]">
+                <CardContent className="w-auto font-medium truncate">{item.category}</CardContent>
+              </Card>
+            </Link>
           );
         })}
       </div>

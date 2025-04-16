@@ -6,7 +6,7 @@ import Image from '@/components/common/Image';
 
 const CardTwo = () => {
   return (
-    <Card className="m-4">
+    <Card className="m-4 w-[500px]">
       <CardHeader className="flex flex-row justify-between items-center">
         <CardTitle>Card Title 2</CardTitle>
         <Badge>Featured</Badge>

@@ -4,7 +4,7 @@ import Card, { CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 const CardThree = () => {
   return (
-    <Card className="m-4">
+    <Card className="m-4 w-[500px]">
       <CardHeader>
         <div className="flex items-center space-x-2">
           <Avatar>

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const CardFive = () => {
   return (
-    <Card className="m-4">
+    <Card className="m-4 w-[500px]">
       <CardHeader className="flex items-center gap-4">
         <Avatar>
           <AvatarImage src="/placeholder-user.jpg" alt="@kalkiui" />

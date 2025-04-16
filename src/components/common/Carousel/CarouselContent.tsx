@@ -5,7 +5,7 @@ import { cn } from '@/utils';
 
 export const CarouselContent: React.FC<CarouselContentProps> = ({ children, className, style }) => {
   const context = useContext(CarouselContext);
-  
+
   if (!context) {
     throw new Error('CarouselContent must be used within a CarouselContext.Provider');
   }
