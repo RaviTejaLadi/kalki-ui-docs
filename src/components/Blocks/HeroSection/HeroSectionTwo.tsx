@@ -3,6 +3,7 @@ import Image from '@/components/common/Image';
 import Link from '@/components/common/Link';
 import { Heading, Paragraph } from '@/components/common/Typography';
 import { ArrowRight } from 'lucide-react';
+import placeholder from '../../../assets/placeholder.svg';
 
 const HeroSectionTwo = () => {
   return (
@@ -34,7 +35,7 @@ const HeroSectionTwo = () => {
           </Link>
         </Div>
         <Div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-          <Image src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup" />
+          <Image src={placeholder} alt="mockup" />
         </Div>
       </Div>
     </section>

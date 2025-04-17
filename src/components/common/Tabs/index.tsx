@@ -95,7 +95,7 @@ const tabButtonStyles = cva(
 // #endregion
 
 // #region types
-interface TabProps extends BoxProps {
+interface TabProps {
   label: string;
   value: string;
   children: ReactNode;
@@ -105,10 +105,10 @@ interface TabProps extends BoxProps {
   className?: string;
 }
 
-interface TabsProps {
+interface TabsProps extends BoxProps {
   children: React.ReactNode;
   active?: string;
-  onChange?: (value: string) => void;
+  onTabChange?: (value: string) => void;
   variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'help' | 'info' | 'dark' | 'light';
   size?: 'sm' | 'md' | 'lg';
   headerStyles?: CSSProperties;
@@ -124,13 +124,14 @@ interface TabsProps {
 export const Tabs: React.FC<TabsProps> = ({
   children,
   active,
-  onChange,
+  onTabChange,
   variant = 'primary',
   size = 'sm',
   headerStyles,
   bodyStyles,
   className,
   style,
+  ...props
 }) => {
   const isTabElement = (child: React.ReactNode): child is React.ReactElement<TabProps> => {
     return React.isValidElement(child) && 'value' in child.props;
@@ -154,11 +155,11 @@ export const Tabs: React.FC<TabsProps> = ({
   const handleTabClick = useCallback(
     (value: string) => {
       setActiveTab(value);
-      if (onChange) {
-        onChange(value);
+      if (onTabChange) {
+        onTabChange(value);
       }
     },
-    [onChange]
+    [onTabChange]
   );
 
   const getEnabledTabs = useCallback(() => {
@@ -196,7 +197,7 @@ export const Tabs: React.FC<TabsProps> = ({
   );
 
   return (
-    <Box padding="5" rounded className={cn(className)} style={style}>
+    <Box padding="5" rounded className={cn(className)} style={style} {...props}>
       <div
         ref={tabsRef}
         role="tablist"
@@ -267,6 +268,8 @@ export const Tabs: React.FC<TabsProps> = ({
   );
 };
 
-export const Tab: React.FC<TabProps> = ({ children, className }) => (
-  <div className={cn('p-2 animate-fade-in w-full', className)}>{children}</div>
+export const Tab: React.FC<TabProps> = ({ children, className, ...props }) => (
+  <div className={cn('p-2 animate-fade-in w-full', className)} {...props}>
+    {children}
+  </div>
 );
