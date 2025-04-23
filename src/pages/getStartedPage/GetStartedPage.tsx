@@ -1,7 +1,15 @@
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { Stepper } from '@/components/common/Stepper/Stepper';
 import { Tab, Tabs } from '@/components/common/Tabs';
-import { usage } from './tabsData';
+import {
+  tsconfigAppJson,
+  tsconfigJson,
+  usage,
+  viteConfigTs,
+  viteTailwindUsage,
+  viteTypesUsage,
+  viteUsage,
+} from './tabsData';
 import { compExampleCode, componentCode, setupSnippet } from './Snippet';
 import { BoxIcon, Code, Terminal } from 'lucide-react';
 import Button from '@/components/common/Button';
@@ -22,21 +30,77 @@ const GetStarted: React.FC = () => {
 
   return (
     <div className="container">
-      <SectionHeader variant="transparent" className="mb-5" size="sm">
-        <SectionHeader.Title className="dark:text-foreground">Quick Start</SectionHeader.Title>
-        <SectionHeader.SubTitle className="dark:text-muted-foreground">
+      <SectionHeader variant="transparent" size="sm">
+        <SectionHeader.Title className="dark:text-foreground tracking-wide">Quick Start</SectionHeader.Title>
+        <SectionHeader.SubTitle className="dark:text-muted-foreground tracking-wide">
           Getting Started with Kalki UI React
         </SectionHeader.SubTitle>
       </SectionHeader>
       <SectionHeader size="sm" variant="transparent">
-        <SectionHeader.Title className="dark:text-foreground">Introduction</SectionHeader.Title>
-        <SectionHeader.SubTitle className="dark:text-muted-foreground">
+        <SectionHeader.Title className="dark:text-foreground tracking-wide">Introduction</SectionHeader.Title>
+        <SectionHeader.SubTitle className="dark:text-muted-foreground tracking-wide">
           To import a component from this package. you first need to ensure that the package is installed in your
           project. You can install it using npm or yarn or pnpm. Here’s how you can do it:
         </SectionHeader.SubTitle>
       </SectionHeader>
       <Stepper>
-        <Stepper.Step step="1" title="Install the Package">
+        <Stepper.Step step="1" title="Create project">
+          <Stepper.Description>
+            Start by creating a new React project using vite. Select the React + TypeScript template:
+          </Stepper.Description>
+          <Tabs variant="secondary" size="sm">
+            {viteUsage.map((item) => (
+              <Tab label={item.label} key={item.label} value={item.label} leftIcon={item.icon}>
+                <Stepper.CodeBlock code={item.content} language="jsx" />
+              </Tab>
+            ))}
+          </Tabs>
+        </Stepper.Step>
+        <Stepper.Step step="2" title="Add Tailwind CSS">
+          <Tabs variant="secondary" size="sm">
+            {viteTailwindUsage.map((item) => (
+              <Tab label={item.label} key={item.label} value={item.label} leftIcon={item.icon}>
+                <Stepper.CodeBlock code={item.content} language="jsx" />
+              </Tab>
+            ))}
+          </Tabs>
+          <Stepper.Description className="my-2">
+            Replace everything in src/index.css with the following:
+          </Stepper.Description>
+          <Stepper.Description className="my-2">src/index.css</Stepper.Description>
+          <Stepper.CodeBlock code={`@import "tailwindcss";`} language="jsx" />
+        </Stepper.Step>
+        <Stepper.Step step="3" title="Edit tsconfig.json file">
+          <Stepper.Description>
+            The current version of Vite splits TypeScript configuration into three files, two of which need to be
+            edited. Add the baseUrl and paths properties to the compilerOptions section of the tsconfig.json and
+            tsconfig.app.json files:
+          </Stepper.Description>
+
+          <Stepper.CodeBlock code={tsconfigJson} language="jsx" />
+        </Stepper.Step>{' '}
+        <Stepper.Step step="4" title="Edit tsconfig.app.json file">
+          <Stepper.Description>
+            Add the following code to the tsconfig.app.json file to resolve paths, for your IDE:
+          </Stepper.Description>
+
+          <Stepper.CodeBlock code={tsconfigAppJson} language="jsx" />
+        </Stepper.Step>
+        <Stepper.Step step="5" title="Update vite.config.ts">
+          <Stepper.Description>
+            Add the following code to the vite.config.ts so your app can resolve paths without error:
+          </Stepper.Description>
+          <Tabs variant="secondary" size="sm">
+            {viteTypesUsage.map((item) => (
+              <Tab label={item.label} key={item.label} value={item.label} leftIcon={item.icon}>
+                <Stepper.CodeBlock code={item.content} language="jsx" />
+              </Tab>
+            ))}
+          </Tabs>
+          <Stepper.Description className="my-2">vite.config.ts</Stepper.Description>
+          <Stepper.CodeBlock code={viteConfigTs} language="jsx" />
+        </Stepper.Step>
+        <Stepper.Step step="6" title="Install the Package">
           <Stepper.Description>Install the package in your project directory with:</Stepper.Description>
           <Tabs variant="secondary" size="sm">
             {usage.map((item) => (
@@ -46,18 +110,18 @@ const GetStarted: React.FC = () => {
             ))}
           </Tabs>
         </Stepper.Step>
-        <Stepper.Step step="2" title="Getting setup">
+        <Stepper.Step step="7" title="Getting setup">
           <Stepper.Description>To start using the components, please follow these steps:</Stepper.Description>
           <Stepper.CodeBlock code={setupSnippet} />
         </Stepper.Step>
-        <Stepper.Step step="3" title="Import the Component">
+        <Stepper.Step step="8" title="Import the Component">
           <Stepper.Description>
             Once the package is installed, you can import the components you need from kalki-ui. Suppose you want to
             import a component called Button. Here’s how you can do it:
           </Stepper.Description>
           <Stepper.CodeBlock code={componentCode} />
         </Stepper.Step>
-        <Stepper.Step step="4" title="Use the Component">
+        <Stepper.Step step="9" title="Use the Component">
           <Stepper.Description>
             After importing the Button component, you can use it in your React component:
           </Stepper.Description>

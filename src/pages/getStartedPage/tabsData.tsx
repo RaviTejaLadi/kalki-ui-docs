@@ -10,6 +10,131 @@ interface usageData {
   content: string;
   icon: React.ReactNode;
 }
+
+export const viteUsage: usageData[] = [
+  {
+    label: 'npm',
+    content: `
+      npm create vite@latest
+    `,
+    icon: <Npm width="20px" height="20px" />,
+  },
+  {
+    label: 'yarn',
+    content: `
+      yarn create vite@latest
+    `,
+    icon: <Yarn width="20px" height="20px" />,
+  },
+  {
+    label: 'pnpm',
+    content: `
+      pnpm create vite@latest
+    `,
+    icon: <Pnpm width="20px" height="20px" />,
+  },
+];
+
+export const viteTailwindUsage: usageData[] = [
+  {
+    label: 'npm',
+    content: `
+      npm install tailwindcss @tailwindcss/vite
+    `,
+    icon: <Npm width="20px" height="20px" />,
+  },
+  {
+    label: 'yarn',
+    content: `
+      yarn add tailwindcss @tailwindcss/vite
+    `,
+    icon: <Yarn width="20px" height="20px" />,
+  },
+  {
+    label: 'pnpm',
+    content: `
+      pnpm add tailwindcss @tailwindcss/vite
+    `,
+    icon: <Pnpm width="20px" height="20px" />,
+  },
+];
+
+export const viteTypesUsage: usageData[] = [
+  {
+    label: 'npm',
+    content: `
+      npm install -D @types/node
+    `,
+    icon: <Npm width="20px" height="20px" />,
+  },
+  {
+    label: 'yarn',
+    content: `
+      yarn add -D @types/node
+    `,
+    icon: <Yarn width="20px" height="20px" />,
+  },
+  {
+    label: 'pnpm',
+    content: `
+      pnpm add -D @types/node
+    `,
+    icon: <Pnpm width="20px" height="20px" />,
+  },
+];
+
+export const tsconfigJson = `
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+`;
+
+export const tsconfigAppJson = `
+{
+  "compilerOptions": {
+    // ...
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+    // ...
+  }
+}
+`;
+
+export const viteConfigTs = `
+import path from "path"
+import tailwindcss from "@tailwindcss/vite"
+import react from "@vitejs/plugin-react"
+import { defineConfig } from "vite"
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+})
+
+`;
 export const usage: usageData[] = [
   {
     label: 'npm',

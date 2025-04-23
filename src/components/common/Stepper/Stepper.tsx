@@ -23,17 +23,11 @@ interface StepperProps {
   className?: string;
 }
 
-// interface StepperComponent extends StepperProps {
-//   Step: React.FC<StepProps>;
-//   CodeBlock: React.FC<CodeBlockProps>;
-//   Description: React.FC<DescriptionProps>;
-// }
-
-const StepperContext = createContext({});
+const StepperContext = createContext(null);
 
 export const Stepper = ({ children, className }: StepperProps) => {
   return (
-    <StepperContext.Provider value={{}}>
+    <StepperContext.Provider value={null}>
       <div className={cn('w-full mx-auto p-6 bg-background text-foreground ', className)}>
         <div className="relative">{children}</div>
       </div>
@@ -45,10 +39,11 @@ const StepperStep: React.FC<StepProps> = ({ step, title, children }) => {
   return (
     <div className="relative flex items-start gap-8 mb-10 group">
       {step && (
-        <div className="relative flex-shrink-0 w-8 h-8 text-center bg-background border rounded-full flex items-center justify-center text-sm font-bold dark:border-gray-200/10">
+        <div className="relative flex-shrink-0 w-8 h-8 text-center text-foreground bg-background border rounded-full flex items-center justify-center text-sm font-bold dark:border-gray-200/10">
           {step}
         </div>
       )}
+      <div className="absolute top-8 left-4 h-full w-[0.5px] dark:bg-gray-200/10 bg-gray-200 group-last:hidden" />
       <div className="flex-1">
         <h3 className="text-md text-foreground font-semibold mb-3">{title}</h3>
         <div className="text-base text-muted-foreground">{children}</div>
@@ -66,7 +61,7 @@ const StepperCodeBlock: React.FC<CodeBlockProps> = ({ code, language, ...rest })
 };
 
 const StepperDescription: React.FC<DescriptionProps> = ({ children, className }) => {
-  return <p className={cn('text-muted-foreground mb-4', className)}>{children}</p>;
+  return <p className={cn('text-muted-foreground text-xs mb-4', className)}>{children}</p>;
 };
 
 Stepper.Step = StepperStep;
