@@ -1,42 +1,42 @@
 import Link from '@/components/common/Link';
-import { ChevronsDownIcon } from 'lucide-react';
-import React from 'react';
+import Logo from '@/components/shared/TopBar/Logo';
+// import { ChevronsDownIcon } from 'lucide-react';
+// import React from 'react';
 
-interface link {
-  label: string;
-  to: string;
-}
-interface FooterLinksProps {
-  title: string;
-  links: link[];
-}
+// interface link {
+//   label: string;
+//   to: string;
+// }
+// interface FooterLinksProps {
+//   title: string;
+//   links: link[];
+// }
 
-const FooterLinks: React.FC<FooterLinksProps> = ({ title, links }) => (
-  <div className="flex flex-col gap-2">
-    <h3 className="font-semibold text-base text-purple-500">{title}</h3>
-    {links.map((link, index) => (
-      <div key={index}>
-        <Link to={link.to} className="text-xs text-foreground">
-          {link.label}
-        </Link>
-      </div>
-    ))}
-  </div>
-);
+// const FooterLinks: React.FC<FooterLinksProps> = ({ title, links }) => (
+//   <div className="flex flex-col gap-2">
+//     <h3 className="font-semibold text-base text-purple-500">{title}</h3>
+//     {links.map((link, index) => (
+//       <div key={index}>
+//         <Link to={link.to} className="text-xs text-foreground">
+//           {link.label}
+//         </Link>
+//       </div>
+//     ))}
+//   </div>
+// );
 
 export const FooterSection = () => {
-  const contactLinks = [
-    { label: 'Github', to: '#' },
-    { label: 'Twitter', to: '#' },
-    { label: 'Instagram', to: '#' },
-  ];
+  // const contactLinks = [
+  //   { label: 'Github', to: '#' },
+  //   { label: 'Twitter', to: '#' },
+  //   { label: 'Instagram', to: '#' },
+  // ];
 
-  const helpLinks = [
-    { label: 'Contact Us', to: '#' },
-    { label: 'FAQ', to: '#' },
-    { label: 'Feedback', to: '#' },
-  ];
-  const currentYear = new Date().getFullYear();
+  // const helpLinks = [
+  //   { label: 'Contact Us', to: '#' },
+  //   { label: 'FAQ', to: '#' },
+  //   { label: 'Feedback', to: '#' },
+  // ];
 
   return (
     <footer className="mx-10 pt-24 sm:pt-32 sm:pb-10">
@@ -45,24 +45,38 @@ export const FooterSection = () => {
           {/* Brand Section */}
           <div>
             <Link to="#" className="flex font-bold items-center text-purple-500 " aria-label="Kalki UI React">
-              <ChevronsDownIcon className="w-9 h-9 mr-2 rounded-lg border border-secondary dark:border-gray-200/10" />
-              <h3 className="text-2xl">Kalki UI</h3>
+              <Logo />
             </Link>
           </div>
 
-          {/* Links Section */}
           <div className="flex gap-20">
+            <section className="text-xs">
+              <h3 className="text-foreground">
+                Designed and developed by
+                <Link
+                  target="_blank"
+                  to="#"
+                  className="transition-all text-xs text-purple-500 italic border-primary hover:border-b-2 ml-1"
+                  aria-label="Ravi Teja Ladi"
+                >
+                  @ Ravi Teja Ladi
+                </Link>
+              </h3>
+            </section>
+          </div>
+          {/* Links Section */}
+          {/* <div className="flex gap-20">
             <FooterLinks title="Contact" links={contactLinks} />
             <FooterLinks title="Help" links={helpLinks} />
-          </div>
+          </div> */}
         </div>
 
-        <hr className="my-6 dark:border-gray-200/10" />
+        {/* <hr className="my-6 dark:border-gray-200/10" /> */}
 
         {/* Copyright Section */}
-        <section className="text-xs">
+        {/* <section className="text-xs">
           <h3 className="text-foreground">
-            Copyright &copy; {currentYear} Designed and developed by
+            Designed and developed by
             <Link
               target="_blank"
               to="#"
@@ -72,7 +86,7 @@ export const FooterSection = () => {
               @ Ravi Teja Ladi
             </Link>
           </h3>
-        </section>
+        </section> */}
       </div>
     </footer>
   );
