@@ -1,9 +1,9 @@
 import { cn } from '@/utils';
 import React, { CSSProperties, forwardRef, ReactNode } from 'react';
-import Label from './Label';
+import Label, { LabelProps } from './Label';
 import { FormErrorMessage } from './FormErrorMessage';
 
-interface FormGroupProps {
+interface FormGroupProps extends LabelProps {
   children?: ReactNode;
   className?: string;
   margin?: string;
@@ -27,7 +27,7 @@ const FormGroup = forwardRef<HTMLDivElement, FormGroupProps>(
       labelFor,
       margin = '0 0 20px 0',
       padding,
-      ...props
+      size,
     },
     ref
   ) => {
@@ -38,9 +38,9 @@ const FormGroup = forwardRef<HTMLDivElement, FormGroupProps>(
     };
 
     return (
-      <div ref={ref} className={cn(className)} style={customStyles} {...props}>
+      <div ref={ref} className={cn(className)} style={customStyles}>
         {label && (
-          <Label htmlFor={labelFor} required={required}>
+          <Label htmlFor={labelFor} size={size} required={required}>
             {label}
           </Label>
         )}

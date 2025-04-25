@@ -17,7 +17,7 @@ interface JsonViewerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'ti
 // #endregion
 
 // #region components
-const JsonViewerComponent = forwardRef<HTMLDivElement, JsonViewerProps>(
+const JsonViewer = forwardRef<HTMLDivElement, JsonViewerProps>(
   ({ indentation = 4, replacer = null, data, className, style, ...rest }, ref) => {
     const [jsonData, setJsonData] = useState<string>('');
     const [copyButtonText, setCopyButtonText] = useState(<Clipboard className="size-3" />);
@@ -118,11 +118,11 @@ const JsonViewerComponent = forwardRef<HTMLDivElement, JsonViewerProps>(
   }
 );
 
-JsonViewerComponent.displayName = 'JsonViewer';
+JsonViewer.displayName = 'JsonViewer';
 // #endregion
 
 // #region export
-export default JsonViewerComponent;
+export default JsonViewer;
 
 export type { JsonViewerProps, JsonReplacer };
 // #endregion
