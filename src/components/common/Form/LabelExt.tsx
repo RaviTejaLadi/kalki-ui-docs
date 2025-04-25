@@ -1,7 +1,7 @@
 import React from 'react';
 import { Info } from 'lucide-react';
-import Label, { LabelProps } from '../Label/Label';
-import Tooltip from '../Tooltip/Tooltip';
+import Label, { LabelProps } from './Label';
+import Tooltip from './Tooltip';
 
 interface LabelExtProps extends Omit<LabelProps, 'children'> {
   label: string;

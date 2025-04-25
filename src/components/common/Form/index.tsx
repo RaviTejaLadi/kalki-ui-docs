@@ -1,29 +1,28 @@
-import React, { forwardRef, ReactNode, FormEvent, CSSProperties } from 'react';
-import FormGroup from './FormGroup/FormGroup';
-import Label from './Label/Label';
-import Input from './Input/Input';
-import Textarea from './Textarea/Textarea';
-import Checkbox from './Checkbox/Checkbox';
-import Radio from './Radio/Radio';
-import Submit from './Submit/Submit';
+import React, { forwardRef, ReactNode, CSSProperties, FormEvent } from 'react';
+import FormGroup from './FormGroup';
+import Label from './Label';
+import Input from './Input';
+import Textarea from './Textarea';
+import Checkbox from './Checkbox';
+import Radio from './Radio';
+import Submit from './Submit';
 import { cn } from '@/utils';
+import Slider from './Slider';
+import FileInput from './FileInput';
+import Select from './Select';
+import Switch from './Switch';
 
 interface FormProps extends React.HTMLAttributes<HTMLFormElement> {
   children: ReactNode;
-  onSubmit: () => void;
+  onSubmit: (e: FormEvent<HTMLFormElement>) => void;
   className?: string;
   style?: CSSProperties;
 }
 
 const Form = forwardRef<HTMLFormElement, FormProps>(
   ({ children, onSubmit, className = '', style = {}, ...rest }, ref) => {
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      onSubmit();
-    };
-
     return (
-      <form ref={ref} className={cn('space-y-2', className)} style={style} onSubmit={handleSubmit} {...rest}>
+      <form ref={ref} className={cn('space-y-2', className)} style={style} onSubmit={onSubmit} {...rest}>
         {children}
       </form>
     );
@@ -42,7 +41,11 @@ export default Object.assign(
     Checkbox: Checkbox,
     Radio: Radio,
     Submit: Submit,
+    Slider: Slider,
+    Switch: Switch,
+    Select: Select,
+    FileInput: FileInput,
   }
 );
 
-export { FormGroup, Label, Input, Textarea, Checkbox, Radio, Submit };
+export { FormGroup, Label, Input, Textarea, Checkbox, Radio, Slider, Select, Switch, FileInput, Submit };

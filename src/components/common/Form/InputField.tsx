@@ -1,8 +1,9 @@
 import { forwardRef } from 'react';
-import Input, { InputProps } from '../Input/Input';
-import LabelExt from '../LabelExt/LabelExt';
-import { LabelProps } from '../Label/Label';
+import Input, { InputProps } from './Input';
+import LabelExt from './LabelExt';
+import { LabelProps } from './Label';
 import { cn } from '@/utils';
+import { FormErrorMessage } from './FormErrorMessage';
 
 interface InputFieldProps extends InputProps {
   label: string;
@@ -19,16 +20,12 @@ export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
         <Input
           name={name}
           size={size}
-          className={cn(error && 'border-red-500 focus:border-red-500 focus:ring-red-200', className)}
+          className={cn(error && 'dark:border-red-500 border-red-500 focus-visible:ring-red-500', className)}
           aria-invalid={error ? 'true' : 'false'}
           aria-describedby={error ? `${name}-error` : undefined}
           {...props}
         />
-        {error && (
-          <p id={`${name}-error`} className="text-xs text-red-500 mt-1" role="alert">
-            {error}
-          </p>
-        )}
+        {error && <FormErrorMessage error={error} />}
       </div>
     );
   }

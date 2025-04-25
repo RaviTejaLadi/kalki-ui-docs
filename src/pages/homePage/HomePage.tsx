@@ -4,6 +4,7 @@ import { FeaturesSection } from './FeaturesSection';
 import ComponentCategoriesSection from './ComponentCategoriesSection';
 import Div from '@/components/common/Div';
 import Head from '@/components/Head';
+// import FormExample from './FormExample ';
 // import  NumberRenderer  from '@/components/common/NumberRenderer/NumberRenderer';
 // import { useState } from 'react';
 
@@ -56,6 +57,7 @@ export default function Home() {
           Increase Count
         </button>
       </div> */}
+      {/* <FormExample /> */}
       <Head title="Home" />
       <HeroSection />
       <FeaturesSection />

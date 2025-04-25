@@ -16,8 +16,8 @@ import Drawer from './Drawer';
 import { Fragment, useState } from 'react';
 import Figure from './Figure';
 import Form from './Form';
-import LabelExt from './Form/LabelExt/LabelExt';
-import { InputField } from './Form/InputField/InputField';
+import LabelExt from './Form/LabelExt';
+import { InputField } from './Form/InputField';
 import FullScreenToggle from './FullScreenToggle';
 import Gallery from './Gallery';
 
