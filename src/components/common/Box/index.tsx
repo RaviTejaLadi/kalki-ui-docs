@@ -1,35 +1,91 @@
-import { forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 import { cn } from '@/utils';
-import type { BoxProps } from './types';
-import { boxVariants } from './boxVariants';
+import { cva, type VariantProps } from 'class-variance-authority';
 
-/**
- * A Box component that serves as a flexible container with various styling options.
- *
- * @param {string} [width='auto'] - The width of the box.
- * @param {string} [height='auto'] - The height of the box.
- * @param {boolean} [shadow] - Whether the box should have a shadow.
- * @param {boolean} [rounded=false] - Whether the box should have rounded corners.
- * @param {React.ReactNode} children - The content to be rendered inside the box.
- * @param {boolean} [outlined=false] - Whether the box should have an outline.
- * @param {string} [className] - Additional class names to apply to the box.
- * @param {string} [margin='0'] - The margin around the box.
- * @param {string} [padding='0'] - The padding inside the box.
- * @param {string} [color] - The text color of the box.
- * @param {string} [backgroundColor] - The background color of the box.
- * @param {string} [display='block'] - The display property of the box.
- * @param {string} [flexDirection] - The flex direction of the box if it is a flex container.
- * @param {string} [flexWrap] - The flex wrap property of the box if it is a flex container.
- * @param {string} [justifyContent] - The justify content property of the box if it is a flex container.
- * @param {string} [alignItems] - The align items property of the box if it is a flex container.
- * @param {string} [alignContent] - The align content property of the box if it is a flex container.
- * @param {string} [gap] - The gap between flex items if the box is a flex container.
- * @param {React.CSSProperties} [style] - Additional inline styles to apply to the box.
- * @param {React.Ref<HTMLDivElement>} ref - The ref to be forwarded to the box element.
- * @param {object} rest - Additional props to be spread onto the box element.
- *
- * @returns {JSX.Element} The rendered Box component.
- */
+// #region boxVariants
+export const boxVariants = cva('block', {
+  variants: {
+    display: {
+      block: 'block',
+      flex: 'flex',
+      inline: 'inline',
+    },
+    shadow: {
+      none: 'shadow-none',
+      sm: 'shadow-sm',
+      normal: 'shadow',
+      md: 'shadow-md',
+      lg: 'shadow-lg',
+      xl: 'shadow-xl',
+      '2xl': 'shadow-2xl',
+      inner: 'shadow-inner',
+    },
+    rounded: {
+      true: 'rounded-lg',
+      false: '',
+    },
+    outlined: {
+      true: 'border border-gray-300',
+      false: '',
+    },
+    flexDirection: {
+      row: 'flex-row',
+      column: 'flex-col',
+    },
+    flexWrap: {
+      wrap: 'flex-wrap',
+      nowrap: 'flex-nowrap',
+    },
+    justifyContent: {
+      start: 'justify-start',
+      center: 'justify-center',
+      end: 'justify-end',
+      between: 'justify-between',
+    },
+    alignItems: {
+      start: 'items-start',
+      center: 'items-center',
+      end: 'items-end',
+    },
+    alignContent: {
+      start: 'content-start',
+      center: 'content-center',
+      end: 'content-end',
+    },
+
+    gap: {
+      0: 'gap-0',
+      1: 'gap-1',
+      2: 'gap-2',
+      4: 'gap-4',
+      8: 'gap-8',
+      12: 'gap-12',
+    },
+  },
+  defaultVariants: {
+    display: 'block',
+    shadow: 'none',
+    rounded: false,
+    outlined: false,
+    gap: 0,
+  },
+});
+// #endregion
+
+// #region types
+interface BoxProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof boxVariants> {
+  width?: string;
+  height?: string;
+  color?: string;
+  backgroundColor?: string;
+  margin?: string;
+  padding?: string;
+}
+// #endregion
+
+// #region Box
 const Box = forwardRef<HTMLDivElement, BoxProps>(
   (
     {
@@ -80,7 +136,12 @@ const Box = forwardRef<HTMLDivElement, BoxProps>(
     };
 
     return (
-      <div style={inlineStyles} ref={ref} className={cn(classNames, className)} {...rest}>
+      <div
+        style={inlineStyles}
+        ref={ref}
+        className={cn(classNames, className)}
+        {...rest}
+      >
         {children}
       </div>
     );
@@ -88,6 +149,9 @@ const Box = forwardRef<HTMLDivElement, BoxProps>(
 );
 
 Box.displayName = 'Box';
+// #endregion
 
+// #region exports
 export default Box;
-export { BoxProps };
+export type { BoxProps };
+// #endregion
