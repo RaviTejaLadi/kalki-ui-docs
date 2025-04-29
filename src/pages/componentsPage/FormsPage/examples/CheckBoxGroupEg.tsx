@@ -29,7 +29,7 @@ export const CheckBoxGroupEg = () => {
       return { ...prev, folders };
     });
   };
-  
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     addToast({

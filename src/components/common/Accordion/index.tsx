@@ -1,4 +1,5 @@
-import React, {
+import * as React from 'react';
+import {
   forwardRef,
   useState,
   useCallback,
@@ -15,7 +16,8 @@ import { cn } from '@/utils';
 import { cva, VariantProps } from 'class-variance-authority';
 import { ChevronDown } from 'lucide-react';
 
-export const accordionVariants = cva('w-full border-[.5px] dark:border-gray-200/10 rounded-md overflow-hidden', {
+// #region accordionVariants
+const accordionVariants = cva('w-full border-[.5px] dark:border-gray-200/10 rounded-md overflow-hidden', {
   variants: {
     size: {
       sm: 'text-sm',
@@ -30,6 +32,9 @@ export const accordionVariants = cva('w-full border-[.5px] dark:border-gray-200/
   },
 });
 
+// #endRegion
+
+// #region types
 type AccordionVariant = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'help' | 'info' | 'dark' | 'light';
 
 type AccordionSize = 'sm' | 'md' | 'lg' | 'xl' | '2xl';
@@ -64,6 +69,16 @@ interface AccordionBodyProps {
   style?: CSSProperties;
 }
 
+interface AccordionContextType {
+  activeKeys: Set<string>;
+  toggleItem: (eventKey: string) => void;
+  openItem: (eventKey: string) => void;
+  variant: AccordionVariant;
+  size: AccordionSize;
+}
+// #endRegion
+
+// #region utils
 export const backgroundColorMap: Record<AccordionVariant, string> = {
   primary: 'bg-primary',
   secondary: 'bg-secondary',
@@ -91,17 +106,13 @@ export const sizesMap: Record<AccordionSize, string> = {
   xl: 'h-13',
   '2xl': 'h-14',
 };
+// #endRegion
 
-export interface AccordionContextType {
-  activeKeys: Set<string>;
-  toggleItem: (eventKey: string) => void;
-  openItem: (eventKey: string) => void;
-  variant: AccordionVariant;
-  size: AccordionSize;
-}
-
+// #region context
 export const AccordionContext = createContext<AccordionContextType | null>(null);
+// #endRegion
 
+// #region components
 const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
   ({ children, variant = 'primary', size = 'sm', className, style, ...rest }, ref) => {
     const [activeKeys, setActiveKeys] = useState<Set<string>>(new Set());
@@ -228,12 +239,15 @@ const AccordionHeader: React.FC<AccordionHeaderProps> = ({
 
 const AccordionItem: React.FC<AccordionItemProps> = ({ children, className, style, ...rest }) => {
   return (
-    <div className={cn('border-[.5px] dark:border-gray-200/10 last:border-b-0', className)} style={style} {...rest}>
+    <div className={cn('border-b border-gray-200 last:border-b-0', className)} style={style} {...rest}>
       {children}
     </div>
   );
 };
 
+// #endRegion
+
+// #region exports
 export default Object.assign(
   Accordion as React.ForwardRefExoticComponent<AccordionProps & React.RefAttributes<HTMLDivElement>>,
   {
@@ -243,7 +257,7 @@ export default Object.assign(
   }
 );
 
-export { AccordionHeader, AccordionBody, AccordionItem };
+export { AccordionHeader, AccordionBody, AccordionItem, accordionVariants };
 export type {
   AccordionVariant,
   AccordionSize,
@@ -252,3 +266,4 @@ export type {
   AccordionHeaderProps,
   AccordionBodyProps,
 };
+// #endRegion
