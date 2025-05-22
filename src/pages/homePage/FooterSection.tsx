@@ -55,7 +55,7 @@ export const FooterSection = () => {
                 Designed and developed by
                 <Link
                   target="_blank"
-                  to="#"
+                  to="https://ravitejaladi.vercel.app/"
                   className="transition-all text-xs text-purple-500 italic border-primary hover:border-b-2 ml-1"
                   aria-label="Ravi Teja Ladi"
                 >
