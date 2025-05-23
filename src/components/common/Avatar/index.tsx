@@ -53,30 +53,24 @@ const AvatarContext = createContext<AvatarContextType>({});
 
 // #region Avatar
 
-const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
-  ({ children, className, size, shape, ...props }, ref) => {
-    const [hasError, setHasError] = useState(false);
+const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(({ children, className, size, shape, ...props }, ref) => {
+  const [hasError, setHasError] = useState(false);
 
-    return (
-      <AvatarContext.Provider
-        value={{
-          size,
-          shape,
-          hasError,
-          onError: () => setHasError(true),
-        }}
-      >
-        <div
-          ref={ref}
-          className={cn('relative inline-flex', className)}
-          {...props}
-        >
-          {children}
-        </div>
-      </AvatarContext.Provider>
-    );
-  }
-);
+  return (
+    <AvatarContext.Provider
+      value={{
+        size,
+        shape,
+        hasError,
+        onError: () => setHasError(true),
+      }}
+    >
+      <div ref={ref} className={cn('relative inline-flex', className)} {...props}>
+        {children}
+      </div>
+    </AvatarContext.Provider>
+  );
+});
 
 Avatar.displayName = 'Avatar';
 
@@ -115,11 +109,7 @@ const AvatarImage = React.forwardRef<HTMLImageElement, AvatarImageProps>(
         ref={ref}
         src={src}
         alt={alt}
-        className={cn(
-          avatarVariants({ size, shape }),
-          'object-cover',
-          className
-        )}
+        className={cn(avatarVariants({ size, shape }), 'object-cover', className)}
         onError={onError}
         {...props}
       />
@@ -138,11 +128,6 @@ export default Object.assign(Avatar as React.FC<AvatarProps>, {
 });
 
 export { AvatarFallback, AvatarImage, avatarVariants };
-export type {
-  AvatarContextType,
-  AvatarProps,
-  AvatarImageProps,
-  AvatarFallbackProps,
-};
+export type { AvatarContextType, AvatarProps, AvatarImageProps, AvatarFallbackProps };
 
 // #endregion

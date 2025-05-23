@@ -73,9 +73,7 @@ export const boxVariants = cva('block', {
 // #endregion
 
 // #region types
-interface BoxProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof boxVariants> {
+interface BoxProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof boxVariants> {
   width?: string;
   height?: string;
   color?: string;
@@ -136,12 +134,7 @@ const Box = forwardRef<HTMLDivElement, BoxProps>(
     };
 
     return (
-      <div
-        style={inlineStyles}
-        ref={ref}
-        className={cn(classNames, className)}
-        {...rest}
-      >
+      <div style={inlineStyles} ref={ref} className={cn(classNames, className)} {...rest}>
         {children}
       </div>
     );

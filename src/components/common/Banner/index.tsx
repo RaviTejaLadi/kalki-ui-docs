@@ -76,41 +76,21 @@ interface BannerChildProps {
 
 // #region Banner
 const Banner = forwardRef<HTMLDivElement, BannerProps>(
-  (
-    {
-      children,
-      variant,
-      size = 'md',
-      controls,
-      className = '',
-      style,
-      background,
-      ...rest
-    },
-    ref
-  ) => {
+  ({ children, variant, size = 'md', controls, className = '', style, background, ...rest }, ref) => {
     const bannerClasses = bannerVariants({ variant, size });
 
     const bannerStyle: CSSProperties = {
       ...style,
       ...(background && {
-        background: background.match(/^(http|data:)/)
-          ? `url(${background}) center/cover no-repeat`
-          : background,
+        background: background.match(/^(http|data:)/) ? `url(${background}) center/cover no-repeat` : background,
       }),
     };
 
     return (
-      <div
-        className={cn(bannerClasses, className, variant)}
-        style={bannerStyle}
-        ref={ref}
-        {...rest}
-      >
+      <div className={cn(bannerClasses, className, variant)} style={bannerStyle} ref={ref} {...rest}>
         <div className="flex-grow">
           {React.Children.map(children, (child) =>
-            React.isValidElement(child) &&
-            (child.type === BannerTitle || child.type === BannerSubTitle)
+            React.isValidElement(child) && (child.type === BannerTitle || child.type === BannerSubTitle)
               ? React.cloneElement(child, {
                   ...child.props,
                   size: size || 'md',
@@ -118,9 +98,7 @@ const Banner = forwardRef<HTMLDivElement, BannerProps>(
               : child
           )}
         </div>
-        {controls && (
-          <div className="flex items-center gap-2 mt-2 md:mt-0">{controls}</div>
-        )}
+        {controls && <div className="flex items-center gap-2 mt-2 md:mt-0">{controls}</div>}
       </div>
     );
   }
@@ -130,11 +108,7 @@ Banner.displayName = 'Banner';
 
 const BannerTitle = React.forwardRef<HTMLHeadingElement, BannerChildProps>(
   ({ children, className = '', style, size = 'md' }, ref) => (
-    <h2
-      ref={ref}
-      className={cn('font-semibold', titleSizes[size], className)}
-      style={style}
-    >
+    <h2 ref={ref} className={cn('font-semibold', titleSizes[size], className)} style={style}>
       {children}
     </h2>
   )
@@ -144,11 +118,7 @@ BannerTitle.displayName = 'BannerTitle';
 
 const BannerSubTitle = forwardRef<HTMLParagraphElement, BannerChildProps>(
   ({ children, className = '', style, size = 'md' }, ref) => (
-    <p
-      ref={ref}
-      className={cn('my-1', subtitleSizes[size], className)}
-      style={style}
-    >
+    <p ref={ref} className={cn('my-1', subtitleSizes[size], className)} style={style}>
       {children}
     </p>
   )
@@ -159,9 +129,7 @@ BannerSubTitle.displayName = 'BannerSubTitle';
 
 // #region exports
 export default Object.assign(
-  Banner as React.ForwardRefExoticComponent<
-    BannerProps & React.RefAttributes<HTMLDivElement>
-  >,
+  Banner as React.ForwardRefExoticComponent<BannerProps & React.RefAttributes<HTMLDivElement>>,
   {
     Title: BannerTitle,
     SubTitle: BannerSubTitle,
