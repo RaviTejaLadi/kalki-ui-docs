@@ -54,10 +54,10 @@ const Navbar = ({
               </NavigationMenu>
             </div>
           </Div>
-          <Div className="hidden md:block">
+          <Div className="flex items-center gap-3">
             <ThemeToggle />
             <a href="https://github.com/RaviTejaLadi/kalki-ui" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" size="xs">
+              <Button variant="ghost" size="xs">
                 <Github className="h-4 w-4" />
               </Button>
             </a>
