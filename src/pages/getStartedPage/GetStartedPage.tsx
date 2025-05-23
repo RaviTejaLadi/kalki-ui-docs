@@ -68,7 +68,9 @@ const GetStarted: React.FC = () => {
             Replace everything in src/index.css with the following:
           </Stepper.Description>
           <Stepper.Description className="my-2">src/index.css</Stepper.Description>
-          <Stepper.CodeBlock code={`@import "tailwindcss";`} language="jsx" />
+          <div className="h-auto overflow-auto mb-5  p-1 border rounded-lg dark:border-gray-200/10">
+            <Stepper.CodeBlock code={`@import "tailwindcss";`} language="jsx" />
+          </div>
         </Stepper.Step>
         <Stepper.Step step="3" title="Edit tsconfig.json file">
           <Stepper.Description>
@@ -76,15 +78,17 @@ const GetStarted: React.FC = () => {
             edited. Add the baseUrl and paths properties to the compilerOptions section of the tsconfig.json and
             tsconfig.app.json files:
           </Stepper.Description>
-
-          <Stepper.CodeBlock code={tsconfigJson} language="jsx" />
+          <div className="h-auto overflow-auto mb-5  p-1 border rounded-lg dark:border-gray-200/10">
+            <Stepper.CodeBlock code={tsconfigJson} language="jsx" />
+          </div>
         </Stepper.Step>{' '}
         <Stepper.Step step="4" title="Edit tsconfig.app.json file">
           <Stepper.Description>
             Add the following code to the tsconfig.app.json file to resolve paths, for your IDE:
           </Stepper.Description>
-
-          <Stepper.CodeBlock code={tsconfigAppJson} language="jsx" />
+          <div className="h-auto overflow-auto mb-5  p-1 border rounded-lg dark:border-gray-200/10">
+            <Stepper.CodeBlock code={tsconfigAppJson} language="jsx" />
+          </div>
         </Stepper.Step>
         <Stepper.Step step="5" title="Update vite.config.ts">
           <Stepper.Description>
@@ -98,7 +102,9 @@ const GetStarted: React.FC = () => {
             ))}
           </Tabs>
           <Stepper.Description className="my-2">vite.config.ts</Stepper.Description>
-          <Stepper.CodeBlock code={viteConfigTs} language="jsx" />
+          <div className="h-auto overflow-auto mb-5  p-1 border rounded-lg dark:border-gray-200/10">
+            <Stepper.CodeBlock code={viteConfigTs} language="jsx" />
+          </div>
         </Stepper.Step>
         <Stepper.Step step="6" title="Install the Package">
           <Stepper.Description>Install the package in your project directory with:</Stepper.Description>
@@ -112,14 +118,18 @@ const GetStarted: React.FC = () => {
         </Stepper.Step>
         <Stepper.Step step="7" title="Getting setup">
           <Stepper.Description>To start using the components, please follow these steps:</Stepper.Description>
-          <Stepper.CodeBlock code={setupSnippet} />
+          <div className="h-auto overflow-auto mb-5  p-1 border rounded-lg dark:border-gray-200/10">
+            <Stepper.CodeBlock code={setupSnippet} />
+          </div>
         </Stepper.Step>
         <Stepper.Step step="8" title="Import the Component">
           <Stepper.Description>
             Once the package is installed, you can import the components you need from kalki-ui. Suppose you want to
             import a component called Button. Here’s how you can do it:
           </Stepper.Description>
-          <Stepper.CodeBlock code={componentCode} />
+          <div className="h-auto overflow-auto mb-5  p-1 border rounded-lg dark:border-gray-200/10">
+            <Stepper.CodeBlock code={componentCode} />
+          </div>
         </Stepper.Step>
         <Stepper.Step step="9" title="Use the Component">
           <Stepper.Description>
