@@ -321,7 +321,7 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
     Icon: FileQuestion,
     components: [
       {
-        label: 'NonIdealState',
+        label: 'Error Pages',
         description:
           'Comprehensive error handling and empty state components for managing unexpected application scenarios with informative and user-friendly interfaces.',
         path: '/components/nonIdealState',

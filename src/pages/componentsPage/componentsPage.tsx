@@ -39,6 +39,7 @@ import { FullScreenTogglePage, RipplePage } from './Utilities';
 import React from 'react';
 import ComponentsLayout from '@/components/Layout/ComponentsLayout/ComponentsLayout';
 import { BoxPage, StackPage } from './LayoutPage';
+import { NonIdealPage } from './Error Page';
 interface RouteConfig {
   path: string;
   Component: React.ComponentType;
@@ -110,6 +111,9 @@ const ROUTES: RouteConfig[] = [
   // Layout
   { path: 'box', Component: BoxPage },
   { path: 'stack', Component: StackPage },
+
+  // error page
+  { path: 'nonIdealState', Component: NonIdealPage },
 ];
 
 const Components = () => {
