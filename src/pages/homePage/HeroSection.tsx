@@ -41,7 +41,7 @@ export const HeroSection = () => {
               <GradientText delay={600}>
                 <h1 className="px-2 text-purple-400 text-4xl tracking-wide md:text-6xl">Kalki UI</h1>
               </GradientText>
-              <h6 className="text-xl md:text-xl text-foreground">Build using Tsx and Tailwind css</h6>
+              <h6 className="text-xl md:text-xl text-foreground">Build using Typescript and Tailwind CSS</h6>
             </div>
           </TextReveal>
           <TextReveal delay={600}>
@@ -52,7 +52,7 @@ export const HeroSection = () => {
           </TextReveal>
           <TextReveal delay={800}>
             <p className="max-w-screen-sm mx-auto text-xl tracking-wide text-muted-foreground">
-              Best Package For All Your Ui Needs
+              Best Package For All Your UI Needs
             </p>
           </TextReveal>
           <TextReveal delay={1000}>
@@ -71,7 +71,7 @@ export const HeroSection = () => {
               <Button size="xs" variant="ghost" className="w-5/6 md:w-1/4 text-black hover:text-purple-400 font-bold">
                 <Link
                   className="text-xs text-dark dark:text-white"
-                  to="https://github.com/nobruf/shadcn-landing-page.git"
+                  to="https://github.com/RaviTejaLadi/kalki-ui"
                   target="_blank"
                 >
                   Github repository
