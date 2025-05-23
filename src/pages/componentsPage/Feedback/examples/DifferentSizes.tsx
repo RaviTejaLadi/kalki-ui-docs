@@ -14,23 +14,41 @@ const DifferentSizes = () => {
     setIsOpen(opt);
   };
 
+  const getReadableSize = (size: ModalSize) => {
+    switch (size) {
+      case 'sm':
+        return 'Small';
+      case 'md':
+        return 'Medium';
+      case 'lg':
+        return 'Large';
+      case 'xl':
+        return 'Extra Large';
+      case '2xl':
+        return '2X Large';
+      case 'fullscreen':
+        return 'Fullscreen';
+      default:
+        return '';
+    }
+  };
+
   return (
     <Box>
       <Box padding="10px" margin="10px" style={{ display: 'flex', justifyContent: 'flex-start', gap: '10px' }}>
-        {['sm' as const, 'md' as const, 'lg' as const, 'xl' as const, '2xl' as const, 'fullscreen' as const].map(
-          (size) => (
-            <Button key={size} onClick={() => handleModal(size, true)}>
-              {size}
-            </Button>
-          )
-        )}
+        {['sm', 'md', 'lg', 'xl', '2xl', 'fullscreen'].map((size) => (
+          <Button key={size} onClick={() => handleModal(size as ModalSize, true)}>
+            {size}
+          </Button>
+        ))}
       </Box>
+
       <Modal open={isOpen} size={size}>
         <Modal.Header closeButton onClose={() => setIsOpen(false)}>
-          <Modal.Title>Large Modal</Modal.Title>
+          <Modal.Title>{getReadableSize(size)} Modal</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>This is a large-sized modal.</p>
+          <p>This is a {getReadableSize(size).toLowerCase()}-sized modal.</p>
         </Modal.Body>
       </Modal>
     </Box>
