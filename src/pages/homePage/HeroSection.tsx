@@ -74,7 +74,7 @@ export const HeroSection = () => {
                   to="https://github.com/RaviTejaLadi/kalki-ui"
                   target="_blank"
                 >
-                  Github repository
+                  Github Repository
                 </Link>
               </Button>
             </div>
