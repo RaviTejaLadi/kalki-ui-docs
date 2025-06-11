@@ -11,7 +11,7 @@ const featureList: FeaturesProps[] = [
     id: Math.random(),
     title: '📦 Kalki UI Package:',
     description:
-      " Enhance your React projects with the comprehensive 'kalki-ui' package, meticulously crafted with React, HTML, CSS, and JavaScript. This all-in-one toolkit is designed to streamline your development process by providing a rich set of essential components for building dynamic and visually appealing user interfaces.",
+      " Enhance your React projects with the comprehensive 'kalki-ui' package, meticulously crafted with React, Typescript and Tailwind CSS. This all-in-one toolkit is designed to streamline your development process by providing a rich set of essential components for building dynamic and visually appealing user interfaces.",
   },
   {
     id: Math.random(),
