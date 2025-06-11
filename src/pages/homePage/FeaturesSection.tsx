@@ -21,9 +21,9 @@ const featureList: FeaturesProps[] = [
   },
   {
     id: Math.random(),
-    title: '🎨 HTML and CSS Integration:',
+    title: '🎨 HTML and Tailwind CSS Integration:',
     description:
-      '  The package is built with clean HTML and CSS, ensuring easy customization and compatibility with a wide range of project structures.',
+      '  The package is built with clean HTML and Tailwind CSS, ensuring easy customization and compatibility with a wide range of project structures.',
   },
   {
     id: Math.random(),
