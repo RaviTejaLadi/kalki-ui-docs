@@ -32,7 +32,7 @@ const Navbar = ({
     { title: 'Get Started', url: '/get-started' },
     { title: 'Components', url: '/components' },
     { title: 'Blocks', url: '/blocks' },
-    { title: 'State Vault', url: 'https://state-vault-docs.vercel.app/' },
+    // { title: 'State Vault', url: 'https://state-vault-docs.vercel.app/' },
     { title: 'Colors', url: '/colors' },
   ],
 }: Navbar1Props) => {
