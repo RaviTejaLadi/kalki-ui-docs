@@ -18,7 +18,7 @@ import Link from '@/components/common/Link';
 export const AppSideBar = ({ className }: { className?: string }) => {
   const location = useLocation();
   return (
-    <Sidebar className={cn(className, 'w-[13rem]')}>
+    <Sidebar className={cn(className, 'w-[20rem]')}>
       <SidebarBody>
         <SidebarGroup>
           <SidebarGroupLabel>Components</SidebarGroupLabel>
@@ -77,7 +77,7 @@ export default function ComponentsLayout() {
       <aside className="fixed top-11 left-0 h-screen hidden md:block">
         <AppSideBar />
       </aside>
-      <main className="ml-0 md:ml-[13rem] w-full flex-1 p-6 overflow-y-auto">
+      <main className="ml-0 md:ml-[20rem] w-full flex-1 p-6 overflow-y-auto">
         <Outlet />
       </main>
     </div>
