@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 interface YarnProps extends React.SVGProps<SVGSVGElement> {
-  className: string;
+  className?: string;
 }
 
 const Yarn: React.FC<YarnProps> = ({ className, ...props }) => (

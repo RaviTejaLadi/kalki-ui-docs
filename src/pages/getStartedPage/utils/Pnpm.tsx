@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface PnpmProps extends React.SVGProps<SVGSVGElement> {
-  className: string;
+  className?: string;
 }
 
 const Pnpm: React.FC<PnpmProps> = ({ className, ...props }) => (
