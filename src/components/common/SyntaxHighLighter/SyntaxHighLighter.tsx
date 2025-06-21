@@ -125,7 +125,7 @@ export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
                 highlightActiveLine: false,
                 tabSize: 2,
               }}
-              className="text-sm font-bold"
+              className="text-sm p-4 font-bold"
               {...rest}
             />
           )}
