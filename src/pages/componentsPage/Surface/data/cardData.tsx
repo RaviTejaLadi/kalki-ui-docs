@@ -1,3 +1,4 @@
+import Badge from '@/components/common/Badge';
 import Button from '@/components/common/Button';
 import Card, { CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/common/Card';
 import { docsData } from '@/types/docsData';
@@ -160,6 +161,43 @@ export const docs: docsData[] = [
                 <span className="font-semibold">+21.7%</span>
               </div>
             </div>
+          </div>
+        </CardContent>
+      </Card>
+    ),
+  },
+  {
+    title: 'Stats card type 3',
+    code: `
+<Card className="w-[30rem]">
+  <CardHeader className="flex flex-row items-center justify-start gap-2 space-y-0 pb-2">
+    <CardTitle className="text-sm font-medium">Response Time</CardTitle>
+    <Clock className="h-4 w-4 text-muted-foreground" />
+  </CardHeader>
+  <CardContent>
+    <div className="text-2xl font-bold">1.24s</div>
+    <div className="flex items-center justify-between mt-2">
+      <span className="text-xs text-muted-foreground">Average</span>
+      <Badge variant="secondary" className="bg-green-100 text-green-800">
+        Fast
+      </Badge>
+    </div>
+  </CardContent>
+</Card>
+        `,
+    snippet: (
+      <Card className="w-[30rem]">
+        <CardHeader className="flex flex-row items-center justify-start gap-2 space-y-0 pb-2">
+          <Clock className="h-4 w-4 text-muted-foreground" />
+          <CardTitle className="text-sm font-medium">Response Time</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="text-2xl font-bold">1.24s</div>
+          <div className="flex items-center justify-between mt-2">
+            <span className="text-xs text-muted-foreground">Average</span>
+            <Badge variant="secondary" className="bg-green-100 text-green-800">
+              Fast
+            </Badge>
           </div>
         </CardContent>
       </Card>
