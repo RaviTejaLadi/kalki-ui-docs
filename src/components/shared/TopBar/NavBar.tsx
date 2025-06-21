@@ -57,7 +57,7 @@ const Navbar = ({
           <Div className="flex items-center gap-3">
             <ThemeToggle />
             <a href="https://github.com/RaviTejaLadi/kalki-ui" target="_blank" rel="noopener noreferrer">
-              <Button variant="ghost" size="xs">
+              <Button variant="ghost" size="xs" accessKey="View source code" aria-label="View source code">
                 <Github className="h-4 w-4" />
               </Button>
             </a>
@@ -94,7 +94,7 @@ const Navbar = ({
               <Div className=" flex items-center justify-end">
                 <ThemeToggle />
                 <a href="https://github.com/RaviTejaLadi/kalki-ui" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" size="xs">
+                  <Button variant="outline" size="xs" accessKey="View source code" aria-label="View source code">
                     <Github className="h-4 w-4" />
                   </Button>
                 </a>
