@@ -5,7 +5,7 @@ import { ChevronRight } from 'lucide-react';
 
 export default function ComponentCategoriesSection() {
   return (
-    <div className="px-10 ">
+    <div className=" container px-10 ">
       <Tabs defaultTab="buttons">
         <Tabs.List title="✨ Component Showcase ✨">
           {categorizedRoutesComponents.map((category, index) => (
