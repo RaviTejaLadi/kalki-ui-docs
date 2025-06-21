@@ -1,4 +1,4 @@
-import React, { createContext, useContext, ReactNode, Context, useCallback } from 'react';
+import React, { createContext, useContext, Context, useCallback, PropsWithChildren } from 'react';
 
 type ContextValue = boolean;
 
@@ -14,7 +14,7 @@ type ContextValue = boolean;
  *
  * @example
  * ```tsx
- * const { Provider, useProtectedContext } = createProtectedContext(
+ * const { Provider, useProtectedContext } = CreateProtectedContext(
  *   "This component must be used within Provider"
  * );
  *
@@ -27,20 +27,15 @@ type ContextValue = boolean;
  * const contextValue = useProtectedContext();
  * ```
  */
-export const createProtectedContext = (errorMessage: string) => {
+ const CreateProtectedContext = (errorMessage: string) => {
   // Explicitly type the context
   const Context: Context<ContextValue> = createContext<ContextValue>(false);
   Context.displayName = 'ProtectedContext'; // Add displayName for better debugging
 
   // Use proper type definition for the Provider props
-  interface ProviderProps {
-    children: ReactNode;
-  }
 
   // Memoize the Provider component
-  const Provider: React.FC<ProviderProps> = React.memo(({ children }) => (
-    <Context.Provider value>{children}</Context.Provider>
-  ));
+  const Provider: React.FC<PropsWithChildren> = ({ children }) => <Context.Provider value>{children}</Context.Provider>;
 
   // Name the component for better debugging
   Provider.displayName = 'ProtectedContextProvider';
@@ -87,3 +82,5 @@ export const createProtectedContext = (errorMessage: string) => {
     useProtectedContext,
   } as const; // Make return type readonly
 };
+
+export default CreateProtectedContext
