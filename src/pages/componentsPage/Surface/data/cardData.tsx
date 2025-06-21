@@ -2,7 +2,7 @@ import Badge from '@/components/common/Badge';
 import Button from '@/components/common/Button';
 import Card, { CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/common/Card';
 import { docsData } from '@/types/docsData';
-import { ArrowUpRight, Clock, Eye, Users } from 'lucide-react';
+import { ArrowUpRight, Award, Clock, Eye, Users } from 'lucide-react';
 
 export const docs: docsData[] = [
   {
@@ -44,7 +44,7 @@ export const docs: docsData[] = [
     ),
   },
   {
-    title: 'Stats card type 1',
+    title: 'Multi-metric Card',
     code: `
 <Card className="w-[30rem]">
   <CardHeader className="pb-2">
@@ -112,7 +112,7 @@ export const docs: docsData[] = [
     ),
   },
   {
-    title: 'Stats card type 2',
+    title: 'Comparison Card',
     code: `
 <Card className="w-[30rem]">
   <CardHeader className="pb-2">
@@ -167,7 +167,7 @@ export const docs: docsData[] = [
     ),
   },
   {
-    title: 'Stats card type 3',
+    title: 'Time-based Card',
     code: `
 <Card className="w-[30rem]">
   <CardHeader className="flex flex-row items-center justify-start gap-2 space-y-0 pb-2">
@@ -198,6 +198,51 @@ export const docs: docsData[] = [
             <Badge variant="secondary" className="bg-green-100 text-green-800">
               Fast
             </Badge>
+          </div>
+        </CardContent>
+      </Card>
+    ),
+  },
+  {
+    title: 'Performance Score Card',
+    code: `
+      <Card className="w-[30rem]">
+        <CardHeader className="flex flex-row items-center justify-start gap-2 space-y-0 pb-2">
+          <Award className="h-4 w-4 text-muted-foreground" />
+          <CardTitle className="text-sm font-medium">Performance Score</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-center space-x-2">
+            <div className="text-2xl font-bold">{85}</div>
+            <div className="text-sm text-muted-foreground">/100</div>
+          </div>
+          <div className="mt-2">
+            <div className="flex items-center justify-between text-xs">
+              <span>Excellent</span>
+              <span className="text-green-600 font-medium">Grade A</span>
+            </div>
+            <progress value={85} className="h-2 mt-1" />
+          </div>
+        </CardContent>
+      </Card>
+        `,
+    snippet: (
+      <Card className="w-[30rem]">
+        <CardHeader className="flex flex-row items-center justify-start gap-2 space-y-0 pb-2">
+          <Award className="h-4 w-4 text-muted-foreground" />
+          <CardTitle className="text-sm font-medium">Performance Score</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-center space-x-2">
+            <div className="text-2xl font-bold">{85}</div>
+            <div className="text-sm text-muted-foreground">/100</div>
+          </div>
+          <div className="mt-2">
+            <div className="flex items-center justify-between text-xs">
+              <span>Excellent</span>
+              <span className="text-green-600 font-medium">Grade A</span>
+            </div>
+            <progress value={85} className="h-2 rounded-full mt-1" />
           </div>
         </CardContent>
       </Card>
