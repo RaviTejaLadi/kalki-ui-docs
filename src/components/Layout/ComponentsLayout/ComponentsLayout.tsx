@@ -44,7 +44,8 @@ export const AppSideBar = ({ className }: { className?: string }) => {
                       icon={Icon ? <Icon className="size-4 text-[var(--icon-color)]" /> : null}
                       className={cn(
                         'hover:bg-gray-100 dark:hover:bg-gray-200/10',
-                        isActive && 'bg-gray-100 dark:bg-gray-200/10 font-medium text-foreground'
+                        isActive &&
+                          'bg-blue-500/20 border-blue-200 border shadow-lg dark:bg-gray-200/10 dark:border-gray-200/10 font-medium text-foreground'
                       )}
                     >
                       {label}
