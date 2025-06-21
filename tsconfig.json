@@ -24,7 +24,9 @@
     "baseUrl": "./src",
     "paths": {
       "@/*": ["./*"],
-      "class-variance-authority/types": ["node_modules/class-variance-authority/dist/types.d.ts"]
+      "class-variance-authority/types": [
+        "node_modules/class-variance-authority/dist/types.d.ts"
+      ]
     }
   },
   "include": ["src"],
