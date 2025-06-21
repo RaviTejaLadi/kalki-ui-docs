@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Table from '@/components/common/Table';
 import { Heading } from '@/components/common/Typography';
 import React, { useEffect, useState, useRef } from 'react';

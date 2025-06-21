@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Form from '@/components/common/Form';
 import { SetStateAction, useState } from 'react';
 
