@@ -1,7 +1,7 @@
 import React from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils';
-import CreateProtectedContext from '@/utils/CreateProtectedContext';
+import ProtectedContext from '@/utils/ProtectedContext';
 
 const fieldSetStyles = cva('border-2 rounded-md p-1 mx-2 mb-4', {
   variants: {
@@ -33,7 +33,7 @@ const fieldSetLabelStyles = cva('px-2 font-medium border rounded-md', {
   },
 });
 
-const { Provider: FieldSetProvider, useProtectedContext: useFieldSetContext } = CreateProtectedContext(
+const { Provider: FieldSetProvider, useProtectedContext: useFieldSetContext } = ProtectedContext(
   '`FieldSetLabel` and `FieldSetContent` must be used within `FieldSet`. Please refer to the documentation for more information.'
 );
 
