@@ -27,7 +27,7 @@ type ContextValue = boolean;
  * const contextValue = useProtectedContext();
  * ```
  */
- const ProtectedContext = (errorMessage: string) => {
+const ProtectedContext = (errorMessage: string) => {
   // Explicitly type the context
   const Context: Context<ContextValue> = createContext<ContextValue>(false);
   Context.displayName = 'ProtectedContext'; // Add displayName for better debugging
@@ -83,4 +83,4 @@ type ContextValue = boolean;
   } as const; // Make return type readonly
 };
 
-export default ProtectedContext
+export default ProtectedContext;

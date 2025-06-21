@@ -1,8 +1,11 @@
 import React from 'react';
-interface PnpmProps extends React.SVGProps<SVGSVGElement> {}
 
-const Pnpm: React.FC<PnpmProps> = (props) => (
-  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" {...props}>
+interface PnpmProps extends React.SVGProps<SVGSVGElement> {
+  className: string;
+}
+
+const Pnpm: React.FC<PnpmProps> = ({ className, ...props }) => (
+  <svg className={className} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" {...props}>
     <g strokeWidth={0} />
     <g strokeLinecap="round" strokeLinejoin="round" />
     <path
