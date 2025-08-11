@@ -14,15 +14,46 @@ import { MessageSquare } from 'lucide-react';
 import { categorizedRoutesComponents } from './categorizedRoutesComponents';
 import { cn } from '@/utils';
 import Link from '@/components/common/Link';
+import { useState, useMemo } from 'react';
+import { Input } from '@/components/common/Form';
 
 export const AppSideBar = ({ className }: { className?: string }) => {
   const location = useLocation();
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // Filter categories and components based on search query
+  const filteredCategories = useMemo(() => {
+    if (!searchQuery.trim()) {
+      return categorizedRoutesComponents;
+    }
+
+    const query = searchQuery.toLowerCase();
+    return categorizedRoutesComponents
+      .map((category) => ({
+        ...category,
+        components: category.components.filter(
+          (component) =>
+            component.label.toLowerCase().includes(query) || component.description?.toLowerCase().includes(query)
+        ),
+      }))
+      .filter((category) => category.components.length > 0);
+  }, [searchQuery]);
+
   return (
     <Sidebar className={cn(className, 'w-[20rem]')}>
       <SidebarBody>
+        <div className="p-4 ">
+          <Input
+            type="search"
+            placeholder="Search components..."
+            className=" w-[18rem]"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
         <SidebarGroup>
           <SidebarGroupLabel>Components</SidebarGroupLabel>
-          {categorizedRoutesComponents.map(({ category, components, path, Icon }) => (
+          {filteredCategories.map(({ category, components, path, Icon }) => (
             <SidebarGroupContent key={path}>
               <SidebarMenuSub defaultOpen>
                 <SidebarMenuSubButton
@@ -57,9 +88,6 @@ export const AppSideBar = ({ className }: { className?: string }) => {
           ))}
         </SidebarGroup>
         <SidebarMenu>
-          {/* <SidebarMenuItem to="/turbo-utilities" icon={<CircleGauge className="size-4 text-[var(--icon-color)]" />}>
-            Turbo Utilities
-          </SidebarMenuItem> */}
           <SidebarMenuItem
             to="https://kalki-ui-toast-docs.vercel.app/"
             icon={<MessageSquare className="size-4 text-[var(--icon-color)]" />}
