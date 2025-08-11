@@ -90,7 +90,9 @@ const SnippetDisplay: React.FC<SnippetDisplayProps> = ({ snippet, highlighter })
         </div>
         <div className="flex-1 bg-gray-800" />
       </div>
-      <div className="h-auto overflow-auto  p-4 border-t dark:border-gray-200/10">{highlighter}</div>
+      <div className="h-auto overflow-auto  p-1.5 border-t dark:border-gray-200/10">
+        <div className="border  rounded dark:border-gray-200/10">{highlighter}</div>
+      </div>
     </div>
   );
 };
