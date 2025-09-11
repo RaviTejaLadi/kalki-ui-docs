@@ -173,49 +173,48 @@ export const docs: docsData[] = [
 ];
 
 export const columns = ['Name', 'Type', 'Default', 'Description'];
+
 export const accordionProps = [
   [
     'variant',
-    'string',
+    `'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'help' | 'info' | 'dark' | 'light'`,
     'primary',
-    "Specifies the visual variant of the Accordion. Possible values are 'primary', 'secondary', 'success', 'danger', 'warning', 'help', 'info', 'dark', and 'light'.",
+    'Specifies the visual variant of the Accordion.',
   ],
-  ['size', 'string', 'sm', "Specifies the size of the Accordion. Possible values are 'sm', 'md', and 'lg'."],
+  ['size', `'sm' | 'md' | 'lg' | 'xl' | '2xl'`, 'sm', 'Specifies the size of the Accordion.'],
   [
     'children',
-    'node',
+    'ReactNode',
     'null',
-    'The content to be rendered inside the Accordion component. This should be Accordion.Item components.',
+    'The content to be rendered inside the Accordion component. This should include Accordion.Item components.',
   ],
-];
-
-export const accordionHeaderProps = [
-  [
-    'eventKey',
-    'string',
-    'required',
-    'A unique identifier for the accordion item. This is used to control the open/close state.',
-  ],
-  ['icon', 'node', 'ArrowDropDown', 'An optional custom icon to use instead of the default arrow icon.'],
-  ['open', 'boolean', 'false', 'If true, the accordion item will be open by default.'],
-  ['children', 'node', 'null', 'The content to be rendered inside the Accordion.Header component.'],
-];
-
-export const accordionBodyProps = [
-  [
-    'eventKey',
-    'string',
-    'required',
-    'A unique identifier for the accordion item. This should match the eventKey of the corresponding Accordion.Header.',
-  ],
-  ['children', 'node', 'null', 'The content to be rendered inside the Accordion.Body component.'],
+  ['className', 'string', '-', 'Additional CSS classes to apply to the Accordion container.'],
+  ['style', 'CSSProperties', '-', 'Inline styles applied to the Accordion container.'],
 ];
 
 export const accordionItemProps = [
   [
     'children',
-    'node',
+    'ReactNode',
     'null',
-    'The content to be rendered inside the Accordion.Item component. This should typically be an Accordion.Header and an Accordion.Body.',
+    'The content inside the Accordion.Item, typically Accordion.Header and Accordion.Body.',
   ],
+  ['className', 'string', '-', 'Additional CSS classes for the Accordion.Item.'],
+  ['style', 'CSSProperties', '-', 'Inline styles applied to the Accordion.Item.'],
+];
+
+export const accordionHeaderProps = [
+  ['children', 'ReactNode', 'null', 'The header text or elements displayed inside the Accordion.Header.'],
+  ['eventKey', 'string', '-', 'Unique identifier for the Accordion.Header and Accordion.Body pair.'],
+  ['open', 'boolean', 'false', 'If true, the Accordion.Header opens its corresponding Accordion.Body by default.'],
+  ['icon', 'ReactNode', '<ChevronDown />', 'Optional custom icon displayed on the right side of the header.'],
+  ['className', 'string', '-', 'Additional CSS classes for the Accordion.Header.'],
+  ['style', 'CSSProperties', '-', 'Inline styles applied to the Accordion.Header.'],
+];
+
+export const accordionBodyProps = [
+  ['children', 'ReactNode', 'null', 'The content displayed when the Accordion.Body is expanded.'],
+  ['eventKey', 'string', '-', 'Unique identifier linking this Accordion.Body to its corresponding Accordion.Header.'],
+  ['className', 'string', '-', 'Additional CSS classes for the Accordion.Body.'],
+  ['style', 'CSSProperties', '-', 'Inline styles applied to the Accordion.Body.'],
 ];
