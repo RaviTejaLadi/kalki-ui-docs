@@ -1,9 +1,11 @@
 import { SectionHeader } from '@/components/common/SectionHeader';
 import Separator from '@/components/common/Separator';
 import TableList from '@/components/common/Table/TableList';
-import { docs, columns, rows } from './data/bannerData';
+import { docs, columns, rows, bannerSubTitleRows, bannerTitleRows } from './data/bannerData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import Code from '@/components/common/Code';
+import Div from '@/components/common/Div';
+import { Heading } from '@/components/common/Typography';
 
 const BannerPage = () => {
   return (
@@ -23,7 +25,26 @@ const BannerPage = () => {
       <SectionHeader variant="transparent" size="sm">
         <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
       </SectionHeader>
-      <TableList columns={columns} rows={rows} code CodeColumn={0} />
+      <Div className="space-y-5">
+        <Div>
+          <Heading as="h6" className="mb-2 text-muted-foreground">
+            Banner
+          </Heading>
+          <TableList columns={columns} rows={rows} code CodeColumn={0} />
+        </Div>
+        <Div>
+          <Heading as="h6" className="mb-2 text-muted-foreground">
+            BannerTitle
+          </Heading>
+          <TableList columns={columns} rows={bannerTitleRows} code CodeColumn={0} />
+        </Div>
+        <Div>
+          <Heading as="h6" className="mb-2 text-muted-foreground">
+            BannerSubTitle
+          </Heading>
+          <TableList columns={columns} rows={bannerSubTitleRows} code CodeColumn={0} />
+        </Div>
+      </Div>
     </div>
   );
 };

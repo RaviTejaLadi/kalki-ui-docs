@@ -80,7 +80,7 @@ const SnippetDisplay: React.FC<SnippetDisplayProps> = ({ snippet, highlighter })
           className=" flex justify-center items-center overflow-auto  relative"
           style={{ width: componentWidth ? `${componentWidth}px` : '100%' }}
         >
-          <div className="p-4">{snippet}</div>
+          <div className="p-4 w-full">{snippet}</div>
         </div>
         <div
           className="w-2 bg-background  cursor-ew-resize flex items-center justify-center"
