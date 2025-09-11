@@ -2,7 +2,7 @@ import { SectionHeader } from '@/components/common/SectionHeader';
 import Separator from '@/components/common/Separator';
 import TableList from '@/components/common/Table/TableList';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
-import { docs, columns, rows } from './data/textHighlighterData';
+import { docs, columns, rows, textHighlighterTextRows } from './data/textHighlighterData';
 
 const TextHighlighterPage = () => {
   return (
@@ -16,9 +16,13 @@ const TextHighlighterPage = () => {
       </SectionHeader>
       <Separator /> <DocumentationRenderer data={docs} />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
+        <SectionHeader.Title className="tracking-wide">TextHighlighter Props</SectionHeader.Title>
       </SectionHeader>
       <TableList columns={columns} rows={rows} code CodeColumn={0} />
+      <SectionHeader variant="transparent" size="sm">
+        <SectionHeader.Title className="tracking-wide">TextHighlighterText Props</SectionHeader.Title>
+      </SectionHeader>
+      <TableList columns={columns} rows={textHighlighterTextRows} code CodeColumn={0} />
     </div>
   );
 };

@@ -1,6 +1,5 @@
-import React, { createContext, forwardRef, useContext, useMemo, useState } from 'react';
+import React, { createContext, forwardRef, useContext, useMemo } from 'react';
 import { cva } from 'class-variance-authority';
-import { Info } from 'lucide-react';
 import { cn } from '@/utils';
 
 // #region textHighlighterVariants
@@ -160,14 +159,6 @@ interface TextHighlighterTextProps extends React.HTMLAttributes<HTMLSpanElement>
   color?: string;
 }
 
-interface TextHighlighterInfoProps {
-  children: string;
-  variant?: 'light' | 'dark';
-  className?: string;
-}
-
-// #endregion
-
 // #region context
 export const HighlightContext = createContext<HighlightContextType>({
   colorsList: defaultColors,
@@ -200,28 +191,6 @@ const TextHighlighter: React.FC<TextHighlighterProps> = ({
     <HighlightContext.Provider value={contextValue}>
       <div className="text-muted-foreground">{children}</div>
     </HighlightContext.Provider>
-  );
-};
-
-const TextHighlighterInfo: React.FC<TextHighlighterInfoProps> = ({ children, variant = 'dark', className }) => {
-  const [show, setShow] = useState(false);
-
-  return (
-    <div className="relative inline-block" onMouseOver={() => setShow(true)} onMouseOut={() => setShow(false)}>
-      <Info className="ml-2 -mt-1 w-3 h-3 cursor-pointer text-gray-500" />
-      {show && (
-        <div
-          className={cn(
-            'absolute z-10 p-2 mt-1 text-sm rounded shadow-lg overflow-y-auto',
-            variant === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900 border border-gray-200',
-            className
-          )}
-          style={{ maxWidth: '300px', maxHeight: '150px' }}
-        >
-          {children}
-        </div>
-      )}
-    </div>
   );
 };
 
@@ -283,18 +252,9 @@ TextHighlighterText.displayName = 'TextHighlighterText';
 export default Object.assign(
   TextHighlighter as React.ForwardRefExoticComponent<TextHighlighterProps & React.RefAttributes<HTMLDivElement>>,
   {
-    Info: TextHighlighterInfo,
     Text: TextHighlighterText,
   }
 );
 
-export { TextHighlighterInfo, TextHighlighterText, textHighlighterVariants };
-export type {
-  Variant,
-  Emphasis,
-  Sizing,
-  HighlightContextType,
-  TextHighlighterProps,
-  TextHighlighterTextProps,
-  TextHighlighterInfoProps,
-};
+export { TextHighlighterText, textHighlighterVariants };
+export type { Variant, Emphasis, Sizing, HighlightContextType, TextHighlighterProps, TextHighlighterTextProps };
