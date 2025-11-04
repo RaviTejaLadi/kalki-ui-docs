@@ -15,4 +15,9 @@ export const categorizedBlocksRoutesData: CategorizedBlocksRoutes[] = [
     category: 'Cards',
     path: '/blocks/cards',
   },
+  {
+    id: 'error-pages',
+    category: 'Error Pages',
+    path: '/blocks/error-pages',
+  },
 ];

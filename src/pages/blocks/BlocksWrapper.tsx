@@ -19,7 +19,7 @@ const BlocksWrapper = ({ children, className, BlockName }: BlocksWrapperProps) =
         </Button>
         <div className="text-muted-foreground">{BlockName}</div>
       </div>
-      <div>{children}</div>
+      <div className="columns-1 md:columns-2 gap-1 space-y-2">{children}</div>
     </div>
   );
 };

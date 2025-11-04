@@ -4,6 +4,7 @@ import HeroSectionPage from './HeroSectionPage/HeroSectionPage';
 import BlocksLayout from '@/components/Layout/BlocksLayout/BlocksLayout';
 import BlocksOverViewPage from './BlocksOverViewPage';
 import CardsPage from './CardsPage/CardsPage';
+import ErrorPages from './ErrorPages/ErrorPages';
 
 interface RouteConfig {
   path: string;
@@ -13,7 +14,9 @@ interface RouteConfig {
 const ROUTES: RouteConfig[] = [
   { path: 'hero-section', Component: HeroSectionPage },
   { path: 'cards', Component: CardsPage },
+  { path: 'error-pages', Component: ErrorPages },
 ];
+
 const Blocks = () => {
   return (
     <Routes>
