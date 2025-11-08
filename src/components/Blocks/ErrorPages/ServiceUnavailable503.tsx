@@ -12,7 +12,7 @@ const ServiceUnavailable503 = () => {
           </div>
         </EmptyMedia>
         <EmptyHeader>
-          <div className="text-7xl font-bold text-slate-800 mb-4">503</div>
+          <div className="text-7xl font-bold text-muted-foreground mb-4">503</div>
           <EmptyTitle>Service Unavailable</EmptyTitle>
           <EmptyDescription>
             The service is temporarily unavailable. We&apos;re performing maintenance or experiencing high traffic.

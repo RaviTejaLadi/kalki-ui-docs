@@ -1,7 +1,12 @@
+import BadGateway502 from '@/components/Blocks/ErrorPages/BadGateway502';
 import Forbidden403 from '@/components/Blocks/ErrorPages/Forbidden403';
+import GatewayTimeout504 from '@/components/Blocks/ErrorPages/GatewayTimeout504';
+import Gone410 from '@/components/Blocks/ErrorPages/Gone410';
 import InternalServerError500 from '@/components/Blocks/ErrorPages/InternalServerError500';
 import NotFound404 from '@/components/Blocks/ErrorPages/NotFound404';
+import RequestTimeout408 from '@/components/Blocks/ErrorPages/RequestTimeout408';
 import ServiceUnavailable503 from '@/components/Blocks/ErrorPages/ServiceUnavailable503';
+import TooManyRequests429 from '@/components/Blocks/ErrorPages/TooManyRequests429';
 import Unauthorized401 from '@/components/Blocks/ErrorPages/Unauthorized401';
 import UnderMaintenance503 from '@/components/Blocks/ErrorPages/UnderMaintenance503';
 import { docsData } from '@/types/docsData';
@@ -80,7 +85,7 @@ import { Home, RefreshCw, ServerCrash } from 'lucide-react';
 
 const InternalServerError500 = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 to-slate-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <Empty className="max-w-2xl">
         <EmptyMedia>
           <div className="bg-red-100 p-6 rounded-full">
@@ -290,5 +295,228 @@ export default UnderMaintenance503;
 
           `,
     snippet: <UnderMaintenance503 />,
+  },
+  {
+    title: 'RequestTimeout408',
+    code: `
+import Button from '@/components/common/Button';
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
+import { Clock, Home, RefreshCw } from 'lucide-react';
+
+const RequestTimeout408 = () => {
+  return (
+    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+      <Empty className="max-w-2xl">
+        <EmptyMedia>
+          <div className="bg-indigo-100 p-6 rounded-full">
+            <Clock className="w-20 h-20 text-indigo-600" />
+          </div>
+        </EmptyMedia>
+        <EmptyHeader>
+          <div className="text-7xl font-bold text-slate-800 mb-4">408</div>
+          <EmptyTitle>Request Timeout</EmptyTitle>
+          <EmptyDescription>
+            Your request took too long to process. This might be due to a slow connection or server load.
+          </EmptyDescription>
+        </EmptyHeader>
+        <EmptyContent>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Button onClick={() => window.location.reload()} className="gap-2">
+              <RefreshCw className="w-4 h-4" />
+              Try Again
+            </Button>
+            <Button variant="outline" onClick={() => alert('Navigate to home')} className="gap-2">
+              <Home className="w-4 h-4" />
+              Go Home
+            </Button>
+          </div>
+        </EmptyContent>
+      </Empty>
+    </div>
+  );
+};
+
+export default RequestTimeout408;
+
+          `,
+    snippet: <RequestTimeout408 />,
+  },
+  {
+    title: 'TooManyRequests429',
+    code: `
+import Button from '@/components/common/Button';
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
+import { Ban, Clock, Home } from 'lucide-react';
+
+const TooManyRequests429 = () => {
+  return (
+    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+      <Empty className="max-w-2xl">
+        <EmptyMedia>
+          <div className="bg-pink-100 p-6 rounded-full">
+            <Ban className="w-20 h-20 text-pink-600" />
+          </div>
+        </EmptyMedia>
+        <EmptyHeader>
+          <div className="text-7xl font-bold text-slate-800 mb-4">429</div>
+          <EmptyTitle>Too Many Requests</EmptyTitle>
+          <EmptyDescription>
+            You&apos;ve made too many requests in a short period. Please wait a moment before trying again.
+          </EmptyDescription>
+        </EmptyHeader>
+        <EmptyContent>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Button onClick={() => setTimeout(() => window.location.reload(), 3000)} className="gap-2">
+              <Clock className="w-4 h-4" />
+              Wait and Retry
+            </Button>
+            <Button variant="outline" onClick={() => alert('Navigate to home')} className="gap-2">
+              <Home className="w-4 h-4" />
+              Go Home
+            </Button>
+          </div>
+        </EmptyContent>
+      </Empty>
+    </div>
+  );
+};
+
+export default TooManyRequests429;
+
+          `,
+    snippet: <TooManyRequests429 />,
+  },
+  {
+    title: 'BadGateway502',
+    code: `
+import Button from '@/components/common/Button';
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
+import { AlertCircle, RefreshCw } from 'lucide-react';
+
+const BadGateway502 = () => {
+  return (
+    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+      <Empty className="max-w-2xl">
+        <EmptyMedia>
+          <div className="bg-cyan-100 p-6 rounded-full">
+            <AlertCircle className="w-20 h-20 text-cyan-600" />
+          </div>
+        </EmptyMedia>
+        <EmptyHeader>
+          <div className="text-7xl font-bold text-slate-800 mb-4">502</div>
+          <EmptyTitle>Bad Gateway</EmptyTitle>
+          <EmptyDescription>
+            The server received an invalid response from an upstream server. Please try again in a few moments.
+          </EmptyDescription>
+        </EmptyHeader>
+        <EmptyContent>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Button onClick={() => window.location.reload()} className="gap-2">
+              <RefreshCw className="w-4 h-4" />
+              Refresh
+            </Button>
+            <Button variant="outline" onClick={() => alert('Report issue')}>
+              Report Issue
+            </Button>
+          </div>
+        </EmptyContent>
+      </Empty>
+    </div>
+  );
+};
+
+export default BadGateway502;
+
+          `,
+    snippet: <BadGateway502 />,
+  },
+  {
+    title: 'Gone410',
+    code: `
+import Button from '@/components/common/Button';
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
+import { CloudOff, Home } from 'lucide-react';
+
+const Gone410 = () => {
+  return (
+    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+      <Empty className="max-w-2xl">
+        <EmptyMedia>
+          <div className="bg-gray-100 p-6 rounded-full">
+            <CloudOff className="w-20 h-20 text-gray-600" />
+          </div>
+        </EmptyMedia>
+        <EmptyHeader>
+          <div className="text-7xl font-bold text-slate-800 mb-4">410</div>
+          <EmptyTitle>Content Gone</EmptyTitle>
+          <EmptyDescription>
+            The content you&apos;re looking for has been permanently removed and is no longer available.
+          </EmptyDescription>
+        </EmptyHeader>
+        <EmptyContent>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Button onClick={() => alert('Navigate to home')} className="gap-2">
+              <Home className="w-4 h-4" />
+              Go Home
+            </Button>
+            <Button variant="outline" onClick={() => alert('Browse archive')}>
+              Browse Archive
+            </Button>
+          </div>
+        </EmptyContent>
+      </Empty>
+    </div>
+  );
+};
+
+export default Gone410;
+
+          `,
+    snippet: <Gone410 />,
+  },
+  {
+    title: 'GatewayTimeout504',
+    code: `
+import Button from '@/components/common/Button';
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
+import { Home, RefreshCw, Zap } from 'lucide-react';
+
+const GatewayTimeout504 = () => {
+  return (
+    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+      <Empty className="max-w-2xl">
+        <EmptyMedia>
+          <div className="bg-emerald-100 p-6 rounded-full">
+            <Zap className="w-20 h-20 text-emerald-600" />
+          </div>
+        </EmptyMedia>
+        <EmptyHeader>
+          <div className="text-7xl font-bold text-slate-800 mb-4">504</div>
+          <EmptyTitle>Gateway Timeout</EmptyTitle>
+          <EmptyDescription>
+            The server didn&apos;t receive a timely response from another server it needed to access. Please try again.
+          </EmptyDescription>
+        </EmptyHeader>
+        <EmptyContent>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Button onClick={() => window.location.reload()} className="gap-2">
+              <RefreshCw className="w-4 h-4" />
+              Try Again
+            </Button>
+            <Button variant="outline" onClick={() => alert('Navigate to home')} className="gap-2">
+              <Home className="w-4 h-4" />
+              Go Home
+            </Button>
+          </div>
+        </EmptyContent>
+      </Empty>
+    </div>
+  );
+};
+
+export default GatewayTimeout504;
+
+          `,
+    snippet: <GatewayTimeout504 />,
   },
 ];

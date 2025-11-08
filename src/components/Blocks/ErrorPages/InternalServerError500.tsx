@@ -12,7 +12,7 @@ const InternalServerError500 = () => {
           </div>
         </EmptyMedia>
         <EmptyHeader>
-          <div className="text-7xl font-bold text-slate-800 mb-4">500</div>
+          <div className="text-7xl font-bold text-muted-foreground mb-4">500</div>
           <EmptyTitle>Internal Server Error</EmptyTitle>
           <EmptyDescription>
             Something went wrong on our end. Our team has been notified and is working to fix the issue.

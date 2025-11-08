@@ -1,21 +1,21 @@
 import Button from '@/components/common/Button';
 import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
-import { Construction, RefreshCw } from 'lucide-react';
+import { AlertCircle, RefreshCw } from 'lucide-react';
 
-const UnderMaintenance503 = () => {
+const BadGateway502 = () => {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <Empty className="max-w-2xl">
         <EmptyMedia>
-          <div className="bg-orange-100 p-6 rounded-full">
-            <Construction className="w-20 h-20 text-orange-600" />
+          <div className="bg-cyan-100 p-6 rounded-full">
+            <AlertCircle className="w-20 h-20 text-cyan-600" />
           </div>
         </EmptyMedia>
         <EmptyHeader>
-          <div className="text-7xl font-bold text-muted-foreground mb-4">503</div>
-          <EmptyTitle>Under Maintenance</EmptyTitle>
+          <div className="text-7xl font-bold text-muted-foreground mb-4">502</div>
+          <EmptyTitle>Bad Gateway</EmptyTitle>
           <EmptyDescription>
-            We&apos;re currently performing scheduled maintenance to improve your experience. We&apos;ll be back online soon!
+            The server received an invalid response from an upstream server. Please try again in a few moments.
           </EmptyDescription>
         </EmptyHeader>
         <EmptyContent>
@@ -24,8 +24,8 @@ const UnderMaintenance503 = () => {
               <RefreshCw className="w-4 h-4" />
               Refresh
             </Button>
-            <Button variant="outline" onClick={() => alert('Subscribe')}>
-              Subscribe for Updates
+            <Button variant="outline" onClick={() => alert('Report issue')}>
+              Report Issue
             </Button>
           </div>
         </EmptyContent>
@@ -34,4 +34,4 @@ const UnderMaintenance503 = () => {
   );
 };
 
-export default UnderMaintenance503;
+export default BadGateway502;

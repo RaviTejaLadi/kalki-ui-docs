@@ -1,26 +1,28 @@
 import Button from '@/components/common/Button';
 import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
-import { Home, Lock } from 'lucide-react';
+import { Ban, Clock, Home } from 'lucide-react';
 
-const Unauthorized401 = () => {
+const TooManyRequests429 = () => {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <Empty className="max-w-2xl">
         <EmptyMedia>
-          <div className="bg-purple-100 p-6 rounded-full">
-            <Lock className="w-20 h-20 text-purple-600" />
+          <div className="bg-pink-100 p-6 rounded-full">
+            <Ban className="w-20 h-20 text-pink-600" />
           </div>
         </EmptyMedia>
         <EmptyHeader>
-          <div className="text-7xl font-bold text-muted-foreground mb-4">401</div>
-          <EmptyTitle>Unauthorized Access</EmptyTitle>
-          <EmptyDescription>You need to be logged in to access this page. Please sign in to continue.</EmptyDescription>
+          <div className="text-7xl font-bold text-muted-foreground mb-4">429</div>
+          <EmptyTitle>Too Many Requests</EmptyTitle>
+          <EmptyDescription>
+            You&apos;ve made too many requests in a short period. Please wait a moment before trying again.
+          </EmptyDescription>
         </EmptyHeader>
         <EmptyContent>
           <div className="flex flex-wrap gap-3 justify-center">
-            <Button onClick={() => alert('Navigate to login')} className="gap-2">
-              <Lock className="w-4 h-4" />
-              Sign In
+            <Button onClick={() => setTimeout(() => window.location.reload(), 3000)} className="gap-2">
+              <Clock className="w-4 h-4" />
+              Wait and Retry
             </Button>
             <Button variant="outline" onClick={() => alert('Navigate to home')} className="gap-2">
               <Home className="w-4 h-4" />
@@ -33,4 +35,4 @@ const Unauthorized401 = () => {
   );
 };
 
-export default Unauthorized401;
+export default TooManyRequests429;
