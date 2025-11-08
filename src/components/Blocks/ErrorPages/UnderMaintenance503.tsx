@@ -15,7 +15,8 @@ const UnderMaintenance503 = () => {
           <div className="text-7xl font-bold text-muted-foreground mb-4">503</div>
           <EmptyTitle>Under Maintenance</EmptyTitle>
           <EmptyDescription>
-            We&apos;re currently performing scheduled maintenance to improve your experience. We&apos;ll be back online soon!
+            We&apos;re currently performing scheduled maintenance to improve your experience. We&apos;ll be back online
+            soon!
           </EmptyDescription>
         </EmptyHeader>
         <EmptyContent>

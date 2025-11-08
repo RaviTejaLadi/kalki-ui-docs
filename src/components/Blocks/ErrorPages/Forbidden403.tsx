@@ -15,8 +15,8 @@ const Forbidden403 = () => {
           <div className="text-7xl font-bold text-muted-foreground mb-4">403</div>
           <EmptyTitle>Access Forbidden</EmptyTitle>
           <EmptyDescription>
-            You don&apos;t have permission to access this resource. Please contact your administrator if you believe this is
-            a mistake.
+            You don&apos;t have permission to access this resource. Please contact your administrator if you believe
+            this is a mistake.
           </EmptyDescription>
         </EmptyHeader>
         <EmptyContent>
