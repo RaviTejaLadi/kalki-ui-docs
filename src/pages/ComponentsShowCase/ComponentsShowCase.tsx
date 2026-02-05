@@ -9,7 +9,6 @@ import { BadgePreviews } from './previews/BadgePreview';
 import { BannerPreviews } from './previews/BannerPreview';
 import { BoxPreviews } from './previews/BoxPreview';
 import { BreadcrumbPreviews } from './previews/BreadcrumbPreview';
-import { CarouselPreviews } from './previews/CarouselPreview';
 import { CloseButtonPreviews } from './previews/CloseButtonPreview';
 // import { CodePreviews } from './previews/CodePreview';
 import { ContentScrollablePreviews } from './previews/ContentScrollablePreview';
@@ -99,11 +98,6 @@ const components: Component[] = [
     name: 'Card',
     description: 'Versatile card components for displaying content and information.',
     preview: CardPreviews.basic,
-  },
-  {
-    name: 'Carousel',
-    description: 'Sliding carousel for images or content.',
-    preview: CarouselPreviews.basic,
   },
   {
     name: 'CloseButton',
