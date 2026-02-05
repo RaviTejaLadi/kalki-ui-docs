@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
+import { Input } from '@/components/common/Form';
 import { PreviewCard } from './PreviewCard';
 import { ButtonPreviews } from './previews/ButtonPreviews';
 import { CardPreviews } from './previews/CardPreviews';
@@ -286,6 +287,18 @@ const components: Component[] = [
   },
 ];
 const ComponentsShowCase: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredComponents = useMemo(() => {
+    if (!searchQuery.trim()) return components;
+    const q = searchQuery.trim().toLowerCase();
+    return components.filter(
+      (c) =>
+        c.name.toLowerCase().includes(q) ||
+        c.description.toLowerCase().includes(q)
+    );
+  }, [searchQuery]);
+
   return (
     <div className="py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -296,10 +309,27 @@ const ComponentsShowCase: React.FC = () => {
           </p>
         </div>
 
+        <div className="mt-8 max-w-xl mx-auto">
+          <Input
+            type="search"
+            placeholder="Search components by name or description..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full"
+            size="md"
+          />
+        </div>
+
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {components.map((component, index) => (
-            <PreviewCard key={index} {...component} />
-          ))}
+          {filteredComponents.length > 0 ? (
+            filteredComponents.map((component) => (
+              <PreviewCard key={component.name} {...component} />
+            ))
+          ) : (
+            <p className="col-span-full text-center text-muted-foreground py-12">
+              No components match &quot;{searchQuery}&quot;
+            </p>
+          )}
         </div>
       </div>
     </div>
