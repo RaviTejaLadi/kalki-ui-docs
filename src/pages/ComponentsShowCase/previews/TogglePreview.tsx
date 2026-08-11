@@ -5,9 +5,15 @@ export const TogglePreviews = {
     <div className="flex flex-col gap-4">
       <Toggle>Toggle</Toggle>
       <ToggleGroup type="multiple" defaultValue={['italic']}>
-        <ToggleGroupItem value="bold" aria-label="Bold">B</ToggleGroupItem>
-        <ToggleGroupItem value="italic" aria-label="Italic">I</ToggleGroupItem>
-        <ToggleGroupItem value="underline" aria-label="Underline">U</ToggleGroupItem>
+        <ToggleGroupItem value="bold" aria-label="Bold">
+          B
+        </ToggleGroupItem>
+        <ToggleGroupItem value="italic" aria-label="Italic">
+          I
+        </ToggleGroupItem>
+        <ToggleGroupItem value="underline" aria-label="Underline">
+          U
+        </ToggleGroupItem>
       </ToggleGroup>
     </div>
   ),

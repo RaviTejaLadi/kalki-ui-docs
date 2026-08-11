@@ -2,16 +2,16 @@ import { SectionHeader } from '@/components/common/SectionHeader';
 import Separator from '@/components/common/Separator';
 import TableList from '@/components/common/Table/TableList';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
-import { docs, columns, rows } from './data/textareaData';
+import { docs, columns, rows } from './data/inputFieldData';
 
-const TextareaPage = () => {
+const InputFieldPage = () => {
   return (
     <div className="container">
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Textarea</SectionHeader.Title>
+        <SectionHeader.Title className="tracking-wide">InputField</SectionHeader.Title>
         <SectionHeader.SubTitle className="tracking-wide">
-          Textarea is a multi-line input field designed for capturing longer user input such as comments, feedback, or
-          messages.
+          InputField is a composite component that combines LabelExt, Input and FormErrorMessage into a single,
+          accessible form field.
         </SectionHeader.SubTitle>
       </SectionHeader>
       <Separator />
@@ -24,4 +24,4 @@ const TextareaPage = () => {
   );
 };
 
-export default TextareaPage;
+export default InputFieldPage;

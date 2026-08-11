@@ -2,16 +2,15 @@ import { SectionHeader } from '@/components/common/SectionHeader';
 import Separator from '@/components/common/Separator';
 import TableList from '@/components/common/Table/TableList';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
-import { docs, columns, rows } from './data/textareaData';
+import { docs, columns, rows } from './data/switchData';
 
-const TextareaPage = () => {
+const SwitchPage = () => {
   return (
     <div className="container">
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Textarea</SectionHeader.Title>
+        <SectionHeader.Title className="tracking-wide">Switch</SectionHeader.Title>
         <SectionHeader.SubTitle className="tracking-wide">
-          Textarea is a multi-line input field designed for capturing longer user input such as comments, feedback, or
-          messages.
+          Switch is a toggle control for representing on/off or enabled/disabled states with rich variants and sizes.
         </SectionHeader.SubTitle>
       </SectionHeader>
       <Separator />
@@ -24,4 +23,4 @@ const TextareaPage = () => {
   );
 };
 
-export default TextareaPage;
+export default SwitchPage;

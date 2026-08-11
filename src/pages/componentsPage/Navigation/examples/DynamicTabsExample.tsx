@@ -16,9 +16,7 @@ export const DynamicTabsExample = () => {
     <div className="space-y-5">
       <div className="rounded-lg border border-border bg-muted/30 p-4 mb-2 space-y-4">
         <div className="space-y-2">
-          <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Variant
-          </label>
+          <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Variant</label>
           <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
             {VARIANTS.map((v) => (
               <button
@@ -38,9 +36,7 @@ export const DynamicTabsExample = () => {
           </div>
         </div>
         <div className="space-y-2 pt-1 border-t border-border">
-          <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Size
-          </label>
+          <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Size</label>
           <div className="flex gap-2">
             {SIZES.map((s) => (
               <button

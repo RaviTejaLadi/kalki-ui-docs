@@ -45,7 +45,7 @@ export const categorizedComponents: CategorizedComponents[] = [
       {
         label: 'Forms',
         description: 'Components and utilities for creating and managing user input fields and form submissions.',
-        path: '/forms',
+        path: '/form',
       },
       { label: 'Input', description: '', path: '/input' },
       { label: 'Select', description: '', path: '/select' },
@@ -58,8 +58,6 @@ export const categorizedComponents: CategorizedComponents[] = [
           'A UI element that allows users to select one option from a list of choices that appears when activated.',
         path: '/dropdown',
       },
-      { label: 'Radio Card', description: '', path: '/radioCard' },
-      { label: 'Checkbox Card', description: '', path: '/checkboxCard' },
     ],
   },
   {

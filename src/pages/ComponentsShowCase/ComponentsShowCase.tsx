@@ -292,11 +292,7 @@ const ComponentsShowCase: React.FC = () => {
   const filteredComponents = useMemo(() => {
     if (!searchQuery.trim()) return components;
     const q = searchQuery.trim().toLowerCase();
-    return components.filter(
-      (c) =>
-        c.name.toLowerCase().includes(q) ||
-        c.description.toLowerCase().includes(q)
-    );
+    return components.filter((c) => c.name.toLowerCase().includes(q) || c.description.toLowerCase().includes(q));
   }, [searchQuery]);
 
   return (
@@ -322,9 +318,7 @@ const ComponentsShowCase: React.FC = () => {
 
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredComponents.length > 0 ? (
-            filteredComponents.map((component) => (
-              <PreviewCard key={component.name} {...component} />
-            ))
+            filteredComponents.map((component) => <PreviewCard key={component.name} {...component} />)
           ) : (
             <p className="col-span-full text-center text-muted-foreground py-12">
               No components match &quot;{searchQuery}&quot;

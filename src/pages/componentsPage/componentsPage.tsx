@@ -57,15 +57,17 @@ const ROUTES: RouteConfig[] = [
   { path: 'splitter', loader: () => import('./Surface/SplitterPage') },
 
   // Forms
-  { path: 'checkbox-card', loader: () => import('./FormsPage/CheckBoxCardPage') },
   { path: 'checkbox', loader: () => import('./FormsPage/CheckboxPage') },
   { path: 'dropdown', loader: () => import('./FormsPage/DropdownPage') },
-  { path: 'forms', loader: () => import('./FormsPage/FormsPage') },
+  { path: 'form', loader: () => import('./FormsPage/FormsPage') },
   { path: 'input', loader: () => import('./FormsPage/InputPage') },
-  { path: 'radio-card', loader: () => import('./FormsPage/RadioCardPage') },
   { path: 'radio', loader: () => import('./FormsPage/RadioPage') },
   { path: 'select', loader: () => import('./FormsPage/SelectPage') },
   { path: 'textarea', loader: () => import('./FormsPage/TextareaPage') },
+  { path: 'slider', loader: () => import('./FormsPage/SliderPage') },
+  { path: 'file-input', loader: () => import('./FormsPage/FileInputPage') },
+  { path: 'switch', loader: () => import('./FormsPage/SwitchPage') },
+  { path: 'input-field', loader: () => import('./FormsPage/InputFieldPage') },
 
   // Navigation
   { path: 'breadcrumb', loader: () => import('./Navigation/BreadcrumbPage') },

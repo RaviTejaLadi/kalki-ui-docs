@@ -14,7 +14,7 @@ export const categories: Category[] = [
   },
   {
     label: 'Forms',
-    id: 'forms',
+    id: 'form',
   },
   {
     label: 'Components',

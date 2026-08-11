@@ -77,10 +77,10 @@ const SnippetDisplay: React.FC<SnippetDisplayProps> = ({ snippet, highlighter })
     >
       <div className="flex w-auto h-auto">
         <div
-          className=" flex justify-center items-center overflow-auto  relative"
+          className=" flex justify-center items-center overflow-auto  relative bg-[radial-gradient(circle,_rgba(148,163,184,0.35)_1px,_transparent_1px)] [background-size:16px_16px]"
           style={{ width: componentWidth ? `${componentWidth}px` : '100%' }}
         >
-          <div className="p-4 w-full">{snippet}</div>
+          <div className="p-[13rem] w-full">{snippet}</div>
         </div>
         <div
           className="w-2 bg-background  cursor-ew-resize flex items-center justify-center"

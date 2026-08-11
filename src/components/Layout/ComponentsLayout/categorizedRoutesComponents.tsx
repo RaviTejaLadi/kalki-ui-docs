@@ -6,7 +6,6 @@ import {
   Radio,
   CheckSquare,
   ChevronDown,
-  IdCard,
   UserCircle2,
   Tag,
   BadgeInfo,
@@ -44,7 +43,7 @@ import {
   ListOrdered,
 } from 'lucide-react';
 
-import { DocumentIcon, ViewColumnsIcon, DocumentTextIcon, DocumentCheckIcon } from '@heroicons/react/24/outline';
+import { DocumentIcon, ViewColumnsIcon, DocumentTextIcon } from '@heroicons/react/24/outline';
 import React from 'react';
 
 interface CategoryRoutesComponentList {
@@ -202,13 +201,6 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         Icon: CheckSquare,
       },
       {
-        label: 'Checkbox Card',
-        description:
-          'Enhanced checkbox variant with card-based UI, enabling more complex selection interfaces with visual feedback and improved user interaction.',
-        path: '/components/checkboxCard',
-        Icon: DocumentCheckIcon,
-      },
-      {
         label: 'Dropdown',
         description:
           'Advanced selection interface allowing users to choose from a list of options with support for search, grouping, and dynamic content rendering.',
@@ -237,13 +229,6 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         Icon: Radio,
       },
       {
-        label: 'Radio Card',
-        description:
-          'Card-based radio button implementation enabling more complex and visually engaging single selection interfaces.',
-        path: '/components/radioCard',
-        Icon: IdCard,
-      },
-      {
         label: 'Select',
         description:
           'Advanced selection component with support for complex data sources, custom rendering, and advanced filtering mechanisms.',
@@ -256,6 +241,34 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
           'Multi-line text input component with advanced features like auto-resizing, validation, and rich text support.',
         path: '/components/textarea',
         Icon: DocumentTextIcon,
+      },
+      {
+        label: 'Slider',
+        description:
+          'Range input component for selecting numeric values within a defined interval using a draggable thumb.',
+        path: '/components/slider',
+        Icon: Rows4,
+      },
+      {
+        label: 'Switch',
+        description:
+          'Toggle control component for representing boolean on/off states with multiple visual variants and sizes.',
+        path: '/components/switch',
+        Icon: CreditCard,
+      },
+      {
+        label: 'File Input',
+        description:
+          'Styled file upload control for selecting single or multiple files with integrated validation and error messaging.',
+        path: '/components/file-input',
+        Icon: FileInput,
+      },
+      {
+        label: 'Input Field',
+        description:
+          'High-level field component combining label, tooltip, input and error message into a single accessible unit.',
+        path: '/components/input-field',
+        Icon: TextCursorInput,
       },
     ],
   },

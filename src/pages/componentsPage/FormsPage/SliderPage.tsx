@@ -2,16 +2,16 @@ import { SectionHeader } from '@/components/common/SectionHeader';
 import Separator from '@/components/common/Separator';
 import TableList from '@/components/common/Table/TableList';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
-import { docs, columns, rows } from './data/textareaData';
+import { docs, columns, rows } from './data/sliderData';
 
-const TextareaPage = () => {
+const SliderPage = () => {
   return (
     <div className="container">
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Textarea</SectionHeader.Title>
+        <SectionHeader.Title className="tracking-wide">Slider</SectionHeader.Title>
         <SectionHeader.SubTitle className="tracking-wide">
-          Textarea is a multi-line input field designed for capturing longer user input such as comments, feedback, or
-          messages.
+          Slider is used to capture numeric input within a range using a draggable thumb, ideal for volume, rating, or
+          level controls.
         </SectionHeader.SubTitle>
       </SectionHeader>
       <Separator />
@@ -24,4 +24,4 @@ const TextareaPage = () => {
   );
 };
 
-export default TextareaPage;
+export default SliderPage;

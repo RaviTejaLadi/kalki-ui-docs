@@ -2,16 +2,16 @@ import { SectionHeader } from '@/components/common/SectionHeader';
 import Separator from '@/components/common/Separator';
 import TableList from '@/components/common/Table/TableList';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
-import { docs, columns, rows } from './data/textareaData';
+import { docs, columns, rows } from './data/fileInputData';
 
-const TextareaPage = () => {
+const FileInputPage = () => {
   return (
     <div className="container">
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Textarea</SectionHeader.Title>
+        <SectionHeader.Title className="tracking-wide">FileInput</SectionHeader.Title>
         <SectionHeader.SubTitle className="tracking-wide">
-          Textarea is a multi-line input field designed for capturing longer user input such as comments, feedback, or
-          messages.
+          FileInput is a styled wrapper around the native file input, used for uploading single or multiple files with
+          error display support.
         </SectionHeader.SubTitle>
       </SectionHeader>
       <Separator />
@@ -24,4 +24,4 @@ const TextareaPage = () => {
   );
 };
 
-export default TextareaPage;
+export default FileInputPage;

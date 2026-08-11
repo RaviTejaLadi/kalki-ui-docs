@@ -7,7 +7,9 @@ export const FormPreviews = {
         <Form.Label>Email</Form.Label>
         <Form.Input type="email" placeholder="you@example.com" size="sm" />
       </Form.Group>
-      <Form.Submit variant="primary" size="sm">Submit</Form.Submit>
+      <Form.Submit variant="primary" size="sm">
+        Submit
+      </Form.Submit>
     </Form>
   ),
 };

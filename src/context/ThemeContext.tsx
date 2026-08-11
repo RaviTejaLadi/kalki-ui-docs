@@ -84,7 +84,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         clearTimeout(midnightTimerRef.current);
       }
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [colorThemes, colorTheme]);
 
   return (
