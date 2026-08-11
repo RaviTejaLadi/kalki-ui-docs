@@ -8,15 +8,15 @@ const bannerVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'bg-primary text-white',
-        secondary: 'bg-secondary text-white',
-        success: 'bg-success text-white',
-        danger: 'bg-danger text-white',
-        warning: 'bg-warning text-gray-900',
-        info: 'bg-info text-white',
-        help: 'bg-help text-white',
-        light: 'bg-light text-foreground',
-        dark: 'bg-dark text-white',
+        primary: 'bg-primary text-primary-foreground',
+        secondary: 'bg-secondary text-secondary-foreground',
+        success: 'bg-success text-success-foreground',
+        danger: 'bg-danger text-danger-foreground',
+        warning: 'bg-warning text-warning-foreground',
+        info: 'bg-info text-info-foreground',
+        help: 'bg-help text-help-foreground',
+        light: 'bg-light text-light-foreground',
+        dark: 'bg-dark text-dark-foreground',
       },
       size: {
         sm: 'p-5 h-20',

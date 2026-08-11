@@ -9,7 +9,7 @@ import { TextReveal } from './animations/TextReveal';
 import { GradientText } from './animations/GradientText';
 
 export const HeroSection = () => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   return (
     <section className="w-full relative sm:px-6 lg:px-8 overflow-hidden">
       <FloatingShapes />
@@ -22,7 +22,7 @@ export const HeroSection = () => {
           </div>
           <TextReveal delay={200}>
             <Badge
-              variant={theme ? 'light' : 'dark'}
+              variant={resolvedTheme === 'dark' ? 'dark' : 'light'}
               size="sm"
               className="text-sm dark:bg-gray-200/10 rounded-full py-2"
             >
@@ -68,12 +68,8 @@ export const HeroSection = () => {
                 </Button>
               </Link>
 
-              <Button size="xs" variant="ghost" className="w-5/6 md:w-1/4 text-black hover:text-purple-400 font-bold">
-                <Link
-                  className="text-xs text-dark dark:text-white"
-                  to="https://github.com/RaviTejaLadi/kalki-ui"
-                  target="_blank"
-                >
+              <Button size="xs" variant="ghost" className="w-5/6 md:w-1/4 text-foreground hover:text-primary font-bold">
+                <Link className="text-xs text-foreground" to="https://github.com/RaviTejaLadi/kalki-ui" target="_blank">
                   Github Repository
                 </Link>
               </Button>

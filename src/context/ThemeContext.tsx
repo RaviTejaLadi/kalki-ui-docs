@@ -1,95 +1,64 @@
-// ThemeContext.tsx
-import React, { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
-type ThemeMode = 'light' | 'dark';
-type ColorTheme = 'ocean' | 'purple' | 'emerald' | 'amber' | 'rose' | 'teal';
+type ThemePreference = 'system' | 'light' | 'dark';
+type ResolvedTheme = 'light' | 'dark';
 
 interface ThemeContextType {
-  theme: ThemeMode;
-  colorTheme: ColorTheme;
-  toggleTheme: () => void;
-  setColorTheme: (theme: ColorTheme) => void;
+  theme: ThemePreference;
+  resolvedTheme: ResolvedTheme;
+  setTheme: (theme: ThemePreference) => void;
 }
+
+const STORAGE_KEY = 'theme';
+const LEGACY_COLOR_KEYS = ['colorTheme', 'colorThemeDayIndex'] as const;
+const COLOR_THEME_CLASSES = ['ocean', 'purple', 'emerald', 'amber', 'rose', 'teal'] as const;
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+const getSystemTheme = (): ResolvedTheme =>
+  window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+const resolveTheme = (preference: ThemePreference): ResolvedTheme =>
+  preference === 'system' ? getSystemTheme() : preference;
+
+const isThemePreference = (value: string | null): value is ThemePreference =>
+  value === 'system' || value === 'light' || value === 'dark';
+
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const colorThemes: ColorTheme[] = useMemo(() => ['ocean', 'purple', 'emerald', 'amber', 'rose', 'teal'], []);
-
-  const [theme, setTheme] = useState<ThemeMode>(() => {
-    const savedTheme = localStorage.getItem('theme');
-    return (savedTheme as ThemeMode) || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const [theme, setThemeState] = useState<ThemePreference>(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    return isThemePreference(saved) ? saved : 'system';
   });
 
-  const [colorTheme, setColorTheme] = useState<ColorTheme>(() => {
-    const savedColorTheme = localStorage.getItem('colorTheme') as ColorTheme | null;
-    const savedDayIndex = localStorage.getItem('colorThemeDayIndex');
-    const todayIndex = Math.floor(Date.now() / 86_400_000);
+  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>(() => resolveTheme(theme));
 
-    // If we have a saved theme from today, keep it; else compute new by day index
-    if (savedColorTheme && savedDayIndex && Number(savedDayIndex) === todayIndex) {
-      return savedColorTheme;
-    }
-    const autoTheme = colorThemes[todayIndex % colorThemes.length];
-    localStorage.setItem('colorTheme', autoTheme);
-    localStorage.setItem('colorThemeDayIndex', String(todayIndex));
-    return autoTheme;
-  });
-
-  // Keep a ref to the midnight timer to clean up
-  const midnightTimerRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    localStorage.setItem('theme', theme);
-    localStorage.setItem('colorTheme', colorTheme);
-
-    // Apply theme classes
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-
-    // Remove existing color theme classes
-    colorThemes.forEach((t) => {
-      document.documentElement.classList.remove(t);
-    });
-
-    // Apply current color theme
-    document.documentElement.classList.add(colorTheme);
-  }, [theme, colorTheme]);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+  const setTheme = (next: ThemePreference) => {
+    setThemeState(next);
   };
 
-  // Auto-rotate color theme daily at local midnight
   useEffect(() => {
-    const scheduleNextMidnight = () => {
-      const now = new Date();
-      const next = new Date(now);
-      next.setHours(24, 0, 0, 0); // next local midnight
-      const ms = next.getTime() - now.getTime();
-      midnightTimerRef.current = window.setTimeout(() => {
-        const currentIndex = colorThemes.indexOf(colorTheme);
-        const nextIndex = (currentIndex + 1) % colorThemes.length;
-        const nextTheme = colorThemes[nextIndex];
-        setColorTheme(nextTheme);
-        const todayIndex = Math.floor(Date.now() / 86_400_000);
-        localStorage.setItem('colorTheme', nextTheme);
-        localStorage.setItem('colorThemeDayIndex', String(todayIndex));
-        scheduleNextMidnight();
-      }, ms);
+    LEGACY_COLOR_KEYS.forEach((key) => localStorage.removeItem(key));
+    localStorage.setItem(STORAGE_KEY, theme);
+
+    const apply = (resolved: ResolvedTheme) => {
+      const root = document.documentElement;
+      root.classList.toggle('dark', resolved === 'dark');
+      COLOR_THEME_CLASSES.forEach((cls) => root.classList.remove(cls));
+      root.style.colorScheme = resolved;
+      setResolvedTheme(resolved);
     };
 
-    scheduleNextMidnight();
-    return () => {
-      if (midnightTimerRef.current) {
-        clearTimeout(midnightTimerRef.current);
-      }
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [colorThemes, colorTheme]);
+    apply(resolveTheme(theme));
 
-  return (
-    <ThemeContext.Provider value={{ theme, colorTheme, toggleTheme, setColorTheme }}>{children}</ThemeContext.Provider>
-  );
+    if (theme !== 'system') return;
+
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+    const onChange = () => apply(getSystemTheme());
+    media.addEventListener('change', onChange);
+    return () => media.removeEventListener('change', onChange);
+  }, [theme]);
+
+  return <ThemeContext.Provider value={{ theme, resolvedTheme, setTheme }}>{children}</ThemeContext.Provider>;
 };
 
 export const useTheme = () => {

@@ -6,6 +6,25 @@
   <link rel="icon" type="image/svg+xml" href="/Public/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kalki UI</title>
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('theme');
+        var preference = stored === 'light' || stored === 'dark' || stored === 'system' ? stored : 'system';
+        var resolved =
+          preference === 'system'
+            ? window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light'
+            : preference;
+        document.documentElement.classList.toggle('dark', resolved === 'dark');
+        document.documentElement.style.colorScheme = resolved;
+        ['ocean', 'purple', 'emerald', 'amber', 'rose', 'teal'].forEach(function (cls) {
+          document.documentElement.classList.remove(cls);
+        });
+      } catch (_) {}
+    })();
+  </script>
 </head>
 
 <body>

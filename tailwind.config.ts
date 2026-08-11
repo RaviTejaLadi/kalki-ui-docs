@@ -35,48 +35,56 @@ module.exports = {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {
-          DEFAULT: 'var(--primary)',
-          foreground: 'var(--primary-foreground)',
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
         },
         secondary: {
-          DEFAULT: 'var(--secondary)',
-          foreground: 'var(--secondary-foreground)',
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
         },
         success: {
-          DEFAULT: 'var(--success)',
-          foreground: 'var(--success-foreground)',
+          DEFAULT: 'hsl(var(--success))',
+          foreground: 'hsl(var(--success-foreground))',
         },
         danger: {
-          DEFAULT: 'var(--danger)',
-          foreground: 'var(--danger-foreground)',
+          DEFAULT: 'hsl(var(--danger))',
+          foreground: 'hsl(var(--danger-foreground))',
         },
         warning: {
-          DEFAULT: 'var(--warning)',
-          foreground: 'var(--warning-foreground)',
+          DEFAULT: 'hsl(var(--warning))',
+          foreground: 'hsl(var(--warning-foreground))',
         },
         info: {
-          DEFAULT: 'var(--info)',
-          foreground: 'var(--info-foreground)',
+          DEFAULT: 'hsl(var(--info))',
+          foreground: 'hsl(var(--info-foreground))',
         },
         help: {
-          DEFAULT: 'var(--help)',
-          foreground: 'var(--help-foreground)',
+          DEFAULT: 'hsl(var(--help))',
+          foreground: 'hsl(var(--help-foreground))',
         },
         light: {
-          DEFAULT: 'var(--light)',
-          foreground: 'var(--light-foreground)',
+          DEFAULT: 'hsl(var(--light))',
+          foreground: 'hsl(var(--light-foreground))',
         },
         dark: {
-          DEFAULT: 'var(--dark)',
-          foreground: 'var(--dark-foreground)',
+          DEFAULT: 'hsl(var(--dark))',
+          foreground: 'hsl(var(--dark-foreground))',
         },
         muted: {
           DEFAULT: 'hsl(var(--muted))',
           foreground: 'hsl(var(--muted-foreground))',
         },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
         },
         neon: {
           400: '#6ee7b7',
