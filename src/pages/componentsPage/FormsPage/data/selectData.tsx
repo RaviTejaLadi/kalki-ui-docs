@@ -12,7 +12,7 @@ import Form, { FormGroup, Select } from "kalki-ui";
 
 type Country = "us" | "ca" | "uk" | "au";
 
-export const SelectExample = () => {
+export default function SelectExample() {
   const [country, setCountry] = useState<Country | "">("");
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -32,7 +32,7 @@ export const SelectExample = () => {
       </FormGroup>
     </Form>
   );
-};
+}
     `,
     snippet: (() => {
       type Country = 'us' | 'ca' | 'uk' | 'au';

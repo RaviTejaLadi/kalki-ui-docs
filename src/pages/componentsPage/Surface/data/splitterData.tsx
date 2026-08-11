@@ -11,7 +11,8 @@ export const splitterProps = [
   ],
   ['height', 'string', '100%', 'Sets the height of the splitter container. Can be any valid CSS height value.'],
   ['children', 'node', 'required', 'The content to be rendered inside the splitter. Must be Splitter.pane components.'],
-  [' withHandle ', 'bool', 'true', 'render svg on resize handler'],
+  ['withHandle', 'boolean', 'true', 'Whether to render a grip icon on the resize handle.'],
+  ['className', 'string', '-', 'Additional CSS classes for the splitter container.'],
 ];
 export const splitterPaneProps = [
   [
@@ -30,15 +31,21 @@ export const docs: docsData[] = [
     title: 'Basic Vertical Splitter',
     desc: 'A simple vertical splitter with default 50/50 split',
     code: `
-<Splitter orientation="vertical" height="400px" className="w-[60rem]">
-  <Splitter.Pane>
-    <div>Left Pane content</div>
-  </Splitter.Pane>
-  <Splitter.Pane>
-    <div>Right Pane content</div>
-  </Splitter.Pane>
-</Splitter>
-    `,
+import { Splitter } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+      <Splitter.Pane>
+        <div className="text-foreground p-2">Left Pane content</div>
+      </Splitter.Pane>
+      <Splitter.Pane>
+        <div className="text-foreground p-2">Right Pane content</div>
+      </Splitter.Pane>
+    </Splitter>
+  );
+}
+`,
     snippet: (
       <Splitter orientation="vertical" height="400px" className="w-[60rem]">
         <Splitter.Pane>
@@ -54,15 +61,21 @@ export const docs: docsData[] = [
     title: 'Horizontal Splitter',
     desc: 'A horizontal splitter with default 50/50 split',
     code: `
-<Splitter orientation="horizontal" className="w-[60rem]">
-  <Splitter.Pane>
-    <div>Top Pane content</div>
-  </Splitter.Pane>
-  <Splitter.Pane>
-    <div>Bottom Pane content</div>
-  </Splitter.Pane>
-</Splitter>
-    `,
+import { Splitter } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Splitter orientation="horizontal" height="400px" className="w-[60rem]">
+      <Splitter.Pane>
+        <div className="text-foreground p-2">Top Pane content</div>
+      </Splitter.Pane>
+      <Splitter.Pane>
+        <div className="text-foreground p-2">Bottom Pane content</div>
+      </Splitter.Pane>
+    </Splitter>
+  );
+}
+`,
     snippet: (
       <Splitter orientation="horizontal" height="400px" className="w-[60rem]">
         <Splitter.Pane>
@@ -76,20 +89,26 @@ export const docs: docsData[] = [
   },
   {
     title: 'Three-Pane Vertical Splitter',
-    desc: 'A vertical splitter with three Panes',
+    desc: 'A vertical splitter with three panes',
     code: `
-<Splitter orientation="vertical" height="400px" className="w-[60rem]">
-  <Splitter.Pane>
-    <div>Left Pane content</div>
-  </Splitter.Pane>
-  <Splitter.Pane>
-    <div>Middle Pane content</div>
-  </Splitter.Pane>
-  <Splitter.Pane>
-    <div>Right Pane content</div>
-  </Splitter.Pane>
-</Splitter>
-    `,
+import { Splitter } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+      <Splitter.Pane>
+        <div className="text-foreground p-2">Left Pane content</div>
+      </Splitter.Pane>
+      <Splitter.Pane>
+        <div className="text-foreground p-2">Middle Pane content</div>
+      </Splitter.Pane>
+      <Splitter.Pane>
+        <div className="text-foreground p-2">Right Pane content</div>
+      </Splitter.Pane>
+    </Splitter>
+  );
+}
+`,
     snippet: (
       <Splitter orientation="vertical" height="400px" className="w-[60rem]">
         <Splitter.Pane>
@@ -108,15 +127,21 @@ export const docs: docsData[] = [
     title: 'Custom Initial Sizes',
     desc: 'A vertical splitter with custom initial sizes',
     code: `
-<Splitter orientation="vertical" height="400px" className="w-[60rem]">
-  <Splitter.Pane initialSize="30%">
-    <div>Left Pane (30%)</div>
-  </Splitter.Pane>
-  <Splitter.Pane initialSize="70%">
-    <div>Right Pane (70%)</div>
-  </Splitter.Pane>
-</Splitter>
-    `,
+import { Splitter } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+      <Splitter.Pane initialSize="30%">
+        <div className="text-foreground p-2">Left Pane (30%)</div>
+      </Splitter.Pane>
+      <Splitter.Pane initialSize="70%">
+        <div className="text-foreground p-2">Right Pane (70%)</div>
+      </Splitter.Pane>
+    </Splitter>
+  );
+}
+`,
     snippet: (
       <Splitter orientation="vertical" height="400px" className="w-[60rem]">
         <Splitter.Pane initialSize="30%">
@@ -132,15 +157,21 @@ export const docs: docsData[] = [
     title: 'Minimum and Maximum Sizes',
     desc: 'A vertical splitter with minimum and maximum size constraints',
     code: `
-<Splitter orientation="vertical" height="400px" className="w-[60rem]">
-  <Splitter.Pane minSize="20%" maxSize="80%">
-    <div>Left Pane (20% - 80%)</div>
-  </Splitter.Pane>
-  <Splitter.Pane minSize="20%" maxSize="80%">
-    <div>Right Pane (20% - 80%)</div>
-  </Splitter.Pane>
-</Splitter>
-    `,
+import { Splitter } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+      <Splitter.Pane minSize="20%" maxSize="80%">
+        <div className="text-foreground p-2">Left Pane (20% - 80%)</div>
+      </Splitter.Pane>
+      <Splitter.Pane minSize="20%" maxSize="80%">
+        <div className="text-foreground p-2">Right Pane (20% - 80%)</div>
+      </Splitter.Pane>
+    </Splitter>
+  );
+}
+`,
     snippet: (
       <Splitter orientation="vertical" height="400px" className="w-[60rem]">
         <Splitter.Pane minSize="20%" maxSize="80%">
@@ -156,22 +187,28 @@ export const docs: docsData[] = [
     title: 'Nested Splitters',
     desc: 'A vertical splitter with a nested horizontal splitter',
     code: `
-<Splitter orientation="vertical" height="400px" className="w-[60rem]">
-  <Splitter.Pane>
-    <div>Left Pane content</div>
-  </Splitter.Pane>
-  <Splitter.Pane>
-    <Splitter orientation="horizontal">
+import { Splitter } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Splitter orientation="vertical" height="400px" className="w-[60rem]">
       <Splitter.Pane>
-        <div>Top right Pane</div>
+        <div className="text-foreground p-2">Left Pane content</div>
       </Splitter.Pane>
       <Splitter.Pane>
-        <div>Bottom right Pane</div>
+        <Splitter orientation="horizontal">
+          <Splitter.Pane>
+            <div className="text-foreground p-2">Top right Pane</div>
+          </Splitter.Pane>
+          <Splitter.Pane>
+            <div className="text-foreground p-2">Bottom right Pane</div>
+          </Splitter.Pane>
+        </Splitter>
       </Splitter.Pane>
     </Splitter>
-  </Splitter.Pane>
-</Splitter>
-    `,
+  );
+}
+`,
     snippet: (
       <Splitter orientation="vertical" height="400px" className="w-[60rem]">
         <Splitter.Pane>
@@ -194,15 +231,21 @@ export const docs: docsData[] = [
     title: 'Fixed Height Splitter',
     desc: 'A vertical splitter with a fixed height',
     code: `
-<Splitter orientation="vertical" height="300px" className="w-[60rem]">
-  <Splitter.Pane>
-    <div>Left Pane content</div>
-  </Splitter.Pane>
-  <Splitter.Pane>
-    <div>Right Pane content</div>
-  </Splitter.Pane>
-</Splitter>
-    `,
+import { Splitter } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Splitter orientation="vertical" height="300px" className="w-[60rem]">
+      <Splitter.Pane>
+        <div className="text-foreground p-2">Left Pane content</div>
+      </Splitter.Pane>
+      <Splitter.Pane>
+        <div className="text-foreground p-2">Right Pane content</div>
+      </Splitter.Pane>
+    </Splitter>
+  );
+}
+`,
     snippet: (
       <Splitter orientation="vertical" height="300px" className="w-[60rem]">
         <Splitter.Pane>
@@ -218,15 +261,21 @@ export const docs: docsData[] = [
     title: 'Pixel-Based Sizes',
     desc: 'A vertical splitter with initial sizes specified in pixels',
     code: `
-<Splitter orientation="vertical" height="400px" className="w-[60rem]">
-  <Splitter.Pane initialSize="200px">
-    <div>Left Pane (200px)</div>
-  </Splitter.Pane>
-  <Splitter.Pane>
-    <div>Right Pane (remaining space)</div>
-  </Splitter.Pane>
-</Splitter>
-    `,
+import { Splitter } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+      <Splitter.Pane initialSize="200px">
+        <div className="text-foreground p-2">Left Pane (200px)</div>
+      </Splitter.Pane>
+      <Splitter.Pane>
+        <div className="text-foreground p-2">Right Pane (remaining space)</div>
+      </Splitter.Pane>
+    </Splitter>
+  );
+}
+`,
     snippet: (
       <Splitter orientation="vertical" height="400px" className="w-[60rem]">
         <Splitter.Pane initialSize="200px">
@@ -240,23 +289,29 @@ export const docs: docsData[] = [
   },
   {
     title: 'Four-Pane Horizontal Splitter',
-    desc: 'A horizontal splitter with four Panes',
+    desc: 'A horizontal splitter with four panes',
     code: `
-<Splitter orientation="horizontal" height="600px" className="w-[60rem]">
-  <Splitter.Pane>
-    <div>First Pane</div>
-  </Splitter.Pane>
-  <Splitter.Pane>
-    <div>Second Pane</div>
-  </Splitter.Pane>
-  <Splitter.Pane>
-    <div>Third Pane</div>
-  </Splitter.Pane>
-  <Splitter.Pane>
-    <div>Fourth Pane</div>
-  </Splitter.Pane>
-</Splitter>
-    `,
+import { Splitter } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Splitter orientation="horizontal" height="600px" className="w-[60rem]">
+      <Splitter.Pane>
+        <div className="text-foreground p-2">First Pane</div>
+      </Splitter.Pane>
+      <Splitter.Pane>
+        <div className="text-foreground p-2">Second Pane</div>
+      </Splitter.Pane>
+      <Splitter.Pane>
+        <div className="text-foreground p-2">Third Pane</div>
+      </Splitter.Pane>
+      <Splitter.Pane>
+        <div className="text-foreground p-2">Fourth Pane</div>
+      </Splitter.Pane>
+    </Splitter>
+  );
+}
+`,
     snippet: (
       <Splitter orientation="horizontal" height="600px" className="w-[60rem]">
         <Splitter.Pane>
@@ -276,20 +331,26 @@ export const docs: docsData[] = [
   },
   {
     title: 'Uneven Three-Pane Splitter',
-    desc: 'A vertical splitter with three Panes and custom initial sizes',
+    desc: 'A vertical splitter with three panes and custom initial sizes',
     code: `
-<Splitter orientation="vertical" height="400px" className="w-[60rem]">
-  <Splitter.Pane initialSize="20%">
-    <div>Left Pane (20%)</div>
-  </Splitter.Pane>
-  <Splitter.Pane initialSize="60%">
-    <div>Middle Pane (60%)</div>
-  </Splitter.Pane>
-  <Splitter.Pane initialSize="20%">
-    <div>Right Pane (20%)</div>
-  </Splitter.Pane>
-</Splitter>
-    `,
+import { Splitter } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+      <Splitter.Pane initialSize="20%">
+        <div className="text-foreground p-2">Left Pane (20%)</div>
+      </Splitter.Pane>
+      <Splitter.Pane initialSize="60%">
+        <div className="text-foreground p-2">Middle Pane (60%)</div>
+      </Splitter.Pane>
+      <Splitter.Pane initialSize="20%">
+        <div className="text-foreground p-2">Right Pane (20%)</div>
+      </Splitter.Pane>
+    </Splitter>
+  );
+}
+`,
     snippet: (
       <Splitter orientation="vertical" height="400px" className="w-[60rem]">
         <Splitter.Pane initialSize="20%">
@@ -308,18 +369,24 @@ export const docs: docsData[] = [
     title: 'Combination of Percentage and Pixel Sizes',
     desc: 'A vertical splitter with mixed initial size units',
     code: `
-<Splitter orientation="vertical" height="400px" className="w-[60rem]">
-  <Splitter.Pane initialSize="25%">
-    <div>Left Pane (25%)</div>
-  </Splitter.Pane>
-  <Splitter.Pane initialSize="300px">
-    <div>Middle Pane (300px)</div>
-  </Splitter.Pane>
-  <Splitter.Pane>
-    <div>Right Pane (remaining space)</div>
-  </Splitter.Pane>
-</Splitter>
-    `,
+import { Splitter } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+      <Splitter.Pane initialSize="25%">
+        <div className="text-foreground p-2">Left Pane (25%)</div>
+      </Splitter.Pane>
+      <Splitter.Pane initialSize="300px">
+        <div className="text-foreground p-2">Middle Pane (300px)</div>
+      </Splitter.Pane>
+      <Splitter.Pane>
+        <div className="text-foreground p-2">Right Pane (remaining space)</div>
+      </Splitter.Pane>
+    </Splitter>
+  );
+}
+`,
     snippet: (
       <Splitter orientation="vertical" height="400px" className="w-[60rem]">
         <Splitter.Pane initialSize="25%">
@@ -338,29 +405,35 @@ export const docs: docsData[] = [
     title: 'Complex Nested Splitters',
     desc: 'A complex layout with nested vertical and horizontal splitters',
     code: `
-<Splitter orientation="vertical" height="400px" className="w-[60rem]">
-  <Splitter.Pane initialSize="30%">
-    <div>Left Pane</div>
-  </Splitter.Pane>
-  <Splitter.Pane>
-    <Splitter orientation="horizontal">
-      <Splitter.Pane initialSize="60%">
-        <div>Top right Pane</div>
+import { Splitter } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+      <Splitter.Pane initialSize="30%">
+        <div className="text-foreground p-2">Left Pane</div>
       </Splitter.Pane>
       <Splitter.Pane>
-        <Splitter>
-          <Splitter.Pane>
-            <div>Bottom right left Pane</div>
+        <Splitter orientation="horizontal">
+          <Splitter.Pane initialSize="60%">
+            <div className="text-foreground p-2">Top right Pane</div>
           </Splitter.Pane>
-          <Splitter.Pane>
-            <div>Bottom right right Pane</div>
+          <Splitter.Pane initialSize="40%">
+            <Splitter>
+              <Splitter.Pane>
+                <div className="text-foreground p-2">Bottom right left Pane</div>
+              </Splitter.Pane>
+              <Splitter.Pane>
+                <div className="text-foreground p-2">Bottom right right Pane</div>
+              </Splitter.Pane>
+            </Splitter>
           </Splitter.Pane>
         </Splitter>
       </Splitter.Pane>
     </Splitter>
-  </Splitter.Pane>
-</Splitter>
-    `,
+  );
+}
+`,
     snippet: (
       <Splitter orientation="vertical" height="400px" className="w-[60rem]">
         <Splitter.Pane initialSize="30%">

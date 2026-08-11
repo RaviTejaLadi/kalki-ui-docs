@@ -6,24 +6,27 @@ export const docs: docsData[] = [
     title: 'Basic Right Drawer',
     desc: 'A simple drawer that opens from the right side of the screen.',
     code: `
-  const BasicRightDrawerExample = () => {
-    const [isOpen, setIsOpen] = useState(false);
-  
-    return (
-      <div>
-        <button onClick={() => setIsOpen(true)}>Open Right Drawer</button>
-        <Drawer isOpen={isOpen} onClose={() => setIsOpen(false)} position="right" width="300px">
-          <Drawer.Header closeButton onClose={() => setIsOpen(false)}>
-            <Drawer.Title>Right Drawer</Drawer.Title>
-          </Drawer.Header>
-          <Drawer.Body>
-            <p>This drawer opens from the right side.</p>
-          </Drawer.Body>
-        </Drawer>
-      </div>
-    );
-  }
-        `,
+import { useState } from "react";
+import { Drawer, Button } from "kalki-ui";
+
+export default function BasicRightDrawerExample() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div>
+      <Button onClick={() => setIsOpen(true)}>Open Right Drawer</Button>
+      <Drawer isOpen={isOpen} onClose={() => setIsOpen(false)} position="right" width="400px">
+        <Drawer.Header closeButton onClose={() => setIsOpen(false)}>
+          <Drawer.Title>Right Drawer</Drawer.Title>
+        </Drawer.Header>
+        <Drawer.Body>
+          <p>This drawer opens from the right side.</p>
+        </Drawer.Body>
+      </Drawer>
+    </div>
+  );
+}
+`,
     snippet: <BasicRightDrawerExample />,
   },
 ];

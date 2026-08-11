@@ -10,119 +10,149 @@ export const docs: docsData[] = [
     title: 'Basic Horizontal Stack',
     desc: 'A simple horizontal stack of items with default spacing.',
     code: `
-  <Stack>
-    <Stack.Item>
-      <Box padding="10px" shadow="sm" rounded>
-        Item 1
-      </Box>
-    </Stack.Item>
-    <Stack.Item>
-      <Box padding="10px" shadow="sm" rounded>
-        Item 2
-      </Box>
-    </Stack.Item>
-    <Stack.Item>
-      <Box padding="10px" shadow="sm" rounded>
-        Item 3
-      </Box>
-    </Stack.Item>
-  </Stack>
-      `,
+import { Stack, Box } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Stack spacing={10}>
+      <Stack.Item>
+        <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
+          Item 1
+        </Box>
+      </Stack.Item>
+      <Stack.Item>
+        <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
+          Item 2
+        </Box>
+      </Stack.Item>
+      <Stack.Item>
+        <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
+          Item 3
+        </Box>
+      </Stack.Item>
+    </Stack>
+  );
+}
+`,
     snippet: <BasicHorizontalStackExample />,
   },
   {
     title: 'Vertical Stack with Custom Spacing',
     desc: 'A vertical stack of items with custom spacing.',
     code: `
-  <Stack direction="column" spacing={20}>
-    <Stack.Item>
-      <Box padding="10px" shadow="sm" rounded>
-        Item 1
-      </Box>
-    </Stack.Item>
-    <Stack.Item>
-      <Box padding="10px" shadow="sm" rounded>
-        Item 2
-      </Box>
-    </Stack.Item>
-    <Stack.Item>
-      <Box padding="10px" shadow="sm" rounded>
-        Item 3
-      </Box>
-    </Stack.Item>
-  </Stack>
-      `,
+import { Stack, Box } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Stack direction="column" spacing={20}>
+      <Stack.Item>
+        <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
+          Item 1
+        </Box>
+      </Stack.Item>
+      <Stack.Item>
+        <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
+          Item 2
+        </Box>
+      </Stack.Item>
+      <Stack.Item>
+        <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
+          Item 3
+        </Box>
+      </Stack.Item>
+    </Stack>
+  );
+}
+`,
     snippet: <VerticalStackExample />,
   },
   {
     title: 'Stack with Custom Alignment',
     desc: 'A stack with custom justification and alignment.',
     code: `
-  <Stack justifyContent="center" alignItems="center" style={{ height: "200px", border: "1px solid #ccc" }}>
-    <Stack.Item>
-      <Box padding="10px" shadow="sm" rounded>
-        Centered Item
-      </Box>
-    </Stack.Item>
-  </Stack>
-      `,
+import { Stack, Box } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Stack justifyContent="center" alignItems="center" style={{ height: "200px", border: "1px solid #ccc" }}>
+      <Stack.Item>
+        <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
+          Centered Item
+        </Box>
+      </Stack.Item>
+    </Stack>
+  );
+}
+`,
     snippet: <AlignedStackExample />,
   },
   {
     title: 'Wrapped Stack',
     desc: 'A stack that wraps its items when they exceed the container width.',
     code: `
-  <Stack flexWrap="wrap" spacing={10} style={{ maxWidth: "300px" }}>
-    {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-      <Stack.Item key={item} style={{ padding: "10px" }}>
-        <Box padding="10px" shadow="sm" rounded>
-          Item {item}
-        </Box>
-      </Stack.Item>
-    ))}
-  </Stack>
-      `,
+import { Stack, Box } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Stack flexWrap="wrap" spacing={10} style={{ maxWidth: "300px" }}>
+      {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+        <Stack.Item key={item} style={{ padding: "10px" }}>
+          <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
+            Item {item}
+          </Box>
+        </Stack.Item>
+      ))}
+    </Stack>
+  );
+}
+`,
     snippet: <WrappedStackExample />,
   },
   {
     title: 'Nested Stacks',
     desc: 'An example of nested stacks for more complex layouts.',
     code: `
-  <Stack direction="column" spacing={20}>
-    <Stack.Item>
-      <Stack spacing={10}>
-        <Box padding="10px" shadow="sm" rounded>
-          <Stack.Item>
-            <Box padding="10px" shadow="sm" rounded>
-              Nested Item 1
-            </Box>
-          </Stack.Item>
-          <Stack.Item>
-            <Box padding="10px" shadow="sm" rounded>
-              Nested Item 2
-            </Box>
-          </Stack.Item>
-        </Box>
-      </Stack>
-    </Stack.Item>
-    <Stack.Item>
-      <Box padding="10px" shadow="sm" rounded>
-        <Stack direction="column" spacing={5}>
-          <Stack.Item>
-            <Box padding="10px" shadow="sm" rounded>
-              Nested Item 3
-            </Box>
-          </Stack.Item>
-          <Stack.Item>
-            <Box padding="10px" shadow="sm" rounded>
-              Nested Item 4
-            </Box>
-          </Stack.Item>
+import { Stack, Box } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Stack direction="column" spacing={20}>
+      <Stack.Item>
+        <Stack spacing={10}>
+          <Box padding="10px" shadow="sm" rounded>
+            <Stack.Item>
+              <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
+                Nested Item 1
+              </Box>
+            </Stack.Item>
+            <Stack.Item>
+              <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
+                Nested Item 2
+              </Box>
+            </Stack.Item>
+          </Box>
         </Stack>
-      </Box>
-    </Stack.Item>
-  </Stack>
-      `,
+      </Stack.Item>
+      <Stack.Item>
+        <Box padding="10px" shadow="sm" rounded>
+          <Stack direction="column" spacing={5}>
+            <Stack.Item>
+              <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
+                Nested Item 3
+              </Box>
+            </Stack.Item>
+            <Stack.Item>
+              <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
+                Nested Item 4
+              </Box>
+            </Stack.Item>
+          </Stack>
+        </Box>
+      </Stack.Item>
+    </Stack>
+  );
+}
+`,
     snippet: <NestedStacksExample />,
   },
 ];

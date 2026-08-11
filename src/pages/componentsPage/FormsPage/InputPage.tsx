@@ -16,7 +16,14 @@ const InputPage = () => {
         </SectionHeader.SubTitle>
       </SectionHeader>
       <Separator />
-      <DocumentationRenderer className="my-4" data={docs} />
+      <DocumentationRenderer
+        className="my-4"
+        data={docs}
+        componentName="Input"
+        importCode={`import Form from "kalki-ui";
+
+// Usage: <Form.Input /> inside <Form.Group>`}
+      />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
       </SectionHeader>

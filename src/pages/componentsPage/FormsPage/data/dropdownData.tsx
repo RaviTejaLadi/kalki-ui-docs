@@ -10,7 +10,7 @@ export const docs: docsData[] = [
 import React, { useState } from 'react';
 import { Select } from "kalki-ui";
 
-export const DropdownExample = () => {
+export default function DropdownExample() {
   const [value, setValue] = useState<string | undefined>(undefined);
 
   return (
@@ -25,7 +25,7 @@ export const DropdownExample = () => {
       </Select.Content>
     </Select>
   );
-};
+}
     `,
     snippet: (() => {
       const DropdownExample = () => {

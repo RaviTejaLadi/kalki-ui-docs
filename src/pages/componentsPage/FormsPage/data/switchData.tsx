@@ -10,7 +10,7 @@ export const docs: docsData[] = [
 import React, { useState } from 'react';
 import Form, { FormGroup, Switch } from "kalki-ui";
 
-export const SwitchExample = () => {
+export default function SwitchExample() {
   const [notifications, setNotifications] = useState(false);
 
   return (
@@ -26,7 +26,7 @@ export const SwitchExample = () => {
       </FormGroup>
     </Form>
   );
-};
+}
     `,
     snippet: (() => {
       const SwitchExample = () => {

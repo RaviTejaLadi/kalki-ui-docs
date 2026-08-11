@@ -13,7 +13,7 @@ const TabsPage = () => {
         <SectionHeader.Title className="tracking-wide">Tabs</SectionHeader.Title>
       </SectionHeader>
       <Separator />
-      <DocumentationRenderer data={docs} />
+      <DocumentationRenderer data={docs} componentName="Tabs" />
       <Div className="space-y-5">
         <Div>
           <Heading as="h6" className="mb-2 text-muted-foreground">

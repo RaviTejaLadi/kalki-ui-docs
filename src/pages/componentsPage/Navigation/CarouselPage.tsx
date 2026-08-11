@@ -24,7 +24,7 @@ const CarouselPage = () => {
         </SectionHeader.SubTitle>
       </SectionHeader>
       <Separator />
-      <DocumentationRenderer data={docs} />
+      <DocumentationRenderer data={docs} componentName="Carousel" />
       <Div className="space-y-5">
         <Div>
           <Heading as="h6" className="mb-2 text-muted-foreground">

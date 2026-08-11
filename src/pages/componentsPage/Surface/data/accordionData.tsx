@@ -7,17 +7,23 @@ export const docs: docsData[] = [
     title: 'Basic Accordion',
     desc: 'This example demonstrates the basic usage of the Accordion component. It shows how to create a simple accordion with two items.',
     code: `
-      <Accordion>
-        <Accordion.Item>
-          <Accordion.Header eventKey="0">Accordion Item #1</Accordion.Header>
-          <Accordion.Body eventKey="0">This is the body content for the first accordion item.</Accordion.Body>
-        </Accordion.Item>
-        <Accordion.Item>
-          <Accordion.Header eventKey="1">Accordion Item #2</Accordion.Header>
-          <Accordion.Body eventKey="1">This is the body content for the second accordion item.</Accordion.Body>
-        </Accordion.Item>
-      </Accordion>
-      `,
+import { Accordion } from "kalki-ui";
+
+export default function BasicAccordion() {
+  return (
+    <Accordion>
+      <Accordion.Item>
+        <Accordion.Header eventKey="0">Accordion Item #1</Accordion.Header>
+        <Accordion.Body eventKey="0">This is the body content for the first accordion item.</Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item>
+        <Accordion.Header eventKey="1">Accordion Item #2</Accordion.Header>
+        <Accordion.Body eventKey="1">This is the body content for the second accordion item.</Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+  );
+}
+`,
     snippet: (
       <Accordion>
         <Accordion.Item>
@@ -35,13 +41,19 @@ export const docs: docsData[] = [
     title: 'Accordion with Custom Variant',
     desc: "This example shows how to use a custom variant for the Accordion. The 'secondary' variant is used here, which may have a different visual style.",
     code: `
-      <Accordion variant="secondary">
-        <Accordion.Item>
-          <Accordion.Header eventKey="0">Secondary Accordion Item</Accordion.Header>
-          <Accordion.Body eventKey="0">This accordion uses the secondary variant.</Accordion.Body>
-        </Accordion.Item>
-      </Accordion>
-      `,
+import { Accordion } from "kalki-ui";
+
+export default function SecondaryAccordion() {
+  return (
+    <Accordion variant="secondary">
+      <Accordion.Item>
+        <Accordion.Header eventKey="0">Secondary Accordion Item</Accordion.Header>
+        <Accordion.Body eventKey="0">This accordion uses the secondary variant.</Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+  );
+}
+`,
     snippet: (
       <Accordion variant="secondary">
         <Accordion.Item>
@@ -55,13 +67,19 @@ export const docs: docsData[] = [
     title: 'Accordion with Custom Size',
     desc: "This example demonstrates how to use a custom size for the Accordion. The 'lg' size is used here for a larger accordion.",
     code: `
-      <Accordion size="lg">
-        <Accordion.Item>
-          <Accordion.Header eventKey="0">Large Accordion Item</Accordion.Header>
-          <Accordion.Body eventKey="0">This accordion uses the large size.</Accordion.Body>
-        </Accordion.Item>
-      </Accordion>
-      `,
+import { Accordion } from "kalki-ui";
+
+export default function LargeAccordion() {
+  return (
+    <Accordion size="lg">
+      <Accordion.Item>
+        <Accordion.Header eventKey="0">Large Accordion Item</Accordion.Header>
+        <Accordion.Body eventKey="0">This accordion uses the large size.</Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+  );
+}
+`,
     snippet: (
       <Accordion size="lg">
         <Accordion.Item>
@@ -75,15 +93,21 @@ export const docs: docsData[] = [
     title: 'Accordion with Custom Icon',
     desc: 'This example shows how to use a custom icon in the Accordion Header. A custom icon is passed to replace the default arrow icon.',
     code: `
-      <Accordion>
-        <Accordion.Item>
-          <Accordion.Header eventKey="0" icon={<span>🔽</span>}>
-            Accordion with Custom Icon
-          </Accordion.Header>
-          <Accordion.Body eventKey="0">This accordion item uses a custom icon in its header.</Accordion.Body>
-        </Accordion.Item>
-      </Accordion>
-      `,
+import { Accordion } from "kalki-ui";
+
+export default function CustomIconAccordion() {
+  return (
+    <Accordion>
+      <Accordion.Item>
+        <Accordion.Header eventKey="0" icon={<span>🔽</span>}>
+          Accordion with Custom Icon
+        </Accordion.Header>
+        <Accordion.Body eventKey="0">This accordion item uses a custom icon in its header.</Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+  );
+}
+`,
     snippet: (
       <Accordion>
         <Accordion.Item>
@@ -99,19 +123,25 @@ export const docs: docsData[] = [
     title: 'Accordion with Initially Open Item',
     desc: "This example demonstrates how to have an accordion item open by default using the 'open' prop on the AccordionHeader.",
     code: `
-      <Accordion>
-        <Accordion.Item>
-          <Accordion.Header eventKey="0" open>
-            Initially Open Item
-          </Accordion.Header>
-          <Accordion.Body eventKey="0">This accordion item is open by default.</Accordion.Body>
-        </Accordion.Item>
-        <Accordion.Item>
-          <Accordion.Header eventKey="1">Closed Item</Accordion.Header>
-          <Accordion.Body eventKey="1">This accordion item is closed by default.</Accordion.Body>
-        </Accordion.Item>
-      </Accordion>
-      `,
+import { Accordion } from "kalki-ui";
+
+export default function InitiallyOpenAccordion() {
+  return (
+    <Accordion>
+      <Accordion.Item>
+        <Accordion.Header eventKey="0" open>
+          Initially Open Item
+        </Accordion.Header>
+        <Accordion.Body eventKey="0">This accordion item is open by default.</Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item>
+        <Accordion.Header eventKey="1">Closed Item</Accordion.Header>
+        <Accordion.Body eventKey="1">This accordion item is closed by default.</Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+  );
+}
+`,
     snippet: (
       <Accordion>
         <Accordion.Item>
@@ -130,25 +160,33 @@ export const docs: docsData[] = [
   {
     title: 'Accordion with All Available Variants',
     code: `
-      <Box style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-        {[
-          'primary' as const,
-          'secondary' as const,
-          'success' as const,
-          'danger' as const,
-          'warning' as const,
-          'help' as const,
-          'info' as const,
-          'dark' as const,
-          'light' as const,
-        ].map((item) => (
-          <Accordion key={item} variant={item} size="sm">
-            <Accordion.Header eventKey="0">{item}</Accordion.Header>
-            <Accordion.Body eventKey="0">This accordion is {item}.</Accordion.Body>
-          </Accordion>
-        ))}
-      </Box>
-        `,
+import { Accordion, Box } from "kalki-ui";
+
+export default function AccordionVariants() {
+  return (
+    <Box style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+      {(
+        [
+          "primary",
+          "secondary",
+          "success",
+          "danger",
+          "warning",
+          "help",
+          "info",
+          "dark",
+          "light",
+        ] as const
+      ).map((item) => (
+        <Accordion key={item} variant={item} size="sm">
+          <Accordion.Header eventKey="0">{item}</Accordion.Header>
+          <Accordion.Body eventKey="0">This accordion is {item}.</Accordion.Body>
+        </Accordion>
+      ))}
+    </Box>
+  );
+}
+`,
     snippet: (
       <Box style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
         {[

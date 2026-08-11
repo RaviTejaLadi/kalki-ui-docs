@@ -28,12 +28,18 @@ export const docs: docsData[] = [
     title: 'Basic Usage',
     desc: 'A simple OrderedList component with default numeric markers.',
     code: `
-      <OrderedList>
-        <OrderedList.Item>First item</OrderedList.Item>
-        <OrderedList.Item>Second item</OrderedList.Item>
-        <OrderedList.Item>Third item</OrderedList.Item>
-      </OrderedList>
-    `,
+import { OrderedList } from "kalki-ui";
+
+export default function BasicOrderedList() {
+  return (
+    <OrderedList>
+      <OrderedList.Item>First item</OrderedList.Item>
+      <OrderedList.Item>Second item</OrderedList.Item>
+      <OrderedList.Item>Third item</OrderedList.Item>
+    </OrderedList>
+  );
+}
+`,
     snippet: (
       <OrderedList>
         <OrderedList.Item>First item</OrderedList.Item>
@@ -46,12 +52,18 @@ export const docs: docsData[] = [
     title: 'Custom Marker Type',
     desc: 'OrderedList component with custom marker type (lowercase letters).',
     code: `
-      <OrderedList type="a">
-        <OrderedList.Item>Item A</OrderedList.Item>
-        <OrderedList.Item>Item B</OrderedList.Item>
-        <OrderedList.Item>Item C</OrderedList.Item>
-      </OrderedList>
-    `,
+import { OrderedList } from "kalki-ui";
+
+export default function CustomMarkerOrderedList() {
+  return (
+    <OrderedList type="a">
+      <OrderedList.Item>Item A</OrderedList.Item>
+      <OrderedList.Item>Item B</OrderedList.Item>
+      <OrderedList.Item>Item C</OrderedList.Item>
+    </OrderedList>
+  );
+}
+`,
     snippet: (
       <OrderedList type="a">
         <OrderedList.Item>Item A</OrderedList.Item>
@@ -64,18 +76,24 @@ export const docs: docsData[] = [
     title: 'Nested Lists',
     desc: 'OrderedList component with nested lists and different marker types.',
     code: `
-      <OrderedList>
-        <OrderedList.Item>Main item 1</OrderedList.Item>
-        <OrderedList.Item>
-          Main item 2
-          <OrderedList type="a">
-            <OrderedList.Item>Subitem 2.a</OrderedList.Item>
-            <OrderedList.Item>Subitem 2.b</OrderedList.Item>
-          </OrderedList>
-        </OrderedList.Item>
-        <OrderedList.Item>Main item 3</OrderedList.Item>
-      </OrderedList>
-    `,
+import { OrderedList } from "kalki-ui";
+
+export default function NestedOrderedList() {
+  return (
+    <OrderedList>
+      <OrderedList.Item>Main item 1</OrderedList.Item>
+      <OrderedList.Item>
+        Main item 2
+        <OrderedList type="a">
+          <OrderedList.Item>Subitem 2.a</OrderedList.Item>
+          <OrderedList.Item>Subitem 2.b</OrderedList.Item>
+        </OrderedList>
+      </OrderedList.Item>
+      <OrderedList.Item>Main item 3</OrderedList.Item>
+    </OrderedList>
+  );
+}
+`,
     snippet: (
       <OrderedList>
         <OrderedList.Item>Main item 1</OrderedList.Item>
@@ -94,14 +112,20 @@ export const docs: docsData[] = [
     title: 'Custom Styling',
     desc: 'OrderedList component with custom CSS classes for styling.',
     code: `
-      <Box padding="10px" margin="0px 0px 0px 15px">
-        <OrderedList type="i" className="list-decimal pl-5 space-y-2">
-          <OrderedList.Item className="text-xl font-semibold text-blue-500">Custom styled item 1</OrderedList.Item>
-          <OrderedList.Item className="text-xl font-semibold text-blue-500">Custom styled item 2</OrderedList.Item>
-          <OrderedList.Item className="text-xl font-semibold text-blue-500">Custom styled item 3</OrderedList.Item>
-        </OrderedList>
-      </Box>
-    `,
+import { Box, OrderedList } from "kalki-ui";
+
+export default function StyledOrderedList() {
+  return (
+    <Box padding="10px" margin="0px 0px 0px 15px">
+      <OrderedList type="i" className="list-decimal pl-5 space-y-2">
+        <OrderedList.Item className="text-xl font-semibold text-blue-500">Custom styled item 1</OrderedList.Item>
+        <OrderedList.Item className="text-xl font-semibold text-blue-500">Custom styled item 2</OrderedList.Item>
+        <OrderedList.Item className="text-xl font-semibold text-blue-500">Custom styled item 3</OrderedList.Item>
+      </OrderedList>
+    </Box>
+  );
+}
+`,
     snippet: (
       <Box padding="10px" margin="0px 0px 0px 15px">
         <OrderedList type="i" className="list-decimal pl-5 space-y-2">

@@ -6,11 +6,17 @@ export const docs: docsData[] = [
     title: 'Basic Box',
     desc: 'This example demonstrates the most basic usage of the Box component with default properties.',
     code: `
-  <Box backgroundColor="#e0f7fa" padding="20px">
-    <h2>Simple Box</h2>
-    <p>This is a simple box with background color and padding.</p>
-  </Box>
-      `,
+import { Box } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Box backgroundColor="#e0f7fa" padding="20px">
+      <h2>Simple Box</h2>
+      <p>This is a simple box with background color and padding.</p>
+    </Box>
+  );
+}
+`,
     snippet: (
       <Box backgroundColor="#e0f7fa" padding="20px">
         <h2>Simple Box</h2>
@@ -22,11 +28,17 @@ export const docs: docsData[] = [
     title: 'Box with Custom Dimensions',
     desc: 'This example shows how to use the Box component with custom width and height.',
     code: `
-  <Box width="300px" height="150px" backgroundColor="#ffecb3" padding="10px">
-    <h2>Custom Size Box</h2>
-    <p>This box has a custom width and height.</p>
-  </Box>
-      `,
+import { Box } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Box width="300px" height="150px" backgroundColor="#ffecb3" padding="10px">
+      <h2>Custom Size Box</h2>
+      <p>This box has a custom width and height.</p>
+    </Box>
+  );
+}
+`,
     snippet: (
       <Box width="300px" height="150px" backgroundColor="#ffecb3" padding="10px">
         <h2>Custom Size Box</h2>
@@ -39,11 +51,17 @@ export const docs: docsData[] = [
     title: 'Outlined Box',
     desc: 'This example demonstrates how to add an outline to the Box using the outlined prop.',
     code: `
-  <Box outlined padding="20px" margin="10px" style={{ borderColor: "#1976d2", borderWidth: "2px" }}>
-    <h2>Outlined Box</h2>
-    <p>This box has a custom outline.</p>
-  </Box>
-      `,
+import { Box } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Box outlined padding="20px" margin="10px" style={{ borderColor: "#1976d2", borderWidth: "2px" }}>
+      <h2 className="text-muted-foreground">Outlined Box</h2>
+      <p className="text-muted-foreground">This box has a custom outline.</p>
+    </Box>
+  );
+}
+`,
     snippet: (
       <Box outlined padding="20px" margin="10px" style={{ borderColor: '#1976d2', borderWidth: '2px' }}>
         <h2 className="text-muted-foreground">Outlined Box</h2>
@@ -55,10 +73,14 @@ export const docs: docsData[] = [
     title: 'Box with Mixed Styles',
     desc: 'This example demonstrates how to customize the text and background colors of the Box.',
     code: `
+import { Box } from "kalki-ui";
+
+export default function Example() {
+  return (
     <Box
       width="250px"
       height="150px"
-      shadow="xxl"
+      shadow="2xl"
       rounded
       outlined
       padding="15px"
@@ -69,7 +91,9 @@ export const docs: docsData[] = [
       <h2>Mixed Styles Box</h2>
       <p>This box combines various styles.</p>
     </Box>
-      `,
+  );
+}
+`,
     snippet: (
       <Box
         width="250px"
@@ -96,9 +120,9 @@ export const rows = [
   ['style', 'object', '{}', 'Inline styles to apply to the Box component.'],
   [
     'shadow',
-    'number',
-    '',
-    'Box-shadow level for the Box component. Acceptable values range from none,normal,sm,md,lg,xl,2xl,inner.',
+    '"none" | "sm" | "normal" | "md" | "lg" | "xl" | "2xl" | "inner"',
+    '-',
+    'Box-shadow level for the Box component.',
   ],
   ['height', 'string', "'auto'", 'Height of the Box component.'],
   ['margin', 'string', "'0'", 'Margin around the Box component.'],

@@ -10,7 +10,7 @@ export const docs: docsData[] = [
 import React, { useState } from 'react';
 import Form, { FormGroup, FileInput } from "kalki-ui";
 
-export const FileInputExample = () => {
+export default function FileInputExample() {
   const [fileName, setFileName] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,7 +26,7 @@ export const FileInputExample = () => {
       {fileName && <p className="text-xs text-muted-foreground mt-2">Selected: {fileName}</p>}
     </Form>
   );
-};
+}
     `,
     snippet: (() => {
       const FileInputExample = () => {

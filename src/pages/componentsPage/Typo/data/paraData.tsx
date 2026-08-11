@@ -7,8 +7,16 @@ export const docs: docsData[] = [
     title: 'Basic Usage',
     desc: 'Demonstrates the versatility of the Paragraph component in creating different types of text elements. It showcases how the component can be used to render standard paragraphs, inline spans, and block-level div elements, allowing for flexible text structuring within your layouts.',
     code: `
-<Paragraph>This is a default paragraph.</Paragraph>
-          `,
+import { Box, Paragraph } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Box padding="10px">
+      <Paragraph>This is a default paragraph.</Paragraph>
+    </Box>
+  );
+}
+`,
     snippet: (
       <Box padding="10px">
         <Paragraph>This is a default paragraph.</Paragraph>
@@ -19,19 +27,25 @@ export const docs: docsData[] = [
     title: 'Styling Options',
     desc: 'Showcases various text decoration and styling options available for the Paragraph component. These options include underline, overline, dashed underline, italics, bold (strong), strikethrough, highlighting (marked), size adjustment, and text deletion/insertion effects. This flexibility allows for rich text formatting and emphasis within paragraphs, enhancing readability and visual appeal.',
     code: `
-      <Box padding="10px" className="space-y-2">
-        <Paragraph underline>Underlined Paragraph</Paragraph>
-        <Paragraph overline>Overline Paragraph</Paragraph>
-        <Paragraph dashed>Dashed Paragraph</Paragraph>
-        <Paragraph italic>Italic Paragraph</Paragraph>
-        <Paragraph strong>Strong Paragraph</Paragraph>
-        <Paragraph strikethrough>Strikethrough Paragraph</Paragraph>
-        <Paragraph marked>Marked Paragraph</Paragraph>
-        <Paragraph smaller>Smaller Paragraph</Paragraph>
-        <Paragraph deleted>Deleted Paragraph</Paragraph>
-        <Paragraph inserted>Inserted Paragraph</Paragraph>
-      </Box>
-    `,
+import { Box, Paragraph } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Box padding="10px" className="space-y-2">
+      <Paragraph underline>Underlined Paragraph</Paragraph>
+      <Paragraph overline>Overline Paragraph</Paragraph>
+      <Paragraph dashed>Dashed Paragraph</Paragraph>
+      <Paragraph italic>Italic Paragraph</Paragraph>
+      <Paragraph strong>Strong Paragraph</Paragraph>
+      <Paragraph strikethrough>Strikethrough Paragraph</Paragraph>
+      <Paragraph marked>Marked Paragraph</Paragraph>
+      <Paragraph smaller>Smaller Paragraph</Paragraph>
+      <Paragraph deleted>Deleted Paragraph</Paragraph>
+      <Paragraph inserted>Inserted Paragraph</Paragraph>
+    </Box>
+  );
+}
+`,
     snippet: (
       <Box padding="10px" className="space-y-2">
         <Paragraph underline>Underlined Paragraph</Paragraph>
@@ -51,10 +65,16 @@ export const docs: docsData[] = [
     title: 'Custom Styling',
     desc: 'Demonstrates the flexibility of the Paragraph component in accepting custom styling properties. This example shows how to directly apply custom font size, color, and font weight to create a unique paragraph style. This feature allows for fine-grained control over text appearance, enabling perfect alignment with specific design requirements or brand guidelines.',
     code: `
-<Paragraph className="text-red-300 font-semibold">
-  Custom Styled Paragraph
-</Paragraph>
-    `,
+import { Box, Paragraph } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Box padding="10px">
+      <Paragraph className="text-red-900 font-semibold">Custom Styled Paragraph</Paragraph>
+    </Box>
+  );
+}
+`,
     snippet: (
       <Box padding="10px">
         <Paragraph className="text-red-900 font-semibold">Custom Styled Paragraph</Paragraph>

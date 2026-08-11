@@ -13,7 +13,7 @@ const SplitterPage = () => {
         <SectionHeader.Title className="tracking-wide">Splitter</SectionHeader.Title>
       </SectionHeader>
       <Separator />
-      <DocumentationRenderer className="my-4" data={docs} />
+      <DocumentationRenderer className="my-4" data={docs} componentName="Splitter" />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
       </SectionHeader>

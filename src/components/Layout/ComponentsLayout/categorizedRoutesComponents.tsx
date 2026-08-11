@@ -131,7 +131,7 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         Icon: ListOrdered,
       },
       {
-        label: 'Un Ordered List',
+        label: 'Unordered List',
         description:
           'Flexible components for rendering collections of items in various formats, supporting dynamic content rendering and accessibility standards.',
         path: '/components/un-ordered-list',
@@ -169,7 +169,7 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         label: 'Modal',
         description:
           'Programmatically controlled overlay windows that interrupt the main application workflow, requiring explicit user interaction and supporting complex interaction patterns.',
-        path: '/components/model',
+        path: '/components/modal',
         Icon: LayoutPanelTop,
       },
       // {
@@ -318,6 +318,13 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
           'Sliding panel navigation component with advanced gesture support, providing off-canvas menu and content interaction patterns.',
         path: '/components/drawer',
         Icon: SidebarClose,
+      },
+      {
+        label: 'Link',
+        description:
+          'Accessible navigation link component for in-app routing and external destinations with consistent styling.',
+        path: '/components/link',
+        Icon: Link,
       },
       {
         label: 'Tabs',

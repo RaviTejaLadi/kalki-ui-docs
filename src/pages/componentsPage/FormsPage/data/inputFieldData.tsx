@@ -10,7 +10,7 @@ export const docs: docsData[] = [
 import React, { useState } from 'react';
 import { InputField } from "kalki-ui";
 
-export const InputFieldExample = () => {
+export default function InputFieldExample() {
   const [value, setValue] = useState("");
   const [error, setError] = useState<string | undefined>();
 
@@ -30,7 +30,7 @@ export const InputFieldExample = () => {
       error={error}
     />
   );
-};
+}
     `,
     snippet: (() => {
       const InputFieldExample = () => {

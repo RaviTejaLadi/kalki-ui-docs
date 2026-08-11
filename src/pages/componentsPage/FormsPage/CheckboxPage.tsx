@@ -11,7 +11,12 @@ const CheckboxPage = () => {
         <SectionHeader.Title className="tracking-wide">Check Box</SectionHeader.Title>
       </SectionHeader>
       <Separator />
-      <DocumentationRenderer className="my-4" data={docs} />
+      <DocumentationRenderer
+        className="my-4"
+        data={docs}
+        componentName="Checkbox"
+        importCode={`import { Checkbox } from "kalki-ui";`}
+      />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
       </SectionHeader>

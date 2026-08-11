@@ -10,7 +10,7 @@ export const docs: docsData[] = [
 import React, { useState } from 'react';
 import Form, { FormGroup, Slider } from "kalki-ui";
 
-export const SliderExample = () => {
+export default function SliderExample() {
   const [experience, setExperience] = useState(50);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,7 +35,7 @@ export const SliderExample = () => {
       </FormGroup>
     </Form>
   );
-};
+}
     `,
     snippet: (() => {
       const SliderExample = () => {

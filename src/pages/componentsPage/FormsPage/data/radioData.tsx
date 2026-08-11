@@ -12,7 +12,7 @@ import Form, { FormGroup, Radio } from "kalki-ui";
 
 type Subscription = "free" | "pro" | "enterprise";
 
-export const RadioGroupExample = () => {
+export default function RadioGroupExample() {
   const [subscription, setSubscription] = useState<Subscription>("free");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,7 +36,7 @@ export const RadioGroupExample = () => {
       </FormGroup>
     </Form>
   );
-};
+}
     `,
     snippet: (() => {
       type Subscription = 'free' | 'pro' | 'enterprise';

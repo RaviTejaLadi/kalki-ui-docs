@@ -7,15 +7,21 @@ export const docs: docsData[] = [
     title: 'Basic Usage',
     desc: "Demonstrates the Heading component's versatility in creating different levels of headings from h1 to h6. Each heading size is showcased to illustrate the hierarchy and default styling applied to different heading levels.",
     code: `
-      <Box padding="10px" className="text-center">
-        <Heading as="h1">H1 Heading</Heading>
-        <Heading as="h2">H2 Heading</Heading>
-        <Heading as="h3">H3 Heading</Heading>
-        <Heading as="h4">H4 Heading</Heading>
-        <Heading as="h5">H5 Heading</Heading>
-        <Heading as="h6">H6 Heading</Heading>
-      </Box>
-      `,
+import { Box, Heading } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Box padding="10px" className="text-center">
+      <Heading as="h1">H1 Heading</Heading>
+      <Heading as="h2">H2 Heading</Heading>
+      <Heading as="h3">H3 Heading</Heading>
+      <Heading as="h4">H4 Heading</Heading>
+      <Heading as="h5">H5 Heading</Heading>
+      <Heading as="h6">H6 Heading</Heading>
+    </Box>
+  );
+}
+`,
     snippet: (
       <Box padding="10px" className="text-center">
         <Heading as="h1">H1 Heading</Heading>
@@ -31,38 +37,44 @@ export const docs: docsData[] = [
     title: 'Styling Options',
     desc: 'Illustrates various text decoration and styling options available for the Heading component. These options include underline, overline, dashed underline, italics, bold (strong), strikethrough, highlighting (marked), size adjustment, and text deletion/insertion effects.',
     code: `
-      <Box padding="10px">
-        <Heading as="h3" underline>
-          Underlined Heading
-        </Heading>
-        <Heading as="h3" overline>
-          Overline Heading
-        </Heading>
-        <Heading as="h3" dashed>
-          Dashed Heading
-        </Heading>
-        <Heading as="h3" italic>
-          Italic Heading
-        </Heading>
-        <Heading as="h3" strong>
-          Strong Heading
-        </Heading>
-        <Heading as="h3" strikethrough>
-          Strikethrough Heading
-        </Heading>
-        <Heading as="h3" marked>
-          Marked Heading
-        </Heading>
-        <Heading as="h3" smaller>
-          Smaller Heading
-        </Heading>
-        <Heading as="h3" deleted>
-          Deleted Heading
-        </Heading>
-        <Heading as="h3" inserted>
-          Inserted Heading
-        </Heading>
-      </Box>
+import { Box, Heading } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Box padding="10px">
+      <Heading as="h3" underline>
+        Underlined Heading
+      </Heading>
+      <Heading as="h3" overline>
+        Overline Heading
+      </Heading>
+      <Heading as="h3" dashed>
+        Dashed Heading
+      </Heading>
+      <Heading as="h3" italic>
+        Italic Heading
+      </Heading>
+      <Heading as="h3" strong>
+        Strong Heading
+      </Heading>
+      <Heading as="h3" strikethrough>
+        Strikethrough Heading
+      </Heading>
+      <Heading as="h3" marked>
+        Marked Heading
+      </Heading>
+      <Heading as="h3" smaller>
+        Smaller Heading
+      </Heading>
+      <Heading as="h3" deleted>
+        Deleted Heading
+      </Heading>
+      <Heading as="h3" inserted>
+        Inserted Heading
+      </Heading>
+    </Box>
+  );
+}
 `,
     snippet: (
       <Box padding="10px">
@@ -103,9 +115,15 @@ export const docs: docsData[] = [
     title: 'Custom Styling',
     desc: 'Demonstrates the flexibility of the Heading component in accepting custom styling properties. This example shows how to directly apply custom font size, color, and font weight to create a unique heading style.',
     code: `
-<Heading className="text-[1.5em] text-[#007bff] ">
-    Custom Styled Heading
-</Heading>
+import { Box, Heading } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Box padding="10px">
+      <Heading className="text-[1.5em] text-[#007bff]">Custom Styled Heading</Heading>
+    </Box>
+  );
+}
 `,
     snippet: (
       <Box padding="10px">

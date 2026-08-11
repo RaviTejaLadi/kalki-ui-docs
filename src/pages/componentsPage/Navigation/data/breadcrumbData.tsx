@@ -7,12 +7,18 @@ export const docs: docsData[] = [
     title: 'Basic Breadcrumb',
     desc: 'This example demonstrates the most basic usage of the Breadcrumb component with default properties.',
     code: `
-      <Breadcrumb>
-        <Breadcrumb.Item to="/">Home</Breadcrumb.Item>
-        <Breadcrumb.Item to="/products">Products</Breadcrumb.Item>
-        <Breadcrumb.Item active>Laptops</Breadcrumb.Item>
-      </Breadcrumb>
-      `,
+import { Breadcrumb } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Breadcrumb>
+      <Breadcrumb.Item to="/">Home</Breadcrumb.Item>
+      <Breadcrumb.Item to="/products">Products</Breadcrumb.Item>
+      <Breadcrumb.Item active>Laptops</Breadcrumb.Item>
+    </Breadcrumb>
+  );
+}
+`,
     snippet: (
       <Breadcrumb>
         <Breadcrumb.Item to="/">Home</Breadcrumb.Item>
@@ -25,17 +31,24 @@ export const docs: docsData[] = [
     title: 'Breadcrumb with Custom Separator',
     desc: 'This example shows how to use a custom separator between Breadcrumb items.',
     code: `
-      <Breadcrumb separator={<ArrowRight className="size-3 mx-1 text-[var(--icon-color)]" />}>
-        <Breadcrumb.Item to="/">Home</Breadcrumb.Item>
-        <Breadcrumb.Item to="/blog">Blog</Breadcrumb.Item>
-        <Breadcrumb.Item active>How to Use BreadCrumbs</Breadcrumb.Item>
-      </Breadcrumb>
-      `,
+import { Breadcrumb } from "kalki-ui";
+import { ArrowRight } from "lucide-react";
+
+export default function Example() {
+  return (
+    <Breadcrumb separator={<ArrowRight className="size-3 mx-1 text-[var(--icon-color)]" />}>
+      <Breadcrumb.Item to="/">Home</Breadcrumb.Item>
+      <Breadcrumb.Item to="/blog">Blog</Breadcrumb.Item>
+      <Breadcrumb.Item active>How to Use Breadcrumbs</Breadcrumb.Item>
+    </Breadcrumb>
+  );
+}
+`,
     snippet: (
       <Breadcrumb separator={<ArrowRight className="size-3 mx-1 text-[var(--icon-color)]" />}>
         <Breadcrumb.Item to="/">Home</Breadcrumb.Item>
         <Breadcrumb.Item to="/blog">Blog</Breadcrumb.Item>
-        <Breadcrumb.Item active>How to Use BreadCrumbs</Breadcrumb.Item>
+        <Breadcrumb.Item active>How to Use Breadcrumbs</Breadcrumb.Item>
       </Breadcrumb>
     ),
   },
@@ -43,16 +56,22 @@ export const docs: docsData[] = [
     title: 'Styled Breadcrumb',
     desc: 'This example demonstrates how to apply custom styles to the Breadcrumb component.',
     code: `
-      <Breadcrumb>
-        <Breadcrumb.Item to="/" className="text-red-800">
-          Dashboard
-        </Breadcrumb.Item>
-        <Breadcrumb.Item to="/settings" className="text-pink-800">
-          Settings
-        </Breadcrumb.Item>
-        <Breadcrumb.Item active>Profile</Breadcrumb.Item>
-      </Breadcrumb>
-      `,
+import { Breadcrumb } from "kalki-ui";
+
+export default function Example() {
+  return (
+    <Breadcrumb>
+      <Breadcrumb.Item to="/" className="text-red-800">
+        Dashboard
+      </Breadcrumb.Item>
+      <Breadcrumb.Item to="/settings" className="text-pink-800">
+        Settings
+      </Breadcrumb.Item>
+      <Breadcrumb.Item active>Profile</Breadcrumb.Item>
+    </Breadcrumb>
+  );
+}
+`,
     snippet: (
       <Breadcrumb>
         <Breadcrumb.Item to="/" className="text-red-800">

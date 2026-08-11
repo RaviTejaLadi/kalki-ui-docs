@@ -7,12 +7,14 @@ export const TextInput = () => {
   const handleChange = (e: { target: { value: SetStateAction<string> } }) => setUsername(e.target.value);
 
   return (
-    <Form.Group>
-      <Form.Label size="sm" margin="5px 0px">
-        Username
-      </Form.Label>
-      <Form.Input size="sm" name="name" placeholder="Enter your username" value={username} onChange={handleChange} />
-    </Form.Group>
+    <Form onSubmit={(e) => e.preventDefault()}>
+      <Form.Group>
+        <Form.Label size="sm" margin="5px 0px">
+          Username
+        </Form.Label>
+        <Form.Input size="sm" name="name" placeholder="Enter your username" value={username} onChange={handleChange} />
+      </Form.Group>
+    </Form>
   );
 };
 
@@ -29,7 +31,7 @@ export const PasswordInput = () => {
   };
 
   return (
-    <Form onSubmit={() => console.log(password)}>
+    <Form onSubmit={(e) => e.preventDefault()}>
       <Form.Group>
         <Form.Label size="sm" margin="5px 0px">
           Password
@@ -55,7 +57,7 @@ export const NumberInput = () => {
   const handleChange = (e: { target: { value: SetStateAction<string> } }) => setAge(e.target.value);
 
   return (
-    <Form onSubmit={() => console.log(age)}>
+    <Form onSubmit={(e) => e.preventDefault()}>
       <Form.Group>
         <Form.Label size="sm" margin="5px 0px">
           Age
@@ -81,7 +83,7 @@ export const EmailInput = () => {
   const handleChange = (e: { target: { value: SetStateAction<string> } }) => setEmail(e.target.value);
 
   return (
-    <Form onSubmit={() => console.log(email)}>
+    <Form onSubmit={(e) => e.preventDefault()}>
       <Form.Group>
         <Form.Label size="sm" margin="5px 0px">
           Email Address
@@ -105,7 +107,7 @@ export const DateInput = () => {
   const handleChange = (e: { target: { value: SetStateAction<string> } }) => setBirthdate(e.target.value);
 
   return (
-    <Form onSubmit={() => console.log(birthdate)}>
+    <Form onSubmit={(e) => e.preventDefault()}>
       <Form.Group>
         <Form.Label size="sm" margin="5px 0px">
           Date of Birth

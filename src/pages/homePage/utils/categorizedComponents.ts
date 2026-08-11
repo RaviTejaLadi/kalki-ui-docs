@@ -152,7 +152,7 @@ export const categorizedComponents: CategorizedComponents[] = [
         label: 'Modal',
         description:
           'Overlay windows that appear on top of the main content, often requiring user interaction before returning to the main view.',
-        path: '/model',
+        path: '/modal',
       },
       {
         label: 'Popover',

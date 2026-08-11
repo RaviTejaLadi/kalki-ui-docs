@@ -21,7 +21,7 @@ const StackPage = () => {
         </SectionHeader.SubTitle>
       </SectionHeader>
       <Separator />
-      <DocumentationRenderer data={docs} />
+      <DocumentationRenderer data={docs} componentName="Stack" />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
       </SectionHeader>

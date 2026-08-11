@@ -18,9 +18,11 @@ import { IMetaData } from '@/types/metaData';
 
 const metaData: IMetaData = {
   title: 'Modal',
-  description: `Modal component to inform users about a task or important information that requires decisions, or involves multiple tasks.`,
+  description:
+    'Modal component to inform users about a task or important information that requires decisions, or involves multiple tasks.',
 };
-const ModelPage = () => {
+
+const ModalPage = () => {
   return (
     <div className="container">
       <Head {...metaData} />
@@ -29,7 +31,12 @@ const ModelPage = () => {
         <SectionHeader.SubTitle className="tracking-wide">{metaData.description}</SectionHeader.SubTitle>
       </SectionHeader>
       <Separator />
-      <DocumentationRenderer className="my-4" data={docs} />
+      <DocumentationRenderer
+        className="my-4"
+        data={docs}
+        componentName="Modal"
+        importCode={`import { Modal, Button } from "kalki-ui";`}
+      />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
       </SectionHeader>
@@ -69,4 +76,4 @@ const ModelPage = () => {
   );
 };
 
-export default ModelPage;
+export default ModalPage;

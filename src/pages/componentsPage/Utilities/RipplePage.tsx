@@ -16,7 +16,7 @@ const RipplePage = () => {
         </SectionHeader.SubTitle>
       </SectionHeader>
       <Separator />
-      <DocumentationRenderer className="my-4" data={docs} />
+      <DocumentationRenderer className="my-4" data={docs} componentName="Ripple" />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
       </SectionHeader>

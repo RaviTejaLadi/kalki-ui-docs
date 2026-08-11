@@ -9,7 +9,7 @@ import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
 
 const metaData: IMetaData = {
-  title: 'Un Ordered List',
+  title: 'Unordered List',
   description: `Used to display a list of items`,
 };
 
@@ -22,20 +22,24 @@ const UnOrderedList = () => {
         <SectionHeader.SubTitle className="tracking-wide">{metaData.description}</SectionHeader.SubTitle>
       </SectionHeader>
       <Separator />
-      <DocumentationRenderer data={docs} />
+      <DocumentationRenderer
+        data={docs}
+        componentName="UnOrderedList"
+        importCode={`import { UnOrderedList } from "kalki-ui";`}
+      />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
       </SectionHeader>
       <Div className="space-y-5">
         <Div>
           <Heading as="h6" className="mb-2 text-muted-foreground">
-            un ordered List
+            Unordered List
           </Heading>
           <TableList columns={columns} rows={unOrderedListRows} code CodeColumn={0} />
         </Div>
         <Div>
           <Heading as="h6" className="mb-2 text-muted-foreground">
-            un ordered List Item
+            Unordered List Item
           </Heading>
           <TableList columns={columns} rows={UnOrderedListItemRows} code CodeColumn={0} />
         </Div>

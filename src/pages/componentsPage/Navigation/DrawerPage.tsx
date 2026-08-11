@@ -13,7 +13,7 @@ const DrawerPage = () => {
         <SectionHeader.Title className="tracking-wide">Drawer</SectionHeader.Title>
       </SectionHeader>
       <Separator />
-      <DocumentationRenderer data={docs} />
+      <DocumentationRenderer data={docs} componentName="Drawer" />
       <Div className="space-y-5">
         <Div>
           <Heading as="h6" className="mb-2 text-muted-foreground">

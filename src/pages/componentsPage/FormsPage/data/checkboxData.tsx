@@ -7,18 +7,31 @@ export const docs: docsData[] = [
     title: 'Basic',
     desc: 'A checkbox for agreeing to terms and conditions.',
     code: `
-        <Checkbox id="agreeTerms" name="agreeTerms" label="I agree to the terms and conditions" />
-      `,
+import { Checkbox } from "kalki-ui";
+
+export default function BasicCheckbox() {
+  return <Checkbox id="agreeTerms" name="agreeTerms" label="I agree to the terms and conditions" />;
+}
+`,
     snippet: <Checkbox id="agreeTerms" name="agreeTerms" label="I agree to the terms and conditions" />,
   },
   {
     title: 'With text',
+    desc: 'A checkbox with supporting helper text beneath the label.',
     code: `
-      <div className="grid gap-1.5 leading-none">
-        <Checkbox id="terms1" label="Accept terms and conditions" />
-        <p className="text-xs ml-5 text-muted-foreground">You agree to our Terms of Service and Privacy Policy.</p>
-      </div>
-      `,
+import { Checkbox } from "kalki-ui";
+
+export default function CheckboxWithText() {
+  return (
+    <div className="grid gap-1.5 leading-none">
+      <Checkbox id="terms1" label="Accept terms and conditions" />
+      <p className="text-xs ml-5 text-muted-foreground">
+        You agree to our Terms of Service and Privacy Policy.
+      </p>
+    </div>
+  );
+}
+`,
     snippet: (
       <div className="grid gap-1.5 leading-none">
         <Checkbox id="terms1" label="Accept terms and conditions" />
@@ -30,39 +43,46 @@ export const docs: docsData[] = [
     title: 'Multiple Selection',
     desc: 'A group of checkboxes for selecting multiple options.',
     code: `
+import React, { FormEvent, useState } from "react";
+import Form, { Checkbox, FormGroup, Submit } from "kalki-ui";
+import { JsonViewer } from "kalki-ui";
+
 type FormState = {
   folders: string[];
 };
 
-export const CheckBoxGroup = () => {
+export default function CheckBoxGroup() {
   const [formState, setFormState] = useState<FormState>({
     folders: [],
   });
 
   const folderOptions = [
-    { id: 'recents', label: 'Recents' },
-    { id: 'home', label: 'Home' },
-    { id: 'applications', label: 'Applications' },
-    { id: 'desktop', label: 'Desktop' },
-    { id: 'downloads', label: 'Downloads' },
-    { id: 'documents', label: 'Documents' },
+    { id: "recents", label: "Recents" },
+    { id: "home", label: "Home" },
+    { id: "applications", label: "Applications" },
+    { id: "desktop", label: "Desktop" },
+    { id: "downloads", label: "Downloads" },
+    { id: "documents", label: "Documents" },
   ] as const;
 
   const handleCheckboxGroupChange = (id: string) => {
     setFormState((prev) => {
-      const folders = prev.folders.includes(id) ? prev.folders.filter((item) => item !== id) : [...prev.folders, id];
+      const folders = prev.folders.includes(id)
+        ? prev.folders.filter((item) => item !== id)
+        : [...prev.folders, id];
       return { ...prev, folders };
     });
   };
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     console.log(formState);
   };
+
   return (
-    <div className="flex gap-5 ">
+    <div className="flex gap-5">
       <Form onSubmit={handleSubmit}>
-        <FormGroup label="Select Folders">
+        <FormGroup label="Select Folders" size="lg">
           <div className="space-y-2">
             {folderOptions.map(({ id, label }) => (
               <Checkbox
@@ -83,8 +103,8 @@ export const CheckBoxGroup = () => {
       </div>
     </div>
   );
-};
-      `,
+}
+`,
     snippet: <CheckBoxGroupEg />,
   },
 ];

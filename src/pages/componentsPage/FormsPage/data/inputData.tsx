@@ -6,41 +6,46 @@ export const docs: docsData[] = [
     title: 'Text Input',
     desc: 'A basic text input field.',
     code: `
-import React, { useState } from 'react';
-import { Form } from "kalki-ui";
+import React, { useState } from "react";
+import Form from "kalki-ui";
 
-export const TextInput = () => {
+export default function TextInput() {
   const [username, setUsername] = useState("");
-  const handleChange = (e) => setUsername(e.target.value);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setUsername(e.target.value);
 
   return (
-    <Form onSubmit={() => console.log(username)}>
+    <Form onSubmit={(e) => e.preventDefault()}>
       <Form.Group>
         <Form.Label size="sm" margin="5px 0px">
           Username
         </Form.Label>
-        <Form.Input size="sm" name="name" placeholder="Enter your username" value={username} onChange={handleChange} />
+        <Form.Input
+          size="sm"
+          name="name"
+          placeholder="Enter your username"
+          value={username}
+          onChange={handleChange}
+        />
       </Form.Group>
     </Form>
   );
-};
-    `,
+}
+`,
     snippet: <TextInput />,
   },
   {
     title: 'Email Input',
     desc: 'An input field for email addresses with validation.',
     code: `
-import React, { useState } from 'react';
-import { Form } from "kalki-ui";
+import React, { useState } from "react";
+import Form from "kalki-ui";
 
-export const EmailInput = () => {
+export default function EmailInput() {
   const [email, setEmail] = useState("");
-
-  const handleChange = (e) => setEmail(e.target.value);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
 
   return (
-    <Form onSubmit={() => console.log(email)}>
+    <Form onSubmit={(e) => e.preventDefault()}>
       <Form.Group>
         <Form.Label size="sm" margin="5px 0px">
           Email Address
@@ -56,22 +61,22 @@ export const EmailInput = () => {
       </Form.Group>
     </Form>
   );
-};
-    `,
+}
+`,
     snippet: <EmailInput />,
   },
   {
     title: 'Password Input',
     desc: 'A password input field with a strength meter.',
     code: `
-import React, { useState } from 'react';
-import { Form } from "kalki-ui";
+import React, { useState } from "react";
+import Form from "kalki-ui";
 
-export const PasswordInput = () => {
+export default function PasswordInput() {
   const [password, setPassword] = useState("");
   const [strength, setStrength] = useState("");
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setPassword(value);
     if (value.length > 10) setStrength("strong");
@@ -80,7 +85,7 @@ export const PasswordInput = () => {
   };
 
   return (
-    <Form onSubmit={() => console.log(password)}>
+    <Form onSubmit={(e) => e.preventDefault()}>
       <Form.Group>
         <Form.Label size="sm" margin="5px 0px">
           Password
@@ -95,27 +100,26 @@ export const PasswordInput = () => {
           onChange={handleChange}
         />
       </Form.Group>
-      {strength && <div>Password strength: {strength}</div>}
+      {strength && <p className="text-muted-foreground">Password strength: {strength}</p>}
     </Form>
   );
-};
-      `,
+}
+`,
     snippet: <PasswordInput />,
   },
   {
     title: 'Number Input',
     desc: 'An input field for numeric values with min and max constraints.',
     code: `
-import React, { useState } from 'react';
-import { Form } from "kalki-ui";
+import React, { useState } from "react";
+import Form from "kalki-ui";
 
-export const NumberInput = () => {
+export default function NumberInput() {
   const [age, setAge] = useState("");
-
-  const handleChange = (e) => setAge(e.target.value);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setAge(e.target.value);
 
   return (
-    <Form onSubmit={() => console.log(age)}>
+    <Form onSubmit={(e) => e.preventDefault()}>
       <Form.Group>
         <Form.Label size="sm" margin="5px 0px">
           Age
@@ -133,24 +137,23 @@ export const NumberInput = () => {
       </Form.Group>
     </Form>
   );
-};
-      `,
+}
+`,
     snippet: <NumberInput />,
   },
   {
     title: 'Date Input',
     desc: 'A date input field with a date picker.',
     code: `
-import React, { useState } from 'react';
-import { Form } from "kalki-ui";
+import React, { useState } from "react";
+import Form from "kalki-ui";
 
-export const DateInput = () => {
+export default function DateInput() {
   const [birthdate, setBirthdate] = useState("");
-
-  const handleChange = (e) => setBirthdate(e.target.value);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setBirthdate(e.target.value);
 
   return (
-    <Form onSubmit={() => console.log(birthdate)}>
+    <Form onSubmit={(e) => e.preventDefault()}>
       <Form.Group>
         <Form.Label size="sm" margin="5px 0px">
           Date of Birth
@@ -159,8 +162,8 @@ export const DateInput = () => {
       </Form.Group>
     </Form>
   );
-};
-      `,
+}
+`,
     snippet: <DateInput />,
   },
 ];

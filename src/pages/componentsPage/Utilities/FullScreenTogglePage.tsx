@@ -29,7 +29,10 @@ const FullScreenTogglePage = () => {
       <Separator />
       {/* <ComponentMetaCard meta={meta} />
       <Separator /> */}
-      <DocumentationRenderer data={docs} />
+      <DocumentationRenderer data={docs} componentName="FullScreenToggle" />
+      <SectionHeader variant="transparent" size="sm">
+        <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
+      </SectionHeader>
       <TableList columns={columns} rows={rows} code CodeColumn={0} />
     </div>
   );

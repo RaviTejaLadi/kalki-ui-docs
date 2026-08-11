@@ -1,7 +1,7 @@
 import { SectionHeader } from '@/components/common/SectionHeader';
 import Separator from '@/components/common/Separator';
 import TableList from '@/components/common/Table/TableList';
-import { docs, columns, figureProps, figureImageProps, figureCaptionProps } from './data/figureDate';
+import { docs, columns, figureProps, figureImageProps, figureCaptionProps } from './data/figureData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { Heading } from '@/components/common/Typography';
 import Div from '@/components/common/Div';
@@ -13,7 +13,7 @@ const FigurePage = () => {
         <SectionHeader.Title className="tracking-wide">Figure</SectionHeader.Title>
       </SectionHeader>
       <Separator />
-      <DocumentationRenderer className="my-4" data={docs} />
+      <DocumentationRenderer className="my-4" data={docs} componentName="Figure" />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
       </SectionHeader>

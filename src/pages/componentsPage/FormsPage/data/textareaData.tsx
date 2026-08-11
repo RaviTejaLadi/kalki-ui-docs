@@ -10,7 +10,7 @@ export const docs: docsData[] = [
 import React, { useState } from 'react';
 import Form, { FormGroup, Textarea } from "kalki-ui";
 
-export const TextareaExample = () => {
+export default function TextareaExample() {
   const [message, setMessage] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -30,7 +30,7 @@ export const TextareaExample = () => {
       </FormGroup>
     </Form>
   );
-};
+}
     `,
     snippet: (() => {
       const TextareaExample = () => {

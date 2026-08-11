@@ -7,17 +7,23 @@ export const docs: docsData[] = [
     title: 'Basic Usage',
     desc: 'A simple ListGroups component with default styling.',
     code: `
-      <ListGroups variant="primary" size="md" width="300px" showDividers>
-        <ListGroups.Item label="Profile" onClick={() => console.log('Profile clicked')} />
-        <ListGroups.Item label="Settings" onClick={() => console.log('Settings clicked')} />
-        <ListGroups.Item
-          label="Notifications"
-          description="Manage your alerts"
-          onClick={() => console.log('Notifications clicked')}
-        />
-        <ListGroups.Item label="Logout" disabled />
-      </ListGroups>
-    `,
+import { ListGroups } from "kalki-ui";
+
+export default function BasicListGroups() {
+  return (
+    <ListGroups variant="primary" size="md" width="300px" showDividers>
+      <ListGroups.Item label="Profile" onClick={() => console.log("Profile clicked")} />
+      <ListGroups.Item label="Settings" onClick={() => console.log("Settings clicked")} />
+      <ListGroups.Item
+        label="Notifications"
+        description="Manage your alerts"
+        onClick={() => console.log("Notifications clicked")}
+      />
+      <ListGroups.Item label="Logout" disabled />
+    </ListGroups>
+  );
+}
+`,
     snippet: (
       <ListGroups variant="primary" size="md" width="300px" showDividers>
         <ListGroups.Item label="Profile" onClick={() => console.log('Profile clicked')} />
@@ -33,22 +39,34 @@ export const docs: docsData[] = [
   },
   {
     title: 'With Icons and Arrows',
+    desc: 'List group items with leading icons and trailing arrows.',
     code: `
-      <ListGroups variant="secondary" showArrows>
-        <ListGroups.Item icon={<UserIcon size={16} />} label="Account" onClick={() => console.log('Account clicked')} />
-        <ListGroups.Item
-          icon={<LockIcon size={16} />}
-          label="Security"
-          description="Change password"
-          onClick={() => console.log('Security clicked')}
-        />
-        <ListGroups.Item
-          icon={<BellIcon size={16} />}
-          label="Notifications"
-          onClick={() => console.log('Notifications clicked')}
-        />
-      </ListGroups>
-    `,
+import { ListGroups } from "kalki-ui";
+import { BellIcon, LockIcon, UserIcon } from "lucide-react";
+
+export default function ListGroupsWithIcons() {
+  return (
+    <ListGroups variant="secondary" showArrows>
+      <ListGroups.Item
+        icon={<UserIcon size={16} />}
+        label="Account"
+        onClick={() => console.log("Account clicked")}
+      />
+      <ListGroups.Item
+        icon={<LockIcon size={16} />}
+        label="Security"
+        description="Change password"
+        onClick={() => console.log("Security clicked")}
+      />
+      <ListGroups.Item
+        icon={<BellIcon size={16} />}
+        label="Notifications"
+        onClick={() => console.log("Notifications clicked")}
+      />
+    </ListGroups>
+  );
+}
+`,
     snippet: (
       <ListGroups variant="secondary" showArrows>
         <ListGroups.Item icon={<UserIcon size={16} />} label="Account" onClick={() => console.log('Account clicked')} />
@@ -68,22 +86,29 @@ export const docs: docsData[] = [
   },
   {
     title: 'Dark Theme with Descriptions',
+    desc: 'A dark-themed list group with item descriptions.',
     code: `
-      <ListGroups variant="dark" size="lg" width="400px">
-        <ListGroups.Item
-          label="Dashboard"
-          description="View your analytics"
-          onClick={() => console.log('Dashboard clicked')}
-        />
-        <ListGroups.Item
-          label="Projects"
-          description="Manage your works"
-          onClick={() => console.log('Projects clicked')}
-        />
-        <ListGroups.Item label="Team" description="View members" onClick={() => console.log('Team clicked')} />
-        <ListGroups.Item label="Reports" description="Generate documents" disabled />
-      </ListGroups>
-    `,
+import { ListGroups } from "kalki-ui";
+
+export default function DarkListGroups() {
+  return (
+    <ListGroups variant="dark" size="lg" width="400px">
+      <ListGroups.Item
+        label="Dashboard"
+        description="View your analytics"
+        onClick={() => console.log("Dashboard clicked")}
+      />
+      <ListGroups.Item
+        label="Projects"
+        description="Manage your works"
+        onClick={() => console.log("Projects clicked")}
+      />
+      <ListGroups.Item label="Team" description="View members" onClick={() => console.log("Team clicked")} />
+      <ListGroups.Item label="Reports" description="Generate documents" disabled />
+    </ListGroups>
+  );
+}
+`,
     snippet: (
       <ListGroups variant="dark" size="lg" width="400px">
         <ListGroups.Item

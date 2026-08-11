@@ -15,7 +15,12 @@ const SliderPage = () => {
         </SectionHeader.SubTitle>
       </SectionHeader>
       <Separator />
-      <DocumentationRenderer className="my-4" data={docs} />
+      <DocumentationRenderer
+        className="my-4"
+        data={docs}
+        componentName="Slider"
+        importCode={`import Form, { FormGroup, Slider } from "kalki-ui";`}
+      />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
       </SectionHeader>

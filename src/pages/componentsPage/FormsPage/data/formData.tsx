@@ -18,7 +18,7 @@ type FormState = {
   message: string;
 };
 
-export const BasicForm = () => {
+export default function BasicForm() {
   const [formState, setFormState] = useState<FormState>({
     name: "",
     email: "",
@@ -71,7 +71,7 @@ export const BasicForm = () => {
       <Submit>Submit</Submit>
     </Form>
   );
-};
+}
     `,
     snippet: (() => {
       type FormState = {
@@ -147,7 +147,7 @@ import React from "react";
 import Form, { FormGroup, Input } from "kalki-ui";
 import { FormDescription } from "kalki-ui";
 
-export const FormWithDescription = () => {
+export default function FormWithDescription() {
   return (
     <Form onSubmit={(e) => e.preventDefault()}>
       <FormGroup label="Email" labelFor="email">
@@ -158,7 +158,7 @@ export const FormWithDescription = () => {
       </FormGroup>
     </Form>
   );
-};
+}
     `,
     snippet: (() => {
       const FormWithDescription = () => {
@@ -184,7 +184,7 @@ export const FormWithDescription = () => {
 import React, { useState } from "react";
 import { InputField } from "kalki-ui";
 
-export const InputFieldWithError = () => {
+export default function InputFieldWithError() {
   const [value, setValue] = useState("");
   const [error, setError] = useState<string | undefined>();
 
@@ -203,7 +203,7 @@ export const InputFieldWithError = () => {
       error={error}
     />
   );
-};
+}
     `,
     snippet: (() => {
       const InputFieldWithError = () => {

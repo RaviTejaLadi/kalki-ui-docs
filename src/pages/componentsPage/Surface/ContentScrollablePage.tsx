@@ -11,7 +11,7 @@ const ContentScrollablePage = () => {
         <SectionHeader.Title className="tracking-wide">Content Scrollable</SectionHeader.Title>
       </SectionHeader>
       <Separator />
-      <DocumentationRenderer className="my-4" data={docs} />
+      <DocumentationRenderer className="my-4" data={docs} componentName="ContentScrollable" />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
       </SectionHeader>

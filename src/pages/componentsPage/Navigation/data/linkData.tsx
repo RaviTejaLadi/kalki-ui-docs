@@ -7,32 +7,28 @@ export const docs: docsData[] = [
     title: 'Basic Usage',
     desc: 'A simple Link component for internal navigation.',
     code: `
-import React from 'react';
-import Link from './Link';
+import { Link } from "kalki-ui";
 
-const BasicExample = () => {
-    return (
-        <Link to="/home">Go to Home</Link>
-    );
-};
-      `,
+export default function Example() {
+  return <Link to="/home">Go to Home</Link>;
+}
+`,
     snippet: <Link to="/home">Go to Home</Link>,
   },
   {
     title: 'External Link',
     desc: 'A Link component that opens an external URL in a new tab.',
     code: `
-import React from 'react';
-import Link from './Link';
+import { Link } from "kalki-ui";
 
-const ExternalLinkExample = () => {
-    return (
-        <Link to="https://www.example.com" target="_blank">
-            Visit Example.com
-        </Link>
-    );
-};
-      `,
+export default function Example() {
+  return (
+    <Link to="https://www.example.com" target="_blank">
+      Visit Example.com
+    </Link>
+  );
+}
+`,
     snippet: (
       <Link to="https://www.example.com" target="_blank">
         Visit Example.com
@@ -43,23 +39,22 @@ const ExternalLinkExample = () => {
     title: 'Styled Link',
     desc: 'A Link component with custom styling.',
     code: `
-import React from 'react';
-import Link from './Link';
+import { Link } from "kalki-ui";
 
-const StyledLinkExample = () => {
-    const customStyle = {
-        color: 'red',
-        textDecoration: 'none',
-        fontWeight: 'bold',
-    };
+export default function Example() {
+  const customStyle = {
+    color: "red",
+    textDecoration: "none",
+    fontWeight: "bold",
+  };
 
-    return (
-        <Link to="/contact" style={customStyle}>
-            Contact Us
-        </Link>
-    );
-};
-      `,
+  return (
+    <Link to="/contact" style={customStyle}>
+      Contact Us
+    </Link>
+  );
+}
+`,
     snippet: (
       <Link to="/contact" style={{ color: 'red', textDecoration: 'none', fontWeight: 'bold' }}>
         Contact Us
@@ -70,22 +65,20 @@ const StyledLinkExample = () => {
     title: 'Link with onClick Handler',
     desc: 'A Link component with a custom onClick handler.',
     code: `
-import React from 'react';
-import Link from './Link';
+import { Link } from "kalki-ui";
 
-const LinkWithOnClickExample = () => {
-    const handleClick = (event) => {
-        console.log('Link clicked!');
-        // You can add additional logic here
-    };
+export default function Example() {
+  const handleClick = () => {
+    console.log("Link clicked!");
+  };
 
-    return (
-        <Link to="/dashboard" onClick={handleClick}>
-            Go to Dashboard
-        </Link>
-    );
-};
-      `,
+  return (
+    <Link to="/dashboard" onClick={handleClick}>
+      Go to Dashboard
+    </Link>
+  );
+}
+`,
     snippet: (
       <Link to="/dashboard" onClick={() => console.log('Link clicked!')}>
         Go to Dashboard
@@ -96,17 +89,16 @@ const LinkWithOnClickExample = () => {
     title: 'Link with Custom Class',
     desc: 'A Link component with a custom CSS class.',
     code: `
-import React from 'react';
-import Link from './Link';
+import { Link } from "kalki-ui";
 
-const LinkWithCustomClassExample = () => {
-    return (
-        <Link to="/products" className="custom-link-class">
-            View Products
-        </Link>
-    );
-};
-      `,
+export default function Example() {
+  return (
+    <Link to="/products" className="custom-link-class">
+      View Products
+    </Link>
+  );
+}
+`,
     snippet: (
       <Link to="/products" className="custom-link-class">
         View Products
@@ -117,25 +109,25 @@ const LinkWithCustomClassExample = () => {
     title: 'Link with Ref',
     desc: 'A Link component with a forwarded ref.',
     code: `
-import React, { useRef } from 'react';
-import Link from './Link';
+import { useRef } from "react";
+import { Link } from "kalki-ui";
 
-const LinkWithRefExample = () => {
-    const linkRef = useRef(null);
+export default function Example() {
+  const linkRef = useRef<HTMLAnchorElement>(null);
 
-    const handleClick = () => {
-        if (linkRef.current) {
-            console.log('Link element:', linkRef.current);
-        }
-    };
+  const handleClick = () => {
+    if (linkRef.current) {
+      console.log("Link element:", linkRef.current);
+    }
+  };
 
-    return (
-        <Link to="/profile" ref={linkRef} onClick={handleClick}>
-            View Profile
-        </Link>
-    );
-};
-      `,
+  return (
+    <Link to="/profile" ref={linkRef} onClick={handleClick}>
+      View Profile
+    </Link>
+  );
+}
+`,
     snippet: (
       <Link to="/profile" ref={React.createRef()}>
         View Profile
@@ -146,17 +138,16 @@ const LinkWithRefExample = () => {
     title: 'Link with Additional Attributes',
     desc: 'A Link component with additional HTML attributes.',
     code: `
-import React from 'react';
-import Link from './Link';
+import { Link } from "kalki-ui";
 
-const LinkWithAttributesExample = () => {
-    return (
-        <Link to="/download" download="file.pdf" title="Download PDF">
-            Download File
-        </Link>
-    );
-};
-      `,
+export default function Example() {
+  return (
+    <Link to="/download" download="file.pdf" title="Download PDF">
+      Download File
+    </Link>
+  );
+}
+`,
     snippet: (
       <Link to="/download" download="file.pdf" title="Download PDF">
         Download File

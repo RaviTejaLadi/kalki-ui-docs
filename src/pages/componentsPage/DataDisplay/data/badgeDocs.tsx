@@ -6,24 +6,32 @@ export const docs: docsData[] = [
     title: 'Basic Badge',
     desc: 'This example demonstrates the most basic usage of the Badge component with default size (small) and primary variant.',
     code: `
-      <>
-        {[
-          'primary' as const,
-          'secondary' as const,
-          'success' as const,
-          'danger' as const,
-          'warning' as const,
-          'info' as const,
-          'help' as const,
-          'light' as const,
-          'dark' as const,
-        ].map((item) => (
-          <Badge size="sm" key={item} variant={item} style={{ margin: '0px 4px' }}>
-            {item}
-          </Badge>
-        ))}
-      </>
-      `,
+import { Badge } from "kalki-ui";
+
+export default function BasicBadge() {
+  return (
+    <>
+      {(
+        [
+          "primary",
+          "secondary",
+          "success",
+          "danger",
+          "warning",
+          "info",
+          "help",
+          "light",
+          "dark",
+        ] as const
+      ).map((item) => (
+        <Badge size="sm" key={item} variant={item} style={{ margin: "0px 4px" }}>
+          {item}
+        </Badge>
+      ))}
+    </>
+  );
+}
+`,
     snippet: (
       <>
         {[
@@ -48,88 +56,136 @@ export const docs: docsData[] = [
     title: 'Medium Badge',
     desc: 'This example shows how to use the Badge component with a medium size.',
     code: `
-    <Badge size="md">Medium Badge</Badge>
-      `,
+import { Badge } from "kalki-ui";
+
+export default function MediumBadge() {
+  return <Badge size="md">Medium Badge</Badge>;
+}
+`,
     snippet: <Badge size="md">Medium Badge</Badge>,
   },
   {
     title: 'Large Badge',
     desc: 'This example shows how to use the Badge component with a large size.',
     code: `
-    <Badge size="lg">Large Badge</Badge>
-      `,
+import { Badge } from "kalki-ui";
+
+export default function LargeBadge() {
+  return <Badge size="lg">Large Badge</Badge>;
+}
+`,
     snippet: <Badge size="lg">Large Badge</Badge>,
   },
   {
     title: 'Secondary Variant Badge',
     desc: 'This example demonstrates the usage of the secondary variant for the Badge component.',
     code: `
-    <Badge variant="secondary">Secondary Badge</Badge>
-      `,
+import { Badge } from "kalki-ui";
+
+export default function SecondaryBadge() {
+  return <Badge variant="secondary">Secondary Badge</Badge>;
+}
+`,
     snippet: <Badge variant="secondary">Secondary Badge</Badge>,
   },
   {
     title: 'Success Variant Badge',
     desc: 'This example shows how to use the success variant for the Badge component.',
     code: `
-    <Badge variant="success">Success Badge</Badge>
-      `,
+import { Badge } from "kalki-ui";
+
+export default function SuccessBadge() {
+  return <Badge variant="success">Success Badge</Badge>;
+}
+`,
     snippet: <Badge variant="success">Success Badge</Badge>,
   },
   {
     title: 'Danger Variant Badge',
     desc: 'This example demonstrates the usage of the danger variant for the Badge component.',
     code: `
-    <Badge variant="danger">Danger Badge</Badge>
-      `,
+import { Badge } from "kalki-ui";
+
+export default function DangerBadge() {
+  return <Badge variant="danger">Danger Badge</Badge>;
+}
+`,
     snippet: <Badge variant="danger">Danger Badge</Badge>,
   },
   {
     title: 'Warning Variant Badge',
     desc: 'This example shows how to use the warning variant for the Badge component.',
     code: `
-    <Badge variant="warning">Warning Badge</Badge>
-      `,
+import { Badge } from "kalki-ui";
+
+export default function WarningBadge() {
+  return <Badge variant="warning">Warning Badge</Badge>;
+}
+`,
     snippet: <Badge variant="warning">Warning Badge</Badge>,
   },
   {
     title: 'Info Variant Badge',
     desc: 'This example demonstrates the usage of the info variant for the Badge component.',
     code: `
-  <Badge variant="info">Info Badge</Badge>
-      `,
+import { Badge } from "kalki-ui";
+
+export default function InfoBadge() {
+  return <Badge variant="info">Info Badge</Badge>;
+}
+`,
     snippet: <Badge variant="info">Info Badge</Badge>,
   },
   {
     title: 'Light Variant Badge',
     desc: 'This example shows how to use the light variant for the Badge component.',
     code: `
-  <Badge variant="light">Light Badge</Badge>
-      `,
+import { Badge } from "kalki-ui";
+
+export default function LightBadge() {
+  return <Badge variant="light">Light Badge</Badge>;
+}
+`,
     snippet: <Badge variant="light">Light Badge</Badge>,
   },
   {
     title: 'Dark Variant Badge',
     desc: 'This example demonstrates the usage of the dark variant for the Badge component.',
     code: `
-  <Badge variant="dark">Dark Badge</Badge>
-      `,
+import { Badge } from "kalki-ui";
+
+export default function DarkBadge() {
+  return <Badge variant="dark">Dark Badge</Badge>;
+}
+`,
     snippet: <Badge variant="dark">Dark Badge</Badge>,
   },
   {
     title: 'Pill Badge',
     desc: 'This example shows how to use the pill property to create a rounded badge.',
     code: `
-  <Badge pill>Pill Badge</Badge>
-      `,
+import { Badge } from "kalki-ui";
+
+export default function PillBadge() {
+  return <Badge pill>Pill Badge</Badge>;
+}
+`,
     snippet: <Badge pill>Pill Badge</Badge>,
   },
   {
     title: 'Large Pill Badge with Danger Variant',
     desc: 'This example combines the pill, size, and variant properties to create a large, rounded badge with the danger variant.',
     code: `
-  <Badge size="lg" variant="danger" pill>Large Danger Pill Badge</Badge>
-      `,
+import { Badge } from "kalki-ui";
+
+export default function LargeDangerPillBadge() {
+  return (
+    <Badge size="lg" variant="danger" pill>
+      Large Danger Pill Badge
+    </Badge>
+  );
+}
+`,
     snippet: (
       <Badge size="lg" variant="danger" pill>
         Large Danger Pill Badge
@@ -140,8 +196,12 @@ export const docs: docsData[] = [
     title: 'Badge with Additional Properties',
     desc: 'This example demonstrates passing additional properties to the Badge component, such as an onClick handler.',
     code: `
-  <Badge onClick={() => alert('Badge clicked')}>Clickable Badge</Badge>
-      `,
+import { Badge } from "kalki-ui";
+
+export default function ClickableBadge() {
+  return <Badge onClick={() => alert("Badge clicked")}>Clickable Badge</Badge>;
+}
+`,
     snippet: <Badge onClick={() => alert('Badge clicked')}>Clickable Badge</Badge>,
   },
 ];

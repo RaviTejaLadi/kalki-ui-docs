@@ -41,7 +41,9 @@ const ROUTES: RouteConfig[] = [
 
   // Feedback
   { path: 'alert', loader: () => import('./Feedback/AlertPage') },
-  { path: 'model', loader: () => import('./Feedback/ModelPage') },
+  { path: 'modal', loader: () => import('./Feedback/ModalPage') },
+  // Keep old path as redirect alias via duplicate route for bookmarks
+  { path: 'model', loader: () => import('./Feedback/ModalPage') },
   { path: 'popover', loader: () => import('./Feedback/PopoverPage') },
   { path: 'spinner', loader: () => import('./Feedback/SpinnerPage') },
 
