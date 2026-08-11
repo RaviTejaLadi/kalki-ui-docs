@@ -13,26 +13,21 @@ import { CloseButtonPreviews } from './previews/CloseButtonPreview';
 // import { CodePreviews } from './previews/CodePreview';
 import { ContentScrollablePreviews } from './previews/ContentScrollablePreview';
 import { DivPreviews } from './previews/DivPreview';
-import { DotSeparatorPreviews } from './previews/DotSeparatorPreview';
 import { EmptyPreviews } from './previews/EmptyPreview';
 import { FigurePreviews } from './previews/FigurePreview';
 import { FullScreenTogglePreviews } from './previews/FullScreenTogglePreview';
 import { GalleryPreviews } from './previews/GalleryPreview';
 import { HighlighterPreviews } from './previews/HighlighterPreview';
 import { ImagePreviews } from './previews/ImagePreview';
-import { ImageViewerPreviews } from './previews/ImageViewerPreview';
 import { JsonViewerPreviews } from './previews/JsonViewerPreview';
 import { LinkPreviews } from './previews/LinkPreview';
 import { LinkBarPreviews } from './previews/LinkBarPreview';
 import { LinkButtonPreviews } from './previews/LinkButtonPreview';
 import { ListsPreviews } from './previews/ListsPreview';
-import { NumberRendererPreviews } from './previews/NumberRendererPreview';
-import { PromotionalBannerPreviews } from './previews/PromotionalBannerPreview';
 import { ScrollToTopPreviews } from './previews/ScrollToTopPreview';
 import { SectionHeaderPreviews } from './previews/SectionHeaderPreview';
 import { SelectPreviews } from './previews/SelectPreview';
 import { SeparatorPreviews } from './previews/SeparatorPreview';
-import { SimpleFooterPreviews } from './previews/SimpleFooterPreview';
 import { SkeletonPreviews } from './previews/SkeletonPreview';
 import { SpinnerPreviews } from './previews/SpinnerPreview';
 import { SplitterPreviews } from './previews/SplitterPreview';
@@ -42,8 +37,6 @@ import { TablePreviews } from './previews/TablePreview';
 import { TabsPreviews } from './previews/TabsPreview';
 import { TagPreviews } from './previews/TagPreview';
 import { TogglePreviews } from './previews/TogglePreview';
-import { TooltipPreviews } from './previews/TooltipPreview';
-import { TreeViewPreviews } from './previews/TreeViewPreview';
 import { TypographyPreviews } from './previews/TypographyPreview';
 
 interface Component {
@@ -119,11 +112,6 @@ const components: Component[] = [
     preview: DivPreviews.basic,
   },
   {
-    name: 'DotSeparator',
-    description: 'Dot-separated list or inline separators.',
-    preview: DotSeparatorPreviews.basic,
-  },
-  {
     name: 'Empty',
     description: 'Empty state placeholder when no data or content.',
     preview: EmptyPreviews.basic,
@@ -154,11 +142,6 @@ const components: Component[] = [
     preview: ImagePreviews.basic,
   },
   {
-    name: 'ImageViewer',
-    description: 'Full-screen or modal image viewer.',
-    preview: ImageViewerPreviews.basic,
-  },
-  {
     name: 'JsonViewer',
     description: 'Tree or formatted view for JSON data.',
     preview: JsonViewerPreviews.basic,
@@ -184,16 +167,6 @@ const components: Component[] = [
     preview: ListsPreviews.basic,
   },
   {
-    name: 'NumberRenderer',
-    description: 'Formatted number display (currency, percent, etc.).',
-    preview: NumberRendererPreviews.basic,
-  },
-  {
-    name: 'PromotionalBanner',
-    description: 'Promotional or marketing banner.',
-    preview: PromotionalBannerPreviews.basic,
-  },
-  {
     name: 'ScrollToTop',
     description: 'Button to scroll back to top of page.',
     preview: ScrollToTopPreviews.basic,
@@ -212,11 +185,6 @@ const components: Component[] = [
     name: 'Separator',
     description: 'Horizontal or vertical divider line.',
     preview: SeparatorPreviews.basic,
-  },
-  {
-    name: 'SimpleFooter',
-    description: 'Simple footer with links and copyright.',
-    preview: SimpleFooterPreviews.basic,
   },
   {
     name: 'Skeleton',
@@ -262,16 +230,6 @@ const components: Component[] = [
     name: 'Toggle',
     description: 'Toggle switch for on/off options.',
     preview: TogglePreviews.basic,
-  },
-  {
-    name: 'Tooltip',
-    description: 'Tooltip on hover or focus.',
-    preview: TooltipPreviews.basic,
-  },
-  {
-    name: 'TreeView',
-    description: 'Hierarchical tree view for data.',
-    preview: TreeViewPreviews.basic,
   },
   {
     name: 'Typography',
