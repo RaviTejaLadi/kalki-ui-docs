@@ -9,7 +9,7 @@ import { TextReveal } from './animations/TextReveal';
 import { GradientText } from './animations/GradientText';
 
 export const HeroSection = () => {
-  const { resolvedTheme } = useTheme();
+  const { theme } = useTheme();
   return (
     <section className="w-full relative sm:px-6 lg:px-8 overflow-hidden">
       <FloatingShapes />
@@ -22,7 +22,7 @@ export const HeroSection = () => {
           </div>
           <TextReveal delay={200}>
             <Badge
-              variant={resolvedTheme === 'dark' ? 'dark' : 'light'}
+              variant={theme === 'dark' ? 'dark' : 'light'}
               size="sm"
               className="text-sm dark:bg-gray-200/10 rounded-full py-2"
             >

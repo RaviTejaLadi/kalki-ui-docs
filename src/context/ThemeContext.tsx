@@ -1,12 +1,10 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-type ThemePreference = 'system' | 'light' | 'dark';
-type ResolvedTheme = 'light' | 'dark';
+type ThemeMode = 'light' | 'dark';
 
 interface ThemeContextType {
-  theme: ThemePreference;
-  resolvedTheme: ResolvedTheme;
-  setTheme: (theme: ThemePreference) => void;
+  theme: ThemeMode;
+  toggleTheme: () => void;
 }
 
 const STORAGE_KEY = 'theme';
@@ -15,50 +13,34 @@ const COLOR_THEME_CLASSES = ['ocean', 'purple', 'emerald', 'amber', 'rose', 'tea
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-const getSystemTheme = (): ResolvedTheme =>
+const getSystemTheme = (): ThemeMode =>
   window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
-const resolveTheme = (preference: ThemePreference): ResolvedTheme =>
-  preference === 'system' ? getSystemTheme() : preference;
-
-const isThemePreference = (value: string | null): value is ThemePreference =>
-  value === 'system' || value === 'light' || value === 'dark';
+const isThemeMode = (value: string | null): value is ThemeMode => value === 'light' || value === 'dark';
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setThemeState] = useState<ThemePreference>(() => {
+  const [theme, setTheme] = useState<ThemeMode>(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
-    return isThemePreference(saved) ? saved : 'system';
+    // Migrate old "system" preference to the current OS theme
+    if (saved === 'system' || !isThemeMode(saved)) return getSystemTheme();
+    return saved;
   });
 
-  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>(() => resolveTheme(theme));
-
-  const setTheme = (next: ThemePreference) => {
-    setThemeState(next);
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
   };
 
   useEffect(() => {
     LEGACY_COLOR_KEYS.forEach((key) => localStorage.removeItem(key));
     localStorage.setItem(STORAGE_KEY, theme);
 
-    const apply = (resolved: ResolvedTheme) => {
-      const root = document.documentElement;
-      root.classList.toggle('dark', resolved === 'dark');
-      COLOR_THEME_CLASSES.forEach((cls) => root.classList.remove(cls));
-      root.style.colorScheme = resolved;
-      setResolvedTheme(resolved);
-    };
-
-    apply(resolveTheme(theme));
-
-    if (theme !== 'system') return;
-
-    const media = window.matchMedia('(prefers-color-scheme: dark)');
-    const onChange = () => apply(getSystemTheme());
-    media.addEventListener('change', onChange);
-    return () => media.removeEventListener('change', onChange);
+    const root = document.documentElement;
+    root.classList.toggle('dark', theme === 'dark');
+    COLOR_THEME_CLASSES.forEach((cls) => root.classList.remove(cls));
+    root.style.colorScheme = theme;
   }, [theme]);
 
-  return <ThemeContext.Provider value={{ theme, resolvedTheme, setTheme }}>{children}</ThemeContext.Provider>;
+  return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
 };
 
 export const useTheme = () => {

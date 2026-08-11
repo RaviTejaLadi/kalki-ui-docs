@@ -10,15 +10,14 @@
     (function () {
       try {
         var stored = localStorage.getItem('theme');
-        var preference = stored === 'light' || stored === 'dark' || stored === 'system' ? stored : 'system';
-        var resolved =
-          preference === 'system'
-            ? window.matchMedia('(prefers-color-scheme: dark)').matches
+        var theme =
+          stored === 'light' || stored === 'dark'
+            ? stored
+            : window.matchMedia('(prefers-color-scheme: dark)').matches
               ? 'dark'
-              : 'light'
-            : preference;
-        document.documentElement.classList.toggle('dark', resolved === 'dark');
-        document.documentElement.style.colorScheme = resolved;
+              : 'light';
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+        document.documentElement.style.colorScheme = theme;
         ['ocean', 'purple', 'emerald', 'amber', 'rose', 'teal'].forEach(function (cls) {
           document.documentElement.classList.remove(cls);
         });
