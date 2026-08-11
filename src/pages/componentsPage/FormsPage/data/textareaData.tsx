@@ -8,7 +8,7 @@ export const docs: docsData[] = [
     desc: 'A multi-line textarea for capturing longer text input.',
     code: `
 import React, { useState } from 'react';
-import Form, { FormGroup, Textarea } from "react-ui-essentials";
+import Form, { FormGroup, Textarea } from "kalki-ui";
 
 export const TextareaExample = () => {
   const [message, setMessage] = useState("");

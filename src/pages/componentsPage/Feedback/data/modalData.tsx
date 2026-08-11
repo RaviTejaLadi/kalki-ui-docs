@@ -38,7 +38,7 @@ const BasicModalExample = () => {
     desc: '',
     code: `
 import React, { useState } from "react";
-import { Modal, Button, Box } from "react-ui-essentials";
+import { Modal, Button, Box } from "kalki-ui";
 
 const DifferentSizes = () => {
   const [isOpen, setIsOpen] = useState(false);

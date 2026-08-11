@@ -8,7 +8,7 @@ export const docs: docsData[] = [
     desc: 'An input field with a label, optional info tooltip, and error message handling.',
     code: `
 import React, { useState } from 'react';
-import { InputField } from "react-ui-essentials";
+import { InputField } from "kalki-ui";
 
 export const InputFieldExample = () => {
   const [value, setValue] = useState("");

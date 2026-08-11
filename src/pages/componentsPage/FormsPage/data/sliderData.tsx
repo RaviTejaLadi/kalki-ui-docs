@@ -8,7 +8,7 @@ export const docs: docsData[] = [
     desc: 'A slider for selecting a numeric value between 0 and 100.',
     code: `
 import React, { useState } from 'react';
-import Form, { FormGroup, Slider } from "react-ui-essentials";
+import Form, { FormGroup, Slider } from "kalki-ui";
 
 export const SliderExample = () => {
   const [experience, setExperience] = useState(50);

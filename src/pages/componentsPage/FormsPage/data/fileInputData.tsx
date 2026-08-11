@@ -8,7 +8,7 @@ export const docs: docsData[] = [
     desc: 'A file input for selecting a single file, with simple preview of the file name.',
     code: `
 import React, { useState } from 'react';
-import Form, { FormGroup, FileInput } from "react-ui-essentials";
+import Form, { FormGroup, FileInput } from "kalki-ui";
 
 export const FileInputExample = () => {
   const [fileName, setFileName] = useState<string | null>(null);

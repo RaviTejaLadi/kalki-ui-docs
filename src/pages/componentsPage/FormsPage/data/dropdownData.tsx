@@ -8,7 +8,7 @@ export const docs: docsData[] = [
     desc: 'A customizable dropdown built with the Select primitives.',
     code: `
 import React, { useState } from 'react';
-import { Select } from "react-ui-essentials";
+import { Select } from "kalki-ui";
 
 export const DropdownExample = () => {
   const [value, setValue] = useState<string | undefined>(undefined);

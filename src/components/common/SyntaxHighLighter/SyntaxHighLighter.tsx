@@ -1,6 +1,6 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useCallback, useState, useEffect, useMemo } from 'react';
 import CodeMirror from '@uiw/react-codemirror';
-import { andromedaInit } from '@uiw/codemirror-theme-andromeda';
+import { githubLightInit, githubDarkInit } from '@uiw/codemirror-theme-github';
 import { Clipboard, Check } from 'lucide-react';
 import { javascript } from '@codemirror/lang-javascript';
 import { html } from '@codemirror/lang-html';
@@ -9,6 +9,7 @@ import { cn } from '@/utils';
 import Button from '../Button';
 import Spinner from '../Spinner';
 import { useToast } from 'kalki-ui-toast';
+import { useTheme } from '@/context/ThemeContext';
 
 interface SyntaxHighlighterProps {
   code: string;
@@ -16,6 +17,13 @@ interface SyntaxHighlighterProps {
   lineNumbers?: boolean;
   title?: string;
 }
+
+const sharedThemeSettings = {
+  background: 'transparent',
+  gutterBackground: 'transparent',
+  fontSize: '14px',
+  fontFamily: 'IBM Plex Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
+} as const;
 
 export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
   code,
@@ -25,6 +33,8 @@ export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
 }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isCopied, setIsCopied] = useState(false);
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
 
   const { addToast } = useToast();
 
@@ -48,6 +58,34 @@ export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
   const getLanguageExtension = () => {
     return languageMap[language as keyof typeof languageMap] || [javascript()];
   };
+
+  const codeTheme = useMemo(
+    () =>
+      isDark
+        ? githubDarkInit({
+            settings: {
+              ...sharedThemeSettings,
+              foreground: '#c9d1d9',
+              caret: '#c9d1d9',
+              selection: 'rgba(56, 139, 253, 0.35)',
+              selectionMatch: 'rgba(56, 139, 253, 0.25)',
+              gutterForeground: '#8b949e',
+              lineHighlight: 'transparent',
+            },
+          })
+        : githubLightInit({
+            settings: {
+              ...sharedThemeSettings,
+              foreground: '#24292f',
+              caret: '#24292f',
+              selection: 'rgba(9, 105, 218, 0.2)',
+              selectionMatch: 'rgba(9, 105, 218, 0.15)',
+              gutterForeground: '#656d76',
+              lineHighlight: 'transparent',
+            },
+          }),
+    [isDark]
+  );
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 500);
@@ -102,21 +140,11 @@ export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
             </div>
           ) : (
             <CodeMirror
+              key={theme}
               value={code}
               height="auto"
               editable={false}
-              theme={andromedaInit({
-                settings: {
-                  background: 'transparent',
-                  fontSize: '14px',
-                  fontFamily: 'IBM Plex Mono, monospace',
-                  selection: 'rgba(66, 153, 225, 0.3)',
-                  caret: 'text-muted-foreground',
-                  gutterBackground: 'transparent',
-                  gutterForeground: '#94a3b8',
-                  lineHighlight: 'rgba(0, 0, 0, 0.2)',
-                },
-              })}
+              theme={codeTheme}
               extensions={getLanguageExtension()}
               basicSetup={{
                 lineNumbers,
@@ -125,7 +153,7 @@ export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
                 highlightActiveLine: false,
                 tabSize: 2,
               }}
-              className="text-sm p-4 font-bold"
+              className="text-sm p-4 font-normal"
               {...rest}
             />
           )}

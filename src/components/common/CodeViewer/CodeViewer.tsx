@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, forwardRef, ReactNode, useEffect } from 'react';
+import React, { createContext, useContext, useState, forwardRef, ReactNode, useEffect, useMemo } from 'react';
 import {
   ChevronRight,
   ChevronDown,
@@ -12,8 +12,9 @@ import {
 } from 'lucide-react';
 import { cn } from '@/utils';
 import CodeMirror from '@uiw/react-codemirror';
-import { andromedaInit } from '@uiw/codemirror-theme-andromeda';
+import { githubLightInit, githubDarkInit } from '@uiw/codemirror-theme-github';
 import { javascript } from '@codemirror/lang-javascript';
+import { useTheme } from '@/context/ThemeContext';
 
 const EmptyState = () => {
   return (
@@ -272,6 +273,8 @@ interface CodeViewerPreviewProps {
 const CodeViewerPreview = forwardRef<HTMLDivElement, CodeViewerPreviewProps>(
   ({ className, language = 'jsx', lineNumbers = false, ...rest }, ref) => {
     const { selectedFile } = useCodeViewer();
+    const { theme } = useTheme();
+    const isDark = theme === 'dark';
 
     const getLanguageExtension = () => {
       if (['typescript', 'ts', 'jsx', 'tsx'].includes(language)) {
@@ -279,6 +282,28 @@ const CodeViewerPreview = forwardRef<HTMLDivElement, CodeViewerPreviewProps>(
       }
       return [javascript()];
     };
+
+    const codeTheme = useMemo(
+      () =>
+        isDark
+          ? githubDarkInit({
+              settings: {
+                background: 'transparent',
+                gutterBackground: 'transparent',
+                fontFamily:
+                  'Fira Code VF, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace',
+              },
+            })
+          : githubLightInit({
+              settings: {
+                background: 'transparent',
+                gutterBackground: 'transparent',
+                fontFamily:
+                  'Fira Code VF, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace',
+              },
+            }),
+      [isDark]
+    );
 
     const copyContent = () => {
       if (selectedFile?.content) {
@@ -304,16 +329,11 @@ const CodeViewerPreview = forwardRef<HTMLDivElement, CodeViewerPreviewProps>(
 
             <div className="overflow-hidden w-full h-full">
               <CodeMirror
+                key={theme}
                 value={selectedFile.content || 'No content available'}
                 height="100%"
                 editable={false}
-                theme={andromedaInit({
-                  settings: {
-                    background: 'bg-gray-50',
-                    fontFamily:
-                      'Fira Code VF, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace',
-                  },
-                })}
+                theme={codeTheme}
                 extensions={[getLanguageExtension()]}
                 basicSetup={{
                   lineNumbers: lineNumbers,

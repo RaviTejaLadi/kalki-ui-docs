@@ -7,7 +7,7 @@ export const docs: docsData[] = [
     desc: 'A basic text input field.',
     code: `
 import React, { useState } from 'react';
-import { Form } from "react-ui-essentials";
+import { Form } from "kalki-ui";
 
 export const TextInput = () => {
   const [username, setUsername] = useState("");
@@ -32,7 +32,7 @@ export const TextInput = () => {
     desc: 'An input field for email addresses with validation.',
     code: `
 import React, { useState } from 'react';
-import { Form } from "react-ui-essentials";
+import { Form } from "kalki-ui";
 
 export const EmailInput = () => {
   const [email, setEmail] = useState("");
@@ -65,7 +65,7 @@ export const EmailInput = () => {
     desc: 'A password input field with a strength meter.',
     code: `
 import React, { useState } from 'react';
-import { Form } from "react-ui-essentials";
+import { Form } from "kalki-ui";
 
 export const PasswordInput = () => {
   const [password, setPassword] = useState("");
@@ -107,7 +107,7 @@ export const PasswordInput = () => {
     desc: 'An input field for numeric values with min and max constraints.',
     code: `
 import React, { useState } from 'react';
-import { Form } from "react-ui-essentials";
+import { Form } from "kalki-ui";
 
 export const NumberInput = () => {
   const [age, setAge] = useState("");
@@ -142,7 +142,7 @@ export const NumberInput = () => {
     desc: 'A date input field with a date picker.',
     code: `
 import React, { useState } from 'react';
-import { Form } from "react-ui-essentials";
+import { Form } from "kalki-ui";
 
 export const DateInput = () => {
   const [birthdate, setBirthdate] = useState("");

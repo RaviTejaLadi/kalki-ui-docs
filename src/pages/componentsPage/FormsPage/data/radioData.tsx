@@ -8,7 +8,7 @@ export const docs: docsData[] = [
     desc: 'A group of radio buttons for selecting a single option.',
     code: `
 import React, { useState } from 'react';
-import Form, { FormGroup, Radio } from "react-ui-essentials";
+import Form, { FormGroup, Radio } from "kalki-ui";
 
 type Subscription = "free" | "pro" | "enterprise";
 

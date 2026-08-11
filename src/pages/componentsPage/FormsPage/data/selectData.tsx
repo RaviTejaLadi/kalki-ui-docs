@@ -8,7 +8,7 @@ export const docs: docsData[] = [
     desc: 'A native select input for choosing a single option.',
     code: `
 import React, { useState } from 'react';
-import Form, { FormGroup, Select } from "react-ui-essentials";
+import Form, { FormGroup, Select } from "kalki-ui";
 
 type Country = "us" | "ca" | "uk" | "au";
 

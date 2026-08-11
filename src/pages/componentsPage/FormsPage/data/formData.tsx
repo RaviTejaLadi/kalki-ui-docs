@@ -10,7 +10,7 @@ export const docs: docsData[] = [
     desc: 'A simple contact form using the Form component with grouped inputs.',
     code: `
 import React, { FormEvent, useState } from 'react';
-import Form, { FormGroup, Input, Textarea, Submit } from "react-ui-essentials";
+import Form, { FormGroup, Input, Textarea, Submit } from "kalki-ui";
 
 type FormState = {
   name: string;
@@ -144,8 +144,8 @@ export const BasicForm = () => {
     desc: 'Use FormDescription to provide contextual help or guidance beneath a field group.',
     code: `
 import React from "react";
-import Form, { FormGroup, Input } from "react-ui-essentials";
-import { FormDescription } from "react-ui-essentials";
+import Form, { FormGroup, Input } from "kalki-ui";
+import { FormDescription } from "kalki-ui";
 
 export const FormWithDescription = () => {
   return (
@@ -182,7 +182,7 @@ export const FormWithDescription = () => {
     desc: 'InputField composes LabelExt, Input, Tooltip, and FormErrorMessage into a single reusable field.',
     code: `
 import React, { useState } from "react";
-import { InputField } from "react-ui-essentials";
+import { InputField } from "kalki-ui";
 
 export const InputFieldWithError = () => {
   const [value, setValue] = useState("");

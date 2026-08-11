@@ -8,7 +8,7 @@ export const docs: docsData[] = [
     desc: 'A toggle switch for enabling or disabling a feature.',
     code: `
 import React, { useState } from 'react';
-import Form, { FormGroup, Switch } from "react-ui-essentials";
+import Form, { FormGroup, Switch } from "kalki-ui";
 
 export const SwitchExample = () => {
   const [notifications, setNotifications] = useState(false);

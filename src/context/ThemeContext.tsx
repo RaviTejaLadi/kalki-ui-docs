@@ -13,8 +13,7 @@ const COLOR_THEME_CLASSES = ['ocean', 'purple', 'emerald', 'amber', 'rose', 'tea
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-const getSystemTheme = (): ThemeMode =>
-  window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+const getSystemTheme = (): ThemeMode => (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
 const isThemeMode = (value: string | null): value is ThemeMode => value === 'light' || value === 'dark';
 
