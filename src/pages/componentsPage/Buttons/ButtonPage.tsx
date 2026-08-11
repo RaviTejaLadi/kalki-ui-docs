@@ -4,7 +4,7 @@ import TableList from '@/components/common/Table/TableList';
 import React from 'react';
 import { docs, columns, componentHierarchyCode, rows } from './data/buttonDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
-import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
+import { SyntaxHighlighter } from '@/components/shared/SyntaxHighLighter/SyntaxHighLighter';
 import ButtonPlayground from '@/components/playground/ButtonPlayground';
 import Div from '@/components/common/Div';
 import Head from '@/components/Head';

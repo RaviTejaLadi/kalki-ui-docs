@@ -1,7 +1,7 @@
 import React from 'react';
 import { SidebarMenuSubItemProps } from '../types';
 import { cn } from '@/utils';
-import Link from '../../Link';
+import Link from '@/components/common/Link';
 
 export const SidebarMenuSubItem = React.forwardRef<HTMLAnchorElement, SidebarMenuSubItemProps>(
   ({ className, isOpen, children, to, icon, ...props }, ref) => {

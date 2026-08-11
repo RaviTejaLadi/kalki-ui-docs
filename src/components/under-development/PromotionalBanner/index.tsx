@@ -1,7 +1,7 @@
 import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
-import Button, { buttonVariants } from '../Button';
-import { Heading, Paragraph } from '../Typography';
+import Button, { buttonVariants } from '@/components/common/Button';
+import { Heading, Paragraph } from '@/components/common/Typography';
 import { CheckIcon } from 'lucide-react';
 
 // Define banner variants using CVA

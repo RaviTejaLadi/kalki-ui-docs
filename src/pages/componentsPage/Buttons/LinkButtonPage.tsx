@@ -5,7 +5,7 @@ import React from 'react';
 import { docs, columns, rows, componentHierarchyCode } from './data/linkButtonDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import Div from '@/components/common/Div';
-import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
+import { SyntaxHighlighter } from '@/components/shared/SyntaxHighLighter/SyntaxHighLighter';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
 

@@ -1,7 +1,7 @@
 import Div from '@/components/common/Div';
 import Link from '@/components/common/Link';
-import Navbar, { NavBarContent, NavBarLogo } from '@/components/common/Navbar/Navbar';
-import NavMenu, { NavMenuItem, NavMenuItemTitle, NavMenuList } from '@/components/common/NavMenu';
+import Navbar, { NavBarContent, NavBarLogo } from '@/components/shared/Navbar/Navbar';
+import NavMenu, { NavMenuItem, NavMenuItemTitle, NavMenuList } from '@/components/shared/NavMenu';
 import { ThemeToggle } from './ThemeToggle';
 import React, { Fragment, useState } from 'react';
 import Logo from './Logo';

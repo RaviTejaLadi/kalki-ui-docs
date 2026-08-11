@@ -1,4 +1,4 @@
-import TreeView from '@/components/common/TreeView/TreeView';
+import TreeView from '@/components/under-development/TreeView/TreeView';
 
 const sampleData = {
   name: 'Root',

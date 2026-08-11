@@ -1,4 +1,4 @@
-import ImageViewer from '@/components/common/ImageViewer/ImageViewer';
+import ImageViewer from '@/components/under-development/ImageViewer/ImageViewer';
 import Image from '@/components/common/Image';
 
 export const ImageViewerPreviews = {

@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode } from 'react';
-import { SyntaxHighlighter } from '../SyntaxHighLighter/SyntaxHighLighter';
+import { SyntaxHighlighter } from '@/components/shared/SyntaxHighLighter/SyntaxHighLighter';
 import { cn } from '@/utils';
 
 interface StepProps {

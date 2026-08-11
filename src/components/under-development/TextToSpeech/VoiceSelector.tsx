@@ -1,5 +1,5 @@
-import Div from '../Div';
-import Select, { SelectContent, SelectItem, SelectTrigger, SelectValue } from '../Select';
+import Div from '@/components/common/Div';
+import Select, { SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/common/Select';
 
 interface VoiceSelectorProps {
   voices: SpeechSynthesisVoice[];

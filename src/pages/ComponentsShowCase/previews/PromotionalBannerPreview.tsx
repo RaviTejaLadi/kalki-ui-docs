@@ -1,4 +1,4 @@
-import PromotionalBanner from '@/components/common/PromotionalBanner';
+import PromotionalBanner from '@/components/under-development/PromotionalBanner';
 
 export const PromotionalBannerPreviews = {
   basic: (

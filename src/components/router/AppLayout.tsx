@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 // import TopBar from '../shared/TopBar/TopBar';
 import { Outlet } from 'react-router-dom';
-import ScrollToTop from '../common/ScrollToTop';
+import ScrollToTop from '@/components/under-development/ScrollToTop';
 import Loading from '../shared/Loading';
 import { Navbar } from '../shared/TopBar/NavBar';
 

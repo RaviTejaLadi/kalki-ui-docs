@@ -5,8 +5,8 @@ import { useTextToSpeech } from './useTextToSpeech';
 import { SpeedControl } from './SpeedControl';
 import { TextReaderProps } from './Speech';
 import { getTextFromNode } from './textChunker';
-import Button from '../Button';
-import Div from '../Div';
+import Button from '@/components/common/Button';
+import Div from '@/components/common/Div';
 import Tooltip from '../Tooltip/Tooltip';
 
 export function TextReader({ children, className = '' }: TextReaderProps) {

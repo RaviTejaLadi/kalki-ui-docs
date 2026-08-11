@@ -1,4 +1,4 @@
-import { Toggle, ToggleGroup, ToggleGroupItem } from '@/components/common/Toggle';
+import { Toggle, ToggleGroup, ToggleGroupItem } from '@/components/under-development/Toggle';
 
 export const TogglePreviews = {
   basic: (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, cloneElement, forwardRef, ReactNode, CSSProperties, ReactElement } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import Box from '../Box';
-import Button from '../Button';
+import Box from '@/components/common/Box';
+import Button from '@/components/common/Button';
 import { cn } from '@/utils';
 
 // #region type

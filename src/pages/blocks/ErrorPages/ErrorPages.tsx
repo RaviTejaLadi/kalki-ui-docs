@@ -2,7 +2,7 @@ import { Tab, Tabs } from '@/components/common/Tabs';
 import BlocksWrapper from '../BlocksWrapper';
 import { Code, Terminal } from 'lucide-react';
 import { data } from './data/errorPagesData';
-import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
+import { SyntaxHighlighter } from '@/components/shared/SyntaxHighLighter/SyntaxHighLighter';
 
 const ErrorPages = () => {
   return (

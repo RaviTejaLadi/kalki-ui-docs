@@ -1,7 +1,7 @@
 import { Tab, Tabs } from '@/components/common/Tabs';
 import BlocksWrapper from '../BlocksWrapper';
 import { data } from './data/cardsData';
-import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
+import { SyntaxHighlighter } from '@/components/shared/SyntaxHighLighter/SyntaxHighLighter';
 import { Code, Terminal } from 'lucide-react';
 
 const CardsPage = () => {

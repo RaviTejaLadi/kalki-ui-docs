@@ -3,7 +3,7 @@ import Separator from '@/components/common/Separator';
 import TableList from '@/components/common/Table/TableList';
 import { docs, columns, rows, componentHierarchyCode } from './data/avatarDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
-import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
+import { SyntaxHighlighter } from '@/components/shared/SyntaxHighLighter/SyntaxHighLighter';
 import Div from '@/components/common/Div';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';

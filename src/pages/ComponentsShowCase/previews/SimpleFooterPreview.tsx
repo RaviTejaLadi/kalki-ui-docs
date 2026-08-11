@@ -1,4 +1,4 @@
-import SimpleFooter from '@/components/common/SimpleFooter';
+import SimpleFooter from '@/components/under-development/SimpleFooter';
 
 export const SimpleFooterPreviews = {
   basic: (

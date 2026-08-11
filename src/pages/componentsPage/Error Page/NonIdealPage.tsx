@@ -1,7 +1,7 @@
 import { ErrorPage } from '@/components/common/ErrorPage/ErrorPage';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import Separator from '@/components/common/Separator';
-import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
+import { SyntaxHighlighter } from '@/components/shared/SyntaxHighLighter/SyntaxHighLighter';
 import TableList from '@/components/common/Table/TableList';
 import { useToast } from 'kalki-ui-toast';
 import { useCallback, useState } from 'react';

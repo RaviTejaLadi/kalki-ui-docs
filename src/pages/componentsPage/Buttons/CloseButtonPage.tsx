@@ -5,7 +5,7 @@ import { docs, columns, rows, componentHierarchyCode } from './data/closeButtonD
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import CloseButtonPlayground from '@/components/playground/CloseButtonPlayground';
 import Div from '@/components/common/Div';
-import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
+import { SyntaxHighlighter } from '@/components/shared/SyntaxHighLighter/SyntaxHighLighter';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
 

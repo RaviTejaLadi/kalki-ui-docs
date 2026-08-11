@@ -1,5 +1,5 @@
 import { SectionHeader } from '@/components/common/SectionHeader';
-import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
+import { SyntaxHighlighter } from '@/components/shared/SyntaxHighLighter/SyntaxHighLighter';
 import { docsData } from '@/types/docsData';
 import { cn } from '@/utils';
 import React from 'react';

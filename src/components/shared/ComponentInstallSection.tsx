@@ -1,5 +1,5 @@
 import { SectionHeader } from '@/components/common/SectionHeader';
-import { SyntaxHighlighter } from '@/components/common/SyntaxHighLighter/SyntaxHighLighter';
+import { SyntaxHighlighter } from '@/components/shared/SyntaxHighLighter/SyntaxHighLighter';
 import Separator from '@/components/common/Separator';
 
 interface ComponentInstallSectionProps {

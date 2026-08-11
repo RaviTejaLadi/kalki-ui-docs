@@ -1,6 +1,6 @@
 import React, { forwardRef, PropsWithChildren, ReactNode } from 'react';
 import DotSeparator from '../DotSeparator';
-import Link, { LinkProps } from '../Link';
+import Link, { LinkProps } from '@/components/common/Link';
 
 // #region types
 interface SimpleFooterLinkProps extends LinkProps {

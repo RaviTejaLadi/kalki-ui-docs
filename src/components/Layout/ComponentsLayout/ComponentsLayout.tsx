@@ -9,7 +9,7 @@ import Sidebar, {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarGroupContent,
-} from '@/components/common/SideBar';
+} from '@/components/shared/SideBar';
 import { MessageSquare } from 'lucide-react';
 import { categorizedRoutesComponents } from './categorizedRoutesComponents';
 import { cn } from '@/utils';

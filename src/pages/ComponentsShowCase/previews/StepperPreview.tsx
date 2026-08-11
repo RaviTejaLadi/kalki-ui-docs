@@ -1,4 +1,4 @@
-import { Stepper } from '@/components/common/Stepper/Stepper';
+import { Stepper } from '@/components/under-development/Stepper/Stepper';
 
 export const StepperPreviews = {
   basic: (

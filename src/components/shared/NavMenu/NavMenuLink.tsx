@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { NavMenuLinkProps } from './interface';
 import { cn } from '@/utils';
-import Link from '../Link';
+import Link from '@/components/common/Link';
 
 export const NavMenuLink = forwardRef<HTMLAnchorElement, NavMenuLinkProps>(
   ({ children, to, className, target, ...props }, ref) => (

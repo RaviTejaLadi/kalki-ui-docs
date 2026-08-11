@@ -1,4 +1,4 @@
-import DotSeparator from '@/components/common/DotSeparator';
+import DotSeparator from '@/components/under-development/DotSeparator';
 
 export const DotSeparatorPreviews = {
   basic: (

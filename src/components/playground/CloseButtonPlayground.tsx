@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Card, { CardContent } from '../common/Card';
-import { SyntaxHighlighter } from '../common/SyntaxHighLighter/SyntaxHighLighter';
+import { SyntaxHighlighter } from '../shared/SyntaxHighLighter/SyntaxHighLighter';
 import CloseButton from '../common/CloseButton';
 
 type Variant = 'light' | 'dark';

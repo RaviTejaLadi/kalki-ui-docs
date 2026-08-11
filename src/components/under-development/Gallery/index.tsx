@@ -1,7 +1,7 @@
 import React, { forwardRef, ReactNode } from 'react';
 import { cn } from '@/utils';
 import { cva, VariantProps } from 'class-variance-authority';
-import Image, { ImageProps } from '../Image';
+import Image, { ImageProps } from '@/components/common/Image';
 
 // #region galleryVariants
 const galleryVariants = cva('gap-4', {

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { CheckCircle2, Settings, ArrowRight } from 'lucide-react';
 import Card, { CardContent } from '../common/Card';
 import Button from '../common/Button';
-import { SyntaxHighlighter } from '../common/SyntaxHighLighter/SyntaxHighLighter';
+import { SyntaxHighlighter } from '../shared/SyntaxHighLighter/SyntaxHighLighter';
 
 type Variant =
   | 'primary'

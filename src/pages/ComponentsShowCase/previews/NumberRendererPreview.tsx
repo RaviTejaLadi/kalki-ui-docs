@@ -1,4 +1,4 @@
-import NumberRenderer from '@/components/common/NumberRenderer/NumberRenderer';
+import NumberRenderer from '@/components/under-development/NumberRenderer/NumberRenderer';
 
 export const NumberRendererPreviews = {
   basic: (
