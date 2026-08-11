@@ -80,19 +80,34 @@ interface CloseButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
  * @returns {JSX.Element} The rendered button component.
  */
 const CloseButton = forwardRef<HTMLButtonElement, CloseButtonProps>(
-  ({ variant = 'light', size = 'sm', onClick, disabled, className, style, ...rest }, ref) => {
+  (
+    {
+      variant = 'light',
+      size = 'sm',
+      onClick,
+      disabled,
+      className,
+      style,
+      'aria-label': ariaLabel = 'Close',
+      type = 'button',
+      ...rest
+    },
+    ref
+  ) => {
     const iconSize = size === 'xs' ? 13 : size === 'sm' ? 15 : size === 'md' ? 20 : 25;
 
     return (
       <button
         ref={ref}
+        type={type}
         onClick={onClick}
         disabled={disabled}
+        aria-label={ariaLabel}
         className={cn(buttonVariants({ variant, size }), className)}
         style={style}
         {...rest}
       >
-        <X className="m-[-2px] text-foreground" width={iconSize} height={iconSize} />
+        <X className="m-[-2px] text-foreground" width={iconSize} height={iconSize} aria-hidden="true" />
       </button>
     );
   }

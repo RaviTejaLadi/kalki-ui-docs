@@ -19,7 +19,7 @@ const headingVariants = cva('font-heading text-foreground scroll-m-20', {
     italic: { true: 'italic' },
     strong: { true: 'font-bold' },
     strikethrough: { true: 'line-through' },
-    marked: { true: 'bg-yellow-200' },
+    marked: { true: 'bg-yellow-200 dark:bg-yellow-500/30' },
     smaller: { true: 'text-sm' },
     deleted: { true: 'line-through' },
     inserted: { true: 'underline' },
@@ -39,21 +39,19 @@ interface HeadingProps extends VariantProps<typeof headingVariants> {
 // #endregion
 
 // #region Heading
-const Heading = forwardRef<HTMLParagraphElement, HeadingProps>(
-  ({ children, as, className, onClick, ...props }, ref) => {
-    const element = as || 'h1';
-    return createElement(
-      element,
-      {
-        ref,
-        className: cn(headingVariants({ as, ...props }), className),
-        onClick,
-        ...props,
-      },
-      children
-    );
-  }
-);
+const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(({ children, as, className, onClick, ...props }, ref) => {
+  const element = as || 'h1';
+  return createElement(
+    element,
+    {
+      ref,
+      className: cn(headingVariants({ as, ...props }), className),
+      onClick,
+      ...props,
+    },
+    children
+  );
+});
 
 Heading.displayName = 'Heading';
 // #endregion

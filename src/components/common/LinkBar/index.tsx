@@ -46,7 +46,7 @@ const linkBarVariants = cva('flex items-center justify-center transition-all', {
       light: 'border border-gray-100',
       dark: 'border border-gray-400 dark:border-gray-400/10',
       default: 'bg-background border-b border-gray-200 dark:border-gray-200/10',
-      outline: 'border border-gray-200/10 bg-white shadow-sm',
+      outline: 'border border-gray-200 dark:border-gray-200/10 bg-white dark:bg-background shadow-sm',
     },
     size: {
       sm: 'h-10',
@@ -168,14 +168,23 @@ const LinkBarControl = forwardRef<HTMLDivElement, ControlsProps>(
     const baseStyles = ' z-10';
     const positionStyles = isLeft ? 'left-1' : 'right-1';
     const gradientStyles = isLeft
-      ? 'bg-gradient-to-r from-white via-white to-transparent'
-      : 'bg-gradient-to-l from-white via-white to-transparent';
+      ? 'bg-gradient-to-r from-background via-background to-transparent'
+      : 'bg-gradient-to-l from-background via-background to-transparent';
 
     return (
       <div ref={ref} className={cn(baseStyles, positionStyles, 'p-1')}>
-        <div className={cn('inset-0 opacity-80', gradientStyles)} />
-        <Button size={size} variant={variant} onClick={() => scroll(isLeft ? 'left' : 'right')}>
-          {isLeft ? <ChevronLeft className="size-3" /> : <ChevronRight className="size-3" />}
+        <div className={cn('inset-0 opacity-80', gradientStyles)} aria-hidden="true" />
+        <Button
+          size={size}
+          variant={variant}
+          onClick={() => scroll(isLeft ? 'left' : 'right')}
+          aria-label={isLeft ? 'Scroll links left' : 'Scroll links right'}
+        >
+          {isLeft ? (
+            <ChevronLeft className="size-3" aria-hidden="true" />
+          ) : (
+            <ChevronRight className="size-3" aria-hidden="true" />
+          )}
         </Button>
       </div>
     );

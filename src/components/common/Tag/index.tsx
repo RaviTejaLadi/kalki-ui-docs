@@ -81,13 +81,20 @@ const TagIcon: React.FC<TagIconProps> = ({ children, className, ...rest }) => (
   </span>
 );
 
-const TagClose: React.FC<TagCloseButtonProps> = ({ onClick, className, ...props }) => (
+const TagClose: React.FC<TagCloseButtonProps> = ({
+  onClick,
+  className,
+  'aria-label': ariaLabel = 'Remove tag',
+  ...props
+}) => (
   <button
+    type="button"
+    aria-label={ariaLabel}
     className={cn('ml-1 p-1 opacity-70 hover:opacity-100 transition z-10', className)}
     onClick={onClick}
     {...props}
   >
-    <X className="size-3 font-bold" />
+    <X className="size-3 font-bold" aria-hidden="true" />
   </button>
 );
 

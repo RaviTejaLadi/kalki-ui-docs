@@ -106,9 +106,9 @@ Figure.displayName = 'Figure';
  *
  * @returns {JSX.Element} The rendered image element.
  */
-const FigureImage = forwardRef<HTMLImageElement, FigureImageProps>(({ src, alt, className, style, ...rest }, ref) => {
+const FigureImage = forwardRef<HTMLDivElement, FigureImageProps>(({ src, alt, className, style, ...rest }, ref) => {
   return (
-    <div ref={ref}>
+    <div ref={ref} className="w-full h-full">
       <Image
         src={src}
         alt={alt}

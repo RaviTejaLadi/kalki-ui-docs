@@ -25,7 +25,7 @@ const fieldSetLabelStyles = cva('px-2 font-medium border rounded-md', {
       warning: 'text-yellow-600 border-yellow-600',
       danger: 'text-red-600 border-red-600',
       info: 'text-cyan-600 border-cyan-600',
-      dark: 'text-black border-black',
+      dark: 'text-foreground border-foreground dark:text-gray-100 dark:border-gray-100',
     },
   },
   defaultVariants: {

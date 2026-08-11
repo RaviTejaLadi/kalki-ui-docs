@@ -1,26 +1,46 @@
 import { cn } from '@/utils';
 import React, { forwardRef } from 'react';
 
-interface SliderProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface SliderProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
   className?: string;
   min?: number;
   max?: number;
   step?: number;
   defaultValue?: number;
+  value?: number | string;
 }
 
 const Slider = forwardRef<HTMLInputElement, SliderProps>(
-  ({ className = '', min = 0, max = 100, step = 1, defaultValue = 50, disabled = false, ...props }, ref) => {
+  (
+    {
+      className = '',
+      min = 0,
+      max = 100,
+      step = 1,
+      defaultValue = 50,
+      value,
+      disabled = false,
+      'aria-label': ariaLabel = 'Slider',
+      ...props
+    },
+    ref
+  ) => {
+    const isControlled = value !== undefined;
+
     return (
       <input
         type="range"
         min={min}
         max={max}
         step={step}
-        defaultValue={defaultValue}
+        {...(isControlled ? { value } : { defaultValue })}
+        aria-label={ariaLabel}
+        aria-valuemin={min}
+        aria-valuemax={max}
+        aria-valuenow={Number(isControlled ? value : defaultValue)}
         className={cn(
           'h-2 w-full cursor-pointer appearance-none rounded-md',
-          'bg-gray-200  accent-blue-600 disabled:cursor-not-allowed disabled:opacity-50',
+          'bg-gray-200 dark:bg-gray-700 accent-blue-600 disabled:cursor-not-allowed disabled:opacity-50',
           className
         )}
         ref={ref}

@@ -51,6 +51,8 @@ const Carousel = forwardRef<HTMLDivElement, CarouselProps>(
         <Box
           ref={ref}
           padding={padding}
+          data-carousel-root
+          tabIndex={0}
           className={cn(carouselVariants({ padding: padding as 'sm' | 'md' | 'lg' | 'xl' }), className)}
           style={containerStyle}
           {...rest}

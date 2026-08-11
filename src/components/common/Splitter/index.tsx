@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef, useEffect, forwardRef } from 'react';
+import React, { useState, useCallback, useRef, useEffect, forwardRef, KeyboardEvent } from 'react';
 import Box from '../Box';
 import { useMergedRef } from '@/hooks/useMergedRef';
 import { cn } from '@/utils';
@@ -45,9 +45,13 @@ const useResizeHandle = (
   const handleResize = useCallback(
     (index: number, e: React.MouseEvent<HTMLDivElement>) => {
       e.preventDefault();
+      if (!containerRef.current) return;
+
       const startPos = orientation === 'horizontal' ? e.clientX : e.clientY;
       const containerSize =
-        orientation === 'horizontal' ? containerRef.current!.offsetWidth : containerRef.current!.offsetHeight;
+        orientation === 'horizontal' ? containerRef.current.offsetWidth : containerRef.current.offsetHeight;
+      if (!containerSize) return;
+
       const startSizes = [...sizes];
 
       const handleMouseMove = (moveEvent: MouseEvent) => {
@@ -56,7 +60,7 @@ const useResizeHandle = (
 
         const newSizes = startSizes.map((size, i) => {
           if (i === index || i === index + 1) {
-            const currentSize = parseSizeToPixels(size, containerSize)!;
+            const currentSize = parseSizeToPixels(size, containerSize) ?? 0;
             const minSize = parseSizeToPixels(minSizes[i], containerSize) || 0;
             const maxSize = parseSizeToPixels(maxSizes[i], containerSize) || containerSize;
 
@@ -81,25 +85,49 @@ const useResizeHandle = (
     [sizes, minSizes, maxSizes, orientation]
   );
 
-  return [sizes, handleResize, containerRef, setSizes] as const;
+  const resizeByKeyboard = useCallback((index: number, deltaPercent: number) => {
+    setSizes((prev) => {
+      const next = [...prev];
+      const left = parseFloat(prev[index]) || 0;
+      const right = parseFloat(prev[index + 1]) || 0;
+      const newLeft = Math.max(5, Math.min(95, left + deltaPercent));
+      const appliedDelta = newLeft - left;
+      next[index] = `${newLeft}%`;
+      next[index + 1] = `${Math.max(5, right - appliedDelta)}%`;
+      return next;
+    });
+  }, []);
+
+  return [sizes, handleResize, containerRef, setSizes, resizeByKeyboard] as const;
 };
 
 const ResizeHandle = React.memo(
   ({
     onMouseDown,
+    onKeyDown,
     orientation = 'horizontal',
     withHandle,
+    valueNow,
   }: {
     onMouseDown: (e: React.MouseEvent<HTMLDivElement>) => void;
+    onKeyDown: (e: KeyboardEvent<HTMLDivElement>) => void;
     orientation: 'horizontal' | 'vertical';
     withHandle?: boolean;
+    valueNow?: number;
   }) => (
     <div
+      role="separator"
+      aria-orientation={orientation}
+      aria-valuenow={valueNow}
+      aria-valuemin={5}
+      aria-valuemax={95}
+      tabIndex={0}
       className={cn(
-        'flex items-center justify-center border dark:border-gray-200/10',
+        'flex items-center justify-center border dark:border-gray-200/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
         orientation === 'horizontal' ? 'w-[.5px] cursor-ew-resize' : 'h-[.5px] cursor-ns-resize'
       )}
       onMouseDown={onMouseDown}
+      onKeyDown={onKeyDown}
     >
       {withHandle && orientation === 'horizontal' ? (
         <Box
@@ -109,7 +137,7 @@ const ResizeHandle = React.memo(
           padding="1px"
           outlined
         >
-          <GripVertical className="text-[var(--icon-color)] size-3" />
+          <GripVertical className="text-[var(--icon-color)] size-3" aria-hidden="true" />
         </Box>
       ) : (
         <Box
@@ -119,7 +147,7 @@ const ResizeHandle = React.memo(
           padding="1px"
           outlined
         >
-          <GripHorizontal className="text-[var(--icon-color)] size-3" />
+          <GripHorizontal className="text-[var(--icon-color)] size-3" aria-hidden="true" />
         </Box>
       )}
     </div>
@@ -133,7 +161,7 @@ const Splitter = forwardRef<HTMLDivElement, SplitterProps>(
     const minSizes = panes.map((pane) => pane.props.minSize || '0%');
     const maxSizes = panes.map((pane) => pane.props.maxSize || '100%');
 
-    const [sizes, handleResize, containerRef, setSizes] = useResizeHandle(
+    const [sizes, handleResize, containerRef, setSizes, resizeByKeyboard] = useResizeHandle(
       initialSizes,
       minSizes,
       maxSizes,
@@ -142,13 +170,18 @@ const Splitter = forwardRef<HTMLDivElement, SplitterProps>(
     const mergedRef = useMergedRef(ref, containerRef);
 
     useEffect(() => {
+      if (!containerRef.current) return;
+
       const containerSize =
-        orientation === 'horizontal' ? containerRef.current!.offsetWidth : containerRef.current!.offsetHeight;
+        orientation === 'horizontal' ? containerRef.current.offsetWidth : containerRef.current.offsetHeight;
+      if (!containerSize) return;
+
       const newSizes = initialSizes.map((size) => {
-        const pxSize = parseSizeToPixels(size, containerSize)!;
+        const pxSize = parseSizeToPixels(size, containerSize) ?? containerSize / panes.length;
         return `${(pxSize / containerSize) * 100}%`;
       });
       setSizes(newSizes);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -163,7 +196,7 @@ const Splitter = forwardRef<HTMLDivElement, SplitterProps>(
         ref={mergedRef}
       >
         {panes.map((pane, index) => (
-          <React.Fragment key={index}>
+          <React.Fragment key={pane.key ?? `pane-${index}`}>
             <div
               className="overflow-auto"
               style={{
@@ -177,7 +210,28 @@ const Splitter = forwardRef<HTMLDivElement, SplitterProps>(
             {index < panes.length - 1 && (
               <ResizeHandle
                 withHandle={withHandle}
+                valueNow={parseFloat(sizes[index]) || undefined}
                 onMouseDown={(e) => handleResize(index, e)}
+                onKeyDown={(e) => {
+                  const step = e.shiftKey ? 5 : 2;
+                  if (orientation === 'horizontal') {
+                    if (e.key === 'ArrowLeft') {
+                      e.preventDefault();
+                      resizeByKeyboard(index, -step);
+                    } else if (e.key === 'ArrowRight') {
+                      e.preventDefault();
+                      resizeByKeyboard(index, step);
+                    }
+                  } else {
+                    if (e.key === 'ArrowUp') {
+                      e.preventDefault();
+                      resizeByKeyboard(index, -step);
+                    } else if (e.key === 'ArrowDown') {
+                      e.preventDefault();
+                      resizeByKeyboard(index, step);
+                    }
+                  }
+                }}
                 orientation={orientation}
               />
             )}

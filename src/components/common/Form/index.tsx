@@ -11,6 +11,11 @@ import Slider from './Slider';
 import FileInput from './FileInput';
 import Select from './Select';
 import Switch from './Switch';
+import { InputField } from './InputField';
+import { FormErrorMessage } from './FormErrorMessage';
+import { FormDescription } from './FormDescription';
+import FieldSet from './FieldSet';
+import LabelExt from './LabelExt';
 
 interface FormProps extends React.HTMLAttributes<HTMLFormElement> {
   children: ReactNode;
@@ -36,7 +41,9 @@ export default Object.assign(
   {
     Group: FormGroup,
     Label: Label,
+    LabelExt: LabelExt,
     Input: Input,
+    InputField: InputField,
     Textarea: Textarea,
     Checkbox: Checkbox,
     Radio: Radio,
@@ -45,7 +52,27 @@ export default Object.assign(
     Switch: Switch,
     Select: Select,
     FileInput: FileInput,
+    ErrorMessage: FormErrorMessage,
+    Description: FormDescription,
+    FieldSet: FieldSet,
   }
 );
 
-export { FormGroup, Label, Input, Textarea, Checkbox, Radio, Slider, Select, Switch, FileInput, Submit };
+export {
+  FormGroup,
+  Label,
+  LabelExt,
+  Input,
+  InputField,
+  Textarea,
+  Checkbox,
+  Radio,
+  Slider,
+  Select,
+  Switch,
+  FileInput,
+  Submit,
+  FormErrorMessage,
+  FormDescription,
+  FieldSet,
+};

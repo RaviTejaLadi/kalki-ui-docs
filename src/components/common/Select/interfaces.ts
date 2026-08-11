@@ -1,4 +1,4 @@
-export interface SelectProps extends React.SelectHTMLAttributes<HTMLDivElement> {
+export interface SelectProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
   value?: string;
   onValueChange?: (value: string) => void;
@@ -15,6 +15,10 @@ export interface SelectContextValue {
   disabled?: boolean;
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  placeholder?: string;
+  error?: boolean;
+  triggerRef?: React.RefObject<HTMLButtonElement | null>;
+  registerTrigger: (node: HTMLButtonElement | null) => void;
 }
 
 export interface SelectTriggerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

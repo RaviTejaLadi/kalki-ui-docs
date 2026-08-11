@@ -9,7 +9,13 @@ import { SelectLabel } from './SelectLabel';
 import { SelectTrigger } from './SelectTrigger';
 import { SelectValue } from './SelectValue';
 
-export const SelectContext = React.createContext<SelectContextValue>({} as SelectContextValue);
+const defaultSelectContext: SelectContextValue = {
+  open: false,
+  setOpen: () => undefined,
+  registerTrigger: () => undefined,
+};
+
+export const SelectContext = React.createContext<SelectContextValue>(defaultSelectContext);
 
 export const Select = React.forwardRef<HTMLDivElement, SelectProps>(
   (
@@ -29,8 +35,13 @@ export const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     const [open, setOpen] = React.useState(false);
     const [internalValue, setInternalValue] = React.useState(defaultValue);
     const selectRef = React.useRef<HTMLDivElement>(null);
+    const triggerRef = React.useRef<HTMLButtonElement | null>(null);
     const combinedRef = useMergedRef(selectRef, ref);
     const currentValue = value ?? internalValue;
+
+    const registerTrigger = React.useCallback((node: HTMLButtonElement | null) => {
+      triggerRef.current = node;
+    }, []);
 
     React.useEffect(() => {
       const handleClickOutside = (event: MouseEvent) => {
@@ -43,6 +54,20 @@ export const Select = React.forwardRef<HTMLDivElement, SelectProps>(
       return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
+    React.useEffect(() => {
+      if (!open) return;
+
+      const handleKeyDown = (event: KeyboardEvent) => {
+        if (event.key === 'Escape') {
+          setOpen(false);
+          triggerRef.current?.focus();
+        }
+      };
+
+      document.addEventListener('keydown', handleKeyDown);
+      return () => document.removeEventListener('keydown', handleKeyDown);
+    }, [open]);
+
     return (
       <SelectContext.Provider
         value={{
@@ -51,13 +76,23 @@ export const Select = React.forwardRef<HTMLDivElement, SelectProps>(
             setInternalValue(newValue);
             onValueChange?.(newValue);
             setOpen(false);
+            triggerRef.current?.focus();
           },
           disabled,
           open,
           setOpen,
+          placeholder,
+          error,
+          triggerRef,
+          registerTrigger,
         }}
       >
-        <div ref={combinedRef} className={cn('relative', className)} style={{ width: props.style?.width }} {...props}>
+        <div
+          ref={combinedRef}
+          className={cn('relative', error && '[&_button]:border-red-500', className)}
+          style={{ width: props.style?.width }}
+          {...props}
+        >
           {children}
         </div>
       </SelectContext.Provider>

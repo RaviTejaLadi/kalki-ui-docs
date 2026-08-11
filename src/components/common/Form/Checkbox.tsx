@@ -1,10 +1,10 @@
-import { forwardRef, InputHTMLAttributes } from 'react';
+import { forwardRef, InputHTMLAttributes, useId } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils';
 
 const checkboxStyles = cva(
-  `rounded border-gray-300 text-blue-600 
-  focus:ring-blue-600  focus:ring-offset-2
+  `rounded border-gray-300 dark:border-gray-600 text-blue-600 
+  focus:ring-blue-600 focus:ring-offset-2 dark:focus:ring-offset-background
   disabled:cursor-not-allowed disabled:opacity-50`,
   {
     variants: {
@@ -35,6 +35,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   (
     {
       name,
+      id,
       checked,
       onChange,
       width,
@@ -50,6 +51,9 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     },
     ref
   ) => {
+    const generatedId = useId();
+    const inputId = id ?? (name ? `${name}-checkbox` : generatedId);
+
     const customStyles = {
       width,
       height,
@@ -62,6 +66,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
       <div className="flex items-center space-x-2">
         <input
           ref={ref}
+          id={inputId}
           type="checkbox"
           name={name}
           checked={checked}
@@ -72,7 +77,10 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           {...props}
         />
         {label && (
-          <label className="text-sm text-muted-foreground font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+          <label
+            htmlFor={inputId}
+            className="text-sm text-muted-foreground font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+          >
             {label}
           </label>
         )}

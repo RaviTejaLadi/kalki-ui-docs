@@ -1,7 +1,8 @@
-import React, { forwardRef, ReactNode } from 'react';
+import React, { forwardRef, ReactNode, useCallback, useEffect, useRef } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import CloseButton from '../CloseButton';
 import { cn } from '@/utils';
+import { useMergedRef } from '@/hooks/useMergedRef';
 
 // #region modalVariants
 const modalVariants = cva(
@@ -41,6 +42,8 @@ interface ModalProps extends VariantProps<typeof modalVariants> {
   overLayColor?: string;
   overlayZIndex?: number;
   modalZIndex?: number;
+  'aria-labelledby'?: string;
+  'aria-describedby'?: string;
 }
 
 interface ModalHeaderProps {
@@ -54,12 +57,14 @@ interface ModalHeaderProps {
 interface ModalTitleProps {
   children?: ReactNode;
   className?: string;
+  id?: string;
 }
 
 interface ModalBodyProps {
   children?: ReactNode;
   height?: string;
   className?: string;
+  id?: string;
 }
 
 interface ModalFooterProps {
@@ -68,6 +73,9 @@ interface ModalFooterProps {
   className?: string;
 }
 // #endregion
+
+const FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 // #region Modal
 const Modal = forwardRef<HTMLDivElement, ModalProps>(
@@ -82,11 +90,15 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(
       overLayColor = '',
       overlayZIndex = 40,
       modalZIndex = 50,
+      'aria-labelledby': ariaLabelledBy,
+      'aria-describedby': ariaDescribedBy,
       ...rest
     },
     ref
   ) => {
-    if (!open) return null;
+    const dialogRef = useRef<HTMLDivElement>(null);
+    const mergedDialogRef = useMergedRef(dialogRef, ref);
+    const previousFocusRef = useRef<HTMLElement | null>(null);
 
     const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
       if (e.target === e.currentTarget && onClose) {
@@ -94,9 +106,65 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(
       }
     };
 
+    const trapFocus = useCallback((e: KeyboardEvent) => {
+      if (e.key !== 'Tab' || !dialogRef.current) return;
+
+      const focusable = Array.from(dialogRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)).filter(
+        (el) => !el.hasAttribute('disabled') && el.offsetParent !== null
+      );
+
+      if (focusable.length === 0) {
+        e.preventDefault();
+        dialogRef.current.focus();
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }, []);
+
+    useEffect(() => {
+      if (!open) return;
+
+      previousFocusRef.current = document.activeElement as HTMLElement | null;
+      const previousOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+
+      const focusTimer = window.setTimeout(() => {
+        const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR);
+        focusable?.[0]?.focus() ?? dialogRef.current?.focus();
+      }, 0);
+
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          onClose?.();
+          return;
+        }
+        trapFocus(e);
+      };
+
+      document.addEventListener('keydown', handleKeyDown);
+
+      return () => {
+        window.clearTimeout(focusTimer);
+        document.removeEventListener('keydown', handleKeyDown);
+        document.body.style.overflow = previousOverflow;
+        previousFocusRef.current?.focus?.();
+      };
+    }, [open, onClose, trapFocus]);
+
+    if (!open) return null;
+
     return (
       <div
-        ref={ref}
         className="fixed inset-0 flex justify-center items-center transition-opacity"
         style={{
           backgroundColor: overLayColor || 'rgba(0, 0, 0, 0.75)',
@@ -106,8 +174,12 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(
         {...rest}
       >
         <div
+          ref={mergedDialogRef}
           role="dialog"
           aria-modal="true"
+          aria-labelledby={ariaLabelledBy}
+          aria-describedby={ariaDescribedBy}
+          tabIndex={-1}
           className={cn(modalVariants({ size, position }), className)}
           style={{ zIndex: modalZIndex }}
           onClick={(e) => e.stopPropagation()}
@@ -129,24 +201,25 @@ const ModalHeader = ({ children, closeButton, onClose, height, className, ...res
       <div>{children}</div>
       {closeButton && (
         <div>
-          <CloseButton onClick={onClose} />
+          <CloseButton onClick={onClose} aria-label="Close modal" />
         </div>
       )}
     </div>
   );
 };
 
-const ModalTitle = ({ children, className, ...rest }: ModalTitleProps) => {
+const ModalTitle = ({ children, className, id, ...rest }: ModalTitleProps) => {
   return (
-    <div className={cn('font-medium text-lg text-foreground', className)} {...rest}>
+    <div id={id} className={cn('font-medium text-lg text-foreground', className)} {...rest}>
       {children}
     </div>
   );
 };
 
-const ModalBody = ({ children, height, className, ...rest }: ModalBodyProps) => {
+const ModalBody = ({ children, height, className, id, ...rest }: ModalBodyProps) => {
   return (
     <div
+      id={id}
       className={cn('p-2.5 w-full flex-grow overflow-auto text-muted-foreground', className)}
       style={{ height }}
       {...rest}

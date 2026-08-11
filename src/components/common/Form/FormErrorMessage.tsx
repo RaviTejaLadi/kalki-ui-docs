@@ -1,5 +1,15 @@
 import React from 'react';
 
-export const FormErrorMessage: React.FC<{ error: string }> = ({ error }) => {
-  return <p className="mt-1 text-xs text-red-500">{error}</p>;
+interface FormErrorMessageProps {
+  error: string;
+  id?: string;
+  className?: string;
+}
+
+export const FormErrorMessage: React.FC<FormErrorMessageProps> = ({ error, id, className }) => {
+  return (
+    <p id={id} role="alert" className={`mt-1 text-xs text-red-500 ${className ?? ''}`.trim()}>
+      {error}
+    </p>
+  );
 };

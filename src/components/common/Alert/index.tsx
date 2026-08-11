@@ -6,14 +6,17 @@ import { cn } from '@/utils';
 const alertVariants = cva('rounded-md p-4 w-full mb-4 border', {
   variants: {
     variant: {
-      primary: 'bg-blue-100 text-blue-700 border-blue-200',
-      secondary: 'bg-gray-100 text-gray-700 border-gray-200',
-      success: 'bg-green-100 text-green-700 border-green-200',
-      info: 'bg-teal-100 text-teal-700 border-teal-200',
-      warning: 'bg-yellow-100 text-yellow-700 border-yellow-200',
-      danger: 'bg-red-100 text-red-700 border-red-200',
-      help: 'bg-purple-100 text-purple-700 border-purple-200',
-      light: 'bg-gray-50 text-gray-800 border-gray-100',
+      primary: 'bg-blue-100 text-blue-700 border-blue-200 dark:bg-blue-950/50 dark:text-blue-200 dark:border-blue-800',
+      secondary:
+        'bg-gray-100 text-gray-700 border-gray-200 dark:bg-gray-800/60 dark:text-gray-200 dark:border-gray-700',
+      success:
+        'bg-green-100 text-green-700 border-green-200 dark:bg-green-950/50 dark:text-green-200 dark:border-green-800',
+      info: 'bg-teal-100 text-teal-700 border-teal-200 dark:bg-teal-950/50 dark:text-teal-200 dark:border-teal-800',
+      warning:
+        'bg-yellow-100 text-yellow-700 border-yellow-200 dark:bg-yellow-950/50 dark:text-yellow-200 dark:border-yellow-800',
+      danger: 'bg-red-100 text-red-700 border-red-200 dark:bg-red-950/50 dark:text-red-200 dark:border-red-800',
+      help: 'bg-purple-100 text-purple-700 border-purple-200 dark:bg-purple-950/50 dark:text-purple-200 dark:border-purple-800',
+      light: 'bg-gray-50 text-gray-800 border-gray-100 dark:bg-gray-900 dark:text-gray-100 dark:border-gray-700',
     },
   },
   defaultVariants: {
@@ -41,7 +44,7 @@ interface SectionProps {
 // #region components
 const Alert = forwardRef<HTMLDivElement, AlertProps>(({ variant, children, className, style, ...rest }, ref) => {
   return (
-    <div className={alertVariants({ variant, className })} ref={ref} style={style} {...rest}>
+    <div role="alert" className={alertVariants({ variant, className })} ref={ref} style={style} {...rest}>
       {children}
     </div>
   );
@@ -77,7 +80,7 @@ const AlertFooter: React.FC<SectionProps> = ({ children, className, style, ...re
 
 // #region exports
 export default Object.assign(
-  Alert as React.ForwardRefExoticComponent<AlertProps & React.RefAttributes<HTMLButtonElement>>,
+  Alert as React.ForwardRefExoticComponent<AlertProps & React.RefAttributes<HTMLDivElement>>,
   {
     Header: AlertHeader,
     Body: AlertBody,

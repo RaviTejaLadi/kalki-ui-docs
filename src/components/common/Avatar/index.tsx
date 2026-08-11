@@ -27,7 +27,9 @@ const avatarVariants = cva('inline-flex items-center justify-center', {
 // #region types
 interface AvatarContextType extends VariantProps<typeof avatarVariants> {
   hasError?: boolean;
+  hasImage?: boolean;
   onError?: () => void;
+  registerImage?: (hasSrc: boolean) => void;
 }
 
 interface AvatarProps extends VariantProps<typeof avatarVariants> {
@@ -55,6 +57,7 @@ const AvatarContext = createContext<AvatarContextType>({});
 
 const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(({ children, className, size, shape, ...props }, ref) => {
   const [hasError, setHasError] = useState(false);
+  const [hasImage, setHasImage] = useState(false);
 
   return (
     <AvatarContext.Provider
@@ -62,7 +65,12 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(({ children, classN
         size,
         shape,
         hasError,
+        hasImage,
         onError: () => setHasError(true),
+        registerImage: (hasSrc: boolean) => {
+          setHasImage(hasSrc);
+          if (!hasSrc) setHasError(true);
+        },
       }}
     >
       <div ref={ref} className={cn('relative inline-flex', className)} {...props}>
@@ -76,9 +84,9 @@ Avatar.displayName = 'Avatar';
 
 const AvatarFallback = React.forwardRef<HTMLDivElement, AvatarFallbackProps>(
   ({ children, className, ...props }, ref) => {
-    const { size, shape, hasError } = useContext(AvatarContext);
+    const { size, shape, hasError, hasImage } = useContext(AvatarContext);
 
-    if (!hasError) return null;
+    if (hasImage && !hasError) return null;
 
     return (
       <div
@@ -100,9 +108,13 @@ AvatarFallback.displayName = 'AvatarFallback';
 
 const AvatarImage = React.forwardRef<HTMLImageElement, AvatarImageProps>(
   ({ className, src, alt = 'avatar', ...props }, ref) => {
-    const { size, shape, hasError, onError } = useContext(AvatarContext);
+    const { size, shape, hasError, onError, registerImage } = useContext(AvatarContext);
 
-    if (hasError) return null;
+    React.useEffect(() => {
+      registerImage?.(Boolean(src));
+    }, [src, registerImage]);
+
+    if (hasError || !src) return null;
 
     return (
       <img

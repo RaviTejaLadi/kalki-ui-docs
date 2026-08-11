@@ -41,7 +41,7 @@ const badgeVariants = cva(
 
 // #region types
 
-interface BadgeProps extends HTMLAttributes<HTMLSpanElement>, VariantProps<typeof badgeVariants> {
+interface BadgeProps extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof badgeVariants> {
   children: React.ReactNode;
 }
 

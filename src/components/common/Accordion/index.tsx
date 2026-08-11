@@ -175,6 +175,10 @@ const AccordionBody: React.FC<AccordionBodyProps> = ({ children, eventKey, class
 
   return (
     <div
+      id={`accordion-panel-${eventKey}`}
+      role="region"
+      aria-labelledby={`accordion-header-${eventKey}`}
+      hidden={!isActive}
       ref={contentRef}
       className={cn('overflow-hidden transition-[max-height] duration-500 ease-in-out', className)}
       style={{ ...style, maxHeight }}
@@ -217,22 +221,27 @@ const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   };
   return (
     <div
+      id={`accordion-header-${eventKey}`}
       className={cn(
-        'flex justify-between font-medium items-center cursor-pointer text-foreground dark:text-foreground p-4 transition-colors duration-300',
-        isActive ? 'text-white' : 'text-black',
+        'flex justify-between font-medium items-center cursor-pointer p-4 transition-colors duration-300',
+        isActive ? 'text-white' : 'text-foreground',
         backgroundColor,
         dimensions,
         className
       )}
       tabIndex={0}
       role="button"
+      aria-expanded={isActive}
+      aria-controls={`accordion-panel-${eventKey}`}
       onClick={() => toggleItem(eventKey)}
       onKeyDown={handleKeyDown}
       style={style}
       {...rest}
     >
       {children}
-      {icon || <ChevronDown className={cn('transition-transform size-4', isActive ? 'rotate-180' : '')} />}
+      {icon || (
+        <ChevronDown aria-hidden="true" className={cn('transition-transform size-4', isActive ? 'rotate-180' : '')} />
+      )}
     </div>
   );
 };

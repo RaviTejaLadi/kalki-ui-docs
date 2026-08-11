@@ -1,10 +1,10 @@
-import React, { forwardRef, InputHTMLAttributes } from 'react';
+import React, { forwardRef, InputHTMLAttributes, useId } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils';
 
 const radioStyles = cva(
-  `border-gray-300 text-blue-600 
-   focus:ring-blue-600 focus:ring-offset-2
+  `border-gray-300 dark:border-gray-600 text-blue-600 
+   focus:ring-blue-600 focus:ring-offset-2 dark:focus:ring-offset-background
    disabled:cursor-not-allowed disabled:opacity-50`,
   {
     variants: {
@@ -29,11 +29,15 @@ interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>
 }
 
 const Radio = forwardRef<HTMLInputElement, RadioProps>(
-  ({ name, value, onChange, disabled = false, label, size = 'sm', className, ...props }, ref) => {
+  ({ name, id, value, onChange, disabled = false, label, size = 'sm', className, ...props }, ref) => {
+    const generatedId = useId();
+    const inputId = id ?? `${name}-${value ?? 'radio'}-${generatedId}`;
+
     return (
       <div className="flex items-center space-x-2">
         <input
           type="radio"
+          id={inputId}
           name={name}
           value={value}
           onChange={onChange}
@@ -43,7 +47,10 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(
           {...props}
         />
         {label && (
-          <label className="text-sm text-muted-foreground font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+          <label
+            htmlFor={inputId}
+            className="text-sm text-muted-foreground font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+          >
             {label}
           </label>
         )}

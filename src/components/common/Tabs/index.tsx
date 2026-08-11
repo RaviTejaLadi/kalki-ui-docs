@@ -202,10 +202,8 @@ export const Tabs: React.FC<TabsProps> = ({
         ref={tabsRef}
         role="tablist"
         aria-orientation="horizontal"
-        className={cn(
-          'flex mb-2 p-1 items-center border rounded-md overflow-x-auto dark:bg-gray-800 dark:border-gray-700',
-          headerStyles
-        )}
+        className="flex mb-2 p-1 items-center border rounded-md overflow-x-auto dark:bg-gray-800 dark:border-gray-700"
+        style={headerStyles}
         onKeyDown={handleKeyNavigation}
       >
         {React.Children.map(children, (child: React.ReactNode) => {
@@ -214,6 +212,7 @@ export const Tabs: React.FC<TabsProps> = ({
           return (
             <button
               key={child.props.value}
+              id={`tab-${child.props.value}`}
               role="tab"
               aria-selected={isActive}
               aria-controls={`tabpanel-${child.props.value}`}
@@ -243,10 +242,8 @@ export const Tabs: React.FC<TabsProps> = ({
         })}
       </div>
       <div
-        className={cn(
-          'bg-background border flex items-center rounded-md overflow-y-auto dark:border-gray-200/10',
-          bodyStyles
-        )}
+        className="bg-background border flex items-center rounded-md overflow-y-auto dark:border-gray-200/10"
+        style={bodyStyles}
       >
         {React.Children.toArray(children).map((child) => {
           if (!isTabElement(child)) return null;

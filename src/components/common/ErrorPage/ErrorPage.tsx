@@ -87,8 +87,10 @@ interface ErrorPageProps {
 export const ErrorPage: React.FC<ErrorPageProps> = ({
   variant = '404',
   onGoBack = () => window.history.back(),
-  onBackToHome = () => (window.location.href = '/'),
-  onLearnMore = () => console.log('Learn more clicked'),
+  onBackToHome = () => {
+    window.location.href = '/';
+  },
+  onLearnMore,
 }) => {
   const content = errorContent[variant];
 
@@ -101,30 +103,24 @@ export const ErrorPage: React.FC<ErrorPageProps> = ({
         onBackToHome();
         break;
       case 'Learn more':
-        onLearnMore();
+        onLearnMore?.();
         break;
       default:
-        console.log(`${buttonText} clicked`);
+        break;
     }
   };
 
   return (
     <div className={errorPageVariants({ variant })}>
       <div className="max-w-md mx-auto">
-        {/* Error Code */}
         <h1 className={errorCodeVariants({ variant })}>{variant}</h1>
-
-        {/* Error Title */}
         <h2 className="text-2xl md:text-3xl font-bold mb-4">{content.title}</h2>
-
-        {/* Error Description */}
         <p className="text-lg opacity-80 mb-8 leading-relaxed">{content.description}</p>
-
-        {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          {content.buttons.map((button, index) => (
+          {content.buttons.map((button) => (
             <button
-              key={index}
+              key={button.text}
+              type="button"
               onClick={() => handleButtonClick(button.text)}
               className={buttonVariants({ variant: button.variant })}
             >

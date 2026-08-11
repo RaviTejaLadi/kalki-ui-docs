@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils';
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef, useEffect, useId, useState } from 'react';
 
 const switchVariants = cva(
   `relative inline-flex flex-shrink-0 cursor-pointer rounded-full border-2 
@@ -96,6 +96,7 @@ interface SwitchProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, Var
   className?: string;
   label?: string;
   checked?: boolean;
+  defaultChecked?: boolean;
   onCheckedChange?: (checked: boolean) => void;
 }
 
@@ -104,34 +105,46 @@ const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
     {
       className = '',
       label,
-      checked = false,
+      checked,
+      defaultChecked = false,
       onCheckedChange,
       disabled = false,
       variant = 'primary',
       size = 'md',
+      id,
       ...props
     },
     ref
   ) => {
-    const [isChecked, setIsChecked] = useState(checked);
+    const isControlled = checked !== undefined;
+    const [uncontrolledChecked, setUncontrolledChecked] = useState(defaultChecked);
+    const isChecked = isControlled ? checked : uncontrolledChecked;
+    const generatedId = useId();
+    const switchId = id ?? generatedId;
+
+    useEffect(() => {
+      if (isControlled) return;
+      setUncontrolledChecked(defaultChecked);
+    }, [defaultChecked, isControlled]);
 
     const handleChange = () => {
       if (disabled) return;
 
       const newValue = !isChecked;
-      setIsChecked(newValue);
-
-      if (onCheckedChange) {
-        onCheckedChange(newValue);
+      if (!isControlled) {
+        setUncontrolledChecked(newValue);
       }
+      onCheckedChange?.(newValue);
     };
 
     return (
       <div className="flex items-center space-x-2">
         <button
           type="button"
+          id={switchId}
           role="switch"
           aria-checked={isChecked}
+          aria-label={label ? undefined : props['aria-label'] ?? 'Toggle'}
           data-state={isChecked ? 'checked' : 'unchecked'}
           className={cn(switchVariants({ variant, size, checked: isChecked, className }))}
           onClick={handleChange}
@@ -142,7 +155,10 @@ const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
           <span aria-hidden="true" className={thumbVariants({ size, checked: isChecked })} />
         </button>
         {label && (
-          <label className="text-sm text-muted-foreground font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+          <label
+            htmlFor={switchId}
+            className="text-sm text-muted-foreground font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+          >
             {label}
           </label>
         )}

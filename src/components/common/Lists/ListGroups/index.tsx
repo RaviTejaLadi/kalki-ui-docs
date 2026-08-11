@@ -1,34 +1,37 @@
-import React, { createContext, forwardRef, useContext } from 'react';
+import React, { createContext, forwardRef, useContext, KeyboardEvent } from 'react';
 import { cn } from '@/utils';
 import { cva, VariantProps } from 'class-variance-authority';
 import { ChevronRight } from 'lucide-react';
 
 // #region listGroupVariants
-const listGroupVariants = cva('flex flex-col rounded-md shadow-xs overflow-hidden bg-white border', {
-  variants: {
-    size: {
-      sm: 'text-sm',
-      md: 'text-base',
-      lg: 'text-lg',
-      xl: 'text-xl',
-      xxl: 'text-2xl',
+const listGroupVariants = cva(
+  'flex flex-col rounded-md shadow-xs overflow-hidden bg-white dark:bg-background border dark:border-gray-200/10',
+  {
+    variants: {
+      size: {
+        sm: 'text-sm',
+        md: 'text-base',
+        lg: 'text-lg',
+        xl: 'text-xl',
+        xxl: 'text-2xl',
+      },
+      variant: {
+        primary: 'border-blue-200 dark:border-blue-200/20',
+        secondary: 'border-gray-200 dark:border-gray-200/10',
+        success: 'border-green-200 dark:border-green-200/20',
+        danger: 'border-red-200 dark:border-red-200/20',
+        warning: 'border-yellow-200 dark:border-yellow-200/20',
+        info: 'border-cyan-200 dark:border-cyan-200/20',
+        light: 'border-gray-100 dark:border-gray-200/10',
+        dark: 'border-gray-700 bg-gray-800',
+      },
     },
-    variant: {
-      primary: 'border-blue-200',
-      secondary: 'border-gray-200',
-      success: 'border-green-200',
-      danger: 'border-red-200',
-      warning: 'border-yellow-200',
-      info: 'border-cyan-200',
-      light: 'border-gray-100',
-      dark: 'border-gray-700 bg-gray-800',
+    defaultVariants: {
+      size: 'sm',
+      variant: 'primary',
     },
-  },
-  defaultVariants: {
-    size: 'sm',
-    variant: 'primary',
-  },
-});
+  }
+);
 
 // #endregion
 
@@ -63,24 +66,26 @@ interface ListGroupItemProps {
 
 // #region constants
 const itemVariants: Record<VariantType, string> = {
-  primary: 'hover:bg-blue-50 focus:bg-blue-100 active:bg-blue-200',
-  secondary: 'hover:bg-gray-50 focus:bg-gray-100 active:bg-gray-200',
-  success: 'hover:bg-green-50 focus:bg-green-100 active:bg-green-200',
-  danger: 'hover:bg-red-50 focus:bg-red-100 active:bg-red-200',
-  warning: 'hover:bg-yellow-50 focus:bg-yellow-100 active:bg-yellow-200',
-  info: 'hover:bg-cyan-50 focus:bg-cyan-100 active:bg-cyan-200',
-  light: 'hover:bg-gray-50 focus:bg-gray-100 active:bg-gray-200',
+  primary: 'hover:bg-blue-50 focus:bg-blue-100 active:bg-blue-200 dark:hover:bg-blue-950/40 dark:focus:bg-blue-950/60',
+  secondary: 'hover:bg-gray-50 focus:bg-gray-100 active:bg-gray-200 dark:hover:bg-gray-800/60 dark:focus:bg-gray-800',
+  success:
+    'hover:bg-green-50 focus:bg-green-100 active:bg-green-200 dark:hover:bg-green-950/40 dark:focus:bg-green-950/60',
+  danger: 'hover:bg-red-50 focus:bg-red-100 active:bg-red-200 dark:hover:bg-red-950/40 dark:focus:bg-red-950/60',
+  warning:
+    'hover:bg-yellow-50 focus:bg-yellow-100 active:bg-yellow-200 dark:hover:bg-yellow-950/40 dark:focus:bg-yellow-950/60',
+  info: 'hover:bg-cyan-50 focus:bg-cyan-100 active:bg-cyan-200 dark:hover:bg-cyan-950/40 dark:focus:bg-cyan-950/60',
+  light: 'hover:bg-gray-50 focus:bg-gray-100 active:bg-gray-200 dark:hover:bg-gray-800/60 dark:focus:bg-gray-800',
   dark: 'hover:bg-gray-700 focus:bg-gray-600 active:bg-gray-500',
 };
 
 const textVariants: Record<VariantType, string> = {
-  primary: 'text-blue-800',
-  secondary: 'text-gray-800',
-  success: 'text-green-800',
-  danger: 'text-red-800',
-  warning: 'text-yellow-800',
-  info: 'text-teal-800',
-  light: 'text-gray-800',
+  primary: 'text-blue-800 dark:text-blue-200',
+  secondary: 'text-gray-800 dark:text-gray-200',
+  success: 'text-green-800 dark:text-green-200',
+  danger: 'text-red-800 dark:text-red-200',
+  warning: 'text-yellow-800 dark:text-yellow-200',
+  info: 'text-teal-800 dark:text-teal-200',
+  light: 'text-gray-800 dark:text-gray-200',
   dark: 'text-white',
 };
 // #endregion
@@ -123,6 +128,14 @@ const ListGroupItem = forwardRef<HTMLLIElement, ListGroupItemProps>(
   ({ icon, label, description, disabled, onClick, className, ...props }, ref) => {
     const { variant, showArrows, showDividers } = useListGroup();
 
+    const handleKeyDown = (e: KeyboardEvent<HTMLLIElement>) => {
+      if (disabled || !onClick) return;
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        onClick();
+      }
+    };
+
     return (
       <li
         ref={ref}
@@ -132,13 +145,16 @@ const ListGroupItem = forwardRef<HTMLLIElement, ListGroupItemProps>(
           itemVariants[variant],
           textVariants[variant],
           disabled && 'opacity-50 cursor-not-allowed pointer-events-none',
+          onClick && !disabled && 'cursor-pointer',
           showDividers && 'border-b',
-          variant === 'dark' ? 'border-gray-700' : 'border-gray-200',
+          variant === 'dark' ? 'border-gray-700' : 'border-gray-200 dark:border-gray-200/10',
           className
         )}
         onClick={!disabled ? onClick : undefined}
-        tabIndex={!disabled ? 0 : -1}
-        role="button"
+        onKeyDown={handleKeyDown}
+        tabIndex={!disabled && onClick ? 0 : -1}
+        role={onClick ? 'button' : undefined}
+        aria-disabled={disabled || undefined}
         {...props}
       >
         {icon && <span className="flex-shrink-0 mr-2 w-5 h-5">{icon}</span>}
@@ -146,7 +162,10 @@ const ListGroupItem = forwardRef<HTMLLIElement, ListGroupItemProps>(
           <div className="font-medium truncate">{label}</div>
           {description && (
             <div
-              className={cn('text-xs opacity-75 line-clamp-1', variant === 'dark' ? 'text-gray-300' : 'text-gray-600')}
+              className={cn(
+                'text-xs opacity-75 line-clamp-1',
+                variant === 'dark' ? 'text-gray-300' : 'text-gray-600 dark:text-gray-400'
+              )}
             >
               {description}
             </div>
@@ -154,6 +173,7 @@ const ListGroupItem = forwardRef<HTMLLIElement, ListGroupItemProps>(
         </div>
         {showArrows && !disabled && (
           <ChevronRight
+            aria-hidden="true"
             className={cn('w-4 h-4 flex-shrink-0 transition-transform duration-200', 'group-hover:translate-x-1')}
           />
         )}
@@ -167,7 +187,7 @@ ListGroupItem.displayName = 'ListGroupItem';
 
 // #region exports
 export default Object.assign(
-  ListGroups as React.ForwardRefExoticComponent<ListGroupProps & React.RefAttributes<HTMLOListElement>>,
+  ListGroups as React.ForwardRefExoticComponent<ListGroupProps & React.RefAttributes<HTMLUListElement>>,
   {
     Item: ListGroupItem,
   }
