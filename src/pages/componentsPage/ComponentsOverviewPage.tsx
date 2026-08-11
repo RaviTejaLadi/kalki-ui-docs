@@ -4,7 +4,9 @@ import Link from '@/components/common/Link';
 import Separator from '@/components/common/Separator';
 import Card, { CardContent, CardDescription, CardTitle, CardHeader } from '@/components/common/Card';
 import { categorizedRoutesComponents } from '@/components/Layout/ComponentsLayout/categorizedRoutesComponents';
-import { Input } from '@/components/common/Form';
+
+const searchInputClassName =
+  'pl-3 w-[25rem] h-10 rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring dark:border-gray-200/10';
 
 const ComponentsOverviewPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -40,12 +42,13 @@ const ComponentsOverviewPage: React.FC = () => {
           </SectionHeader.SubTitle>
         </SectionHeader>{' '}
         <div className="my-6 ">
-          <Input
+          <input
             type="search"
             placeholder="Search components..."
-            className="pl-10 w-[25rem] "
+            className={searchInputClassName}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
+            aria-label="Search components"
           />
         </div>
       </div>

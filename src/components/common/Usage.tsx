@@ -15,9 +15,6 @@ import ContentScrollable from './ContentScrollable';
 import Drawer from './Drawer';
 import { Fragment, useState } from 'react';
 import Figure from './Figure';
-import Form from './Form';
-import LabelExt from './Form/LabelExt';
-import { InputField } from './Form/InputField';
 import FullScreenToggle from './FullScreenToggle';
 import Gallery from './Gallery';
 
@@ -287,14 +284,6 @@ const Usage = () => {
         </Figure>
       </Box>
 
-      <Box outlined rounded padding="10px" margin="10px">
-        <p>Form</p>
-        <Form onSubmit={() => console.log('Form submitted')}>
-          <LabelExt label="Name" htmlFor="name" info="Name info" />
-          <Form.Input name="test" size="sm" type="tel" placeholder="Text input" />
-          <InputField name="test" size="sm" placeholder="placeholder" label="test" info="text2" />
-        </Form>
-      </Box>
       <Box outlined rounded padding="10px" margin="10px">
         <p>FullScreenToggle</p>
         <FullScreenToggle />

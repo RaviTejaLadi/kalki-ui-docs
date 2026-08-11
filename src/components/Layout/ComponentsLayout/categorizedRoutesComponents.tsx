@@ -2,9 +2,6 @@ import {
   LayoutGrid,
   Box,
   AlignVerticalSpaceAround,
-  FileInput,
-  Radio,
-  CheckSquare,
   ChevronDown,
   UserCircle2,
   Tag,
@@ -19,7 +16,6 @@ import {
   BarChart,
   AlertTriangle,
   LayoutPanelTop,
-  // AlignCenter,
   Loader2,
   Layers,
   ScrollText,
@@ -36,14 +32,12 @@ import {
   GalleryThumbnails,
   Puzzle,
   FileQuestion,
-  TextCursorInput,
-  Space,
   Pilcrow,
-  Rows4,
   ListOrdered,
+  Rows4,
 } from 'lucide-react';
 
-import { DocumentIcon, ViewColumnsIcon, DocumentTextIcon } from '@heroicons/react/24/outline';
+import { ViewColumnsIcon } from '@heroicons/react/24/outline';
 import React from 'react';
 
 interface CategoryRoutesComponentList {
@@ -189,111 +183,6 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
     ],
   },
   {
-    id: 'forms',
-    category: 'Forms',
-    Icon: FileInput,
-    components: [
-      {
-        label: 'Checkbox',
-        description:
-          'Customizable boolean input control for selecting multiple options with enhanced accessibility and validation support.',
-        path: '/components/checkbox',
-        Icon: CheckSquare,
-      },
-      {
-        label: 'Dropdown',
-        description:
-          'Advanced selection interface allowing users to choose from a list of options with support for search, grouping, and dynamic content rendering.',
-        path: '/components/dropdown',
-        Icon: ChevronDown,
-      },
-      {
-        label: 'Form',
-        description:
-          'Comprehensive form management system providing validation, state management, submission handling, and cross-field interaction capabilities.',
-        path: '/components/form',
-        Icon: DocumentIcon,
-      },
-      {
-        label: 'Input',
-        description:
-          'Flexible text input component supporting various input types, validation, masking, and advanced formatting options.',
-        path: '/components/input',
-        Icon: TextCursorInput,
-      },
-      {
-        label: 'Radio',
-        description:
-          'Mutually exclusive selection control for choosing a single option from a group with enhanced styling and accessibility features.',
-        path: '/components/radio',
-        Icon: Radio,
-      },
-      {
-        label: 'Select',
-        description:
-          'Advanced selection component with support for complex data sources, custom rendering, and advanced filtering mechanisms.',
-        path: '/components/select',
-        Icon: Space,
-      },
-      {
-        label: 'Textarea',
-        description:
-          'Multi-line text input component with advanced features like auto-resizing, validation, and rich text support.',
-        path: '/components/textarea',
-        Icon: DocumentTextIcon,
-      },
-      {
-        label: 'Slider',
-        description:
-          'Range input component for selecting numeric values within a defined interval using a draggable thumb.',
-        path: '/components/slider',
-        Icon: Rows4,
-      },
-      {
-        label: 'Switch',
-        description:
-          'Toggle control component for representing boolean on/off states with multiple visual variants and sizes.',
-        path: '/components/switch',
-        Icon: CreditCard,
-      },
-      {
-        label: 'File Input',
-        description:
-          'Styled file upload control for selecting single or multiple files with integrated validation and error messaging.',
-        path: '/components/file-input',
-        Icon: FileInput,
-      },
-      {
-        label: 'Input Field',
-        description:
-          'High-level field component combining label, tooltip, input and error message into a single accessible unit.',
-        path: '/components/input-field',
-        Icon: TextCursorInput,
-      },
-    ],
-  },
-  {
-    id: 'layout',
-    category: 'Layout',
-    Icon: LayoutGrid,
-    components: [
-      {
-        label: 'Box',
-        description:
-          'Fundamental layout primitive for creating flexible, responsive container components with configurable spacing and alignment.',
-        path: '/components/box',
-        Icon: Box,
-      },
-      {
-        label: 'Stack',
-        description:
-          'Flexible layout component for creating responsive vertical or horizontal element arrangements with intelligent spacing and alignment controls.',
-        path: '/components/stack',
-        Icon: AlignVerticalSpaceAround,
-      },
-    ],
-  },
-  {
     id: 'navigation',
     category: 'Navigation',
     Icon: NavigationIcon,
@@ -320,6 +209,13 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         Icon: SidebarClose,
       },
       {
+        label: 'Dropdown',
+        description:
+          'Advanced selection interface allowing users to choose from a list of options with support for search, grouping, and dynamic content rendering.',
+        path: '/components/dropdown',
+        Icon: ChevronDown,
+      },
+      {
         label: 'Link',
         description:
           'Accessible navigation link component for in-app routing and external destinations with consistent styling.',
@@ -332,6 +228,27 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
           'Flexible content organization component supporting dynamic, accessible tab interfaces with responsive design and keyboard navigation.',
         path: '/components/tabs',
         Icon: CreditCard,
+      },
+    ],
+  },
+  {
+    id: 'layout',
+    category: 'Layout',
+    Icon: LayoutGrid,
+    components: [
+      {
+        label: 'Box',
+        description:
+          'Fundamental layout primitive for creating flexible, responsive container components with configurable spacing and alignment.',
+        path: '/components/box',
+        Icon: Box,
+      },
+      {
+        label: 'Stack',
+        description:
+          'Flexible layout component for creating responsive vertical or horizontal element arrangements with intelligent spacing and alignment controls.',
+        path: '/components/stack',
+        Icon: AlignVerticalSpaceAround,
       },
     ],
   },

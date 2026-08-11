@@ -39,28 +39,6 @@ export const categorizedComponents: CategorizedComponents[] = [
     ],
   },
   {
-    id: 'forms',
-    category: 'Forms',
-    components: [
-      {
-        label: 'Forms',
-        description: 'Components and utilities for creating and managing user input fields and form submissions.',
-        path: '/form',
-      },
-      { label: 'Input', description: '', path: '/input' },
-      { label: 'Select', description: '', path: '/select' },
-      { label: 'Radio', description: '', path: '/radio' },
-      { label: 'Checkbox', description: '', path: '/checkbox' },
-      { label: 'Textarea', description: '', path: '/textarea' },
-      {
-        label: 'Dropdown',
-        description:
-          'A UI element that allows users to select one option from a list of choices that appears when activated.',
-        path: '/dropdown',
-      },
-    ],
-  },
-  {
     id: 'components',
     category: 'Components',
     components: [
@@ -78,6 +56,12 @@ export const categorizedComponents: CategorizedComponents[] = [
         label: 'Tag',
         description: 'Label-like components used for categorization, filtering, or displaying metadata.',
         path: '/tag',
+      },
+      {
+        label: 'Dropdown',
+        description:
+          'A UI element that allows users to select one option from a list of choices that appears when activated.',
+        path: '/dropdown',
       },
       {
         label: 'Table',

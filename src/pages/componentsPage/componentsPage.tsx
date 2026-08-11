@@ -58,23 +58,11 @@ const ROUTES: RouteConfig[] = [
   { path: 'section-header', loader: () => import('./Surface/SectionHeaderPage') },
   { path: 'splitter', loader: () => import('./Surface/SplitterPage') },
 
-  // Forms
-  { path: 'checkbox', loader: () => import('./FormsPage/CheckboxPage') },
-  { path: 'dropdown', loader: () => import('./FormsPage/DropdownPage') },
-  { path: 'form', loader: () => import('./FormsPage/FormsPage') },
-  { path: 'input', loader: () => import('./FormsPage/InputPage') },
-  { path: 'radio', loader: () => import('./FormsPage/RadioPage') },
-  { path: 'select', loader: () => import('./FormsPage/SelectPage') },
-  { path: 'textarea', loader: () => import('./FormsPage/TextareaPage') },
-  { path: 'slider', loader: () => import('./FormsPage/SliderPage') },
-  { path: 'file-input', loader: () => import('./FormsPage/FileInputPage') },
-  { path: 'switch', loader: () => import('./FormsPage/SwitchPage') },
-  { path: 'input-field', loader: () => import('./FormsPage/InputFieldPage') },
-
   // Navigation
   { path: 'breadcrumb', loader: () => import('./Navigation/BreadcrumbPage') },
   { path: 'carousel', loader: () => import('./Navigation/CarouselPage') },
   { path: 'drawer', loader: () => import('./Navigation/DrawerPage') },
+  { path: 'dropdown', loader: () => import('./Navigation/DropdownPage') },
   { path: 'link', loader: () => import('./Navigation/LinkPage') },
   { path: 'tabs', loader: () => import('./Navigation/TabsPage') },
 

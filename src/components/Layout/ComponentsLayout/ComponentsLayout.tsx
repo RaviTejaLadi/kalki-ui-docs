@@ -15,7 +15,9 @@ import { categorizedRoutesComponents } from './categorizedRoutesComponents';
 import { cn } from '@/utils';
 import Link from '@/components/common/Link';
 import { useState, useMemo } from 'react';
-import { Input } from '@/components/common/Form';
+
+const searchInputClassName =
+  'w-[18rem] h-8 rounded-md border border-input bg-background px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring dark:border-gray-200/10';
 
 export const AppSideBar = ({ className }: { className?: string }) => {
   const location = useLocation();
@@ -43,12 +45,13 @@ export const AppSideBar = ({ className }: { className?: string }) => {
     <Sidebar className={cn(className, 'w-[20rem]')}>
       <SidebarBody>
         <div className="p-4 ">
-          <Input
+          <input
             type="search"
             placeholder="Search components..."
-            className=" w-[18rem]"
+            className={searchInputClassName}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
+            aria-label="Search components"
           />
         </div>
         <SidebarGroup>

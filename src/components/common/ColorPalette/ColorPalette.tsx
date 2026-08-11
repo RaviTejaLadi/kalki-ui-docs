@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import { Copy, Check, Search } from 'lucide-react';
 import { colors, getColorValues } from './colorUtils';
-import { Input } from '../Form';
 
 const ColorsWatch: React.FC<{ shade: { value: number; color: string } }> = ({ shade }) => {
   const [copied, setCopied] = useState(false);
@@ -55,6 +54,10 @@ const ColorPalette: React.FC = () => {
     return color.shades.some((shade) => shade.color.toLowerCase().includes(searchLower));
   });
 
+  const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  };
+
   return (
     <div className="px-5">
       <div className="flex items-end justify-between">
@@ -66,13 +69,14 @@ const ColorPalette: React.FC = () => {
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <Search className="size-4 text-muted-foreground" />
           </div>
-          <Input
+          <input
             name="search"
             type="search"
             placeholder="Search by color name or Tailwind class..."
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="block text-muted-foreground placeholder:text-xs w-[30rem] pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            onChange={handleSearchChange}
+            aria-label="Search colors"
+            className="block text-muted-foreground placeholder:text-xs w-[30rem] pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-200/10 rounded-md leading-5 bg-background placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
           />
         </div>
       </div>

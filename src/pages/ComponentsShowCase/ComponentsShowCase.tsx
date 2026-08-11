@@ -1,5 +1,4 @@
 import React, { useState, useMemo } from 'react';
-import { Input } from '@/components/common/Form';
 import { PreviewCard } from './PreviewCard';
 import { ButtonPreviews } from './previews/ButtonPreviews';
 import { CardPreviews } from './previews/CardPreviews';
@@ -17,7 +16,6 @@ import { DivPreviews } from './previews/DivPreview';
 import { DotSeparatorPreviews } from './previews/DotSeparatorPreview';
 import { EmptyPreviews } from './previews/EmptyPreview';
 import { FigurePreviews } from './previews/FigurePreview';
-import { FormPreviews } from './previews/FormPreview';
 import { FullScreenTogglePreviews } from './previews/FullScreenTogglePreview';
 import { GalleryPreviews } from './previews/GalleryPreview';
 import { HighlighterPreviews } from './previews/HighlighterPreview';
@@ -134,11 +132,6 @@ const components: Component[] = [
     name: 'Figure',
     description: 'Figure with optional caption for images or diagrams.',
     preview: FigurePreviews.basic,
-  },
-  {
-    name: 'Form',
-    description: 'Form components: inputs, labels, checkboxes, selects, and more.',
-    preview: FormPreviews.basic,
   },
   {
     name: 'FullScreenToggle',
@@ -306,13 +299,13 @@ const ComponentsShowCase: React.FC = () => {
         </div>
 
         <div className="mt-8 max-w-xl mx-auto">
-          <Input
+          <input
             type="search"
             placeholder="Search components by name or description..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full"
-            size="md"
+            aria-label="Search components"
+            className="w-full h-10 rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring dark:border-gray-200/10"
           />
         </div>
 
