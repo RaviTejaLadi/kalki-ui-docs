@@ -1,12 +1,5 @@
 import Button from '@/components/common/Button';
-import {
-  Empty,
-  EmptyContent,
-  EmptyDescription,
-  EmptyHeader,
-  EmptyMedia,
-  EmptyTitle,
-} from '@/components/under-development/Empty';
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
 import { Ban, Clock, Home } from 'lucide-react';
 
 const TooManyRequests429 = () => {

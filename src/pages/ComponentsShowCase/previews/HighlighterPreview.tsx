@@ -1,4 +1,4 @@
-import Highlighter from '@/components/under-development/Highlighter';
+import Highlighter from '@/components/common/Highlighter';
 
 export const HighlighterPreviews = {
   basic: (

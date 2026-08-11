@@ -1,4 +1,4 @@
-import { Skeleton } from '@/components/under-development/Skeleton';
+import { Skeleton } from '@/components/common/Skeleton';
 
 export const SkeletonPreviews = {
   basic: (

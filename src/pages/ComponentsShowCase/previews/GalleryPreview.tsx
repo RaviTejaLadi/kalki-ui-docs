@@ -1,4 +1,4 @@
-import Gallery from '@/components/under-development/Gallery';
+import Gallery from '@/components/common/Gallery';
 import Image from '@/components/common/Image';
 
 export const GalleryPreviews = {

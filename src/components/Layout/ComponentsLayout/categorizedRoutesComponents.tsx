@@ -35,6 +35,12 @@ import {
   Pilcrow,
   ListOrdered,
   Rows4,
+  ToggleLeft,
+  Inbox,
+  RectangleHorizontal,
+  Images,
+  ListTree,
+  Text,
 } from 'lucide-react';
 
 import { ViewColumnsIcon } from '@heroicons/react/24/outline';
@@ -88,6 +94,13 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
           'A responsive horizontal navigation component containing a group of related links or actions, optimized for clear user navigation and interaction.',
         path: '/components/link-bar',
         Icon: BarChart,
+      },
+      {
+        label: 'Toggle',
+        description:
+          'Pressable toggle controls and toggle groups for single or multiple option selection with outline and size variants.',
+        path: '/components/toggle',
+        Icon: ToggleLeft,
       },
     ],
   },
@@ -160,6 +173,13 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         Icon: AlertTriangle,
       },
       {
+        label: 'Empty',
+        description:
+          'Composable empty-state surfaces for missing data, no-results, and first-run experiences with optional media and actions.',
+        path: '/components/empty',
+        Icon: Inbox,
+      },
+      {
         label: 'Modal',
         description:
           'Programmatically controlled overlay windows that interrupt the main application workflow, requiring explicit user interaction and supporting complex interaction patterns.',
@@ -173,6 +193,12 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
       //   path: '/components/popover',
       //   Icon: AlignCenter,
       // },
+      {
+        label: 'Skeleton',
+        description: 'Animated loading placeholders that reserve layout space while content is fetched or processed.',
+        path: '/components/skeleton',
+        Icon: RectangleHorizontal,
+      },
       {
         label: 'Spinner',
         description:
@@ -223,11 +249,24 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         Icon: Link,
       },
       {
+        label: 'Stepper',
+        description:
+          'Vertical step indicator for guides, onboarding, and sequential documentation with optional descriptions and code blocks.',
+        path: '/components/stepper',
+        Icon: ListTree,
+      },
+      {
         label: 'Tabs',
         description:
           'Flexible content organization component supporting dynamic, accessible tab interfaces with responsive design and keyboard navigation.',
         path: '/components/tabs',
         Icon: CreditCard,
+      },
+      {
+        label: 'Text Carousel',
+        description: 'Lightweight text announcement carousel with previous/next controls and optional autoplay.',
+        path: '/components/text-carousel',
+        Icon: Text,
       },
     ],
   },
@@ -307,6 +346,13 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
         Icon: Image,
       },
       {
+        label: 'Gallery',
+        description:
+          'Flexible media gallery layouts supporting grid, masonry, carousel, asymmetric, and compact patterns.',
+        path: '/components/gallery',
+        Icon: Images,
+      },
+      {
         label: 'JSON Viewer',
         description:
           'Interactive data exploration tool for rendering structured JSON data with syntax highlighting, collapsible sections, and copy functionality.',
@@ -335,17 +381,17 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
     Icon: Type,
     components: [
       {
-        label: 'Text Highlighter',
-        description:
-          'Advanced text annotation utility for dynamically marking and styling text segments with customizable highlighting strategies.',
-        path: '/components/text-highlighter',
-        Icon: Highlighter,
-      },
-      {
         label: 'Heading',
         description: 'Headings are titles or subtitles that you want to display on a webpage.',
         path: '/components/heading',
         Icon: Heading,
+      },
+      {
+        label: 'Highlighter',
+        description:
+          'Highlight specific words or phrases in a string with customizable color, variant, and emphasis styles.',
+        path: '/components/highlighter',
+        Icon: Highlighter,
       },
       {
         label: 'Paragraph',
@@ -353,6 +399,13 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
           'A paragraph always starts on a new line, and browsers automatically add some white space (a margin) before and after a paragraph.',
         path: '/components/paragraph',
         Icon: Pilcrow,
+      },
+      {
+        label: 'Text Highlighter',
+        description:
+          'Advanced text annotation utility for dynamically marking and styling text segments with customizable highlighting strategies.',
+        path: '/components/text-highlighter',
+        Icon: Highlighter,
       },
     ],
   },

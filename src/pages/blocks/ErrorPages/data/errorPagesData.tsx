@@ -17,7 +17,7 @@ export const data: docsData[] = [
     code: `
 import { ArrowLeft, Home, Ghost } from 'lucide-react';
 import { cn } from '@/utils';
-import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/under-development/Empty';
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
 import Button from '@/components/common/Button';
 
 interface NotFound404Props {
@@ -79,7 +79,7 @@ export default function NotFound404({
   {
     title: 'InternalServerError500',
     code: `
-import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/under-development/Empty';
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
 import Button from '@/components/common/Button';
 import { Home, RefreshCw, ServerCrash } from 'lucide-react';
 
@@ -124,7 +124,7 @@ export default InternalServerError500;
     title: 'Forbidden403',
     code: `
 import Button from '@/components/common/Button';
-import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/under-development/Empty';
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
 import { Home, ShieldAlert } from 'lucide-react';
 
 const Forbidden403 = () => {
@@ -168,7 +168,7 @@ export default Forbidden403;
     title: 'ServiceUnavailable503',
     code: `
 import Button from '@/components/common/Button';
-import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/under-development/Empty';
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
 import { RefreshCw, WifiOff } from 'lucide-react';
 
 const ServiceUnavailable503 = () => {
@@ -213,7 +213,7 @@ export default ServiceUnavailable503;
     title: 'Unauthorized401',
     code: `
 import Button from '@/components/common/Button';
-import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/under-development/Empty';
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
 import { Home, Lock } from 'lucide-react';
 
 const Unauthorized401 = () => {
@@ -256,7 +256,7 @@ export default Unauthorized401;
     title: 'UnderMaintenance503',
     code: `
 import Button from '@/components/common/Button';
-import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/under-development/Empty';
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
 import { Construction, RefreshCw } from 'lucide-react';
 
 const UnderMaintenance503 = () => {
@@ -300,7 +300,7 @@ export default UnderMaintenance503;
     title: 'RequestTimeout408',
     code: `
 import Button from '@/components/common/Button';
-import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/under-development/Empty';
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
 import { Clock, Home, RefreshCw } from 'lucide-react';
 
 const RequestTimeout408 = () => {
@@ -345,7 +345,7 @@ export default RequestTimeout408;
     title: 'TooManyRequests429',
     code: `
 import Button from '@/components/common/Button';
-import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/under-development/Empty';
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
 import { Ban, Clock, Home } from 'lucide-react';
 
 const TooManyRequests429 = () => {
@@ -390,7 +390,7 @@ export default TooManyRequests429;
     title: 'BadGateway502',
     code: `
 import Button from '@/components/common/Button';
-import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/under-development/Empty';
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
 import { AlertCircle, RefreshCw } from 'lucide-react';
 
 const BadGateway502 = () => {
@@ -434,7 +434,7 @@ export default BadGateway502;
     title: 'Gone410',
     code: `
 import Button from '@/components/common/Button';
-import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/under-development/Empty';
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
 import { CloudOff, Home } from 'lucide-react';
 
 const Gone410 = () => {
@@ -478,7 +478,7 @@ export default Gone410;
     title: 'GatewayTimeout504',
     code: `
 import Button from '@/components/common/Button';
-import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/under-development/Empty';
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
 import { Home, RefreshCw, Zap } from 'lucide-react';
 
 const GatewayTimeout504 = () => {

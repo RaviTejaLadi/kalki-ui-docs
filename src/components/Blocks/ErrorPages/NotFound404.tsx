@@ -1,13 +1,6 @@
 import { ArrowLeft, Home, Ghost } from 'lucide-react';
 import { cn } from '@/utils';
-import {
-  Empty,
-  EmptyContent,
-  EmptyDescription,
-  EmptyHeader,
-  EmptyMedia,
-  EmptyTitle,
-} from '@/components/under-development/Empty';
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
 import Button from '@/components/common/Button';
 
 interface NotFound404Props {

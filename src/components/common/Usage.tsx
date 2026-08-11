@@ -16,7 +16,7 @@ import Drawer from './Drawer';
 import { Fragment, useState } from 'react';
 import Figure from './Figure';
 import FullScreenToggle from './FullScreenToggle';
-import Gallery from '@/components/under-development/Gallery';
+import Gallery from '@/components/common/Gallery';
 
 const Usage = () => {
   const [rightDrawer, setRightDrawer] = useState(false);

@@ -1,5 +1,5 @@
 import { SectionHeader } from '@/components/common/SectionHeader';
-import { Stepper } from '@/components/under-development/Stepper/Stepper';
+import { Stepper } from '@/components/common/Stepper';
 import { Tab, Tabs } from '@/components/common/Tabs';
 import {
   tsconfigAppJson,

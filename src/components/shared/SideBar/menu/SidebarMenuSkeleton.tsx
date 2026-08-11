@@ -1,5 +1,5 @@
 import React from 'react';
-import { Skeleton } from '@/components/under-development/Skeleton';
+import { Skeleton } from '@/components/common/Skeleton';
 
 export const SidebarMenuSkeleton: React.FC = () => {
   return (

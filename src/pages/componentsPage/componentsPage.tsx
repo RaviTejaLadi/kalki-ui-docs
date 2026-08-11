@@ -29,6 +29,7 @@ const ROUTES: RouteConfig[] = [
   { path: 'link-button', loader: () => import('./Buttons/LinkButtonPage') },
   { path: 'link-bar', loader: () => import('./Buttons/LinkBarPage') },
   { path: 'close-button', loader: () => import('./Buttons/CloseButtonPage') },
+  { path: 'toggle', loader: () => import('./Buttons/TogglePage') },
 
   // Data Display
   { path: 'avatar', loader: () => import('./DataDisplay/AvatarPage') },
@@ -41,10 +42,12 @@ const ROUTES: RouteConfig[] = [
 
   // Feedback
   { path: 'alert', loader: () => import('./Feedback/AlertPage') },
+  { path: 'empty', loader: () => import('./Feedback/EmptyPage') },
   { path: 'modal', loader: () => import('./Feedback/ModalPage') },
   // Keep old path as redirect alias via duplicate route for bookmarks
   { path: 'model', loader: () => import('./Feedback/ModalPage') },
   { path: 'popover', loader: () => import('./Feedback/PopoverPage') },
+  { path: 'skeleton', loader: () => import('./Feedback/SkeletonPage') },
   { path: 'spinner', loader: () => import('./Feedback/SpinnerPage') },
 
   // Surface
@@ -53,6 +56,7 @@ const ROUTES: RouteConfig[] = [
   { path: 'cards', loader: () => import('./Surface/CardsPage') },
   { path: 'content-scrollable', loader: () => import('./Surface/ContentScrollablePage') },
   { path: 'figure', loader: () => import('./Surface/FigurePage') },
+  { path: 'gallery', loader: () => import('./Surface/GalleryPage') },
   { path: 'grid-background', loader: () => import('./Surface/GridBackgroundPage') },
   { path: 'json-viewer', loader: () => import('./Surface/JsonViewerPage') },
   { path: 'section-header', loader: () => import('./Surface/SectionHeaderPage') },
@@ -64,11 +68,14 @@ const ROUTES: RouteConfig[] = [
   { path: 'drawer', loader: () => import('./Navigation/DrawerPage') },
   { path: 'dropdown', loader: () => import('./Navigation/DropdownPage') },
   { path: 'link', loader: () => import('./Navigation/LinkPage') },
+  { path: 'stepper', loader: () => import('./Navigation/StepperPage') },
   { path: 'tabs', loader: () => import('./Navigation/TabsPage') },
+  { path: 'text-carousel', loader: () => import('./Navigation/TextCarouselPage') },
 
   // Typography
   { path: 'typography', loader: () => import('./Typo/TypographyPage') },
   { path: 'heading', loader: () => import('./Typo/HeadingPage') },
+  { path: 'highlighter', loader: () => import('./Typo/HighlighterPage') },
   { path: 'paragraph', loader: () => import('./Typo/ParagraphPage') },
   { path: 'text-highlighter', loader: () => import('./Typo/TextHighlighterPage') },
 

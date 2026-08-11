@@ -35,6 +35,13 @@ const TypographyPage = () => {
             body text with size and decoration variants.
           </li>
           <li>
+            <Link to="/components/highlighter" className="text-primary underline underline-offset-4">
+              Highlighter
+            </Link>
+            {' — '}
+            highlight words in a string with color and variant styles.
+          </li>
+          <li>
             <Link to="/components/text-highlighter" className="text-primary underline underline-offset-4">
               Text Highlighter
             </Link>
