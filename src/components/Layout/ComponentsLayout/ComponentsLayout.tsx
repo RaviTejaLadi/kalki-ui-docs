@@ -13,7 +13,7 @@ import Sidebar, {
 import { MessageSquare } from 'lucide-react';
 import { categorizedRoutesComponents } from './categorizedRoutesComponents';
 import { cn } from '@/utils';
-import Link from '@/components/common/Link';
+import { Link } from 'kalki-ui';
 import { useState, useMemo } from 'react';
 
 const searchInputClassName =
@@ -78,8 +78,7 @@ export const AppSideBar = ({ className }: { className?: string }) => {
                       icon={Icon ? <Icon className="size-4 text-[var(--icon-color)]" /> : null}
                       className={cn(
                         'hover:bg-muted/70 dark:hover:bg-muted/40',
-                        isActive &&
-                          'border border-border bg-muted font-medium text-foreground shadow-none'
+                        isActive && 'border border-border bg-muted font-medium text-foreground shadow-none'
                       )}
                     >
                       {label}

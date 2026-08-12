@@ -1,4 +1,4 @@
-import { Skeleton } from '@/components/common/Skeleton';
+import { Skeleton } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 export const columns = ['Name', 'Type', 'Default', 'Description'];

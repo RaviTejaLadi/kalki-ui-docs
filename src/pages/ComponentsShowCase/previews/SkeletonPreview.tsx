@@ -1,5 +1,4 @@
-import { Skeleton } from '@/components/common/Skeleton';
-
+import { Skeleton } from 'kalki-ui';
 export const SkeletonPreviews = {
   basic: (
     <div className="space-y-2 w-full max-w-[200px]">

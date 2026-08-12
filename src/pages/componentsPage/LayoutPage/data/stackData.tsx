@@ -10,26 +10,25 @@ export const docs: docsData[] = [
     title: 'Basic Horizontal Stack',
     desc: 'A simple horizontal stack of items with default spacing.',
     code: `
-import { Stack, Box } from "kalki-ui";
-
+import { Stack, Box, StackItem } from "kalki-ui";
 export default function Example() {
   return (
     <Stack spacing={10}>
-      <Stack.Item>
+      <StackItem>
         <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
           Item 1
         </Box>
-      </Stack.Item>
-      <Stack.Item>
+      </StackItem>
+      <StackItem>
         <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
           Item 2
         </Box>
-      </Stack.Item>
-      <Stack.Item>
+      </StackItem>
+      <StackItem>
         <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
           Item 3
         </Box>
-      </Stack.Item>
+      </StackItem>
     </Stack>
   );
 }
@@ -40,26 +39,26 @@ export default function Example() {
     title: 'Vertical Stack with Custom Spacing',
     desc: 'A vertical stack of items with custom spacing.',
     code: `
-import { Stack, Box } from "kalki-ui";
+import { Stack, Box, StackItem } from "kalki-ui";
 
 export default function Example() {
   return (
     <Stack direction="column" spacing={20}>
-      <Stack.Item>
+      <StackItem>
         <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
           Item 1
         </Box>
-      </Stack.Item>
-      <Stack.Item>
+      </StackItem>
+      <StackItem>
         <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
           Item 2
         </Box>
-      </Stack.Item>
-      <Stack.Item>
+      </StackItem>
+      <StackItem>
         <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
           Item 3
         </Box>
-      </Stack.Item>
+      </StackItem>
     </Stack>
   );
 }
@@ -70,16 +69,16 @@ export default function Example() {
     title: 'Stack with Custom Alignment',
     desc: 'A stack with custom justification and alignment.',
     code: `
-import { Stack, Box } from "kalki-ui";
+import { Stack, Box, StackItem } from "kalki-ui";
 
 export default function Example() {
   return (
     <Stack justifyContent="center" alignItems="center" style={{ height: "200px", border: "1px solid #ccc" }}>
-      <Stack.Item>
+      <StackItem>
         <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
           Centered Item
         </Box>
-      </Stack.Item>
+      </StackItem>
     </Stack>
   );
 }
@@ -90,17 +89,17 @@ export default function Example() {
     title: 'Wrapped Stack',
     desc: 'A stack that wraps its items when they exceed the container width.',
     code: `
-import { Stack, Box } from "kalki-ui";
+import { Stack, Box, StackItem } from "kalki-ui";
 
 export default function Example() {
   return (
     <Stack flexWrap="wrap" spacing={10} style={{ maxWidth: "300px" }}>
       {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-        <Stack.Item key={item} style={{ padding: "10px" }}>
+        <StackItem key={item} style={{ padding: "10px" }}>
           <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
             Item {item}
           </Box>
-        </Stack.Item>
+        </StackItem>
       ))}
     </Stack>
   );
@@ -112,43 +111,43 @@ export default function Example() {
     title: 'Nested Stacks',
     desc: 'An example of nested stacks for more complex layouts.',
     code: `
-import { Stack, Box } from "kalki-ui";
+import { Stack, Box, StackItem } from "kalki-ui";
 
 export default function Example() {
   return (
     <Stack direction="column" spacing={20}>
-      <Stack.Item>
+      <StackItem>
         <Stack spacing={10}>
           <Box padding="10px" shadow="sm" rounded>
-            <Stack.Item>
+            <StackItem>
               <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
                 Nested Item 1
               </Box>
-            </Stack.Item>
-            <Stack.Item>
+            </StackItem>
+            <StackItem>
               <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
                 Nested Item 2
               </Box>
-            </Stack.Item>
+            </StackItem>
           </Box>
         </Stack>
-      </Stack.Item>
-      <Stack.Item>
+      </StackItem>
+      <StackItem>
         <Box padding="10px" shadow="sm" rounded>
           <Stack direction="column" spacing={5}>
-            <Stack.Item>
+            <StackItem>
               <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
                 Nested Item 3
               </Box>
-            </Stack.Item>
-            <Stack.Item>
+            </StackItem>
+            <StackItem>
               <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
                 Nested Item 4
               </Box>
-            </Stack.Item>
+            </StackItem>
           </Stack>
         </Box>
-      </Stack.Item>
+      </StackItem>
     </Stack>
   );
 }
@@ -195,10 +194,10 @@ export const stackItemProps = [['children', 'node', '-', 'The content of the sta
 
 export const additionalNotes = [
   'The Stack component is built on top of flexbox, providing an easy way to create flexible layouts.',
-  'Stack.Item is a wrapper around the Box component, allowing for additional customization of individual items.',
+  'StackItem is a wrapper around the Box component, allowing for additional customization of individual items.',
   'The Stack component forwards refs, allowing you to access the underlying DOM element if needed.',
   'You can nest Stack components to create more complex layouts.',
   'The spacing prop applies to both horizontal and vertical spacing between items.',
-  'Custom styles can be applied to both the Stack and Stack.Item components using the style prop or custom CSS classes.',
+  'Custom styles can be applied to both the Stack and StackItem components using the style prop or custom CSS classes.',
   'The Stack component automatically handles the conversion of justifyContent, alignItems, and alignContent prop values to their corresponding CSS class names.',
 ];

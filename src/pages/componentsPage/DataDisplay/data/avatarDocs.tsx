@@ -1,4 +1,4 @@
-import Avatar from '@/components/common/Avatar';
+import { Avatar, AvatarFallback, AvatarImage } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 const pic = 'https://github.com/shadcn.png';
@@ -8,21 +8,21 @@ export const docs: docsData[] = [
     title: 'Basic Avatar',
     desc: 'This example demonstrates the most basic usage of the Avatar component with a source image, default alt text, and default size.',
     code: `
-import { Avatar } from "kalki-ui";
+import { Avatar, AvatarImage, AvatarFallback } from "kalki-ui";
 
 export default function BasicAvatar() {
   return (
     <Avatar>
-      <Avatar.Image src="https://github.com/shadcn.png" alt="Avatar" />
-      <Avatar.Fallback>SC</Avatar.Fallback>
+      <AvatarImage src="https://github.com/shadcn.png" alt="Avatar" />
+      <AvatarFallback>SC</AvatarFallback>
     </Avatar>
   );
 }
 `,
     snippet: (
       <Avatar>
-        <Avatar.Image src={pic} alt="Avatar" />
-        <Avatar.Fallback>SC</Avatar.Fallback>
+        <AvatarImage src={pic} alt="Avatar" />
+        <AvatarFallback>SC</AvatarFallback>
       </Avatar>
     ),
   },
@@ -41,9 +41,9 @@ export const rows = [
 
 export const componentHierarchyCode = `
   <Avatar>
-    <Avatar.Image  />
-    <Avatar.Fallback>
+    <AvatarImage  />
+    <AvatarFallback>
     
-    </Avatar.Fallback>
+    </AvatarFallback>
   </Avatar>
 `;

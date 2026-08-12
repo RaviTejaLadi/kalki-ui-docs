@@ -9,7 +9,6 @@ export const docs: docsData[] = [
     code: `
 import React, { useState } from 'react';
 import { Select } from "kalki-ui";
-
 export default function DropdownExample() {
   const [value, setValue] = useState<string | undefined>(undefined);
 

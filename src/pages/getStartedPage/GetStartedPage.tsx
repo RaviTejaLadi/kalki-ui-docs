@@ -1,6 +1,5 @@
-import { SectionHeader } from '@/components/common/SectionHeader';
+import { SectionHeader, Tab, Tabs, Button, Box, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
 import { Stepper } from '@/components/common/Stepper';
-import { Tab, Tabs } from '@/components/common/Tabs';
 import {
   tsconfigAppJson,
   tsconfigJson,
@@ -12,8 +11,6 @@ import {
 } from './tabsData';
 import { compExampleCode, componentCode, setupSnippet } from './Snippet';
 import { BoxIcon, Code, Terminal } from 'lucide-react';
-import Button from '@/components/common/Button';
-import Box from '@/components/common/Box';
 import React from 'react';
 import { useToast, ToastVariant } from 'kalki-ui-toast';
 
@@ -31,17 +28,17 @@ const GetStarted: React.FC = () => {
   return (
     <div className="container">
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="dark:text-foreground tracking-wide">Quick Start</SectionHeader.Title>
-        <SectionHeader.SubTitle className="dark:text-muted-foreground tracking-wide">
+        <SectionHeaderTitle className="dark:text-foreground tracking-wide">Quick Start</SectionHeaderTitle>
+        <SectionHeaderSubTitle className="dark:text-muted-foreground tracking-wide">
           Getting Started with Kalki UI React
-        </SectionHeader.SubTitle>
+        </SectionHeaderSubTitle>
       </SectionHeader>
       <SectionHeader size="sm" variant="transparent">
-        <SectionHeader.Title className="dark:text-foreground tracking-wide">Introduction</SectionHeader.Title>
-        <SectionHeader.SubTitle className="dark:text-muted-foreground tracking-wide">
+        <SectionHeaderTitle className="dark:text-foreground tracking-wide">Introduction</SectionHeaderTitle>
+        <SectionHeaderSubTitle className="dark:text-muted-foreground tracking-wide">
           To import a component from this package. you first need to ensure that the package is installed in your
           project. You can install it using npm or yarn or pnpm. Here’s how you can do it:
-        </SectionHeader.SubTitle>
+        </SectionHeaderSubTitle>
       </SectionHeader>
       <Stepper>
         <Stepper.Step step="1" title="Create project">
@@ -124,8 +121,9 @@ const GetStarted: React.FC = () => {
         </Stepper.Step>
         <Stepper.Step step="8" title="Import the Component">
           <Stepper.Description>
-            Once the package is installed, you can import the components you need from kalki-ui. Suppose you want to
-            import a component called Button. Here’s how you can do it:
+            Once the package is installed, import components with named exports only (required in v3). Prefer deep
+            imports like kalki-ui/button for smaller bundles, or import from the root package. Subcomponents are also
+            named exports (for example ButtonIcon, CardHeader) — compound APIs like Button.Icon are no longer supported.
           </Stepper.Description>
           <div className="h-auto overflow-auto mb-5  p-1 border rounded-lg dark:border-gray-200/10">
             <Stepper.CodeBlock code={componentCode} />

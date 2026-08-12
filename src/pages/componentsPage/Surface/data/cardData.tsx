@@ -1,6 +1,4 @@
-import Badge from '@/components/common/Badge';
-import Button from '@/components/common/Button';
-import Card, { CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/common/Card';
+import { Badge, Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 import { ArrowUpRight, Award, Clock, Eye, Users } from 'lucide-react';
 

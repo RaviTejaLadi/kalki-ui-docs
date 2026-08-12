@@ -1,5 +1,4 @@
-import Link from '@/components/common/Link';
-
+import { Link } from 'kalki-ui';
 export const LinkPreviews = {
   basic: (
     <div className="flex gap-4">

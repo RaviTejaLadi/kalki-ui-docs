@@ -1,4 +1,4 @@
-import UnOrderedList from '@/components/common/Lists/UnOrderedList';
+import { UnOrderedList, UnOrderedListItem } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 export const columns = ['Name', 'Type', 'Default', 'Description'];
@@ -8,7 +8,7 @@ export const unOrderedListRows = [
     'children',
     'node',
     'required',
-    'The content to be rendered inside the UnOrderedList component. This should be UnOrderedList.Item components.',
+    'The content to be rendered inside the UnOrderedList component. This should be UnOrderedListItem components.',
   ],
   [
     'type',
@@ -27,23 +27,23 @@ export const docs: docsData[] = [
     title: 'Basic Usage',
     desc: 'A simple UnorderedList component with default disc bullets.',
     code: `
-import { UnOrderedList } from "kalki-ui";
+import { UnOrderedList, OrderedListItem, UnOrderedListItem } from "kalki-ui";
 
 export default function BasicUnorderedList() {
   return (
     <UnOrderedList>
-      <UnOrderedList.Item>First item</UnOrderedList.Item>
-      <UnOrderedList.Item>Second item</UnOrderedList.Item>
-      <UnOrderedList.Item>Third item</UnOrderedList.Item>
+      <UnOrderedListItem>First item</UnOrderedListItem>
+      <UnOrderedListItem>Second item</UnOrderedListItem>
+      <UnOrderedListItem>Third item</UnOrderedListItem>
     </UnOrderedList>
   );
 }
 `,
     snippet: (
       <UnOrderedList>
-        <UnOrderedList.Item>First item</UnOrderedList.Item>
-        <UnOrderedList.Item>Second item</UnOrderedList.Item>
-        <UnOrderedList.Item>Third item</UnOrderedList.Item>
+        <UnOrderedListItem>First item</UnOrderedListItem>
+        <UnOrderedListItem>Second item</UnOrderedListItem>
+        <UnOrderedListItem>Third item</UnOrderedListItem>
       </UnOrderedList>
     ),
   },
@@ -51,23 +51,23 @@ export default function BasicUnorderedList() {
     title: 'Custom Bullet Style',
     desc: 'UnorderedList component with custom bullet style.',
     code: `
-import { UnOrderedList } from "kalki-ui";
+import { UnOrderedList, OrderedListItem, UnOrderedListItem } from "kalki-ui";
 
 export default function SquareUnorderedList() {
   return (
     <UnOrderedList type="square">
-      <UnOrderedList.Item>Square bullet item 1</UnOrderedList.Item>
-      <UnOrderedList.Item>Square bullet item 2</UnOrderedList.Item>
-      <UnOrderedList.Item>Square bullet item 3</UnOrderedList.Item>
+      <UnOrderedListItem>Square bullet item 1</UnOrderedListItem>
+      <UnOrderedListItem>Square bullet item 2</UnOrderedListItem>
+      <UnOrderedListItem>Square bullet item 3</UnOrderedListItem>
     </UnOrderedList>
   );
 }
 `,
     snippet: (
       <UnOrderedList type="square">
-        <UnOrderedList.Item>Square bullet item 1</UnOrderedList.Item>
-        <UnOrderedList.Item>Square bullet item 2</UnOrderedList.Item>
-        <UnOrderedList.Item>Square bullet item 3</UnOrderedList.Item>
+        <UnOrderedListItem>Square bullet item 1</UnOrderedListItem>
+        <UnOrderedListItem>Square bullet item 2</UnOrderedListItem>
+        <UnOrderedListItem>Square bullet item 3</UnOrderedListItem>
       </UnOrderedList>
     ),
   },
@@ -75,35 +75,35 @@ export default function SquareUnorderedList() {
     title: 'Nested Lists',
     desc: 'UnorderedList component with nested lists and different bullet styles.',
     code: `
-import { UnOrderedList } from "kalki-ui";
+import { UnOrderedList, OrderedListItem, UnOrderedListItem } from "kalki-ui";
 
 export default function NestedUnorderedList() {
   return (
     <UnOrderedList>
-      <UnOrderedList.Item>Main item 1</UnOrderedList.Item>
-      <UnOrderedList.Item>
+      <UnOrderedListItem>Main item 1</UnOrderedListItem>
+      <UnOrderedListItem>
         Main item 2
         <UnOrderedList type="circle">
-          <UnOrderedList.Item>Subitem 2.1</UnOrderedList.Item>
-          <UnOrderedList.Item>Subitem 2.2</UnOrderedList.Item>
+          <UnOrderedListItem>Subitem 2.1</UnOrderedListItem>
+          <UnOrderedListItem>Subitem 2.2</UnOrderedListItem>
         </UnOrderedList>
-      </UnOrderedList.Item>
-      <UnOrderedList.Item>Main item 3</UnOrderedList.Item>
+      </UnOrderedListItem>
+      <UnOrderedListItem>Main item 3</UnOrderedListItem>
     </UnOrderedList>
   );
 }
 `,
     snippet: (
       <UnOrderedList>
-        <UnOrderedList.Item>Main item 1</UnOrderedList.Item>
-        <UnOrderedList.Item>
+        <UnOrderedListItem>Main item 1</UnOrderedListItem>
+        <UnOrderedListItem>
           Main item 2
           <UnOrderedList type="circle">
-            <UnOrderedList.Item>Subitem 2.1</UnOrderedList.Item>
-            <UnOrderedList.Item>Subitem 2.2</UnOrderedList.Item>
+            <UnOrderedListItem>Subitem 2.1</UnOrderedListItem>
+            <UnOrderedListItem>Subitem 2.2</UnOrderedListItem>
           </UnOrderedList>
-        </UnOrderedList.Item>
-        <UnOrderedList.Item>Main item 3</UnOrderedList.Item>
+        </UnOrderedListItem>
+        <UnOrderedListItem>Main item 3</UnOrderedListItem>
       </UnOrderedList>
     ),
   },
@@ -111,23 +111,23 @@ export default function NestedUnorderedList() {
     title: 'Custom Styling',
     desc: 'UnorderedList component with custom CSS classes for styling.',
     code: `
-import { UnOrderedList } from "kalki-ui";
+import { UnOrderedList, OrderedListItem, UnOrderedListItem } from "kalki-ui";
 
 export default function StyledUnorderedList() {
   return (
     <UnOrderedList className="pl-5 space-y-2" type="none">
-      <UnOrderedList.Item className="text-xl font-semibold text-blue-500">✅ Custom styled item 1</UnOrderedList.Item>
-      <UnOrderedList.Item className="text-xl font-semibold text-blue-500">🚀 Custom styled item 2</UnOrderedList.Item>
-      <UnOrderedList.Item className="text-xl font-semibold text-blue-500">🌟 Custom styled item 3</UnOrderedList.Item>
+      <UnOrderedListItem className="text-xl font-semibold text-blue-500">✅ Custom styled item 1</UnOrderedListItem>
+      <UnOrderedListItem className="text-xl font-semibold text-blue-500">🚀 Custom styled item 2</UnOrderedListItem>
+      <UnOrderedListItem className="text-xl font-semibold text-blue-500">🌟 Custom styled item 3</UnOrderedListItem>
     </UnOrderedList>
   );
 }
 `,
     snippet: (
       <UnOrderedList className="pl-5 space-y-2" type="none">
-        <UnOrderedList.Item className="text-xl font-semibold text-blue-500">✅ Custom styled item 1</UnOrderedList.Item>
-        <UnOrderedList.Item className="text-xl font-semibold text-blue-500">🚀 Custom styled item 2</UnOrderedList.Item>
-        <UnOrderedList.Item className="text-xl font-semibold text-blue-500">🌟 Custom styled item 3</UnOrderedList.Item>
+        <UnOrderedListItem className="text-xl font-semibold text-blue-500">✅ Custom styled item 1</UnOrderedListItem>
+        <UnOrderedListItem className="text-xl font-semibold text-blue-500">🚀 Custom styled item 2</UnOrderedListItem>
+        <UnOrderedListItem className="text-xl font-semibold text-blue-500">🌟 Custom styled item 3</UnOrderedListItem>
       </UnOrderedList>
     ),
   },

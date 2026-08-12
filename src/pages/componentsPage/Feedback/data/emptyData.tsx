@@ -1,5 +1,4 @@
-import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
-import Button from '@/components/common/Button';
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle, Button } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 import { Inbox } from 'lucide-react';
 

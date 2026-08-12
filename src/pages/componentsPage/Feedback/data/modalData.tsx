@@ -8,8 +8,7 @@ export const docs: docsData[] = [
     desc: 'A simple modal with a header, body, and footer.',
     code: `
 import React, { useState } from "react";
-import { Modal, Button } from "kalki-ui";
-
+import { Modal, Button, ModalHeader, ModalFooter, ModalTitle, ModalBody } from "kalki-ui";
 const BasicModalExample = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -17,15 +16,15 @@ const BasicModalExample = () => {
     <div>
       <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
       <Modal open={isOpen} size="md" onClose={() => setIsOpen(false)} position="top">
-        <Modal.Header closeButton onClose={() => setIsOpen(false)}>
-          <Modal.Title>Modal Title</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+        <ModalHeader closeButton onClose={() => setIsOpen(false)}>
+          <ModalTitle>Modal Title</ModalTitle>
+        </ModalHeader>
+        <ModalBody>
           <p>This is the modal content.</p>
-        </Modal.Body>
-        <Modal.Footer>
+        </ModalBody>
+        <ModalFooter>
           <Button onClick={() => setIsOpen(false)}>Close</Button>
-        </Modal.Footer>
+        </ModalFooter>
       </Modal>
     </div>
   );
@@ -40,7 +39,7 @@ export default BasicModalExample;
     desc: 'Modals support multiple sizes: sm, md, lg, xl, 2xl, and fullscreen.',
     code: `
 import React, { useState } from "react";
-import { Modal, Button, Box } from "kalki-ui";
+import { Modal, Button, Box, ModalHeader, ModalTitle, ModalBody } from "kalki-ui";
 
 type ModalSize = "sm" | "md" | "lg" | "xl" | "2xl" | "fullscreen";
 
@@ -63,12 +62,12 @@ const DifferentSizes = () => {
         ))}
       </Box>
       <Modal open={isOpen} size={size} onClose={() => setIsOpen(false)}>
-        <Modal.Header closeButton onClose={() => setIsOpen(false)}>
-          <Modal.Title>{size} Modal</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+        <ModalHeader closeButton onClose={() => setIsOpen(false)}>
+          <ModalTitle>{size} Modal</ModalTitle>
+        </ModalHeader>
+        <ModalBody>
           <p>This is a {size}-sized modal.</p>
-        </Modal.Body>
+        </ModalBody>
       </Modal>
     </Box>
   );

@@ -1,29 +1,33 @@
-import { SectionHeader } from '@/components/common/SectionHeader';
-import Separator from '@/components/common/Separator';
-import TableList from '@/components/common/Table/TableList';
+import {
+  SectionHeader,
+  Separator,
+  TableList,
+  Div,
+  Heading,
+  SectionHeaderTitle,
+  SectionHeaderSubTitle,
+  UnOrderedList,
+  UnOrderedListItem,
+} from 'kalki-ui';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { docs, columns, stackProps, stackItemProps, additionalNotes } from './data/stackData';
-import { Heading } from '@/components/common/Typography';
-import UnOrderedList from '@/components/common/Lists/UnOrderedList';
-import Div from '@/components/common/Div';
-
 const StackPage = () => {
   return (
     <div className="container">
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Stack</SectionHeader.Title>
-        <SectionHeader.SubTitle className="tracking-wide">
+        <SectionHeaderTitle className="tracking-wide">Stack</SectionHeaderTitle>
+        <SectionHeaderSubTitle className="tracking-wide">
           {additionalNotes.map((note, index) => (
             <UnOrderedList key={index}>
-              <UnOrderedList.Item className="text-muted-foreground">{note}</UnOrderedList.Item>
+              <UnOrderedListItem className="text-muted-foreground">{note}</UnOrderedListItem>
             </UnOrderedList>
           ))}
-        </SectionHeader.SubTitle>
+        </SectionHeaderSubTitle>
       </SectionHeader>
       <Separator />
       <DocumentationRenderer data={docs} componentName="Stack" />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
+        <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>
       </SectionHeader>
       <Div className="space-y-5">
         <Div>

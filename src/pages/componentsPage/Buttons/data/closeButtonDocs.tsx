@@ -1,5 +1,4 @@
-import CloseButton from '@/components/common/CloseButton';
-import Div from '@/components/common/Div';
+import { CloseButton, Div } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 export const docs: docsData[] = [

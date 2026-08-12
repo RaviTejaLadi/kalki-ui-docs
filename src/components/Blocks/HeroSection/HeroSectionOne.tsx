@@ -1,7 +1,4 @@
-import Badge from '@/components/common/Badge';
-import Div from '@/components/common/Div';
-import Link from '@/components/common/Link';
-import { Heading, Paragraph } from '@/components/common/Typography';
+import { Badge, Div, Link, Heading, Paragraph } from 'kalki-ui';
 import { ArrowRight, Video } from 'lucide-react';
 
 const HeroSectionOne = () => {

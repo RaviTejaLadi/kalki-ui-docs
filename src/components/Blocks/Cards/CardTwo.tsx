@@ -1,9 +1,6 @@
-import Badge from '@/components/common/Badge';
-import Card, { CardContent, CardFooter, CardHeader, CardTitle } from '@/components/common/Card';
+import { Badge, Card, CardContent, CardFooter, CardHeader, CardTitle, Image } from 'kalki-ui';
 import { Link } from 'react-router-dom';
 import placeholder from '../../../assets/placeholder.svg';
-import Image from '@/components/common/Image';
-
 const CardTwo = () => {
   return (
     <Card className="m-4 w-[500px]">

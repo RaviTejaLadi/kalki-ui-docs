@@ -1,4 +1,4 @@
-import Figure from '@/components/common/Figure';
+import { Figure, FigureCaption, FigureImage } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 const pic =
@@ -9,7 +9,7 @@ export const docs: docsData[] = [
     title: 'Basic Figure',
     desc: 'A simple figure with an image and caption',
     code: `
-import { Figure } from "kalki-ui";
+import { Figure, FigureImage, FigureCaption } from "kalki-ui";
 
 const IMAGE_URL =
   "https://images.unsplash.com/photo-1739993655680-4b7050ed2896?q=80&w=2070&auto=format&fit=crop";
@@ -17,16 +17,16 @@ const IMAGE_URL =
 export default function Example() {
   return (
     <Figure width="600px">
-      <Figure.Image src={IMAGE_URL} alt="Example" className="rounded-md" />
-      <Figure.Caption>This is a sample image</Figure.Caption>
+      <FigureImage src={IMAGE_URL} alt="Example" className="rounded-md" />
+      <FigureCaption>This is a sample image</FigureCaption>
     </Figure>
   );
 }
 `,
     snippet: (
       <Figure width="600px">
-        <Figure.Image src={pic} alt="Example" className="rounded-md" />
-        <Figure.Caption>This is a sample image</Figure.Caption>
+        <FigureImage src={pic} alt="Example" className="rounded-md" />
+        <FigureCaption>This is a sample image</FigureCaption>
       </Figure>
     ),
   },
@@ -34,7 +34,7 @@ export default function Example() {
     title: 'Custom Dimensions',
     desc: 'Figure with custom width and height',
     code: `
-import { Figure } from "kalki-ui";
+import { Figure, FigureImage, FigureCaption } from "kalki-ui";
 
 const IMAGE_URL =
   "https://images.unsplash.com/photo-1739993655680-4b7050ed2896?q=80&w=2070&auto=format&fit=crop";
@@ -42,16 +42,16 @@ const IMAGE_URL =
 export default function Example() {
   return (
     <Figure width="300px" height="300px">
-      <Figure.Image src={IMAGE_URL} alt="Landscape" />
-      <Figure.Caption>Beautiful landscape</Figure.Caption>
+      <FigureImage src={IMAGE_URL} alt="Landscape" />
+      <FigureCaption>Beautiful landscape</FigureCaption>
     </Figure>
   );
 }
 `,
     snippet: (
       <Figure width="300px" height="300px">
-        <Figure.Image src={pic} alt="Landscape" />
-        <Figure.Caption>Beautiful landscape</Figure.Caption>
+        <FigureImage src={pic} alt="Landscape" />
+        <FigureCaption>Beautiful landscape</FigureCaption>
       </Figure>
     ),
   },
@@ -59,7 +59,7 @@ export default function Example() {
     title: 'Custom Margin',
     desc: 'Figure with custom margin',
     code: `
-import { Figure } from "kalki-ui";
+import { Figure, FigureImage, FigureCaption } from "kalki-ui";
 
 const IMAGE_URL =
   "https://images.unsplash.com/photo-1739993655680-4b7050ed2896?q=80&w=2070&auto=format&fit=crop";
@@ -67,16 +67,16 @@ const IMAGE_URL =
 export default function Example() {
   return (
     <Figure width="500px" height="300px" margin="20px">
-      <Figure.Image src={IMAGE_URL} alt="Portrait" />
-      <Figure.Caption>Portrait with extra margin</Figure.Caption>
+      <FigureImage src={IMAGE_URL} alt="Portrait" />
+      <FigureCaption>Portrait with extra margin</FigureCaption>
     </Figure>
   );
 }
 `,
     snippet: (
       <Figure width="500px" height="300px" margin="20px">
-        <Figure.Image src={pic} alt="Portrait" />
-        <Figure.Caption>Portrait with extra margin</Figure.Caption>
+        <FigureImage src={pic} alt="Portrait" />
+        <FigureCaption>Portrait with extra margin</FigureCaption>
       </Figure>
     ),
   },
@@ -84,7 +84,7 @@ export default function Example() {
     title: 'Figure with Node Caption',
     desc: 'Figure with a React node as caption',
     code: `
-import { Figure } from "kalki-ui";
+import { Figure, FigureImage, FigureCaption } from "kalki-ui";
 
 const IMAGE_URL =
   "https://images.unsplash.com/photo-1739993655680-4b7050ed2896?q=80&w=2070&auto=format&fit=crop";
@@ -92,20 +92,20 @@ const IMAGE_URL =
 export default function Example() {
   return (
     <Figure width="600px" height="400px">
-      <Figure.Image src={IMAGE_URL} alt="Technology" />
-      <Figure.Caption>
+      <FigureImage src={IMAGE_URL} alt="Technology" />
+      <FigureCaption>
         <strong>Fig. 1:</strong> Advanced technology in action
-      </Figure.Caption>
+      </FigureCaption>
     </Figure>
   );
 }
 `,
     snippet: (
       <Figure width="600px" height="400px">
-        <Figure.Image src={pic} alt="Technology" />
-        <Figure.Caption>
+        <FigureImage src={pic} alt="Technology" />
+        <FigureCaption>
           <strong>Fig. 1:</strong> Advanced technology in action
-        </Figure.Caption>
+        </FigureCaption>
       </Figure>
     ),
   },
@@ -113,7 +113,7 @@ export default function Example() {
     title: 'Multiple Images in Figure',
     desc: 'Figure containing multiple images',
     code: `
-import { Figure } from "kalki-ui";
+import { Figure, FigureImage, FigureCaption } from "kalki-ui";
 
 const IMAGE_URL =
   "https://images.unsplash.com/photo-1739993655680-4b7050ed2896?q=80&w=2070&auto=format&fit=crop";
@@ -122,18 +122,18 @@ export default function Example() {
   return (
     <Figure width="98%">
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <Figure.Image
+        <FigureImage
           src={IMAGE_URL}
           alt="Image 1"
           style={{ width: "48%", height: "400px", objectFit: "contain" }}
         />
-        <Figure.Image
+        <FigureImage
           src={IMAGE_URL}
           alt="Image 2"
           style={{ width: "48%", height: "400px", objectFit: "contain" }}
         />
       </div>
-      <Figure.Caption>Comparison of two samples</Figure.Caption>
+      <FigureCaption>Comparison of two samples</FigureCaption>
     </Figure>
   );
 }
@@ -141,10 +141,10 @@ export default function Example() {
     snippet: (
       <Figure width="98%">
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Figure.Image src={pic} alt="Image 1" style={{ width: '48%', height: '400px', objectFit: 'contain' }} />
-          <Figure.Image src={pic} alt="Image 2" style={{ width: '48%', height: '400px', objectFit: 'contain' }} />
+          <FigureImage src={pic} alt="Image 1" style={{ width: '48%', height: '400px', objectFit: 'contain' }} />
+          <FigureImage src={pic} alt="Image 2" style={{ width: '48%', height: '400px', objectFit: 'contain' }} />
         </div>
-        <Figure.Caption>Comparison of two samples</Figure.Caption>
+        <FigureCaption>Comparison of two samples</FigureCaption>
       </Figure>
     ),
   },
@@ -152,7 +152,7 @@ export default function Example() {
     title: 'Figure with Custom Image Styles',
     desc: 'Figure with custom styles applied to the image',
     code: `
-import { Figure } from "kalki-ui";
+import { Figure, FigureImage, FigureCaption } from "kalki-ui";
 
 const IMAGE_URL =
   "https://images.unsplash.com/photo-1739993655680-4b7050ed2896?q=80&w=2070&auto=format&fit=crop";
@@ -160,24 +160,24 @@ const IMAGE_URL =
 export default function Example() {
   return (
     <Figure width="200px" height="auto">
-      <Figure.Image
+      <FigureImage
         src={IMAGE_URL}
         alt="Circular Image"
         style={{ borderRadius: "50%", width: "200px", height: "200px", objectFit: "cover" }}
       />
-      <Figure.Caption>A circular image</Figure.Caption>
+      <FigureCaption>A circular image</FigureCaption>
     </Figure>
   );
 }
 `,
     snippet: (
       <Figure width="200px" height="auto">
-        <Figure.Image
+        <FigureImage
           src={pic}
           alt="Circular Image"
           style={{ borderRadius: '50%', width: '200px', height: '200px', objectFit: 'cover' }}
         />
-        <Figure.Caption>A circular image</Figure.Caption>
+        <FigureCaption>A circular image</FigureCaption>
       </Figure>
     ),
   },
@@ -185,7 +185,7 @@ export default function Example() {
     title: 'Figure with Additional Content',
     desc: 'Figure with additional content besides image and caption',
     code: `
-import { Figure } from "kalki-ui";
+import { Figure, FigureImage, FigureCaption } from "kalki-ui";
 
 const IMAGE_URL =
   "https://images.unsplash.com/photo-1739993655680-4b7050ed2896?q=80&w=2070&auto=format&fit=crop";
@@ -193,8 +193,8 @@ const IMAGE_URL =
 export default function Example() {
   return (
     <Figure width="300px">
-      <Figure.Image src={IMAGE_URL} alt="Chart" />
-      <Figure.Caption>Monthly Sales Chart</Figure.Caption>
+      <FigureImage src={IMAGE_URL} alt="Chart" />
+      <FigureCaption>Monthly Sales Chart</FigureCaption>
       <p style={{ fontSize: "0.8em", color: "#666" }}>Data source: Company sales report, 2023</p>
     </Figure>
   );
@@ -202,8 +202,8 @@ export default function Example() {
 `,
     snippet: (
       <Figure width="300px">
-        <Figure.Image src={pic} alt="Chart" />
-        <Figure.Caption>Monthly Sales Chart</Figure.Caption>
+        <FigureImage src={pic} alt="Chart" />
+        <FigureCaption>Monthly Sales Chart</FigureCaption>
         <p style={{ fontSize: '0.8em', color: '#666' }}>Data source: Company sales report, 2023</p>
       </Figure>
     ),
@@ -212,7 +212,7 @@ export default function Example() {
     title: 'Responsive Figure',
     desc: 'Figure that adjusts based on screen size',
     code: `
-import { Figure } from "kalki-ui";
+import { Figure, FigureImage, FigureCaption } from "kalki-ui";
 
 const IMAGE_URL =
   "https://images.unsplash.com/photo-1739993655680-4b7050ed2896?q=80&w=2070&auto=format&fit=crop";
@@ -220,16 +220,16 @@ const IMAGE_URL =
 export default function Example() {
   return (
     <Figure width="100%" style={{ maxWidth: "600px" }}>
-      <Figure.Image src={IMAGE_URL} alt="Responsive Image" />
-      <Figure.Caption>This figure adjusts to the screen size</Figure.Caption>
+      <FigureImage src={IMAGE_URL} alt="Responsive Image" />
+      <FigureCaption>This figure adjusts to the screen size</FigureCaption>
     </Figure>
   );
 }
 `,
     snippet: (
       <Figure width="100%" style={{ maxWidth: '600px' }}>
-        <Figure.Image src={pic} alt="Responsive Image" />
-        <Figure.Caption>This figure adjusts to the screen size</Figure.Caption>
+        <FigureImage src={pic} alt="Responsive Image" />
+        <FigureCaption>This figure adjusts to the screen size</FigureCaption>
       </Figure>
     ),
   },
@@ -238,7 +238,7 @@ export default function Example() {
 export const columns = ['Name', 'Type', 'Default', 'Description'];
 
 export const figureProps = [
-  ['children', 'node', 'Required', 'The content of the figure, typically including Figure.Image and Figure.Caption.'],
+  ['children', 'node', 'Required', 'The content of the figure, typically including FigureImage and FigureCaption.'],
   ['width', 'string', '-', 'Specifies the width of the figure container.'],
   ['height', 'string', '-', 'Specifies the height of the figure container.'],
   ['margin', 'string', '5px', 'Specifies the margin around the figure container.'],

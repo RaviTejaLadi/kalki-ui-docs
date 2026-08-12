@@ -1,4 +1,4 @@
-import ListGroups from '@/components/common/Lists/ListGroups';
+import { ListGroups, ListGroupItem } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 import { BellIcon, LockIcon, UserIcon } from 'lucide-react';
 
@@ -7,33 +7,33 @@ export const docs: docsData[] = [
     title: 'Basic Usage',
     desc: 'A simple ListGroups component with default styling.',
     code: `
-import { ListGroups } from "kalki-ui";
+import { ListGroups, ListGroupItem } from "kalki-ui";
 
 export default function BasicListGroups() {
   return (
     <ListGroups variant="primary" size="md" width="300px" showDividers>
-      <ListGroups.Item label="Profile" onClick={() => console.log("Profile clicked")} />
-      <ListGroups.Item label="Settings" onClick={() => console.log("Settings clicked")} />
-      <ListGroups.Item
+      <ListGroupItem label="Profile" onClick={() => console.log("Profile clicked")} />
+      <ListGroupItem label="Settings" onClick={() => console.log("Settings clicked")} />
+      <ListGroupItem
         label="Notifications"
         description="Manage your alerts"
         onClick={() => console.log("Notifications clicked")}
       />
-      <ListGroups.Item label="Logout" disabled />
+      <ListGroupItem label="Logout" disabled />
     </ListGroups>
   );
 }
 `,
     snippet: (
       <ListGroups variant="primary" size="md" width="300px" showDividers>
-        <ListGroups.Item label="Profile" onClick={() => console.log('Profile clicked')} />
-        <ListGroups.Item label="Settings" onClick={() => console.log('Settings clicked')} />
-        <ListGroups.Item
+        <ListGroupItem label="Profile" onClick={() => console.log('Profile clicked')} />
+        <ListGroupItem label="Settings" onClick={() => console.log('Settings clicked')} />
+        <ListGroupItem
           label="Notifications"
           description="Manage your alerts"
           onClick={() => console.log('Notifications clicked')}
         />
-        <ListGroups.Item label="Logout" disabled />
+        <ListGroupItem label="Logout" disabled />
       </ListGroups>
     ),
   },
@@ -41,24 +41,24 @@ export default function BasicListGroups() {
     title: 'With Icons and Arrows',
     desc: 'List group items with leading icons and trailing arrows.',
     code: `
-import { ListGroups } from "kalki-ui";
+import { ListGroups, ListGroupItem } from "kalki-ui";
 import { BellIcon, LockIcon, UserIcon } from "lucide-react";
 
 export default function ListGroupsWithIcons() {
   return (
     <ListGroups variant="secondary" showArrows>
-      <ListGroups.Item
+      <ListGroupItem
         icon={<UserIcon size={16} />}
         label="Account"
         onClick={() => console.log("Account clicked")}
       />
-      <ListGroups.Item
+      <ListGroupItem
         icon={<LockIcon size={16} />}
         label="Security"
         description="Change password"
         onClick={() => console.log("Security clicked")}
       />
-      <ListGroups.Item
+      <ListGroupItem
         icon={<BellIcon size={16} />}
         label="Notifications"
         onClick={() => console.log("Notifications clicked")}
@@ -69,14 +69,14 @@ export default function ListGroupsWithIcons() {
 `,
     snippet: (
       <ListGroups variant="secondary" showArrows>
-        <ListGroups.Item icon={<UserIcon size={16} />} label="Account" onClick={() => console.log('Account clicked')} />
-        <ListGroups.Item
+        <ListGroupItem icon={<UserIcon size={16} />} label="Account" onClick={() => console.log('Account clicked')} />
+        <ListGroupItem
           icon={<LockIcon size={16} />}
           label="Security"
           description="Change password"
           onClick={() => console.log('Security clicked')}
         />
-        <ListGroups.Item
+        <ListGroupItem
           icon={<BellIcon size={16} />}
           label="Notifications"
           onClick={() => console.log('Notifications clicked')}
@@ -88,41 +88,41 @@ export default function ListGroupsWithIcons() {
     title: 'Dark Theme with Descriptions',
     desc: 'A dark-themed list group with item descriptions.',
     code: `
-import { ListGroups } from "kalki-ui";
+import { ListGroups, ListGroupItem } from "kalki-ui";
 
 export default function DarkListGroups() {
   return (
     <ListGroups variant="dark" size="lg" width="400px">
-      <ListGroups.Item
+      <ListGroupItem
         label="Dashboard"
         description="View your analytics"
         onClick={() => console.log("Dashboard clicked")}
       />
-      <ListGroups.Item
+      <ListGroupItem
         label="Projects"
         description="Manage your works"
         onClick={() => console.log("Projects clicked")}
       />
-      <ListGroups.Item label="Team" description="View members" onClick={() => console.log("Team clicked")} />
-      <ListGroups.Item label="Reports" description="Generate documents" disabled />
+      <ListGroupItem label="Team" description="View members" onClick={() => console.log("Team clicked")} />
+      <ListGroupItem label="Reports" description="Generate documents" disabled />
     </ListGroups>
   );
 }
 `,
     snippet: (
       <ListGroups variant="dark" size="lg" width="400px">
-        <ListGroups.Item
+        <ListGroupItem
           label="Dashboard"
           description="View your analytics"
           onClick={() => console.log('Dashboard clicked')}
         />
-        <ListGroups.Item
+        <ListGroupItem
           label="Projects"
           description="Manage your works"
           onClick={() => console.log('Projects clicked')}
         />
-        <ListGroups.Item label="Team" description="View members" onClick={() => console.log('Team clicked')} />
-        <ListGroups.Item label="Reports" description="Generate documents" disabled />
+        <ListGroupItem label="Team" description="View members" onClick={() => console.log('Team clicked')} />
+        <ListGroupItem label="Reports" description="Generate documents" disabled />
       </ListGroups>
     ),
   },

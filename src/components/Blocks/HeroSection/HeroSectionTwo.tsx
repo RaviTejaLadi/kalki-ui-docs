@@ -1,7 +1,4 @@
-import Div from '@/components/common/Div';
-import Image from '@/components/common/Image';
-import Link from '@/components/common/Link';
-import { Heading, Paragraph } from '@/components/common/Typography';
+import { Div, Image, Link, Heading, Paragraph } from 'kalki-ui';
 import { ArrowRight } from 'lucide-react';
 import placeholder from '../../../assets/placeholder.svg';
 

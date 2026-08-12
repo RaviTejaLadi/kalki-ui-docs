@@ -1,6 +1,4 @@
-import Box from '@/components/common/Box';
-import Button from '@/components/common/Button';
-import Modal from '@/components/common/Modal';
+import { Box, Button, Modal, ModalHeader, ModalTitle, ModalBody } from 'kalki-ui';
 import { useState } from 'react';
 
 type ModalSize = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'fullscreen';
@@ -44,12 +42,12 @@ const DifferentSizes = () => {
       </Box>
 
       <Modal open={isOpen} size={size}>
-        <Modal.Header closeButton onClose={() => setIsOpen(false)}>
-          <Modal.Title>{getReadableSize(size)} Modal</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+        <ModalHeader closeButton onClose={() => setIsOpen(false)}>
+          <ModalTitle>{getReadableSize(size)} Modal</ModalTitle>
+        </ModalHeader>
+        <ModalBody>
           <p>This is a {getReadableSize(size).toLowerCase()}-sized modal.</p>
-        </Modal.Body>
+        </ModalBody>
       </Modal>
     </Box>
   );

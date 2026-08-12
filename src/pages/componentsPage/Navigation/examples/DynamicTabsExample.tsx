@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Tab, Tabs } from '@/components/common/Tabs';
+import { Tab, Tabs } from 'kalki-ui';
 import { cn } from '@/utils';
 
 const VARIANTS = ['primary', 'secondary', 'success', 'danger', 'warning', 'help', 'info', 'dark', 'light'] as const;

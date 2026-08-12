@@ -15,7 +15,6 @@ export const docs: docsData[] = [
     desc: 'A vertical step list for guides, onboarding, or sequential instructions.',
     code: `
 import { Stepper } from "kalki-ui";
-
 export default function BasicStepper() {
   return (
     <Stepper>

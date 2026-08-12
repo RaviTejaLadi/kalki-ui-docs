@@ -1,5 +1,4 @@
-import CloseButton from '@/components/common/CloseButton';
-
+import { CloseButton } from 'kalki-ui';
 export const CloseButtonPreviews = {
   basic: (
     <div className="flex gap-2 items-center">

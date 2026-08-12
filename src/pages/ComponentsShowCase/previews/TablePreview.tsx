@@ -1,24 +1,23 @@
-import Table from '@/components/common/Table';
-
+import { Table, TableHead, TableBody, TableRow, TableCell } from 'kalki-ui';
 export const TablePreviews = {
   basic: (
     <Table className="max-w-xs">
-      <Table.Head>
-        <Table.Row>
-          <Table.Cell isHeader>Name</Table.Cell>
-          <Table.Cell isHeader>Value</Table.Cell>
-        </Table.Row>
-      </Table.Head>
-      <Table.Body>
-        <Table.Row>
-          <Table.Cell>Alpha</Table.Cell>
-          <Table.Cell>1</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>Beta</Table.Cell>
-          <Table.Cell>2</Table.Cell>
-        </Table.Row>
-      </Table.Body>
+      <TableHead>
+        <TableRow>
+          <TableCell isHeader>Name</TableCell>
+          <TableCell isHeader>Value</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell>Alpha</TableCell>
+          <TableCell>1</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Beta</TableCell>
+          <TableCell>2</TableCell>
+        </TableRow>
+      </TableBody>
     </Table>
   ),
 };

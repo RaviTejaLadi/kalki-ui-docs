@@ -1,4 +1,4 @@
-import { Tab, Tabs } from '@/components/common/Tabs';
+import { Tab, Tabs } from 'kalki-ui';
 import BlocksWrapper from '../BlocksWrapper';
 import { data } from './data/cardsData';
 import { SyntaxHighlighter } from '@/components/shared/SyntaxHighLighter/SyntaxHighLighter';

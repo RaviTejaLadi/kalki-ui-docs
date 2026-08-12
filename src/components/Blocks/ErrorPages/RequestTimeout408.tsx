@@ -1,5 +1,4 @@
-import Button from '@/components/common/Button';
-import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
+import { Button, Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from 'kalki-ui';
 import { Clock, Home, RefreshCw } from 'lucide-react';
 
 const RequestTimeout408 = () => {

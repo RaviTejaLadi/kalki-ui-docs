@@ -1,4 +1,4 @@
-import JsonViewer from '@/components/common/JsonViewer';
+import { JsonViewer } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 export const docs: docsData[] = [

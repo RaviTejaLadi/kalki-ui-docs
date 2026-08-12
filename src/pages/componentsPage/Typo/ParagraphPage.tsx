@@ -1,6 +1,4 @@
-import { SectionHeader } from '@/components/common/SectionHeader';
-import Separator from '@/components/common/Separator';
-import TableList from '@/components/common/Table/TableList';
+import { SectionHeader, Separator, TableList, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
 import { docs, columns, rows } from './data/paraData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 
@@ -8,19 +6,19 @@ const ParagraphPage = () => {
   return (
     <div className="container">
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Paragraph</SectionHeader.Title>
-        <SectionHeader.SubTitle className="tracking-wide">
+        <SectionHeaderTitle className="tracking-wide">Paragraph</SectionHeaderTitle>
+        <SectionHeaderSubTitle className="tracking-wide">
           A paragraph always starts on a new line, and is usually a block of text.
-        </SectionHeader.SubTitle>
-        <SectionHeader.SubTitle className="tracking-wide">
+        </SectionHeaderSubTitle>
+        <SectionHeaderSubTitle className="tracking-wide">
           A paragraph always starts on a new line, and browsers automatically add some white space (a margin) before and
           after a paragraph.
-        </SectionHeader.SubTitle>
+        </SectionHeaderSubTitle>
       </SectionHeader>
       <Separator />
       <DocumentationRenderer className="my-4" data={docs} componentName="Paragraph" />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
+        <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>
       </SectionHeader>
       <TableList columns={columns} rows={rows} code CodeColumn={0} />
     </div>

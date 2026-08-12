@@ -1,8 +1,4 @@
-import Alert from '@/components/common/Alert';
-import Box from '@/components/common/Box';
-import Button from '@/components/common/Button';
-import Separator from '@/components/common/Separator';
-import { Paragraph } from '@/components/common/Typography';
+import { Alert, Box, Button, Separator, Paragraph, AlertHeader, AlertFooter, AlertBody, ButtonText } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 export const docs: docsData[] = [
@@ -48,23 +44,23 @@ export default function AlertVariants() {
     title: 'Alert with Header, Body, and Footer',
     desc: 'Use compound components to structure richer alerts.',
     code: `
-import { Alert } from "kalki-ui";
+import { Alert, AlertHeader, AlertBody, AlertFooter } from "kalki-ui";
 
 export default function StructuredAlert() {
   return (
     <Alert variant="info">
-      <Alert.Header>Alert Header</Alert.Header>
-      <Alert.Body>This is the main content of the alert.</Alert.Body>
-      <Alert.Footer>Alert Footer</Alert.Footer>
+      <AlertHeader>Alert Header</AlertHeader>
+      <AlertBody>This is the main content of the alert.</AlertBody>
+      <AlertFooter>Alert Footer</AlertFooter>
     </Alert>
   );
 }
 `,
     snippet: (
       <Alert variant="info">
-        <Alert.Header>Alert Header</Alert.Header>
-        <Alert.Body>This is the main content of the alert.</Alert.Body>
-        <Alert.Footer>Alert Footer</Alert.Footer>
+        <AlertHeader>Alert Header</AlertHeader>
+        <AlertBody>This is the main content of the alert.</AlertBody>
+        <AlertFooter>Alert Footer</AlertFooter>
       </Alert>
     ),
   },
@@ -92,63 +88,63 @@ export default function CustomAlert() {
     snippet: (
       <Box padding="10px">
         <Alert variant="success">
-          <Alert.Header>Alert meaning</Alert.Header>
+          <AlertHeader>Alert meaning</AlertHeader>
           <Separator />
-          <Alert.Body>
+          <AlertBody>
             <Paragraph className="p-3">
               In web development terminology, an &quot;alert&quot; typically refers to a way to deliver a message or
               notification to the user. Alerts are used to capture the user&apos;s attention for various reasons such as
               informing them of important events, errors, warnings, or other significant information.
             </Paragraph>
-          </Alert.Body>
+          </AlertBody>
           <Separator />
-          <Alert.Footer>
+          <AlertFooter>
             <Box
               padding="5px"
               rounded
               style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px', backgroundColor: 'inherit' }}
             >
               <Button size="sm" variant="primary">
-                <Button.Text>Save</Button.Text>
+                <ButtonText>Save</ButtonText>
               </Button>
               <Button size="sm" variant="secondary">
-                <Button.Text>Cancel</Button.Text>
+                <ButtonText>Cancel</ButtonText>
               </Button>
             </Box>
-          </Alert.Footer>
+          </AlertFooter>
         </Alert>
       </Box>
     ),
     code: `
-import { Alert, Separator, Paragraph, Box, Button } from "kalki-ui";
+import { Alert, Separator, Paragraph, Box, Button, AlertHeader, AlertBody, AlertFooter, ButtonText } from "kalki-ui";
 
 export default function RichAlert() {
   return (
     <Alert variant="success">
-      <Alert.Header>Alert meaning</Alert.Header>
+      <AlertHeader>Alert meaning</AlertHeader>
       <Separator />
-      <Alert.Body>
+      <AlertBody>
         <Paragraph className="p-3">
           In web development terminology, an "alert" typically refers to a way to deliver a message or
           notification to the user. Alerts are used to capture the user's attention for various reasons
           such as informing them of important events, errors, warnings, or other significant information.
         </Paragraph>
-      </Alert.Body>
+      </AlertBody>
       <Separator />
-      <Alert.Footer>
+      <AlertFooter>
         <Box
           padding="5px"
           rounded
           style={{ display: "flex", justifyContent: "flex-end", gap: "8px", backgroundColor: "inherit" }}
         >
           <Button size="sm" variant="primary">
-            <Button.Text>Save</Button.Text>
+            <ButtonText>Save</ButtonText>
           </Button>
           <Button size="sm" variant="secondary">
-            <Button.Text>Cancel</Button.Text>
+            <ButtonText>Cancel</ButtonText>
           </Button>
         </Box>
-      </Alert.Footer>
+      </AlertFooter>
     </Alert>
   );
 }

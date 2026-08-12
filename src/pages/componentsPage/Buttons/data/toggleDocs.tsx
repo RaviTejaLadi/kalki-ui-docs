@@ -1,4 +1,4 @@
-import { Toggle, ToggleGroup, ToggleGroupItem } from '@/components/common/Toggle';
+import { Toggle, ToggleGroup, ToggleGroupItem } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 export const columns = ['Name', 'Type', 'Default', 'Description'];

@@ -1,5 +1,4 @@
-import Box from '@/components/common/Box';
-import { Heading } from '@/components/common/Typography';
+import { Box, Heading } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 export const docs: docsData[] = [

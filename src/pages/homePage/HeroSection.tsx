@@ -1,6 +1,4 @@
-import Badge from '@/components/common/Badge';
-import Button from '@/components/common/Button';
-import Link from '@/components/common/Link';
+import { Badge, Button, Link } from 'kalki-ui';
 import { ArrowRight } from 'lucide-react';
 import { FloatingShapes } from './FloatingShapes';
 import { ReactLogo, TailwindLogo, TypeScriptLogo } from './Logos';

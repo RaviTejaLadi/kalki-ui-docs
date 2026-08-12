@@ -1,5 +1,4 @@
-import Box from '@/components/common/Box';
-
+import { Box } from 'kalki-ui';
 export const BoxPreviews = {
   basic: (
     <Box display="flex" gap={4} rounded outlined padding="12px" justifyContent="center" alignItems="center">

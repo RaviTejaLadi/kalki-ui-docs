@@ -1,5 +1,4 @@
-import { Tab, Tabs } from '@/components/common/Tabs';
-
+import { Tab, Tabs } from 'kalki-ui';
 export const BasicTabsExample = () => {
   return (
     <Tabs variant="primary" size="md">

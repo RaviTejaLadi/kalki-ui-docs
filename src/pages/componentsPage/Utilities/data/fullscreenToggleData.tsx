@@ -1,5 +1,4 @@
-import FullScreenToggle from '@/components/common/FullScreenToggle';
-import { Heading } from '@/components/common/Typography';
+import { FullScreenToggle, Heading } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 export const docs: docsData[] = [

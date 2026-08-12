@@ -1,6 +1,4 @@
-import { SectionHeader } from '@/components/common/SectionHeader';
-import Separator from '@/components/common/Separator';
-import TableList from '@/components/common/Table/TableList';
+import { SectionHeader, Separator, TableList, Heading, Div, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
 import {
   docs,
   columns,
@@ -12,8 +10,6 @@ import {
   tableCellRows,
 } from './data/tableDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
-import { Heading } from '@/components/common/Typography';
-import Div from '@/components/common/Div';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
 
@@ -27,17 +23,17 @@ const TablePage = () => {
     <div className="container">
       <Head {...metaData} />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">{metaData.title}</SectionHeader.Title>
-        <SectionHeader.SubTitle className="tracking-wide">{metaData.description}</SectionHeader.SubTitle>
-        <SectionHeader.SubTitle className="tracking-wide">
+        <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
+        <SectionHeaderSubTitle className="tracking-wide">{metaData.description}</SectionHeaderSubTitle>
+        <SectionHeaderSubTitle className="tracking-wide">
           Tables are ideal for presenting data that is best understood in a row-column format, such as statistics,
           schedules, comparisons, financial information, and any data that needs to be organized clearly.
-        </SectionHeader.SubTitle>
+        </SectionHeaderSubTitle>
       </SectionHeader>
       <Separator />
       <DocumentationRenderer className="my-4" data={docs} componentName="Table" />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
+        <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>
       </SectionHeader>
       <Div className="space-y-5">
         <Div>

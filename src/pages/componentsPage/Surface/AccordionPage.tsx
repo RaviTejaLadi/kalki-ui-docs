@@ -1,6 +1,4 @@
-import { SectionHeader } from '@/components/common/SectionHeader';
-import Separator from '@/components/common/Separator';
-import TableList from '@/components/common/Table/TableList';
+import { SectionHeader, Separator, TableList, Div, Heading, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
 import {
   docs,
   columns,
@@ -10,23 +8,20 @@ import {
   accordionItemProps,
 } from './data/accordionData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
-import Div from '@/components/common/Div';
-import { Heading } from '@/components/common/Typography';
-
 const AccordionPage = () => {
   return (
     <div className="container">
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Accordion</SectionHeader.Title>
-        <SectionHeader.SubTitle className="tracking-wide">
+        <SectionHeaderTitle className="tracking-wide">Accordion</SectionHeaderTitle>
+        <SectionHeaderSubTitle className="tracking-wide">
           An accordion is a vertically stacked list of items where each item can be expanded or collapsed to reveal or
           hide content. It allows users to manage and navigate large amounts of information within a limited space.
-        </SectionHeader.SubTitle>
+        </SectionHeaderSubTitle>
       </SectionHeader>
       <Separator />
       <DocumentationRenderer className="my-4" data={docs} componentName="Accordion" />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
+        <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>
       </SectionHeader>
       <Div className="space-y-5">
         <Div>

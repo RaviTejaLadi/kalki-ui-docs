@@ -1,4 +1,4 @@
-import { SectionHeader } from '@/components/common/SectionHeader';
+import { SectionHeader, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 export const docs: docsData[] = [
@@ -6,21 +6,21 @@ export const docs: docsData[] = [
     title: 'Basic Section Header',
     desc: 'A simple section header with title and subtitle',
     code: `
-import { SectionHeader } from "kalki-ui";
+import { SectionHeader, SectionHeaderTitle, SectionHeaderSubTitle } from "kalki-ui";
 
 export default function Example() {
   return (
     <SectionHeader className="w-[60rem]">
-      <SectionHeader.Title>Main Title</SectionHeader.Title>
-      <SectionHeader.SubTitle>This is a subtitle</SectionHeader.SubTitle>
+      <SectionHeaderTitle>Main Title</SectionHeaderTitle>
+      <SectionHeaderSubTitle>This is a subtitle</SectionHeaderSubTitle>
     </SectionHeader>
   );
 }
 `,
     snippet: (
       <SectionHeader className="w-[60rem]">
-        <SectionHeader.Title>Main Title</SectionHeader.Title>
-        <SectionHeader.SubTitle>This is a subtitle</SectionHeader.SubTitle>
+        <SectionHeaderTitle>Main Title</SectionHeaderTitle>
+        <SectionHeaderSubTitle>This is a subtitle</SectionHeaderSubTitle>
       </SectionHeader>
     ),
   },
@@ -28,21 +28,21 @@ export default function Example() {
     title: 'Right-aligned Section Header',
     desc: 'A section header with right alignment',
     code: `
-import { SectionHeader } from "kalki-ui";
+import { SectionHeader, SectionHeaderTitle, SectionHeaderSubTitle } from "kalki-ui";
 
 export default function Example() {
   return (
     <SectionHeader align="right" className="w-[60rem]">
-      <SectionHeader.Title>Right Aligned</SectionHeader.Title>
-      <SectionHeader.SubTitle>This header is aligned to the right</SectionHeader.SubTitle>
+      <SectionHeaderTitle>Right Aligned</SectionHeaderTitle>
+      <SectionHeaderSubTitle>This header is aligned to the right</SectionHeaderSubTitle>
     </SectionHeader>
   );
 }
 `,
     snippet: (
       <SectionHeader align="right" className="w-[60rem]">
-        <SectionHeader.Title>Right Aligned</SectionHeader.Title>
-        <SectionHeader.SubTitle>This header is aligned to the right</SectionHeader.SubTitle>
+        <SectionHeaderTitle>Right Aligned</SectionHeaderTitle>
+        <SectionHeaderSubTitle>This header is aligned to the right</SectionHeaderSubTitle>
       </SectionHeader>
     ),
   },
@@ -50,21 +50,21 @@ export default function Example() {
     title: 'Centered Section Header',
     desc: 'A section header with center alignment',
     code: `
-import { SectionHeader } from "kalki-ui";
+import { SectionHeader, SectionHeaderTitle, SectionHeaderSubTitle } from "kalki-ui";
 
 export default function Example() {
   return (
     <SectionHeader align="center" className="w-[60rem]">
-      <SectionHeader.Title>Centered Header</SectionHeader.Title>
-      <SectionHeader.SubTitle>This header is centered</SectionHeader.SubTitle>
+      <SectionHeaderTitle>Centered Header</SectionHeaderTitle>
+      <SectionHeaderSubTitle>This header is centered</SectionHeaderSubTitle>
     </SectionHeader>
   );
 }
 `,
     snippet: (
       <SectionHeader align="center" className="w-[60rem]">
-        <SectionHeader.Title>Centered Header</SectionHeader.Title>
-        <SectionHeader.SubTitle>This header is centered</SectionHeader.SubTitle>
+        <SectionHeaderTitle>Centered Header</SectionHeaderTitle>
+        <SectionHeaderSubTitle>This header is centered</SectionHeaderSubTitle>
       </SectionHeader>
     ),
   },
@@ -72,21 +72,21 @@ export default function Example() {
     title: 'Large Section Header',
     desc: 'A section header with large size',
     code: `
-import { SectionHeader } from "kalki-ui";
+import { SectionHeader, SectionHeaderTitle, SectionHeaderSubTitle } from "kalki-ui";
 
 export default function Example() {
   return (
     <SectionHeader size="lg" className="w-[60rem]">
-      <SectionHeader.Title>Large Header</SectionHeader.Title>
-      <SectionHeader.SubTitle>This is a large-sized header</SectionHeader.SubTitle>
+      <SectionHeaderTitle>Large Header</SectionHeaderTitle>
+      <SectionHeaderSubTitle>This is a large-sized header</SectionHeaderSubTitle>
     </SectionHeader>
   );
 }
 `,
     snippet: (
       <SectionHeader size="lg" className="w-[60rem]">
-        <SectionHeader.Title>Large Header</SectionHeader.Title>
-        <SectionHeader.SubTitle>This is a large-sized header</SectionHeader.SubTitle>
+        <SectionHeaderTitle>Large Header</SectionHeaderTitle>
+        <SectionHeaderSubTitle>This is a large-sized header</SectionHeaderSubTitle>
       </SectionHeader>
     ),
   },
@@ -94,21 +94,21 @@ export default function Example() {
     title: 'Custom Padding and Margin',
     desc: 'A section header with custom padding and margin',
     code: `
-import { SectionHeader } from "kalki-ui";
+import { SectionHeader, SectionHeaderTitle, SectionHeaderSubTitle } from "kalki-ui";
 
 export default function Example() {
   return (
     <SectionHeader className="p-2 m-2 w-[60rem]">
-      <SectionHeader.Title>Custom Spacing</SectionHeader.Title>
-      <SectionHeader.SubTitle>This header has custom padding and margin</SectionHeader.SubTitle>
+      <SectionHeaderTitle>Custom Spacing</SectionHeaderTitle>
+      <SectionHeaderSubTitle>This header has custom padding and margin</SectionHeaderSubTitle>
     </SectionHeader>
   );
 }
 `,
     snippet: (
       <SectionHeader className="p-2 m-2 w-[60rem]">
-        <SectionHeader.Title>Custom Spacing</SectionHeader.Title>
-        <SectionHeader.SubTitle>This header has custom padding and margin</SectionHeader.SubTitle>
+        <SectionHeaderTitle>Custom Spacing</SectionHeaderTitle>
+        <SectionHeaderSubTitle>This header has custom padding and margin</SectionHeaderSubTitle>
       </SectionHeader>
     ),
   },
@@ -116,21 +116,21 @@ export default function Example() {
     title: 'Section Header with Custom Styles',
     desc: 'A section header with custom inline styles',
     code: `
-import { SectionHeader } from "kalki-ui";
+import { SectionHeader, SectionHeaderTitle, SectionHeaderSubTitle } from "kalki-ui";
 
 export default function Example() {
   return (
     <SectionHeader className="w-[60rem]" style={{ backgroundColor: "#f0f0f0", borderRadius: "8px" }}>
-      <SectionHeader.Title style={{ color: "#333" }}>Custom Styled Header</SectionHeader.Title>
-      <SectionHeader.SubTitle style={{ fontStyle: "italic" }}>With custom styles applied</SectionHeader.SubTitle>
+      <SectionHeaderTitle style={{ color: "#333" }}>Custom Styled Header</SectionHeaderTitle>
+      <SectionHeaderSubTitle style={{ fontStyle: "italic" }}>With custom styles applied</SectionHeaderSubTitle>
     </SectionHeader>
   );
 }
 `,
     snippet: (
       <SectionHeader className="w-[60rem]" style={{ backgroundColor: '#f0f0f0', borderRadius: '8px' }}>
-        <SectionHeader.Title style={{ color: '#333' }}>Custom Styled Header</SectionHeader.Title>
-        <SectionHeader.SubTitle style={{ fontStyle: 'italic' }}>With custom styles applied</SectionHeader.SubTitle>
+        <SectionHeaderTitle style={{ color: '#333' }}>Custom Styled Header</SectionHeaderTitle>
+        <SectionHeaderSubTitle style={{ fontStyle: 'italic' }}>With custom styles applied</SectionHeaderSubTitle>
       </SectionHeader>
     ),
   },

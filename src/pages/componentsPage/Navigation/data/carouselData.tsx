@@ -1,67 +1,74 @@
-import Carousel from '@/components/common/Carousel';
-import Button from '@/components/common/Button';
+import {
+  Carousel,
+  Button,
+  Image,
+  CarouselControls,
+  CarouselContent,
+  CarouselSlides,
+  CarouselDots,
+  ButtonIcon,
+  ButtonText,
+} from 'kalki-ui';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { dog1, dog2, dog3, dog4 } from '../assets';
 import { docsData } from '@/types/docsData';
-import Image from '@/components/common/Image';
-
 export const docs: docsData[] = [
   {
     title: 'Basic Carousel',
     desc: 'A simple carousel with images and navigation controls',
     code: `
-import { Carousel, Button, Image } from "kalki-ui";
+import { Carousel, Button, Image, ButtonIcon, ButtonText, CarouselSlides, CarouselControls } from "kalki-ui";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Example() {
   return (
     <Carousel size="md">
-      <Carousel.Slides>
+      <CarouselSlides>
         <Image src="https://picsum.photos/seed/carousel1/800/400" objectFit="cover" alt="Slide 1" />
         <Image src="https://picsum.photos/seed/carousel2/800/400" objectFit="cover" alt="Slide 2" />
         <Image src="https://picsum.photos/seed/carousel3/800/400" objectFit="cover" alt="Slide 3" />
         <Image src="https://picsum.photos/seed/carousel4/800/400" objectFit="cover" alt="Slide 4" />
-      </Carousel.Slides>
-      <Carousel.Controls>
+      </CarouselSlides>
+      <CarouselControls>
         <Button variant="light">
-          <Button.Icon>
+          <ButtonIcon>
             <ChevronLeft width="20px" height="20px" />
-          </Button.Icon>
-          <Button.Text>Previous</Button.Text>
+          </ButtonIcon>
+          <ButtonText>Previous</ButtonText>
         </Button>
         <Button variant="light">
-          <Button.Text>Next</Button.Text>
-          <Button.Icon>
+          <ButtonText>Next</ButtonText>
+          <ButtonIcon>
             <ChevronRight width="20px" height="20px" />
-          </Button.Icon>
+          </ButtonIcon>
         </Button>
-      </Carousel.Controls>
+      </CarouselControls>
     </Carousel>
   );
 }
 `,
     snippet: (
       <Carousel size="md">
-        <Carousel.Slides>
+        <CarouselSlides>
           <Image src={dog1} objectFit="cover" alt="Slide 1" />
           <Image src={dog2} objectFit="cover" alt="Slide 2" />
           <Image src={dog3} objectFit="cover" alt="Slide 3" />
           <Image src={dog4} objectFit="cover" alt="Slide 4" />
-        </Carousel.Slides>
-        <Carousel.Controls>
+        </CarouselSlides>
+        <CarouselControls>
           <Button variant="light">
-            <Button.Icon>
+            <ButtonIcon>
               <ChevronLeft width="20px" height="20px" />
-            </Button.Icon>
-            <Button.Text>Previous</Button.Text>
+            </ButtonIcon>
+            <ButtonText>Previous</ButtonText>
           </Button>
           <Button variant="light">
-            <Button.Text>Next</Button.Text>
-            <Button.Icon>
+            <ButtonText>Next</ButtonText>
+            <ButtonIcon>
               <ChevronRight width="20px" height="20px" />
-            </Button.Icon>
+            </ButtonIcon>
           </Button>
-        </Carousel.Controls>
+        </CarouselControls>
       </Carousel>
     ),
   },
@@ -69,53 +76,53 @@ export default function Example() {
     title: 'Carousel with Content',
     desc: 'A carousel with images and corresponding text content',
     code: `
-import { Carousel, Button, Image } from "kalki-ui";
+import { Carousel, Button, Image, ButtonText, CarouselSlides, CarouselContent, CarouselControls } from "kalki-ui";
 
 export default function Example() {
   return (
     <Carousel size="md">
-      <Carousel.Slides>
+      <CarouselSlides>
         <Image src="https://picsum.photos/seed/carousel1/800/400" objectFit="cover" alt="Slide 1" />
         <Image src="https://picsum.photos/seed/carousel2/800/400" objectFit="cover" alt="Slide 2" />
         <Image src="https://picsum.photos/seed/carousel3/800/400" objectFit="cover" alt="Slide 3" />
-      </Carousel.Slides>
-      <Carousel.Content>
+      </CarouselSlides>
+      <CarouselContent>
         <h3>Dog 1</h3>
         <h3>Dog 2</h3>
         <h3>Dog 3</h3>
-      </Carousel.Content>
-      <Carousel.Controls>
+      </CarouselContent>
+      <CarouselControls>
         <Button variant="light">
-          <Button.Text>Previous</Button.Text>
+          <ButtonText>Previous</ButtonText>
         </Button>
         <Button variant="light">
-          <Button.Text>Next</Button.Text>
+          <ButtonText>Next</ButtonText>
         </Button>
-      </Carousel.Controls>
+      </CarouselControls>
     </Carousel>
   );
 }
 `,
     snippet: (
       <Carousel size="md">
-        <Carousel.Slides>
+        <CarouselSlides>
           <Image src={dog1} objectFit="cover" alt="Slide 1" />
           <Image src={dog2} objectFit="cover" alt="Slide 2" />
           <Image src={dog3} objectFit="cover" alt="Slide 3" />
-        </Carousel.Slides>
-        <Carousel.Content>
+        </CarouselSlides>
+        <CarouselContent>
           <h3>Dog 1</h3>
           <h3>Dog 2</h3>
           <h3>Dog 3</h3>
-        </Carousel.Content>
-        <Carousel.Controls>
+        </CarouselContent>
+        <CarouselControls>
           <Button variant="light">
-            <Button.Text>Previous</Button.Text>
+            <ButtonText>Previous</ButtonText>
           </Button>
           <Button variant="light">
-            <Button.Text>Next</Button.Text>
+            <ButtonText>Next</ButtonText>
           </Button>
-        </Carousel.Controls>
+        </CarouselControls>
       </Carousel>
     ),
   },
@@ -123,29 +130,29 @@ export default function Example() {
     title: 'Carousel with Dots',
     desc: 'A carousel with navigation dots for direct slide selection',
     code: `
-import { Carousel, Image } from "kalki-ui";
+import { Carousel, Image, CarouselSlides, CarouselDots } from "kalki-ui";
 
 export default function Example() {
   return (
     <Carousel size="md">
-      <Carousel.Slides>
+      <CarouselSlides>
         <Image src="https://picsum.photos/seed/carousel1/800/400" objectFit="cover" alt="Slide 1" />
         <Image src="https://picsum.photos/seed/carousel2/800/400" objectFit="cover" alt="Slide 2" />
         <Image src="https://picsum.photos/seed/carousel3/800/400" objectFit="cover" alt="Slide 3" />
-      </Carousel.Slides>
-      <Carousel.Dots />
+      </CarouselSlides>
+      <CarouselDots />
     </Carousel>
   );
 }
 `,
     snippet: (
       <Carousel size="md">
-        <Carousel.Slides>
+        <CarouselSlides>
           <Image src={dog1} objectFit="cover" alt="Slide 1" />
           <Image src={dog2} objectFit="cover" alt="Slide 2" />
           <Image src={dog3} objectFit="cover" alt="Slide 3" />
-        </Carousel.Slides>
-        <Carousel.Dots />
+        </CarouselSlides>
+        <CarouselDots />
       </Carousel>
     ),
   },
@@ -153,41 +160,41 @@ export default function Example() {
     title: 'Custom Styled Carousel',
     desc: 'A carousel with custom styling applied to its components',
     code: `
-import { Carousel, Button, Image } from "kalki-ui";
+import { Carousel, Button, Image, CarouselSlides, CarouselContent, CarouselControls } from "kalki-ui";
 
 export default function Example() {
   return (
     <Carousel className="bg-[#9b9999] border">
-      <Carousel.Slides className="border rounded-md shadow-lg">
+      <CarouselSlides className="border rounded-md shadow-lg">
         <Image src="https://picsum.photos/seed/carousel1/800/400" objectFit="cover" alt="Slide 1" />
         <Image src="https://picsum.photos/seed/carousel2/800/400" objectFit="cover" alt="Slide 2" />
-      </Carousel.Slides>
-      <Carousel.Content className="text-foreground p-2 text-center">
+      </CarouselSlides>
+      <CarouselContent className="text-foreground p-2 text-center">
         <p>Content 1</p>
         <p>Content 2</p>
-      </Carousel.Content>
-      <Carousel.Controls className="border p-2 rounded-md">
+      </CarouselContent>
+      <CarouselControls className="border p-2 rounded-md">
         <Button>Previous</Button>
         <Button>Next</Button>
-      </Carousel.Controls>
+      </CarouselControls>
     </Carousel>
   );
 }
 `,
     snippet: (
       <Carousel className="bg-[#9b9999] border">
-        <Carousel.Slides className="border rounded-md shadow-lg">
+        <CarouselSlides className="border rounded-md shadow-lg">
           <Image src={dog1} objectFit="cover" alt="Slide 1" />
           <Image src={dog2} objectFit="cover" alt="Slide 2" />
-        </Carousel.Slides>
-        <Carousel.Content className="text-foreground p-2 text-center">
+        </CarouselSlides>
+        <CarouselContent className="text-foreground p-2 text-center">
           <p>Content 1</p>
           <p>Content 2</p>
-        </Carousel.Content>
-        <Carousel.Controls className="border p-2 rounded-md">
+        </CarouselContent>
+        <CarouselControls className="border p-2 rounded-md">
           <Button>Previous</Button>
           <Button>Next</Button>
-        </Carousel.Controls>
+        </CarouselControls>
       </Carousel>
     ),
   },

@@ -1,11 +1,10 @@
-import Breadcrumb from '@/components/common/Breadcrumb';
-
+import { Breadcrumb, BreadcrumbItem } from 'kalki-ui';
 export const BreadcrumbPreviews = {
   basic: (
     <Breadcrumb separator="chevron" size="sm">
-      <Breadcrumb.Item to="/">Home</Breadcrumb.Item>
-      <Breadcrumb.Item to="/docs">Docs</Breadcrumb.Item>
-      <Breadcrumb.Item active>Components</Breadcrumb.Item>
+      <BreadcrumbItem to="/">Home</BreadcrumbItem>
+      <BreadcrumbItem to="/docs">Docs</BreadcrumbItem>
+      <BreadcrumbItem active>Components</BreadcrumbItem>
     </Breadcrumb>
   ),
 };

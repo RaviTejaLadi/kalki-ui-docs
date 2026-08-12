@@ -1,8 +1,7 @@
 import React from 'react';
 import { SidebarMenuSubItemProps } from '../types';
 import { cn } from '@/utils';
-import Link from '@/components/common/Link';
-
+import { Link } from 'kalki-ui';
 export const SidebarMenuSubItem = React.forwardRef<HTMLAnchorElement, SidebarMenuSubItemProps>(
   ({ className, isOpen, children, to, icon, ...props }, ref) => {
     if (!isOpen) return null;

@@ -1,5 +1,4 @@
-import Box from '@/components/common/Box';
-import Tag from '@/components/common/Tag';
+import { Box, Tag, TagIcon, TagText } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 import { GlassWaterIcon } from 'lucide-react';
 
@@ -40,26 +39,26 @@ export default function SuccessTag() {
     title: 'Tag with Icon',
     desc: 'A tag with an icon and text.',
     code: `
-import { Tag } from "kalki-ui";
+import { Tag, TagIcon, TagText } from "kalki-ui";
 import { GlassWaterIcon } from "lucide-react";
 
 export default function TagWithIcon() {
   return (
     <Tag>
-      <Tag.Icon>
+      <TagIcon>
         <GlassWaterIcon className="size-3" />
-      </Tag.Icon>
-      <Tag.Text>Favorite</Tag.Text>
+      </TagIcon>
+      <TagText>Favorite</TagText>
     </Tag>
   );
 }
 `,
     snippet: (
       <Tag>
-        <Tag.Icon>
+        <TagIcon>
           <GlassWaterIcon className="size-3" />
-        </Tag.Icon>
-        <Tag.Text>Favorite</Tag.Text>
+        </TagIcon>
+        <TagText>Favorite</TagText>
       </Tag>
     ),
   },
@@ -117,10 +116,10 @@ export const tagCloseButtonProps = [
 ];
 
 export const additionalNotes = [
-  'The Tag component is composed of several sub-components: Tag.Icon, Tag.Text, and Tag.Close.',
+  'The Tag component is composed of several sub-components: TagIcon, TagText, and TagClose.',
   'You can use these sub-components to create more complex tag structures.',
   'The Tag component forwards refs, allowing you to access the underlying DOM element if needed.',
   'The Close sub-component renders a times symbol (×) by default, but you can override this by passing children to it.',
   'The Tag component applies CSS classes based on the variant and size props, allowing for easy styling customization.',
-  'When using Tag.Close, remember to handle the visibility state of the tag in your parent component.',
+  'When using TagClose, remember to handle the visibility state of the tag in your parent component.',
 ];

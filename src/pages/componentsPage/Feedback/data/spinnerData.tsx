@@ -1,4 +1,4 @@
-import Spinner from '@/components/common/Spinner';
+import { Spinner } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 export const columns = ['Name', 'Type', 'Default', 'Description'];

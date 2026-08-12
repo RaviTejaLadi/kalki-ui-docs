@@ -1,4 +1,4 @@
-import Breadcrumb from '@/components/common/Breadcrumb';
+import { Breadcrumb, BreadcrumbItem } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 import { ArrowRight } from 'lucide-react';
 
@@ -7,23 +7,23 @@ export const docs: docsData[] = [
     title: 'Basic Breadcrumb',
     desc: 'This example demonstrates the most basic usage of the Breadcrumb component with default properties.',
     code: `
-import { Breadcrumb } from "kalki-ui";
+import { Breadcrumb, BreadcrumbItem } from "kalki-ui";
 
 export default function Example() {
   return (
     <Breadcrumb>
-      <Breadcrumb.Item to="/">Home</Breadcrumb.Item>
-      <Breadcrumb.Item to="/products">Products</Breadcrumb.Item>
-      <Breadcrumb.Item active>Laptops</Breadcrumb.Item>
+      <BreadcrumbItem to="/">Home</BreadcrumbItem>
+      <BreadcrumbItem to="/products">Products</BreadcrumbItem>
+      <BreadcrumbItem active>Laptops</BreadcrumbItem>
     </Breadcrumb>
   );
 }
 `,
     snippet: (
       <Breadcrumb>
-        <Breadcrumb.Item to="/">Home</Breadcrumb.Item>
-        <Breadcrumb.Item to="/products">Products</Breadcrumb.Item>
-        <Breadcrumb.Item active>Laptops</Breadcrumb.Item>
+        <BreadcrumbItem to="/">Home</BreadcrumbItem>
+        <BreadcrumbItem to="/products">Products</BreadcrumbItem>
+        <BreadcrumbItem active>Laptops</BreadcrumbItem>
       </Breadcrumb>
     ),
   },
@@ -31,24 +31,24 @@ export default function Example() {
     title: 'Breadcrumb with Custom Separator',
     desc: 'This example shows how to use a custom separator between Breadcrumb items.',
     code: `
-import { Breadcrumb } from "kalki-ui";
+import { Breadcrumb, BreadcrumbItem } from "kalki-ui";
 import { ArrowRight } from "lucide-react";
 
 export default function Example() {
   return (
     <Breadcrumb separator={<ArrowRight className="size-3 mx-1 text-[var(--icon-color)]" />}>
-      <Breadcrumb.Item to="/">Home</Breadcrumb.Item>
-      <Breadcrumb.Item to="/blog">Blog</Breadcrumb.Item>
-      <Breadcrumb.Item active>How to Use Breadcrumbs</Breadcrumb.Item>
+      <BreadcrumbItem to="/">Home</BreadcrumbItem>
+      <BreadcrumbItem to="/blog">Blog</BreadcrumbItem>
+      <BreadcrumbItem active>How to Use Breadcrumbs</BreadcrumbItem>
     </Breadcrumb>
   );
 }
 `,
     snippet: (
       <Breadcrumb separator={<ArrowRight className="size-3 mx-1 text-[var(--icon-color)]" />}>
-        <Breadcrumb.Item to="/">Home</Breadcrumb.Item>
-        <Breadcrumb.Item to="/blog">Blog</Breadcrumb.Item>
-        <Breadcrumb.Item active>How to Use Breadcrumbs</Breadcrumb.Item>
+        <BreadcrumbItem to="/">Home</BreadcrumbItem>
+        <BreadcrumbItem to="/blog">Blog</BreadcrumbItem>
+        <BreadcrumbItem active>How to Use Breadcrumbs</BreadcrumbItem>
       </Breadcrumb>
     ),
   },
@@ -56,31 +56,31 @@ export default function Example() {
     title: 'Styled Breadcrumb',
     desc: 'This example demonstrates how to apply custom styles to the Breadcrumb component.',
     code: `
-import { Breadcrumb } from "kalki-ui";
+import { Breadcrumb, BreadcrumbItem } from "kalki-ui";
 
 export default function Example() {
   return (
     <Breadcrumb>
-      <Breadcrumb.Item to="/" className="text-red-800">
+      <BreadcrumbItem to="/" className="text-red-800">
         Dashboard
-      </Breadcrumb.Item>
-      <Breadcrumb.Item to="/settings" className="text-pink-800">
+      </BreadcrumbItem>
+      <BreadcrumbItem to="/settings" className="text-pink-800">
         Settings
-      </Breadcrumb.Item>
-      <Breadcrumb.Item active>Profile</Breadcrumb.Item>
+      </BreadcrumbItem>
+      <BreadcrumbItem active>Profile</BreadcrumbItem>
     </Breadcrumb>
   );
 }
 `,
     snippet: (
       <Breadcrumb>
-        <Breadcrumb.Item to="/" className="text-red-800">
+        <BreadcrumbItem to="/" className="text-red-800">
           Dashboard
-        </Breadcrumb.Item>
-        <Breadcrumb.Item to="/settings" className="text-pink-800">
+        </BreadcrumbItem>
+        <BreadcrumbItem to="/settings" className="text-pink-800">
           Settings
-        </Breadcrumb.Item>
-        <Breadcrumb.Item active>Profile</Breadcrumb.Item>
+        </BreadcrumbItem>
+        <BreadcrumbItem active>Profile</BreadcrumbItem>
       </Breadcrumb>
     ),
   },

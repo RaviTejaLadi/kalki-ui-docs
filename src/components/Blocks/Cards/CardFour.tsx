@@ -1,5 +1,4 @@
-import Button from '@/components/common/Button';
-import Card, { CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/common/Card';
+import { Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'kalki-ui';
 import { StarIcon } from 'lucide-react';
 
 const CardFour = () => {

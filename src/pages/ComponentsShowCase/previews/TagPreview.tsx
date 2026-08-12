@@ -1,17 +1,16 @@
-import Tag from '@/components/common/Tag';
-
+import { Tag, TagClose, TagText } from 'kalki-ui';
 export const TagPreviews = {
   basic: (
     <div className="flex flex-wrap gap-2">
       <Tag variant="primary" size="sm">
-        <Tag.Text>React</Tag.Text>
+        <TagText>React</TagText>
       </Tag>
       <Tag variant="success" size="sm">
-        <Tag.Text>TypeScript</Tag.Text>
-        <Tag.Close onClick={() => {}} />
+        <TagText>TypeScript</TagText>
+        <TagClose onClick={() => {}} />
       </Tag>
       <Tag variant="info" size="sm">
-        <Tag.Text>Kalki UI</Tag.Text>
+        <TagText>Kalki UI</TagText>
       </Tag>
     </div>
   ),

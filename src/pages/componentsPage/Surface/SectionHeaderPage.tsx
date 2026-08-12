@@ -1,6 +1,4 @@
-import { SectionHeader } from '@/components/common/SectionHeader';
-import Separator from '@/components/common/Separator';
-import TableList from '@/components/common/Table/TableList';
+import { SectionHeader, Separator, TableList, Heading, Div, SectionHeaderTitle } from 'kalki-ui';
 import {
   docs,
   columns,
@@ -9,19 +7,16 @@ import {
   sectionHeaderSubTitleProps,
 } from './data/sectionHeaderData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
-import { Heading } from '@/components/common/Typography';
-import Div from '@/components/common/Div';
-
 const SectionHeaderPage = () => {
   return (
     <div className="container">
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Section Header</SectionHeader.Title>
+        <SectionHeaderTitle className="tracking-wide">Section Header</SectionHeaderTitle>
       </SectionHeader>
       <Separator />
       <DocumentationRenderer className="my-4" data={docs} componentName="SectionHeader" />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
+        <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>
       </SectionHeader>
       <Div className="space-y-5">
         <Div>

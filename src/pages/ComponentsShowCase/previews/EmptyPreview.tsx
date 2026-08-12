@@ -1,4 +1,4 @@
-import { Empty, EmptyHeader, EmptyTitle, EmptyDescription, EmptyMedia } from '@/components/common/Empty';
+import { Empty, EmptyHeader, EmptyTitle, EmptyDescription, EmptyMedia } from 'kalki-ui';
 import { Inbox } from 'lucide-react';
 
 export const EmptyPreviews = {

@@ -1,5 +1,4 @@
-import Badge from '@/components/common/Badge';
-import Button from '@/components/common/Button';
+import { Badge, Button } from 'kalki-ui';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import placeholder from '../../../assets/placeholder.svg';
 

@@ -1,5 +1,4 @@
-import Spinner from '@/components/common/Spinner';
-
+import { Spinner } from 'kalki-ui';
 export const SpinnerPreviews = {
   basic: (
     <div className="flex gap-4 items-center">

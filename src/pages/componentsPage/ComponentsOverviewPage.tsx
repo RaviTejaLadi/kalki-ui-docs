@@ -1,8 +1,16 @@
-import { SectionHeader } from '@/components/common/SectionHeader';
+import {
+  SectionHeader,
+  Link,
+  Separator,
+  Card,
+  CardContent,
+  CardDescription,
+  CardTitle,
+  CardHeader,
+  SectionHeaderTitle,
+  SectionHeaderSubTitle,
+} from 'kalki-ui';
 import React, { useState, useMemo } from 'react';
-import Link from '@/components/common/Link';
-import Separator from '@/components/common/Separator';
-import Card, { CardContent, CardDescription, CardTitle, CardHeader } from '@/components/common/Card';
 import { categorizedRoutesComponents } from '@/components/Layout/ComponentsLayout/categorizedRoutesComponents';
 
 const searchInputClassName =
@@ -33,13 +41,13 @@ const ComponentsOverviewPage: React.FC = () => {
     <div className="container">
       <div className="flex items-center justify-between mb-6">
         <SectionHeader variant="transparent" size="sm">
-          <SectionHeader.Title className="tracking-wide">Components overview</SectionHeader.Title>
-          <SectionHeader.SubTitle className="tracking-wide">
+          <SectionHeaderTitle className="tracking-wide">Components overview</SectionHeaderTitle>
+          <SectionHeaderSubTitle className="tracking-wide">
             Every Kalki UI component available so far. Accessible, modern and easy to style UI components.
-          </SectionHeader.SubTitle>
-          <SectionHeader.SubTitle>
+          </SectionHeaderSubTitle>
+          <SectionHeaderSubTitle>
             Here&apos;s a list of all the components available in the library.
-          </SectionHeader.SubTitle>
+          </SectionHeaderSubTitle>
         </SectionHeader>{' '}
         <div className="my-6 ">
           <input

@@ -1,6 +1,4 @@
-import { SectionHeader } from '@/components/common/SectionHeader';
-import Separator from '@/components/common/Separator';
-import TableList from '@/components/common/Table/TableList';
+import { SectionHeader, Separator, TableList, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
 import { docs, columns, rows } from './data/headingData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 
@@ -8,18 +6,16 @@ const HeadingPage = () => {
   return (
     <div className="container">
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Heading</SectionHeader.Title>
-        <SectionHeader.SubTitle className="tracking-wide">
+        <SectionHeaderTitle className="tracking-wide">Heading</SectionHeaderTitle>
+        <SectionHeaderSubTitle className="tracking-wide">
           Headings are titles or subtitles that you want to display on a webpage.
-        </SectionHeader.SubTitle>
-        <SectionHeader.SubTitle className="tracking-wide">
-          Headings are defined with the H1 to H6.
-        </SectionHeader.SubTitle>
+        </SectionHeaderSubTitle>
+        <SectionHeaderSubTitle className="tracking-wide">Headings are defined with the H1 to H6.</SectionHeaderSubTitle>
       </SectionHeader>
       <Separator />
       <DocumentationRenderer className="my-4" data={docs} componentName="Heading" />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
+        <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>
       </SectionHeader>
       <TableList columns={columns} rows={rows} code CodeColumn={0} />
     </div>

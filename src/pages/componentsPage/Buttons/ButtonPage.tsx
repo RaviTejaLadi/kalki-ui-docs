@@ -1,12 +1,9 @@
-import { SectionHeader } from '@/components/common/SectionHeader';
-import Separator from '@/components/common/Separator';
-import TableList from '@/components/common/Table/TableList';
+import { SectionHeader, Separator, TableList, Div, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
 import React from 'react';
 import { docs, columns, componentHierarchyCode, rows } from './data/buttonDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { SyntaxHighlighter } from '@/components/shared/SyntaxHighLighter/SyntaxHighLighter';
 import ButtonPlayground from '@/components/playground/ButtonPlayground';
-import Div from '@/components/common/Div';
 import Head from '@/components/Head';
 import { IMetaData } from '@/types/metaData';
 
@@ -22,19 +19,19 @@ const ButtonPage: React.FC = () => {
     <div className="container">
       <Head {...metaData} />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">{metaData.title}</SectionHeader.Title>
-        <SectionHeader.SubTitle className="tracking-wide">{metaData.description}</SectionHeader.SubTitle>
+        <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
+        <SectionHeaderSubTitle className="tracking-wide">{metaData.description}</SectionHeaderSubTitle>
       </SectionHeader>
       <Separator />
       <ButtonPlayground />
       <Separator />
       <DocumentationRenderer className="my-4" data={docs} componentName="Button" />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
+        <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>
       </SectionHeader>
       <TableList columns={columns} rows={rows} code CodeColumn={0} />
       <SectionHeader variant="transparent" size="sm" className="mt-4">
-        <SectionHeader.Title className="tracking-wide">Component Hierarchy</SectionHeader.Title>
+        <SectionHeaderTitle className="tracking-wide">Component Hierarchy</SectionHeaderTitle>
       </SectionHeader>
       <Div borderStyle="solid">
         <SyntaxHighlighter code={componentHierarchyCode} language="html" />

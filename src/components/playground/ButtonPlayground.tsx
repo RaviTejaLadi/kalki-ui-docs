@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { CheckCircle2, Settings, ArrowRight } from 'lucide-react';
-import Card, { CardContent } from '../common/Card';
-import Button from '../common/Button';
+import { Card, CardContent, Button, ButtonIcon, ButtonText } from 'kalki-ui';
 import { SyntaxHighlighter } from '../shared/SyntaxHighLighter/SyntaxHighLighter';
 
 type Variant =
@@ -78,23 +77,23 @@ const ButtonPlayground = () => {
     code += `>\n`;
 
     if (settings.withIcon && !settings.isPending) {
-      code += `  <Button.Icon>\n`;
+      code += `  <ButtonIcon>\n`;
       code += `    ${
         settings.variant === 'success' ? '<CheckCircle2 className="size-4" />' : '<Settings className="size-4" />'
       }\n`;
-      code += `  </Button.Icon>\n`;
+      code += `  </ButtonIcon>\n`;
     }
 
     if (settings.withText) {
-      code += `  <Button.Text>\n`;
+      code += `  <ButtonText>\n`;
       code += `    ${settings.variant.charAt(0).toUpperCase() + settings.variant.slice(1)} Button\n`;
-      code += `  </Button.Text>\n`;
+      code += `  </ButtonText>\n`;
     }
 
     if (settings.withIcon && !settings.isPending) {
-      code += `  <Button.Icon className="ml-1">\n`;
+      code += `  <ButtonIcon className="ml-1">\n`;
       code += `    <ArrowRight className="size-4" />\n`;
-      code += `  </Button.Icon>\n`;
+      code += `  </ButtonIcon>\n`;
     }
 
     code += `</Button>`;
@@ -119,23 +118,21 @@ const ButtonPlayground = () => {
                 isPendingText="Loading..."
               >
                 {settings.withIcon && !settings.isPending && (
-                  <Button.Icon>
+                  <ButtonIcon>
                     {settings.variant === 'success' ? (
                       <CheckCircle2 className="size-4" />
                     ) : (
                       <Settings className="size-4" />
                     )}
-                  </Button.Icon>
+                  </ButtonIcon>
                 )}
                 {settings.withText && (
-                  <Button.Text>
-                    {settings.variant.charAt(0).toUpperCase() + settings.variant.slice(1)} Button
-                  </Button.Text>
+                  <ButtonText>{settings.variant.charAt(0).toUpperCase() + settings.variant.slice(1)} Button</ButtonText>
                 )}
                 {settings.withIcon && !settings.isPending && (
-                  <Button.Icon className="ml-1">
+                  <ButtonIcon className="ml-1">
                     <ArrowRight className="size-4" />
-                  </Button.Icon>
+                  </ButtonIcon>
                 )}
               </Button>
             </div>

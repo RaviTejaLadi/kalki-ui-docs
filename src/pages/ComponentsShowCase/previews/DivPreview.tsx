@@ -1,5 +1,4 @@
-import Div from '@/components/common/Div';
-
+import { Div } from 'kalki-ui';
 export const DivPreviews = {
   basic: (
     <div className="flex gap-2 flex-wrap">

@@ -1,5 +1,4 @@
-import Box from '@/components/common/Box';
-import OrderedList from '@/components/common/Lists/OrderedList';
+import { Box, OrderedList, OrderedListItem } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 export const columns = ['Name', 'Type', 'Default', 'Description'];
@@ -9,7 +8,7 @@ export const orderedListRows = [
     'children',
     'node',
     'required',
-    'The content to be rendered inside the OrderedList component. This should be OrderedList.Item components.',
+    'The content to be rendered inside the OrderedList component. This should be OrderedListItem components.',
   ],
   [
     'type',
@@ -28,23 +27,23 @@ export const docs: docsData[] = [
     title: 'Basic Usage',
     desc: 'A simple OrderedList component with default numeric markers.',
     code: `
-import { OrderedList } from "kalki-ui";
+import { OrderedList, OrderedListItem } from "kalki-ui";
 
 export default function BasicOrderedList() {
   return (
     <OrderedList>
-      <OrderedList.Item>First item</OrderedList.Item>
-      <OrderedList.Item>Second item</OrderedList.Item>
-      <OrderedList.Item>Third item</OrderedList.Item>
+      <OrderedListItem>First item</OrderedListItem>
+      <OrderedListItem>Second item</OrderedListItem>
+      <OrderedListItem>Third item</OrderedListItem>
     </OrderedList>
   );
 }
 `,
     snippet: (
       <OrderedList>
-        <OrderedList.Item>First item</OrderedList.Item>
-        <OrderedList.Item>Second item</OrderedList.Item>
-        <OrderedList.Item>Third item</OrderedList.Item>
+        <OrderedListItem>First item</OrderedListItem>
+        <OrderedListItem>Second item</OrderedListItem>
+        <OrderedListItem>Third item</OrderedListItem>
       </OrderedList>
     ),
   },
@@ -52,23 +51,23 @@ export default function BasicOrderedList() {
     title: 'Custom Marker Type',
     desc: 'OrderedList component with custom marker type (lowercase letters).',
     code: `
-import { OrderedList } from "kalki-ui";
+import { OrderedList, OrderedListItem } from "kalki-ui";
 
 export default function CustomMarkerOrderedList() {
   return (
     <OrderedList type="a">
-      <OrderedList.Item>Item A</OrderedList.Item>
-      <OrderedList.Item>Item B</OrderedList.Item>
-      <OrderedList.Item>Item C</OrderedList.Item>
+      <OrderedListItem>Item A</OrderedListItem>
+      <OrderedListItem>Item B</OrderedListItem>
+      <OrderedListItem>Item C</OrderedListItem>
     </OrderedList>
   );
 }
 `,
     snippet: (
       <OrderedList type="a">
-        <OrderedList.Item>Item A</OrderedList.Item>
-        <OrderedList.Item>Item B</OrderedList.Item>
-        <OrderedList.Item>Item C</OrderedList.Item>
+        <OrderedListItem>Item A</OrderedListItem>
+        <OrderedListItem>Item B</OrderedListItem>
+        <OrderedListItem>Item C</OrderedListItem>
       </OrderedList>
     ),
   },
@@ -76,35 +75,35 @@ export default function CustomMarkerOrderedList() {
     title: 'Nested Lists',
     desc: 'OrderedList component with nested lists and different marker types.',
     code: `
-import { OrderedList } from "kalki-ui";
+import { OrderedList, OrderedListItem } from "kalki-ui";
 
 export default function NestedOrderedList() {
   return (
     <OrderedList>
-      <OrderedList.Item>Main item 1</OrderedList.Item>
-      <OrderedList.Item>
+      <OrderedListItem>Main item 1</OrderedListItem>
+      <OrderedListItem>
         Main item 2
         <OrderedList type="a">
-          <OrderedList.Item>Subitem 2.a</OrderedList.Item>
-          <OrderedList.Item>Subitem 2.b</OrderedList.Item>
+          <OrderedListItem>Subitem 2.a</OrderedListItem>
+          <OrderedListItem>Subitem 2.b</OrderedListItem>
         </OrderedList>
-      </OrderedList.Item>
-      <OrderedList.Item>Main item 3</OrderedList.Item>
+      </OrderedListItem>
+      <OrderedListItem>Main item 3</OrderedListItem>
     </OrderedList>
   );
 }
 `,
     snippet: (
       <OrderedList>
-        <OrderedList.Item>Main item 1</OrderedList.Item>
-        <OrderedList.Item>
+        <OrderedListItem>Main item 1</OrderedListItem>
+        <OrderedListItem>
           Main item 2
           <OrderedList type="a">
-            <OrderedList.Item>Subitem 2.a</OrderedList.Item>
-            <OrderedList.Item>Subitem 2.b</OrderedList.Item>
+            <OrderedListItem>Subitem 2.a</OrderedListItem>
+            <OrderedListItem>Subitem 2.b</OrderedListItem>
           </OrderedList>
-        </OrderedList.Item>
-        <OrderedList.Item>Main item 3</OrderedList.Item>
+        </OrderedListItem>
+        <OrderedListItem>Main item 3</OrderedListItem>
       </OrderedList>
     ),
   },
@@ -112,15 +111,15 @@ export default function NestedOrderedList() {
     title: 'Custom Styling',
     desc: 'OrderedList component with custom CSS classes for styling.',
     code: `
-import { Box, OrderedList } from "kalki-ui";
+import { Box, OrderedList, OrderedListItem } from "kalki-ui";
 
 export default function StyledOrderedList() {
   return (
     <Box padding="10px" margin="0px 0px 0px 15px">
       <OrderedList type="i" className="list-decimal pl-5 space-y-2">
-        <OrderedList.Item className="text-xl font-semibold text-blue-500">Custom styled item 1</OrderedList.Item>
-        <OrderedList.Item className="text-xl font-semibold text-blue-500">Custom styled item 2</OrderedList.Item>
-        <OrderedList.Item className="text-xl font-semibold text-blue-500">Custom styled item 3</OrderedList.Item>
+        <OrderedListItem className="text-xl font-semibold text-blue-500">Custom styled item 1</OrderedListItem>
+        <OrderedListItem className="text-xl font-semibold text-blue-500">Custom styled item 2</OrderedListItem>
+        <OrderedListItem className="text-xl font-semibold text-blue-500">Custom styled item 3</OrderedListItem>
       </OrderedList>
     </Box>
   );
@@ -129,9 +128,9 @@ export default function StyledOrderedList() {
     snippet: (
       <Box padding="10px" margin="0px 0px 0px 15px">
         <OrderedList type="i" className="list-decimal pl-5 space-y-2">
-          <OrderedList.Item className="text-xl font-semibold text-blue-500">Custom styled item 1</OrderedList.Item>
-          <OrderedList.Item className="text-xl font-semibold text-blue-500">Custom styled item 2</OrderedList.Item>
-          <OrderedList.Item className="text-xl font-semibold text-blue-500">Custom styled item 3</OrderedList.Item>
+          <OrderedListItem className="text-xl font-semibold text-blue-500">Custom styled item 1</OrderedListItem>
+          <OrderedListItem className="text-xl font-semibold text-blue-500">Custom styled item 2</OrderedListItem>
+          <OrderedListItem className="text-xl font-semibold text-blue-500">Custom styled item 3</OrderedListItem>
         </OrderedList>
       </Box>
     ),

@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Table from '@/components/common/Table';
-import { Heading } from '@/components/common/Typography';
+import { Table, Heading, TableHead, TableBody, TableRow, TableCell } from 'kalki-ui';
 import React, { useEffect, useState, useRef } from 'react';
 
 interface SystemInfo {
@@ -148,20 +147,20 @@ const SystemInfoTable: React.FC = () => {
     <div className="container mx-auto p-4">
       <Heading className="text-2xl font-bold mb-4">System Information</Heading>
       <Table>
-        <Table.Head>
-          <Table.Row>
-            <Table.Cell isHeader>Property</Table.Cell>
-            <Table.Cell isHeader>Value</Table.Cell>
-          </Table.Row>
-        </Table.Head>
-        <Table.Body>
+        <TableHead>
+          <TableRow>
+            <TableCell isHeader>Property</TableCell>
+            <TableCell isHeader>Value</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
           {systemInfo.map((info, index) => (
-            <Table.Row key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-              <Table.Cell className="border border-gray-300 px-4 py-2">{info.key}</Table.Cell>
-              <Table.Cell className="border border-gray-300 px-4 py-2">{info.value?.toString() || 'N/A'}</Table.Cell>
-            </Table.Row>
+            <TableRow key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+              <TableCell className="border border-gray-300 px-4 py-2">{info.key}</TableCell>
+              <TableCell className="border border-gray-300 px-4 py-2">{info.value?.toString() || 'N/A'}</TableCell>
+            </TableRow>
           ))}
-        </Table.Body>
+        </TableBody>
       </Table>
 
       {locationInfo && (

@@ -1,5 +1,4 @@
-import Button from '@/components/common/Button';
-import Modal from '@/components/common/Modal';
+import { Button, Modal, ModalHeader, ModalFooter, ModalTitle, ModalBody } from 'kalki-ui';
 import { useState } from 'react';
 
 export const BasicModalExample = () => {
@@ -10,15 +9,15 @@ export const BasicModalExample = () => {
       <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
       {isOpen && (
         <Modal open={isOpen} size="md" onClose={() => setIsOpen(false)} position="top">
-          <Modal.Header closeButton onClose={() => setIsOpen(false)}>
-            <Modal.Title>Modal Title</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
+          <ModalHeader closeButton onClose={() => setIsOpen(false)}>
+            <ModalTitle>Modal Title</ModalTitle>
+          </ModalHeader>
+          <ModalBody>
             <p>This is the modal content.</p>
-          </Modal.Body>
-          <Modal.Footer>
+          </ModalBody>
+          <ModalFooter>
             <Button onClick={() => setIsOpen(false)}>Close</Button>
-          </Modal.Footer>
+          </ModalFooter>
         </Modal>
       )}
     </div>

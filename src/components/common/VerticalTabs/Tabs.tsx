@@ -72,7 +72,9 @@ const TabList = ({ children, title, className }: TabListProps) => {
 
   return (
     <div className={cn(' transition-all duration-200', isMobile ? 'w-full' : 'w-80', className)}>
-      {title && <div className="px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{title}</div>}
+      {title && (
+        <div className="px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{title}</div>
+      )}
       <nav className={cn('flex', isMobile ? 'flex-row overflow-x-auto scrollbar-hide' : 'flex-col')}>{children}</nav>
     </div>
   );

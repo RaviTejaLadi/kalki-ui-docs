@@ -1,6 +1,14 @@
-import { SectionHeader } from '@/components/common/SectionHeader';
-import Separator from '@/components/common/Separator';
-import TableList from '@/components/common/Table/TableList';
+import {
+  SectionHeader,
+  Separator,
+  TableList,
+  Div,
+  Heading,
+  SectionHeaderTitle,
+  SectionHeaderSubTitle,
+  UnOrderedList,
+  UnOrderedListItem,
+} from 'kalki-ui';
 import {
   docs,
   columns,
@@ -11,9 +19,6 @@ import {
   additionalNotes,
 } from './data/tagDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
-import Div from '@/components/common/Div';
-import { Heading } from '@/components/common/Typography';
-import UnOrderedList from '@/components/common/Lists/UnOrderedList';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
 
@@ -26,19 +31,19 @@ const TagPage = () => {
     <div className="container">
       <Head {...metaData} />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">{metaData.title}</SectionHeader.Title>
-        <SectionHeader.SubTitle>
+        <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
+        <SectionHeaderSubTitle>
           {additionalNotes.map((note, index) => (
             <UnOrderedList key={index}>
-              <UnOrderedList.Item className="text-muted-foreground tracking-wide">{note}</UnOrderedList.Item>
+              <UnOrderedListItem className="text-muted-foreground tracking-wide">{note}</UnOrderedListItem>
             </UnOrderedList>
           ))}
-        </SectionHeader.SubTitle>
+        </SectionHeaderSubTitle>
       </SectionHeader>
       <Separator />
       <DocumentationRenderer className="my-4" data={docs} componentName="Tag" />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
+        <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>
       </SectionHeader>
       <Div className="space-y-5">
         <Div>

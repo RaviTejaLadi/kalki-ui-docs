@@ -1,9 +1,6 @@
-import { SectionHeader } from '@/components/common/SectionHeader';
-import Separator from '@/components/common/Separator';
-import TableList from '@/components/common/Table/TableList';
+import { SectionHeader, Separator, TableList, Div, SectionHeaderTitle } from 'kalki-ui';
 import { docs, columns, rows, componentHierarchyCode } from './data/linkBarDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
-import Div from '@/components/common/Div';
 import { SyntaxHighlighter } from '@/components/shared/SyntaxHighLighter/SyntaxHighLighter';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
@@ -17,16 +14,16 @@ const LinkBarPage = () => {
     <div className="container">
       <Head {...metaData} />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">{metaData.title}</SectionHeader.Title>
+        <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
       </SectionHeader>
       <Separator />
       <DocumentationRenderer className="my-4" data={docs} componentName="LinkBar" />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
+        <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>
       </SectionHeader>
       <TableList columns={columns} rows={rows} code CodeColumn={0} />
       <SectionHeader variant="transparent" size="sm" className="mt-4">
-        <SectionHeader.Title className="tracking-wide">Component Hierarchy</SectionHeader.Title>
+        <SectionHeaderTitle className="tracking-wide">Component Hierarchy</SectionHeaderTitle>
       </SectionHeader>
       <Div borderStyle="solid">
         <SyntaxHighlighter code={componentHierarchyCode} language="jsx" />

@@ -1,4 +1,4 @@
-import Button from '@/components/common/Button';
+import { Button } from 'kalki-ui';
 import { useToast } from 'kalki-ui-toast';
 import { BoxIcon } from 'lucide-react';
 

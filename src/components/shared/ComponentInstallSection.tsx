@@ -1,41 +1,37 @@
-import { SectionHeader } from '@/components/common/SectionHeader';
+import { SectionHeader, Separator, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
 import { SyntaxHighlighter } from '@/components/shared/SyntaxHighLighter/SyntaxHighLighter';
-import Separator from '@/components/common/Separator';
 
 interface ComponentInstallSectionProps {
   /** Public component export name, e.g. "Button" or "Modal" */
   componentName: string;
   /** Optional custom import snippet. Defaults to named import from kalki-ui. */
   importCode?: string;
-  /** Whether the component is a default export in the package. */
-  defaultExport?: boolean;
+  /** Optional deep-import path segment, e.g. "button" → kalki-ui/button */
+  deepImport?: string;
 }
 
 /**
- * shadcn-style Installation + Usage block for component docs pages.
- * Users can install the package or copy the usage import into their app.
+ * Installation + Usage block for component docs pages (kalki-ui v3: named exports only).
  */
-const ComponentInstallSection = ({
-  componentName,
-  importCode,
-  defaultExport = false,
-}: ComponentInstallSectionProps) => {
+const ComponentInstallSection = ({ componentName, importCode, deepImport }: ComponentInstallSectionProps) => {
   const usageCode =
     importCode ??
-    (defaultExport ? `import ${componentName} from "kalki-ui";` : `import { ${componentName} } from "kalki-ui";`);
+    (deepImport
+      ? `import { ${componentName} } from "kalki-ui/${deepImport}";`
+      : `import { ${componentName} } from "kalki-ui";`);
 
   return (
     <div className="my-6 space-y-6">
       <div>
         <SectionHeader variant="transparent" size="sm">
-          <SectionHeader.Title className="tracking-wide">Installation</SectionHeader.Title>
-          <SectionHeader.SubTitle className="tracking-wide">
+          <SectionHeaderTitle className="tracking-wide">Installation</SectionHeaderTitle>
+          <SectionHeaderSubTitle className="tracking-wide">
             Install the package, then import styles once in your app entry file.
-          </SectionHeader.SubTitle>
+          </SectionHeaderSubTitle>
         </SectionHeader>
         <div className="mt-3 space-y-3">
           <SyntaxHighlighter code={`npm install kalki-ui`} language="javascript" />
-          <SyntaxHighlighter code={`import "kalki-ui/dist/index.css";`} language="javascript" />
+          <SyntaxHighlighter code={`import "kalki-ui/styles.css";`} language="javascript" />
         </div>
       </div>
 
@@ -43,10 +39,11 @@ const ComponentInstallSection = ({
 
       <div>
         <SectionHeader variant="transparent" size="sm">
-          <SectionHeader.Title className="tracking-wide">Usage</SectionHeader.Title>
-          <SectionHeader.SubTitle className="tracking-wide">
-            Import the component from the package, or copy any example below and use it directly.
-          </SectionHeader.SubTitle>
+          <SectionHeaderTitle className="tracking-wide">Usage</SectionHeaderTitle>
+          <SectionHeaderSubTitle className="tracking-wide">
+            v3 uses named exports only (no compound APIs like Button.Icon). Prefer deep imports for smaller bundles, or
+            import from the root package.
+          </SectionHeaderSubTitle>
         </SectionHeader>
         <div className="mt-3">
           <SyntaxHighlighter code={usageCode} language="tsx" />

@@ -1,18 +1,17 @@
-import Avatar from '@/components/common/Avatar';
-
+import { Avatar, AvatarFallback, AvatarImage } from 'kalki-ui';
 export const AvatarPreviews = {
   basic: (
     <div className="flex gap-3 items-center">
       <Avatar size="sm">
-        <Avatar.Image src="https://github.com/github.png" alt="User" />
-        <Avatar.Fallback>JD</Avatar.Fallback>
+        <AvatarImage src="https://github.com/github.png" alt="User" />
+        <AvatarFallback>JD</AvatarFallback>
       </Avatar>
       <Avatar size="md">
-        <Avatar.Image src="https://github.com/github.png" alt="User" />
-        <Avatar.Fallback>AB</Avatar.Fallback>
+        <AvatarImage src="https://github.com/github.png" alt="User" />
+        <AvatarFallback>AB</AvatarFallback>
       </Avatar>
       <Avatar size="lg">
-        <Avatar.Fallback>XY</Avatar.Fallback>
+        <AvatarFallback>XY</AvatarFallback>
       </Avatar>
     </div>
   ),

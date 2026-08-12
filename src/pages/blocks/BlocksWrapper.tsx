@@ -1,4 +1,4 @@
-import Button from '@/components/common/Button';
+import { Button } from 'kalki-ui';
 import { cn } from '@/utils';
 import { ArrowLeft } from 'lucide-react';
 import { PropsWithChildren } from 'react';

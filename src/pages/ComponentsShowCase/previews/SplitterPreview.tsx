@@ -1,10 +1,9 @@
-import Splitter from '@/components/common/Splitter';
-
+import { Splitter, SplitterPane } from 'kalki-ui';
 export const SplitterPreviews = {
   basic: (
     <Splitter orientation="horizontal" height="80px" withHandle>
-      <Splitter.Pane initialSize="50%">Left</Splitter.Pane>
-      <Splitter.Pane initialSize="50%">Right</Splitter.Pane>
+      <SplitterPane initialSize="50%">Left</SplitterPane>
+      <SplitterPane initialSize="50%">Right</SplitterPane>
     </Splitter>
   ),
 };

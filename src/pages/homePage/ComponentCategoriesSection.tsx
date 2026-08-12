@@ -1,5 +1,5 @@
 import Tabs from '@/components/common/VerticalTabs/Tabs';
-import Link from '@/components/common/Link';
+import { Link } from 'kalki-ui';
 import { categorizedRoutesComponents } from '@/components/Layout/ComponentsLayout/categorizedRoutesComponents';
 import { ChevronRight } from 'lucide-react';
 

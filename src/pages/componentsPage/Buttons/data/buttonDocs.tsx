@@ -1,5 +1,4 @@
-import Box from '@/components/common/Box';
-import Button from '@/components/common/Button';
+import { Box, Button, ButtonIcon, ButtonText } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 import {
   AlertCircle,
@@ -48,7 +47,7 @@ export default BasicButton;
     title: 'Button Variants',
     desc: 'This example shows different variants of the Button component.',
     code: `
-import { Button, Box } from "kalki-ui";
+import { Button, Box, ButtonIcon } from "kalki-ui";
 
 export default function ButtonVariants() {
   return (
@@ -69,7 +68,7 @@ export default function ButtonVariants() {
         ] as const
       ).map((item) => (
         <Button size="sm" key={item} variant={item}>
-          <Button.Icon>{item}</Button.Icon>
+          <ButtonIcon>{item}</ButtonIcon>
         </Button>
       ))}
     </Box>
@@ -92,7 +91,7 @@ export default function ButtonVariants() {
           'ghost' as const,
         ].map((item) => (
           <Button size="sm" key={item} variant={item}>
-            <Button.Icon>{item}</Button.Icon>
+            <ButtonIcon>{item}</ButtonIcon>
           </Button>
         ))}
       </Box>
@@ -176,28 +175,28 @@ export default function DisabledButton() {
   },
   {
     title: 'Button with Icon and Text',
-    desc: 'This example demonstrates how to use Button.Icon and Button.Text together.',
+    desc: 'This example demonstrates how to use ButtonIcon and ButtonText together.',
     code: `
-import { Button } from "kalki-ui";
+import { Button, ButtonIcon, ButtonText } from "kalki-ui";
 import { Home } from "lucide-react";
 
 export default function ButtonWithIconAndText() {
   return (
     <Button variant="primary">
-      <Button.Icon>
+      <ButtonIcon>
         <Home className="size-4" />
-      </Button.Icon>
-      <Button.Text>Like</Button.Text>
+      </ButtonIcon>
+      <ButtonText>Like</ButtonText>
     </Button>
   );
 }
 `,
     snippet: (
       <Button variant="primary">
-        <Button.Icon>
+        <ButtonIcon>
           <Home className="size-4" />
-        </Button.Icon>
-        <Button.Text>Like</Button.Text>
+        </ButtonIcon>
+        <ButtonText>Like</ButtonText>
       </Button>
     ),
   },
@@ -205,21 +204,21 @@ export default function ButtonWithIconAndText() {
     title: 'Custom Styled Button',
     desc: 'This example shows how to apply custom styles to the Button component.',
     code: `
-import { Button } from "kalki-ui";
+import { Button, ButtonText } from "kalki-ui";
 
 export default function CustomStyledButton() {
   return (
     <Button className="p-2">
-      <Button.Text className="text-red-200 text-sm capitalize font-bold">
+      <ButtonText className="text-red-200 text-sm capitalize font-bold">
         Custom Button
-      </Button.Text>
+      </ButtonText>
     </Button>
   );
 }
 `,
     snippet: (
       <Button className="p-2">
-        <Button.Text className=" text-red-200 text-sm capitalize font-bold">Custom Button</Button.Text>
+        <ButtonText className=" text-red-200 text-sm capitalize font-bold">Custom Button</ButtonText>
       </Button>
     ),
   },
@@ -227,7 +226,7 @@ export default function CustomStyledButton() {
     title: 'Button with Icon and Label',
     desc: 'Icon buttons across variants with a matching label.',
     code: `
-import { Button, Box } from "kalki-ui";
+import { Button, Box, ButtonIcon, ButtonText } from "kalki-ui";
 import {
   AlertCircle,
   AlertTriangle,
@@ -259,8 +258,8 @@ export default function ButtonWithIcons() {
         { variant: "ghost" as const, icon: <Ghost className="size-4" /> },
       ].map(({ variant, icon }) => (
         <Button size="sm" key={variant} variant={variant}>
-          <Button.Icon>{icon}</Button.Icon>
-          <Button.Text>{variant}</Button.Text>
+          <ButtonIcon>{icon}</ButtonIcon>
+          <ButtonText>{variant}</ButtonText>
         </Button>
       ))}
     </Box>
@@ -283,8 +282,8 @@ export default function ButtonWithIcons() {
           { variant: 'ghost' as const, icon: <Ghost className="size-4" /> },
         ].map(({ variant, icon }) => (
           <Button size="sm" key={variant} variant={variant}>
-            <Button.Icon>{icon}</Button.Icon>
-            <Button.Text>{variant}</Button.Text>
+            <ButtonIcon>{icon}</ButtonIcon>
+            <ButtonText>{variant}</ButtonText>
           </Button>
         ))}
       </Box>
@@ -316,11 +315,11 @@ export const rows = [
 
 export const componentHierarchyCode = `
   <Button>
-    <Button.Text>
+    <ButtonText>
 
-    </Button.Text>
-    <Button.Icon>
+    </ButtonText>
+    <ButtonIcon>
     
-    </Button.Icon>
+    </ButtonIcon>
   </Button>
 `;

@@ -9,7 +9,6 @@ export const docs: docsData[] = [
     code: `
 import { useState } from "react";
 import { Tabs, Tab } from "kalki-ui";
-
 const VARIANTS = ["primary", "secondary", "success", "danger", "warning", "help", "info", "dark", "light"] as const;
 const SIZES = ["sm", "md", "lg"] as const;
 

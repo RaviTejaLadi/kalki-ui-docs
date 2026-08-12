@@ -1,22 +1,52 @@
 import { Bug, Building } from 'lucide-react';
-import { Accordion } from 'kalki-ui';
-import Alert from './Alert';
-import Avatar from './Avatar';
-import Badge from './Badge';
-import Box from './Box';
-import Banner from './Banner';
-import Breadcrumb from './Breadcrumb';
-import Button from './Button';
-import Card from './Card';
-import Carousel, { CarouselSlides } from './Carousel';
-import CloseButton from './CloseButton';
-import Code from './Code';
-import ContentScrollable from './ContentScrollable';
-import Drawer from './Drawer';
+
+import {
+  GalleryImage as Gallery,
+  Accordion,
+  Alert,
+  Avatar,
+  Badge,
+  Box,
+  Banner,
+  Breadcrumb,
+  Button,
+  Card,
+  CloseButton,
+  Code,
+  ContentScrollable,
+  Drawer,
+  Figure,
+  FullScreenToggle,
+  Carousel,
+  CarouselSlides,
+  CarouselControls,
+  CarouselContent,
+  CarouselDots,
+  BreadcrumbItem,
+  AccordionHeader,
+  AccordionBody,
+  AccordionItem,
+  AlertHeader,
+  AlertFooter,
+  AlertBody,
+  AvatarFallback,
+  AvatarImage,
+  BannerSubTitle,
+  BannerTitle,
+  CardDescription,
+  CardContent,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerBody,
+  FigureCaption,
+  FigureImage,
+  BadgeIcon,
+  Image,
+} from 'kalki-ui';
 import { Fragment, useState } from 'react';
-import Figure from './Figure';
-import FullScreenToggle from './FullScreenToggle';
-import Gallery from '@/components/common/Gallery';
 
 const Usage = () => {
   const [rightDrawer, setRightDrawer] = useState(false);
@@ -51,18 +81,18 @@ const Usage = () => {
           'dark' as const,
         ].map((item) => (
           <Accordion size="sm" className="mb-4" variant={item} key={item}>
-            <Accordion.Item>
-              <Accordion.Header eventKey="1">Header 1</Accordion.Header>
-              <Accordion.Body eventKey="1">
+            <AccordionItem>
+              <AccordionHeader eventKey="1">Header 1</AccordionHeader>
+              <AccordionBody eventKey="1">
                 lore m ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
                 ante dapibus diam. Sed nisi. Nulla quis sem at nib
-              </Accordion.Body>
-              <Accordion.Header eventKey="2">Header 1</Accordion.Header>
-              <Accordion.Body eventKey="2">
+              </AccordionBody>
+              <AccordionHeader eventKey="2">Header 1</AccordionHeader>
+              <AccordionBody eventKey="2">
                 lore m ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
                 ante dapibus diam. Sed nisi. Nulla quis sem at nib
-              </Accordion.Body>
-            </Accordion.Item>
+              </AccordionBody>
+            </AccordionItem>
           </Accordion>
         ))}
       </Box>
@@ -78,12 +108,12 @@ const Usage = () => {
           'light' as const,
         ].map((item) => (
           <Alert className="mb-4 " variant={item} key={item}>
-            <Alert.Header>Header 1</Alert.Header>
-            <Alert.Body>
+            <AlertHeader>Header 1</AlertHeader>
+            <AlertBody>
               lore m ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
               ante dapibus diam. Sed nisi. Nulla quis sem at nib
-            </Alert.Body>
-            <Alert.Footer>Footer 1</Alert.Footer>
+            </AlertBody>
+            <AlertFooter>Footer 1</AlertFooter>
           </Alert>
         ))}
       </Box>
@@ -91,15 +121,15 @@ const Usage = () => {
         <p>Avatar</p>
 
         <Avatar size="md" shape="circle">
-          <Avatar.Image src="" alt="User avatar" />
-          <Avatar.Fallback>JD</Avatar.Fallback>
+          <AvatarImage src="" alt="User avatar" />
+          <AvatarFallback>JD</AvatarFallback>
         </Avatar>
 
         <Avatar size="lg" shape="square" className="border-2 border-blue-500">
-          <Avatar.Image src="/path/to/image.jpg" className="grayscale hover:grayscale-0 transition-all" />
-          <Avatar.Fallback className="bg-blue-100">
+          <AvatarImage src="/path/to/image.jpg" className="grayscale hover:grayscale-0 transition-all" />
+          <AvatarFallback className="bg-blue-100">
             <span className="text-blue-600">JD</span>
-          </Avatar.Fallback>
+          </AvatarFallback>
         </Avatar>
       </Box>
 
@@ -117,13 +147,13 @@ const Usage = () => {
           'outline' as const,
         ].map((item) => (
           <Badge variant={item} size="sm" key={item}>
-            <Badge.Icon>
+            <BadgeIcon>
               <Bug className="size-4" />
-            </Badge.Icon>
+            </BadgeIcon>
             <div>{item}</div>
-            <Badge.Icon>
+            <BadgeIcon>
               <Building className="size-4" />
-            </Badge.Icon>
+            </BadgeIcon>
           </Badge>
         ))}
       </Box>
@@ -140,8 +170,8 @@ const Usage = () => {
           'dark' as const,
         ].map((item) => (
           <Banner variant={item} size="sm" key={item}>
-            <Banner.Title>{item}</Banner.Title>
-            <Banner.SubTitle>Subtitle</Banner.SubTitle>
+            <BannerTitle>{item}</BannerTitle>
+            <BannerSubTitle>Subtitle</BannerSubTitle>
           </Banner>
         ))}
       </Box>
@@ -149,9 +179,9 @@ const Usage = () => {
       <Box outlined rounded padding="10px" margin="10px">
         <p>Breadcrumb</p>
         <Breadcrumb size="xs">
-          <Breadcrumb.Item to="/">Home</Breadcrumb.Item>
-          <Breadcrumb.Item to="/about">About</Breadcrumb.Item>
-          <Breadcrumb.Item active>Current Page</Breadcrumb.Item>
+          <BreadcrumbItem to="/">Home</BreadcrumbItem>
+          <BreadcrumbItem to="/about">About</BreadcrumbItem>
+          <BreadcrumbItem active>Current Page</BreadcrumbItem>
         </Breadcrumb>
       </Box>
       <Box outlined rounded padding="10px" margin="10px">
@@ -178,16 +208,16 @@ const Usage = () => {
       <Box outlined rounded padding="10px" margin="10px">
         <p>Card</p>
         <Card>
-          <Card.Header>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Description>Card Description</Card.Description>
-          </Card.Header>
-          <Card.Content>
+          <CardHeader>
+            <CardTitle>Card Title</CardTitle>
+            <CardDescription>Card Description</CardDescription>
+          </CardHeader>
+          <CardContent>
             <p>Card Content</p>
-          </Card.Content>
-          <Card.Footer>
+          </CardContent>
+          <CardFooter>
             <p>Card Footer</p>
-          </Card.Footer>
+          </CardFooter>
         </Card>
       </Box>
       <Box outlined rounded padding="10px" margin="10px">
@@ -198,14 +228,14 @@ const Usage = () => {
             <img src="https://picsum.photos/300/200?random=2" className="w-full" alt="Random image 2" />
             <img src="https://picsum.photos/300/200?random=3" className="w-full" alt="Random image 3" />
           </CarouselSlides>
-          <Carousel.Content>
+          <CarouselContent>
             <p>Content</p>
-          </Carousel.Content>
-          <Carousel.Dots />
-          <Carousel.Controls>
+          </CarouselContent>
+          <CarouselDots />
+          <CarouselControls>
             <Button>Previous</Button>
             <Button>Next</Button>
-          </Carousel.Controls>
+          </CarouselControls>
         </Carousel>
       </Box>
 
@@ -268,10 +298,10 @@ const Usage = () => {
               onClose={() => setDrawerStates[position](false)}
               position={position}
             >
-              <Drawer.Header closeButton onClose={() => setDrawerStates[position](false)}>
-                <Drawer.Title>{position.charAt(0).toUpperCase() + position.slice(1)} Drawer</Drawer.Title>
-              </Drawer.Header>
-              <Drawer.Body>{position.charAt(0).toUpperCase() + position.slice(1)} Drawer Content</Drawer.Body>
+              <DrawerHeader closeButton onClose={() => setDrawerStates[position](false)}>
+                <DrawerTitle>{position.charAt(0).toUpperCase() + position.slice(1)} Drawer</DrawerTitle>
+              </DrawerHeader>
+              <DrawerBody>{position.charAt(0).toUpperCase() + position.slice(1)} Drawer Content</DrawerBody>
             </Drawer>
           </Fragment>
         ))}
@@ -279,8 +309,8 @@ const Usage = () => {
       <Box outlined rounded padding="10px" margin="10px">
         <p>figure</p>
         <Figure className="w-fit">
-          <Figure.Image src="https://picsum.photos/300/200" alt="Random image" />
-          <Figure.Caption>Random image</Figure.Caption>
+          <FigureImage src="https://picsum.photos/300/200" alt="Random image" />
+          <FigureCaption>Random image</FigureCaption>
         </Figure>
       </Box>
 
@@ -291,15 +321,15 @@ const Usage = () => {
       <Box outlined rounded padding="10px" margin="10px">
         <p>Gallery</p>
         <Gallery pattern="compact">
-          <Gallery.Image src="https://picsum.photos/300/200" alt="Random image 1" />
-          <Gallery.Image src="https://picsum.photos/300/200?random=2" alt="Random image 2" />
-          <Gallery.Image src="https://picsum.photos/300/200?random=3" alt="Random image 3" />
-          <Gallery.Image src="https://picsum.photos/300/200?random=4" alt="Random image 4" />
-          <Gallery.Image src="https://picsum.photos/300/200?random=5" alt="Random image 5" />
-          <Gallery.Image src="https://picsum.photos/300/200?random=6" alt="Random image 6" />
-          <Gallery.Image src="https://picsum.photos/300/200?random=7" alt="Random image 7" />
-          <Gallery.Image src="https://picsum.photos/300/200?random=8" alt="Random image 8" />
-          <Gallery.Image src="https://picsum.photos/300/200?random=9" alt="Random image 9" />
+          <Image src="https://picsum.photos/300/200" alt="Random image 1" />
+          <Image src="https://picsum.photos/300/200?random=2" alt="Random image 2" />
+          <Image src="https://picsum.photos/300/200?random=3" alt="Random image 3" />
+          <Image src="https://picsum.photos/300/200?random=4" alt="Random image 4" />
+          <Image src="https://picsum.photos/300/200?random=5" alt="Random image 5" />
+          <Image src="https://picsum.photos/300/200?random=6" alt="Random image 6" />
+          <Image src="https://picsum.photos/300/200?random=7" alt="Random image 7" />
+          <Image src="https://picsum.photos/300/200?random=8" alt="Random image 8" />
+          <Image src="https://picsum.photos/300/200?random=9" alt="Random image 9" />
         </Gallery>
       </Box>
     </div>

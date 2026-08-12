@@ -6,8 +6,7 @@ import { javascript } from '@codemirror/lang-javascript';
 import { html } from '@codemirror/lang-html';
 import { css } from '@codemirror/lang-css';
 import { cn } from '@/utils';
-import Button from '../../common/Button';
-import Spinner from '../../common/Spinner';
+import { Button, Spinner } from 'kalki-ui';
 import { useToast } from 'kalki-ui-toast';
 import { useTheme } from '@/context/ThemeContext';
 

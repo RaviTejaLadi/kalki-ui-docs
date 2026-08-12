@@ -11,13 +11,16 @@ export const pnpmSnippet = `
 `;
 
 export const componentCode = `
-  import { Button } from 'kalki-ui';
+  // Preferred (tree-shakeable deep import)
+  import { Button } from 'kalki-ui/button';
 
+  // Or from the root package
+  import { Button } from "kalki-ui";
 `;
 
 export const compExampleCode = `
   import React from 'react';
-  import { Button } from 'kalki-ui';
+  import { Button } from 'kalki-ui/button';
 
   const App = () => (
     <div>
@@ -40,7 +43,7 @@ export const setupSnippet = `
   import React from "react";
   import ReactDOM from "react-dom/client";
   import App from "./App.tsx";
-  import "kalki-ui/dist/index.css"; // import styles in the main file
+  import "kalki-ui/styles.css"; // import styles once in the main file
 
   ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>

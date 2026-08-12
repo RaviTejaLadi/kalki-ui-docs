@@ -1,4 +1,4 @@
-import Card, { CardContent, CardTitle, CardHeader } from '@/components/common/Card';
+import { Card, CardContent, CardTitle, CardHeader } from 'kalki-ui';
 import { Boxes, Code2, LayoutTemplate, Puzzle, Smartphone, Zap } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -41,8 +41,7 @@ const featureList: FeaturesProps[] = [
   {
     id: 'coverage',
     title: 'Broad component coverage',
-    description:
-      'From foundational controls to richer widgets, Kalki UI covers the patterns you reach for day to day.',
+    description: 'From foundational controls to richer widgets, Kalki UI covers the patterns you reach for day to day.',
     icon: Puzzle,
   },
   {
@@ -71,7 +70,9 @@ export const FeaturesSection = () => {
               <div className="flex h-9 w-9 items-center justify-center rounded-md border border-border bg-muted/60 text-foreground">
                 <Icon className="size-4" strokeWidth={1.75} />
               </div>
-              <CardTitle className="text-left text-base font-semibold tracking-tight text-foreground">{title}</CardTitle>
+              <CardTitle className="text-left text-base font-semibold tracking-tight text-foreground">
+                {title}
+              </CardTitle>
             </CardHeader>
             <CardContent className="text-left text-sm leading-relaxed text-muted-foreground">{description}</CardContent>
           </Card>

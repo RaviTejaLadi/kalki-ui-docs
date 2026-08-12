@@ -1,4 +1,4 @@
-import LinkBar from '@/components/common/LinkBar';
+import { LinkBar, LinkBarContent, LinkBarLink } from 'kalki-ui';
 import { useState } from 'react';
 
 const LinkBarWithIcons = () => {
@@ -6,17 +6,17 @@ const LinkBarWithIcons = () => {
 
   return (
     <LinkBar variant="default" size="sm" rounded="none" activeUrl={activeUrl} onUrlChange={setActiveUrl}>
-      <LinkBar.Content className="px-2">
-        <LinkBar.Link to="/home" icon="🏠">
+      <LinkBarContent className="px-2">
+        <LinkBarLink to="/home" icon="🏠">
           Home
-        </LinkBar.Link>
-        <LinkBar.Link to="/settings" icon="⚙️" iconPosition="end">
+        </LinkBarLink>
+        <LinkBarLink to="/settings" icon="⚙️" iconPosition="end">
           Settings
-        </LinkBar.Link>
-        <LinkBar.Link to="/profile" icon="👤">
+        </LinkBarLink>
+        <LinkBarLink to="/profile" icon="👤">
           Profile
-        </LinkBar.Link>
-      </LinkBar.Content>
+        </LinkBarLink>
+      </LinkBarContent>
     </LinkBar>
   );
 };

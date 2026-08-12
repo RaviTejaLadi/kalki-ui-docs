@@ -1,4 +1,4 @@
-import Link from '@/components/common/Link';
+import { Link } from 'kalki-ui';
 import Logo from '@/components/shared/TopBar/Logo';
 
 export const FooterSection = () => {

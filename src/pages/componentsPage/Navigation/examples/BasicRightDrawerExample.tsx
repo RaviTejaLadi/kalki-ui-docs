@@ -1,5 +1,4 @@
-import Button from '@/components/common/Button';
-import Drawer from '@/components/common/Drawer';
+import { Button, Drawer, DrawerHeader, DrawerTitle, DrawerBody } from 'kalki-ui';
 import { useState } from 'react';
 
 export const BasicRightDrawerExample = () => {
@@ -9,12 +8,12 @@ export const BasicRightDrawerExample = () => {
     <div>
       <Button onClick={() => setIsOpen(true)}>Open Right Drawer</Button>
       <Drawer isOpen={isOpen} onClose={() => setIsOpen(false)} position="right" width="400px">
-        <Drawer.Header closeButton onClose={() => setIsOpen(false)}>
-          <Drawer.Title>Right Drawer</Drawer.Title>
-        </Drawer.Header>
-        <Drawer.Body>
+        <DrawerHeader closeButton onClose={() => setIsOpen(false)}>
+          <DrawerTitle>Right Drawer</DrawerTitle>
+        </DrawerHeader>
+        <DrawerBody>
           <p>This drawer opens from the right side.</p>
-        </Drawer.Body>
+        </DrawerBody>
       </Drawer>
     </div>
   );

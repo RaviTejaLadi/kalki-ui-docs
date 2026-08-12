@@ -1,4 +1,4 @@
-import Badge from '@/components/common/Badge';
+import { Badge } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 export const docs: docsData[] = [

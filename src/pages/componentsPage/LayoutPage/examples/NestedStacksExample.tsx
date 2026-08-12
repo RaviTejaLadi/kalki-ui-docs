@@ -1,39 +1,37 @@
-import Box from '@/components/common/Box';
-import Stack from '@/components/common/Stack';
-
+import { Box, Stack, StackItem } from 'kalki-ui';
 export const NestedStacksExample = () => (
   <Stack direction="column" spacing={20}>
-    <Stack.Item>
+    <StackItem>
       <Stack spacing={10}>
         <Box padding="10px" shadow="sm" rounded>
-          <Stack.Item>
+          <StackItem>
             <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
               Nested Item 1
             </Box>
-          </Stack.Item>
-          <Stack.Item>
+          </StackItem>
+          <StackItem>
             <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
               Nested Item 2
             </Box>
-          </Stack.Item>
+          </StackItem>
         </Box>
       </Stack>
-    </Stack.Item>
-    <Stack.Item>
+    </StackItem>
+    <StackItem>
       <Box padding="10px" shadow="sm" rounded>
         <Stack direction="column" spacing={5}>
-          <Stack.Item>
+          <StackItem>
             <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
               Nested Item 3
             </Box>
-          </Stack.Item>
-          <Stack.Item>
+          </StackItem>
+          <StackItem>
             <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
               Nested Item 4
             </Box>
-          </Stack.Item>
+          </StackItem>
         </Stack>
       </Box>
-    </Stack.Item>
+    </StackItem>
   </Stack>
 );

@@ -1,8 +1,6 @@
 import { ArrowLeft, Home, Ghost } from 'lucide-react';
 import { cn } from '@/utils';
-import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/common/Empty';
-import Button from '@/components/common/Button';
-
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle, Button } from 'kalki-ui';
 interface NotFound404Props {
   title?: string;
   description?: string;

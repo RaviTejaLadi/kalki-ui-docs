@@ -1,4 +1,4 @@
-import Button from '@/components/common/Button';
+import { Button, Div } from 'kalki-ui';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/schadcn/accordion';
 import {
   NavigationMenu,
@@ -12,7 +12,6 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/co
 import { Github, Menu } from 'lucide-react';
 import React from 'react';
 import Logo from './Logo';
-import Div from '@/components/common/Div';
 import { ThemeToggle } from './ThemeToggle';
 
 interface MenuItem {

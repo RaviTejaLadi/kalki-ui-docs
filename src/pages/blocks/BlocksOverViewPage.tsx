@@ -1,6 +1,5 @@
-import Card, { CardContent } from '@/components/common/Card';
+import { Card, CardContent, Separator } from 'kalki-ui';
 import { Link } from 'react-router-dom';
-import Separator from '@/components/common/Separator';
 import { categorizedBlocksRoutesData } from '@/components/Layout/BlocksLayout/categorizedBlocksRoutes';
 
 const BlocksOverViewPage = () => {

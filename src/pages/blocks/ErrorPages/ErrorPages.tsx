@@ -1,4 +1,4 @@
-import { Tab, Tabs } from '@/components/common/Tabs';
+import { Tab, Tabs } from 'kalki-ui';
 import BlocksWrapper from '../BlocksWrapper';
 import { Code, Terminal } from 'lucide-react';
 import { data } from './data/errorPagesData';

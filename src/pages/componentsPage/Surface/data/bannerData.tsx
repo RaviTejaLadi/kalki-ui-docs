@@ -1,7 +1,4 @@
-import Banner from '@/components/common/Banner';
-import Box from '@/components/common/Box';
-import Button from '@/components/common/Button';
-import { Heading, Paragraph } from '@/components/common/Typography';
+import { Banner, Box, Button, Heading, Paragraph, BannerSubTitle, BannerTitle } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 import { Info } from 'lucide-react';
 
@@ -10,21 +7,21 @@ export const docs: docsData[] = [
     title: 'Basic Banner',
     desc: 'This example demonstrates the basic usage of the Banner component.',
     code: `
-import { Banner } from "kalki-ui";
+import { Banner, BannerTitle, BannerSubTitle } from "kalki-ui";
 
 export default function BasicBanner() {
   return (
     <Banner>
-      <Banner.Title>Welcome</Banner.Title>
-      <Banner.SubTitle>This is a basic banner</Banner.SubTitle>
+      <BannerTitle>Welcome</BannerTitle>
+      <BannerSubTitle>This is a basic banner</BannerSubTitle>
     </Banner>
   );
 }
 `,
     snippet: (
       <Banner>
-        <Banner.Title>Welcome</Banner.Title>
-        <Banner.SubTitle>This is a basic banner</Banner.SubTitle>
+        <BannerTitle>Welcome</BannerTitle>
+        <BannerSubTitle>This is a basic banner</BannerSubTitle>
       </Banner>
     ),
   },
@@ -32,21 +29,21 @@ export default function BasicBanner() {
     title: 'Large Banner',
     desc: 'This example demonstrates the usage of the large size for the Banner component.',
     code: `
-import { Banner } from "kalki-ui";
+import { Banner, BannerTitle, BannerSubTitle } from "kalki-ui";
 
 export default function LargeBanner() {
   return (
     <Banner variant="success" size="lg">
-      <Banner.Title>Welcome</Banner.Title>
-      <Banner.SubTitle>This is a large banner</Banner.SubTitle>
+      <BannerTitle>Welcome</BannerTitle>
+      <BannerSubTitle>This is a large banner</BannerSubTitle>
     </Banner>
   );
 }
 `,
     snippet: (
       <Banner variant="success" size="lg">
-        <Banner.Title>Welcome</Banner.Title>
-        <Banner.SubTitle>This is a large banner</Banner.SubTitle>
+        <BannerTitle>Welcome</BannerTitle>
+        <BannerSubTitle>This is a large banner</BannerSubTitle>
       </Banner>
     ),
   },
@@ -54,21 +51,21 @@ export default function LargeBanner() {
     title: 'Banner with Custom Styles',
     desc: 'This example demonstrates how to apply custom styles to the Banner component using the style prop.',
     code: `
-import { Banner } from "kalki-ui";
+import { Banner, BannerTitle, BannerSubTitle } from "kalki-ui";
 
 export default function CustomStyledBanner() {
   return (
     <Banner style={{ backgroundColor: "#f0f0f0", color: "#333" }}>
-      <Banner.Title>Welcome</Banner.Title>
-      <Banner.SubTitle>This banner has custom styles</Banner.SubTitle>
+      <BannerTitle>Welcome</BannerTitle>
+      <BannerSubTitle>This banner has custom styles</BannerSubTitle>
     </Banner>
   );
 }
 `,
     snippet: (
       <Banner style={{ backgroundColor: '#f0f0f0', color: '#333' }}>
-        <Banner.Title>Welcome</Banner.Title>
-        <Banner.SubTitle>This banner has custom styles</Banner.SubTitle>
+        <BannerTitle>Welcome</BannerTitle>
+        <BannerSubTitle>This banner has custom styles</BannerSubTitle>
       </Banner>
     ),
   },
@@ -76,7 +73,7 @@ export default function CustomStyledBanner() {
     title: 'Banner with All Available Variants',
     desc: 'This example shows all available variants of the Banner component.',
     code: `
-import { Banner, Box, Heading, Paragraph } from "kalki-ui";
+import { Banner, Box, Heading, Paragraph, BannerTitle, BannerSubTitle } from "kalki-ui";
 
 export default function BannerVariants() {
   return (
@@ -95,12 +92,12 @@ export default function BannerVariants() {
         ] as const
       ).map((item) => (
         <Banner key={item} variant={item} size="sm">
-          <Banner.Title>
+          <BannerTitle>
             <Heading as="h5">{item.charAt(0).toUpperCase() + item.slice(1)} Banner</Heading>
-          </Banner.Title>
-          <Banner.SubTitle>
+          </BannerTitle>
+          <BannerSubTitle>
             <Paragraph>This is a {item} variant banner</Paragraph>
-          </Banner.SubTitle>
+          </BannerSubTitle>
         </Banner>
       ))}
     </Box>
@@ -121,12 +118,12 @@ export default function BannerVariants() {
           'dark' as const,
         ].map((item) => (
           <Banner key={item} variant={item} size="sm">
-            <Banner.Title>
+            <BannerTitle>
               <Heading as="h5">{item.charAt(0).toUpperCase() + item.slice(1)} Banner</Heading>
-            </Banner.Title>
-            <Banner.SubTitle>
+            </BannerTitle>
+            <BannerSubTitle>
               <Paragraph>This is a {item} variant banner</Paragraph>
-            </Banner.SubTitle>
+            </BannerSubTitle>
           </Banner>
         ))}
       </Box>
@@ -136,7 +133,7 @@ export default function BannerVariants() {
     title: 'Banner with Background',
     desc: 'This example shows Banner component with a background image.',
     code: `
-import { Banner, Box, Button } from "kalki-ui";
+import { Banner, Box, Button, BannerTitle, BannerSubTitle } from "kalki-ui";
 import { Info } from "lucide-react";
 
 export default function BannerWithBackground() {
@@ -158,13 +155,13 @@ export default function BannerWithBackground() {
         }
         className="text-white"
       >
-        <Banner.Title className="flex items-center">
+        <BannerTitle className="flex items-center">
           Welcome to React World <Info className="inline-block ml-2 w-5 h-5" />
-        </Banner.Title>
-        <Banner.SubTitle>
+        </BannerTitle>
+        <BannerSubTitle>
           React makes it painless to create interactive UIs. Design simple views for each state in your application,
           and React will efficiently update and render the right components when your data changes.
-        </Banner.SubTitle>
+        </BannerSubTitle>
       </Banner>
     </Box>
   );
@@ -188,13 +185,13 @@ export default function BannerWithBackground() {
           }
           className="text-white"
         >
-          <Banner.Title className="flex items-center">
+          <BannerTitle className="flex items-center">
             Welcome to React World <Info className="inline-block ml-2 w-5 h-5" />
-          </Banner.Title>
-          <Banner.SubTitle>
+          </BannerTitle>
+          <BannerSubTitle>
             React makes it painless to create interactive UIs. Design simple views for each state in your application,
             and React will efficiently update and render the right components when your data changes.
-          </Banner.SubTitle>
+          </BannerSubTitle>
         </Banner>
       </Box>
     ),
@@ -204,7 +201,7 @@ export default function BannerWithBackground() {
 export const columns = ['Name', 'Type', 'Default', 'Description'];
 
 export const rows = [
-  ['children', 'ReactNode', 'null', 'The content of the banner, typically Banner.Title and Banner.SubTitle components'],
+  ['children', 'ReactNode', 'null', 'The content of the banner, typically BannerTitle and BannerSubTitle components'],
   [
     'variant',
     `'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'help' | 'light' | 'dark'`,

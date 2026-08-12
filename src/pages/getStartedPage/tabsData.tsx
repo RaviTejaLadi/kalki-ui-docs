@@ -1,7 +1,6 @@
 import { Npm, Yarn, Pnpm } from './utils';
 import { npmSnippet, yarnSnippet, pnpmSnippet, compExampleCode } from './Snippet';
-import Button from '@/components/common/Button';
-import Box from '@/components/common/Box';
+import { Button, Box } from 'kalki-ui';
 import { Code, Terminal } from 'lucide-react';
 import React from 'react';
 

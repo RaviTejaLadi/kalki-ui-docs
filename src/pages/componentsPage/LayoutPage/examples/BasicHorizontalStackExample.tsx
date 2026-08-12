@@ -1,22 +1,20 @@
-import Box from '@/components/common/Box';
-import Stack from '@/components/common/Stack';
-
+import { Box, Stack, StackItem } from 'kalki-ui';
 export const BasicHorizontalStackExample = () => (
   <Stack spacing={10}>
-    <Stack.Item>
+    <StackItem>
       <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
         Item 1
       </Box>
-    </Stack.Item>
-    <Stack.Item>
+    </StackItem>
+    <StackItem>
       <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
         Item 2
       </Box>
-    </Stack.Item>
-    <Stack.Item>
+    </StackItem>
+    <StackItem>
       <Box padding="10px" shadow="sm" className="text-muted-foreground bg-gray-100" rounded>
         Item 3
       </Box>
-    </Stack.Item>
+    </StackItem>
   </Stack>
 );

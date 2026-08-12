@@ -2,8 +2,7 @@ import React from 'react';
 import { SidebarMenuItemProps } from '../types';
 import { cn } from '@/utils';
 import { useSidebar } from '../context';
-import Link from '@/components/common/Link';
-
+import { Link } from 'kalki-ui';
 export const SidebarMenuItem = React.forwardRef<HTMLAnchorElement, SidebarMenuItemProps>(
   ({ className, icon, active, children, to, ...props }, ref) => {
     const { expanded } = useSidebar();

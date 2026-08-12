@@ -1,4 +1,4 @@
-import Link from '@/components/common/Link';
+import { Link } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 import React from 'react';
 

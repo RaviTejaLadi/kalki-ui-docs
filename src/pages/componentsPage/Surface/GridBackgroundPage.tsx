@@ -1,21 +1,19 @@
-import { SectionHeader } from '@/components/common/SectionHeader';
-import Separator from '@/components/common/Separator';
-
+import { SectionHeader, Separator, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
 const GridBackgroundPage = () => {
   return (
     <div className="container">
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Grid Background</SectionHeader.Title>
-        <SectionHeader.SubTitle className="tracking-wide">
+        <SectionHeaderTitle className="tracking-wide">Grid Background</SectionHeaderTitle>
+        <SectionHeaderSubTitle className="tracking-wide">
           Documentation for the Grid Background component is not available yet.
-        </SectionHeader.SubTitle>
+        </SectionHeaderSubTitle>
       </SectionHeader>
       <Separator />
       <SectionHeader variant="transparent" size="md" align="center" className="py-16">
-        <SectionHeader.Title className="tracking-wide">Coming Soon</SectionHeader.Title>
-        <SectionHeader.SubTitle className="tracking-wide max-w-md">
+        <SectionHeaderTitle className="tracking-wide">Coming Soon</SectionHeaderTitle>
+        <SectionHeaderSubTitle className="tracking-wide max-w-md">
           We are currently working on this component. Stay tuned for updates.
-        </SectionHeader.SubTitle>
+        </SectionHeaderSubTitle>
       </SectionHeader>
     </div>
   );

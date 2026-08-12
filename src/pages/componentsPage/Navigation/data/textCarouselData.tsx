@@ -1,5 +1,4 @@
-import TextCarousel from '@/components/common/TextCarousel';
-import { Paragraph } from '@/components/common/Typography';
+import { TextCarousel, Paragraph } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 export const columns = ['Name', 'Type', 'Default', 'Description'];

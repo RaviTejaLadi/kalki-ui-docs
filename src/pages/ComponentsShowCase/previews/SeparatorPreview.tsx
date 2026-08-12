@@ -1,5 +1,4 @@
-import Separator from '@/components/common/Separator';
-
+import { Separator } from 'kalki-ui';
 export const SeparatorPreviews = {
   basic: (
     <div className="w-full space-y-2">

@@ -1,17 +1,13 @@
 import { Link } from 'react-router-dom';
-import { SectionHeader } from '@/components/common/SectionHeader';
-import Separator from '@/components/common/Separator';
-import { Paragraph } from '@/components/common/Typography';
-import Div from '@/components/common/Div';
-
+import { SectionHeader, Separator, Paragraph, Div, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
 const TypographyPage = () => {
   return (
     <div className="container">
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Typography</SectionHeader.Title>
-        <SectionHeader.SubTitle className="tracking-wide">
+        <SectionHeaderTitle className="tracking-wide">Typography</SectionHeaderTitle>
+        <SectionHeaderSubTitle className="tracking-wide">
           Typography primitives for headings, body copy, and emphasized phrases in Kalki UI.
-        </SectionHeader.SubTitle>
+        </SectionHeaderSubTitle>
       </SectionHeader>
       <Separator />
       <Div className="my-6 space-y-4 max-w-2xl">

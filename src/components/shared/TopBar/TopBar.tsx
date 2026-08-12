@@ -1,15 +1,12 @@
-import Div from '@/components/common/Div';
-import Link from '@/components/common/Link';
+import { Div, Link, Button, Drawer, DrawerHeader, DrawerTitle, DrawerBody } from 'kalki-ui';
 import Navbar, { NavBarContent, NavBarLogo } from '@/components/shared/Navbar/Navbar';
 import NavMenu, { NavMenuItem, NavMenuItemTitle, NavMenuList } from '@/components/shared/NavMenu';
 import { ThemeToggle } from './ThemeToggle';
 import React, { Fragment, useState } from 'react';
 import Logo from './Logo';
 import ReactDOM from 'react-dom';
-import Button from '@/components/common/Button';
 import { Github, Menu } from 'lucide-react';
 import { usePortal } from '@/hooks';
-import Drawer from '@/components/common/Drawer';
 import { AppSideBar } from '@/components/Layout/ComponentsLayout/ComponentsLayout';
 
 interface SidebarPortalProps {
@@ -80,14 +77,14 @@ const TopBar: React.FC = () => {
       </Navbar>
       <SidebarPortal id="sidebar-root">
         <Drawer isOpen={showSidebar} onClose={() => setShowSidebar(false)} position="left" width="15rem">
-          <Drawer.Header>
-            <Drawer.Title>
+          <DrawerHeader>
+            <DrawerTitle>
               <Logo />
-            </Drawer.Title>
-          </Drawer.Header>
-          <Drawer.Body className="p-0">
+            </DrawerTitle>
+          </DrawerHeader>
+          <DrawerBody className="p-0">
             <AppSideBar className="h-auto bg-inherit" />
-          </Drawer.Body>
+          </DrawerBody>
         </Drawer>
       </SidebarPortal>
     </Fragment>

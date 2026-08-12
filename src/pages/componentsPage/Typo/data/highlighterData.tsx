@@ -1,4 +1,4 @@
-import Highlighter from '@/components/common/Highlighter';
+import { Highlighter } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 export const columns = ['Name', 'Type', 'Default', 'Description'];

@@ -1,4 +1,4 @@
-import LinkBar from '@/components/common/LinkBar';
+import { LinkBar, LinkBarContent, LinkBarControl, LinkBarLink } from 'kalki-ui';
 import { useState } from 'react';
 
 const LinkBarWithManyLinks = () => {
@@ -64,17 +64,17 @@ const LinkBarWithManyLinks = () => {
       onUrlChange={handleUrlChange}
       className="w-[50rem]"
     >
-      <LinkBar.Control position="left" />
+      <LinkBarControl position="left" />
 
-      <LinkBar.Content className="px-2">
+      <LinkBarContent className="px-2">
         {links.map((link, index) => (
-          <LinkBar.Link key={index} to={`#-${link.to}`} icon={link.icon}>
+          <LinkBarLink key={index} to={`#-${link.to}`} icon={link.icon}>
             {link.label}
-          </LinkBar.Link>
+          </LinkBarLink>
         ))}
-      </LinkBar.Content>
+      </LinkBarContent>
 
-      <LinkBar.Control position="right" />
+      <LinkBarControl position="right" />
     </LinkBar>
   );
 };

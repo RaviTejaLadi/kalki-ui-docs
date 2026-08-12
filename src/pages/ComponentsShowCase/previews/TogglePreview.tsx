@@ -1,5 +1,4 @@
-import { Toggle, ToggleGroup, ToggleGroupItem } from '@/components/common/Toggle';
-
+import { Toggle, ToggleGroup, ToggleGroupItem } from 'kalki-ui';
 export const TogglePreviews = {
   basic: (
     <div className="flex flex-col gap-4">

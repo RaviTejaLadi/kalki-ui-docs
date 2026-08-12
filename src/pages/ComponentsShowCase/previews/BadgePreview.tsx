@@ -1,5 +1,4 @@
-import Badge from '@/components/common/Badge';
-
+import { Badge } from 'kalki-ui';
 export const BadgePreviews = {
   basic: (
     <div className="flex flex-wrap gap-2">

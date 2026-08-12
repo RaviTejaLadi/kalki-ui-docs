@@ -12,18 +12,17 @@ export const docs: docsData[] = [
     desc: 'A simple LinkBar with default settings.',
     code: `
 import React, { useState } from "react";
-import { LinkBar } from "kalki-ui";
-
+import { LinkBar, LinkBarContent, LinkBarControl, LinkBarLink } from "kalki-ui";
 const BasicLinkBar = () => {
   const [activeUrl, setActiveUrl] = useState("/home");
 
   return (
     <LinkBar variant="default" size="sm" rounded="none" activeUrl={activeUrl} onUrlChange={setActiveUrl}>
-      <LinkBar.Content className="px-2">
-        <LinkBar.Link to="/home">Home</LinkBar.Link>
-        <LinkBar.Link to="/about">About</LinkBar.Link>
-        <LinkBar.Link to="/contact">Contact</LinkBar.Link>
-      </LinkBar.Content>
+      <LinkBarContent className="px-2">
+        <LinkBarLink to="/home">Home</LinkBarLink>
+        <LinkBarLink to="/about">About</LinkBarLink>
+        <LinkBarLink to="/contact">Contact</LinkBarLink>
+      </LinkBarContent>
     </LinkBar>
   );
 };
@@ -37,24 +36,24 @@ export default BasicLinkBar;
     desc: 'LinkBar links with start and end icons.',
     code: `
 import React, { useState } from "react";
-import { LinkBar } from "kalki-ui";
+import { LinkBar, LinkBarLink, LinkBarContent } from "kalki-ui";
 
 const LinkBarWithIcons = () => {
   const [activeUrl, setActiveUrl] = useState("/settings");
 
   return (
     <LinkBar variant="default" size="sm" rounded="none" activeUrl={activeUrl} onUrlChange={setActiveUrl}>
-      <LinkBar.Content className="px-2">
-        <LinkBar.Link to="/home" icon="🏠">
+      <LinkBarContent className="px-2">
+        <LinkBarLink to="/home" icon="🏠">
           Home
-        </LinkBar.Link>
-        <LinkBar.Link to="/settings" icon="⚙️" iconPosition="end">
+        </LinkBarLink>
+        <LinkBarLink to="/settings" icon="⚙️" iconPosition="end">
           Settings
-        </LinkBar.Link>
-        <LinkBar.Link to="/profile" icon="👤">
+        </LinkBarLink>
+        <LinkBarLink to="/profile" icon="👤">
           Profile
-        </LinkBar.Link>
-      </LinkBar.Content>
+        </LinkBarLink>
+      </LinkBarContent>
     </LinkBar>
   );
 };
@@ -68,7 +67,7 @@ export default LinkBarWithIcons;
     desc: 'LinkBar with custom width, size, and rounded corners.',
     code: `
 import React, { useState } from "react";
-import { LinkBar } from "kalki-ui";
+import { LinkBar, LinkBarLink, LinkBarContent } from "kalki-ui";
 
 const CustomSizedLinkBar = () => {
   const [activeUrl, setActiveUrl] = useState("/option1");
@@ -82,11 +81,11 @@ const CustomSizedLinkBar = () => {
       onUrlChange={setActiveUrl}
       className="w-[300px]"
     >
-      <LinkBar.Content className="px-2">
-        <LinkBar.Link to="/option1">Option 1</LinkBar.Link>
-        <LinkBar.Link to="/option2">Option 2</LinkBar.Link>
-        <LinkBar.Link to="/option3">Option 3</LinkBar.Link>
-      </LinkBar.Content>
+      <LinkBarContent className="px-2">
+        <LinkBarLink to="/option1">Option 1</LinkBarLink>
+        <LinkBarLink to="/option2">Option 2</LinkBarLink>
+        <LinkBarLink to="/option3">Option 3</LinkBarLink>
+      </LinkBarContent>
     </LinkBar>
   );
 };
@@ -100,18 +99,18 @@ export default CustomSizedLinkBar;
     desc: 'LinkBar without scroll control buttons.',
     code: `
 import React, { useState } from "react";
-import { LinkBar } from "kalki-ui";
+import { LinkBar, LinkBarLink, LinkBarContent } from "kalki-ui";
 
 const LinkBarWithoutControls = () => {
   const [activeUrl, setActiveUrl] = useState("/tab1");
 
   return (
     <LinkBar variant="default" size="sm" rounded="none" activeUrl={activeUrl} onUrlChange={setActiveUrl}>
-      <LinkBar.Content className="px-2">
-        <LinkBar.Link to="/tab1">Tab 1</LinkBar.Link>
-        <LinkBar.Link to="/tab2">Tab 2</LinkBar.Link>
-        <LinkBar.Link to="/tab3">Tab 3</LinkBar.Link>
-      </LinkBar.Content>
+      <LinkBarContent className="px-2">
+        <LinkBarLink to="/tab1">Tab 1</LinkBarLink>
+        <LinkBarLink to="/tab2">Tab 2</LinkBarLink>
+        <LinkBarLink to="/tab3">Tab 3</LinkBarLink>
+      </LinkBarContent>
     </LinkBar>
   );
 };
@@ -125,7 +124,7 @@ export default LinkBarWithoutControls;
     desc: 'LinkBar with custom size and variant for control buttons.',
     code: `
 import React, { useState } from "react";
-import { LinkBar } from "kalki-ui";
+import { LinkBar, LinkBarLink, LinkBarContent, LinkBarControl } from "kalki-ui";
 
 const LinkBarWithCustomControlButtons = () => {
   const [activeUrl, setActiveUrl] = useState("/product-a");
@@ -139,15 +138,15 @@ const LinkBarWithCustomControlButtons = () => {
       onUrlChange={setActiveUrl}
       className="w-[20rem]"
     >
-      <LinkBar.Control position="left" size="md" variant="primary" />
-      <LinkBar.Content className="px-2">
-        <LinkBar.Link to="/product-a">Product A</LinkBar.Link>
-        <LinkBar.Link to="/product-b">Product B</LinkBar.Link>
-        <LinkBar.Link to="/product-c">Product C</LinkBar.Link>
-        <LinkBar.Link to="/product-d">Product D</LinkBar.Link>
-        <LinkBar.Link to="/product-e">Product E</LinkBar.Link>
-      </LinkBar.Content>
-      <LinkBar.Control position="right" size="md" variant="primary" />
+      <LinkBarControl position="left" size="md" variant="primary" />
+      <LinkBarContent className="px-2">
+        <LinkBarLink to="/product-a">Product A</LinkBarLink>
+        <LinkBarLink to="/product-b">Product B</LinkBarLink>
+        <LinkBarLink to="/product-c">Product C</LinkBarLink>
+        <LinkBarLink to="/product-d">Product D</LinkBarLink>
+        <LinkBarLink to="/product-e">Product E</LinkBarLink>
+      </LinkBarContent>
+      <LinkBarControl position="right" size="md" variant="primary" />
     </LinkBar>
   );
 };
@@ -161,7 +160,7 @@ export default LinkBarWithCustomControlButtons;
     desc: 'LinkBar with many links to demonstrate scrolling.',
     code: `
 import React, { useState } from "react";
-import { LinkBar } from "kalki-ui";
+import { LinkBar, LinkBarLink, LinkBarContent, LinkBarControl } from "kalki-ui";
 
 const LinkBarWithManyLinks = () => {
   const [activeUrl, setActiveUrl] = useState("/home");
@@ -229,15 +228,15 @@ const LinkBarWithManyLinks = () => {
       onUrlChange={handleUrlChange}
       className="w-[50rem]"
     >
-      <LinkBar.Control position="left" />
-      <LinkBar.Content className="px-2">
+      <LinkBarControl position="left" />
+      <LinkBarContent className="px-2">
         {links.map((link, index) => (
-          <LinkBar.Link key={index} to={\`#-\${link.to}\`} icon={link.icon}>
+          <LinkBarLink key={index} to={\`#-\${link.to}\`} icon={link.icon}>
             {link.label}
-          </LinkBar.Link>
+          </LinkBarLink>
         ))}
-      </LinkBar.Content>
-      <LinkBar.Control position="right" />
+      </LinkBarContent>
+      <LinkBarControl position="right" />
     </LinkBar>
   );
 };
@@ -261,17 +260,17 @@ export const rows = [
   ['activeUrl', 'string', '-', 'URL of the currently active link.'],
   ['onUrlChange', '(url: string) => void', '-', 'Called when a link is clicked.'],
   ['className', 'string', '-', 'Additional CSS classes for the LinkBar container.'],
-  ['children', 'node', '-', 'Compound children such as LinkBar.Content, LinkBar.Link, and LinkBar.Control.'],
+  ['children', 'node', '-', 'Compound children such as LinkBarContent, LinkBarLink, and LinkBarControl.'],
 ];
 
 export const componentHierarchyCode = `
   <LinkBar>
-    <LinkBar.Control position="left" />
-    <LinkBar.Content>
-         <LinkBar.Link>
+    <LinkBarControl position="left" />
+    <LinkBarContent>
+         <LinkBarLink>
            
-        </LinkBar.Link>
-    </LinkBar.Content>
-    <LinkBar.Control position="right" />
+        </LinkBarLink>
+    </LinkBarContent>
+    <LinkBarControl position="right" />
   </LinkBar>
 `;

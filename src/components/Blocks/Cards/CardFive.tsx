@@ -1,6 +1,15 @@
-import Avatar, { AvatarFallback, AvatarImage } from '@/components/common/Avatar';
-import Badge from '@/components/common/Badge';
-import Card, { CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/common/Card';
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+  Badge,
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from 'kalki-ui';
 import { Link } from 'react-router-dom';
 
 const CardFive = () => {

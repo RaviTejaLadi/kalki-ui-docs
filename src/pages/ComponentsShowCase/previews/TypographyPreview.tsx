@@ -1,5 +1,4 @@
-import { Heading, Paragraph, Text } from '@/components/common/Typography';
-
+import { Heading, Paragraph, Text } from 'kalki-ui';
 export const TypographyPreviews = {
   basic: (
     <div className="space-y-2">

@@ -1,6 +1,4 @@
-import Box from '@/components/common/Box';
-import LinkButton from '@/components/common/LinkButton';
-import Ripple from '@/components/common/Ripple';
+import { Box, LinkButton, Ripple, LinkIcon, LinkText } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 import { Terminal } from 'lucide-react';
 
@@ -123,23 +121,23 @@ export default function RoundedLinkButton() {
   },
   {
     title: 'LinkButton with Icon and Text',
-    desc: 'This example demonstrates how to use LinkButton.Icon and LinkButton.Text together.',
+    desc: 'This example demonstrates how to use LinkIcon and LinkText together.',
     code: `
-import { LinkButton } from "kalki-ui";
+import { LinkButton, LinkIcon, LinkText } from "kalki-ui";
 
 export default function LinkButtonWithIconAndText() {
   return (
     <LinkButton variant="primary">
-      <LinkButton.Icon>💖</LinkButton.Icon>
-      <LinkButton.Text>Like</LinkButton.Text>
+      <LinkIcon>💖</LinkIcon>
+      <LinkText>Like</LinkText>
     </LinkButton>
   );
 }
 `,
     snippet: (
       <LinkButton variant="primary">
-        <LinkButton.Icon>💖</LinkButton.Icon>
-        <LinkButton.Text>Like</LinkButton.Text>
+        <LinkIcon>💖</LinkIcon>
+        <LinkText>Like</LinkText>
       </LinkButton>
     ),
   },
@@ -147,7 +145,7 @@ export default function LinkButtonWithIconAndText() {
     title: 'LinkButton with only Icon',
     desc: 'Icon-only LinkButton examples across variants.',
     code: `
-import { LinkButton, Box } from "kalki-ui";
+import { LinkButton, Box, ButtonIcon, LinkIcon } from "kalki-ui";
 import { Terminal } from "lucide-react";
 
 export default function LinkButtonIconOnly() {
@@ -166,9 +164,9 @@ export default function LinkButtonIconOnly() {
         ] as const
       ).map((item) => (
         <LinkButton key={item} size="sm" variant={item}>
-          <LinkButton.Icon>
+          <LinkIcon>
             <Terminal width="20px" height="20px" />
-          </LinkButton.Icon>
+          </LinkIcon>
         </LinkButton>
       ))}
     </Box>
@@ -188,9 +186,9 @@ export default function LinkButtonIconOnly() {
           'dark' as const,
         ].map((item) => (
           <LinkButton key={item} size="sm" variant={item}>
-            <LinkButton.Icon>
+            <LinkIcon>
               <Terminal width="20px" height="20px" />
-            </LinkButton.Icon>
+            </LinkIcon>
           </LinkButton>
         ))}
       </Box>
@@ -217,11 +215,11 @@ export const rows = [
 
 export const componentHierarchyCode = `
   <LinkButton>
-    <LinkButton.Icon>
+    <LinkIcon>
 
-    </LinkButton.Icon>
-    <LinkButton.Text>
+    </LinkIcon>
+    <LinkText>
 
-    </LinkButton.Text>
+    </LinkText>
   </LinkButton>
 `;

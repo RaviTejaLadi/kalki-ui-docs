@@ -1,6 +1,4 @@
-import Button from '@/components/common/Button';
-import Card, { CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/common/Card';
-
+import { Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'kalki-ui';
 const CardOne = () => {
   return (
     <Card className="m-4 w-[500px]">

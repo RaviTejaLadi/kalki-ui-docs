@@ -1,5 +1,4 @@
-import FullScreenToggle from '@/components/common/FullScreenToggle';
-
+import { FullScreenToggle } from 'kalki-ui';
 export const FullScreenTogglePreviews = {
   basic: <FullScreenToggle variant="light" size="sm" />,
 };

@@ -1,7 +1,4 @@
-import Box from '@/components/common/Box';
-import Button from '@/components/common/Button';
-import Ripple from '@/components/common/Ripple';
-import { Paragraph } from '@/components/common/Typography';
+import { Box, Button, Ripple, Paragraph } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 export const docs: docsData[] = [

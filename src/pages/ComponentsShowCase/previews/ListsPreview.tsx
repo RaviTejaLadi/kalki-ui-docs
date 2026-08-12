@@ -1,6 +1,4 @@
-import OrderedList from '@/components/common/Lists/OrderedList';
-import UnOrderedList from '@/components/common/Lists/UnOrderedList';
-
+import { OrderedList, UnOrderedList } from 'kalki-ui';
 export const ListsPreviews = {
   basic: (
     <div className="flex gap-6 text-sm">

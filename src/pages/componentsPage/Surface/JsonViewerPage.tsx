@@ -1,6 +1,4 @@
-import { SectionHeader } from '@/components/common/SectionHeader';
-import Separator from '@/components/common/Separator';
-import TableList from '@/components/common/Table/TableList';
+import { SectionHeader, Separator, TableList, SectionHeaderTitle } from 'kalki-ui';
 import { docs, columns, rows } from './data/jsonViewerData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 
@@ -8,12 +6,12 @@ const JsonViewerPage = () => {
   return (
     <div className="container">
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">JSON Viewer</SectionHeader.Title>
+        <SectionHeaderTitle className="tracking-wide">JSON Viewer</SectionHeaderTitle>
       </SectionHeader>
       <Separator />
       <DocumentationRenderer className="my-4" data={docs} componentName="JsonViewer" />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
+        <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>
       </SectionHeader>
       <TableList columns={columns} rows={rows} code CodeColumn={0} />
     </div>

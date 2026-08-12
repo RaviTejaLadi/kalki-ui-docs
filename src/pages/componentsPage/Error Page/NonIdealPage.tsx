@@ -1,8 +1,5 @@
-import { ErrorPage } from '@/components/common/ErrorPage/ErrorPage';
-import { SectionHeader } from '@/components/common/SectionHeader';
-import Separator from '@/components/common/Separator';
+import { ErrorPage, SectionHeader, Separator, TableList, SectionHeaderTitle } from 'kalki-ui';
 import { SyntaxHighlighter } from '@/components/shared/SyntaxHighLighter/SyntaxHighLighter';
-import TableList from '@/components/common/Table/TableList';
 import { useToast } from 'kalki-ui-toast';
 import { useCallback, useState } from 'react';
 
@@ -77,7 +74,7 @@ const NonIdealPage = () => {
   return (
     <div className="container">
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Error Pages</SectionHeader.Title>
+        <SectionHeaderTitle className="tracking-wide">Error Pages</SectionHeaderTitle>
       </SectionHeader>
       <Separator />
       {/* Variant Selector */}
@@ -109,7 +106,7 @@ const NonIdealPage = () => {
         onLearnMore={() => showToast('Opening the Learn More section...')}
       />
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Props</SectionHeader.Title>
+        <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>
       </SectionHeader>
       <TableList columns={columns} rows={rows} code CodeColumn={0} />
     </div>

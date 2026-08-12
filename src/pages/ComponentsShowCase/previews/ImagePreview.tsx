@@ -1,5 +1,4 @@
-import Image from '@/components/common/Image';
-
+import { Image } from 'kalki-ui';
 export const ImagePreviews = {
   basic: (
     <div className="flex gap-2 items-center">

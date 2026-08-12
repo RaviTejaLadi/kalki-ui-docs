@@ -1,11 +1,9 @@
 import { useState } from 'react';
-import Card, { CardContent } from '../common/Card';
+import { Card, CardContent, CloseButton } from 'kalki-ui';
 import { SyntaxHighlighter } from '../shared/SyntaxHighLighter/SyntaxHighLighter';
-import CloseButton from '../common/CloseButton';
-
 type Variant = 'light' | 'dark';
 
-type Size = 'xs' | 'sm' | 'md' | 'lg';
+type Size = 'sm' | 'md' | 'lg';
 
 type ButtonSettings = {
   variant: Variant;
@@ -25,7 +23,7 @@ const CloseButtonPlayground = () => {
 
   const variants: string[] = ['light', 'dark'] as const;
 
-  const sizes: string[] = ['xs', 'sm', 'md', 'lg'] as const;
+  const sizes: Size[] = ['sm', 'md', 'lg'];
 
   const handleChange = (key: SettingKey, value: SettingValue): void => {
     setSettings((prev) => ({ ...prev, [key]: value }));

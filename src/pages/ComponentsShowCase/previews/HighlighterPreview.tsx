@@ -1,5 +1,4 @@
-import Highlighter from '@/components/common/Highlighter';
-
+import { Highlighter } from 'kalki-ui';
 export const HighlighterPreviews = {
   basic: (
     <Highlighter variant="solid" highlightText={['highlighted']} className="text-sm">

@@ -1,10 +1,9 @@
-import Banner from '@/components/common/Banner';
-
+import { Banner, BannerSubTitle, BannerTitle } from 'kalki-ui';
 export const BannerPreviews = {
   basic: (
     <Banner variant="primary" size="md">
-      <Banner.Title>Welcome to Kalki UI</Banner.Title>
-      <Banner.SubTitle>Build beautiful interfaces with our component library.</Banner.SubTitle>
+      <BannerTitle>Welcome to Kalki UI</BannerTitle>
+      <BannerSubTitle>Build beautiful interfaces with our component library.</BannerSubTitle>
     </Banner>
   ),
 };

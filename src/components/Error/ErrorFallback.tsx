@@ -1,8 +1,7 @@
 import React from 'react';
 import { AlertTriangle, RefreshCw, ChevronDown, ChevronUp, FileCode, XCircle, Terminal, Layers } from 'lucide-react';
 import { ErrorDetails, ErrorLocation } from './types';
-import Button, { ButtonIcon, ButtonText } from '../common/Button';
-
+import { Button, ButtonIcon, ButtonText } from 'kalki-ui';
 interface ErrorFallbackProps {
   error: ErrorDetails;
   resetError: () => void;

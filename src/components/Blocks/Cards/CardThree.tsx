@@ -1,7 +1,15 @@
-import Avatar, { AvatarFallback, AvatarImage } from '@/components/common/Avatar';
-import Button from '@/components/common/Button';
-import Card, { CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/common/Card';
-
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from 'kalki-ui';
 const CardThree = () => {
   return (
     <Card className="m-4 w-[500px]">

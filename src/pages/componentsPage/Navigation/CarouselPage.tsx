@@ -1,6 +1,4 @@
-import { SectionHeader } from '@/components/common/SectionHeader';
-import Separator from '@/components/common/Separator';
-import TableList from '@/components/common/Table/TableList';
+import { SectionHeader, Separator, TableList, Heading, Div, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
 import {
   docs,
   columns,
@@ -11,17 +9,14 @@ import {
   carouselDots,
 } from './data/carouselData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
-import { Heading } from '@/components/common/Typography';
-import Div from '@/components/common/Div';
-
 const CarouselPage = () => {
   return (
     <div className="container">
       <SectionHeader variant="transparent" size="sm">
-        <SectionHeader.Title className="tracking-wide">Carousel</SectionHeader.Title>
-        <SectionHeader.SubTitle className="tracking-wide">
+        <SectionHeaderTitle className="tracking-wide">Carousel</SectionHeaderTitle>
+        <SectionHeaderSubTitle className="tracking-wide">
           The Carousel component is a reusable React component that displays a set of slides with navigation controls.
-        </SectionHeader.SubTitle>
+        </SectionHeaderSubTitle>
       </SectionHeader>
       <Separator />
       <DocumentationRenderer data={docs} componentName="Carousel" />
