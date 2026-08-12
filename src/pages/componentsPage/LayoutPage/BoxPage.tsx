@@ -1,4 +1,5 @@
-import { Code, SectionHeader, Separator, TableList, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { Code, SectionHeader, TableList, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { docs, columns, rows } from './data/boxData';
 import { IMetaData } from '@/types/metaData';
@@ -27,7 +28,7 @@ const BoxPage = () => {
           application.
         </SectionHeaderSubTitle>
       </SectionHeader>
-      <Separator />
+      <DocsDivider />
       <DocumentationRenderer data={docs} componentName="Box" />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>

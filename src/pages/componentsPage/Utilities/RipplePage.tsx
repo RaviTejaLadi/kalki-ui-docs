@@ -1,4 +1,5 @@
-import { SectionHeader, Separator, TableList, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { SectionHeader, TableList, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 import { docs, columns, rows } from './data/rippleData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 
@@ -13,7 +14,7 @@ const RipplePage = () => {
           touched.
         </SectionHeaderSubTitle>
       </SectionHeader>
-      <Separator />
+      <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Ripple" />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>

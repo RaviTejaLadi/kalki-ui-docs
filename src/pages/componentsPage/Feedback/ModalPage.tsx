@@ -1,4 +1,5 @@
-import { SectionHeader, Separator, TableList, Heading, Div, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { SectionHeader, TableList, Heading, Div, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 import {
   docs,
   columns,
@@ -26,7 +27,7 @@ const ModalPage = () => {
         <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide">{metaData.description}</SectionHeaderSubTitle>
       </SectionHeader>
-      <Separator />
+      <DocsDivider />
       <DocumentationRenderer
         className="my-4"
         data={docs}

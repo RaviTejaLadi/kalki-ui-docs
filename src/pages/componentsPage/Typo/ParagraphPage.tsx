@@ -1,4 +1,5 @@
-import { SectionHeader, Separator, TableList, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { SectionHeader, TableList, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 import { docs, columns, rows } from './data/paraData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 
@@ -15,7 +16,7 @@ const ParagraphPage = () => {
           after a paragraph.
         </SectionHeaderSubTitle>
       </SectionHeader>
-      <Separator />
+      <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Paragraph" />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>

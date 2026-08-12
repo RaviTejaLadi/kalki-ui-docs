@@ -1,4 +1,5 @@
-import { SectionHeader, Separator, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { SectionHeader, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 import { SyntaxHighlighter } from '@/components/shared/SyntaxHighLighter/SyntaxHighLighter';
 
 interface ComponentInstallSectionProps {
@@ -35,7 +36,7 @@ const ComponentInstallSection = ({ componentName, importCode, deepImport }: Comp
         </div>
       </div>
 
-      <Separator />
+      <DocsDivider />
 
       <div>
         <SectionHeader variant="transparent" size="sm">

@@ -1,7 +1,6 @@
 import {
   SectionHeader,
   Link,
-  Separator,
   Card,
   CardContent,
   CardDescription,
@@ -10,6 +9,7 @@ import {
   SectionHeaderTitle,
   SectionHeaderSubTitle,
 } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 import React, { useState, useMemo } from 'react';
 import { categorizedRoutesComponents } from '@/components/Layout/ComponentsLayout/categorizedRoutesComponents';
 
@@ -59,14 +59,14 @@ const ComponentsOverviewPage: React.FC = () => {
           />
         </div>
       </div>
-      <Separator />
+      <DocsDivider />
 
       <div className="my-3 w-full">
         {filteredCategories.length > 0 ? (
           filteredCategories.map(({ category, components, id }) => (
             <div className="mb-10 py-4" key={id}>
               <h2 className="font-semibold text-foreground">{category}</h2>
-              <Separator className="my-5 h-[0.5px]" />
+              <DocsDivider className="my-5 h-[0.5px]" />
               <div key={id} id={id} className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {components.map(({ path, label, description, Icon }, idx) => (
                   <Link key={idx} to={path}>

@@ -1,4 +1,5 @@
-import { SectionHeader, Separator, TableList, Heading, Div, SectionHeaderTitle } from 'kalki-ui';
+import { SectionHeader, TableList, Heading, Div, SectionHeaderTitle } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 import { docs, columns, splitterProps, splitterPaneProps } from './data/splitterData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 const SplitterPage = () => {
@@ -7,7 +8,7 @@ const SplitterPage = () => {
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Splitter</SectionHeaderTitle>
       </SectionHeader>
-      <Separator />
+      <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Splitter" />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>

@@ -1,4 +1,5 @@
-import { SectionHeader, Separator, TableList, Div, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { SectionHeader, TableList, Div, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 import { docs, columns, rows, componentHierarchyCode } from './data/closeButtonDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import CloseButtonPlayground from '@/components/playground/CloseButtonPlayground';
@@ -20,9 +21,9 @@ const CloseButtonPage = () => {
         <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide">{metaData.description}</SectionHeaderSubTitle>
       </SectionHeader>
-      <Separator />
+      <DocsDivider />
       <CloseButtonPlayground />
-      <Separator />
+      <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="CloseButton" />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>

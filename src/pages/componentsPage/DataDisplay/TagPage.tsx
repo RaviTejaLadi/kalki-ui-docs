@@ -1,6 +1,5 @@
 import {
   SectionHeader,
-  Separator,
   TableList,
   Div,
   Heading,
@@ -9,6 +8,7 @@ import {
   UnOrderedList,
   UnOrderedListItem,
 } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 import {
   docs,
   columns,
@@ -40,7 +40,7 @@ const TagPage = () => {
           ))}
         </SectionHeaderSubTitle>
       </SectionHeader>
-      <Separator />
+      <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Tag" />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>

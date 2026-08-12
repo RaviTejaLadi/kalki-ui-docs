@@ -1,13 +1,5 @@
-import {
-  SectionHeader,
-  Separator,
-  TableList,
-  Div,
-  Heading,
-  SectionHeaderTitle,
-  SectionHeaderSubTitle,
-  Code,
-} from 'kalki-ui';
+import { SectionHeader, TableList, Div, Heading, SectionHeaderTitle, SectionHeaderSubTitle, Code } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 import { docs, columns, rows, bannerSubTitleRows, bannerTitleRows } from './data/bannerData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 const BannerPage = () => {
@@ -23,7 +15,7 @@ const BannerPage = () => {
           a wide range of use cases, from simple informational banners to more complex promotional displays.
         </SectionHeaderSubTitle>
       </SectionHeader>
-      <Separator />
+      <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Banner" />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>

@@ -1,4 +1,5 @@
-import { SectionHeader, Separator, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { SectionHeader, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 const GridBackgroundPage = () => {
   return (
     <div className="container">
@@ -8,7 +9,7 @@ const GridBackgroundPage = () => {
           Documentation for the Grid Background component is not available yet.
         </SectionHeaderSubTitle>
       </SectionHeader>
-      <Separator />
+      <DocsDivider />
       <SectionHeader variant="transparent" size="md" align="center" className="py-16">
         <SectionHeaderTitle className="tracking-wide">Coming Soon</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide max-w-md">

@@ -1,4 +1,5 @@
-import { SectionHeader, Separator, TableList, Heading, Div, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { SectionHeader, TableList, Heading, Div, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 import {
   docs,
   columns,
@@ -18,7 +19,7 @@ const CarouselPage = () => {
           The Carousel component is a reusable React component that displays a set of slides with navigation controls.
         </SectionHeaderSubTitle>
       </SectionHeader>
-      <Separator />
+      <DocsDivider />
       <DocumentationRenderer data={docs} componentName="Carousel" />
       <Div className="space-y-5">
         <Div>

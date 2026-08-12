@@ -1,4 +1,5 @@
-import { ErrorPage, SectionHeader, Separator, TableList, SectionHeaderTitle } from 'kalki-ui';
+import { ErrorPage, SectionHeader, TableList, SectionHeaderTitle } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 import { SyntaxHighlighter } from '@/components/shared/SyntaxHighLighter/SyntaxHighLighter';
 import { useToast } from 'kalki-ui-toast';
 import { useCallback, useState } from 'react';
@@ -76,7 +77,7 @@ const NonIdealPage = () => {
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Error Pages</SectionHeaderTitle>
       </SectionHeader>
-      <Separator />
+      <DocsDivider />
       {/* Variant Selector */}
       <div className=" bg-background rounded-lg mb-2 shadow-lg p-3">
         <div className="flex flex-wrap gap-2">

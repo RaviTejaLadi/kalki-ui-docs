@@ -1,4 +1,4 @@
-import { Alert, Box, Button, Separator, Paragraph, AlertHeader, AlertFooter, AlertBody, ButtonText } from 'kalki-ui';
+import { Alert, Box, Button, Paragraph, AlertHeader, AlertFooter, AlertBody, ButtonText } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 export const docs: docsData[] = [
@@ -84,12 +84,11 @@ export default function CustomAlert() {
   },
   {
     title: 'Alert with additional content',
-    desc: 'Combine Separator, Paragraph, and Button for a richer alert layout.',
+    desc: 'Combine Paragraph and Button for a richer alert layout.',
     snippet: (
       <Box padding="10px">
         <Alert variant="success">
           <AlertHeader>Alert meaning</AlertHeader>
-          <Separator />
           <AlertBody>
             <Paragraph className="p-3">
               In web development terminology, an &quot;alert&quot; typically refers to a way to deliver a message or
@@ -97,7 +96,6 @@ export default function CustomAlert() {
               informing them of important events, errors, warnings, or other significant information.
             </Paragraph>
           </AlertBody>
-          <Separator />
           <AlertFooter>
             <Box
               padding="5px"
@@ -116,13 +114,12 @@ export default function CustomAlert() {
       </Box>
     ),
     code: `
-import { Alert, Separator, Paragraph, Box, Button, AlertHeader, AlertBody, AlertFooter, ButtonText } from "kalki-ui";
+import { Alert, Paragraph, Box, Button, AlertHeader, AlertBody, AlertFooter, ButtonText } from "kalki-ui";
 
 export default function RichAlert() {
   return (
     <Alert variant="success">
       <AlertHeader>Alert meaning</AlertHeader>
-      <Separator />
       <AlertBody>
         <Paragraph className="p-3">
           In web development terminology, an "alert" typically refers to a way to deliver a message or
@@ -130,7 +127,6 @@ export default function RichAlert() {
           such as informing them of important events, errors, warnings, or other significant information.
         </Paragraph>
       </AlertBody>
-      <Separator />
       <AlertFooter>
         <Box
           padding="5px"

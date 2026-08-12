@@ -27,7 +27,6 @@ import { ListsPreviews } from './previews/ListsPreview';
 import { ScrollToTopPreviews } from './previews/ScrollToTopPreview';
 import { SectionHeaderPreviews } from './previews/SectionHeaderPreview';
 import { SelectPreviews } from './previews/SelectPreview';
-import { SeparatorPreviews } from './previews/SeparatorPreview';
 import { SkeletonPreviews } from './previews/SkeletonPreview';
 import { SpinnerPreviews } from './previews/SpinnerPreview';
 import { SplitterPreviews } from './previews/SplitterPreview';
@@ -180,11 +179,6 @@ const components: Component[] = [
     name: 'Select',
     description: 'Dropdown select for single or multiple options.',
     preview: SelectPreviews.basic,
-  },
-  {
-    name: 'Separator',
-    description: 'Horizontal or vertical divider line.',
-    preview: SeparatorPreviews.basic,
   },
   {
     name: 'Skeleton',

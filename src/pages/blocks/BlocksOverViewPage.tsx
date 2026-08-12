@@ -1,4 +1,5 @@
-import { Card, CardContent, Separator } from 'kalki-ui';
+import { Card, CardContent } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 import { Link } from 'react-router-dom';
 import { categorizedBlocksRoutesData } from '@/components/Layout/BlocksLayout/categorizedBlocksRoutes';
 
@@ -14,7 +15,7 @@ const BlocksOverViewPage = () => {
           Works with all React frameworks. Open Source. Free forever.
         </p>
       </div>
-      <Separator />
+      <DocsDivider />
       <div className="flex flex-wrap items-stretch gap-3 p-2 sm:gap-4">
         {categorizedBlocksRoutesData.map((item, index) => {
           return (

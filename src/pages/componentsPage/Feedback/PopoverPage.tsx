@@ -1,4 +1,5 @@
-import { SectionHeader, Separator, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { SectionHeader, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 import Head from '@/components/Head';
 import { IMetaData } from '@/types/metaData';
 
@@ -16,7 +17,7 @@ const PopoverPage = () => {
         <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide">{metaData.description}</SectionHeaderSubTitle>
       </SectionHeader>
-      <Separator />
+      <DocsDivider />
       <SectionHeader variant="transparent" size="sm" className="my-8">
         <SectionHeaderTitle className="tracking-wide">Coming Soon</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide">

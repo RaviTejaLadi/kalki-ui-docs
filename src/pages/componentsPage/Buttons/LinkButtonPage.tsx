@@ -1,4 +1,5 @@
-import { SectionHeader, Separator, TableList, Div, SectionHeaderTitle } from 'kalki-ui';
+import { SectionHeader, TableList, Div, SectionHeaderTitle } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 import React from 'react';
 import { docs, columns, rows, componentHierarchyCode } from './data/linkButtonDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
@@ -19,7 +20,7 @@ const LinkButtonPage: React.FC = () => {
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
       </SectionHeader>
-      <Separator />
+      <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="LinkButton" />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>

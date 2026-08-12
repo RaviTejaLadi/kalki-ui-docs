@@ -1,4 +1,5 @@
-import { SectionHeader, Separator, TableList, Div, Heading, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { SectionHeader, TableList, Div, Heading, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 import {
   docs,
   columns,
@@ -18,7 +19,7 @@ const AccordionPage = () => {
           hide content. It allows users to manage and navigate large amounts of information within a limited space.
         </SectionHeaderSubTitle>
       </SectionHeader>
-      <Separator />
+      <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Accordion" />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>

@@ -1,4 +1,5 @@
-import { SectionHeader, Separator, TableList, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { SectionHeader, TableList, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { docs, columns, rows } from './data/fullscreenToggleData';
 // import ComponentMetaCard from '@/components/shared/ComponentMetaCard';
@@ -24,9 +25,9 @@ const FullScreenTogglePage = () => {
           full-size.
         </SectionHeaderSubTitle>
       </SectionHeader>
-      <Separator />
+      <DocsDivider />
       {/* <ComponentMetaCard meta={meta} />
-      <Separator /> */}
+      <DocsDivider /> */}
       <DocumentationRenderer data={docs} componentName="FullScreenToggle" />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>

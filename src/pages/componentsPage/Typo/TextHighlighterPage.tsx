@@ -1,4 +1,5 @@
-import { SectionHeader, Separator, TableList, Div, Heading, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { SectionHeader, TableList, Div, Heading, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { docs, columns, rows, textHighlighterTextRows } from './data/textHighlighterData';
 const TextHighlighterPage = () => {
@@ -11,7 +12,7 @@ const TextHighlighterPage = () => {
           useful for drawing attention to important information or for creating interactive text elements.
         </SectionHeaderSubTitle>
       </SectionHeader>
-      <Separator />
+      <DocsDivider />
       <DocumentationRenderer data={docs} componentName="TextHighlighter" />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>

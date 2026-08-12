@@ -1,6 +1,5 @@
 import {
   SectionHeader,
-  Separator,
   TableList,
   Div,
   Heading,
@@ -9,6 +8,7 @@ import {
   UnOrderedList,
   UnOrderedListItem,
 } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { docs, columns, stackProps, stackItemProps, additionalNotes } from './data/stackData';
 const StackPage = () => {
@@ -24,7 +24,7 @@ const StackPage = () => {
           ))}
         </SectionHeaderSubTitle>
       </SectionHeader>
-      <Separator />
+      <DocsDivider />
       <DocumentationRenderer data={docs} componentName="Stack" />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>

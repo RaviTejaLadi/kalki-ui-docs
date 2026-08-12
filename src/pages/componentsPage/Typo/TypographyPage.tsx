@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { SectionHeader, Separator, Paragraph, Div, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
+import { DocsDivider } from '@/components/shared/DocsDivider';
+import { SectionHeader, Paragraph, Div, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
 const TypographyPage = () => {
   return (
     <div className="container">
@@ -9,7 +10,7 @@ const TypographyPage = () => {
           Typography primitives for headings, body copy, and emphasized phrases in Kalki UI.
         </SectionHeaderSubTitle>
       </SectionHeader>
-      <Separator />
+      <DocsDivider />
       <Div className="my-6 space-y-4 max-w-2xl">
         <Paragraph>
           Use these primitives to keep text hierarchy and emphasis consistent across your application. Each component
