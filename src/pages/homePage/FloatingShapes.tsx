@@ -1,16 +1,17 @@
 export const FloatingShapes = () => (
-  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    <div className="absolute -top-40 -right-32 w-[500px] h-[500px] bg-gradient-to-br from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/20 dark:to-purple-500/20 rounded-full blur-3xl" />
-    <div className="absolute -bottom-40 -left-32 w-[500px] h-[500px] bg-gradient-to-tr from-blue-500/10 to-teal-500/10 dark:from-blue-500/20 dark:to-teal-500/20 rounded-full blur-3xl" />
-    <div className="absolute top-1/2  left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-      <svg width="604" height="604" fill="none" viewBox="0 0 404 404">
-        <defs>
-          <pattern id="grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-            <rect x="9" y="9" width="2" height="2" className="text-muted-foreground/10" fill="currentColor" />
-          </pattern>
-        </defs>
-        <rect width="404" height="404" fill="url(#grid)" />
-      </svg>
-    </div>
+  <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
+    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_hsl(var(--hero-glow)_/_0.08),_transparent_55%)]" />
+    <div className="absolute -top-32 right-[-10%] h-[28rem] w-[28rem] rounded-full bg-[hsl(var(--hero-glow)/0.08)] blur-3xl dark:bg-[hsl(var(--hero-glow)/0.14)]" />
+    <div className="absolute -bottom-40 left-[-8%] h-[26rem] w-[26rem] rounded-full bg-slate-400/10 blur-3xl dark:bg-slate-500/10" />
+    <div
+      className="absolute inset-0 opacity-[0.35] dark:opacity-[0.2]"
+      style={{
+        backgroundImage:
+          'linear-gradient(to right, hsl(var(--border) / 0.55) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--border) / 0.55) 1px, transparent 1px)',
+        backgroundSize: '48px 48px',
+        maskImage: 'radial-gradient(ellipse at center, black 20%, transparent 75%)',
+        WebkitMaskImage: 'radial-gradient(ellipse at center, black 20%, transparent 75%)',
+      }}
+    />
   </div>
 );

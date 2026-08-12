@@ -1,73 +1,80 @@
 import Card, { CardContent, CardTitle, CardHeader } from '@/components/common/Card';
+import { Boxes, Code2, LayoutTemplate, Puzzle, Smartphone, Zap } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 
 interface FeaturesProps {
-  id: number;
+  id: string;
   title: string;
   description: string;
+  icon: LucideIcon;
 }
 
 const featureList: FeaturesProps[] = [
   {
-    id: Math.random(),
-    title: '📦 Kalki UI Package:',
+    id: 'package',
+    title: 'Complete UI kit',
     description:
-      " Enhance your React projects with the comprehensive 'kalki-ui' package, meticulously crafted with React, Typescript and Tailwind CSS. This all-in-one toolkit is designed to streamline your development process by providing a rich set of essential components for building dynamic and visually appealing user interfaces.",
+      'Ship polished interfaces faster with a curated set of React components written in TypeScript and styled with Tailwind CSS.',
+    icon: Boxes,
   },
   {
-    id: Math.random(),
-    title: '⚛️ React-Powered Components:',
+    id: 'react',
+    title: 'React-first architecture',
     description:
-      'Leverage the power of React to seamlessly integrate reusable and efficient UI components into your projects.',
+      'Composable, reusable primitives that drop cleanly into existing React apps without fighting your project structure.',
+    icon: Code2,
   },
   {
-    id: Math.random(),
-    title: '🎨 HTML and Tailwind CSS Integration:',
+    id: 'tailwind',
+    title: 'Tailwind-native styling',
     description:
-      '  The package is built with clean HTML and Tailwind CSS, ensuring easy customization and compatibility with a wide range of project structures.',
+      'Customize with utility classes and design tokens so every component can match your brand without heavy overrides.',
+    icon: LayoutTemplate,
   },
   {
-    id: Math.random(),
-    title: '⚡ JavaScript Functionality:',
+    id: 'interactive',
+    title: 'Interactive by default',
     description:
-      ' Take advantage of JavaScript functionalities embedded in the components for interactive and dynamic user experiences.',
+      'Built-in behaviors for common UI patterns help you deliver dynamic experiences with less boilerplate.',
+    icon: Zap,
   },
   {
-    id: Math.random(),
-    title: '🧩 Comprehensive Component Set:',
+    id: 'coverage',
+    title: 'Broad component coverage',
     description:
-      "From basic elements to advanced widgets, 'kalki-ui' includes a diverse range of components to cover all your UI needs.",
+      'From foundational controls to richer widgets, Kalki UI covers the patterns you reach for day to day.',
+    icon: Puzzle,
   },
   {
-    id: Math.random(),
-    title: '🔌 Easy Integration:',
+    id: 'responsive',
+    title: 'Responsive out of the box',
     description:
-      'Effortlessly integrate the package into your React projects, reducing development time and boosting overall productivity.',
-  },
-  {
-    id: Math.random(),
-    title: '📱 Responsive Design:',
-    description:
-      '  All components are designed with responsiveness in mind, ensuring a seamless user experience across various devices.',
+      'Layouts and controls are designed to stay usable across breakpoints so products feel consistent on every device.',
+    icon: Smartphone,
   },
 ];
 
 export const FeaturesSection = () => {
   return (
-    <section id="features" className=" container py-5 px-10 ">
-      <div className="text-center mb-16">
-        <h2 className="text-3xl font-bold text-foreground">Why Choose Kalki UI ?</h2>
-        <p className="mt-4 text-lg text-muted-foreground">Everything you need to build modern React applications 🚀</p>
+    <section id="features" className="container px-6 py-20 lg:px-10">
+      <div className="mb-12 max-w-2xl">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-primary">Why Kalki UI</p>
+        <h2 className="text-3xl font-bold tracking-tight text-foreground">Built for serious product teams</h2>
+        <p className="mt-3 text-base text-muted-foreground">
+          Everything you need to assemble modern React interfaces with consistency and speed.
+        </p>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 sm:block columns-2  lg:columns-3 lg:gap-6 mx-auto space-y-4 lg:space-y-6 sm:grid-cols-2  md:grid-col-3 gap-4">
-        {featureList.map(({ id, title, description }) => (
-          <div key={id}>
-            <Card className="h-full max-w-md md:break-inside-avoid overflow-hidden  hover:shadow-md border dark:border-gray-200/10 dark:bg-background/10 shadow-none">
-              <CardHeader className="flex">
-                <CardTitle className="text-purple-500 text-base text-left tracking-wide">{title}</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm tracking-wide text-muted-foreground text-left">{description}</CardContent>
-            </Card>
-          </div>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {featureList.map(({ id, title, description, icon: Icon }) => (
+          <Card key={id} className="h-full border-border/80 bg-card shadow-none transition-shadow hover:shadow-sm">
+            <CardHeader className="space-y-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-md border border-border bg-muted/60 text-foreground">
+                <Icon className="size-4" strokeWidth={1.75} />
+              </div>
+              <CardTitle className="text-left text-base font-semibold tracking-tight text-foreground">{title}</CardTitle>
+            </CardHeader>
+            <CardContent className="text-left text-sm leading-relaxed text-muted-foreground">{description}</CardContent>
+          </Card>
         ))}
       </div>
     </section>

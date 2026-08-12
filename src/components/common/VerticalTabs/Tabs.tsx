@@ -72,7 +72,7 @@ const TabList = ({ children, title, className }: TabListProps) => {
 
   return (
     <div className={cn(' transition-all duration-200', isMobile ? 'w-full' : 'w-80', className)}>
-      {title && <div className="px-4 py-3 font-medium text-sm text-foreground dark:text-gray-200">{title}</div>}
+      {title && <div className="px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{title}</div>}
       <nav className={cn('flex', isMobile ? 'flex-row overflow-x-auto scrollbar-hide' : 'flex-col')}>{children}</nav>
     </div>
   );
@@ -87,15 +87,15 @@ const TabTrigger = ({ id, children, className, icon }: TabTriggerProps) => {
       onClick={() => setActiveTab(id)}
       className={cn(
         'relative rounded-sm h-8 text-sm flex items-center transition-all duration-150',
-        'border border-gray-200 dark:border-gray-700',
-        'hover:bg-gray-50 dark:hover:bg-gray-800',
-        'text-foreground dark:text-foreground',
+        'border border-border',
+        'hover:bg-muted/70 dark:hover:bg-muted/50',
+        'text-foreground',
         isMobile ? 'mx-1 my-2 px-3 py-2 text-sm whitespace-nowrap' : 'mx-2 my-1 px-4 py-2',
-        isActive && ['bg-purple-50 dark:bg-gray-900/10', 'text-foreground dark:text-foreground'],
+        isActive && ['bg-muted', 'text-foreground font-medium'],
         isActive &&
           !isMobile &&
-          'before:absolute before:left-0 before:h-1/2 before:w-1 before:bg-gray-600 dark:before:bg-gray-400 before:rounded',
-        isActive && isMobile && 'border-b-2 border-b-gray-600 dark:border-b-gray-400',
+          'before:absolute before:left-0 before:h-1/2 before:w-0.5 before:rounded before:bg-primary',
+        isActive && isMobile && 'border-b-2 border-b-primary',
         className
       )}
     >
@@ -114,7 +114,7 @@ const TabContent = ({ id, children, className }: TabContentProps) => {
     <div
       className={cn(
         'animate-in fade-in-50 duration-200',
-        'text-gray-700 dark:text-gray-300',
+        'text-muted-foreground',
         isMobile ? 'p-4' : 'flex-1 p-6 mx-2',
         className
       )}

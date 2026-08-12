@@ -1,78 +1,61 @@
 import Badge from '@/components/common/Badge';
 import Button from '@/components/common/Button';
 import Link from '@/components/common/Link';
-import { useTheme } from '@/context/ThemeContext';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { FloatingShapes } from './FloatingShapes';
 import { ReactLogo, TailwindLogo, TypeScriptLogo } from './Logos';
 import { TextReveal } from './animations/TextReveal';
 import { GradientText } from './animations/GradientText';
 
 export const HeroSection = () => {
-  const { theme } = useTheme();
   return (
-    <section className="w-full relative sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative w-full overflow-hidden border-b border-border/60">
       <FloatingShapes />
-      <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20 md:py-32">
-        <div className="text-center space-y-8">
-          <div className="flex justify-center items-center gap-6 ">
-            <ReactLogo />
-            <TypeScriptLogo />
-            <TailwindLogo />
-          </div>
+      <div className="relative mx-auto grid max-w-screen-xl place-items-center gap-8 px-6 py-24 md:py-32 lg:px-8">
+        <div className="space-y-8 text-center">
+          <TextReveal delay={100}>
+            <div className="flex items-center justify-center gap-5 opacity-80">
+              <ReactLogo />
+              <TypeScriptLogo />
+              <TailwindLogo />
+            </div>
+          </TextReveal>
+
           <TextReveal delay={200}>
             <Badge
-              variant={theme === 'dark' ? 'dark' : 'light'}
+              variant="outline"
               size="sm"
-              className="text-sm dark:bg-gray-200/10 rounded-full py-2"
+              className="rounded-full border-border bg-card/80 px-3 py-1.5 text-xs font-medium text-muted-foreground shadow-sm backdrop-blur"
             >
-              <span className=" text-primary">
-                <Badge variant="outline" className="bg-indigo-50 text-blue rounded-full tracking-wide">
-                  <Sparkles className="w-4 h-4 " />
-                  50 +
-                </Badge>
-              </span>
-              <span className="tracking-wide text-foreground dark:text-gray">Production-Ready Components </span>
+              50+ production-ready components
             </Badge>
           </TextReveal>
 
-          <TextReveal delay={400}>
-            <div className="max-w-screen-md space-y-4 mx-auto text-center  font-bold">
-              <GradientText delay={600}>
-                <h1 className="px-2 text-purple-400 text-4xl tracking-wide md:text-6xl">Kalki UI</h1>
+          <TextReveal delay={350}>
+            <div className="mx-auto max-w-3xl space-y-4 text-center">
+              <GradientText delay={400}>
+                <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-6xl">Kalki UI</h1>
               </GradientText>
-              <h6 className="text-xl md:text-xl text-foreground">Build using Typescript and Tailwind CSS</h6>
+              <p className="mx-auto max-w-xl text-balance text-base font-medium text-muted-foreground md:text-lg">
+                A TypeScript-first React component library built with Tailwind CSS — accessible, composable, and ready
+                for production.
+              </p>
             </div>
           </TextReveal>
-          <TextReveal delay={600}>
-            <p className="max-w-screen-sm mx-auto text-xl tracking-wide text-muted-foreground">
-              Build stunning web applications faster than ever with our modern, accessible, and fully customizable
-              components. ✨
-            </p>
-          </TextReveal>
-          <TextReveal delay={800}>
-            <p className="max-w-screen-sm mx-auto text-xl tracking-wide text-muted-foreground">
-              Best Package For All Your UI Needs
-            </p>
-          </TextReveal>
-          <TextReveal delay={1000}>
-            <div className="space-y-4 md:space-y-0 md:space-x-4">
+
+          <TextReveal delay={550}>
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link to="/get-started">
-                <Button
-                  size="xs"
-                  variant="outline"
-                  className="w-5/6 md:w-1/4 text-foreground text-xs hover:text-purple-400 font-bold group/arrow"
-                >
+                <Button size="sm" className="min-w-[10rem] group/arrow font-semibold">
                   Get Started
-                  <ArrowRight className="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 size-4 transition-transform group-hover/arrow:translate-x-0.5" />
                 </Button>
               </Link>
-
-              <Button size="xs" variant="ghost" className="w-5/6 md:w-1/4 text-foreground hover:text-primary font-bold">
-                <Link className="text-xs text-foreground" to="https://github.com/RaviTejaLadi/kalki-ui" target="_blank">
-                  Github Repository
-                </Link>
-              </Button>
+              <Link to="https://github.com/RaviTejaLadi/kalki-ui" target="_blank">
+                <Button size="sm" variant="outline" className="min-w-[10rem] font-semibold">
+                  View on GitHub
+                </Button>
+              </Link>
             </div>
           </TextReveal>
         </div>

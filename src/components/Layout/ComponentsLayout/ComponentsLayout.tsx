@@ -17,7 +17,7 @@ import Link from '@/components/common/Link';
 import { useState, useMemo } from 'react';
 
 const searchInputClassName =
-  'w-[18rem] h-8 rounded-md border border-input bg-background px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring dark:border-gray-200/10';
+  'w-[18rem] h-8 rounded-md border border-input bg-background px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring';
 
 export const AppSideBar = ({ className }: { className?: string }) => {
   const location = useLocation();
@@ -62,10 +62,10 @@ export const AppSideBar = ({ className }: { className?: string }) => {
                 <SidebarMenuSubButton
                   title={category}
                   icon={Icon ? <Icon className="size-4 text-[var(--icon-color)]" /> : null}
-                  className="hover:bg-gray-100 dark:hover:bg-gray-200/10"
+                  className="hover:bg-muted/70 dark:hover:bg-muted/40"
                   isOpen
                 >
-                  <Link to={path || '#'} className={cn('text-muted-foreground text-xs hover:text-muted-foreground')}>
+                  <Link to={path || '#'} className={cn('text-muted-foreground text-xs hover:text-foreground')}>
                     {category.slice(0, 15)}
                   </Link>
                 </SidebarMenuSubButton>
@@ -77,9 +77,9 @@ export const AppSideBar = ({ className }: { className?: string }) => {
                       to={path}
                       icon={Icon ? <Icon className="size-4 text-[var(--icon-color)]" /> : null}
                       className={cn(
-                        'hover:bg-gray-100 dark:hover:bg-gray-200/10',
+                        'hover:bg-muted/70 dark:hover:bg-muted/40',
                         isActive &&
-                          'bg-blue-500/20 border-blue-200 border shadow-lg dark:bg-gray-200/10 dark:border-gray-200/10 font-medium text-foreground'
+                          'border border-border bg-muted font-medium text-foreground shadow-none'
                       )}
                     >
                       {label}

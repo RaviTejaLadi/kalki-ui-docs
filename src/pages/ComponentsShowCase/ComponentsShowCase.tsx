@@ -250,9 +250,9 @@ const ComponentsShowCase: React.FC = () => {
     <div className="py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-4xl font-bold text-foreground">Component Showcase</h2>
-          <p className="mt-4 text-xl text-muted-foreground">
-            Explore our growing collection of 65+ beautiful components ✨
+          <h2 className="text-4xl font-bold tracking-tight text-foreground">Component Showcase</h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Explore the full collection of production-ready components.
           </p>
         </div>
 
@@ -263,7 +263,7 @@ const ComponentsShowCase: React.FC = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             aria-label="Search components"
-            className="w-full h-10 rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring dark:border-gray-200/10"
+            className="w-full h-10 rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           />
         </div>
 

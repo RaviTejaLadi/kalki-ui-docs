@@ -16,12 +16,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import 'kalki-ui/dist/index.css';
+import 'react-perfect-scrollbar/dist/css/styles.css';
 import './styles/index.css';
 import './styles/base.css';
 import './styles/common.css';
 import './styles/key-frames.css';
-import 'react-perfect-scrollbar/dist/css/styles.css';
-import 'kalki-ui/dist/index.css';
 import { ToastProvider, ToastContainer } from 'kalki-ui-toast';
 
 const rootElement = document.getElementById('root');
