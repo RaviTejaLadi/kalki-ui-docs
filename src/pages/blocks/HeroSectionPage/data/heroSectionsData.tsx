@@ -227,13 +227,13 @@ const HeroSectionThree = () => {
           creators. Get access to exclusive resources, tutorials, and support.
           </p>
 
-          <div className="space-y-4 md:space-y-0 md:space-x-4">
-            <Button className="w-5/6 md:w-1/4 font-bold group/arrow text-sm">
+          <div className="flex w-full flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
+            <Button className="w-full max-w-xs font-bold group/arrow text-sm sm:w-auto sm:min-w-[10rem]">
               Get Started
               <ArrowRight className="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
             </Button>
 
-            <Button variant="outline" className="w-5/6 md:w-1/4 font-bold ">
+            <Button variant="outline" className="w-full max-w-xs font-bold sm:w-auto sm:min-w-[10rem]">
               <Link
                 to="https://github.com/nobruf/shadcn-landing-page.git"
                 className="text-sm text-white hover:text-white"
@@ -297,7 +297,7 @@ const HeroSectionFour = ({
   },
 }: HeroSectionFourProps) => {
   return (
-    <section className="py-32">
+    <section className="py-12 sm:py-20 md:py-32">
       <div className="container">
         <div className="grid items-center gap-8 lg:grid-cols-2">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
@@ -340,12 +340,12 @@ import { ChevronRight } from 'lucide-react';
 
 const HeroSectionFive = () => {
   return (
-    <section className="py-32">
+    <section className="py-12 sm:py-20 md:py-32">
       <div className="overflow-hidden border-b border-muted">
         <div className="container">
           <div className="mx-auto flex max-w-5xl flex-col items-center">
             <div className="z-10 items-center text-center">
-              <h1 className="mb-8 text-4xl font-semibold text-pretty text-foreground lg:text-7xl">Build faster with Kalki UI blocks</h1>
+              <h1 className="mb-6 text-3xl font-semibold text-pretty text-foreground sm:mb-8 sm:text-4xl lg:text-7xl">Build faster with Kalki UI blocks</h1>
               <p className="mx-auto max-w-screen-md text-muted-foreground lg:text-xl">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia fugiat omnis! Porro
                 facilis quo animi consequatur. Explicabo.

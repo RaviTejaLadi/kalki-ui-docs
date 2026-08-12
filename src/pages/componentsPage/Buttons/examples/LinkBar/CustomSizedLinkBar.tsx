@@ -11,7 +11,7 @@ const CustomSizedLinkBar = () => {
       rounded="md"
       activeUrl={activeUrl}
       onUrlChange={setActiveUrl}
-      className="w-[300px]"
+      className="w-full max-w-[300px]"
     >
       <LinkBarContent className="px-2">
         <LinkBarLink to="/option1">Option 1</LinkBarLink>

@@ -36,7 +36,7 @@ const Navbar = ({
   ],
 }: Navbar1Props) => {
   return (
-    <div className="fixed top-0 z-50 flex h-14 w-full items-center justify-between border-b border-border/70 bg-background/80 px-6 backdrop-blur-md supports-[backdrop-filter]:bg-background/70 lg:px-10">
+    <div className="fixed top-0 z-50 flex h-14 w-full items-center justify-between border-b border-border/70 bg-background/80 px-4 backdrop-blur-md supports-[backdrop-filter]:bg-background/70 sm:px-6 lg:px-10">
       {/* Desktop Menu */}
       <nav className="hidden w-full justify-between lg:flex">
         <div className="flex w-full items-center justify-between gap-6">

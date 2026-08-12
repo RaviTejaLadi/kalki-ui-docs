@@ -9,15 +9,17 @@ interface ErrorFallbackProps {
 
 function ErrorLocationInfo({ location }: { location: ErrorLocation }) {
   return (
-    <div className="group flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100 transition-all duration-200">
-      <FileCode className="h-4 w-4 text-blue-500 group-hover:text-blue-600" />
-      <span className="font-medium text-muted-foreground group-hover:text-foreground">{location.fileName}</span>
+    <div className="group flex flex-wrap items-center gap-x-2 gap-y-1 p-2 rounded-lg hover:bg-gray-100 transition-all duration-200 min-w-0">
+      <FileCode className="h-4 w-4 shrink-0 text-blue-500 group-hover:text-blue-600" />
+      <span className="font-medium text-muted-foreground group-hover:text-foreground break-all">
+        {location.fileName}
+      </span>
       <span className="text-gray-400">:</span>
       <span className="font-mono text-blue-600 group-hover:text-blue-700">{location.lineNumber}</span>
       <span className="text-gray-400">:</span>
       <span className="font-mono text-purple-600 group-hover:text-purple-700">{location.columnNumber}</span>
       {location.functionName && (
-        <div className="ml-2 px-2 py-0.5 bg-gray-100 rounded text-sm text-gray-600 group-hover:bg-gray-200">
+        <div className="ml-0 sm:ml-2 px-2 py-0.5 bg-gray-100 rounded text-sm text-gray-600 group-hover:bg-gray-200 break-all">
           {location.functionName}
         </div>
       )}

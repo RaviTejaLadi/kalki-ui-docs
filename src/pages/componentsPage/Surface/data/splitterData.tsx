@@ -35,7 +35,7 @@ import { Splitter, SplitterPane } from "kalki-ui";
 
 export default function Example() {
   return (
-    <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+    <Splitter orientation="vertical" height="400px" className="w-full max-w-[60rem]">
       <SplitterPane>
         <div className="text-foreground p-2">Left Pane content</div>
       </SplitterPane>
@@ -47,7 +47,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+      <Splitter orientation="vertical" height="400px" className="w-full max-w-[60rem]">
         <SplitterPane>
           <div className="text-foreground p-2">Left Pane content</div>
         </SplitterPane>
@@ -65,7 +65,7 @@ import { Splitter, SplitterPane } from "kalki-ui";
 
 export default function Example() {
   return (
-    <Splitter orientation="horizontal" height="400px" className="w-[60rem]">
+    <Splitter orientation="horizontal" height="400px" className="w-full max-w-[60rem]">
       <SplitterPane>
         <div className="text-foreground p-2">Top Pane content</div>
       </SplitterPane>
@@ -77,7 +77,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <Splitter orientation="horizontal" height="400px" className="w-[60rem]">
+      <Splitter orientation="horizontal" height="400px" className="w-full max-w-[60rem]">
         <SplitterPane>
           <div className="text-foreground p-2">Top Pane content</div>
         </SplitterPane>
@@ -95,7 +95,7 @@ import { Splitter, SplitterPane } from "kalki-ui";
 
 export default function Example() {
   return (
-    <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+    <Splitter orientation="vertical" height="400px" className="w-full max-w-[60rem]">
       <SplitterPane>
         <div className="text-foreground p-2">Left Pane content</div>
       </SplitterPane>
@@ -110,7 +110,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+      <Splitter orientation="vertical" height="400px" className="w-full max-w-[60rem]">
         <SplitterPane>
           <div className="text-foreground p-2">Left Pane content</div>
         </SplitterPane>
@@ -131,7 +131,7 @@ import { Splitter, SplitterPane } from "kalki-ui";
 
 export default function Example() {
   return (
-    <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+    <Splitter orientation="vertical" height="400px" className="w-full max-w-[60rem]">
       <SplitterPane initialSize="30%">
         <div className="text-foreground p-2">Left Pane (30%)</div>
       </SplitterPane>
@@ -143,7 +143,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+      <Splitter orientation="vertical" height="400px" className="w-full max-w-[60rem]">
         <SplitterPane initialSize="30%">
           <div className="text-foreground p-2">Left Pane (30%)</div>
         </SplitterPane>
@@ -161,7 +161,7 @@ import { Splitter, SplitterPane } from "kalki-ui";
 
 export default function Example() {
   return (
-    <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+    <Splitter orientation="vertical" height="400px" className="w-full max-w-[60rem]">
       <SplitterPane minSize="20%" maxSize="80%">
         <div className="text-foreground p-2">Left Pane (20% - 80%)</div>
       </SplitterPane>
@@ -173,7 +173,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+      <Splitter orientation="vertical" height="400px" className="w-full max-w-[60rem]">
         <SplitterPane minSize="20%" maxSize="80%">
           <div className="text-foreground p-2">Left Pane (20% - 80%)</div>
         </SplitterPane>
@@ -191,7 +191,7 @@ import { Splitter, SplitterPane } from "kalki-ui";
 
 export default function Example() {
   return (
-    <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+    <Splitter orientation="vertical" height="400px" className="w-full max-w-[60rem]">
       <SplitterPane>
         <div className="text-foreground p-2">Left Pane content</div>
       </SplitterPane>
@@ -210,7 +210,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+      <Splitter orientation="vertical" height="400px" className="w-full max-w-[60rem]">
         <SplitterPane>
           <div className="text-foreground p-2">Left Pane content</div>
         </SplitterPane>
@@ -235,7 +235,7 @@ import { Splitter, SplitterPane } from "kalki-ui";
 
 export default function Example() {
   return (
-    <Splitter orientation="vertical" height="300px" className="w-[60rem]">
+    <Splitter orientation="vertical" height="300px" className="w-full max-w-[60rem]">
       <SplitterPane>
         <div className="text-foreground p-2">Left Pane content</div>
       </SplitterPane>
@@ -247,7 +247,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <Splitter orientation="vertical" height="300px" className="w-[60rem]">
+      <Splitter orientation="vertical" height="300px" className="w-full max-w-[60rem]">
         <SplitterPane>
           <div className="text-foreground p-2">Left Pane content</div>
         </SplitterPane>
@@ -265,7 +265,7 @@ import { Splitter, SplitterPane } from "kalki-ui";
 
 export default function Example() {
   return (
-    <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+    <Splitter orientation="vertical" height="400px" className="w-full max-w-[60rem]">
       <SplitterPane initialSize="200px">
         <div className="text-foreground p-2">Left Pane (200px)</div>
       </SplitterPane>
@@ -277,7 +277,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+      <Splitter orientation="vertical" height="400px" className="w-full max-w-[60rem]">
         <SplitterPane initialSize="200px">
           <div className="text-foreground p-2">Left Pane (200px)</div>
         </SplitterPane>
@@ -295,7 +295,7 @@ import { Splitter, SplitterPane } from "kalki-ui";
 
 export default function Example() {
   return (
-    <Splitter orientation="horizontal" height="600px" className="w-[60rem]">
+    <Splitter orientation="horizontal" height="600px" className="w-full max-w-[60rem]">
       <SplitterPane>
         <div className="text-foreground p-2">First Pane</div>
       </SplitterPane>
@@ -313,7 +313,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <Splitter orientation="horizontal" height="600px" className="w-[60rem]">
+      <Splitter orientation="horizontal" height="600px" className="w-full max-w-[60rem]">
         <SplitterPane>
           <div className="text-foreground p-2">First Pane</div>
         </SplitterPane>
@@ -337,7 +337,7 @@ import { Splitter, SplitterPane } from "kalki-ui";
 
 export default function Example() {
   return (
-    <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+    <Splitter orientation="vertical" height="400px" className="w-full max-w-[60rem]">
       <SplitterPane initialSize="20%">
         <div className="text-foreground p-2">Left Pane (20%)</div>
       </SplitterPane>
@@ -352,7 +352,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+      <Splitter orientation="vertical" height="400px" className="w-full max-w-[60rem]">
         <SplitterPane initialSize="20%">
           <div className="text-foreground p-2">Left Pane (20%)</div>
         </SplitterPane>
@@ -373,7 +373,7 @@ import { Splitter, SplitterPane } from "kalki-ui";
 
 export default function Example() {
   return (
-    <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+    <Splitter orientation="vertical" height="400px" className="w-full max-w-[60rem]">
       <SplitterPane initialSize="25%">
         <div className="text-foreground p-2">Left Pane (25%)</div>
       </SplitterPane>
@@ -388,7 +388,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+      <Splitter orientation="vertical" height="400px" className="w-full max-w-[60rem]">
         <SplitterPane initialSize="25%">
           <div className="text-foreground p-2">Left Pane (25%)</div>
         </SplitterPane>
@@ -409,7 +409,7 @@ import { Splitter, SplitterPane } from "kalki-ui";
 
 export default function Example() {
   return (
-    <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+    <Splitter orientation="vertical" height="400px" className="w-full max-w-[60rem]">
       <SplitterPane initialSize="30%">
         <div className="text-foreground p-2">Left Pane</div>
       </SplitterPane>
@@ -435,7 +435,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <Splitter orientation="vertical" height="400px" className="w-[60rem]">
+      <Splitter orientation="vertical" height="400px" className="w-full max-w-[60rem]">
         <SplitterPane initialSize="30%">
           <div className="text-foreground p-2">Left Pane</div>
         </SplitterPane>

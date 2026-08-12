@@ -14,7 +14,7 @@ import Card, { CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 const CardOne = () => {
   return (
-    <Card className="m-4 w-[500px]">
+    <Card className="m-2 sm:m-4 w-full max-w-[500px]">
       <CardHeader>
         <CardTitle>Card Title 1</CardTitle>
         <CardDescription>Some brief description about the card content.</CardDescription>
@@ -51,7 +51,7 @@ import Image from '@/components/common/Image';
 
 const CardTwo = () => {
   return (
-    <Card className="m-4 w-[500px]">
+    <Card className="m-2 sm:m-4 w-full max-w-[500px]">
       <CardHeader className="flex flex-row justify-between items-center">
         <CardTitle>Card Title 2</CardTitle>
         <Badge>Featured</Badge>
@@ -86,7 +86,7 @@ import Card, { CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 const CardThree = () => {
   return (
-    <Card className="m-4 w-[500px]">
+    <Card className="m-2 sm:m-4 w-full max-w-[500px]">
       <CardHeader>
         <div className="flex items-center space-x-2">
           <Avatar>
@@ -122,7 +122,7 @@ import { StarIcon } from 'lucide-react';
 
 const CardFour = () => {
   return (
-    <Card className="m-4 w-[500px]">
+    <Card className="m-2 sm:m-4 w-full max-w-[500px]">
       <CardHeader>
         <CardTitle>Product Highlights</CardTitle>
         <CardDescription>Check out our latest features</CardDescription>
@@ -162,7 +162,7 @@ import { Link } from 'react-router-dom';
 
 const CardFive = () => {
   return (
-    <Card className="m-4 w-[500px]">
+    <Card className="m-2 sm:m-4 w-full max-w-[500px]">
       <CardHeader className="flex items-center gap-4">
         <Avatar>
           <AvatarImage src="/placeholder-user.jpg" alt="@kalkiui" />

@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 
 const CardFive = () => {
   return (
-    <Card className="m-4 w-[500px]">
+    <Card className="m-2 sm:m-4 w-full max-w-[500px]">
       <CardHeader className="flex items-center gap-4">
         <Avatar>
           <AvatarImage src="/placeholder-user.jpg" alt="@kalkiui" />

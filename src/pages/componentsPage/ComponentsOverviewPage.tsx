@@ -14,12 +14,11 @@ import React, { useState, useMemo } from 'react';
 import { categorizedRoutesComponents } from '@/components/Layout/ComponentsLayout/categorizedRoutesComponents';
 
 const searchInputClassName =
-  'pl-3 w-[25rem] h-10 rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring dark:border-gray-200/10';
+  'w-full max-w-md h-10 rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring dark:border-gray-200/10';
 
 const ComponentsOverviewPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Filter categories and components based on search query
   const filteredCategories = useMemo(() => {
     if (!searchQuery.trim()) {
       return categorizedRoutesComponents;
@@ -39,8 +38,8 @@ const ComponentsOverviewPage: React.FC = () => {
 
   return (
     <div className="container">
-      <div className="flex items-center justify-between mb-6">
-        <SectionHeader variant="transparent" size="sm">
+      <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+        <SectionHeader variant="transparent" size="sm" className="min-w-0 flex-1">
           <SectionHeaderTitle className="tracking-wide">Components overview</SectionHeaderTitle>
           <SectionHeaderSubTitle className="tracking-wide">
             Every Kalki UI component available so far. Accessible, modern and easy to style UI components.
@@ -48,8 +47,8 @@ const ComponentsOverviewPage: React.FC = () => {
           <SectionHeaderSubTitle>
             Here&apos;s a list of all the components available in the library.
           </SectionHeaderSubTitle>
-        </SectionHeader>{' '}
-        <div className="my-6 ">
+        </SectionHeader>
+        <div className="w-full shrink-0 lg:mt-2 lg:w-auto">
           <input
             type="search"
             placeholder="Search components..."
@@ -62,20 +61,20 @@ const ComponentsOverviewPage: React.FC = () => {
       </div>
       <Separator />
 
-      <div className="container my-3">
+      <div className="my-3 w-full">
         {filteredCategories.length > 0 ? (
           filteredCategories.map(({ category, components, id }) => (
             <div className="mb-10 py-4" key={id}>
-              <h2 className="text-foreground font-semibold">{category}</h2>
-              <Separator className="h-[0.5px] my-5" />
-              <div key={id} id={id} className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <h2 className="font-semibold text-foreground">{category}</h2>
+              <Separator className="my-5 h-[0.5px]" />
+              <div key={id} id={id} className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {components.map(({ path, label, description, Icon }, idx) => (
                   <Link key={idx} to={path}>
-                    <Card className="border h-full border-gray-100 mb-5 rounded-md hover:shadow-md transition dark:border-gray-200/10 dark:bg-background/10">
+                    <Card className="mb-5 h-full rounded-md border border-gray-100 transition hover:shadow-md dark:border-gray-200/10 dark:bg-background/10">
                       <CardHeader>
-                        <div className="flex gap-3 items-center align-middle">
+                        <div className="flex items-center gap-3 align-middle">
                           {Icon ? (
-                            <Icon className="size-5 text-[var(--icon-color)] border p-1 rounded bg-background dark:border-gray-200/10 dark:bg-background/10" />
+                            <Icon className="size-5 rounded border bg-background p-1 text-[var(--icon-color)] dark:border-gray-200/10 dark:bg-background/10" />
                           ) : null}
                           <CardTitle className="text-sm font-medium text-foreground">{label}</CardTitle>
                         </div>
@@ -90,7 +89,7 @@ const ComponentsOverviewPage: React.FC = () => {
             </div>
           ))
         ) : (
-          <div className="text-center py-10">
+          <div className="py-10 text-center">
             <p className="text-muted-foreground">No components found matching your search.</p>
           </div>
         )}

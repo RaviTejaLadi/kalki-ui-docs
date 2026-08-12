@@ -28,13 +28,13 @@ const HeroSectionThree = () => {
           creators. Get access to exclusive resources, tutorials, and support.`}
           </p>
 
-          <div className="space-y-4 md:space-y-0 md:space-x-4">
-            <Button className="w-5/6 md:w-1/4 font-bold group/arrow text-sm">
+          <div className="flex w-full flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
+            <Button className="w-full max-w-xs font-bold group/arrow text-sm sm:w-auto sm:min-w-[10rem]">
               Get Started
               <ArrowRight className="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
             </Button>
 
-            <Button variant="outline" className="w-5/6 md:w-1/4 font-bold ">
+            <Button variant="outline" className="w-full max-w-xs font-bold sm:w-auto sm:min-w-[10rem]">
               <Link
                 to="https://github.com/nobruf/shadcn-landing-page.git"
                 className="text-sm text-white hover:text-white"

@@ -111,7 +111,7 @@ export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
 
   return (
     <div
-      className={`group relative  rounded-xl overflow-hidden backdrop-blur-xl backdrop-saturate-150 
+      className={`group relative w-full max-w-full overflow-x-auto rounded-xl backdrop-blur-xl backdrop-saturate-150 
       bg-background dark:border-gray-200/10 
       before:absolute before:inset-0 before:rounded-xl`}
     >

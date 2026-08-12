@@ -55,7 +55,7 @@ const featureList: FeaturesProps[] = [
 
 export const FeaturesSection = () => {
   return (
-    <section id="features" className="container px-6 py-20 lg:px-10">
+    <section id="features" className="container py-16 sm:py-20">
       <div className="mb-12 max-w-2xl">
         <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-primary">Why Kalki UI</p>
         <h2 className="text-3xl font-bold tracking-tight text-foreground">Built for serious product teams</h2>

@@ -10,7 +10,7 @@ import { FullScreenToggle, Heading } from "kalki-ui";
 
 export default function Example() {
   return (
-    <header className=" w-[900px] flex justify-between items-center px-4 py-2 border dark:border-gray-200/10 rounded-lg">
+    <header className=" w-full max-w-[900px] flex justify-between items-center px-4 py-2 border dark:border-gray-200/10 rounded-lg">
       <Heading as="h5">My Website</Heading>
       <FullScreenToggle className="text-sm">Toggle Fullscreen</FullScreenToggle>
     </header>
@@ -18,7 +18,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <header className=" w-[900px] flex justify-between items-center px-4 py-2 border dark:border-gray-200/10 rounded-lg">
+      <header className=" w-full max-w-[900px] flex justify-between items-center px-4 py-2 border dark:border-gray-200/10 rounded-lg">
         <Heading as="h5">My Website</Heading>
         <FullScreenToggle className="text-sm">Toggle Fullscreen</FullScreenToggle>
       </header>

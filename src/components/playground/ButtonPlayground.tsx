@@ -104,10 +104,10 @@ const ButtonPlayground = () => {
   return (
     <div className="w-full my-3">
       <Card className="w-full mb-6">
-        <CardContent className="flex flex-col gap-4">
+        <CardContent className="flex flex-col gap-3 !p-3">
           <div className="w-full">
-            <h3 className="text-sm font-medium mb-4">Preview</h3>
-            <div className="p-8 flex justify-center items-center bg-gray-50 dark:bg-gray-900 rounded-lg">
+            <h3 className="mb-3 text-sm font-medium">Preview</h3>
+            <div className="flex items-center justify-center rounded-lg bg-gray-50 p-4 dark:bg-gray-900">
               <Button
                 variant={settings.variant}
                 size={settings.size}
@@ -138,9 +138,9 @@ const ButtonPlayground = () => {
             </div>
           </div>
           <hr className="dark:border-gray-200/10" />
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-4">
             {/* Controls */}
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-4">
               <div>
                 <label className="block text-sm font-medium mb-1">Variant</label>
                 <div className="flex flex-wrap gap-2">
@@ -258,7 +258,7 @@ const ButtonPlayground = () => {
       </Card>
 
       <Card className="w-full">
-        <CardContent>
+        <CardContent className="!p-3">
           <SyntaxHighlighter code={generateCode()} language="jsx" />
         </CardContent>
       </Card>

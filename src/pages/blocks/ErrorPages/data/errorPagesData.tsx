@@ -42,7 +42,7 @@ export default function NotFound404({
   return (
     <div
       className={cn(
-        'relative min-h-screen w-full overflow-hidden bg-background flex items-center justify-center px-6',
+        'relative min-h-[28rem] sm:min-h-screen w-full overflow-hidden bg-background flex items-center justify-center px-4 sm:px-6',
         className
       )}
     >
@@ -85,15 +85,15 @@ import { Home, RefreshCw, ServerCrash } from 'lucide-react';
 
 const InternalServerError500 = () => {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <div className="min-h-[28rem] sm:min-h-screen bg-background flex items-center justify-center p-4 sm:p-6">
       <Empty className="max-w-2xl">
         <EmptyMedia>
           <div className="bg-red-100 p-6 rounded-full">
-            <ServerCrash className="w-20 h-20 text-red-600" />
+            <ServerCrash className="w-12 h-12 sm:w-20 sm:h-20 text-red-600" />
           </div>
         </EmptyMedia>
         <EmptyHeader>
-          <div className="text-7xl font-bold text-slate-800 mb-4">500</div>
+          <div className="text-4xl sm:text-7xl font-bold text-slate-800 mb-4">500</div>
           <EmptyTitle>Internal Server Error</EmptyTitle>
           <EmptyDescription>
             Something went wrong on our end. Our team has been notified and is working to fix the issue.
@@ -129,15 +129,15 @@ import { Home, ShieldAlert } from 'lucide-react';
 
 const Forbidden403 = () => {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <div className="min-h-[28rem] sm:min-h-screen bg-background flex items-center justify-center p-4 sm:p-6">
       <Empty className="max-w-2xl">
         <EmptyMedia>
           <div className="bg-amber-100 p-6 rounded-full">
-            <ShieldAlert className="w-20 h-20 text-amber-600" />
+            <ShieldAlert className="w-12 h-12 sm:w-20 sm:h-20 text-amber-600" />
           </div>
         </EmptyMedia>
         <EmptyHeader>
-          <div className="text-7xl font-bold text-slate-800 mb-4">403</div>
+          <div className="text-4xl sm:text-7xl font-bold text-slate-800 mb-4">403</div>
           <EmptyTitle>Access Forbidden</EmptyTitle>
           <EmptyDescription>
             You don't have permission to access this resource. Please contact your administrator if you believe this is
@@ -173,15 +173,15 @@ import { RefreshCw, WifiOff } from 'lucide-react';
 
 const ServiceUnavailable503 = () => {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <div className="min-h-[28rem] sm:min-h-screen bg-background flex items-center justify-center p-4 sm:p-6">
       <Empty className="max-w-2xl">
         <EmptyMedia>
           <div className="bg-blue-100 p-6 rounded-full">
-            <WifiOff className="w-20 h-20 text-blue-600" />
+            <WifiOff className="w-12 h-12 sm:w-20 sm:h-20 text-blue-600" />
           </div>
         </EmptyMedia>
         <EmptyHeader>
-          <div className="text-7xl font-bold text-slate-800 mb-4">503</div>
+          <div className="text-4xl sm:text-7xl font-bold text-slate-800 mb-4">503</div>
           <EmptyTitle>Service Unavailable</EmptyTitle>
           <EmptyDescription>
             The service is temporarily unavailable. We&apos;re performing maintenance or experiencing high traffic.
@@ -218,15 +218,15 @@ import { Home, Lock } from 'lucide-react';
 
 const Unauthorized401 = () => {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <div className="min-h-[28rem] sm:min-h-screen bg-background flex items-center justify-center p-4 sm:p-6">
       <Empty className="max-w-2xl">
         <EmptyMedia>
           <div className="bg-purple-100 p-6 rounded-full">
-            <Lock className="w-20 h-20 text-purple-600" />
+            <Lock className="w-12 h-12 sm:w-20 sm:h-20 text-purple-600" />
           </div>
         </EmptyMedia>
         <EmptyHeader>
-          <div className="text-7xl font-bold text-slate-800 mb-4">401</div>
+          <div className="text-4xl sm:text-7xl font-bold text-slate-800 mb-4">401</div>
           <EmptyTitle>Unauthorized Access</EmptyTitle>
           <EmptyDescription>You need to be logged in to access this page. Please sign in to continue.</EmptyDescription>
         </EmptyHeader>
@@ -261,15 +261,15 @@ import { Construction, RefreshCw } from 'lucide-react';
 
 const UnderMaintenance503 = () => {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <div className="min-h-[28rem] sm:min-h-screen bg-background flex items-center justify-center p-4 sm:p-6">
       <Empty className="max-w-2xl">
         <EmptyMedia>
           <div className="bg-orange-100 p-6 rounded-full">
-            <Construction className="w-20 h-20 text-orange-600" />
+            <Construction className="w-12 h-12 sm:w-20 sm:h-20 text-orange-600" />
           </div>
         </EmptyMedia>
         <EmptyHeader>
-          <div className="text-7xl font-bold text-slate-800 mb-4">503</div>
+          <div className="text-4xl sm:text-7xl font-bold text-slate-800 mb-4">503</div>
           <EmptyTitle>Under Maintenance</EmptyTitle>
           <EmptyDescription>
             We&apos;re currently performing scheduled maintenance to improve your experience. We&apos;ll be back online soon!
@@ -305,15 +305,15 @@ import { Clock, Home, RefreshCw } from 'lucide-react';
 
 const RequestTimeout408 = () => {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <div className="min-h-[28rem] sm:min-h-screen bg-background flex items-center justify-center p-4 sm:p-6">
       <Empty className="max-w-2xl">
         <EmptyMedia>
           <div className="bg-indigo-100 p-6 rounded-full">
-            <Clock className="w-20 h-20 text-indigo-600" />
+            <Clock className="w-12 h-12 sm:w-20 sm:h-20 text-indigo-600" />
           </div>
         </EmptyMedia>
         <EmptyHeader>
-          <div className="text-7xl font-bold text-slate-800 mb-4">408</div>
+          <div className="text-4xl sm:text-7xl font-bold text-slate-800 mb-4">408</div>
           <EmptyTitle>Request Timeout</EmptyTitle>
           <EmptyDescription>
             Your request took too long to process. This might be due to a slow connection or server load.
@@ -350,15 +350,15 @@ import { Ban, Clock, Home } from 'lucide-react';
 
 const TooManyRequests429 = () => {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <div className="min-h-[28rem] sm:min-h-screen bg-background flex items-center justify-center p-4 sm:p-6">
       <Empty className="max-w-2xl">
         <EmptyMedia>
           <div className="bg-pink-100 p-6 rounded-full">
-            <Ban className="w-20 h-20 text-pink-600" />
+            <Ban className="w-12 h-12 sm:w-20 sm:h-20 text-pink-600" />
           </div>
         </EmptyMedia>
         <EmptyHeader>
-          <div className="text-7xl font-bold text-slate-800 mb-4">429</div>
+          <div className="text-4xl sm:text-7xl font-bold text-slate-800 mb-4">429</div>
           <EmptyTitle>Too Many Requests</EmptyTitle>
           <EmptyDescription>
             You&apos;ve made too many requests in a short period. Please wait a moment before trying again.
@@ -395,15 +395,15 @@ import { AlertCircle, RefreshCw } from 'lucide-react';
 
 const BadGateway502 = () => {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <div className="min-h-[28rem] sm:min-h-screen bg-background flex items-center justify-center p-4 sm:p-6">
       <Empty className="max-w-2xl">
         <EmptyMedia>
           <div className="bg-cyan-100 p-6 rounded-full">
-            <AlertCircle className="w-20 h-20 text-cyan-600" />
+            <AlertCircle className="w-12 h-12 sm:w-20 sm:h-20 text-cyan-600" />
           </div>
         </EmptyMedia>
         <EmptyHeader>
-          <div className="text-7xl font-bold text-slate-800 mb-4">502</div>
+          <div className="text-4xl sm:text-7xl font-bold text-slate-800 mb-4">502</div>
           <EmptyTitle>Bad Gateway</EmptyTitle>
           <EmptyDescription>
             The server received an invalid response from an upstream server. Please try again in a few moments.
@@ -439,15 +439,15 @@ import { CloudOff, Home } from 'lucide-react';
 
 const Gone410 = () => {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <div className="min-h-[28rem] sm:min-h-screen bg-background flex items-center justify-center p-4 sm:p-6">
       <Empty className="max-w-2xl">
         <EmptyMedia>
           <div className="bg-gray-100 p-6 rounded-full">
-            <CloudOff className="w-20 h-20 text-gray-600" />
+            <CloudOff className="w-12 h-12 sm:w-20 sm:h-20 text-gray-600" />
           </div>
         </EmptyMedia>
         <EmptyHeader>
-          <div className="text-7xl font-bold text-slate-800 mb-4">410</div>
+          <div className="text-4xl sm:text-7xl font-bold text-slate-800 mb-4">410</div>
           <EmptyTitle>Content Gone</EmptyTitle>
           <EmptyDescription>
             The content you&apos;re looking for has been permanently removed and is no longer available.
@@ -483,15 +483,15 @@ import { Home, RefreshCw, Zap } from 'lucide-react';
 
 const GatewayTimeout504 = () => {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <div className="min-h-[28rem] sm:min-h-screen bg-background flex items-center justify-center p-4 sm:p-6">
       <Empty className="max-w-2xl">
         <EmptyMedia>
           <div className="bg-emerald-100 p-6 rounded-full">
-            <Zap className="w-20 h-20 text-emerald-600" />
+            <Zap className="w-12 h-12 sm:w-20 sm:h-20 text-emerald-600" />
           </div>
         </EmptyMedia>
         <EmptyHeader>
-          <div className="text-7xl font-bold text-slate-800 mb-4">504</div>
+          <div className="text-4xl sm:text-7xl font-bold text-slate-800 mb-4">504</div>
           <EmptyTitle>Gateway Timeout</EmptyTitle>
           <EmptyDescription>
             The server didn&apos;t receive a timely response from another server it needed to access. Please try again.

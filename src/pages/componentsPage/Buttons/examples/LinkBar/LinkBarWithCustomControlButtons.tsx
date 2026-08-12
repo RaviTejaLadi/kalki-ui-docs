@@ -11,7 +11,7 @@ const LinkBarWithCustomControlButtons = () => {
       rounded="none"
       activeUrl={activeUrl}
       onUrlChange={setActiveUrl}
-      className="w-[20rem]"
+      className="w-full max-w-[20rem]"
     >
       <LinkBarControl position="left" size="md" variant="primary" />
       <LinkBarContent className="px-2">

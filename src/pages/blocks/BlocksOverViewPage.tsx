@@ -4,21 +4,23 @@ import { categorizedBlocksRoutesData } from '@/components/Layout/BlocksLayout/ca
 
 const BlocksOverViewPage = () => {
   return (
-    <div className="container">
-      <div className="pl-2 pt-14 mb-4 max-w-2xl">
-        <h1 className="text-3xl font-bold mb-2 text-foreground">Kalki UI Blocks - Building Blocks for the Web</h1>
+    <div className="container py-6">
+      <div className="mb-4 max-w-2xl px-1">
+        <h1 className="mb-2 text-2xl font-bold text-foreground sm:text-3xl">
+          Kalki UI Blocks - Building Blocks for the Web
+        </h1>
         <p className="text-sm text-muted-foreground text-wrap">
-          Get started with free and premium UI components.Clean, modern building blocks. Copy and paste into your apps.
+          Get started with free and premium UI components. Clean, modern building blocks. Copy and paste into your apps.
           Works with all React frameworks. Open Source. Free forever.
         </p>
       </div>
       <Separator />
-      <div className="p-2 flex flex-wrap items-center gap-4">
+      <div className="flex flex-wrap items-stretch gap-3 p-2 sm:gap-4">
         {categorizedBlocksRoutesData.map((item, index) => {
           return (
-            <Link to={item.path} key={index}>
-              <Card className="w-[15rem]">
-                <CardContent className="w-auto font-medium truncate">{item.category}</CardContent>
+            <Link to={item.path} key={index} className="w-full sm:w-auto">
+              <Card className="w-full sm:w-[15rem] transition hover:shadow-md">
+                <CardContent className="w-auto truncate font-medium">{item.category}</CardContent>
               </Card>
             </Link>
           );

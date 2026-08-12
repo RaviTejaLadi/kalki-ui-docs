@@ -36,13 +36,13 @@ const DocumentationRenderer: React.FC<DocumentationRendererProps> = ({
   deepImport,
 }) => {
   return (
-    <div className={cn(className)}>
+    <div className={cn('w-full min-w-0 overflow-x-hidden', className)}>
       {componentName ? (
         <ComponentInstallSection componentName={componentName} importCode={importCode} deepImport={deepImport} />
       ) : null}
       {data?.map((item: docsData, index: number) => {
         return (
-          <div className="my-5" key={`${item.title}-${index}`}>
+          <div className="my-5 w-full min-w-0" key={`${item.title}-${index}`}>
             <SectionHeader variant="transparent" size="sm">
               <SectionHeaderTitle className="tracking-wide">{item.title}</SectionHeaderTitle>
               <SectionHeaderSubTitle className="tracking-wide">{item.desc}</SectionHeaderSubTitle>

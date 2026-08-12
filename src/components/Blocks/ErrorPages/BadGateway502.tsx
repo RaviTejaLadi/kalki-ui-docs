@@ -3,15 +3,15 @@ import { AlertCircle, RefreshCw } from 'lucide-react';
 
 const BadGateway502 = () => {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <div className="min-h-[28rem] sm:min-h-screen bg-background flex items-center justify-center p-4 sm:p-6">
       <Empty className="max-w-2xl">
         <EmptyMedia>
-          <div className="bg-cyan-100 p-6 rounded-full">
-            <AlertCircle className="w-20 h-20 text-cyan-600" />
+          <div className="bg-cyan-100 p-4 sm:p-6 rounded-full">
+            <AlertCircle className="w-12 h-12 sm:w-20 sm:h-20 text-cyan-600" />
           </div>
         </EmptyMedia>
         <EmptyHeader>
-          <div className="text-7xl font-bold text-muted-foreground mb-4">502</div>
+          <div className="text-4xl sm:text-7xl font-bold text-muted-foreground mb-4">502</div>
           <EmptyTitle>Bad Gateway</EmptyTitle>
           <EmptyDescription>
             The server received an invalid response from an upstream server. Please try again in a few moments.

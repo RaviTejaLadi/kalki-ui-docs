@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import placeholder from '../../../assets/placeholder.svg';
 const CardTwo = () => {
   return (
-    <Card className="m-4 w-[500px]">
+    <Card className="m-2 sm:m-4 w-full max-w-[500px]">
       <CardHeader className="flex flex-row justify-between items-center">
         <CardTitle>Card Title 2</CardTitle>
         <Badge>Featured</Badge>

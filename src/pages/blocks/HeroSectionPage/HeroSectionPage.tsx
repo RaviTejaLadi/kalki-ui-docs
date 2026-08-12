@@ -9,11 +9,21 @@ const HeroSectionPage = () => {
     <BlocksWrapper BlockName="Hero Sections">
       {data.map((item, index) => {
         return (
-          <Tabs className="p-4 break-inside-avoid" key={index} variant="secondary">
-            <Tab label="Preview" value="preview" leftIcon={<Terminal className="size-4" />}>
+          <Tabs className="break-inside-avoid overflow-hidden p-2 sm:p-4" key={index} variant="secondary">
+            <Tab
+              label="Preview"
+              value="preview"
+              className="max-h-[70vh] w-full min-w-0 overflow-auto"
+              leftIcon={<Terminal className="size-4" />}
+            >
               {item.snippet}
             </Tab>
-            <Tab label="Code" value="code" className="h-[500px] overflow-y-auto" leftIcon={<Code className="size-4" />}>
+            <Tab
+              label="Code"
+              value="code"
+              className="h-[min(500px,70vh)] overflow-auto"
+              leftIcon={<Code className="size-4" />}
+            >
               <SyntaxHighlighter code={item.code} language="jsx" />
             </Tab>
           </Tabs>

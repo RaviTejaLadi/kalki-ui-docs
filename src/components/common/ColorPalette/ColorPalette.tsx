@@ -59,14 +59,14 @@ const ColorPalette: React.FC = () => {
   };
 
   return (
-    <div className="px-5">
-      <div className="flex items-end justify-between">
-        <div className="pl-2 pt-14">
-          <h1 className="text-3xl font-bold mb-2 text-foreground">Tailwind Colors</h1>
+    <div className="w-full py-4 sm:py-6">
+      <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <div className="min-w-0">
+          <h1 className="mb-2 text-2xl font-bold text-foreground sm:text-3xl">Tailwind Colors</h1>
           <p className="text-sm text-muted-foreground">Tailwind CSS colors in HSL, RGB, and HEX formats.</p>
         </div>
-        <div className="relative mt-4 flex items-center max-w-md">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+        <div className="relative flex w-full max-w-md items-center">
+          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
             <Search className="size-4 text-muted-foreground" />
           </div>
           <input
@@ -76,17 +76,22 @@ const ColorPalette: React.FC = () => {
             value={searchTerm}
             onChange={handleSearchChange}
             aria-label="Search colors"
-            className="block text-muted-foreground placeholder:text-xs w-[30rem] pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-200/10 rounded-md leading-5 bg-background placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            className="block w-full rounded-md border border-gray-300 bg-background py-2 pl-10 pr-3 text-sm leading-5 text-muted-foreground placeholder:text-xs placeholder-gray-500 focus:border-blue-500 focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-200/10"
           />
         </div>
       </div>
 
-      <div className="py-10 text-foreground flex flex-wrap items-center justify-center gap-3 text-sm">
+      <div className="flex flex-wrap items-center justify-center gap-3 py-6 text-sm text-foreground sm:py-10">
         {filteredColors.length > 0 ? (
           filteredColors.map((color) => (
-            <div key={color.name} className=" w-full flex items-center gap-x-4 bg-background rounded-md px-3 py-2">
-              <h3 className="text-xs w-[5rem] text-muted-foreground tracking-wider font-semibold mb-4">{color.name}</h3>
-              <div className="flex justify-center flex-wrap space-x-1 overflow-auto">
+            <div
+              key={color.name}
+              className="flex w-full min-w-0 flex-col gap-3 rounded-md bg-background px-2 py-2 sm:flex-row sm:items-center sm:gap-x-4 sm:px-3"
+            >
+              <h3 className="mb-0 w-full shrink-0 text-xs font-semibold tracking-wider text-muted-foreground sm:mb-0 sm:w-[5rem]">
+                {color.name}
+              </h3>
+              <div className="flex flex-wrap justify-start gap-1 overflow-x-auto sm:justify-center">
                 {color.shades.map((shade) => (
                   <ColorsWatch key={shade.value} shade={shade} />
                 ))}
@@ -94,7 +99,7 @@ const ColorPalette: React.FC = () => {
             </div>
           ))
         ) : (
-          <div className="text-center text-muted-foreground py-10">
+          <div className="py-10 text-center text-muted-foreground">
             No colors found matching &quot;{searchTerm}&quot;
           </div>
         )}

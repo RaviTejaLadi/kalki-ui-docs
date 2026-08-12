@@ -10,20 +10,20 @@ import Sidebar, {
   SidebarMenuSubItem,
   SidebarGroupContent,
 } from '@/components/shared/SideBar';
-import { MessageSquare } from 'lucide-react';
+import { MessageSquare, Menu } from 'lucide-react';
 import { categorizedRoutesComponents } from './categorizedRoutesComponents';
 import { cn } from '@/utils';
-import { Link } from 'kalki-ui';
-import { useState, useMemo } from 'react';
+import { Button, Link } from 'kalki-ui';
+import { useState, useMemo, useEffect } from 'react';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/schadcn/sheet';
 
 const searchInputClassName =
-  'w-[18rem] h-8 rounded-md border border-input bg-background px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring';
+  'w-full max-w-full h-8 rounded-md border border-input bg-background px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring';
 
-export const AppSideBar = ({ className }: { className?: string }) => {
+export const AppSideBar = ({ className, onNavigate }: { className?: string; onNavigate?: () => void }) => {
   const location = useLocation();
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Filter categories and components based on search query
   const filteredCategories = useMemo(() => {
     if (!searchQuery.trim()) {
       return categorizedRoutesComponents;
@@ -42,9 +42,9 @@ export const AppSideBar = ({ className }: { className?: string }) => {
   }, [searchQuery]);
 
   return (
-    <Sidebar className={cn(className, 'w-[20rem]')}>
+    <Sidebar className={cn('w-full max-w-[20rem]', className)}>
       <SidebarBody>
-        <div className="p-4 ">
+        <div className="p-4">
           <input
             type="search"
             placeholder="Search components..."
@@ -65,7 +65,11 @@ export const AppSideBar = ({ className }: { className?: string }) => {
                   className="hover:bg-muted/70 dark:hover:bg-muted/40"
                   isOpen
                 >
-                  <Link to={path || '#'} className={cn('text-muted-foreground text-xs hover:text-foreground')}>
+                  <Link
+                    to={path || '#'}
+                    onClick={onNavigate}
+                    className={cn('text-muted-foreground text-xs hover:text-foreground')}
+                  >
                     {category.slice(0, 15)}
                   </Link>
                 </SidebarMenuSubButton>
@@ -75,6 +79,7 @@ export const AppSideBar = ({ className }: { className?: string }) => {
                     <SidebarMenuSubItem
                       key={path}
                       to={path}
+                      onClick={onNavigate}
                       icon={Icon ? <Icon className="size-4 text-[var(--icon-color)]" /> : null}
                       className={cn(
                         'hover:bg-muted/70 dark:hover:bg-muted/40',
@@ -103,13 +108,41 @@ export const AppSideBar = ({ className }: { className?: string }) => {
 };
 
 export default function ComponentsLayout() {
+  const location = useLocation();
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
+  useEffect(() => {
+    setMobileNavOpen(false);
+  }, [location.pathname]);
+
   return (
-    <div className="flex min-h-screen">
-      <aside className="fixed top-11 left-0 h-screen hidden md:block">
-        <AppSideBar />
+    <div className="flex min-h-[calc(100vh-3.5rem)] w-full overflow-x-hidden">
+      <aside className="fixed top-14 left-0 z-30 hidden h-[calc(100vh-3.5rem)] w-[20rem] border-r border-border/60 bg-background md:block">
+        <AppSideBar className="h-full" />
       </aside>
-      <main className="ml-0 md:ml-[20rem] w-full flex-1 p-6 overflow-y-auto">
-        <Outlet />
+
+      <main className="ml-0 w-full min-w-0 flex-1 overflow-x-hidden md:ml-[20rem]">
+        <div className="sticky top-14 z-20 flex items-center gap-2 border-b border-border/60 bg-background/95 px-4 py-2 backdrop-blur md:hidden">
+          <Sheet open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
+            <SheetTrigger asChild>
+              <Button variant="outline" size="xs" aria-label="Open components menu">
+                <Menu className="size-4" />
+                <span className="ml-1.5 text-xs">Components</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-[min(100vw,20rem)] p-0">
+              <SheetHeader className="border-b border-border/60 px-4 py-3 text-left">
+                <SheetTitle className="text-sm">Components</SheetTitle>
+              </SheetHeader>
+              <div className="h-[calc(100vh-4rem)] overflow-y-auto">
+                <AppSideBar onNavigate={() => setMobileNavOpen(false)} />
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+        <div className="py-4 md:py-6">
+          <Outlet />
+        </div>
       </main>
     </div>
   );

@@ -3,7 +3,7 @@ import { StarIcon } from 'lucide-react';
 
 const CardFour = () => {
   return (
-    <Card className="m-4 w-[500px]">
+    <Card className="m-2 sm:m-4 w-full max-w-[500px]">
       <CardHeader>
         <CardTitle>Product Highlights</CardTitle>
         <CardDescription>Check out our latest features</CardDescription>

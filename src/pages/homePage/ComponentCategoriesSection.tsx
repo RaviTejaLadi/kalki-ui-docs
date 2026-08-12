@@ -5,7 +5,7 @@ import { ChevronRight } from 'lucide-react';
 
 export default function ComponentCategoriesSection() {
   return (
-    <section className="container px-6 py-16 lg:px-10">
+    <section className="container py-12 sm:py-16">
       <div className="mb-8 max-w-2xl">
         <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-primary">Library</p>
         <h2 className="text-3xl font-bold tracking-tight text-foreground">Component categories</h2>

@@ -71,7 +71,7 @@ const TabList = ({ children, title, className }: TabListProps) => {
   const { isMobile } = useTabs();
 
   return (
-    <div className={cn(' transition-all duration-200', isMobile ? 'w-full' : 'w-80', className)}>
+    <div className={cn('shrink-0 transition-all duration-200', isMobile ? 'w-full' : 'w-64 lg:w-80', className)}>
       {title && (
         <div className="px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{title}</div>
       )}
@@ -115,9 +115,9 @@ const TabContent = ({ id, children, className }: TabContentProps) => {
   return (
     <div
       className={cn(
-        'animate-in fade-in-50 duration-200',
+        'min-w-0 animate-in fade-in-50 duration-200',
         'text-muted-foreground',
-        isMobile ? 'p-4' : 'flex-1 p-6 mx-2',
+        isMobile ? 'p-4' : 'mx-2 flex-1 p-4 lg:p-6',
         className
       )}
     >

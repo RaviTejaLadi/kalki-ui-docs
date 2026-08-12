@@ -23,7 +23,7 @@ export default function NotFound404({
   return (
     <div
       className={cn(
-        'relative min-h-screen w-full overflow-hidden bg-background flex items-center justify-center px-6',
+        'relative min-h-[28rem] sm:min-h-screen w-full overflow-hidden bg-background flex items-center justify-center px-4 sm:px-6',
         className
       )}
     >
@@ -32,10 +32,10 @@ export default function NotFound404({
           <EmptyMedia variant="icon">
             <Ghost className="h-4 w-4 text-muted-foreground" />
           </EmptyMedia>
-          <EmptyTitle className="text-4xl font-bold bg-gradient-to-r from-primary via-primary/80 to-blue-500 bg-clip-text text-transparent">
+          <EmptyTitle className="text-2xl sm:text-4xl font-bold bg-gradient-to-r from-primary via-primary/80 to-blue-500 bg-clip-text text-transparent">
             {title}
           </EmptyTitle>
-          <EmptyDescription className="text-lg">{description}</EmptyDescription>
+          <EmptyDescription className="text-sm sm:text-lg">{description}</EmptyDescription>
         </EmptyHeader>
         <EmptyContent>
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">

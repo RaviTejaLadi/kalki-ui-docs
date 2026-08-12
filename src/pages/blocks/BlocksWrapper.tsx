@@ -12,14 +12,14 @@ interface BlocksWrapperProps extends PropsWithChildren {
 const BlocksWrapper = ({ children, className, BlockName }: BlocksWrapperProps) => {
   const navigate = useNavigate();
   return (
-    <div className={cn('container', className)}>
-      <div className="w-full py-4 flex gap-5 items-center">
-        <Button variant="ghost" className="rounded-full" onClick={() => navigate('/blocks')}>
-          <ArrowLeft className="w-4 h-4 text-muted-foreground" />
+    <div className={cn('container overflow-x-hidden py-2', className)}>
+      <div className="flex w-full items-center gap-3 py-4 sm:gap-5">
+        <Button variant="ghost" className="shrink-0 rounded-full" onClick={() => navigate('/blocks')}>
+          <ArrowLeft className="h-4 w-4 text-muted-foreground" />
         </Button>
-        <div className="text-muted-foreground">{BlockName}</div>
+        <div className="truncate text-muted-foreground">{BlockName}</div>
       </div>
-      <div className="columns-1 md:columns-2 gap-1 space-y-2">{children}</div>
+      <div className="columns-1 gap-4 space-y-4 md:columns-2">{children}</div>
     </div>
   );
 };

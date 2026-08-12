@@ -1,7 +1,7 @@
 import { Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'kalki-ui';
 const CardOne = () => {
   return (
-    <Card className="m-4 w-[500px]">
+    <Card className="m-2 sm:m-4 w-full max-w-[500px]">
       <CardHeader>
         <CardTitle>Card Title 1</CardTitle>
         <CardDescription>Some brief description about the card content.</CardDescription>

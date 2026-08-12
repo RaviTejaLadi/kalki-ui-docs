@@ -4,12 +4,12 @@ import { ChevronRight } from 'lucide-react';
 
 const HeroSectionFive = () => {
   return (
-    <section className="py-32">
+    <section className="py-12 sm:py-20 md:py-32">
       <div className="overflow-hidden border-b border-muted">
         <div className="container">
           <div className="mx-auto flex max-w-5xl flex-col items-center">
             <div className="z-10 items-center text-center">
-              <h1 className="mb-8 text-4xl font-semibold text-pretty text-foreground lg:text-7xl">
+              <h1 className="mb-6 text-3xl font-semibold text-pretty text-foreground sm:mb-8 sm:text-4xl lg:text-7xl">
                 Build faster with Kalki UI blocks
               </h1>
               <p className="mx-auto max-w-screen-md text-muted-foreground lg:text-xl">

@@ -12,7 +12,7 @@ import {
 } from 'kalki-ui';
 const CardThree = () => {
   return (
-    <Card className="m-4 w-[500px]">
+    <Card className="m-2 sm:m-4 w-full max-w-[500px]">
       <CardHeader>
         <div className="flex items-center space-x-2">
           <Avatar>

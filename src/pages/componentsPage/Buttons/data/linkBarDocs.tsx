@@ -79,7 +79,7 @@ const CustomSizedLinkBar = () => {
       rounded="md"
       activeUrl={activeUrl}
       onUrlChange={setActiveUrl}
-      className="w-[300px]"
+      className="w-full max-w-[300px]"
     >
       <LinkBarContent className="px-2">
         <LinkBarLink to="/option1">Option 1</LinkBarLink>
@@ -136,7 +136,7 @@ const LinkBarWithCustomControlButtons = () => {
       rounded="none"
       activeUrl={activeUrl}
       onUrlChange={setActiveUrl}
-      className="w-[20rem]"
+      className="w-full max-w-[20rem]"
     >
       <LinkBarControl position="left" size="md" variant="primary" />
       <LinkBarContent className="px-2">
@@ -226,7 +226,7 @@ const LinkBarWithManyLinks = () => {
       rounded="none"
       activeUrl={activeUrl}
       onUrlChange={handleUrlChange}
-      className="w-[50rem]"
+      className="w-full max-w-[50rem]"
     >
       <LinkBarControl position="left" />
       <LinkBarContent className="px-2">

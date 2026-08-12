@@ -172,12 +172,12 @@
   }
 
   html {
-    @apply antialiased;
+    @apply antialiased overflow-x-hidden;
     text-rendering: optimizeLegibility;
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans overflow-x-hidden;
     font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
     font-feature-settings: 'ss01' on, 'cv11' on;
   }

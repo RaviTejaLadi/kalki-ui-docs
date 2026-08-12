@@ -10,7 +10,7 @@ import { SectionHeader, SectionHeaderTitle, SectionHeaderSubTitle } from "kalki-
 
 export default function Example() {
   return (
-    <SectionHeader className="w-[60rem]">
+    <SectionHeader className="w-full max-w-[60rem]">
       <SectionHeaderTitle>Main Title</SectionHeaderTitle>
       <SectionHeaderSubTitle>This is a subtitle</SectionHeaderSubTitle>
     </SectionHeader>
@@ -18,7 +18,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <SectionHeader className="w-[60rem]">
+      <SectionHeader className="w-full max-w-[60rem]">
         <SectionHeaderTitle>Main Title</SectionHeaderTitle>
         <SectionHeaderSubTitle>This is a subtitle</SectionHeaderSubTitle>
       </SectionHeader>
@@ -32,7 +32,7 @@ import { SectionHeader, SectionHeaderTitle, SectionHeaderSubTitle } from "kalki-
 
 export default function Example() {
   return (
-    <SectionHeader align="right" className="w-[60rem]">
+    <SectionHeader align="right" className="w-full max-w-[60rem]">
       <SectionHeaderTitle>Right Aligned</SectionHeaderTitle>
       <SectionHeaderSubTitle>This header is aligned to the right</SectionHeaderSubTitle>
     </SectionHeader>
@@ -40,7 +40,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <SectionHeader align="right" className="w-[60rem]">
+      <SectionHeader align="right" className="w-full max-w-[60rem]">
         <SectionHeaderTitle>Right Aligned</SectionHeaderTitle>
         <SectionHeaderSubTitle>This header is aligned to the right</SectionHeaderSubTitle>
       </SectionHeader>
@@ -54,7 +54,7 @@ import { SectionHeader, SectionHeaderTitle, SectionHeaderSubTitle } from "kalki-
 
 export default function Example() {
   return (
-    <SectionHeader align="center" className="w-[60rem]">
+    <SectionHeader align="center" className="w-full max-w-[60rem]">
       <SectionHeaderTitle>Centered Header</SectionHeaderTitle>
       <SectionHeaderSubTitle>This header is centered</SectionHeaderSubTitle>
     </SectionHeader>
@@ -62,7 +62,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <SectionHeader align="center" className="w-[60rem]">
+      <SectionHeader align="center" className="w-full max-w-[60rem]">
         <SectionHeaderTitle>Centered Header</SectionHeaderTitle>
         <SectionHeaderSubTitle>This header is centered</SectionHeaderSubTitle>
       </SectionHeader>
@@ -76,7 +76,7 @@ import { SectionHeader, SectionHeaderTitle, SectionHeaderSubTitle } from "kalki-
 
 export default function Example() {
   return (
-    <SectionHeader size="lg" className="w-[60rem]">
+    <SectionHeader size="lg" className="w-full max-w-[60rem]">
       <SectionHeaderTitle>Large Header</SectionHeaderTitle>
       <SectionHeaderSubTitle>This is a large-sized header</SectionHeaderSubTitle>
     </SectionHeader>
@@ -84,7 +84,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <SectionHeader size="lg" className="w-[60rem]">
+      <SectionHeader size="lg" className="w-full max-w-[60rem]">
         <SectionHeaderTitle>Large Header</SectionHeaderTitle>
         <SectionHeaderSubTitle>This is a large-sized header</SectionHeaderSubTitle>
       </SectionHeader>
@@ -98,7 +98,7 @@ import { SectionHeader, SectionHeaderTitle, SectionHeaderSubTitle } from "kalki-
 
 export default function Example() {
   return (
-    <SectionHeader className="p-2 m-2 w-[60rem]">
+    <SectionHeader className="p-2 m-2 w-full max-w-[60rem]">
       <SectionHeaderTitle>Custom Spacing</SectionHeaderTitle>
       <SectionHeaderSubTitle>This header has custom padding and margin</SectionHeaderSubTitle>
     </SectionHeader>
@@ -106,7 +106,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <SectionHeader className="p-2 m-2 w-[60rem]">
+      <SectionHeader className="p-2 m-2 w-full max-w-[60rem]">
         <SectionHeaderTitle>Custom Spacing</SectionHeaderTitle>
         <SectionHeaderSubTitle>This header has custom padding and margin</SectionHeaderSubTitle>
       </SectionHeader>
@@ -120,7 +120,7 @@ import { SectionHeader, SectionHeaderTitle, SectionHeaderSubTitle } from "kalki-
 
 export default function Example() {
   return (
-    <SectionHeader className="w-[60rem]" style={{ backgroundColor: "#f0f0f0", borderRadius: "8px" }}>
+    <SectionHeader className="w-full max-w-[60rem]" style={{ backgroundColor: "#f0f0f0", borderRadius: "8px" }}>
       <SectionHeaderTitle style={{ color: "#333" }}>Custom Styled Header</SectionHeaderTitle>
       <SectionHeaderSubTitle style={{ fontStyle: "italic" }}>With custom styles applied</SectionHeaderSubTitle>
     </SectionHeader>
@@ -128,7 +128,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <SectionHeader className="w-[60rem]" style={{ backgroundColor: '#f0f0f0', borderRadius: '8px' }}>
+      <SectionHeader className="w-full max-w-[60rem]" style={{ backgroundColor: '#f0f0f0', borderRadius: '8px' }}>
         <SectionHeaderTitle style={{ color: '#333' }}>Custom Styled Header</SectionHeaderTitle>
         <SectionHeaderSubTitle style={{ fontStyle: 'italic' }}>With custom styles applied</SectionHeaderSubTitle>
       </SectionHeader>

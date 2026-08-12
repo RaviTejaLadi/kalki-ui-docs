@@ -3,15 +3,15 @@ import { Ban, Clock, Home } from 'lucide-react';
 
 const TooManyRequests429 = () => {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <div className="min-h-[28rem] sm:min-h-screen bg-background flex items-center justify-center p-4 sm:p-6">
       <Empty className="max-w-2xl">
         <EmptyMedia>
-          <div className="bg-pink-100 p-6 rounded-full">
-            <Ban className="w-20 h-20 text-pink-600" />
+          <div className="bg-pink-100 p-4 sm:p-6 rounded-full">
+            <Ban className="w-12 h-12 sm:w-20 sm:h-20 text-pink-600" />
           </div>
         </EmptyMedia>
         <EmptyHeader>
-          <div className="text-7xl font-bold text-muted-foreground mb-4">429</div>
+          <div className="text-4xl sm:text-7xl font-bold text-muted-foreground mb-4">429</div>
           <EmptyTitle>Too Many Requests</EmptyTitle>
           <EmptyDescription>
             You&apos;ve made too many requests in a short period. Please wait a moment before trying again.

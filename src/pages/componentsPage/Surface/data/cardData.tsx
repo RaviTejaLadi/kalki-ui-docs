@@ -11,7 +11,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, 
 
 export default function Example() {
   return (
-    <Card className="w-[350px]">
+    <Card className="w-full max-w-[350px]">
       <CardHeader>
         <CardTitle>Create project</CardTitle>
         <CardDescription>Deploy your new project in one-click.</CardDescription>
@@ -30,7 +30,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <Card className="w-[350px]">
+      <Card className="w-full max-w-[350px]">
         <CardHeader>
           <CardTitle>Create project</CardTitle>
           <CardDescription>Deploy your new project in one-click.</CardDescription>
@@ -55,7 +55,7 @@ import { Users, Eye, Clock } from "lucide-react";
 
 export default function Example() {
   return (
-    <Card className="w-[30rem]">
+    <Card className="w-full max-w-[30rem]">
       <CardHeader className="pb-2">
         <CardTitle className="text-sm font-medium">Website Analytics</CardTitle>
       </CardHeader>
@@ -89,7 +89,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <Card className="w-[30rem]">
+      <Card className="w-full max-w-[30rem]">
         <CardHeader className="pb-2">
           <CardTitle className="text-sm font-medium">Website Analytics</CardTitle>
         </CardHeader>
@@ -129,7 +129,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function Example() {
   return (
-    <Card className="w-[30rem]">
+    <Card className="w-full max-w-[30rem]">
       <CardHeader className="pb-2">
         <CardTitle className="text-sm font-medium">Sales Comparison</CardTitle>
       </CardHeader>
@@ -157,7 +157,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <Card className="w-[30rem]">
+      <Card className="w-full max-w-[30rem]">
         <CardHeader className="pb-2">
           <CardTitle className="text-sm font-medium">Sales Comparison</CardTitle>
         </CardHeader>
@@ -191,7 +191,7 @@ import { Clock } from "lucide-react";
 
 export default function Example() {
   return (
-    <Card className="w-[30rem]">
+    <Card className="w-full max-w-[30rem]">
       <CardHeader className="flex flex-row items-center justify-start gap-2 space-y-0 pb-2">
         <Clock className="h-4 w-4 text-muted-foreground" />
         <CardTitle className="text-sm font-medium">Response Time</CardTitle>
@@ -210,7 +210,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <Card className="w-[30rem]">
+      <Card className="w-full max-w-[30rem]">
         <CardHeader className="flex flex-row items-center justify-start gap-2 space-y-0 pb-2">
           <Clock className="h-4 w-4 text-muted-foreground" />
           <CardTitle className="text-sm font-medium">Response Time</CardTitle>
@@ -235,7 +235,7 @@ import { Award } from "lucide-react";
 
 export default function Example() {
   return (
-    <Card className="w-[30rem]">
+    <Card className="w-full max-w-[30rem]">
       <CardHeader className="flex flex-row items-center justify-start gap-2 space-y-0 pb-2">
         <Award className="h-4 w-4 text-muted-foreground" />
         <CardTitle className="text-sm font-medium">Performance Score</CardTitle>
@@ -258,7 +258,7 @@ export default function Example() {
 }
 `,
     snippet: (
-      <Card className="w-[30rem]">
+      <Card className="w-full max-w-[30rem]">
         <CardHeader className="flex flex-row items-center justify-start gap-2 space-y-0 pb-2">
           <Award className="h-4 w-4 text-muted-foreground" />
           <CardTitle className="text-sm font-medium">Performance Score</CardTitle>
