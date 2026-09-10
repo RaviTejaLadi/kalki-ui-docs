@@ -10,6 +10,7 @@ import {
   carouselDots,
 } from './data/carouselData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
+import CarouselPlayground from '@/components/playground/CarouselPlayground';
 const CarouselPage = () => {
   return (
     <div className="container">
@@ -19,6 +20,8 @@ const CarouselPage = () => {
           The Carousel component is a reusable React component that displays a set of slides with navigation controls.
         </SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <CarouselPlayground />
       <DocsDivider />
       <DocumentationRenderer data={docs} componentName="Carousel" />
       <Div className="space-y-5">

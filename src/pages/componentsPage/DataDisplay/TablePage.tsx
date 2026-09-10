@@ -13,6 +13,7 @@ import {
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
+import TablePlayground from '@/components/playground/TablePlayground';
 
 const metaData: IMetaData = {
   title: 'Table',
@@ -31,6 +32,8 @@ const TablePage = () => {
           schedules, comparisons, financial information, and any data that needs to be organized clearly.
         </SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <TablePlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Table" />
       <SectionHeader variant="transparent" size="sm">

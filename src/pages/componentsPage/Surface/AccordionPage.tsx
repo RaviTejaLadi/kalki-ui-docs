@@ -9,6 +9,7 @@ import {
   accordionItemProps,
 } from './data/accordionData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
+import AccordionPlayground from '@/components/playground/AccordionPlayground';
 const AccordionPage = () => {
   return (
     <div className="container">
@@ -19,6 +20,8 @@ const AccordionPage = () => {
           hide content. It allows users to manage and navigate large amounts of information within a limited space.
         </SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <AccordionPlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Accordion" />
       <SectionHeader variant="transparent" size="sm">

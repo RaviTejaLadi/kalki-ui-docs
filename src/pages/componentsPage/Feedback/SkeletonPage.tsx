@@ -4,6 +4,7 @@ import { docs, columns, rows } from './data/skeletonData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
+import SkeletonPlayground from '@/components/playground/SkeletonPlayground';
 
 const metaData: IMetaData = {
   title: 'Skeleton',
@@ -19,6 +20,8 @@ const SkeletonPage = () => {
         <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide">{metaData.description}</SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <SkeletonPlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Skeleton" />
       <SectionHeader variant="transparent" size="sm">

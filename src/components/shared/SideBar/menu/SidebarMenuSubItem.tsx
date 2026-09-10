@@ -14,7 +14,7 @@ export const SidebarMenuSubItem = React.forwardRef<HTMLAnchorElement, SidebarMen
           'flex items-center rounded-md py-1.5 pl-6 pr-2 text-xs text-muted-foreground hover:bg-gray-100 hover:text-foreground',
           className
         )}
-        {...props}
+        {...(props as object)}
       >
         <div className="flex items-center gap-4">
           {icon}

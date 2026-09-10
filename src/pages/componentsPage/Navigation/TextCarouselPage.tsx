@@ -4,6 +4,7 @@ import { docs, columns, rows } from './data/textCarouselData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
+import TextCarouselPlayground from '@/components/playground/TextCarouselPlayground';
 
 const metaData: IMetaData = {
   title: 'Text Carousel',
@@ -19,6 +20,8 @@ const TextCarouselPage = () => {
         <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide">{metaData.description}</SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <TextCarouselPlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="TextCarousel" />
       <SectionHeader variant="transparent" size="sm">

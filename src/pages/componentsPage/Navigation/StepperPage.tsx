@@ -4,6 +4,7 @@ import { docs, columns, rows } from './data/stepperData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
+import StepperPlayground from '@/components/playground/StepperPlayground';
 
 const metaData: IMetaData = {
   title: 'Stepper',
@@ -19,6 +20,8 @@ const StepperPage = () => {
         <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide">{metaData.description}</SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <StepperPlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Stepper" />
       <SectionHeader variant="transparent" size="sm">

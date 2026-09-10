@@ -2,12 +2,15 @@ import { SectionHeader, TableList, Heading, Div, SectionHeaderTitle } from 'kalk
 import { DocsDivider } from '@/components/shared/DocsDivider';
 import { docs, columns, splitterProps, splitterPaneProps } from './data/splitterData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
+import SplitterPlayground from '@/components/playground/SplitterPlayground';
 const SplitterPage = () => {
   return (
     <div className="container">
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Splitter</SectionHeaderTitle>
       </SectionHeader>
+      <DocsDivider />
+      <SplitterPlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Splitter" />
       <SectionHeader variant="transparent" size="sm">

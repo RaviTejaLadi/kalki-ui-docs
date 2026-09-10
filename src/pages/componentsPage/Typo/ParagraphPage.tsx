@@ -2,6 +2,7 @@ import { SectionHeader, TableList, SectionHeaderTitle, SectionHeaderSubTitle } f
 import { DocsDivider } from '@/components/shared/DocsDivider';
 import { docs, columns, rows } from './data/paraData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
+import ParagraphPlayground from '@/components/playground/ParagraphPlayground';
 
 const ParagraphPage = () => {
   return (
@@ -16,6 +17,8 @@ const ParagraphPage = () => {
           after a paragraph.
         </SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <ParagraphPlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Paragraph" />
       <SectionHeader variant="transparent" size="sm">

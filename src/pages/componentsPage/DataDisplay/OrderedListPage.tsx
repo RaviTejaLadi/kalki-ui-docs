@@ -4,6 +4,7 @@ import DocumentationRenderer from '@/components/shared/DocumentationRenderer/Doc
 import { columns, docs, orderedListRows, listItemRows } from './data/OrderedListData';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
+import OrderedListPlayground from '@/components/playground/OrderedListPlayground';
 
 const metaData: IMetaData = {
   title: 'Ordered List',
@@ -18,6 +19,8 @@ const OrderedListPage = () => {
         <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide">{metaData.description}</SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <OrderedListPlayground />
       <DocsDivider />
       <DocumentationRenderer data={docs} componentName="OrderedList" />
       <SectionHeader variant="transparent" size="sm">

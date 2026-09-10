@@ -12,6 +12,7 @@ import {
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import Head from '@/components/Head';
 import { IMetaData } from '@/types/metaData';
+import ModalPlayground from '@/components/playground/ModalPlayground';
 
 const metaData: IMetaData = {
   title: 'Modal',
@@ -27,6 +28,8 @@ const ModalPage = () => {
         <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide">{metaData.description}</SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <ModalPlayground />
       <DocsDivider />
       <DocumentationRenderer
         className="my-4"

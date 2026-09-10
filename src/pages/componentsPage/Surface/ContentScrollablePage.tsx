@@ -2,6 +2,7 @@ import { SectionHeader, TableList, SectionHeaderTitle } from 'kalki-ui';
 import { DocsDivider } from '@/components/shared/DocsDivider';
 import { docs, columns, rows } from './data/contentScrollableData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
+import ContentScrollablePlayground from '@/components/playground/ContentScrollablePlayground';
 
 const ContentScrollablePage = () => {
   return (
@@ -9,6 +10,8 @@ const ContentScrollablePage = () => {
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Content Scrollable</SectionHeaderTitle>
       </SectionHeader>
+      <DocsDivider />
+      <ContentScrollablePlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="ContentScrollable" />
       <SectionHeader variant="transparent" size="sm">

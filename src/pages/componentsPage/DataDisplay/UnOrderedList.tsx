@@ -4,6 +4,7 @@ import DocumentationRenderer from '@/components/shared/DocumentationRenderer/Doc
 import { columns, docs, unOrderedListRows, UnOrderedListItemRows } from './data/UnOrderedListData';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
+import UnOrderedListPlayground from '@/components/playground/UnOrderedListPlayground';
 
 const metaData: IMetaData = {
   title: 'Unordered List',
@@ -18,6 +19,8 @@ const UnOrderedList = () => {
         <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide">{metaData.description}</SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <UnOrderedListPlayground />
       <DocsDivider />
       <DocumentationRenderer
         data={docs}

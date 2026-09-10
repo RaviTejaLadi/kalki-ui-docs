@@ -2,6 +2,7 @@ import { SectionHeader, TableList, Div, Heading, SectionHeaderTitle, SectionHead
 import { DocsDivider } from '@/components/shared/DocsDivider';
 import { docs, columns, rows, bannerSubTitleRows, bannerTitleRows } from './data/bannerData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
+import BannerPlayground from '@/components/playground/BannerPlayground';
 const BannerPage = () => {
   return (
     <div className="container">
@@ -15,6 +16,8 @@ const BannerPage = () => {
           a wide range of use cases, from simple informational banners to more complex promotional displays.
         </SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <BannerPlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Banner" />
       <SectionHeader variant="transparent" size="sm">

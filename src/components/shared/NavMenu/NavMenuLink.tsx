@@ -4,7 +4,7 @@ import { cn } from '@/utils';
 import { Link } from 'kalki-ui';
 export const NavMenuLink = forwardRef<HTMLAnchorElement, NavMenuLinkProps>(
   ({ children, to, className, target, ...props }, ref) => (
-    <Link ref={ref} to={to} target={target || '_self'} className={cn(className)} {...props}>
+    <Link ref={ref} to={to} target={target || '_self'} className={cn(className)} {...(props as object)}>
       {children}
     </Link>
   )

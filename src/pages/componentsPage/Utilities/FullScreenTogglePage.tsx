@@ -2,6 +2,7 @@ import { SectionHeader, TableList, SectionHeaderTitle, SectionHeaderSubTitle } f
 import { DocsDivider } from '@/components/shared/DocsDivider';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { docs, columns, rows } from './data/fullscreenToggleData';
+import FullScreenTogglePlayground from '@/components/playground/FullScreenTogglePlayground';
 // import ComponentMetaCard from '@/components/shared/ComponentMetaCard';
 // import { ComponentMeta } from '@/components/types/ComponentMeta';
 
@@ -28,6 +29,10 @@ const FullScreenTogglePage = () => {
       <DocsDivider />
       {/* <ComponentMetaCard meta={meta} />
       <DocsDivider /> */}
+      <FullScreenTogglePlayground />
+
+      <DocsDivider />
+
       <DocumentationRenderer data={docs} componentName="FullScreenToggle" />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>

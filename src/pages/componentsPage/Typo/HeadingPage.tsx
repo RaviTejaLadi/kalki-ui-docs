@@ -2,6 +2,7 @@ import { SectionHeader, TableList, SectionHeaderTitle, SectionHeaderSubTitle } f
 import { DocsDivider } from '@/components/shared/DocsDivider';
 import { docs, columns, rows } from './data/headingData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
+import HeadingPlayground from '@/components/playground/HeadingPlayground';
 
 const HeadingPage = () => {
   return (
@@ -13,6 +14,8 @@ const HeadingPage = () => {
         </SectionHeaderSubTitle>
         <SectionHeaderSubTitle className="tracking-wide">Headings are defined with the H1 to H6.</SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <HeadingPlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Heading" />
       <SectionHeader variant="transparent" size="sm">

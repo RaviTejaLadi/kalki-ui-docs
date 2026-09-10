@@ -6,6 +6,7 @@ import DocumentationRenderer from '@/components/shared/DocumentationRenderer/Doc
 import { SyntaxHighlighter } from '@/components/shared/SyntaxHighLighter/SyntaxHighLighter';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
+import LinkButtonPlayground from '@/components/playground/LinkButtonPlayground';
 
 const metaData: IMetaData = {
   title: 'Link Button',
@@ -20,6 +21,8 @@ const LinkButtonPage: React.FC = () => {
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
       </SectionHeader>
+      <DocsDivider />
+      <LinkButtonPlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="LinkButton" />
       <SectionHeader variant="transparent" size="sm">

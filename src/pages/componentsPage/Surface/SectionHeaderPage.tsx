@@ -8,12 +8,15 @@ import {
   sectionHeaderSubTitleProps,
 } from './data/sectionHeaderData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
+import SectionHeaderPlayground from '@/components/playground/SectionHeaderPlayground';
 const SectionHeaderPage = () => {
   return (
     <div className="container">
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Section Header</SectionHeaderTitle>
       </SectionHeader>
+      <DocsDivider />
+      <SectionHeaderPlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="SectionHeader" />
       <SectionHeader variant="transparent" size="sm">

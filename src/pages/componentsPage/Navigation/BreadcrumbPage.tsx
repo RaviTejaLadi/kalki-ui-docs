@@ -2,6 +2,7 @@ import { SectionHeader, TableList, SectionHeaderTitle, SectionHeaderSubTitle } f
 import { DocsDivider } from '@/components/shared/DocsDivider';
 import { docs, columns, rows } from './data/breadcrumbData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
+import BreadcrumbPlayground from '@/components/playground/BreadcrumbPlayground';
 
 const BreadcrumbPage = () => {
   return (
@@ -13,6 +14,8 @@ const BreadcrumbPage = () => {
           website&apos;s hierarchy.
         </SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <BreadcrumbPlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Breadcrumb" />
       <SectionHeader variant="transparent" size="sm">

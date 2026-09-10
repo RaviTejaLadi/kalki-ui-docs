@@ -4,6 +4,7 @@ import { docs, columns, rows } from './data/galleryData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
+import GalleryPlayground from '@/components/playground/GalleryPlayground';
 
 const metaData: IMetaData = {
   title: 'Gallery',
@@ -18,6 +19,8 @@ const GalleryPage = () => {
         <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide">{metaData.description}</SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <GalleryPlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="GalleryImage" deepImport="gallery" />
       <SectionHeader variant="transparent" size="sm">

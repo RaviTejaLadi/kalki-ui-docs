@@ -4,6 +4,7 @@ import { docs, columns, rows } from './data/toggleDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
+import TogglePlayground from '@/components/playground/TogglePlayground';
 
 const metaData: IMetaData = {
   title: 'Toggle',
@@ -19,6 +20,8 @@ const TogglePage = () => {
         <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide">{metaData.description}</SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <TogglePlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Toggle" />
       <SectionHeader variant="transparent" size="sm">

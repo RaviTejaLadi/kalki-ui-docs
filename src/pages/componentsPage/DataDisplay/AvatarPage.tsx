@@ -5,6 +5,7 @@ import DocumentationRenderer from '@/components/shared/DocumentationRenderer/Doc
 import { SyntaxHighlighter } from '@/components/shared/SyntaxHighLighter/SyntaxHighLighter';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
+import AvatarPlayground from '@/components/playground/AvatarPlayground';
 
 const metaData: IMetaData = {
   title: 'Avatar',
@@ -19,6 +20,8 @@ const AvatarPage = () => {
         <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide">{metaData.description}</SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <AvatarPlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Avatar" />
       <SectionHeader variant="transparent" size="sm">

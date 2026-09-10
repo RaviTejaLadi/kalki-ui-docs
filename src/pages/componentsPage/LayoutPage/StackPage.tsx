@@ -11,6 +11,7 @@ import {
 import { DocsDivider } from '@/components/shared/DocsDivider';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { docs, columns, stackProps, stackItemProps, additionalNotes } from './data/stackData';
+import StackPlayground from '@/components/playground/StackPlayground';
 const StackPage = () => {
   return (
     <div className="container">
@@ -24,6 +25,8 @@ const StackPage = () => {
           ))}
         </SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <StackPlayground />
       <DocsDivider />
       <DocumentationRenderer data={docs} componentName="Stack" />
       <SectionHeader variant="transparent" size="sm">

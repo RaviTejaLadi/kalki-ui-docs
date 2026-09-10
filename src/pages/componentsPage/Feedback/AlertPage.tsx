@@ -4,6 +4,7 @@ import { docs, columns, rows } from './data/alertData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
+import AlertPlayground from '@/components/playground/AlertPlayground';
 
 const metaData: IMetaData = {
   title: 'Alerts',
@@ -19,6 +20,8 @@ const AlertPage = () => {
         <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide">{metaData.description}</SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <AlertPlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Alert" />
       <SectionHeader variant="transparent" size="sm">

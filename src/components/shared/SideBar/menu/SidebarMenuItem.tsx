@@ -18,7 +18,7 @@ export const SidebarMenuItem = React.forwardRef<HTMLAnchorElement, SidebarMenuIt
           !expanded && 'justify-center',
           className
         )}
-        {...props}
+        {...(props as object)}
       >
         <div className="flex items-center gap-4">
           {icon}

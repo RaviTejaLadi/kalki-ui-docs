@@ -4,6 +4,7 @@ import { docs, columns, rows } from './data/highlighterData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
+import HighlighterPlayground from '@/components/playground/HighlighterPlayground';
 
 const metaData: IMetaData = {
   title: 'Highlighter',
@@ -19,6 +20,8 @@ const HighlighterPage = () => {
         <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide">{metaData.description}</SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <HighlighterPlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Highlighter" />
       <SectionHeader variant="transparent" size="sm">

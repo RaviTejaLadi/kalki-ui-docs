@@ -21,6 +21,7 @@ import {
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
+import TagPlayground from '@/components/playground/TagPlayground';
 
 const metaData: IMetaData = {
   title: 'Tag',
@@ -40,6 +41,8 @@ const TagPage = () => {
           ))}
         </SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <TagPlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Tag" />
       <SectionHeader variant="transparent" size="sm">

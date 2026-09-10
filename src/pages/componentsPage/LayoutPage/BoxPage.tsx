@@ -4,6 +4,7 @@ import DocumentationRenderer from '@/components/shared/DocumentationRenderer/Doc
 import { docs, columns, rows } from './data/boxData';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
+import BoxPlayground from '@/components/playground/BoxPlayground';
 
 const metaData: IMetaData = {
   title: 'Box',
@@ -28,6 +29,8 @@ const BoxPage = () => {
           application.
         </SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <BoxPlayground />
       <DocsDivider />
       <DocumentationRenderer data={docs} componentName="Box" />
       <SectionHeader variant="transparent" size="sm">

@@ -2,6 +2,7 @@ import { SectionHeader, TableList, SectionHeaderTitle, SectionHeaderSubTitle } f
 import { DocsDivider } from '@/components/shared/DocsDivider';
 import { docs, columns, rows } from './data/rippleData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
+import RipplePlayground from '@/components/playground/RipplePlayground';
 
 const RipplePage = () => {
   return (
@@ -14,6 +15,8 @@ const RipplePage = () => {
           touched.
         </SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <RipplePlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Ripple" />
       <SectionHeader variant="transparent" size="sm">

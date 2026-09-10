@@ -2,6 +2,7 @@ import { SectionHeader, TableList, SectionHeaderTitle, SectionHeaderSubTitle } f
 import { DocsDivider } from '@/components/shared/DocsDivider';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { docs, columns, rows } from './data/dropdownData';
+import DropdownPlayground from '@/components/playground/DropdownPlayground';
 
 const DropdownPage = () => {
   return (
@@ -13,6 +14,8 @@ const DropdownPage = () => {
           menus and filter controls.
         </SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <DropdownPlayground />
       <DocsDivider />
       <DocumentationRenderer
         className="my-4"

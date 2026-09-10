@@ -2,12 +2,15 @@ import { SectionHeader, TableList, Heading, Div, SectionHeaderTitle } from 'kalk
 import { DocsDivider } from '@/components/shared/DocsDivider';
 import { docs, columns, tabsRows, tabRows } from './data/tabsData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
+import TabsPlayground from '@/components/playground/TabsPlayground';
 const TabsPage = () => {
   return (
     <div className="container">
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Tabs</SectionHeaderTitle>
       </SectionHeader>
+      <DocsDivider />
+      <TabsPlayground />
       <DocsDivider />
       <DocumentationRenderer data={docs} componentName="Tabs" />
       <Div className="space-y-5">

@@ -2,6 +2,7 @@ import { SectionHeader, TableList, SectionHeaderTitle } from 'kalki-ui';
 import { DocsDivider } from '@/components/shared/DocsDivider';
 import { docs, columns, rows } from './data/linkData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
+import LinkPlayground from '@/components/playground/LinkPlayground';
 
 const LinkPage = () => {
   return (
@@ -9,6 +10,8 @@ const LinkPage = () => {
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Link</SectionHeaderTitle>
       </SectionHeader>
+      <DocsDivider />
+      <LinkPlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Link" />
       <SectionHeader variant="transparent" size="sm">

@@ -31,8 +31,8 @@ const Navbar = ({
     { title: 'Get Started', url: '/get-started' },
     { title: 'Components', url: '/components' },
     { title: 'Blocks', url: '/blocks' },
-    // { title: 'State Vault', url: 'https://state-vault-docs.vercel.app/' },
     { title: 'Colors', url: '/colors' },
+    // { title: 'State Vault', url: 'https://state-vault-docs.vercel.app/' },
   ],
 }: Navbar1Props) => {
   return (
@@ -75,7 +75,7 @@ const Navbar = ({
                 <Menu className="size-4" />
               </Button>
             </SheetTrigger>
-            <SheetContent className="overflow-y-auto">
+            <SheetContent className="overflow-y-auto w-[18rem] border-none">
               <SheetHeader>
                 <SheetTitle>
                   <a href="/" className="w-auto">

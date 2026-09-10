@@ -4,6 +4,7 @@ import { docs, columns, rows } from './data/badgeDocs';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
+import BadgePlayground from '@/components/playground/BadgePlayground';
 
 const metaData: IMetaData = {
   title: 'Badge',
@@ -18,6 +19,8 @@ const BadgePage = () => {
         <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide">{metaData.description}</SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <BadgePlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Badge" />
       <SectionHeader variant="transparent" size="sm">

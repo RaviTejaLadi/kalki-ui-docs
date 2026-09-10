@@ -2,6 +2,7 @@ import { SectionHeader, TableList, Div, Heading, SectionHeaderTitle, SectionHead
 import { DocsDivider } from '@/components/shared/DocsDivider';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
 import { docs, columns, rows, textHighlighterTextRows } from './data/textHighlighterData';
+import TextHighlighterPlayground from '@/components/playground/TextHighlighterPlayground';
 const TextHighlighterPage = () => {
   return (
     <div className="container">
@@ -12,6 +13,8 @@ const TextHighlighterPage = () => {
           useful for drawing attention to important information or for creating interactive text elements.
         </SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <TextHighlighterPlayground />
       <DocsDivider />
       <DocumentationRenderer data={docs} componentName="TextHighlighter" />
       <SectionHeader variant="transparent" size="sm">

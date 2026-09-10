@@ -18,7 +18,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/schadcn/sheet';
 
 const searchInputClassName =
-  'w-full max-w-full h-8 rounded-md border border-input bg-background px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring';
+  'w-full max-w-full h-8 rounded-md border border-input bg-background px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring';
 
 export const AppSideBar = ({ className, onNavigate }: { className?: string; onNavigate?: () => void }) => {
   const location = useLocation();
@@ -70,7 +70,7 @@ export const AppSideBar = ({ className, onNavigate }: { className?: string; onNa
                     onClick={onNavigate}
                     className={cn('text-muted-foreground text-xs hover:text-foreground')}
                   >
-                    {category.slice(0, 15)}
+                    {category}
                   </Link>
                 </SidebarMenuSubButton>
                 {components.map(({ path, label, Icon }) => {

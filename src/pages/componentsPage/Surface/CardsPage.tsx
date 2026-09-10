@@ -11,6 +11,7 @@ import {
   cardFooterProps,
 } from './data/cardData';
 import DocumentationRenderer from '@/components/shared/DocumentationRenderer/DocumentationRenderer';
+import CardsPlayground from '@/components/playground/CardsPlayground';
 const CardsPage = () => {
   return (
     <div className="container">
@@ -20,6 +21,8 @@ const CardsPage = () => {
           A flexible container for grouping related content with header, body, and footer regions.
         </SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <CardsPlayground />
       <DocsDivider />
       <DocumentationRenderer className="my-4" data={docs} componentName="Card" />
       <SectionHeader variant="transparent" size="sm">

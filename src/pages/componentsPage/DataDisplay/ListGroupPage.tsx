@@ -4,6 +4,7 @@ import DocumentationRenderer from '@/components/shared/DocumentationRenderer/Doc
 import { columns, docs, ListGroupsRows, ListGroupsItemRows } from './data/ListGroupData';
 import { IMetaData } from '@/types/metaData';
 import Head from '@/components/Head';
+import ListGroupPlayground from '@/components/playground/ListGroupPlayground';
 
 const metaData: IMetaData = {
   title: 'List Group',
@@ -19,6 +20,8 @@ const ListGroupPage = () => {
         <SectionHeaderTitle className="tracking-wide">{metaData.title}</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide">{metaData.description}</SectionHeaderSubTitle>
       </SectionHeader>
+      <DocsDivider />
+      <ListGroupPlayground />
       <DocsDivider />
       <DocumentationRenderer
         data={docs}
