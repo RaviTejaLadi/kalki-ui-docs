@@ -1,3 +1,22 @@
+import { ErrorInfo } from 'react';
+import { ErrorDetails, ParsedError } from './types';
+
+interface LoggedErrorRecord {
+  name: string;
+  message: string;
+  stack?: string;
+  componentStack?: string;
+  locations?: ParsedError['locations'];
+  firstLocation?: ParsedError['firstLocation'];
+  timestamp: string;
+  url: string;
+  userAgent: string;
+  viewport: {
+    width: number;
+    height: number;
+  };
+}
+
 export class ErrorLogger {
   private static instance: ErrorLogger;
   private readonly maxStoredErrors = 10;
@@ -10,18 +29,24 @@ export class ErrorLogger {
     return ErrorLogger.instance;
   }
 
-  logError(error: unknown): void {
-    const errorDetails = this.formatError(error);
+  logError(error: Error, errorInfo?: ErrorInfo, details?: ErrorDetails): void {
+    const errorDetails = this.formatError(error, errorInfo, details);
     console.error('Application Error:', errorDetails);
     this.storeError(errorDetails);
   }
 
-  private formatError(error: unknown): Record<string, any> {
-    const errorObj = error instanceof Error ? error : new Error(String(error));
+  private formatError(error: Error, errorInfo?: ErrorInfo, details?: ErrorDetails): LoggedErrorRecord {
+    const parsedName = details?.name || error.name || 'Error';
+    const parsedMessage = details?.message || error.message || 'Unknown error';
+    const parsedStack = details?.stack || error.stack;
 
     return {
-      message: errorObj.message,
-      stack: errorObj.stack,
+      name: parsedName,
+      message: parsedMessage,
+      stack: parsedStack,
+      componentStack: errorInfo?.componentStack || details?.componentStack,
+      locations: details?.locations,
+      firstLocation: details?.firstLocation,
       timestamp: new Date().toISOString(),
       url: window.location.href,
       userAgent: navigator.userAgent,
@@ -29,15 +54,13 @@ export class ErrorLogger {
         width: window.innerWidth,
         height: window.innerHeight,
       },
-      // Add any relevant application state here
-      // e.g., currentUser, currentRoute, etc.
     };
   }
 
-  private storeError(errorDetails: Record<string, any>): void {
+  private storeError(errorDetails: LoggedErrorRecord): void {
     try {
       const stored = localStorage.getItem(this.storageKey);
-      const errors = stored ? JSON.parse(stored) : [];
+      const errors = (stored ? JSON.parse(stored) : []) as LoggedErrorRecord[];
 
       errors.unshift(errorDetails);
 
@@ -52,10 +75,10 @@ export class ErrorLogger {
     }
   }
 
-  getStoredErrors(): Record<string, any>[] {
+  getStoredErrors(): LoggedErrorRecord[] {
     try {
       const stored = localStorage.getItem(this.storageKey);
-      return stored ? JSON.parse(stored) : [];
+      return (stored ? JSON.parse(stored) : []) as LoggedErrorRecord[];
     } catch {
       return [];
     }

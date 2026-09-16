@@ -13,6 +13,7 @@ export class ErrorParser {
     const locations = this.parseStackTrace(stackLines);
 
     return {
+      name: error.name || 'Error',
       message: error.message,
       stack: error.stack,
       locations: locations,
@@ -101,9 +102,7 @@ export class ErrorParser {
   }
 
   private static isProjectFile(fileName: string): boolean {
-    // More comprehensive filtering
     const excludePatterns = [
-      'node_modules',
       'webpack',
       'internal/',
       '[native code]',
@@ -111,10 +110,7 @@ export class ErrorParser {
       '<anonymous>',
       'eval',
     ];
-
-    const includePattern = /src\//;
-
-    return !excludePatterns.some((pattern) => fileName.includes(pattern)) && includePattern.test(fileName);
+    return !excludePatterns.some((pattern) => fileName.includes(pattern));
   }
 
   private static cleanFileName(fileName: string): string {

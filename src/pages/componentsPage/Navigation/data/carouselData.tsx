@@ -10,8 +10,13 @@ import {
   ButtonText,
 } from 'kalki-ui';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { dog1, dog2, dog3, dog4 } from '../assets';
+import { sampleDog1, sampleDog2, sampleDog3, sampleDog4 } from '@/assets/samples';
 import { docsData } from '@/types/docsData';
+
+const dog1 = sampleDog1;
+const dog2 = sampleDog2;
+const dog3 = sampleDog3;
+const dog4 = sampleDog4;
 export const docs: docsData[] = [
   {
     title: 'Basic Carousel',
@@ -24,10 +29,10 @@ export default function Example() {
   return (
     <Carousel size="md">
       <CarouselSlides>
-        <Image src="https://picsum.photos/seed/carousel1/800/400" objectFit="cover" alt="Slide 1" />
-        <Image src="https://picsum.photos/seed/carousel2/800/400" objectFit="cover" alt="Slide 2" />
-        <Image src="https://picsum.photos/seed/carousel3/800/400" objectFit="cover" alt="Slide 3" />
-        <Image src="https://picsum.photos/seed/carousel4/800/400" objectFit="cover" alt="Slide 4" />
+        <Image src="${dog1}" objectFit="cover" alt="Slide 1" />
+        <Image src="${dog2}" objectFit="cover" alt="Slide 2" />
+        <Image src="${dog3}" objectFit="cover" alt="Slide 3" />
+        <Image src="${dog4}" objectFit="cover" alt="Slide 4" />
       </CarouselSlides>
       <CarouselControls>
         <Button variant="light">
@@ -82,9 +87,9 @@ export default function Example() {
   return (
     <Carousel size="md">
       <CarouselSlides>
-        <Image src="https://picsum.photos/seed/carousel1/800/400" objectFit="cover" alt="Slide 1" />
-        <Image src="https://picsum.photos/seed/carousel2/800/400" objectFit="cover" alt="Slide 2" />
-        <Image src="https://picsum.photos/seed/carousel3/800/400" objectFit="cover" alt="Slide 3" />
+        <Image src="${dog1}" objectFit="cover" alt="Slide 1" />
+        <Image src="${dog2}" objectFit="cover" alt="Slide 2" />
+        <Image src="${dog3}" objectFit="cover" alt="Slide 3" />
       </CarouselSlides>
       <CarouselContent>
         <h3>Dog 1</h3>
@@ -136,9 +141,9 @@ export default function Example() {
   return (
     <Carousel size="md">
       <CarouselSlides>
-        <Image src="https://picsum.photos/seed/carousel1/800/400" objectFit="cover" alt="Slide 1" />
-        <Image src="https://picsum.photos/seed/carousel2/800/400" objectFit="cover" alt="Slide 2" />
-        <Image src="https://picsum.photos/seed/carousel3/800/400" objectFit="cover" alt="Slide 3" />
+        <Image src="${dog1}" objectFit="cover" alt="Slide 1" />
+        <Image src="${dog2}" objectFit="cover" alt="Slide 2" />
+        <Image src="${dog3}" objectFit="cover" alt="Slide 3" />
       </CarouselSlides>
       <CarouselDots />
     </Carousel>
@@ -166,8 +171,8 @@ export default function Example() {
   return (
     <Carousel className="bg-[#9b9999] border">
       <CarouselSlides className="border rounded-md shadow-lg">
-        <Image src="https://picsum.photos/seed/carousel1/800/400" objectFit="cover" alt="Slide 1" />
-        <Image src="https://picsum.photos/seed/carousel2/800/400" objectFit="cover" alt="Slide 2" />
+        <Image src="${dog1}" objectFit="cover" alt="Slide 1" />
+        <Image src="${dog2}" objectFit="cover" alt="Slide 2" />
       </CarouselSlides>
       <CarouselContent className="text-foreground p-2 text-center">
         <p>Content 1</p>

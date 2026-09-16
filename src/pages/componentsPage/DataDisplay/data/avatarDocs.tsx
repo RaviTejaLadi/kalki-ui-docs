@@ -1,7 +1,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from 'kalki-ui';
+import { sampleDog1 } from '@/assets/samples';
 import { docsData } from '@/types/docsData';
 
-const pic = 'https://github.com/shadcn.png';
+const pic = sampleDog1;
 
 export const docs: docsData[] = [
   {
@@ -13,7 +14,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "kalki-ui";
 export default function BasicAvatar() {
   return (
     <Avatar>
-      <AvatarImage src="https://github.com/shadcn.png" alt="Avatar" />
+      <AvatarImage src="${pic}" alt="Avatar" />
       <AvatarFallback>SC</AvatarFallback>
     </Avatar>
   );

@@ -1,4 +1,5 @@
 import { Banner, BannerSubTitle, BannerTitle, Box, Button, Heading, Paragraph } from 'kalki-ui';
+import { sampleDog4 } from '@/assets/samples';
 import { docsData } from '@/types/docsData';
 import { Info } from 'lucide-react';
 
@@ -119,7 +120,7 @@ export default function BannerWithBackground() {
     <Box padding="10px" style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
       <Banner
         size="lg"
-        background="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1350&q=80"
+        background="${sampleDog4}"
         controls={
           <>
             <Button variant="secondary" size="sm">Learn More</Button>
@@ -142,7 +143,7 @@ export default function BannerWithBackground() {
       <Box padding="10px" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
         <Banner
           size="lg"
-          background="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1350&q=80"
+          background={sampleDog4}
           controls={
             <>
               <Button variant="secondary" size="sm">

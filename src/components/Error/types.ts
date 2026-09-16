@@ -26,6 +26,7 @@ interface ErrorLocation {
  * @property {ErrorLocation | null} firstLocation - The first error location or null if not available.
  */
 interface ParsedError {
+  name: string;
   message: string;
   stack?: string;
   locations: ErrorLocation[];

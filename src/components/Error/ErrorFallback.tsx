@@ -1,7 +1,6 @@
 import React from 'react';
-import { AlertTriangle, RefreshCw, ChevronDown, ChevronUp, FileCode, XCircle, Terminal, Layers } from 'lucide-react';
 import { ErrorDetails, ErrorLocation } from './types';
-import { Button, ButtonIcon, ButtonText } from 'kalki-ui';
+
 interface ErrorFallbackProps {
   error: ErrorDetails;
   resetError: () => void;
@@ -9,121 +8,125 @@ interface ErrorFallbackProps {
 
 function ErrorLocationInfo({ location }: { location: ErrorLocation }) {
   return (
-    <div className="group flex flex-wrap items-center gap-x-2 gap-y-1 p-2 rounded-lg hover:bg-gray-100 transition-all duration-200 min-w-0">
-      <FileCode className="h-4 w-4 shrink-0 text-blue-500 group-hover:text-blue-600" />
-      <span className="font-medium text-muted-foreground group-hover:text-foreground break-all">
-        {location.fileName}
-      </span>
-      <span className="text-gray-400">:</span>
-      <span className="font-mono text-blue-600 group-hover:text-blue-700">{location.lineNumber}</span>
-      <span className="text-gray-400">:</span>
-      <span className="font-mono text-purple-600 group-hover:text-purple-700">{location.columnNumber}</span>
-      {location.functionName && (
-        <div className="ml-0 sm:ml-2 px-2 py-0.5 bg-gray-100 rounded text-sm text-gray-600 group-hover:bg-gray-200 break-all">
-          {location.functionName}
-        </div>
-      )}
+    <div className="rounded-md border border-border/70 bg-muted/30 px-3 py-2 text-xs font-mono text-foreground">
+      <span>{location.fileName}</span>
+      <span>:{location.lineNumber}</span>
+      <span>:{location.columnNumber}</span>
+      {location.functionName ? <span> ({location.functionName})</span> : null}
     </div>
   );
 }
 
 export function ErrorFallback({ error, resetError }: ErrorFallbackProps) {
-  const [isExpanded, setIsExpanded] = React.useState(false);
+  const errorLabel = `${error.name}: ${error.message}`;
+  const capturedAt = new Date(error.timestamp).toISOString();
 
-  const toggleExpanded = () => setIsExpanded((prev) => !prev);
+  const errorPayload = React.useMemo(
+    () =>
+      JSON.stringify(
+        {
+          name: error.name,
+          message: error.message,
+          stack: error.stack,
+          componentStack: error.componentStack,
+          timestamp: error.timestamp,
+          url: error.url,
+          userAgent: error.userAgent,
+          firstLocation: error.firstLocation,
+          locations: error.locations,
+        },
+        null,
+        2
+      ),
+    [error]
+  );
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(errorPayload);
+    } catch {
+      // Keep fallback stable if clipboard is not available.
+    }
+  };
 
   return (
-    <div className="min-h-screen flex items-start justify-center p-4">
-      <div className="w-full space-y-6 p-6">
-        <div className="flex items-start space-x-4">
-          <div className="bg-red-100 rounded-full p-2">
-            <XCircle className="h-6 w-6 text-red-600" />
-          </div>
-          <div className="flex-1">
-            <h2 className="text-xl font-semibold text-foreground">Application Error</h2>
-            <p className="mt-1 text-sm text-muted-foreground">
-              An unexpected error has occurred. Our team has been notified.
-            </p>
-          </div>
+    <div className="min-h-screen bg-background px-4 py-6">
+      <div className="mx-auto w-full max-w-5xl space-y-4 rounded-xl border border-border bg-card p-5 shadow-sm">
+        <div className="space-y-1">
+          <h2 className="text-xl font-semibold text-foreground">Application Error</h2>
+          <p className="text-sm text-muted-foreground">Exact runtime error details captured below.</p>
         </div>
 
-        <div className="bg-gradient-to-r from-red-50 to-red-50/50 border border-red-100 rounded-lg p-4 backdrop-blur-sm">
-          <div className="flex items-start space-x-3">
-            <AlertTriangle className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-            <p className="text-red-800 font-medium leading-relaxed">{error.message}</p>
-          </div>
-
-          {error.firstLocation && (
-            <div className="mt-4 pt-4 border-t border-red-100/50">
+        <div className="rounded-lg border border-red-500/50 bg-red-500/10 p-3">
+          <p className="break-words font-mono text-sm text-red-400">{errorLabel}</p>
+          {error.firstLocation ? (
+            <div className="mt-3">
               <ErrorLocationInfo location={error.firstLocation} />
             </div>
-          )}
+          ) : null}
         </div>
 
-        <div className="space-y-4">
+        <div className="grid grid-cols-1 gap-2 text-xs text-muted-foreground sm:grid-cols-2">
+          <div className="rounded border border-border/70 px-3 py-2">Captured: {capturedAt}</div>
+          <div className="rounded border border-border/70 px-3 py-2 break-all">URL: {error.url}</div>
+        </div>
+
+        {error.stack ? (
+          <section className="space-y-2">
+            <h3 className="text-sm font-semibold text-foreground">Stack Trace</h3>
+            <pre className="max-h-80 overflow-auto rounded-md border border-border/70 bg-muted/30 p-3 text-xs text-foreground">
+              {error.stack}
+            </pre>
+          </section>
+        ) : null}
+
+        {error.componentStack ? (
+          <section className="space-y-2">
+            <h3 className="text-sm font-semibold text-foreground">Component Stack</h3>
+            <pre className="max-h-80 overflow-auto rounded-md border border-border/70 bg-muted/30 p-3 text-xs text-foreground">
+              {error.componentStack}
+            </pre>
+          </section>
+        ) : null}
+
+        {error.locations.length > 0 ? (
+          <section className="space-y-2">
+            <h3 className="text-sm font-semibold text-foreground">Parsed Frames</h3>
+            <div className="space-y-2">
+              {error.locations.map((location, index) => (
+                <ErrorLocationInfo key={`${location.fileName}-${location.lineNumber}-${index}`} location={location} />
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        <details className="rounded-md border border-border/70 bg-muted/20 p-3">
+          <summary className="cursor-pointer text-sm font-semibold text-foreground">Raw Error Payload (JSON)</summary>
+          <pre className="mt-3 max-h-80 overflow-auto text-xs text-foreground">{errorPayload}</pre>
+        </details>
+
+        <div className="flex flex-wrap justify-end gap-2 border-t border-border pt-4">
           <button
-            onClick={toggleExpanded}
-            className="flex items-center space-x-2 px-4 py-2 text-muted-foreground hover:text-foreground hover:bg-gray-50 rounded-lg transition-all duration-200"
+            type="button"
+            onClick={handleCopy}
+            className="rounded-md border border-border px-3 py-2 text-sm text-foreground hover:bg-muted"
           >
-            <Terminal className="h-4 w-4" />
-            <span className="font-medium">Technical Details</span>
-            {isExpanded ? <ChevronUp className="h-4 w-4 ml-2" /> : <ChevronDown className="h-4 w-4 ml-2" />}
+            Copy Error JSON
           </button>
-
-          <div
-            className={`space-y-6 overflow-hidden transition-all duration-300 ${
-              isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
-            }`}
+          <button
+            type="button"
+            onClick={() => window.location.reload()}
+            className="rounded-md border border-border px-3 py-2 text-sm text-foreground hover:bg-muted"
           >
-            {error.locations.length > 1 && (
-              <div className="space-y-3">
-                <div className="flex items-center space-x-2 text-muted-foreground">
-                  <Layers className="h-4 w-4" />
-                  <h3 className="font-medium">Error Trace</h3>
-                </div>
-                <div className="bg-gray-50 rounded-lg border border-gray-100">
-                  {error.locations.map((location, index) => (
-                    <div key={index} className="border-b border-gray-100 last:border-0">
-                      <ErrorLocationInfo location={location} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {error.componentStack && (
-              <div className="space-y-3">
-                <div className="flex items-center space-x-2 text-muted-foreground">
-                  <Terminal className="h-4 w-4" />
-                  <h3 className="font-medium text-foreground">Component Stack</h3>
-                </div>
-                <pre className="bg-gray-50 p-4 rounded-lg text-sm font-mono text-muted-foreground border border-gray-100 overflow-x-auto">
-                  {error.componentStack}
-                </pre>
-              </div>
-            )}
-
-            {error.stack && (
-              <div className="space-y-3">
-                <div className="flex items-center space-x-2 text-muted-foreground">
-                  <Terminal className="h-4 w-4" />
-                  <h3 className="font-medium text-foreground">Stack Trace</h3>
-                </div>
-                <pre className="bg-gray-50 p-4 rounded-lg text-sm font-mono text-muted-foreground border border-gray-100 overflow-x-auto">
-                  {error.stack}
-                </pre>
-              </div>
-            )}
-          </div>
-        </div>
-
-        <div className="flex justify-end pt-4 border-t border-gray-100">
-          <Button onClick={resetError} variant="ghost">
-            <ButtonIcon>
-              <RefreshCw className="h-4 w-4 mr-2" />
-            </ButtonIcon>
-            <ButtonText>Retry Application</ButtonText>
-          </Button>
+            Reload Page
+          </button>
+          <button
+            type="button"
+            onClick={resetError}
+            className="rounded-md bg-primary px-3 py-2 text-sm text-primary-foreground hover:opacity-90"
+          >
+            Retry Application
+          </button>
         </div>
       </div>
     </div>

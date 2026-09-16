@@ -1,7 +1,8 @@
-import { Gallery, Image } from 'kalki-ui';
+import { Gallery, GalleryImage } from 'kalki-ui';
+import { sampleDog1, sampleDog2, sampleDog3, sampleDog4 } from '@/assets/samples';
 import { docsData } from '@/types/docsData';
 
-const demoSrc = 'https://github.com/github.png';
+const demoSrc = sampleDog1;
 
 export const columns = ['Name', 'Type', 'Default', 'Description'];
 export const rows = [
@@ -18,51 +19,51 @@ export const rows = [
 export const docs: docsData[] = [
   {
     title: 'Grid Gallery',
-    desc: 'Default grid layout for a responsive image collection.',
+    desc: 'Default grid layout with images that fill each gallery item container.',
     code: `
-import { Gallery, Image } from "kalki-ui";
+import { Gallery, GalleryImage } from "kalki-ui";
 
 export default function GridGallery() {
   return (
-    <Gallery pattern="grid">
-      <Image src="${demoSrc}" alt="1" width={64} height={64} variant="rounded" />
-      <Image src="${demoSrc}" alt="2" width={64} height={64} variant="rounded" />
-      <Image src="${demoSrc}" alt="3" width={64} height={64} variant="rounded" />
+    <Gallery pattern="grid" className="w-full max-w-3xl">
+      <GalleryImage src="${demoSrc}" alt="1" />
+      <GalleryImage src="${sampleDog2}" alt="2" />
+      <GalleryImage src="${sampleDog3}" alt="3" />
     </Gallery>
   );
 }
 `,
     snippet: (
-      <Gallery pattern="grid" className="max-w-md">
-        <Image src={demoSrc} alt="1" width={64} height={64} variant="rounded" />
-        <Image src={demoSrc} alt="2" width={64} height={64} variant="rounded" />
-        <Image src={demoSrc} alt="3" width={64} height={64} variant="rounded" />
+      <Gallery pattern="grid" className="w-full max-w-3xl">
+        <GalleryImage src={demoSrc} alt="1" />
+        <GalleryImage src={sampleDog2} alt="2" />
+        <GalleryImage src={sampleDog3} alt="3" />
       </Gallery>
     ),
   },
   {
     title: 'Compact Gallery',
-    desc: 'A denser grid with tighter spacing.',
+    desc: 'A denser grid with images filling their container space.',
     code: `
-import { Gallery, Image } from "kalki-ui";
+import { Gallery, GalleryImage } from "kalki-ui";
 
 export default function CompactGallery() {
   return (
-    <Gallery pattern="compact">
-      <Image src="${demoSrc}" alt="1" width={48} height={48} variant="rounded" />
-      <Image src="${demoSrc}" alt="2" width={48} height={48} variant="rounded" />
-      <Image src="${demoSrc}" alt="3" width={48} height={48} variant="rounded" />
-      <Image src="${demoSrc}" alt="4" width={48} height={48} variant="rounded" />
+    <Gallery pattern="compact" className="w-full max-w-3xl">
+      <GalleryImage src="${demoSrc}" alt="1" />
+      <GalleryImage src="${sampleDog2}" alt="2" />
+      <GalleryImage src="${sampleDog3}" alt="3" />
+      <GalleryImage src="${sampleDog4}" alt="4" />
     </Gallery>
   );
 }
 `,
     snippet: (
-      <Gallery pattern="compact" className="max-w-md">
-        <Image src={demoSrc} alt="1" width={48} height={48} variant="rounded" />
-        <Image src={demoSrc} alt="2" width={48} height={48} variant="rounded" />
-        <Image src={demoSrc} alt="3" width={48} height={48} variant="rounded" />
-        <Image src={demoSrc} alt="4" width={48} height={48} variant="rounded" />
+      <Gallery pattern="compact" className="w-full max-w-3xl">
+        <GalleryImage src={demoSrc} alt="1" />
+        <GalleryImage src={sampleDog2} alt="2" />
+        <GalleryImage src={sampleDog3} alt="3" />
+        <GalleryImage src={sampleDog4} alt="4" />
       </Gallery>
     ),
   },

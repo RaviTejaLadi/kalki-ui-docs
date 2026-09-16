@@ -1,8 +1,9 @@
 import { Figure, FigureCaption, FigureImage } from 'kalki-ui';
+import { sampleDog3 } from '@/assets/samples';
 export const FigurePreviews = {
   basic: (
     <Figure className="max-w-[120px]">
-      <FigureImage src="https://github.com/github.png" alt="Figure" className="rounded" />
+      <FigureImage src={sampleDog3} alt="Figure" className="rounded object-cover" />
       <FigureCaption>Caption text</FigureCaption>
     </Figure>
   ),

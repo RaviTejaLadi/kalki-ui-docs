@@ -29,31 +29,20 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
     const parsedError = ErrorParser.parseError(error);
-
-    // Log the error
-    this.errorLogger.logError({
+    const errorDetails = {
       ...parsedError,
-      componentStack: errorInfo.componentStack,
-    });
+      componentStack: errorInfo.componentStack || undefined,
+      timestamp: Date.now(),
+      url: window.location.href,
+      userAgent: navigator.userAgent,
+    };
 
-    // Update state with component stack
-    this.setState(
-      (prevState: ErrorBoundaryState): ErrorBoundaryState => ({
-        hasError: true,
-        error: prevState.error
-          ? {
-              ...prevState.error,
-              componentStack: errorInfo.componentStack || undefined,
-            }
-          : {
-              ...parsedError,
-              componentStack: errorInfo.componentStack || undefined,
-              timestamp: Date.now(),
-              url: window.location.href,
-              userAgent: navigator.userAgent,
-            },
-      })
-    );
+    this.errorLogger.logError(error, errorInfo, errorDetails);
+
+    this.setState({
+      hasError: true,
+      error: errorDetails,
+    });
 
     // Call optional error handler
     this.props.onError?.(error, errorInfo);

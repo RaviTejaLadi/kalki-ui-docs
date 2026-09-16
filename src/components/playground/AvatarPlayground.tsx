@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from 'kalki-ui';
+import { sampleDog1 } from '@/assets/samples';
 import PlaygroundShell, { CheckboxGrid, OptionGroup } from './PlaygroundShell';
 
 const AVATAR_SIZES = ['sm', 'md', 'lg', 'xl'] as const;
 const AVATAR_SHAPES = ['circle', 'square'] as const;
-const AVATAR_URL = 'https://github.com/shadcn.png';
+const AVATAR_URL = sampleDog1;
 
 type Size = (typeof AVATAR_SIZES)[number];
 type Shape = (typeof AVATAR_SHAPES)[number];

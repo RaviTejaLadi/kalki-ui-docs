@@ -11,14 +11,15 @@ import {
   Image,
 } from 'kalki-ui';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { sampleDog1, sampleDog2, sampleDog3 } from '@/assets/samples';
 import PlaygroundShell, { CheckboxGrid, OptionGroup, SIZES_SM_XL } from './PlaygroundShell';
 
 type Size = (typeof SIZES_SM_XL)[number];
 
 const SLIDES = [
-  { src: 'https://picsum.photos/seed/kalki-1/800/400', alt: 'Mountain lake', caption: 'Mountain lake at dawn' },
-  { src: 'https://picsum.photos/seed/kalki-2/800/400', alt: 'Forest path', caption: 'Forest trail in autumn' },
-  { src: 'https://picsum.photos/seed/kalki-3/800/400', alt: 'Ocean sunset', caption: 'Ocean sunset horizon' },
+  { src: sampleDog1, alt: 'Mountain lake', caption: 'Mountain lake at dawn' },
+  { src: sampleDog2, alt: 'Forest path', caption: 'Forest trail in autumn' },
+  { src: sampleDog3, alt: 'Ocean sunset', caption: 'Ocean sunset horizon' },
 ];
 
 const CarouselPlayground = () => {

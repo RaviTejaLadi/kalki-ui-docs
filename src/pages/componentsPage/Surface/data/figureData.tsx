@@ -1,8 +1,9 @@
 import { Figure, FigureCaption, FigureImage } from 'kalki-ui';
+import { sampleDog2, sampleDog3 } from '@/assets/samples';
 import { docsData } from '@/types/docsData';
 
-const pic =
-  'https://images.unsplash.com/photo-1739993655680-4b7050ed2896?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const pic = sampleDog2;
+const secondaryPic = sampleDog3;
 
 export const docs: docsData[] = [
   {
@@ -12,7 +13,7 @@ export const docs: docsData[] = [
 import { Figure, FigureImage, FigureCaption } from "kalki-ui";
 
 const IMAGE_URL =
-  "https://images.unsplash.com/photo-1739993655680-4b7050ed2896?q=80&w=2070&auto=format&fit=crop";
+  "${pic}";
 
 export default function Example() {
   return (
@@ -37,7 +38,7 @@ export default function Example() {
 import { Figure, FigureImage, FigureCaption } from "kalki-ui";
 
 const IMAGE_URL =
-  "https://images.unsplash.com/photo-1739993655680-4b7050ed2896?q=80&w=2070&auto=format&fit=crop";
+  "${pic}";
 
 export default function Example() {
   return (
@@ -62,7 +63,7 @@ export default function Example() {
 import { Figure, FigureImage, FigureCaption } from "kalki-ui";
 
 const IMAGE_URL =
-  "https://images.unsplash.com/photo-1739993655680-4b7050ed2896?q=80&w=2070&auto=format&fit=crop";
+  "${pic}";
 
 export default function Example() {
   return (
@@ -87,7 +88,7 @@ export default function Example() {
 import { Figure, FigureImage, FigureCaption } from "kalki-ui";
 
 const IMAGE_URL =
-  "https://images.unsplash.com/photo-1739993655680-4b7050ed2896?q=80&w=2070&auto=format&fit=crop";
+  "${pic}";
 
 export default function Example() {
   return (
@@ -116,7 +117,7 @@ export default function Example() {
 import { Figure, FigureImage, FigureCaption } from "kalki-ui";
 
 const IMAGE_URL =
-  "https://images.unsplash.com/photo-1739993655680-4b7050ed2896?q=80&w=2070&auto=format&fit=crop";
+  "${pic}";
 
 export default function Example() {
   return (
@@ -142,7 +143,11 @@ export default function Example() {
       <Figure width="98%">
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <FigureImage src={pic} alt="Image 1" style={{ width: '48%', height: '400px', objectFit: 'contain' }} />
-          <FigureImage src={pic} alt="Image 2" style={{ width: '48%', height: '400px', objectFit: 'contain' }} />
+          <FigureImage
+            src={secondaryPic}
+            alt="Image 2"
+            style={{ width: '48%', height: '400px', objectFit: 'contain' }}
+          />
         </div>
         <FigureCaption>Comparison of two samples</FigureCaption>
       </Figure>
@@ -155,7 +160,7 @@ export default function Example() {
 import { Figure, FigureImage, FigureCaption } from "kalki-ui";
 
 const IMAGE_URL =
-  "https://images.unsplash.com/photo-1739993655680-4b7050ed2896?q=80&w=2070&auto=format&fit=crop";
+  "${pic}";
 
 export default function Example() {
   return (
@@ -188,7 +193,7 @@ export default function Example() {
 import { Figure, FigureImage, FigureCaption } from "kalki-ui";
 
 const IMAGE_URL =
-  "https://images.unsplash.com/photo-1739993655680-4b7050ed2896?q=80&w=2070&auto=format&fit=crop";
+  "${pic}";
 
 export default function Example() {
   return (
@@ -215,7 +220,7 @@ export default function Example() {
 import { Figure, FigureImage, FigureCaption } from "kalki-ui";
 
 const IMAGE_URL =
-  "https://images.unsplash.com/photo-1739993655680-4b7050ed2896?q=80&w=2070&auto=format&fit=crop";
+  "${pic}";
 
 export default function Example() {
   return (
