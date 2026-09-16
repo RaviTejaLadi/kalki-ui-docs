@@ -4,7 +4,7 @@ import { BasicRightDrawerExample } from '../examples/BasicRightDrawerExample';
 export const docs: docsData[] = [
   {
     title: 'Basic Right Drawer',
-    desc: 'A simple drawer that opens from the right side of the screen.',
+    desc: 'A floating drawer that smoothly slides from the right side with a fading scrim.',
     code: `
 import { useState } from "react";
 import { Drawer, Button, DrawerHeader, DrawerTitle, DrawerBody } from "kalki-ui";
@@ -19,7 +19,7 @@ export default function BasicRightDrawerExample() {
           <DrawerTitle>Right Drawer</DrawerTitle>
         </DrawerHeader>
         <DrawerBody>
-          <p>This drawer opens from the right side.</p>
+          <p>This floating drawer opens from the right side.</p>
         </DrawerBody>
       </Drawer>
     </div>
@@ -37,13 +37,13 @@ export const drawerRows = [
     'position',
     'string',
     'right',
-    "Specifies the position of the drawer. Possible values are 'top', 'right', 'bottom', and 'left'.",
+    "Specifies the edge the floating drawer slides from: 'top', 'right', 'bottom', or 'left'.",
   ],
   ['isOpen', 'boolean', 'false', 'Controls whether the drawer is open or closed.'],
   ['onClose', 'function', '-', 'Callback function to be called when the drawer should be closed.'],
   ['width', 'string', '-', "Specifies the width of the drawer when position is 'left' or 'right'."],
   ['height', 'string', '-', "Specifies the height of the drawer when position is 'top' or 'bottom'."],
-  ['overLayColor', 'string', 'rgb(204 204 204 / 39%)', 'Specifies the color of the overlay behind the drawer.'],
+  ['overLayColor', 'string', 'rgba(0, 0, 0, 0.55)', 'Specifies the color of the overlay behind the drawer.'],
   ['className', 'string', '-', 'Additional CSS class to be applied to the drawer.'],
   ['style', 'object', '-', 'Additional inline styles to be applied to the drawer.'],
 ];

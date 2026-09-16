@@ -289,13 +289,6 @@ export const categories: Category[] = [
 //   },
 //   {
 //     id: generateId(),
-//     label: "Ripple",
-//     path: "/ripple",
-//     icons: ripple,
-//     desc: "A visual effect that creates an expanding circle animation when an element is clicked or touched.",
-//   },
-//   {
-//     id: generateId(),
 //     label: "SectionHeader",
 //     path: "/sectionHeader",
 //     icons: section,

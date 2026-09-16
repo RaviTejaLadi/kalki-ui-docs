@@ -57,7 +57,6 @@ const LinkBarWithManyLinks = () => {
   ];
   return (
     <LinkBar
-      variant="default"
       size="sm"
       rounded="none"
       activeUrl={activeUrl}

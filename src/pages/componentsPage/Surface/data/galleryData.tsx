@@ -1,4 +1,4 @@
-import { GalleryImage as Gallery, Image } from 'kalki-ui';
+import { Gallery, Image } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 const demoSrc = 'https://github.com/github.png';
@@ -20,15 +20,15 @@ export const docs: docsData[] = [
     title: 'Grid Gallery',
     desc: 'Default grid layout for a responsive image collection.',
     code: `
-import { GalleryImage, Image } from "kalki-ui";
+import { Gallery, Image } from "kalki-ui";
 
 export default function GridGallery() {
   return (
-    <GalleryImage pattern="grid">
+    <Gallery pattern="grid">
       <Image src="${demoSrc}" alt="1" width={64} height={64} variant="rounded" />
       <Image src="${demoSrc}" alt="2" width={64} height={64} variant="rounded" />
       <Image src="${demoSrc}" alt="3" width={64} height={64} variant="rounded" />
-    </Image>
+    </Gallery>
   );
 }
 `,
@@ -44,16 +44,16 @@ export default function GridGallery() {
     title: 'Compact Gallery',
     desc: 'A denser grid with tighter spacing.',
     code: `
-import { GalleryImage, Image } from "kalki-ui";
+import { Gallery, Image } from "kalki-ui";
 
 export default function CompactGallery() {
   return (
-    <GalleryImage pattern="compact">
+    <Gallery pattern="compact">
       <Image src="${demoSrc}" alt="1" width={48} height={48} variant="rounded" />
       <Image src="${demoSrc}" alt="2" width={48} height={48} variant="rounded" />
       <Image src="${demoSrc}" alt="3" width={48} height={48} variant="rounded" />
       <Image src="${demoSrc}" alt="4" width={48} height={48} variant="rounded" />
-    </Image>
+    </Gallery>
   );
 }
 `,

@@ -1,7 +1,7 @@
 import { Accordion, AccordionHeader, AccordionBody, AccordionItem } from 'kalki-ui';
 const AccordionPreview = {
   basic: (
-    <Accordion size="sm" className="mb-4" variant="primary">
+    <Accordion size="sm" className="mb-4">
       <AccordionItem>
         <AccordionHeader eventKey="1">what is accordion in react ?</AccordionHeader>
         <AccordionBody eventKey="1" className="tracking-wide">

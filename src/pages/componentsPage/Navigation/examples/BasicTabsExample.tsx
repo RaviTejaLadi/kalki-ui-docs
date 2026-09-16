@@ -1,7 +1,7 @@
 import { Tab, Tabs } from 'kalki-ui';
 export const BasicTabsExample = () => {
   return (
-    <Tabs variant="primary" size="md">
+    <Tabs size="md">
       <Tab label="Overview" value="overview">
         <p className="text-muted-foreground">Content for the overview tab.</p>
       </Tab>

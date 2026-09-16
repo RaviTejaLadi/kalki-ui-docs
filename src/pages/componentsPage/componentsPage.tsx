@@ -81,7 +81,6 @@ const ROUTES: RouteConfig[] = [
 
   // Utilities
   { path: 'full-screen-toggle', loader: () => import('./Utilities/FullScreenTogglePage') },
-  { path: 'ripple', loader: () => import('./Utilities/RipplePage') },
 
   // Layout
   { path: 'box', loader: () => import('./LayoutPage/BoxPage') },

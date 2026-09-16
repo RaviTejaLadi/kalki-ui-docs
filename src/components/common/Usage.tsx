@@ -1,7 +1,7 @@
 import { Bug, Building } from 'lucide-react';
 
 import {
-  GalleryImage as Gallery,
+  Gallery,
   Accordion,
   Alert,
   Avatar,
@@ -70,17 +70,8 @@ const Usage = () => {
     <div>
       <Box outlined rounded padding="10px" margin="10px">
         <p>Accordion</p>
-        {[
-          'primary' as const,
-          'secondary' as const,
-          'warning' as const,
-          'danger' as const,
-          'help' as const,
-          'success' as const,
-          'light' as const,
-          'dark' as const,
-        ].map((item) => (
-          <Accordion size="sm" className="mb-4" variant={item} key={item}>
+        {(['light', 'dark'] as const).map((item) => (
+          <Accordion size="sm" className="mb-4" key={item}>
             <AccordionItem>
               <AccordionHeader eventKey="1">Header 1</AccordionHeader>
               <AccordionBody eventKey="1">
@@ -159,17 +150,8 @@ const Usage = () => {
       </Box>
       <Box outlined rounded padding="10px" margin="10px">
         <p>Banner</p>
-        {[
-          'primary' as const,
-          'secondary' as const,
-          'warning' as const,
-          'danger' as const,
-          'help' as const,
-          'success' as const,
-          'light' as const,
-          'dark' as const,
-        ].map((item) => (
-          <Banner variant={item} size="sm" key={item}>
+        {(['light', 'dark'] as const).map((item) => (
+          <Banner size="sm" key={item}>
             <BannerTitle>{item}</BannerTitle>
             <BannerSubTitle>Subtitle</BannerSubTitle>
           </Banner>
@@ -246,16 +228,7 @@ const Usage = () => {
 
       <Box outlined rounded padding="10px" margin="10px">
         <p>Code</p>
-        {[
-          'primary' as const,
-          'secondary' as const,
-          'warning' as const,
-          'danger' as const,
-          'help' as const,
-          'success' as const,
-          'light' as const,
-          'dark' as const,
-        ].map((item) => (
+        {(['light', 'dark'] as const).map((item) => (
           <Code variant={item} size="sm" key={item}>
             {`() => console.log('Close button clicked')`}
           </Code>
@@ -264,17 +237,8 @@ const Usage = () => {
 
       <Box outlined rounded padding="10px" margin="10px">
         <p>Content scrollable</p>
-        {[
-          'primary' as const,
-          'secondary' as const,
-          'warning' as const,
-          'danger' as const,
-          'help' as const,
-          'success' as const,
-          'light' as const,
-          'dark' as const,
-        ].map((item) => (
-          <ContentScrollable height="200px" width="200px" variant={item} key={item}>
+        {(['light', 'dark'] as const).map((item) => (
+          <ContentScrollable height="200px" width="200px" key={item}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur impedit reprehenderit laboriosam facere
             deserunt voluptate illum amet tenetur voluptatibus architecto quaerat aliquam quia excepturi eos eius modi,
             obcaecati consequatur. Numquam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur impedit

@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { Home, BookOpen, Info, Settings, Users, Package } from 'lucide-react';
 import { LinkBar, LinkBarContent, LinkBarControl, LinkBarLink } from 'kalki-ui';
-import PlaygroundShell, { CheckboxGrid, COLOR_VARIANTS, OptionGroup, SIZES_SM_LG } from './PlaygroundShell';
+import PlaygroundShell, { CheckboxGrid, OptionGroup, SIZES_SM_LG } from './PlaygroundShell';
 
-const LINK_BAR_VARIANTS = [...COLOR_VARIANTS, 'default', 'outline'] as const;
 const ROUNDED_OPTIONS = ['xs', 'sm', 'md', 'lg', 'none'] as const;
 
-type Variant = (typeof LINK_BAR_VARIANTS)[number];
 type Size = (typeof SIZES_SM_LG)[number];
 type Rounded = (typeof ROUNDED_OPTIONS)[number];
 
@@ -20,7 +18,6 @@ const LINKS = [
 ];
 
 const LinkBarPlayground = () => {
-  const [variant, setVariant] = useState<Variant>('default');
   const [size, setSize] = useState<Size>('sm');
   const [rounded, setRounded] = useState<Rounded>('none');
   const [withControls, setWithControls] = useState(true);
@@ -28,7 +25,6 @@ const LinkBarPlayground = () => {
   const [activeUrl, setActiveUrl] = useState('/home');
 
   const generateCode = () => `<LinkBar
-  variant="${variant}"
   size="${size}"
   rounded="${rounded}"
   activeUrl={activeUrl}
@@ -46,7 +42,6 @@ ${withControls ? '  <LinkBarControl position="right" />\n' : ''}</LinkBar>`;
     <PlaygroundShell
       preview={
         <LinkBar
-          variant={variant}
           size={size}
           rounded={rounded}
           activeUrl={activeUrl}
@@ -66,7 +61,6 @@ ${withControls ? '  <LinkBarControl position="right" />\n' : ''}</LinkBar>`;
       }
       controls={
         <>
-          <OptionGroup label="Variant" options={LINK_BAR_VARIANTS} value={variant} onChange={setVariant} />
           <OptionGroup label="Size" options={SIZES_SM_LG} value={size} onChange={setSize} />
           <OptionGroup label="Rounded" options={ROUNDED_OPTIONS} value={rounded} onChange={setRounded} />
           <CheckboxGrid

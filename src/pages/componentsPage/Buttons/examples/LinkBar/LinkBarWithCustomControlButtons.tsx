@@ -6,14 +6,13 @@ const LinkBarWithCustomControlButtons = () => {
 
   return (
     <LinkBar
-      variant="default"
       size="sm"
       rounded="none"
       activeUrl={activeUrl}
       onUrlChange={setActiveUrl}
       className="w-full max-w-[20rem]"
     >
-      <LinkBarControl position="left" size="md" variant="primary" />
+      <LinkBarControl position="left" size="md" />
       <LinkBarContent className="px-2">
         <LinkBarLink to="/product-a">Product A</LinkBarLink>
         <LinkBarLink to="/product-b">Product B</LinkBarLink>
@@ -21,7 +20,7 @@ const LinkBarWithCustomControlButtons = () => {
         <LinkBarLink to="/product-d">Product D</LinkBarLink>
         <LinkBarLink to="/product-e">Product E</LinkBarLink>
       </LinkBarContent>
-      <LinkBarControl position="right" size="md" variant="primary" />
+      <LinkBarControl position="right" size="md" />
     </LinkBar>
   );
 };

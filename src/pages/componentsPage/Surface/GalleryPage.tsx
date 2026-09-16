@@ -22,7 +22,7 @@ const GalleryPage = () => {
       <DocsDivider />
       <GalleryPlayground />
       <DocsDivider />
-      <DocumentationRenderer className="my-4" data={docs} componentName="GalleryImage" deepImport="gallery" />
+      <DocumentationRenderer className="my-4" data={docs} componentName="Gallery" deepImport="gallery" />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>
       </SectionHeader>

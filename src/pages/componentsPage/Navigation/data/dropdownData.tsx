@@ -1,28 +1,28 @@
 import { useState } from 'react';
-import Select from '@/components/common/Select';
+import { Dropdown } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 export const docs: docsData[] = [
   {
     title: 'Basic Dropdown',
-    desc: 'A customizable dropdown built with the Select primitives.',
+    desc: 'A customizable dropdown for selecting one option from a menu.',
     code: `
 import React, { useState } from 'react';
-import { Select } from "kalki-ui";
+import { Dropdown } from "kalki-ui";
 export default function DropdownExample() {
   const [value, setValue] = useState<string | undefined>(undefined);
 
   return (
-    <Select value={value} onValueChange={setValue} placeholder="Select a framework">
-      <Select.Trigger>
-        <Select.Value />
-      </Select.Trigger>
-      <Select.Content>
-        <Select.Item value="react">React</Select.Item>
-        <Select.Item value="vue">Vue</Select.Item>
-        <Select.Item value="svelte">Svelte</Select.Item>
-      </Select.Content>
-    </Select>
+    <Dropdown value={value} onValueChange={setValue} placeholder="Choose a framework">
+      <Dropdown.Trigger>
+        <Dropdown.Value />
+      </Dropdown.Trigger>
+      <Dropdown.Content>
+        <Dropdown.Item value="react">React</Dropdown.Item>
+        <Dropdown.Item value="vue">Vue</Dropdown.Item>
+        <Dropdown.Item value="svelte">Svelte</Dropdown.Item>
+      </Dropdown.Content>
+    </Dropdown>
   );
 }
     `,
@@ -31,16 +31,16 @@ export default function DropdownExample() {
         const [value, setValue] = useState<string | undefined>(undefined);
 
         return (
-          <Select value={value} onValueChange={setValue} placeholder="Select a framework">
-            <Select.Trigger>
-              <Select.Value />
-            </Select.Trigger>
-            <Select.Content>
-              <Select.Item value="react">React</Select.Item>
-              <Select.Item value="vue">Vue</Select.Item>
-              <Select.Item value="svelte">Svelte</Select.Item>
-            </Select.Content>
-          </Select>
+          <Dropdown value={value} onValueChange={setValue} placeholder="Choose a framework">
+            <Dropdown.Trigger>
+              <Dropdown.Value />
+            </Dropdown.Trigger>
+            <Dropdown.Content>
+              <Dropdown.Item value="react">React</Dropdown.Item>
+              <Dropdown.Item value="vue">Vue</Dropdown.Item>
+              <Dropdown.Item value="svelte">Svelte</Dropdown.Item>
+            </Dropdown.Content>
+          </Dropdown>
         );
       };
 
@@ -52,9 +52,9 @@ export default function DropdownExample() {
 export const columns = ['Name', 'Type', 'Default', 'Description'];
 
 export const rows = [
-  ['value', 'string', 'undefined', 'Controlled value of the dropdown.'],
-  ['defaultValue', 'string', 'undefined', 'Initial value for uncontrolled usage.'],
+  ['value', 'string', 'undefined', 'Controlled selected value.'],
+  ['defaultValue', 'string', 'undefined', 'Initial selected value for uncontrolled usage.'],
   ['onValueChange', '(value: string) => void', '—', 'Callback fired when a new option is selected.'],
-  ['placeholder', 'string', '"Select an option"', 'Placeholder text shown when no value is selected.'],
+  ['placeholder', 'string', '"Select an option"', 'Placeholder text shown when no item is selected.'],
   ['disabled', 'boolean', 'false', 'Disables interaction with the dropdown.'],
 ];

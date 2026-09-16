@@ -1,18 +1,18 @@
 import { useState } from 'react';
-import { Stepper } from '@/components/common/Stepper';
+import { Stepper } from 'kalki-ui';
 import PlaygroundShell, { CheckboxGrid } from './PlaygroundShell';
 
 const StepperPlayground = () => {
   const [showStepNumbers, setShowStepNumbers] = useState(true);
 
   const generateCode = () => `<Stepper>
-  <Stepper.Step${showStepNumbers ? ' step="1"' : ''} title="Install">
+  <Stepper.Step${showStepNumbers ? ' step="1"' : ''} title="Install" status="complete">
     Install the package with your preferred package manager.
   </Stepper.Step>
-  <Stepper.Step${showStepNumbers ? ' step="2"' : ''} title="Configure">
+  <Stepper.Step${showStepNumbers ? ' step="2"' : ''} title="Configure" status="current">
     Add theme and provider setup to your app entry.
   </Stepper.Step>
-  <Stepper.Step${showStepNumbers ? ' step="3"' : ''} title="Build">
+  <Stepper.Step${showStepNumbers ? ' step="3"' : ''} title="Build" status="upcoming">
     Import components and start building your UI.
   </Stepper.Step>
 </Stepper>`;
@@ -20,14 +20,14 @@ const StepperPlayground = () => {
   return (
     <PlaygroundShell
       preview={
-        <Stepper className="w-full max-w-md p-0">
-          <Stepper.Step step={showStepNumbers ? '1' : undefined} title="Install">
+        <Stepper className="w-full max-w-md">
+          <Stepper.Step step={showStepNumbers ? '1' : undefined} title="Install" status="complete">
             Install the package with your preferred package manager.
           </Stepper.Step>
-          <Stepper.Step step={showStepNumbers ? '2' : undefined} title="Configure">
+          <Stepper.Step step={showStepNumbers ? '2' : undefined} title="Configure" status="current">
             Add theme and provider setup to your app entry.
           </Stepper.Step>
-          <Stepper.Step step={showStepNumbers ? '3' : undefined} title="Build">
+          <Stepper.Step step={showStepNumbers ? '3' : undefined} title="Build" status="upcoming">
             Import components and start building your UI.
           </Stepper.Step>
         </Stepper>

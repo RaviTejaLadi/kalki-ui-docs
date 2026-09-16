@@ -1,4 +1,4 @@
-import { Stepper } from '@/components/common/Stepper';
+import { Stepper } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 export const columns = ['Name', 'Type', 'Default', 'Description'];
@@ -7,24 +7,25 @@ export const rows = [
   ['children', 'ReactNode', '-', 'Stepper.Step children describing each step.'],
   ['step', 'string', '-', 'Optional step indicator label shown in the circle.'],
   ['title', 'string', '-', 'Title displayed for each Stepper.Step.'],
+  ['status', "'upcoming' | 'current' | 'complete'", 'upcoming', 'Visual state for each step marker and connector.'],
 ];
 
 export const docs: docsData[] = [
   {
     title: 'Basic Stepper',
-    desc: 'A vertical step list for guides, onboarding, or sequential instructions.',
+    desc: 'A vertical step list with status-aware markers for guides and onboarding.',
     code: `
 import { Stepper } from "kalki-ui";
 export default function BasicStepper() {
   return (
     <Stepper>
-      <Stepper.Step step="1" title="Install">
+      <Stepper.Step step="1" title="Install" status="complete">
         Install the package with your preferred package manager.
       </Stepper.Step>
-      <Stepper.Step step="2" title="Configure">
+      <Stepper.Step step="2" title="Configure" status="current">
         Add theme and provider setup to your app entry.
       </Stepper.Step>
-      <Stepper.Step step="3" title="Use">
+      <Stepper.Step step="3" title="Use" status="upcoming">
         Import components and start building your UI.
       </Stepper.Step>
     </Stepper>
@@ -33,13 +34,13 @@ export default function BasicStepper() {
 `,
     snippet: (
       <Stepper className="w-full max-w-md p-0">
-        <Stepper.Step step="1" title="Install">
+        <Stepper.Step step="1" title="Install" status="complete">
           Install the package with your preferred package manager.
         </Stepper.Step>
-        <Stepper.Step step="2" title="Configure">
+        <Stepper.Step step="2" title="Configure" status="current">
           Add theme and provider setup to your app entry.
         </Stepper.Step>
-        <Stepper.Step step="3" title="Use">
+        <Stepper.Step step="3" title="Use" status="upcoming">
           Import components and start building your UI.
         </Stepper.Step>
       </Stepper>
@@ -64,7 +65,7 @@ export default function StepperWithCode() {
 `,
     snippet: (
       <Stepper className="w-full max-w-md p-0">
-        <Stepper.Step step="1" title="Install package">
+        <Stepper.Step step="1" title="Install package" status="current">
           <Stepper.Description>Run the install command in your project.</Stepper.Description>
           <Stepper.CodeBlock code="npm install kalki-ui" language="bash" />
         </Stepper.Step>

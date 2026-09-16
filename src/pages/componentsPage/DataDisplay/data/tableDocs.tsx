@@ -1,12 +1,12 @@
-import { Table, TableHead, TableBody, TableRow, TableCell } from 'kalki-ui';
+import { Table, TableHead, TableBody, TableRow, TableCell, TableFooter } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 
 export const docs: docsData[] = [
   {
     title: 'Basic Usage',
-    desc: 'A simple Table component with default styling.',
+    desc: 'A simple table with head, body, and footer sections.',
     code: `
-import { Table, TableHead, TableBody, TableRow, TableCell } from "kalki-ui";
+import { Table, TableHead, TableBody, TableRow, TableCell, TableFooter } from "kalki-ui";
 
 export default function BasicTable() {
   return (
@@ -27,6 +27,12 @@ export default function BasicTable() {
           <TableCell>Row 2, Cell 2</TableCell>
         </TableRow>
       </TableBody>
+      <TableFooter>
+        <TableRow>
+          <TableCell>Total</TableCell>
+          <TableCell>2 rows</TableCell>
+        </TableRow>
+      </TableFooter>
     </Table>
   );
 }
@@ -49,6 +55,12 @@ export default function BasicTable() {
             <TableCell>Row 2, Cell 2</TableCell>
           </TableRow>
         </TableBody>
+        <TableFooter>
+          <TableRow>
+            <TableCell>Total</TableCell>
+            <TableCell>2 rows</TableCell>
+          </TableRow>
+        </TableFooter>
       </Table>
     ),
   },

@@ -17,7 +17,7 @@ const BasicLinkBar = () => {
   const [activeUrl, setActiveUrl] = useState("/home");
 
   return (
-    <LinkBar variant="default" size="sm" rounded="none" activeUrl={activeUrl} onUrlChange={setActiveUrl}>
+    <LinkBar size="sm" rounded="none" activeUrl={activeUrl} onUrlChange={setActiveUrl}>
       <LinkBarContent className="px-2">
         <LinkBarLink to="/home">Home</LinkBarLink>
         <LinkBarLink to="/about">About</LinkBarLink>
@@ -42,7 +42,7 @@ const LinkBarWithIcons = () => {
   const [activeUrl, setActiveUrl] = useState("/settings");
 
   return (
-    <LinkBar variant="default" size="sm" rounded="none" activeUrl={activeUrl} onUrlChange={setActiveUrl}>
+    <LinkBar size="sm" rounded="none" activeUrl={activeUrl} onUrlChange={setActiveUrl}>
       <LinkBarContent className="px-2">
         <LinkBarLink to="/home" icon="🏠">
           Home
@@ -74,7 +74,6 @@ const CustomSizedLinkBar = () => {
 
   return (
     <LinkBar
-      variant="outline"
       size="md"
       rounded="md"
       activeUrl={activeUrl}
@@ -105,7 +104,7 @@ const LinkBarWithoutControls = () => {
   const [activeUrl, setActiveUrl] = useState("/tab1");
 
   return (
-    <LinkBar variant="default" size="sm" rounded="none" activeUrl={activeUrl} onUrlChange={setActiveUrl}>
+    <LinkBar size="sm" rounded="none" activeUrl={activeUrl} onUrlChange={setActiveUrl}>
       <LinkBarContent className="px-2">
         <LinkBarLink to="/tab1">Tab 1</LinkBarLink>
         <LinkBarLink to="/tab2">Tab 2</LinkBarLink>
@@ -121,7 +120,7 @@ export default LinkBarWithoutControls;
   },
   {
     title: 'LinkBar with Custom Control Buttons',
-    desc: 'LinkBar with custom size and variant for control buttons.',
+    desc: 'LinkBar with custom size for control buttons.',
     code: `
 import React, { useState } from "react";
 import { LinkBar, LinkBarLink, LinkBarContent, LinkBarControl } from "kalki-ui";
@@ -131,14 +130,13 @@ const LinkBarWithCustomControlButtons = () => {
 
   return (
     <LinkBar
-      variant="default"
       size="sm"
       rounded="none"
       activeUrl={activeUrl}
       onUrlChange={setActiveUrl}
       className="w-full max-w-[20rem]"
     >
-      <LinkBarControl position="left" size="md" variant="primary" />
+      <LinkBarControl position="left" size="md" />
       <LinkBarContent className="px-2">
         <LinkBarLink to="/product-a">Product A</LinkBarLink>
         <LinkBarLink to="/product-b">Product B</LinkBarLink>
@@ -146,7 +144,7 @@ const LinkBarWithCustomControlButtons = () => {
         <LinkBarLink to="/product-d">Product D</LinkBarLink>
         <LinkBarLink to="/product-e">Product E</LinkBarLink>
       </LinkBarContent>
-      <LinkBarControl position="right" size="md" variant="primary" />
+      <LinkBarControl position="right" size="md" />
     </LinkBar>
   );
 };
@@ -221,7 +219,6 @@ const LinkBarWithManyLinks = () => {
 
   return (
     <LinkBar
-      variant="default"
       size="sm"
       rounded="none"
       activeUrl={activeUrl}
@@ -249,12 +246,6 @@ export default LinkBarWithManyLinks;
 
 export const columns = ['Name', 'Type', 'Default', 'Description'];
 export const rows = [
-  [
-    'variant',
-    'string',
-    'default',
-    'Visual style of the LinkBar. [primary, secondary, success, danger, warning, info, help, light, dark, default, outline]',
-  ],
   ['size', 'string', 'sm', "Height of the LinkBar. ['sm', 'md', 'lg']"],
   ['rounded', 'string', 'none', "Border radius of the LinkBar. ['xs', 'sm', 'md', 'lg', 'none']"],
   ['activeUrl', 'string', '-', 'URL of the currently active link.'],

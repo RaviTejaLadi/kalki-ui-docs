@@ -1,4 +1,4 @@
-import { Box, LinkButton, Ripple, LinkIcon, LinkText } from 'kalki-ui';
+import { Box, LinkButton, LinkIcon, LinkText } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 import { Terminal } from 'lucide-react';
 
@@ -7,13 +7,12 @@ export const docs: docsData[] = [
     title: 'Basic LinkButton',
     desc: 'This example demonstrates the most basic usage of the LinkButton component with default properties.',
     code: `
-import { LinkButton, Ripple } from "kalki-ui";
+import { LinkButton } from "kalki-ui";
 
 export default function BasicLinkButton() {
   return (
     <LinkButton>
       Click me
-      <Ripple />
     </LinkButton>
   );
 }
@@ -21,7 +20,6 @@ export default function BasicLinkButton() {
     snippet: (
       <LinkButton>
         Click me
-        <Ripple />
       </LinkButton>
     ),
   },

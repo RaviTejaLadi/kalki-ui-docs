@@ -10,8 +10,7 @@ const DropdownPage = () => {
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Dropdown</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide">
-          Dropdown provides a flexible, accessible select experience powered by the Select primitives, ideal for custom
-          menus and filter controls.
+          Dropdown provides a flexible, accessible single-select menu for filters, form controls, and option pickers.
         </SectionHeaderSubTitle>
       </SectionHeader>
       <DocsDivider />
@@ -20,8 +19,8 @@ const DropdownPage = () => {
       <DocumentationRenderer
         className="my-4"
         data={docs}
-        componentName="Select"
-        importCode={`import { Select } from "kalki-ui";`}
+        componentName="Dropdown"
+        importCode={`import { Dropdown } from "kalki-ui";`}
       />
       <SectionHeader variant="transparent" size="sm">
         <SectionHeaderTitle className="tracking-wide">Props</SectionHeaderTitle>

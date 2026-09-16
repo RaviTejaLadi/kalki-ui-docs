@@ -415,13 +415,6 @@ export const categorizedRoutesComponents: CategorizedRoutesComponents[] = [
     Icon: Puzzle,
     components: [
       {
-        label: 'Ripple',
-        description:
-          'Touch feedback utility implementing material design-inspired interactive animations for enhanced user interaction feedback.',
-        path: '/components/ripple',
-        Icon: Target,
-      },
-      {
         label: 'FullScreen Toggle',
         description:
           'Adaptive control for managing viewport modes, supporting immersive content experiences across different device types.',

@@ -9,7 +9,7 @@ const HeroSectionPage = () => {
     <BlocksWrapper BlockName="Hero Sections">
       {data.map((item, index) => {
         return (
-          <Tabs className="break-inside-avoid overflow-hidden p-2 sm:p-4" key={index} variant="secondary">
+          <Tabs className="break-inside-avoid overflow-hidden p-2 sm:p-4" key={index}>
             <Tab
               label="Preview"
               value="preview"

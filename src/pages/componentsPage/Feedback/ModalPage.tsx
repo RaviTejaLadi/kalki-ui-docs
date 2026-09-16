@@ -17,7 +17,7 @@ import ModalPlayground from '@/components/playground/ModalPlayground';
 const metaData: IMetaData = {
   title: 'Modal',
   description:
-    'Modal component to inform users about a task or important information that requires decisions, or involves multiple tasks.',
+    'Modal is a smooth animated dialog for focused decisions, including centered, edge-positioned, and fullscreen layouts.',
 };
 
 const ModalPage = () => {

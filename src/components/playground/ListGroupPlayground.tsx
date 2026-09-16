@@ -1,16 +1,13 @@
 import { useState } from 'react';
 import { Bell, Settings, User } from 'lucide-react';
 import { ListGroupItem, ListGroups } from 'kalki-ui';
-import PlaygroundShell, { CheckboxGrid, COLOR_VARIANTS, OptionGroup } from './PlaygroundShell';
+import PlaygroundShell, { CheckboxGrid, OptionGroup } from './PlaygroundShell';
 
-const LIST_GROUP_VARIANTS = COLOR_VARIANTS.filter((variant) => variant !== 'help');
 const LIST_GROUP_SIZES = ['sm', 'md', 'lg', 'xl', 'xxl'] as const;
 
-type ListGroupVariant = (typeof LIST_GROUP_VARIANTS)[number];
 type ListGroupSize = (typeof LIST_GROUP_SIZES)[number];
 
 const ListGroupPlayground = () => {
-  const [variant, setVariant] = useState<ListGroupVariant>('primary');
   const [size, setSize] = useState<ListGroupSize>('md');
   const [showDividers, setShowDividers] = useState(true);
   const [showArrows, setShowArrows] = useState(true);
@@ -19,7 +16,6 @@ const ListGroupPlayground = () => {
 
   const generateCode = () => {
     const props = [
-      `variant="${variant}"`,
       `size="${size}"`,
       showDividers && 'showDividers',
       showArrows && 'showArrows',
@@ -40,7 +36,7 @@ const ListGroupPlayground = () => {
     <PlaygroundShell
       preview={
         <div className="w-full max-w-sm space-y-2">
-          <ListGroups variant={variant} size={size} width="100%" showDividers={showDividers} showArrows={showArrows}>
+          <ListGroups size={size} width="100%" showDividers={showDividers} showArrows={showArrows}>
             <ListGroupItem
               icon={withIcons ? <User className="size-4" /> : undefined}
               label="Profile"
@@ -65,7 +61,6 @@ const ListGroupPlayground = () => {
       }
       controls={
         <>
-          <OptionGroup label="Variant" options={LIST_GROUP_VARIANTS} value={variant} onChange={setVariant} />
           <OptionGroup label="Size" options={LIST_GROUP_SIZES} value={size} onChange={setSize} />
           <CheckboxGrid
             options={[

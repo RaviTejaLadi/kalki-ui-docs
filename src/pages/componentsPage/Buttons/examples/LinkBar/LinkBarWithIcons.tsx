@@ -5,7 +5,7 @@ const LinkBarWithIcons = () => {
   const [activeUrl, setActiveUrl] = useState('/settings');
 
   return (
-    <LinkBar variant="default" size="sm" rounded="none" activeUrl={activeUrl} onUrlChange={setActiveUrl}>
+    <LinkBar size="sm" rounded="none" activeUrl={activeUrl} onUrlChange={setActiveUrl}>
       <LinkBarContent className="px-2">
         <LinkBarLink to="/home" icon="🏠">
           Home

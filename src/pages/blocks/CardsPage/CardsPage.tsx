@@ -9,7 +9,7 @@ const CardsPage = () => {
     <BlocksWrapper BlockName="Cards">
       {data.map((item, index) => {
         return (
-          <Tabs className="break-inside-avoid overflow-hidden p-2 sm:p-4" variant="secondary" key={index}>
+          <Tabs className="break-inside-avoid overflow-hidden p-2 sm:p-4" key={index}>
             <Tab
               label="Preview"
               value="preview"

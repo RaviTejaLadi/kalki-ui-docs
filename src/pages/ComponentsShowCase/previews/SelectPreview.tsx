@@ -1,16 +1,16 @@
-import Select from '@/components/common/Select';
+import { Dropdown } from 'kalki-ui';
 
-export const SelectPreviews = {
+export const DropdownPreviews = {
   basic: (
-    <Select placeholder="Choose..." className="w-[180px]">
-      <Select.Trigger>
-        <Select.Value />
-      </Select.Trigger>
-      <Select.Content>
-        <Select.Item value="a">Option A</Select.Item>
-        <Select.Item value="b">Option B</Select.Item>
-        <Select.Item value="c">Option C</Select.Item>
-      </Select.Content>
-    </Select>
+    <Dropdown placeholder="Choose..." className="w-[180px]">
+      <Dropdown.Trigger>
+        <Dropdown.Value />
+      </Dropdown.Trigger>
+      <Dropdown.Content>
+        <Dropdown.Item value="a">Option A</Dropdown.Item>
+        <Dropdown.Item value="b">Option B</Dropdown.Item>
+        <Dropdown.Item value="c">Option C</Dropdown.Item>
+      </Dropdown.Content>
+    </Dropdown>
   ),
 };

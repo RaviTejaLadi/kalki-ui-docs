@@ -41,7 +41,7 @@ const DifferentSizes = () => {
         ))}
       </Box>
 
-      <Modal open={isOpen} size={size}>
+      <Modal open={isOpen} size={size} onClose={() => setIsOpen(false)}>
         <ModalHeader closeButton onClose={() => setIsOpen(false)}>
           <ModalTitle>{getReadableSize(size)} Modal</ModalTitle>
         </ModalHeader>

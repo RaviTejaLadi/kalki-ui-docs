@@ -1,4 +1,4 @@
-import { GalleryImage as Gallery, Image } from 'kalki-ui';
+import { Gallery, Image } from 'kalki-ui';
 export const GalleryPreviews = {
   basic: (
     <Gallery pattern="grid" className="max-w-[180px]">

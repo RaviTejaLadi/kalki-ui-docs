@@ -1,5 +1,5 @@
 import { SectionHeader, Tab, Tabs, Button, Box, SectionHeaderTitle, SectionHeaderSubTitle } from 'kalki-ui';
-import { Stepper } from '@/components/common/Stepper';
+import { Stepper } from 'kalki-ui';
 import { usage } from './tabsData';
 import { compExampleCode, componentCode, setupSnippet } from './Snippet';
 import { BoxIcon, Code, Terminal } from 'lucide-react';
@@ -27,11 +27,11 @@ const GetStarted: React.FC = () => {
       </SectionHeader>
 
       <Stepper>
-        <Stepper.Step step="1" title="Install the package">
+        <Stepper.Step step="1" title="Install the package" status="complete">
           <Stepper.Description>
             Peer dependencies: React / React DOM (^16.8–^19) and Tailwind CSS (^3.4 or ^4).
           </Stepper.Description>
-          <Tabs variant="secondary" size="sm">
+          <Tabs size="sm">
             {usage.map((item) => (
               <Tab label={item.label} key={item.label} value={item.label} leftIcon={item.icon}>
                 <Stepper.CodeBlock code={item.content} language="jsx" />
@@ -40,14 +40,14 @@ const GetStarted: React.FC = () => {
           </Tabs>
         </Stepper.Step>
 
-        <Stepper.Step step="2" title="Import styles">
+        <Stepper.Step step="2" title="Import styles" status="current">
           <Stepper.Description>Import the stylesheet once in your app entry file:</Stepper.Description>
           <div className="h-auto overflow-auto mb-5 p-1 border rounded-lg dark:border-gray-200/10">
             <Stepper.CodeBlock code={setupSnippet} />
           </div>
         </Stepper.Step>
 
-        <Stepper.Step step="3" title="Import components">
+        <Stepper.Step step="3" title="Import components" status="upcoming">
           <Stepper.Description>
             Use named exports only. Prefer deep imports like <code>kalki-ui/button</code> for smaller bundles, or import
             from the root package.
@@ -57,8 +57,8 @@ const GetStarted: React.FC = () => {
           </div>
         </Stepper.Step>
 
-        <Stepper.Step step="4" title="Use a component">
-          <Tabs variant="secondary">
+        <Stepper.Step step="4" title="Use a component" status="upcoming">
+          <Tabs>
             <Tab label="Preview" value="preview" leftIcon={<Terminal className="size-4" />}>
               <Box
                 padding="10px"

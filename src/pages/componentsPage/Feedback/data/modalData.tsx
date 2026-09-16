@@ -36,7 +36,7 @@ export default BasicModalExample;
   },
   {
     title: 'Different Sizes Modal',
-    desc: 'Modals support multiple sizes: sm, md, lg, xl, 2xl, and fullscreen.',
+    desc: 'Modals support multiple sizes: sm, md, lg, xl, 2xl, and fullscreen. Fullscreen covers the entire viewport.',
     code: `
 import React, { useState } from "react";
 import { Modal, Button, Box, ModalHeader, ModalTitle, ModalBody } from "kalki-ui";
@@ -90,8 +90,13 @@ export const modalProps = [
     '"center"',
     'Specifies the position of the modal within the viewport.',
   ],
-  ['size', '"sm" | "md" | "lg" | "xl" | "2xl" | "fullscreen"', '"md"', 'Specifies the size of the modal.'],
-  ['overLayColor', 'string', 'rgba(0, 0, 0, 0.75)', 'Background color of the overlay behind the modal.'],
+  [
+    'size',
+    '"sm" | "md" | "lg" | "xl" | "2xl" | "fullscreen"',
+    '"md"',
+    'Specifies the size of the modal. Use "fullscreen" to occupy the entire viewport.',
+  ],
+  ['overLayColor', 'string', 'rgba(0, 0, 0, 0.65)', 'Background color of the overlay behind the modal.'],
   ['overlayZIndex', 'number', '40', 'z-index of the overlay.'],
   ['modalZIndex', 'number', '50', 'z-index of the modal dialog.'],
   ['className', 'string', '-', 'Additional CSS classes for the modal panel.'],

@@ -6,7 +6,6 @@ const CustomSizedLinkBar = () => {
 
   return (
     <LinkBar
-      variant="outline"
       size="md"
       rounded="md"
       activeUrl={activeUrl}

@@ -10,10 +10,10 @@ const BannerPage = () => {
         <SectionHeaderTitle className="tracking-wide">Banner</SectionHeaderTitle>
         <SectionHeaderSubTitle className="tracking-wide">
           The <Code>Banner</Code> component is a versatile UI element designed to display prominent messages with
-          optional titles, subtitles, and images. It supports various visual styles through the <Code>variant </Code>{' '}
-          and <Code>size </Code> props, allowing it to adapt to different contexts within an application. The component
-          is highly customizable, offering properties to adjust its appearance and behavior. This makes it suitable for
-          a wide range of use cases, from simple informational banners to more complex promotional displays.
+          optional titles, subtitles, and images. It supports adaptable light/dark styling automatically and exposes a
+          <Code>size</Code> prop for spacing and typography control. The component is highly customizable, offering
+          properties to adjust its appearance and behavior. This makes it suitable for a wide range of use cases, from
+          simple informational banners to more complex promotional displays.
         </SectionHeaderSubTitle>
       </SectionHeader>
       <DocsDivider />

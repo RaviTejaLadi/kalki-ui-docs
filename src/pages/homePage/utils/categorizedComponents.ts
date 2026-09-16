@@ -221,12 +221,6 @@ export const categorizedComponents: CategorizedComponents[] = [
     category: 'Interactive Features',
     components: [
       {
-        label: 'Ripple',
-        description:
-          'A visual effect that creates an expanding circle animation when an element is clicked or touched.',
-        path: '/ripple',
-      },
-      {
         label: 'FullScreen Toggle',
         description: 'A control to switch between normal and full-screen viewing modes for content or applications.',
         path: '/fullScreenToggle',

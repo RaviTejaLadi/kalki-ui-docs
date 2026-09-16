@@ -1,7 +1,7 @@
 import { Tabs, Tab } from 'kalki-ui';
 export const TabsPreviews = {
   basic: (
-    <Tabs variant="primary" size="sm" className="w-full max-w-md">
+    <Tabs size="sm" className="w-full max-w-md">
       <Tab value="tab1" label="Tab 1">
         Content for tab 1
       </Tab>

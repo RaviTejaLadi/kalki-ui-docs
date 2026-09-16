@@ -1,47 +1,47 @@
 import { useState } from 'react';
-import Select from '@/components/common/Select';
+import { Dropdown } from 'kalki-ui';
 import PlaygroundShell, { CheckboxGrid } from './PlaygroundShell';
 
 const DropdownPlayground = () => {
   const [value, setValue] = useState<string | undefined>(undefined);
   const [disabled, setDisabled] = useState(false);
   const [showPlaceholder, setShowPlaceholder] = useState(true);
-  const placeholder = showPlaceholder ? 'Select a framework' : '';
+  const placeholder = showPlaceholder ? 'Choose a framework' : '';
 
-  const generateCode = () => `<Select
+  const generateCode = () => `<Dropdown
   value={value}
   onValueChange={setValue}
   placeholder="${placeholder}"
 ${disabled ? '  disabled\n' : ''}>
-  <Select.Trigger>
-    <Select.Value />
-  </Select.Trigger>
-  <Select.Content>
-    <Select.Item value="react">React</Select.Item>
-    <Select.Item value="vue">Vue</Select.Item>
-    <Select.Item value="svelte">Svelte</Select.Item>
-  </Select.Content>
-</Select>`;
+  <Dropdown.Trigger>
+    <Dropdown.Value />
+  </Dropdown.Trigger>
+  <Dropdown.Content>
+    <Dropdown.Item value="react">React</Dropdown.Item>
+    <Dropdown.Item value="vue">Vue</Dropdown.Item>
+    <Dropdown.Item value="svelte">Svelte</Dropdown.Item>
+  </Dropdown.Content>
+</Dropdown>`;
 
   return (
     <PlaygroundShell
       preview={
-        <Select
+        <Dropdown
           value={value}
           onValueChange={setValue}
           placeholder={placeholder}
           disabled={disabled}
           className="w-full max-w-xs"
         >
-          <Select.Trigger>
-            <Select.Value />
-          </Select.Trigger>
-          <Select.Content>
-            <Select.Item value="react">React</Select.Item>
-            <Select.Item value="vue">Vue</Select.Item>
-            <Select.Item value="svelte">Svelte</Select.Item>
-          </Select.Content>
-        </Select>
+          <Dropdown.Trigger>
+            <Dropdown.Value />
+          </Dropdown.Trigger>
+          <Dropdown.Content>
+            <Dropdown.Item value="react">React</Dropdown.Item>
+            <Dropdown.Item value="vue">Vue</Dropdown.Item>
+            <Dropdown.Item value="svelte">Svelte</Dropdown.Item>
+          </Dropdown.Content>
+        </Dropdown>
       }
       controls={
         <CheckboxGrid

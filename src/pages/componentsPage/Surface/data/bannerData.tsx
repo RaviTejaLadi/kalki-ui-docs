@@ -1,11 +1,11 @@
-import { Banner, Box, Button, Heading, Paragraph, BannerSubTitle, BannerTitle } from 'kalki-ui';
+import { Banner, BannerSubTitle, BannerTitle, Box, Button, Heading, Paragraph } from 'kalki-ui';
 import { docsData } from '@/types/docsData';
 import { Info } from 'lucide-react';
 
 export const docs: docsData[] = [
   {
     title: 'Basic Banner',
-    desc: 'This example demonstrates the basic usage of the Banner component.',
+    desc: 'The Banner component supports title/subtitle composition with theme-aware defaults.',
     code: `
 import { Banner, BannerTitle, BannerSubTitle } from "kalki-ui";
 
@@ -27,13 +27,13 @@ export default function BasicBanner() {
   },
   {
     title: 'Large Banner',
-    desc: 'This example demonstrates the usage of the large size for the Banner component.',
+    desc: 'Use size presets to create more prominent banners.',
     code: `
 import { Banner, BannerTitle, BannerSubTitle } from "kalki-ui";
 
 export default function LargeBanner() {
   return (
-    <Banner variant="success" size="lg">
+    <Banner size="lg">
       <BannerTitle>Welcome</BannerTitle>
       <BannerSubTitle>This is a large banner</BannerSubTitle>
     </Banner>
@@ -41,7 +41,7 @@ export default function LargeBanner() {
 }
 `,
     snippet: (
-      <Banner variant="success" size="lg">
+      <Banner size="lg">
         <BannerTitle>Welcome</BannerTitle>
         <BannerSubTitle>This is a large banner</BannerSubTitle>
       </Banner>
@@ -49,7 +49,7 @@ export default function LargeBanner() {
   },
   {
     title: 'Banner with Custom Styles',
-    desc: 'This example demonstrates how to apply custom styles to the Banner component using the style prop.',
+    desc: 'Override banner visuals with the style prop when needed.',
     code: `
 import { Banner, BannerTitle, BannerSubTitle } from "kalki-ui";
 
@@ -70,33 +70,21 @@ export default function CustomStyledBanner() {
     ),
   },
   {
-    title: 'Banner with All Available Variants',
-    desc: 'This example shows all available variants of the Banner component.',
+    title: 'Repeated Banners',
+    desc: 'Render multiple banners using mapped content.',
     code: `
 import { Banner, Box, Heading, Paragraph, BannerTitle, BannerSubTitle } from "kalki-ui";
 
 export default function BannerVariants() {
   return (
     <Box padding="10px" style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-      {(
-        [
-          "primary",
-          "secondary",
-          "success",
-          "danger",
-          "warning",
-          "info",
-          "help",
-          "light",
-          "dark",
-        ] as const
-      ).map((item) => (
-        <Banner key={item} variant={item} size="sm">
+      {(["Release", "Announcement"] as const).map((item) => (
+        <Banner key={item} size="sm">
           <BannerTitle>
             <Heading as="h5">{item.charAt(0).toUpperCase() + item.slice(1)} Banner</Heading>
           </BannerTitle>
           <BannerSubTitle>
-            <Paragraph>This is a {item} variant banner</Paragraph>
+            <Paragraph>This is a reusable banner block.</Paragraph>
           </BannerSubTitle>
         </Banner>
       ))}
@@ -106,23 +94,13 @@ export default function BannerVariants() {
 `,
     snippet: (
       <Box padding="10px" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-        {[
-          'primary' as const,
-          'secondary' as const,
-          'success' as const,
-          'danger' as const,
-          'warning' as const,
-          'info' as const,
-          'help' as const,
-          'light' as const,
-          'dark' as const,
-        ].map((item) => (
-          <Banner key={item} variant={item} size="sm">
+        {(['Release', 'Announcement'] as const).map((item) => (
+          <Banner key={item} size="sm">
             <BannerTitle>
               <Heading as="h5">{item.charAt(0).toUpperCase() + item.slice(1)} Banner</Heading>
             </BannerTitle>
             <BannerSubTitle>
-              <Paragraph>This is a {item} variant banner</Paragraph>
+              <Paragraph>This is a reusable banner block.</Paragraph>
             </BannerSubTitle>
           </Banner>
         ))}
@@ -131,7 +109,7 @@ export default function BannerVariants() {
   },
   {
     title: 'Banner with Background',
-    desc: 'This example shows Banner component with a background image.',
+    desc: 'Use a background image and controls for hero-like banner layouts.',
     code: `
 import { Banner, Box, Button, BannerTitle, BannerSubTitle } from "kalki-ui";
 import { Info } from "lucide-react";
@@ -140,27 +118,20 @@ export default function BannerWithBackground() {
   return (
     <Box padding="10px" style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
       <Banner
-        variant="dark"
         size="lg"
         background="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1350&q=80"
         controls={
           <>
-            <Button variant="secondary" size="sm">
-              Learn More
-            </Button>
-            <Button variant="danger" size="sm">
-              Dismiss
-            </Button>
+            <Button variant="secondary" size="sm">Learn More</Button>
+            <Button variant="danger" size="sm">Dismiss</Button>
           </>
         }
-        className="text-white"
       >
         <BannerTitle className="flex items-center">
-          Welcome to React World <Info className="inline-block ml-2 w-5 h-5" />
+          Welcome to React World <Info className="ml-2 inline-block h-5 w-5" />
         </BannerTitle>
         <BannerSubTitle>
-          React makes it painless to create interactive UIs. Design simple views for each state in your application,
-          and React will efficiently update and render the right components when your data changes.
+          React makes it painless to create interactive UIs.
         </BannerSubTitle>
       </Banner>
     </Box>
@@ -170,7 +141,6 @@ export default function BannerWithBackground() {
     snippet: (
       <Box padding="10px" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
         <Banner
-          variant="dark"
           size="lg"
           background="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1350&q=80"
           controls={
@@ -183,15 +153,11 @@ export default function BannerWithBackground() {
               </Button>
             </>
           }
-          className="text-white"
         >
           <BannerTitle className="flex items-center">
-            Welcome to React World <Info className="inline-block ml-2 w-5 h-5" />
+            Welcome to React World <Info className="ml-2 inline-block h-5 w-5" />
           </BannerTitle>
-          <BannerSubTitle>
-            React makes it painless to create interactive UIs. Design simple views for each state in your application,
-            and React will efficiently update and render the right components when your data changes.
-          </BannerSubTitle>
+          <BannerSubTitle>React makes it painless to create interactive UIs.</BannerSubTitle>
         </Banner>
       </Box>
     ),
@@ -201,30 +167,24 @@ export default function BannerWithBackground() {
 export const columns = ['Name', 'Type', 'Default', 'Description'];
 
 export const rows = [
-  ['children', 'ReactNode', 'null', 'The content of the banner, typically BannerTitle and BannerSubTitle components'],
-  [
-    'variant',
-    `'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'help' | 'light' | 'dark'`,
-    'primary',
-    'Specifies the visual style of the banner.',
-  ],
-  ['size', `'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'`, 'md', 'Defines size of the banner.'],
-  ['controls', 'ReactNode', 'null', 'Additional controls to be displayed in the banner, such as buttons or icons'],
-  ['className', 'string', '-', 'Additional CSS class for custom styling'],
-  ['style', 'CSSProperties', '-', 'Inline styles to be applied to the banner container'],
-  ['background', 'string', '-', 'Background color or image URL'],
+  ['children', 'ReactNode', 'null', 'Banner content, typically BannerTitle and BannerSubTitle components.'],
+  ['size', `'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'`, 'md', 'Defines spacing and text scale.'],
+  ['controls', 'ReactNode', 'null', 'Optional controls displayed at the right side.'],
+  ['className', 'string', '-', 'Additional CSS class for custom styling.'],
+  ['style', 'CSSProperties', '-', 'Inline styles for the banner container.'],
+  ['background', 'string', '-', 'Background color or image URL.'],
 ];
 
 export const bannerTitleRows = [
-  ['children', 'ReactNode', 'null', 'The content of the banner title'],
+  ['children', 'ReactNode', 'null', 'The content of the banner title.'],
   ['size', `'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'`, 'md', 'Size of the title text. Matches Banner size.'],
-  ['className', 'string', '-', 'Additional CSS class for custom styling'],
-  ['style', 'CSSProperties', '-', 'Inline styles to be applied to the title element'],
+  ['className', 'string', '-', 'Additional CSS class for custom styling.'],
+  ['style', 'CSSProperties', '-', 'Inline styles applied to the title element.'],
 ];
 
 export const bannerSubTitleRows = [
-  ['children', 'ReactNode', 'null', 'The content of the banner subtitle'],
+  ['children', 'ReactNode', 'null', 'The content of the banner subtitle.'],
   ['size', `'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'`, 'md', 'Size of the subtitle text. Matches Banner size.'],
-  ['className', 'string', '-', 'Additional CSS class for custom styling'],
-  ['style', 'CSSProperties', '-', 'Inline styles to be applied to the subtitle element'],
+  ['className', 'string', '-', 'Additional CSS class for custom styling.'],
+  ['style', 'CSSProperties', '-', 'Inline styles applied to the subtitle element.'],
 ];
